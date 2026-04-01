@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 
 export default function AboutPage() {
@@ -85,13 +84,13 @@ export default function AboutPage() {
           Създадохме първият крипто спестовен продукт в България
         </h1>
         <div className="flex items-center gap-4" style={{ marginTop: '48px' }}>
-          <Link
-            href="/earn"
+          <a
+            href="https://app.defied.bg" target="_blank" rel="noopener noreferrer"
             className="inline-block hover:opacity-80 transition-opacity whitespace-nowrap"
-            style={{ background: '#000', borderRadius: '28px', color: '#fff', fontSize: '16px', lineHeight: '24px', fontWeight: 700, padding: '14px 32px' }}
+            style={{ background: '#000', borderRadius: '28px', color: '#fff', fontSize: '16px', lineHeight: '24px', fontWeight: 700, padding: '14px 32px', textDecoration: 'none' }}
           >
             Започни сега
-          </Link>
+          </a>
           <a
             href="mailto:hello@defied.bg"
             className="inline-block hover:opacity-80 transition-opacity"
