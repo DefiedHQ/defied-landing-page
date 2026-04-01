@@ -1,0 +1,160 @@
+{
+  "nav": {
+    "earn": "Earn",
+    "trade": "Trade Crypto",
+    "resources": "Resources",
+    "about": "About",
+    "profile": "Account",
+    "logout": "Logout",
+    "login": "Login",
+    "connected": "Connected",
+    "goTo": "Go to..."
+  },
+  "hero": {
+    "title": "Decentralized finance is for everyone",
+    "subtitle1": "Through smart contracts we provide",
+    "subtitle2": "the opportunity for everyone to earn yield",
+    "subtitle3": "on their money — without custody",
+    "cta": "Get started",
+    "ctaMain": "Take control of your money",
+    "ctaHover": "Get started"
+  },
+  "protocols": {
+    "title": "Integrated Protocols"
+  },
+  "protocolsSection": {
+    "title": "Some of the protocols we integrate"
+  },
+  "imageSection": {
+    "heading": "Earn more from your money",
+    "subtext1": "Banks give 2–3%.",
+    "subtext2": "DeFi protocols — up to 10%",
+    "subtext3": "annually, without intermediaries.",
+    "feature1": "No bank, no fees",
+    "feature2": "Higher yield",
+    "feature3": "Full control"
+  },
+  "carousel": {
+    "step1Title": "Register with just an email",
+    "step1Desc": "No need to understand wallets or keys. We create a wallet for you automatically.",
+    "step2Title": "Curated DeFi protocols",
+    "step2Desc": "We select low-risk protocols with high liquidity and generate yield for you.",
+    "step3Title": "Full control over your assets",
+    "step3Desc": "We have no access to your funds. Smart contracts are public and verifiable.",
+    "cta": "Get started"
+  },
+  "aboutCarousel": {
+    "title": "Why us",
+    "card1Tag": "Easy Access",
+    "card1Title": "No technical knowledge needed",
+    "card1Desc": "You don't need to understand how digital wallets and private keys work. We offer an easy-to-use interface and registration with just an email address.",
+    "card2Tag": "Security",
+    "card2Title": "Full control over your assets",
+    "card2Desc": "We have no access to your funds. You are the only one who controls your wallet. All smart contracts are non-custodial.",
+    "card3Tag": "Yield",
+    "card3Title": "Curated protocols with high yield",
+    "card3Desc": "No need to research DeFi protocols yourself. We select the lowest-risk options with high liquidity and generate yield for you.",
+    "card4Tag": "Quick Purchase",
+    "card4Title": "Buy crypto in two clicks",
+    "card4Desc": "Buy cryptocurrency with a card, Apple Pay, Google Pay, or via SEPA bank transfer. You can also deposit crypto directly into your account.",
+    "learnMore": "Learn more"
+  },
+  "faq": {
+    "title": "Questions?",
+    "subtitle": "Answers.",
+    "q1": "What is Defied?",
+    "a1": "Defied is a platform that provides non-custodial decentralized infrastructure for easy access to DeFi. Register with an email and automatically receive a wallet.",
+    "q2": "Who controls my funds?",
+    "a2": "Only you. The smart contracts are non-custodial — neither Defied nor Privy have access to your private key. It is stored locally on your device.",
+    "q3": "How is yield generated?",
+    "a3": "Your funds are deposited into curated DeFi protocols with high liquidity through our smart contracts. Yield comes directly from the protocol, without an intermediary.",
+    "q4": "What are the advantages over a bank?",
+    "a4": "Full transparency through public smart contracts, higher yield from DeFi protocols, no intermediary, and full control over your assets at all times.",
+    "q5": "Can I withdraw my money at any time?",
+    "a5": "Yes — there is no lock-up period on our part. Withdrawal depends only on the liquidity of the respective decentralized protocol.",
+    "q6": "How do I buy crypto?",
+    "a6": "You can buy stablecoins directly on the platform with a debit/credit card, Apple Pay, Google Pay, or SEPA bank transfer — through our licensed partner MoonPay."
+  },
+  "trade": {
+    "title": "Trade Crypto",
+    "subtitle": "Buy crypto with a card, Apple Pay, Google Pay, or SEPA bank transfer.",
+    "loginRequired": "Log in to your account",
+    "loginRequiredDesc": "To buy crypto, you need to log in to your account first.",
+    "buyCrypto": "Buy Crypto",
+    "buyCryptoDesc": "Buy cryptocurrency with a card, Apple Pay, Google Pay, or SEPA bank transfer.",
+    "sellCrypto": "Sell Crypto",
+    "sellCryptoDesc": "Sell cryptocurrency and receive funds to your card or bank account.",
+    "buyAction": "Buy",
+    "sellAction": "Coming soon",
+    "poweredBy": "Powered by MoonPay"
+  },
+  "earn": {
+    "title": "Earn",
+    "subtitle": "Explore DeFi vaults and start generating yield from stablecoins through curated protocols.",
+    "filterAll": "All",
+    "apr": "APR",
+    "protocol": "Protocol",
+    "asset": "Asset"
+  },
+  "vaults": {
+    "aaveUsdc": {
+      "title": "USDC Aave Stablecoin",
+      "description": "Deposit USDC stablecoins into the decentralized Aave lending protocol.",
+      "cta": "Deposit"
+    },
+    "aaveEurc": {
+      "title": "EURC Aave Stablecoin",
+      "description": "Deposit EURC stablecoins into the decentralized Aave lending protocol.",
+      "cta": "Deposit"
+    },
+    "compoundUsdc": {
+      "title": "USDC Compound Stablecoin",
+      "description": "Deposit USDC stablecoins into the decentralized Compound lending protocol.",
+      "cta": "Deposit"
+    }
+  },
+  "vault": {
+    "deposit": "Deposit",
+    "withdraw": "Withdraw",
+    "payingOn": "You pay on Ethereum",
+    "receivingOn": "You receive on Ethereum",
+    "shares": "shares",
+    "login": "Login",
+    "confirmInWallet": "Confirm in wallet...",
+    "approving": "Approving...",
+    "approved": "Approved!",
+    "approve": "Approve {{asset}}",
+    "depositing": "Depositing...",
+    "deposited": "Deposited!",
+    "depositCta": "Deposit {{asset}}",
+    "depositSuccess": "Deposit successful!",
+    "vaultBalance": "Vault balance",
+    "noBalance": "No balance",
+    "withdrawAll": "Withdraw all",
+    "withdrawing": "Withdrawing...",
+    "withdrawn": "Withdrawn!",
+    "withdrawSuccess": "Withdrawal successful!",
+    "contract": "Contract"
+  },
+  "resources": {
+    "heroTitle": "Updates, stories, and announcements",
+    "heroSubtitle": "On this page we publish the latest news: product updates, guides, and articles about the DeFi ecosystem.",
+    "shareArticle": "Share the article",
+    "recentPosts": "Recent Posts",
+    "backToResources": "Back to Resources",
+    "notFound": "Article not found"
+  },
+  "footer": {
+    "products": "Products",
+    "earn": "Earn",
+    "trade": "Trade Crypto",
+    "useful": "Useful",
+    "resources": "Resources",
+    "risks": "Risks",
+    "company": "Company",
+    "about": "About us",
+    "terms": "Terms of use",
+    "privacy": "Privacy policy",
+    "address": "Bulgaria Blvd 115, Sofia, Bulgaria"
+  }
+}

@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1456 816" fill="none">
+  <rect width="1456" height="816" fill="#EDEDF0"/>
+
+  <!-- Dotted horizontal line -->
+  <g fill="#1a1a1a">
+    <circle cx="8" cy="390" r="3"/>
+    <circle cx="40" cy="390" r="3.5"/>
+    <circle cx="72" cy="390" r="2.5"/>
+    <circle cx="104" cy="390" r="3"/>
+    <circle cx="136" cy="390" r="2.5"/>
+    <circle cx="168" cy="390" r="3.5"/>
+    <circle cx="200" cy="390" r="2.5"/>
+    <circle cx="232" cy="390" r="3"/>
+    <circle cx="264" cy="390" r="2.5"/>
+    <circle cx="296" cy="390" r="3.5"/>
+    <circle cx="328" cy="390" r="3"/>
+    <circle cx="360" cy="390" r="2.5"/>
+    <circle cx="392" cy="390" r="3.5"/>
+    <circle cx="424" cy="390" r="4"/>
+    <rect x="452" y="382" width="16" height="16" rx="1"/>
+
+    <rect x="988" y="382" width="16" height="16" rx="1"/>
+    <circle cx="1032" cy="390" r="4"/>
+    <circle cx="1064" cy="390" r="3.5"/>
+    <circle cx="1096" cy="390" r="3"/>
+    <circle cx="1128" cy="390" r="2.5"/>
+    <circle cx="1160" cy="390" r="3"/>
+    <circle cx="1192" cy="390" r="3.5"/>
+    <circle cx="1224" cy="390" r="2.5"/>
+    <circle cx="1256" cy="390" r="3"/>
+    <circle cx="1288" cy="390" r="2.5"/>
+    <circle cx="1320" cy="390" r="3.5"/>
+    <circle cx="1352" cy="390" r="3"/>
+    <circle cx="1384" cy="390" r="2.5"/>
+    <circle cx="1416" cy="390" r="3"/>
+    <circle cx="1448" cy="390" r="3.5"/>
+  </g>
+
+  <!-- Chart squares - left side going up -->
+  <g fill="#c4c4cc" opacity="0.7">
+    <!-- Far left -->
+    <rect x="40" y="340" width="14" height="14" rx="1"/>
+    <rect x="80" y="310" width="12" height="12" rx="1"/>
+    <rect x="110" y="320" width="14" height="14" rx="1"/>
+    <rect x="150" y="290" width="12" height="12" rx="1"/>
+    <rect x="180" y="300" width="14" height="14" rx="1"/>
+    <rect x="210" y="310" width="12" height="12" rx="1"/>
+    <rect x="250" y="280" width="14" height="14" rx="1"/>
+    <rect x="290" y="260" width="12" height="12" rx="1"/>
+
+    <!-- Left descending -->
+    <rect x="320" y="380" width="14" height="14" rx="1"/>
+    <rect x="340" y="420" width="12" height="12" rx="1"/>
+    <rect x="370" y="440" width="14" height="14" rx="1"/>
+    <rect x="350" y="460" width="12" height="12" rx="1"/>
+    <rect x="390" y="480" width="14" height="14" rx="1"/>
+
+    <!-- Center peak -->
+    <rect x="480" y="220" width="14" height="14" rx="1"/>
+    <rect x="510" y="180" width="14" height="14" rx="1"/>
+    <rect x="540" y="160" width="12" height="12" rx="1"/>
+    <rect x="560" y="120" width="14" height="14" rx="1"/>
+    <rect x="580" y="80" width="12" height="12" rx="1"/>
+    <rect x="610" y="100" width="14" height="14" rx="1"/>
+    <rect x="630" y="60" width="14" height="14" rx="1"/>
+
+    <rect x="670" y="140" width="14" height="14" rx="1"/>
+    <rect x="700" y="120" width="12" height="12" rx="1"/>
+    <rect x="730" y="170" width="14" height="14" rx="1"/>
+    <rect x="760" y="200" width="12" height="12" rx="1"/>
+    <rect x="790" y="240" width="14" height="14" rx="1"/>
+    <rect x="520" y="240" width="12" height="12" rx="1"/>
+
+    <!-- Right side peak -->
+    <rect x="850" y="190" width="14" height="14" rx="1"/>
+    <rect x="880" y="160" width="12" height="12" rx="1"/>
+    <rect x="910" y="130" width="14" height="14" rx="1"/>
+    <rect x="940" y="170" width="12" height="12" rx="1"/>
+    <rect x="970" y="220" width="14" height="14" rx="1"/>
+
+    <!-- Right descending vertical -->
+    <rect x="1080" y="370" width="14" height="14" rx="1"/>
+    <rect x="1080" y="420" width="12" height="12" rx="1"/>
+    <rect x="1090" y="460" width="14" height="14" rx="1"/>
+    <rect x="1080" y="500" width="12" height="12" rx="1"/>
+    <rect x="1090" y="540" width="14" height="14" rx="1"/>
+    <rect x="1080" y="580" width="12" height="12" rx="1"/>
+    <rect x="1100" y="620" width="14" height="14" rx="1"/>
+    <rect x="1090" y="660" width="12" height="12" rx="1"/>
+    <rect x="1100" y="700" width="14" height="14" rx="1"/>
+    <rect x="1110" y="740" width="12" height="12" rx="1"/>
+
+    <rect x="1020" y="280" width="14" height="14" rx="1"/>
+    <rect x="1040" y="320" width="12" height="12" rx="1"/>
+  </g>
+
+  <!-- Place order button -->
+  <rect x="490" y="350" width="476" height="80" rx="40" fill="#1a1a1a"/>
+  <text x="728" y="400" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="36" font-weight="400">Place order</text>
+</svg>
