@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
 import { FeatureCarousel } from '@/components/FeatureCarousel';
 import { AboutCarousel } from '@/components/AboutCarousel';
 import { ProtocolsSection } from '@/components/ProtocolsSection';
@@ -25,7 +24,7 @@ function CtaSection() {
         transition: 'background 0.3s ease',
       }}
     >
-      <Link href="/earn" style={{ textDecoration: 'none' }}>
+      <a href="https://app.defied.bg" style={{ textDecoration: 'none' }}>
         <div
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
@@ -48,7 +47,7 @@ function CtaSection() {
         >
           {hovered ? t('hero.ctaHover') : t('hero.ctaMain')}
         </div>
-      </Link>
+      </a>
     </div>
   );
 }
@@ -83,13 +82,13 @@ export function LandingPage() {
             {t('hero.title')}
           </h1>
           <div className="mt-8 sm:mt-10">
-            <Link
-              href="/earn"
+            <a
+              href="https://app.defied.bg"
               className="inline-block px-8 py-3.5 hover:opacity-80 transition-opacity"
-              style={{ background: '#000000', borderRadius: '28px', color: '#ffffff', fontSize: '16px', lineHeight: '24px', fontWeight: 700 }}
+              style={{ background: '#000000', borderRadius: '28px', color: '#ffffff', fontSize: '16px', lineHeight: '24px', fontWeight: 700, textDecoration: 'none' }}
             >
               {t('hero.cta')}
-            </Link>
+            </a>
           </div>
         </div>
 

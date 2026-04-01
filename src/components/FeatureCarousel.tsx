@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect, useRef, useCallback } from 'react';
-import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 
 const INTERVAL_MS = 4000;
@@ -75,8 +74,8 @@ export function FeatureCarousel() {
             0{i + 1}
           </button>
         ))}
-        <Link
-          href="/earn"
+        <a
+          href="https://app.defied.bg"
           className="inline-block px-6 sm:px-8 py-3 sm:py-3.5 hover:opacity-80 transition-opacity"
           style={{
             background: '#000000',
@@ -90,7 +89,7 @@ export function FeatureCarousel() {
           }}
         >
           {t('carousel.cta')}
-        </Link>
+        </a>
       </div>
     </div>
   );

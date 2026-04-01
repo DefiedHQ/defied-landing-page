@@ -28,13 +28,6 @@ export function Footer() {
           {/* Link columns floated right */}
           <div className="flex flex-wrap gap-10 sm:gap-16 md:gap-20">
             <div>
-              <h4 className="text-white font-semibold mb-4" style={{ fontSize: '18px' }}>{t('footer.products')}</h4>
-              <ul className="space-y-2.5" style={{ fontSize: '14px' }}>
-                <li><Link href="/earn" className="text-[#999] hover:text-white transition-colors">{t('footer.earn')}</Link></li>
-                <li><Link href="/trade" className="text-[#999] hover:text-white transition-colors">{t('footer.trade')}</Link></li>
-              </ul>
-            </div>
-            <div>
               <h4 className="text-white font-semibold mb-4" style={{ fontSize: '18px' }}>{t('footer.useful')}</h4>
               <ul className="space-y-2.5" style={{ fontSize: '14px' }}>
                 <li><Link href="/resources" className="text-[#999] hover:text-white transition-colors">{t('footer.resources')}</Link></li>
