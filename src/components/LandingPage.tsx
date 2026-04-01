@@ -24,7 +24,7 @@ function CtaSection() {
         transition: 'background 0.3s ease',
       }}
     >
-      <a href="https://app.defied.bg" style={{ textDecoration: 'none' }}>
+      <a href="https://app.defied.bg" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
         <div
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
@@ -83,7 +83,7 @@ export function LandingPage() {
           </h1>
           <div className="mt-8 sm:mt-10">
             <a
-              href="https://app.defied.bg"
+              href="https://app.defied.bg" target="_blank" rel="noopener noreferrer"
               className="inline-block px-8 py-3.5 hover:opacity-80 transition-opacity"
               style={{ background: '#000000', borderRadius: '28px', color: '#ffffff', fontSize: '16px', lineHeight: '24px', fontWeight: 700, textDecoration: 'none' }}
             >

@@ -75,7 +75,7 @@ export function FeatureCarousel() {
           </button>
         ))}
         <a
-          href="https://app.defied.bg"
+          href="https://app.defied.bg" target="_blank" rel="noopener noreferrer"
           className="inline-block px-6 sm:px-8 py-3 sm:py-3.5 hover:opacity-80 transition-opacity"
           style={{
             background: '#000000',

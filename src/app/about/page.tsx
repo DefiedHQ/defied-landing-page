@@ -85,7 +85,7 @@ export default function AboutPage() {
         </h1>
         <div className="flex items-center gap-4" style={{ marginTop: '48px' }}>
           <a
-            href="https://app.defied.bg"
+            href="https://app.defied.bg" target="_blank" rel="noopener noreferrer"
             className="inline-block hover:opacity-80 transition-opacity whitespace-nowrap"
             style={{ background: '#000', borderRadius: '28px', color: '#fff', fontSize: '16px', lineHeight: '24px', fontWeight: 700, padding: '14px 32px', textDecoration: 'none' }}
           >

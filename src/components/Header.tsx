@@ -73,7 +73,7 @@ export function Header() {
         {/* CTA button — right */}
         <div className="flex-1 flex justify-end items-center gap-3">
           <a
-            href="https://app.defied.bg"
+            href="https://app.defied.bg" target="_blank" rel="noopener noreferrer"
             className="hover:opacity-80 transition-opacity"
             style={{ background: '#000000', borderRadius: '28px', color: '#ffffff', fontSize: '16px', lineHeight: '24px', fontWeight: 700, padding: '10px 24px', textDecoration: 'none' }}
           >
