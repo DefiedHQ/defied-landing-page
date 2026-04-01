@@ -62,11 +62,11 @@ export function Header() {
 
         {/* Center nav tabs */}
         <div className="hidden sm:flex items-center gap-1" style={{ color: 'rgb(20, 20, 23)', fontSize: '16px', fontWeight: 500 }}>
-          <Link href="/resources" className={tabClass(['/resources'])} style={{ borderRadius: '24px' }}>
-            {t('nav.resources')}
-          </Link>
           <Link href="/about" className={tabClass(['/about'])} style={{ borderRadius: '24px' }}>
             {t('nav.about')}
+          </Link>
+          <Link href="/resources" className={tabClass(['/resources'])} style={{ borderRadius: '24px' }}>
+            {t('nav.resources')}
           </Link>
         </div>
 
@@ -99,8 +99,8 @@ export function Header() {
       >
         <div className="flex flex-col gap-1 px-4 pt-3 pb-2" style={{ color: 'rgb(20, 20, 23)', fontSize: '18px', fontWeight: 500 }}>
           {[
-            { href: '/resources', label: t('nav.resources'), paths: ['/resources'] },
             { href: '/about', label: t('nav.about'), paths: ['/about'] },
+            { href: '/resources', label: t('nav.resources'), paths: ['/resources'] },
           ].map((item) => (
             <Link
               key={item.href}
