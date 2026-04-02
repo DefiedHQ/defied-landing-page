@@ -31,21 +31,29 @@ export function ProtocolsSection() {
       style={{
         width: '100%',
         height: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: 'clamp(32px, 5vh, 56px)',
         background: bgColor,
         transition: 'background 0.4s ease',
-        padding: '40px 5%',
-        boxSizing: 'border-box',
+        display: 'flex',
+        alignItems: 'center',
       }}
     >
+      <div
+        className="px-4 sm:px-6"
+        style={{
+          maxWidth: '1600px',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          width: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          gap: 'clamp(40px, 6vh, 72px)',
+        }}
+      >
       {/* Title */}
       <h2
         className="text-[28px] sm:text-[36px] md:text-[48px]"
-        style={{ fontWeight: 700, color: '#000', lineHeight: 1.1, textAlign: 'center' }}
+        style={{ fontWeight: 700, color: '#000', lineHeight: 1.1, maxWidth: '520px' }}
       >
         {t('protocolsSection.title')}
       </h2>
@@ -91,6 +99,7 @@ export function ProtocolsSection() {
             </a>
           );
         })}
+      </div>
       </div>
     </div>
   );
