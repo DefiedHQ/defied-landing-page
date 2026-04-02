@@ -145,12 +145,12 @@ export function LandingPage() {
         }}
       >
         <div
+          className="px-6 sm:px-10 lg:px-16 py-8"
           style={{
             background: '#1400FF',
             width: promoExpanded ? '100%' : '90%',
             margin: '0 auto',
             transition: 'width 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
-            padding: 'clamp(32px, 5vw, 64px)',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
