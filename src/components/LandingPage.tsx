@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { FeatureCarousel } from '@/components/FeatureCarousel';
 import { AboutCarousel } from '@/components/AboutCarousel';
 import { ProtocolsSection } from '@/components/ProtocolsSection';
@@ -54,6 +54,17 @@ function CtaSection() {
 
 export function LandingPage() {
   const { t } = useLanguage();
+  const promoRef = useRef<HTMLDivElement>(null);
+  const [promoExpanded, setPromoExpanded] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setPromoExpanded(entry.isIntersecting),
+      { threshold: 0.3 }
+    );
+    if (promoRef.current) observer.observe(promoRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div
@@ -123,25 +134,25 @@ export function LandingPage() {
 
       {/* Section 3: Blue promo */}
       <div
-        className="px-4 sm:px-6"
+        ref={promoRef}
         style={{
           height: 'calc(100dvh - var(--header-h, 72px))',
           scrollSnapAlign: 'start',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
           background: '#fff',
+          overflow: 'hidden',
+          display: 'flex',
+          alignItems: 'stretch',
         }}
       >
         <div
-          className="w-full max-w-[1600px]"
           style={{
             background: '#1400FF',
-            borderRadius: 0,
+            width: promoExpanded ? '100%' : '90%',
+            margin: '0 auto',
+            transition: 'width 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
             padding: 'clamp(32px, 5vw, 64px)',
             display: 'flex',
             flexDirection: 'column',
-            minHeight: 'clamp(320px, 50vh, 520px)',
           }}
         >
           {/* Eyebrow */}
