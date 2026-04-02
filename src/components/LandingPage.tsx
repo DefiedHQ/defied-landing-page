@@ -160,9 +160,6 @@ export function LandingPage() {
             {t('imageSection.promoLabel')}
           </p>
 
-          {/* Spacer */}
-          <div style={{ flex: 1 }} />
-
           {/* Main heading */}
           <h2
             className="text-[28px] sm:text-[42px] md:text-[56px]"
