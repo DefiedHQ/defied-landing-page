@@ -206,7 +206,6 @@ export function LandingPage() {
 
       {/* Section 4: FAQ */}
       <div
-        id="faq"
         style={{
           scrollSnapAlign: 'start',
           background: '#fff',
