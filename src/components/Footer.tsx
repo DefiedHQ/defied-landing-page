@@ -63,7 +63,7 @@ export function Footer() {
         </p>
 
         {/* Copyright */}
-        <p style={{ fontSize: '12px', color: '#999', textAlign: 'center', marginTop: '16px' }}>
+        <p style={{ fontSize: '12px', color: '#999', textAlign: 'left', marginTop: '16px' }}>
           © Fusion Software LLC. Всички права запазени.
         </p>
       </div>
