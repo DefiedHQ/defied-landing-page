@@ -155,8 +155,12 @@ span.vault-card-btn {
 span.about-card-btn {
   background-color: #0F0F660D !important;
   color: #000 !important;
+  transition: background-color 0.4s ease, color 0.4s ease !important;
 }
-.about-card { background-color: rgb(247, 247, 250) !important; }
+.about-card {
+  background-color: rgb(247, 247, 250) !important;
+  transition: background-color 0.4s ease !important;
+}
 .about-card-1:hover { background-color: #09F9F9 !important; }
 .about-card-2:hover { background-color: #4FF01F !important; }
 .about-card-3:hover { background-color: #FFEE00 !important; }
@@ -167,6 +171,9 @@ span.about-card-btn {
 }
 .about-card:hover .about-card-desc {
   color: #0F0F128F !important;
+}
+.about-card-desc {
+  transition: color 0.4s ease !important;
 }
 .about-carousel-scroll {
   scrollbar-width: none !important;
