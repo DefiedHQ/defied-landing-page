@@ -68,6 +68,15 @@ export function Header() {
           <Link href="/resources" className={tabClass(['/resources'])} style={{ borderRadius: '24px' }}>
             {t('nav.resources')}
           </Link>
+          {pathname === '/' && (
+            <button
+              onClick={() => document.getElementById('faq')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+              className="px-4 py-2 transition-colors hover:bg-[#0F0F660D]"
+              style={{ borderRadius: '24px', background: 'none', border: 'none', cursor: 'pointer', fontSize: '16px', fontWeight: 500, color: 'rgb(20, 20, 23)' }}
+            >
+              {t('nav.faq')}
+            </button>
+          )}
         </div>
 
         {/* CTA button — right */}
@@ -114,6 +123,18 @@ export function Header() {
               {item.label}
             </Link>
           ))}
+          {pathname === '/' && (
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                document.getElementById('faq')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }}
+              className="py-2.5 px-1 text-left transition-colors"
+              style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '18px', fontWeight: 500, color: 'rgb(20, 20, 23)' }}
+            >
+              {t('nav.faq')}
+            </button>
+          )}
         </div>
       </div>
     </header>
