@@ -9,7 +9,7 @@ const protocols = [
   { name: 'Compound', logo: '/Compound-Logo.svg', width: 140, height: 140, mobileWidth: 70, mobileHeight: 70, href: 'https://compound.finance', color: '#00D395' },
   { name: 'Morpho', logo: '/Morpho-logo-horizontal-lightmode.svg', width: 180, height: 60, mobileWidth: 90, mobileHeight: 30, href: 'https://morpho.org', color: '#2470FF' },
   { name: 'Lido', logo: '/lido-logo.svg', width: 160, height: 60, mobileWidth: 80, mobileHeight: 30, href: 'https://lido.fi', color: '#f89c90' },
-  { name: 'Yo', logo: '/yo_wordmark_black.svg', width: 160, height: 60, mobileWidth: 80, mobileHeight: 30, href: 'https://yo.xyz', color: '#fde68a' },
+  { name: 'Yo', logo: '/yo_wordmark_black.svg', width: 128, height: 48, mobileWidth: 64, mobileHeight: 24, href: 'https://yo.xyz', color: '#D6FF34' },
 ];
 
 const cardPositions = [
