@@ -13,19 +13,19 @@ const protocols = [
 ];
 
 const cardPositions = [
-  { top: '10%', left: '8%', transform: 'rotate(-3deg)' },
-  { top: '12%', right: '10%', transform: 'rotate(2deg)' },
-  { bottom: '10%', left: '50%', transform: 'translateX(-50%) rotate(1deg)' },
-  { bottom: '12%', right: '8%', transform: 'rotate(-2deg)' },
-  { bottom: '12%', left: '8%', transform: 'rotate(3deg)' },
+  { top: '10%', left: '5%' },
+  { top: '12%', right: '5%' },
+  { bottom: '10%', left: '50%', transform: 'translateX(-50%)' },
+  { bottom: '12%', right: '5%' },
+  { bottom: '12%', left: '5%' },
 ] as const;
 
 const mobileCardPositions = [
-  { top: '5%', left: '5%', transform: 'rotate(-3deg)' },
-  { top: '5%', right: '5%', transform: 'rotate(2deg)' },
-  { bottom: '8%', left: '50%', transform: 'translateX(-50%) rotate(1deg)' },
-  { bottom: '8%', right: '5%', transform: 'rotate(-2deg)' },
-  { top: '42%', left: '5%', transform: 'translateY(-50%) rotate(3deg)' },
+  { top: '5%', left: '5%' },
+  { top: '5%', right: '5%' },
+  { bottom: '8%', left: '50%', transform: 'translateX(-50%)' },
+  { bottom: '8%', right: '5%' },
+  { top: '42%', left: '5%', transform: 'translateY(-50%)' },
 ] as const;
 
 export function ProtocolsSection() {
