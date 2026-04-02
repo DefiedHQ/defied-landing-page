@@ -14,10 +14,8 @@ function CtaSection() {
 
   return (
     <div
-      className="py-16 sm:py-0"
       style={{
-        height: 'auto',
-        minHeight: 'min(100dvh, calc(100dvh - var(--header-h, 72px)))',
+        height: 'calc(100dvh - var(--header-h, 72px))',
         scrollSnapAlign: 'start',
         display: 'flex',
         alignItems: 'center',
@@ -125,8 +123,8 @@ export function LandingPage() {
 
       {/* Section 2.5: Protocols */}
       <div
-        className="h-auto sm:h-[calc(100dvh-var(--header-h,72px))]"
         style={{
+          height: 'calc(100dvh - var(--header-h, 72px))',
           scrollSnapAlign: 'start',
           overflow: 'hidden',
         }}

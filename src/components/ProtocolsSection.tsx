@@ -28,10 +28,9 @@ export function ProtocolsSection() {
 
   return (
     <div
-      className="py-10 sm:py-0"
       style={{
         width: '100%',
-        minHeight: '100%',
+        height: '100%',
         background: bgColor,
         transition: 'background 0.4s ease',
         display: 'flex',
