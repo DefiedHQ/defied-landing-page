@@ -62,7 +62,8 @@ export function ProtocolsSection() {
       <div
         style={{
           display: 'flex',
-          flexDirection: isMobile ? 'column' : 'row',
+          flexDirection: 'row',
+          flexWrap: isMobile ? 'wrap' : 'nowrap',
           gap: '16px',
           width: '100%',
           alignItems: 'center',

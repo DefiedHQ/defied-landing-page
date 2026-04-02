@@ -212,10 +212,10 @@ span.about-card-btn {
 }
 @media (max-width: 640px) {
   .protocol-card {
-    flex: none;
-    width: 120px;
-    height: 120px;
-    aspect-ratio: auto;
+    flex: 1 1 calc(50% - 8px);
+    max-width: calc(50% - 8px);
+    aspect-ratio: 1;
+    height: auto;
   }
 }
 
