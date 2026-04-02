@@ -110,7 +110,7 @@ export function AboutCarousel() {
             href={card.href}
             onClick={handleClick}
             draggable={false}
-            className={`about-card ${card.hoverClass} transition-colors sm:shrink-0 w-full sm:w-[640px] h-[420px] sm:h-[540px] p-6 sm:p-14 gap-6 sm:gap-0`}
+            className={`about-card ${card.hoverClass} sm:shrink-0 w-full sm:w-[640px] h-[420px] sm:h-[540px] p-6 sm:p-14 gap-6 sm:gap-0`}
             style={{
               display: 'flex',
               flexDirection: 'column',

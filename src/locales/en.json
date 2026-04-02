@@ -26,13 +26,10 @@
     "title": "Some of the protocols we integrate"
   },
   "imageSection": {
-    "heading": "Earn more from your money",
-    "subtext1": "Banks give 2–3%.",
-    "subtext2": "DeFi protocols — up to 10%",
-    "subtext3": "annually, without intermediaries.",
-    "feature1": "No bank, no fees",
-    "feature2": "Higher yield",
-    "feature3": "Full control"
+    "promoLabel": "Earn more from your money",
+    "heading": "DeFi yield without the complexity, banks, or intermediaries.",
+    "cta1": "Open account",
+    "cta2": "Learn more"
   },
   "carousel": {
     "step1Title": "Register with just an email",
