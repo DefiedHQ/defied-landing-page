@@ -12,22 +12,6 @@ const protocols = [
   { name: 'Yo', logo: '/yo_wordmark_black.svg', width: 128, height: 48, mobileWidth: 64, mobileHeight: 24, href: 'https://yo.xyz', color: '#D6FF34' },
 ];
 
-const cardPositions = [
-  { top: '10%', left: '5%' },
-  { top: '12%', right: '5%' },
-  { bottom: '10%', left: '50%', transform: 'translateX(-50%)' },
-  { bottom: '12%', right: '5%' },
-  { bottom: '12%', left: '5%' },
-] as const;
-
-const mobileCardPositions = [
-  { top: '5%', left: '5%' },
-  { top: '5%', right: '5%' },
-  { bottom: '8%', left: '50%', transform: 'translateX(-50%)' },
-  { bottom: '8%', right: '5%' },
-  { top: '42%', left: '5%', transform: 'translateY(-50%)' },
-] as const;
-
 export function ProtocolsSection() {
   const { t } = useLanguage();
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -45,71 +29,69 @@ export function ProtocolsSection() {
   return (
     <div
       style={{
-        position: 'relative',
         width: '100%',
         height: '100%',
-        overflow: 'hidden',
         display: 'flex',
+        flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
+        gap: 'clamp(32px, 5vh, 56px)',
         background: bgColor,
         transition: 'background 0.4s ease',
+        padding: '40px 5%',
+        boxSizing: 'border-box',
       }}
     >
-      {/* Center title */}
+      {/* Title */}
       <h2
         className="text-[28px] sm:text-[36px] md:text-[48px]"
-        style={{
-          fontWeight: 700,
-          color: '#000',
-          lineHeight: 1.1,
-          textAlign: 'center',
-          maxWidth: '600px',
-          padding: '0 1rem',
-          zIndex: 1,
-          position: 'relative',
-        }}
+        style={{ fontWeight: 700, color: '#000', lineHeight: 1.1, textAlign: 'center' }}
       >
         {t('protocolsSection.title')}
       </h2>
 
-      {/* Floating protocol cards */}
-      {protocols.map((protocol, i) => {
-        const isHovered = hoveredIndex === i;
-        const someoneHovered = hoveredIndex !== null;
-        // When hovered: white card. When another card is hovered: tinted card. Default: light gray.
-        const cardBg = isHovered
-          ? '#fff'
-          : someoneHovered
-            ? `color-mix(in srgb, ${protocols[hoveredIndex!].color} 70%, white 30%)`
-            : undefined;
+      {/* Cards row / column */}
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: isMobile ? 'column' : 'row',
+          gap: '16px',
+          width: '100%',
+          alignItems: 'center',
+          justifyContent: isMobile ? 'center' : 'space-between',
+        }}
+      >
+        {protocols.map((protocol, i) => {
+          const isHovered = hoveredIndex === i;
+          const someoneHovered = hoveredIndex !== null;
+          const cardBg = isHovered
+            ? '#fff'
+            : someoneHovered
+              ? `color-mix(in srgb, ${protocols[hoveredIndex!].color} 70%, white 30%)`
+              : undefined;
 
-        return (
-          <a
-            key={protocol.name}
-            href={protocol.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="protocol-card"
-            onMouseEnter={() => setHoveredIndex(i)}
-            onMouseLeave={() => setHoveredIndex(null)}
-            style={{
-              position: 'absolute',
-              ...(isMobile ? mobileCardPositions[i] : cardPositions[i]),
-              background: cardBg,
-              transition: 'background 0.4s ease',
-            }}
-          >
-            <Image
-              src={protocol.logo}
-              alt={protocol.name}
-              width={isMobile ? protocol.mobileWidth : protocol.width}
-              height={isMobile ? protocol.mobileHeight : protocol.height}
-              style={{ filter: 'brightness(0)', display: 'block', objectFit: 'contain' }}
-            />
-          </a>
-        );
-      })}
+          return (
+            <a
+              key={protocol.name}
+              href={protocol.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="protocol-card"
+              onMouseEnter={() => setHoveredIndex(i)}
+              onMouseLeave={() => setHoveredIndex(null)}
+              style={{ background: cardBg, transition: 'background 0.4s ease' }}
+            >
+              <Image
+                src={protocol.logo}
+                alt={protocol.name}
+                width={isMobile ? protocol.mobileWidth : protocol.width}
+                height={isMobile ? protocol.mobileHeight : protocol.height}
+                style={{ filter: 'brightness(0)', display: 'block', objectFit: 'contain' }}
+              />
+            </a>
+          );
+        })}
+      </div>
     </div>
   );
 }
