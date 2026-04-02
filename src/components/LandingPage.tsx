@@ -128,14 +128,14 @@ export function LandingPage() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background: '#000',
+          background: '#fff',
         }}
       >
         <div
           className="w-full max-w-[1600px]"
           style={{
             background: '#1400FF',
-            borderRadius: '24px',
+            borderRadius: 0,
             padding: 'clamp(32px, 5vw, 64px)',
             display: 'flex',
             flexDirection: 'column',
@@ -143,7 +143,7 @@ export function LandingPage() {
           }}
         >
           {/* Eyebrow */}
-          <p className="text-sm sm:text-base" style={{ color: 'rgba(255,255,255,0.7)', fontWeight: 500, margin: 0 }}>
+          <p style={{ color: '#fff', fontWeight: 500, margin: 0, fontSize: '32px' }}>
             {t('imageSection.promoLabel')}
           </p>
 
