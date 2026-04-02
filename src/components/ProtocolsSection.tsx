@@ -15,14 +15,14 @@ const cardPositions = [
   { top: '10%', left: '8%', transform: 'rotate(-3deg)' },
   { top: '12%', right: '10%', transform: 'rotate(2deg)' },
   { bottom: '10%', left: '50%', transform: 'translateX(-50%) rotate(1deg)' },
-  { top: '5%', left: '50%', transform: 'translateX(-50%) rotate(-2deg)' },
+  { bottom: '12%', right: '8%', transform: 'rotate(-2deg)' },
 ] as const;
 
 const mobileCardPositions = [
   { top: '5%', left: '5%', transform: 'rotate(-3deg)' },
   { top: '5%', right: '5%', transform: 'rotate(2deg)' },
   { bottom: '8%', left: '50%', transform: 'translateX(-50%) rotate(1deg)' },
-  { top: '38%', left: '50%', transform: 'translateX(-50%) rotate(-2deg)' },
+  { bottom: '8%', right: '5%', transform: 'rotate(-2deg)' },
 ] as const;
 
 export function ProtocolsSection() {
@@ -102,7 +102,7 @@ export function ProtocolsSection() {
               alt={protocol.name}
               width={isMobile ? protocol.mobileWidth : protocol.width}
               height={isMobile ? protocol.mobileHeight : protocol.height}
-              style={{ filter: 'brightness(0)' }}
+              style={{ filter: 'brightness(0)', display: 'block', objectFit: 'contain' }}
             />
           </a>
         );
