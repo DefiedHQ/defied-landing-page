@@ -121,17 +121,6 @@ export function LandingPage() {
         </div>
       </div>
 
-      {/* Section 2.5: Protocols */}
-      <div
-        style={{
-          height: 'calc(100dvh - var(--header-h, 72px))',
-          scrollSnapAlign: 'start',
-          overflow: 'hidden',
-        }}
-      >
-        <ProtocolsSection />
-      </div>
-
       {/* Section 3: Blue promo */}
       <div
         ref={promoRef}
@@ -201,6 +190,17 @@ export function LandingPage() {
           </div>
           </div>
         </div>
+      </div>
+
+      {/* Section 2.5: Protocols */}
+      <div
+        style={{
+          height: 'calc(100dvh - var(--header-h, 72px))',
+          scrollSnapAlign: 'start',
+          overflow: 'hidden',
+        }}
+      >
+        <ProtocolsSection />
       </div>
 
       {/* Section 4: FAQ */}
