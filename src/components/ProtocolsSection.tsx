@@ -67,7 +67,7 @@ export function ProtocolsSection() {
           gap: '16px',
           width: '100%',
           alignItems: 'center',
-          justifyContent: 'space-between',
+          justifyContent: isMobile ? 'flex-start' : 'space-between',
         }}
       >
         {protocols.map((protocol, i) => {
