@@ -9,6 +9,7 @@ const protocols = [
   { name: 'Compound', logo: '/Compound-Logo.svg', width: 140, height: 140, mobileWidth: 70, mobileHeight: 70, href: 'https://compound.finance', color: '#00D395' },
   { name: 'Morpho', logo: '/Morpho-logo-horizontal-lightmode.svg', width: 180, height: 60, mobileWidth: 90, mobileHeight: 30, href: 'https://morpho.org', color: '#2470FF' },
   { name: 'Lido', logo: '/lido-logo.svg', width: 160, height: 60, mobileWidth: 80, mobileHeight: 30, href: 'https://lido.fi', color: '#f89c90' },
+  { name: 'Yo', logo: '/yo_wordmark_black.svg', width: 160, height: 60, mobileWidth: 80, mobileHeight: 30, href: 'https://yo.xyz', color: '#fde68a' },
 ];
 
 const cardPositions = [
@@ -16,6 +17,7 @@ const cardPositions = [
   { top: '12%', right: '10%', transform: 'rotate(2deg)' },
   { bottom: '10%', left: '50%', transform: 'translateX(-50%) rotate(1deg)' },
   { bottom: '12%', right: '8%', transform: 'rotate(-2deg)' },
+  { bottom: '12%', left: '8%', transform: 'rotate(3deg)' },
 ] as const;
 
 const mobileCardPositions = [
@@ -23,6 +25,7 @@ const mobileCardPositions = [
   { top: '5%', right: '5%', transform: 'rotate(2deg)' },
   { bottom: '8%', left: '50%', transform: 'translateX(-50%) rotate(1deg)' },
   { bottom: '8%', right: '5%', transform: 'rotate(-2deg)' },
+  { top: '42%', left: '5%', transform: 'translateY(-50%) rotate(3deg)' },
 ] as const;
 
 export function ProtocolsSection() {
