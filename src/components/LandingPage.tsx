@@ -119,51 +119,63 @@ export function LandingPage() {
         <ProtocolsSection />
       </div>
 
-      {/* Section 3: Full-bleed hero image with breathing room */}
+      {/* Section 3: Blue promo */}
       <div
+        className="px-4 sm:px-6"
         style={{
           height: 'calc(100dvh - var(--header-h, 72px))',
           scrollSnapAlign: 'start',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          background: '#000',
         }}
       >
         <div
+          className="w-full max-w-[1600px]"
           style={{
-            height: '100%',
-            position: 'relative',
-            backgroundImage: 'url(/hero-car.jpg)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center center',
+            background: '#1400FF',
+            borderRadius: '24px',
+            padding: 'clamp(32px, 5vw, 64px)',
+            display: 'flex',
+            flexDirection: 'column',
+            minHeight: 'clamp(320px, 50vh, 520px)',
           }}
         >
-          {/* Dark overlay */}
-          <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.30)' }} />
+          {/* Eyebrow */}
+          <p className="text-sm sm:text-base" style={{ color: 'rgba(255,255,255,0.7)', fontWeight: 500, margin: 0 }}>
+            {t('imageSection.promoLabel')}
+          </p>
 
-          {/* Content */}
-          <div style={{ position: 'relative', zIndex: 1, height: '100%', display: 'flex', flexDirection: 'column' }}>
-            <div
-              className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 flex-1 flex flex-col justify-between py-8 sm:py-[60px]"
+          {/* Spacer */}
+          <div style={{ flex: 1 }} />
+
+          {/* Main heading */}
+          <h2
+            className="text-[28px] sm:text-[42px] md:text-[56px]"
+            style={{ fontWeight: 700, color: '#fff', lineHeight: 1.1, margin: '0 0 clamp(24px, 4vw, 48px) 0', maxWidth: '800px' }}
+          >
+            {t('imageSection.heading')}
+          </h2>
+
+          {/* Buttons */}
+          <div className="flex flex-wrap gap-3">
+            <a
+              href="https://app.defied.bg"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center hover:opacity-80 transition-opacity"
+              style={{ background: '#fff', color: '#000', borderRadius: '28px', padding: '14px 32px', fontSize: '16px', fontWeight: 700, textDecoration: 'none', whiteSpace: 'nowrap' }}
             >
-              {/* Top-right text block */}
-              <div className="self-end max-w-full sm:max-w-[520px] text-left">
-                <h2 className="text-xl sm:text-2xl md:text-[32px]" style={{ fontWeight: 700, color: '#fff', lineHeight: 1.1, marginBottom: '20px' }}>
-                  {t('imageSection.heading')}
-                </h2>
-                <p className="text-lg sm:text-2xl md:text-[32px]" style={{ color: 'rgba(255,255,255,0.76)', lineHeight: 1.3, fontWeight: 500 }}>
-                  {t('imageSection.subtext1')}<br />{t('imageSection.subtext2')}<br />{t('imageSection.subtext3')}
-                </p>
-              </div>
-
-              {/* Bottom feature items */}
-              <div className="flex flex-col sm:flex-row gap-2 sm:gap-[clamp(32px,6vw,80px)]" style={{ alignItems: 'flex-end', justifyContent: 'center', width: '100%' }}>
-                {(['imageSection.feature1', 'imageSection.feature2', 'imageSection.feature3'] as const).map((key) => (
-                  <div key={key}>
-                    <p className="text-2xl sm:text-4xl md:text-[48px]" style={{ fontWeight: 700, color: '#fff', lineHeight: 1.1, margin: 0 }}>
-                      {t(key)}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
+              {t('imageSection.cta1')}
+            </a>
+            <a
+              href="/resources"
+              className="inline-flex items-center justify-center hover:opacity-80 transition-opacity"
+              style={{ background: 'rgba(255,255,255,0.15)', color: '#fff', borderRadius: '28px', padding: '14px 32px', fontSize: '16px', fontWeight: 700, textDecoration: 'none', whiteSpace: 'nowrap' }}
+            >
+              {t('imageSection.cta2')}
+            </a>
           </div>
         </div>
       </div>
