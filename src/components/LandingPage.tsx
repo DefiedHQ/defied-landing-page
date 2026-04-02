@@ -14,8 +14,10 @@ function CtaSection() {
 
   return (
     <div
+      className="py-16 sm:py-0"
       style={{
-        height: 'calc(100dvh - var(--header-h, 72px))',
+        height: 'auto',
+        minHeight: 'min(100dvh, calc(100dvh - var(--header-h, 72px)))',
         scrollSnapAlign: 'start',
         display: 'flex',
         alignItems: 'center',
@@ -123,8 +125,8 @@ export function LandingPage() {
 
       {/* Section 2.5: Protocols */}
       <div
+        className="h-auto sm:h-[calc(100dvh-var(--header-h,72px))]"
         style={{
-          height: 'calc(100dvh - var(--header-h, 72px))',
           scrollSnapAlign: 'start',
           overflow: 'hidden',
         }}
@@ -168,7 +170,8 @@ export function LandingPage() {
             }}
           >
           {/* Eyebrow */}
-          <p style={{ color: '#fff', fontWeight: 500, margin: '0 0 40px 0', fontSize: '32px', lineHeight: 1.1 }}>
+          <p className="text-[24px] sm:text-[32px]"
+                style={{ color: '#fff', fontWeight: 500, margin: '0 0 40px 0', lineHeight: 1.1 }}>
             {t('imageSection.promoLabel')}
           </p>
 
