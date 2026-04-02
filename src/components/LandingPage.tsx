@@ -153,6 +153,7 @@ export function LandingPage() {
             padding: 'clamp(32px, 5vw, 64px)',
             display: 'flex',
             flexDirection: 'column',
+            justifyContent: 'center',
           }}
         >
           {/* Eyebrow */}
