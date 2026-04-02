@@ -145,7 +145,6 @@ export function LandingPage() {
         }}
       >
         <div
-          className="px-6 sm:px-10 lg:px-16 py-8"
           style={{
             background: '#1400FF',
             width: promoExpanded ? '100%' : '90%',
@@ -156,6 +155,18 @@ export function LandingPage() {
             justifyContent: 'center',
           }}
         >
+          <div
+            className="px-6 sm:px-10 lg:px-16 py-8"
+            style={{
+              maxWidth: '1600px',
+              marginLeft: 'auto',
+              marginRight: 'auto',
+              width: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+            }}
+          >
           {/* Eyebrow */}
           <p style={{ color: '#fff', fontWeight: 500, margin: '0 0 40px 0', fontSize: '32px' }}>
             {t('imageSection.promoLabel')}
@@ -187,6 +198,7 @@ export function LandingPage() {
             >
               {t('imageSection.cta2')}
             </a>
+          </div>
           </div>
         </div>
       </div>
