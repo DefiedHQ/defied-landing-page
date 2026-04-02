@@ -41,7 +41,7 @@ export function ProtocolsSection() {
       style={{
         position: 'relative',
         width: '100%',
-        height: 'calc(100dvh - var(--header-h, 72px))',
+        height: '100%',
         overflow: 'hidden',
         display: 'flex',
         alignItems: 'center',

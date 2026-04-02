@@ -113,7 +113,9 @@ export function LandingPage() {
       {/* Section 2.5: Protocols */}
       <div
         style={{
+          height: 'calc(100dvh - var(--header-h, 72px))',
           scrollSnapAlign: 'start',
+          overflow: 'hidden',
         }}
       >
         <ProtocolsSection />
