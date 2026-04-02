@@ -168,7 +168,7 @@ export function LandingPage() {
             }}
           >
           {/* Eyebrow */}
-          <p style={{ color: '#fff', fontWeight: 500, margin: '0 0 40px 0', fontSize: '32px' }}>
+          <p style={{ color: '#fff', fontWeight: 500, margin: '0 0 40px 0', fontSize: '32px', lineHeight: 1.1 }}>
             {t('imageSection.promoLabel')}
           </p>
 
