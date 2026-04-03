@@ -59,7 +59,7 @@ export default function AboutPage() {
 
       {/* Logo + identity section */}
       <section className="flex flex-col items-center justify-center text-center px-4 sm:px-6" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
-        <img src="/defied_squared_logo.svg" width={80} height={80} alt="Defied" style={{ marginBottom: '32px' }} />
+        <img src="/defied_squared_logo_blue.svg" width={80} height={80} alt="Defied" style={{ marginBottom: '32px' }} />
         <h2 className="text-[28px] sm:text-[42px] md:text-[56px]" style={{ fontWeight: 500, lineHeight: 1.1, color: '#0A0B0D', maxWidth: '800px' }}>
           Нашата мисия е да улесним достъпа до децентрализираните финанси.
         </h2>

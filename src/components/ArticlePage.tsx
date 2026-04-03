@@ -60,7 +60,7 @@ export function ArticlePage() {
 
         {/* Meta */}
         <div className="flex items-center gap-3 mb-8">
-          <img src="/defied_squared_logo.svg" width={40} height={40} alt="" />
+          <img src="/defied_squared_logo_blue.svg" width={40} height={40} alt="" />
           <div style={{ fontSize: '14px', color: '#9ca3af' }}>
             <div>by <span style={{ color: '#6b7280' }}>Defied</span></div>
             <div>{formatDate(article.date)} &middot; {article.readTime} мин четене</div>
