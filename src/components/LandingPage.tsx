@@ -23,14 +23,13 @@ export function LandingPage() {
       {/* Section 1: Hero + Carousel */}
       <div
         style={{
+          minHeight: '100vh',
           display: 'flex',
           flexDirection: 'column',
           padding: '0 1rem',
-          paddingTop: '80px',
-          paddingBottom: '80px',
         }}
       >
-        <div className="w-full max-w-[800px] mx-auto flex flex-col items-center justify-center px-4">
+        <div className="w-full max-w-[800px] mx-auto flex flex-col flex-1 items-center justify-center px-4">
           <h1 className="leading-[1.05] tracking-tight text-center text-[32px] sm:text-[56px] md:text-[96px]" style={{ display: 'block', fontFamily: 'CoinbaseDisplay, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"', fontWeight: 400, color: 'rgb(10, 11, 13)' }}>
             {t('hero.title')}
           </h1>
@@ -48,7 +47,7 @@ export function LandingPage() {
           </div>
         </div>
 
-        <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6" style={{ marginTop: '100px' }}>
+        <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6" style={{ marginTop: 'auto', paddingBottom: '48px' }}>
           <FeatureCarousel />
         </div>
       </div>
