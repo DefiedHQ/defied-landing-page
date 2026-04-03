@@ -86,13 +86,17 @@ export function LandingPage() {
           scrollSnapAlign: 'start',
           overflow: 'hidden',
           display: 'flex',
-          alignItems: 'stretch',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '0 1rem',
         }}
       >
         <div
           style={{
             background: '#0052FF',
             width: '100%',
+            maxWidth: '1600px',
+            borderRadius: '56px',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
