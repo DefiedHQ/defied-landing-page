@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 
 const darkColor = '#0052FF';
@@ -57,25 +56,21 @@ export function AboutCarousel() {
       tag: t('aboutCarousel.card1Tag'),
       title: t('aboutCarousel.card1Title'),
       desc: t('aboutCarousel.card1Desc'),
-      href: '/about',
     },
     {
       tag: t('aboutCarousel.card2Tag'),
       title: t('aboutCarousel.card2Title'),
       desc: t('aboutCarousel.card2Desc'),
-      href: '/about',
     },
     {
       tag: t('aboutCarousel.card3Tag'),
       title: t('aboutCarousel.card3Title'),
       desc: t('aboutCarousel.card3Desc'),
-      href: '/about',
     },
     {
       tag: t('aboutCarousel.card4Tag'),
       title: t('aboutCarousel.card4Title'),
       desc: t('aboutCarousel.card4Desc'),
-      href: '/about',
     },
   ];
 
@@ -96,9 +91,8 @@ export function AboutCarousel() {
         {cards.map((card, i) => {
           const Icon = CARD_ICONS[i];
           return (
-            <Link
+            <div
               key={i}
-              href={card.href}
               className="about-card"
               style={{
                 display: 'flex',
@@ -106,7 +100,6 @@ export function AboutCarousel() {
                 justifyContent: 'space-between',
                 padding: 'clamp(24px, 4vw, 40px)',
                 minHeight: '320px',
-                textDecoration: 'none',
               }}
             >
               {/* Icon at top */}
@@ -122,7 +115,7 @@ export function AboutCarousel() {
                   {card.desc}
                 </p>
               </div>
-            </Link>
+            </div>
           );
         })}
       </div>
