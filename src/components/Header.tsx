@@ -1,17 +1,30 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { useState, useRef, useEffect } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { LogoMark } from '@/components/LogoMark';
 import { useLanguage } from '@/context/LanguageContext';
 
 export function Header() {
   const pathname = usePathname();
+  const router = useRouter();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const mobileToggleRef = useRef<HTMLButtonElement>(null);
   const { t } = useLanguage();
+
+  const scrollToSection = useCallback((sectionId: string) => {
+    setMobileMenuOpen(false);
+    if (pathname === '/') {
+      const el = document.getElementById(sectionId);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      router.push(`/#${sectionId}`);
+    }
+  }, [pathname, router]);
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -57,6 +70,22 @@ export function Header() {
           </button>
           {/* Nav tabs */}
           <div className="hidden sm:flex items-center gap-1" style={{ color: '#0A0B0D', fontSize: '16px', fontWeight: 600 }}>
+            <button
+              type="button"
+              onClick={() => scrollToSection('how-it-works')}
+              className="px-4 py-2 transition-colors hover:bg-[#0F0F660D]"
+              style={{ borderRadius: '24px', background: 'none', border: 'none', color: 'inherit', fontSize: 'inherit', fontWeight: 'inherit' }}
+            >
+              {t('nav.howItWorks')}
+            </button>
+            <button
+              type="button"
+              onClick={() => scrollToSection('faq')}
+              className="px-4 py-2 transition-colors hover:bg-[#0F0F660D]"
+              style={{ borderRadius: '24px', background: 'none', border: 'none', color: 'inherit', fontSize: 'inherit', fontWeight: 'inherit' }}
+            >
+              {t('nav.faq')}
+            </button>
             <Link href="/about" className={tabClass(['/about'])} style={{ borderRadius: '24px' }}>
               {t('nav.about')}
             </Link>
@@ -94,6 +123,22 @@ export function Header() {
         }}
       >
         <div className="flex flex-col gap-1 px-4 pt-3 pb-2" style={{ color: '#0A0B0D', fontSize: '18px', fontWeight: 400 }}>
+          <button
+            type="button"
+            onClick={() => scrollToSection('how-it-works')}
+            className="py-2.5 px-1 transition-colors text-left"
+            style={{ background: 'none', border: 'none', color: 'inherit', fontSize: 'inherit', fontWeight: 'inherit' }}
+          >
+            {t('nav.howItWorks')}
+          </button>
+          <button
+            type="button"
+            onClick={() => scrollToSection('faq')}
+            className="py-2.5 px-1 transition-colors text-left"
+            style={{ background: 'none', border: 'none', color: 'inherit', fontSize: 'inherit', fontWeight: 'inherit' }}
+          >
+            {t('nav.faq')}
+          </button>
           {[
             { href: '/about', label: t('nav.about'), paths: ['/about'] },
             { href: '/resources', label: t('nav.resources'), paths: ['/resources'] },

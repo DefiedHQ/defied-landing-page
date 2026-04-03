@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import { AboutCarousel } from '@/components/AboutCarousel';
 import { ProtocolsSection } from '@/components/ProtocolsSection';
 import { InfoSection } from '@/components/Hero';
@@ -8,6 +9,16 @@ import { useLanguage } from '@/context/LanguageContext';
 
 export function LandingPage() {
   const { t } = useLanguage();
+
+  useEffect(() => {
+    const hash = window.location.hash.slice(1);
+    if (hash) {
+      setTimeout(() => {
+        const el = document.getElementById(hash);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
+  }, []);
 
   return (
     <div
@@ -102,6 +113,7 @@ export function LandingPage() {
 
       {/* Section 2: About Grid */}
       <div
+        id="how-it-works"
         style={{
           background: '#fff',
           paddingTop: '100px',
@@ -164,6 +176,7 @@ export function LandingPage() {
 
       {/* Section 5: FAQ */}
       <div
+        id="faq"
         style={{
           background: '#fff',
           paddingTop: '100px',

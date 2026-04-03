@@ -8,7 +8,9 @@
     "logout": "Logout",
     "login": "Login",
     "connected": "Connected",
-    "goTo": "Go to..."
+    "goTo": "Go to...",
+    "howItWorks": "How it works",
+    "faq": "FAQ"
   },
   "hero": {
     "title": "Decentralized finance is for everyone",
