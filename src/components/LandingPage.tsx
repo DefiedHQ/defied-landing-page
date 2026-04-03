@@ -98,39 +98,13 @@ export function LandingPage() {
               minHeight: '400px',
             }}
           >
-          {/* Eyebrow */}
-          <p className="text-[24px] sm:text-[32px]"
-                style={{ color: 'rgba(255,255,255,0.7)', fontWeight: 400, margin: '0 0 40px 0', lineHeight: 1.1 }}>
-            {t('imageSection.promoLabel')}
-          </p>
-
           {/* Main heading */}
           <h2
             className="text-[28px] sm:text-[42px] md:text-[56px]"
-            style={{ fontWeight: 500, color: '#fff', lineHeight: 1.1, margin: '0 0 clamp(24px, 4vw, 48px) 0', maxWidth: '800px' }}
+            style={{ fontWeight: 500, color: '#fff', lineHeight: 1.1, maxWidth: '800px' }}
           >
             {t('imageSection.heading')}
           </h2>
-
-          {/* Buttons */}
-          <div className="flex flex-wrap gap-3">
-            <a
-              href="https://app.defied.bg"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center hover:opacity-80 transition-opacity"
-              style={{ background: '#fff', color: '#0052FF', border: '1px solid #fff', borderRadius: '56px', fontSize: '16px', fontWeight: 600, height: '44px', minWidth: '100px', padding: '0 24px', textDecoration: 'none', whiteSpace: 'nowrap' }}
-            >
-              {t('imageSection.cta1')}
-            </a>
-            <a
-              href="/resources"
-              className="inline-flex items-center justify-center hover:opacity-80 transition-opacity"
-              style={{ background: 'rgba(255,255,255,0.15)', color: '#fff', border: '1px solid rgba(255,255,255,0.3)', borderRadius: '56px', fontSize: '16px', fontWeight: 600, height: '44px', minWidth: '100px', padding: '0 24px', textDecoration: 'none', whiteSpace: 'nowrap' }}
-            >
-              {t('imageSection.cta2')}
-            </a>
-          </div>
           </div>
         </div>
       </div>
