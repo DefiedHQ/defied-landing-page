@@ -55,14 +55,14 @@ export default function AboutPage() {
           <a
             href="https://app.defied.bg" target="_blank" rel="noopener noreferrer"
             className="inline-block hover:opacity-80 transition-opacity whitespace-nowrap"
-            style={{ background: '#0052FF', borderRadius: '100px', color: '#fff', fontSize: '16px', lineHeight: '24px', fontWeight: 500, padding: '14px 32px', textDecoration: 'none' }}
+            style={{ background: '#0052FF', border: '1px solid #0052FF', borderRadius: '56px', color: '#fff', fontSize: '16px', fontWeight: 600, height: '44px', minWidth: '100px', padding: '0 24px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
           >
             Започни сега
           </a>
           <a
             href="mailto:hello@defied.bg"
             className="inline-block hover:opacity-80 transition-opacity"
-            style={{ background: 'rgb(247, 248, 249)', borderRadius: '100px', color: '#0A0B0D', fontSize: '16px', lineHeight: '24px', fontWeight: 500, padding: '14px 32px' }}
+            style={{ background: 'rgb(247, 248, 249)', border: '1px solid rgb(247, 248, 249)', borderRadius: '56px', color: '#0A0B0D', fontSize: '16px', fontWeight: 600, height: '44px', minWidth: '100px', padding: '0 24px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
           >
             Контакт
           </a>

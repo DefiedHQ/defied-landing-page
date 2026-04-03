@@ -81,7 +81,7 @@ export function VaultsGrid() {
 
           const cardContent = (
             <>
-              <span className="inline-block self-start text-[13px] font-medium text-white px-3 py-1 mb-5" style={{ background: '#0052FF', borderRadius: '100px' }}>
+              <span className="inline-block self-start text-[13px] font-medium text-white px-3 py-1 mb-5" style={{ background: '#0052FF', borderRadius: '56px' }}>
                 {vault.badge}
               </span>
 
@@ -116,7 +116,7 @@ export function VaultsGrid() {
               <div>
                 <span
                   className="inline-block px-8 py-3.5 vault-card-btn"
-                  style={{ borderRadius: '100px', fontSize: '16px', lineHeight: '24px', fontWeight: 500 }}
+                  style={{ borderRadius: '56px', fontSize: '16px', fontWeight: 600, height: '44px', minWidth: '100px', padding: '0 24px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
                 >
                   {t(`vaults.${vaultKey}.cta`)}
                 </span>

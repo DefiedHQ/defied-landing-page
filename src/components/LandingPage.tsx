@@ -30,7 +30,7 @@ function CtaSection() {
           onMouseLeave={() => setHovered(false)}
           className="w-[85vw] sm:w-[600px] md:w-[734px] h-[140px] sm:h-[220px] md:h-[262px] text-lg sm:text-2xl md:text-[32px]"
           style={{
-            borderRadius: '100px',
+            borderRadius: '56px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -84,8 +84,8 @@ export function LandingPage() {
           <div className="mt-8 sm:mt-10">
             <a
               href="https://app.defied.bg" target="_blank" rel="noopener noreferrer"
-              className="inline-block px-8 py-3.5 hover:opacity-80 transition-opacity"
-              style={{ background: '#0052FF', borderRadius: '100px', color: '#ffffff', fontSize: '16px', lineHeight: '24px', fontWeight: 500, textDecoration: 'none' }}
+              className="hover:opacity-80 transition-opacity"
+              style={{ background: '#0052FF', border: '1px solid #0052FF', borderRadius: '56px', color: '#ffffff', fontSize: '16px', fontWeight: 600, height: '44px', minWidth: '100px', padding: '0 24px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
             >
               {t('hero.cta')}
             </a>
@@ -173,14 +173,14 @@ export function LandingPage() {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center hover:opacity-80 transition-opacity"
-              style={{ background: '#fff', color: '#0052FF', borderRadius: '100px', padding: '14px 32px', fontSize: '16px', fontWeight: 500, textDecoration: 'none', whiteSpace: 'nowrap' }}
+              style={{ background: '#fff', color: '#0052FF', border: '1px solid #fff', borderRadius: '56px', fontSize: '16px', fontWeight: 600, height: '44px', minWidth: '100px', padding: '0 24px', textDecoration: 'none', whiteSpace: 'nowrap' }}
             >
               {t('imageSection.cta1')}
             </a>
             <a
               href="/resources"
               className="inline-flex items-center justify-center hover:opacity-80 transition-opacity"
-              style={{ background: 'rgba(255,255,255,0.15)', color: '#fff', borderRadius: '100px', padding: '14px 32px', fontSize: '16px', fontWeight: 500, textDecoration: 'none', whiteSpace: 'nowrap' }}
+              style={{ background: 'rgba(255,255,255,0.15)', color: '#fff', border: '1px solid rgba(255,255,255,0.3)', borderRadius: '56px', fontSize: '16px', fontWeight: 600, height: '44px', minWidth: '100px', padding: '0 24px', textDecoration: 'none', whiteSpace: 'nowrap' }}
             >
               {t('imageSection.cta2')}
             </a>

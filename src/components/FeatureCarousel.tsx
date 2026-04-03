@@ -76,16 +76,22 @@ export function FeatureCarousel() {
         ))}
         <a
           href="https://app.defied.bg" target="_blank" rel="noopener noreferrer"
-          className="inline-block px-6 sm:px-8 py-3 sm:py-3.5 hover:opacity-80 transition-opacity"
+          className="hover:opacity-80 transition-opacity"
           style={{
             background: '#0052FF',
-            borderRadius: '100px',
+            border: '1px solid #0052FF',
+            borderRadius: '56px',
             color: '#ffffff',
             fontSize: '16px',
-            lineHeight: '24px',
-            fontWeight: 500,
+            fontWeight: 600,
+            height: '44px',
+            minWidth: '100px',
+            padding: '0 24px',
             textDecoration: 'none',
             whiteSpace: 'nowrap',
+            display: 'inline-flex',
+            alignItems: 'center',
+            justifyContent: 'center',
           }}
         >
           {t('carousel.cta')}

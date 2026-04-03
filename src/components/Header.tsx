@@ -75,7 +75,7 @@ export function Header() {
           <a
             href="https://app.defied.bg" target="_blank" rel="noopener noreferrer"
             className="hover:opacity-80 transition-opacity"
-            style={{ background: '#0052FF', borderRadius: '100px', color: '#ffffff', fontSize: '16px', lineHeight: '24px', fontWeight: 500, padding: '10px 24px', textDecoration: 'none' }}
+            style={{ background: '#0052FF', border: '1px solid #0052FF', borderRadius: '56px', color: '#ffffff', fontSize: '16px', fontWeight: 600, height: '44px', minWidth: '100px', padding: '0 24px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
           >
             {t('hero.cta')}
           </a>

@@ -72,7 +72,7 @@ export function AboutCarousel() {
                 fontWeight: 500,
                 padding: '6px 14px',
                 lineHeight: 1.3,
-                borderRadius: '100px',
+                borderRadius: '56px',
               }}
             >
               {card.tag}
