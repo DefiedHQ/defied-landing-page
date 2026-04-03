@@ -26,6 +26,7 @@ export function LandingPage() {
           display: 'flex',
           flexDirection: 'column',
           padding: '0 1rem',
+          background: '#FFFFFF',
         }}
       >
         <div className="w-full max-w-[1200px] mx-auto flex flex-col md:flex-row flex-1 items-center justify-center px-4 gap-8 md:gap-16">
@@ -52,7 +53,7 @@ export function LandingPage() {
             <img
               src="/phone2.png"
               alt="DeFied App"
-              className="w-[280px] sm:w-[340px] md:w-[420px] h-auto"
+              className="w-[320px] sm:w-[400px] md:w-[500px] lg:w-[560px] h-auto"
               style={{ filter: 'drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15))' }}
             />
           </div>
