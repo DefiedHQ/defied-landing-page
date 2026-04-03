@@ -93,10 +93,10 @@ export function LandingPage() {
               alt="DeFied App"
               style={{
                 width: '745px',
-                height: '745px',
+                maxWidth: '100%',
+                aspectRatio: '1 / 1',
                 borderRadius: '56px',
                 objectFit: 'cover',
-                maxWidth: '100%',
               }}
             />
           </div>
