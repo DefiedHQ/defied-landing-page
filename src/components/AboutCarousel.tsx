@@ -3,41 +3,6 @@
 import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 
-{/* Coinbase-style filled icons — matching data-icon-name equivalents */}
-function GearIcon() {
-  return (
-    <svg width="48" height="48" viewBox="0 0 24 24" fill="#0A0B0D">
-      <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.49.49 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.484.484 0 0 0-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96a.49.49 0 0 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.07.62-.07.94s.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6A3.6 3.6 0 1 1 12 8.4a3.6 3.6 0 0 1 0 7.2z" />
-    </svg>
-  );
-}
-
-function ShieldIcon() {
-  return (
-    <svg width="48" height="48" viewBox="0 0 24 24" fill="#0A0B0D">
-      <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1.5 14.59l-3.54-3.54 1.41-1.41 2.13 2.12 4.24-4.24 1.41 1.42L10.5 15.59z" />
-    </svg>
-  );
-}
-
-function PercentageIcon() {
-  return (
-    <svg width="48" height="48" viewBox="0 0 24 24" fill="#0A0B0D">
-      <path d="M7.5 4C5.57 4 4 5.57 4 7.5S5.57 11 7.5 11 11 9.43 11 7.5 9.43 4 7.5 4zm0 5C6.67 9 6 8.33 6 7.5S6.67 6 7.5 6 9 6.67 9 7.5 8.33 9 7.5 9zm9 4c-1.93 0-3.5 1.57-3.5 3.5S14.57 20 16.5 20s3.5-1.57 3.5-3.5-1.57-3.5-3.5-3.5zm0 5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5.41 20L4 18.59 18.59 4 20 5.41 5.41 20z" />
-    </svg>
-  );
-}
-
-function PaymentCardIcon() {
-  return (
-    <svg width="48" height="48" viewBox="0 0 24 24" fill="#0A0B0D">
-      <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z" />
-    </svg>
-  );
-}
-
-const CARD_ICONS = [GearIcon, ShieldIcon, PercentageIcon, PaymentCardIcon];
-
 export function AboutCarousel() {
   const { t } = useLanguage();
 
@@ -83,7 +48,6 @@ export function AboutCarousel() {
       {/* 2-column grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
         {cards.map((card, i) => {
-          const Icon = CARD_ICONS[i];
           return (
             <Link
               key={i}
@@ -98,11 +62,10 @@ export function AboutCarousel() {
                 textDecoration: 'none',
               }}
             >
-              {/* Icon at top */}
-              <div style={{ width: 48, height: 48 }}>
-                <Icon />
-              </div>
-
+              {/* Number at top */}
+              <span style={{ fontSize: '48px', fontStyle: 'normal', fontWeight: 400, height: '48px', lineHeight: '48px', color: '#0A0B0D' }}>
+                {i + 1}
+              </span>
               {/* Title + Description at bottom */}
               <div>
                 <h4 className="text-lg sm:text-[22px] mb-2" style={{ fontWeight: 500, color: '#0A0B0D', lineHeight: 1.3 }}>
