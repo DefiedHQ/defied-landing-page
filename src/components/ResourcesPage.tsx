@@ -99,7 +99,7 @@ export function ResourcesPage() {
                       {article.category}
                     </span>
                     <h2
-                      className="group-hover:text-[#0052FF] transition-colors mb-2"
+                      className="group-hover:underline transition-colors mb-2"
                       style={{
                         WebkitLineClamp: 2,
                         WebkitBoxOrient: 'vertical',
@@ -166,7 +166,7 @@ export function ResourcesPage() {
                       {article.category}
                     </span>
                     <h3
-                      className="group-hover:text-[#0052FF] transition-colors mb-2"
+                      className="group-hover:underline transition-colors mb-2"
                       style={{
                         WebkitLineClamp: 2,
                         WebkitBoxOrient: 'vertical',
