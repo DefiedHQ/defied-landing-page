@@ -41,7 +41,7 @@ export function Header() {
         {/* Logo + mobile menu toggle */}
         <div className="flex-1 flex items-center gap-4">
           <Link href="/" className="inline-flex items-center gap-2 hover:opacity-80 transition-opacity">
-            <LogoMark size={44} />
+            <LogoMark size={48} />
           </Link>
           <button
             ref={mobileToggleRef}

@@ -1,7 +1,7 @@
-export function LogoMark({ size = 44 }: { size?: number }) {
+export function LogoMark({ size = 48 }: { size?: number }) {
   return (
     <img
-      src="/defied-blue-light.svg"
+      src="/defied-blue.svg"
       width={size}
       height={size}
       alt=""
