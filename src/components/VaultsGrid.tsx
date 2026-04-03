@@ -64,7 +64,7 @@ export function VaultsGrid() {
               padding: '16px 24px',
               transition: 'all .2s ease',
               whiteSpace: 'nowrap' as const,
-              background: filter === key ? '#0052FF' : '#F5F8FF',
+              background: filter === key ? '#0052FF' : 'rgb(247, 248, 249)',
               color: filter === key ? '#fff' : '#374151',
             }}
           >

@@ -1,6 +1,72 @@
 @import "tailwindcss";
 
-/* Coinbase Display — headings */
+/* Suisse Intl — Cyrillic fallback (Coinbase fonts lack Cyrillic glyphs) */
+@font-face {
+  font-family: "Coinbase Display";
+  src: url("/fonts/SuisseIntl-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0400-04FF, U+0500-052F;
+}
+@font-face {
+  font-family: "Coinbase Display";
+  src: url("/fonts/SuisseIntl-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0400-04FF, U+0500-052F;
+}
+@font-face {
+  font-family: "Coinbase Display";
+  src: url("/fonts/SuisseIntl-Medium.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0400-04FF, U+0500-052F;
+}
+@font-face {
+  font-family: "Coinbase Sans";
+  src: url("/fonts/SuisseIntl-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0400-04FF, U+0500-052F;
+}
+@font-face {
+  font-family: "Coinbase Sans";
+  src: url("/fonts/SuisseIntl-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0400-04FF, U+0500-052F;
+}
+@font-face {
+  font-family: "Coinbase Sans";
+  src: url("/fonts/SuisseIntl-Medium.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0400-04FF, U+0500-052F;
+}
+@font-face {
+  font-family: "Coinbase Text";
+  src: url("/fonts/SuisseIntl-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0400-04FF, U+0500-052F;
+}
+@font-face {
+  font-family: "Coinbase Text";
+  src: url("/fonts/SuisseIntl-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0400-04FF, U+0500-052F;
+}
+
+/* Coinbase Display — headings (Latin only) */
 @font-face {
   font-family: "Coinbase Display";
   src: url("/fonts/Coinbase-Display/Coinbase_Display-Regular-web-1.32.woff2") format("woff2");
@@ -30,7 +96,7 @@
   font-display: swap;
 }
 
-/* Coinbase Sans — body text */
+/* Coinbase Sans — body text (Latin only) */
 @font-face {
   font-family: "Coinbase Sans";
   src: url("/fonts/Coinbase-Sans/Coinbase_Sans-Regular-web-1.32.woff2") format("woff2");
@@ -60,7 +126,7 @@
   font-display: swap;
 }
 
-/* Coinbase Text — smaller UI text */
+/* Coinbase Text — smaller UI text (Latin only) */
 @font-face {
   font-family: "Coinbase Text";
   src: url("/fonts/Coinbase-Text/Coinbase_Text-Regular-web-1.32.woff2") format("woff2");
@@ -121,8 +187,8 @@
 :root {
   --header-h: 96px;
   --bg: #FFFFFF;
-  --surface: #F5F8FF;
-  --surface2: #EEF2FA;
+  --surface: rgb(247, 248, 249);
+  --surface2: rgb(237, 239, 242);
   --bdcolor: #D1D5DB;
   --bdcolor2: #C3C8D1;
   --tx: #0A0B0D;
@@ -131,9 +197,9 @@
   --mt2: #6B7280;
   --card: #ffffff;
   --card-bd: rgba(0, 0, 0, 0.06);
-  --banner-from: #F5F8FF;
-  --banner-via: #F0F0FF;
-  --banner-to: #F5F8FF;
+  --banner-from: rgb(247, 248, 249);
+  --banner-via: rgb(243, 244, 246);
+  --banner-to: rgb(247, 248, 249);
 }
 
 * {
@@ -215,10 +281,10 @@ span.vault-card-btn {
   background-color: #0052FF;
   color: #fff;
 }
-.vault-card { background-color: #fff; border-radius: 12px; }
-.vault-card-lido:hover { background-color: #F5F8FF; }
-.vault-card-yo:hover { background-color: #F5F8FF; }
-.vault-card-rp:hover { background-color: #F5F8FF; }
+.vault-card { background-color: #fff; border-radius: 56px; }
+.vault-card-lido:hover { background-color: rgb(247, 248, 249); }
+.vault-card-yo:hover { background-color: rgb(247, 248, 249); }
+.vault-card-rp:hover { background-color: rgb(247, 248, 249); }
 .vault-card:hover span.vault-card-btn {
   background-color: #0040D0;
   color: #fff;
@@ -233,8 +299,8 @@ span.about-card-btn {
   color: #fff !important;
 }
 .about-card {
-  background-color: #F5F8FF !important;
-  border-radius: 12px !important;
+  background-color: rgb(247, 248, 249) !important;
+  border-radius: 56px !important;
 }
 .about-card-desc {
   color: #5B616E !important;
@@ -262,7 +328,7 @@ span.about-card-btn {
 
 /* Protocol section cards */
 .protocol-card {
-  background: #F5F8FF;
+  background: rgb(247, 248, 249);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -273,7 +339,7 @@ span.about-card-btn {
   aspect-ratio: 1;
   min-width: 0;
   max-width: 240px;
-  border-radius: 12px;
+  border-radius: 56px;
 }
 @media (max-width: 640px) {
   .protocol-card {

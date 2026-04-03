@@ -62,7 +62,7 @@ export default function AboutPage() {
           <a
             href="mailto:hello@defied.bg"
             className="inline-block hover:opacity-80 transition-opacity"
-            style={{ background: '#F5F8FF', borderRadius: '100px', color: '#0A0B0D', fontSize: '16px', lineHeight: '24px', fontWeight: 500, padding: '14px 32px' }}
+            style={{ background: 'rgb(247, 248, 249)', borderRadius: '100px', color: '#0A0B0D', fontSize: '16px', lineHeight: '24px', fontWeight: 500, padding: '14px 32px' }}
           >
             Контакт
           </a>

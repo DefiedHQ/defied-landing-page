@@ -60,7 +60,7 @@ export function ResourcesPage() {
                 padding: '16px 24px',
                 transition: 'all .2s ease',
                 whiteSpace: 'nowrap' as const,
-                background: activeFilter === cat ? '#0052FF' : '#F5F8FF',
+                background: activeFilter === cat ? '#0052FF' : 'rgb(247, 248, 249)',
                 color: activeFilter === cat ? '#fff' : '#374151',
               }}
             >
