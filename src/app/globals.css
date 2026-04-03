@@ -1,161 +1,171 @@
 @import "tailwindcss";
 
-/* Suisse Intl — Cyrillic fallback (Coinbase fonts lack Cyrillic glyphs) */
+/* ── Onest — headings (Cyrillic subset) ── */
 @font-face {
-  font-family: "Coinbase Display";
-  src: url("/fonts/SuisseIntl-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-  unicode-range: U+0400-04FF, U+0500-052F;
-}
-@font-face {
-  font-family: "Coinbase Display";
-  src: url("/fonts/SuisseIntl-Medium.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-  unicode-range: U+0400-04FF, U+0500-052F;
-}
-@font-face {
-  font-family: "Coinbase Display";
-  src: url("/fonts/SuisseIntl-Medium.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-  unicode-range: U+0400-04FF, U+0500-052F;
-}
-@font-face {
-  font-family: "Coinbase Sans";
-  src: url("/fonts/SuisseIntl-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-  unicode-range: U+0400-04FF, U+0500-052F;
-}
-@font-face {
-  font-family: "Coinbase Sans";
-  src: url("/fonts/SuisseIntl-Medium.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-  unicode-range: U+0400-04FF, U+0500-052F;
-}
-@font-face {
-  font-family: "Coinbase Sans";
-  src: url("/fonts/SuisseIntl-Medium.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-  unicode-range: U+0400-04FF, U+0500-052F;
-}
-@font-face {
-  font-family: "Coinbase Text";
-  src: url("/fonts/SuisseIntl-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-  unicode-range: U+0400-04FF, U+0500-052F;
-}
-@font-face {
-  font-family: "Coinbase Text";
-  src: url("/fonts/SuisseIntl-Medium.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-  unicode-range: U+0400-04FF, U+0500-052F;
-}
-
-/* Coinbase Display — headings (Latin only) */
-@font-face {
-  font-family: "Coinbase Display";
-  src: url("/fonts/Coinbase-Display/Coinbase_Display-Regular-web-1.32.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Coinbase Display";
-  src: url("/fonts/Coinbase-Display/Coinbase_Display-Medium-web-1.32.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Coinbase Display";
-  src: url("/fonts/Coinbase-Display/Coinbase_Display-Bold-web-1.32.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Coinbase Display";
-  src: url("/fonts/Coinbase-Display/Coinbase_Display-Light-web-1.32.woff2") format("woff2");
+  font-family: "Onest";
+  src: url("/fonts/Onest/onest-cyrillic-300-normal.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
-
-/* Coinbase Sans — body text (Latin only) */
 @font-face {
-  font-family: "Coinbase Sans";
-  src: url("/fonts/Coinbase-Sans/Coinbase_Sans-Regular-web-1.32.woff2") format("woff2");
+  font-family: "Onest";
+  src: url("/fonts/Onest/onest-cyrillic-400-normal.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 @font-face {
-  font-family: "Coinbase Sans";
-  src: url("/fonts/Coinbase-Sans/Coinbase_Sans-Medium-web-1.32.woff2") format("woff2");
+  font-family: "Onest";
+  src: url("/fonts/Onest/onest-cyrillic-500-normal.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 @font-face {
-  font-family: "Coinbase Sans";
-  src: url("/fonts/Coinbase-Sans/Coinbase_Sans-Bold-web-1.32.woff2") format("woff2");
+  font-family: "Onest";
+  src: url("/fonts/Onest/onest-cyrillic-600-normal.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Onest";
+  src: url("/fonts/Onest/onest-cyrillic-700-normal.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
+
+/* ── Onest — headings (Latin subset) ── */
 @font-face {
-  font-family: "Coinbase Sans";
-  src: url("/fonts/Coinbase-Sans/Coinbase_Sans-Light-web-1.32.woff2") format("woff2");
+  font-family: "Onest";
+  src: url("/fonts/Onest/onest-latin-300-normal.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-
-/* Coinbase Text — smaller UI text (Latin only) */
 @font-face {
-  font-family: "Coinbase Text";
-  src: url("/fonts/Coinbase-Text/Coinbase_Text-Regular-web-1.32.woff2") format("woff2");
+  font-family: "Onest";
+  src: url("/fonts/Onest/onest-latin-400-normal.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
-  font-family: "Coinbase Text";
-  src: url("/fonts/Coinbase-Text/Coinbase_Text-Medium-web-1.32.woff2") format("woff2");
+  font-family: "Onest";
+  src: url("/fonts/Onest/onest-latin-500-normal.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
-  font-family: "Coinbase Text";
-  src: url("/fonts/Coinbase-Text/Coinbase_Text-Bold-web-1.32.woff2") format("woff2");
+  font-family: "Onest";
+  src: url("/fonts/Onest/onest-latin-600-normal.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Onest";
+  src: url("/fonts/Onest/onest-latin-700-normal.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-/* Coinbase Mono — monospace */
+/* ── Inter — body text (Cyrillic subset) ── */
 @font-face {
-  font-family: "Coinbase Mono";
-  src: url("/fonts/Coinbase-Mono/Coinbase_Mono-Regular-web.woff2") format("woff2");
+  font-family: "Inter";
+  src: url("/fonts/Inter/inter-cyrillic-300-normal.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter/inter-cyrillic-400-normal.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter/inter-cyrillic-500-normal.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter/inter-cyrillic-600-normal.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter/inter-cyrillic-700-normal.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* ── Inter — body text (Latin subset) ── */
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter/inter-latin-300-normal.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter/inter-latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter/inter-latin-500-normal.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter/inter-latin-600-normal.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter/inter-latin-700-normal.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @theme {
@@ -178,9 +188,8 @@
   --color-banner-from: var(--banner-from);
   --color-banner-via: var(--banner-via);
   --color-banner-to: var(--banner-to);
-  --font-display: "Coinbase Display", system-ui, sans-serif;
-  --font-sans: "Coinbase Sans", system-ui, sans-serif;
-  --font-text: "Coinbase Text", system-ui, sans-serif;
+  --font-display: "Onest", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
   --font-mono: "Coinbase Mono", monospace;
 }
 
@@ -213,7 +222,7 @@ html {
 body {
   background-color: var(--bg);
   color: var(--tx);
-  font-family: "Coinbase Sans", system-ui, sans-serif;
+  font-family: "Inter", system-ui, sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -221,7 +230,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Coinbase Display", system-ui, sans-serif;
+  font-family: "Onest", system-ui, sans-serif;
 }
 
 button,
@@ -243,11 +252,11 @@ button:disabled,
 
 /* Override RainbowKit fonts */
 [data-rk] {
-  --rk-fonts-body: "Coinbase Sans", system-ui, sans-serif !important;
+  --rk-fonts-body: "Inter", system-ui, sans-serif !important;
 }
 
 [data-rk] * {
-  font-family: "Coinbase Sans", system-ui, sans-serif;
+  font-family: "Inter", system-ui, sans-serif;
 }
 
 
