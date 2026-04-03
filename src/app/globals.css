@@ -1,25 +1,93 @@
 @import "tailwindcss";
 
+/* ── Coinbase Sans ── */
 @font-face {
-  font-family: "Suisse Intl";
-  src: url("/fonts/SuisseIntl-Regular.woff2") format("woff2");
+  font-family: "Coinbase Sans";
+  src: url("/fonts/Coinbase-Sans/Coinbase_Sans-Light-web-1.32.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Coinbase Sans";
+  src: url("/fonts/Coinbase-Sans/Coinbase_Sans-Regular-web-1.32.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
-
 @font-face {
-  font-family: "Suisse Intl";
-  src: url("/fonts/SuisseIntl-Book.woff2") format("woff2");
-  font-weight: 450;
+  font-family: "Coinbase Sans";
+  src: url("/fonts/Coinbase-Sans/Coinbase_Sans-Medium-web-1.32.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Coinbase Sans";
+  src: url("/fonts/Coinbase-Sans/Coinbase_Sans-Bold-web-1.32.woff2") format("woff2");
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
+/* ── Coinbase Display ── */
 @font-face {
-  font-family: "Suisse Intl";
-  src: url("/fonts/SuisseIntl-Medium.woff2") format("woff2");
+  font-family: "Coinbase Display";
+  src: url("/fonts/Coinbase-Display/Coinbase_Display-Light-web-1.32.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Coinbase Display";
+  src: url("/fonts/Coinbase-Display/Coinbase_Display-Regular-web-1.32.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Coinbase Display";
+  src: url("/fonts/Coinbase-Display/Coinbase_Display-Medium-web-1.32.woff2") format("woff2");
   font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Coinbase Display";
+  src: url("/fonts/Coinbase-Display/Coinbase_Display-Bold-web-1.32.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ── Coinbase Text ── */
+@font-face {
+  font-family: "Coinbase Text";
+  src: url("/fonts/Coinbase-Text/Coinbase_Text-Regular-web-1.32.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Coinbase Text";
+  src: url("/fonts/Coinbase-Text/Coinbase_Text-Medium-web-1.32.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Coinbase Text";
+  src: url("/fonts/Coinbase-Text/Coinbase_Text-Bold-web-1.32.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ── Coinbase Mono ── */
+@font-face {
+  font-family: "Coinbase Mono";
+  src: url("/fonts/Coinbase-Mono/Coinbase_Mono-Regular-web.woff2") format("woff2");
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
@@ -30,11 +98,11 @@
   --color-surface2: var(--surface2);
   --color-border: var(--bdcolor);
   --color-border2: var(--bdcolor2);
-  --color-pink: rgb(0, 163, 255);
-  --color-cyan: rgb(0, 163, 255);
-  --color-amber: rgb(0, 163, 255);
-  --color-green: #40b66b;
-  --color-red: rgb(0, 163, 255);
+  --color-pink: #0052FF;
+  --color-cyan: #0052FF;
+  --color-amber: #0052FF;
+  --color-green: #05B169;
+  --color-red: #DF2935;
   --color-text: var(--tx);
   --color-text2: var(--tx2);
   --color-muted: var(--mt);
@@ -44,24 +112,27 @@
   --color-banner-from: var(--banner-from);
   --color-banner-via: var(--banner-via);
   --color-banner-to: var(--banner-to);
+  --font-display: "Coinbase Display", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-sans: "Coinbase Sans", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "Coinbase Mono", monospace;
 }
 
 :root {
   --header-h: 96px;
-  --bg: #f7f7f8;
-  --surface: #edf0f4;
-  --surface2: #e5e8ee;
-  --bdcolor: #d8dee7;
-  --bdcolor2: #c8cfd9;
-  --tx: #273852;
-  --tx2: #4a5e78;
-  --mt: #7a8aa0;
-  --mt2: #5c6f88;
+  --bg: #FFFFFF;
+  --surface: rgb(247, 248, 249);
+  --surface2: rgb(237, 239, 242);
+  --bdcolor: #D1D5DB;
+  --bdcolor2: #C3C8D1;
+  --tx: #0A0B0D;
+  --tx2: #3D4250;
+  --mt: #5B616E;
+  --mt2: #6B7280;
   --card: #ffffff;
-  --card-bd: rgba(216, 222, 231, 0.6);
-  --banner-from: #edf2fa;
-  --banner-via: #f0edfa;
-  --banner-to: #edf2fa;
+  --card-bd: rgba(0, 0, 0, 0.06);
+  --banner-from: rgb(247, 248, 249);
+  --banner-via: rgb(243, 244, 246);
+  --banner-to: rgb(247, 248, 249);
 }
 
 * {
@@ -75,11 +146,15 @@ html {
 body {
   background-color: var(--bg);
   color: var(--tx);
-  font-family: "Suisse Intl", system-ui, sans-serif;
+  font-family: "Coinbase Sans", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Coinbase Display", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 button,
@@ -101,11 +176,11 @@ button:disabled,
 
 /* Override RainbowKit fonts */
 [data-rk] {
-  --rk-fonts-body: "Suisse Intl", system-ui, sans-serif !important;
+  --rk-fonts-body: "Coinbase Sans", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
 }
 
 [data-rk] * {
-  font-family: "Suisse Intl", system-ui, sans-serif;
+  font-family: "Coinbase Sans", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 
@@ -136,69 +211,33 @@ input[type="number"]::-webkit-inner-spin-button {
 
 /* Vault card styles — after everything for highest specificity */
 span.vault-card-btn {
-  background-color: #0F0F660D;
-  color: #000;
+  background-color: #0052FF;
+  color: #fff;
 }
-.vault-card { background-color: #fff; }
-.vault-card-lido:hover { background-color: #09F9F9; }
-.vault-card-yo:hover { background-color: #4FF01F; }
-.vault-card-rp:hover { background-color: #FFEE00; }
+.vault-card { background-color: #fff; border-radius: 56px; }
+.vault-card-lido:hover { background-color: rgb(247, 248, 249); }
+.vault-card-yo:hover { background-color: rgb(247, 248, 249); }
+.vault-card-rp:hover { background-color: rgb(247, 248, 249); }
 .vault-card:hover span.vault-card-btn {
-  background-color: #000;
+  background-color: #0040D0;
   color: #fff;
 }
 .vault-card:hover .vault-card-desc {
-  color: #0F0F128F;
+  color: #5B616E;
 }
 
 /* About card styles */
-span.about-card-btn {
-  background-color: #0F0F660D !important;
-  color: #000 !important;
-  transition: background-color 0.4s ease, color 0.4s ease !important;
-}
 .about-card {
-  background-color: rgb(247, 247, 250) !important;
-  transition: background-color 0.4s ease !important;
-}
-.about-card-1:hover { background-color: #09F9F9 !important; }
-.about-card-2:hover { background-color: #4FF01F !important; }
-.about-card-3:hover { background-color: #FFEE00 !important; }
-.about-card-4:hover { background-color: #09F9F9 !important; }
-.about-card:hover span.about-card-btn {
-  background-color: #000 !important;
-  color: #fff !important;
-}
-.about-card:hover .about-card-desc {
-  color: #0F0F128F !important;
+  background-color: rgb(247, 248, 249) !important;
+  border-radius: 56px !important;
 }
 .about-card-desc {
-  transition: color 0.4s ease !important;
-}
-.about-carousel-scroll {
-  scrollbar-width: none !important;
-  -ms-overflow-style: none !important;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  overflow-x: auto !important;
-  overflow-y: hidden !important;
-}
-.about-carousel-scroll::-webkit-scrollbar {
-  display: none !important;
-}
-@media (max-width: 639px) {
-  .about-carousel-scroll {
-    overflow-x: hidden !important;
-    overflow-y: visible !important;
-    scroll-snap-type: none;
-    width: 100% !important;
-    margin-left: 0 !important;
-  }
+  color: #5B616E !important;
 }
 
 /* Protocol section cards */
 .protocol-card {
-  background: rgb(247, 247, 250);
+  background: rgb(247, 248, 249);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -209,6 +248,7 @@ span.about-card-btn {
   aspect-ratio: 1;
   min-width: 0;
   max-width: 240px;
+  border-radius: 56px;
 }
 @media (max-width: 640px) {
   .protocol-card {
@@ -231,8 +271,8 @@ span.about-card-btn {
 
 /* Resource filter hover */
 .resource-filter-btn:hover {
-  background: #0F0F6614 !important;
-  color: #374151 !important;
+  background: #0052FF !important;
+  color: #fff !important;
 }
 
 /* Bottom-sheet slide-up for modals on mobile/tablet */

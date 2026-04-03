@@ -24,15 +24,12 @@ export function ProtocolsSection() {
     return () => window.removeEventListener('resize', check);
   }, []);
 
-  const bgColor = hoveredIndex !== null ? protocols[hoveredIndex].color : '#fff';
-
   return (
     <div
       style={{
         width: '100%',
         height: '100%',
-        background: bgColor,
-        transition: 'background 0.4s ease',
+        background: '#fff',
         display: 'flex',
         alignItems: 'center',
       }}
@@ -40,7 +37,7 @@ export function ProtocolsSection() {
       <div
         className="px-4 sm:px-6"
         style={{
-          maxWidth: '1600px',
+          maxWidth: '1200px',
           marginLeft: 'auto',
           marginRight: 'auto',
           width: '100%',
@@ -53,7 +50,7 @@ export function ProtocolsSection() {
       {/* Title */}
       <h2
         className="text-[28px] sm:text-[36px] md:text-[48px]"
-        style={{ fontWeight: 700, color: '#000', lineHeight: 1.1, maxWidth: '520px' }}
+        style={{ fontWeight: 500, color: '#0A0B0D', lineHeight: 1.1, maxWidth: '520px' }}
       >
         {t('protocolsSection.title')}
       </h2>
@@ -72,12 +69,6 @@ export function ProtocolsSection() {
       >
         {protocols.map((protocol, i) => {
           const isHovered = hoveredIndex === i;
-          const someoneHovered = hoveredIndex !== null;
-          const cardBg = isHovered
-            ? '#fff'
-            : someoneHovered
-              ? `color-mix(in srgb, ${protocols[hoveredIndex!].color} 70%, white 30%)`
-              : undefined;
 
           return (
             <a
@@ -88,7 +79,10 @@ export function ProtocolsSection() {
               className="protocol-card"
               onMouseEnter={() => setHoveredIndex(i)}
               onMouseLeave={() => setHoveredIndex(null)}
-              style={{ background: cardBg, transition: 'background 0.4s ease' }}
+              style={{
+                background: isHovered ? protocol.color : undefined,
+                transition: 'background 0.3s ease',
+              }}
             >
               <Image
                 src={protocol.logo}

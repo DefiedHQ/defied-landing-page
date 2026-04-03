@@ -86,11 +86,11 @@ export function VaultPanel() {
   const maxBal = ethBalance ? parseFloat(ethBalance.formatted) : 0;
 
   return (
-    <div className="w-full max-w-[1600px] mx-auto mt-6 px-4 sm:px-6">
+    <div className="w-full max-w-[1200px] mx-auto mt-6 px-4 sm:px-6">
       {/* Page title */}
       <div className="flex items-center justify-center gap-4 mb-10">
         <LidoIcon size={56} />
-        <h1 className="text-[28px] sm:text-[36px] md:text-[48px]" style={{ lineHeight: 1, fontWeight: 700, color: '#000000' }}>
+        <h1 className="text-[32px] sm:text-[56px] md:text-[80px]" style={{ lineHeight: 1, fontWeight: 400, color: '#0A0B0D' }}>
           Diamond wstETH
         </h1>
       </div>

@@ -36,15 +36,12 @@ export function Header() {
   };
 
   return (
-    <header className="relative w-full px-4 sm:px-6 py-3 sm:py-4 max-w-[1600px] mx-auto">
+    <header className="relative w-full px-4 sm:px-6 py-3 sm:py-4 max-w-[1200px] mx-auto">
       <div className="flex items-center">
         {/* Logo + mobile menu toggle */}
-        <div className="flex-1 flex items-center gap-2">
+        <div className="flex-1 flex items-center gap-4">
           <Link href="/" className="inline-flex items-center gap-2 hover:opacity-80 transition-opacity">
-            <LogoMark size={36} />
-            <span className="tracking-tight hidden sm:inline" style={{ fontWeight: 700, fontSize: '36px', color: '#000000' }}>
-              defied
-            </span>
+            <LogoMark size={48} />
           </Link>
           <button
             ref={mobileToggleRef}
@@ -58,16 +55,15 @@ export function Header() {
               <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </button>
-        </div>
-
-        {/* Center nav tabs */}
-        <div className="hidden sm:flex items-center gap-1" style={{ color: 'rgb(20, 20, 23)', fontSize: '16px', fontWeight: 500 }}>
-          <Link href="/about" className={tabClass(['/about'])} style={{ borderRadius: '24px' }}>
-            {t('nav.about')}
-          </Link>
-          <Link href="/resources" className={tabClass(['/resources'])} style={{ borderRadius: '24px' }}>
-            {t('nav.resources')}
-          </Link>
+          {/* Nav tabs */}
+          <div className="hidden sm:flex items-center gap-1" style={{ color: '#0A0B0D', fontSize: '16px', fontWeight: 600 }}>
+            <Link href="/about" className={tabClass(['/about'])} style={{ borderRadius: '24px' }}>
+              {t('nav.about')}
+            </Link>
+            <Link href="/resources" className={tabClass(['/resources'])} style={{ borderRadius: '24px' }}>
+              {t('nav.resources')}
+            </Link>
+          </div>
         </div>
 
         {/* CTA button — right */}
@@ -75,7 +71,7 @@ export function Header() {
           <a
             href="https://app.defied.bg" target="_blank" rel="noopener noreferrer"
             className="hover:opacity-80 transition-opacity"
-            style={{ background: '#000000', borderRadius: '28px', color: '#ffffff', fontSize: '16px', lineHeight: '24px', fontWeight: 700, padding: '10px 24px', textDecoration: 'none' }}
+            style={{ background: '#0052FF', border: '1px solid #0052FF', borderRadius: '56px', color: '#ffffff', fontSize: '16px', fontWeight: 600, height: '44px', minWidth: '100px', padding: '0 24px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
           >
             {t('hero.cta')}
           </a>
@@ -89,7 +85,7 @@ export function Header() {
         style={{
           top: '100%',
           zIndex: 100,
-          background: '#f7f7f8',
+          background: '#FFFFFF',
           boxShadow: mobileMenuOpen ? '0 8px 24px rgba(0,0,0,0.08)' : 'none',
           maxHeight: mobileMenuOpen ? '300px' : '0',
           opacity: mobileMenuOpen ? 1 : 0,
@@ -97,7 +93,7 @@ export function Header() {
           pointerEvents: mobileMenuOpen ? 'auto' : 'none',
         }}
       >
-        <div className="flex flex-col gap-1 px-4 pt-3 pb-2" style={{ color: 'rgb(20, 20, 23)', fontSize: '18px', fontWeight: 500 }}>
+        <div className="flex flex-col gap-1 px-4 pt-3 pb-2" style={{ color: '#0A0B0D', fontSize: '18px', fontWeight: 400 }}>
           {[
             { href: '/about', label: t('nav.about'), paths: ['/about'] },
             { href: '/resources', label: t('nav.resources'), paths: ['/resources'] },

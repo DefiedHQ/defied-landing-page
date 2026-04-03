@@ -12,9 +12,9 @@
   },
   "hero": {
     "title": "Decentralized finance is for everyone",
-    "subtitle1": "Through smart contracts we provide",
-    "subtitle2": "the opportunity for everyone to earn yield",
-    "subtitle3": "on their money — without custody",
+    "subtitle1": "Earn passive income",
+    "subtitle2": "through smart",
+    "subtitle3": "contracts.",
     "cta": "Get started",
     "ctaMain": "Take control of your money",
     "ctaHover": "Get started"
@@ -23,7 +23,7 @@
     "title": "Integrated Protocols"
   },
   "protocolsSection": {
-    "title": "Some of the protocols we integrate"
+    "title": "Integrated protocols"
   },
   "imageSection": {
     "promoLabel": "Earn more from your money",
@@ -41,7 +41,7 @@
     "cta": "Get started"
   },
   "aboutCarousel": {
-    "title": "Why us",
+    "title": "How it works",
     "card1Tag": "Easy Access",
     "card1Title": "No technical knowledge needed",
     "card1Desc": "You don't need to understand how digital wallets and private keys work. We offer an easy-to-use interface and registration with just an email address.",
