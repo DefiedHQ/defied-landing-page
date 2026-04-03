@@ -52,7 +52,7 @@ export default function RootLayout({
         <Providers>
           <LanguageProvider>
           <div className="min-h-screen flex flex-col">
-            <div className="sticky top-0 z-50" style={{ background: '#f7f7f8' }}>
+            <div className="sticky top-0 z-50" style={{ background: '#ffffff' }}>
               <Header />
             </div>
             <MainWrapper>{children}</MainWrapper>
