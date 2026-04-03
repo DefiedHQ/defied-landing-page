@@ -271,8 +271,8 @@ span.vault-card-btn {
 
 /* Resource filter hover */
 .resource-filter-btn:hover {
-  background: #E8EEFB !important;
-  color: #0A0B0D !important;
+  background: #0052FF !important;
+  color: #fff !important;
 }
 
 /* Bottom-sheet slide-up for modals on mobile/tablet */
