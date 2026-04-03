@@ -74,7 +74,7 @@ export function Header() {
               type="button"
               onClick={() => scrollToSection('how-it-works')}
               className={tabClass([])}
-              style={{ borderRadius: '24px' }}
+              style={{ borderRadius: '24px', fontFamily: 'Inter, -apple-system, "system-ui", sans-serif' }}
             >
               {t('nav.howItWorks')}
             </button>
@@ -82,7 +82,7 @@ export function Header() {
               type="button"
               onClick={() => scrollToSection('faq')}
               className={tabClass([])}
-              style={{ borderRadius: '24px' }}
+              style={{ borderRadius: '24px', fontFamily: 'Inter, -apple-system, "system-ui", sans-serif' }}
             >
               {t('nav.faq')}
             </button>
@@ -127,7 +127,7 @@ export function Header() {
             type="button"
             onClick={() => scrollToSection('how-it-works')}
             className="py-2.5 px-1 transition-colors text-left"
-            style={{ background: 'none', border: 'none', color: 'inherit', fontSize: 'inherit', fontWeight: 'inherit' }}
+            style={{ background: 'none', border: 'none', color: 'inherit', fontSize: 'inherit', fontWeight: 'inherit', fontFamily: 'Inter, -apple-system, "system-ui", sans-serif' }}
           >
             {t('nav.howItWorks')}
           </button>
@@ -135,7 +135,7 @@ export function Header() {
             type="button"
             onClick={() => scrollToSection('faq')}
             className="py-2.5 px-1 transition-colors text-left"
-            style={{ background: 'none', border: 'none', color: 'inherit', fontSize: 'inherit', fontWeight: 'inherit' }}
+            style={{ background: 'none', border: 'none', color: 'inherit', fontSize: 'inherit', fontWeight: 'inherit', fontFamily: 'Inter, -apple-system, "system-ui", sans-serif' }}
           >
             {t('nav.faq')}
           </button>
