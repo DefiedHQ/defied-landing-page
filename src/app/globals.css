@@ -296,7 +296,7 @@ span.vault-card-btn {
 /* About card styles */
 .about-card {
   background-color: rgb(247, 248, 249) !important;
-  border-radius: 24px !important;
+  border-radius: 56px !important;
 }
 .about-card-desc {
   color: #5B616E !important;
