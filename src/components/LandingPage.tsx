@@ -81,11 +81,14 @@ export function LandingPage() {
           <h1 className="leading-[1.05] tracking-tight text-center text-[32px] sm:text-[56px] md:text-[80px]" style={{ fontWeight: 400, color: '#0A0B0D' }}>
             {t('hero.title')}
           </h1>
+          <p className="mt-4 sm:mt-6 text-center" style={{ fontSize: '18px', fontWeight: 400, lineHeight: '28px', color: '#0A0B0D', overflowWrap: 'break-word' }}>
+            {t('hero.subtitle1')} {t('hero.subtitle2')} {t('hero.subtitle3')}
+          </p>
           <div className="mt-8 sm:mt-10">
             <a
               href="https://app.defied.bg" target="_blank" rel="noopener noreferrer"
               className="hover:opacity-80 transition-opacity"
-              style={{ background: '#0052FF', border: '1px solid #0052FF', borderRadius: '56px', color: '#ffffff', fontSize: '16px', fontWeight: 600, height: '44px', minWidth: '100px', padding: '0 24px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
+              style={{ background: '#0A0B0D', border: '1px solid #0A0B0D', borderRadius: '56px', color: '#ffffff', fontSize: '16px', fontWeight: 600, height: '58px', minHeight: '56px', minWidth: '100px', padding: '16px 32px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', maxWidth: '100%', userSelect: 'none' }}
             >
               {t('hero.cta')}
             </a>
