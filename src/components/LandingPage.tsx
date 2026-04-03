@@ -33,10 +33,10 @@ export function LandingPage() {
         }}
       >
         <div className="w-full max-w-[800px] mx-auto flex flex-col flex-1 items-center justify-center px-4">
-          <h1 className="leading-[1.05] tracking-tight text-center text-[32px] sm:text-[56px] md:text-[80px]" style={{ fontWeight: 400, color: '#0A0B0D' }}>
+          <h1 className="leading-[1.05] tracking-tight text-center text-[32px] sm:text-[56px] md:text-[96px]" style={{ display: 'block', fontFamily: 'CoinbaseDisplay, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"', fontWeight: 400, color: 'rgb(10, 11, 13)' }}>
             {t('hero.title')}
           </h1>
-          <p className="mt-4 sm:mt-6 text-center" style={{ fontSize: '18px', fontWeight: 400, lineHeight: '28px', color: '#0A0B0D', overflowWrap: 'break-word' }}>
+          <p className="mt-4 sm:mt-6 text-center" style={{ display: 'block', fontFamily: 'CoinbaseText, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"', fontSize: '18px', fontWeight: 400, lineHeight: '28px', color: 'rgb(10, 11, 13)', overflowWrap: 'break-word' }}>
             {t('hero.subtitle1')} {t('hero.subtitle2')} {t('hero.subtitle3')}
           </p>
           <div className="mt-8 sm:mt-10">
