@@ -19,7 +19,7 @@ export function LandingPage() {
         background: '#FFFFFF',
       }}
     >
-      {/* Section 1: Hero + Carousel */}
+      {/* Section 1: Hero */}
       <div
         style={{
           minHeight: '100vh',
@@ -29,37 +29,76 @@ export function LandingPage() {
           background: '#FFFFFF',
         }}
       >
-        <div className="w-full max-w-[1200px] mx-auto flex flex-col md:flex-row flex-1 items-center justify-center px-4 gap-8 md:gap-16">
+        <div className="w-full max-w-[1200px] mx-auto flex flex-col md:flex-row flex-1 items-center justify-center px-4 gap-10 md:gap-16">
           {/* Left side: Text + CTA */}
           <div className="flex flex-col items-start justify-center md:w-1/2 text-center md:text-left">
-            <h1 className="leading-[1.05] tracking-tight text-[32px] sm:text-[56px] md:text-[72px] w-full" style={{ display: 'block', fontFamily: 'CoinbaseDisplay, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"', fontWeight: 400, color: 'rgb(10, 11, 13)' }}>
+            <h1
+              className="w-full"
+              style={{
+                fontFamily: 'CoinbaseDisplay, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+                fontSize: '80px',
+                lineHeight: '80px',
+                fontWeight: 400,
+                color: '#000',
+                letterSpacing: '-0.02em',
+              }}
+            >
               {t('hero.title')}
             </h1>
-            <p className="mt-4 sm:mt-6 w-full" style={{ display: 'block', fontFamily: 'CoinbaseText, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"', fontSize: '18px', fontWeight: 400, lineHeight: '28px', color: 'rgb(10, 11, 13)', overflowWrap: 'break-word' }}>
+            <p
+              className="mt-6 w-full"
+              style={{
+                fontFamily: 'CoinbaseText, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+                fontSize: '18px',
+                fontWeight: 400,
+                lineHeight: '28px',
+                color: 'rgb(10, 11, 13)',
+                overflowWrap: 'break-word',
+              }}
+            >
               {t('hero.subtitle1')} {t('hero.subtitle2')} {t('hero.subtitle3')}
             </p>
-            <div className="mt-8 sm:mt-10 w-full md:w-auto">
+            <div className="mt-8 w-full md:w-auto">
               <a
-                href="https://app.defied.bg" target="_blank" rel="noopener noreferrer"
+                href="https://app.defied.bg"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="hover:opacity-80 transition-opacity"
-                style={{ background: '#0052FF', border: '1px solid #0052FF', borderRadius: '56px', color: '#ffffff', fontSize: '16px', fontWeight: 600, height: '58px', minHeight: '56px', minWidth: '100px', padding: '16px 32px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', maxWidth: '100%', userSelect: 'none' }}
+                style={{
+                  background: '#0052FF',
+                  border: '1px solid #0052FF',
+                  borderRadius: '56px',
+                  color: '#ffffff',
+                  fontSize: '16px',
+                  fontWeight: 600,
+                  height: '58px',
+                  lineHeight: '18.4px',
+                  minWidth: '100px',
+                  padding: '16px 32px',
+                  textDecoration: 'none',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  userSelect: 'none',
+                }}
               >
                 {t('hero.cta')}
               </a>
             </div>
           </div>
-          {/* Right side: Phone image */}
+          {/* Right side: Hero image */}
           <div className="md:w-1/2 flex items-center justify-center">
-            <div
-              className="w-[340px] sm:w-[420px] md:w-[520px] lg:w-[580px] aspect-square rounded-[32px] overflow-hidden flex items-center justify-center"
-              style={{ background: 'rgb(247, 248, 249)' }}
-            >
-              <img
-                src="/phone2.png"
-                alt="DeFied App"
-                className="w-full h-full object-cover"
-              />
-            </div>
+            <img
+              src="/hero_app.png"
+              alt="DeFied App"
+              style={{
+                width: '745px',
+                height: '745px',
+                borderRadius: '56px',
+                objectFit: 'cover',
+                maxWidth: '100%',
+              }}
+            />
           </div>
         </div>
       </div>
