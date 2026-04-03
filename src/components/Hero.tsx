@@ -22,20 +22,20 @@ function FaqItem({ question, answer, open, onToggle }: { question: string; answe
     <div
       style={{
         background: open ? 'rgb(247, 248, 249)' : 'transparent',
-        borderRadius: '4px',
+        borderRadius: '16px',
         marginBottom: '2px',
       }}
     >
       <button
         type="button"
         onClick={onToggle}
-        className="w-full flex items-center justify-between py-5 sm:py-6 px-5 sm:px-8 text-left"
-        style={{ background: 'rgb(247, 248, 249)', borderRadius: '4px', border: 'none' }}
+        className="w-full flex items-center justify-between text-left"
+        style={{ background: 'rgb(247, 248, 249)', borderRadius: '16px', border: 'none', height: '76px', padding: '24px 72px 24px 32px', cursor: 'pointer', fontFamily: 'CoinbaseSans, -apple-system, "system-ui", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif', fontSize: '16px', fontWeight: 400, lineHeight: '18.4px', position: 'relative' }}
       >
-        <span className="text-base sm:text-lg" style={{ fontWeight: 600, color: '#0A0B0D', lineHeight: 1.4 }}>{question}</span>
+        <span style={{ fontWeight: 600, color: '#0A0B0D', lineHeight: 1.4 }}>{question}</span>
         <span
           className="shrink-0 flex items-center justify-center"
-          style={{ fontSize: '24px', fontWeight: 300, color: '#0A0B0D', marginLeft: '16px' }}
+          style={{ fontSize: '24px', fontWeight: 300, color: '#0A0B0D', position: 'absolute', right: '32px' }}
         >
           {open ? '–' : '+'}
         </span>
