@@ -37,7 +37,7 @@ export function ProtocolsSection() {
       <div
         className="px-4 sm:px-6"
         style={{
-          maxWidth: '1600px',
+          maxWidth: '1200px',
           marginLeft: 'auto',
           marginRight: 'auto',
           width: '100%',

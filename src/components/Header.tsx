@@ -36,7 +36,7 @@ export function Header() {
   };
 
   return (
-    <header className="relative w-full px-4 sm:px-6 py-3 sm:py-4 max-w-[1600px] mx-auto">
+    <header className="relative w-full px-4 sm:px-6 py-3 sm:py-4 max-w-[1200px] mx-auto">
       <div className="flex items-center">
         {/* Logo + mobile menu toggle */}
         <div className="flex-1 flex items-center gap-2">

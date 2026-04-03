@@ -9,7 +9,7 @@ export function Footer() {
 
   return (
     <footer className="w-full mt-auto" style={{ background: 'rgb(247, 248, 249)' }}>
-      <div className="max-w-[1600px] mx-auto px-6 sm:px-8 py-6 sm:py-8" style={{ paddingTop: 'calc(1.5rem + 20px)' }}>
+      <div className="max-w-[1200px] mx-auto px-6 sm:px-8 py-6 sm:py-8" style={{ paddingTop: 'calc(1.5rem + 20px)' }}>
         {/* Top section: logo left, links right */}
         <div className="flex flex-col sm:flex-row gap-10 sm:justify-between items-start mb-6">
           {/* Logo */}

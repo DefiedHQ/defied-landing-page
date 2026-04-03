@@ -86,7 +86,7 @@ export function VaultPanel() {
   const maxBal = ethBalance ? parseFloat(ethBalance.formatted) : 0;
 
   return (
-    <div className="w-full max-w-[1600px] mx-auto mt-6 px-4 sm:px-6">
+    <div className="w-full max-w-[1200px] mx-auto mt-6 px-4 sm:px-6">
       {/* Page title */}
       <div className="flex items-center justify-center gap-4 mb-10">
         <LidoIcon size={56} />

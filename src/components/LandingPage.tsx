@@ -49,12 +49,13 @@ export function LandingPage() {
 
       {/* Section 2: About Grid */}
       <div
-        className="py-10 sm:py-20"
         style={{
           background: '#fff',
+          paddingTop: '100px',
+          paddingBottom: '100px',
         }}
       >
-        <div className="w-full max-w-[1600px] mx-auto">
+        <div className="w-full max-w-[1200px] mx-auto">
           <AboutCarousel />
         </div>
       </div>
@@ -77,7 +78,7 @@ export function LandingPage() {
           style={{
             background: '#0052FF',
             width: '100%',
-            maxWidth: '1600px',
+            maxWidth: '1200px',
             borderRadius: '56px',
             display: 'flex',
             flexDirection: 'column',
@@ -85,9 +86,9 @@ export function LandingPage() {
           }}
         >
           <div
-            className="px-6 sm:px-10 lg:px-16 py-8"
+            className="px-8 sm:px-14 lg:px-20 py-14 sm:py-20"
             style={{
-              maxWidth: '1600px',
+              maxWidth: '1200px',
               marginLeft: 'auto',
               marginRight: 'auto',
               width: '100%',

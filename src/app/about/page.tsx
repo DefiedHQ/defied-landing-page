@@ -21,7 +21,7 @@ export default function AboutPage() {
     justifyContent: 'center' as const,
     textAlign: 'start' as const,
     alignItems: 'start' as const,
-    maxWidth: '1600px',
+    maxWidth: '1200px',
     marginLeft: 'auto',
     marginRight: 'auto',
   };
