@@ -114,7 +114,7 @@
   --color-banner-to: var(--banner-to);
   --font-display: "Onest", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-sans: "Inter", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-mono: "JetBrains Mono", "Coinbase Mono", monospace;
+  --font-mono: "IBM Plex Mono", "Coinbase Mono", monospace;
 }
 
 :root {
@@ -166,7 +166,7 @@ summary,
 [type="submit"],
 [type="reset"] {
   cursor: pointer;
-  font-family: "JetBrains Mono", "Coinbase Mono", monospace;
+  font-family: "IBM Plex Mono", "Coinbase Mono", monospace;
 }
 
 a {
