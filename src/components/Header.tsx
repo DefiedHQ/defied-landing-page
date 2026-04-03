@@ -39,7 +39,7 @@ export function Header() {
     <header className="relative w-full px-4 sm:px-6 py-3 sm:py-4 max-w-[1200px] mx-auto">
       <div className="flex items-center">
         {/* Logo + mobile menu toggle */}
-        <div className="flex-1 flex items-center gap-2">
+        <div className="flex-1 flex items-center gap-4">
           <Link href="/" className="inline-flex items-center gap-2 hover:opacity-80 transition-opacity">
             <LogoMark size={44} />
           </Link>
@@ -55,16 +55,15 @@ export function Header() {
               <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </button>
-        </div>
-
-        {/* Center nav tabs */}
-        <div className="hidden sm:flex items-center gap-1" style={{ color: '#0A0B0D', fontSize: '16px', fontWeight: 600 }}>
-          <Link href="/about" className={tabClass(['/about'])} style={{ borderRadius: '24px' }}>
-            {t('nav.about')}
-          </Link>
-          <Link href="/resources" className={tabClass(['/resources'])} style={{ borderRadius: '24px' }}>
-            {t('nav.resources')}
-          </Link>
+          {/* Nav tabs */}
+          <div className="hidden sm:flex items-center gap-1" style={{ color: '#0A0B0D', fontSize: '16px', fontWeight: 600 }}>
+            <Link href="/about" className={tabClass(['/about'])} style={{ borderRadius: '24px' }}>
+              {t('nav.about')}
+            </Link>
+            <Link href="/resources" className={tabClass(['/resources'])} style={{ borderRadius: '24px' }}>
+              {t('nav.resources')}
+            </Link>
+          </div>
         </div>
 
         {/* CTA button — right */}
