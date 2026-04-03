@@ -41,7 +41,7 @@ export function LandingPage() {
         }}
       >
         {/* Centered text + CTA */}
-        <div className="w-full max-w-[800px] mx-auto flex flex-col items-center text-center pt-16 sm:pt-24 md:pt-32 px-4">
+        <div className="w-full max-w-[1200px] mx-auto flex flex-col items-center text-center pt-16 sm:pt-24 md:pt-32 px-4">
           <h1
             className="text-[64px] leading-[68px] md:text-[96px] md:leading-[100px]"
             style={{

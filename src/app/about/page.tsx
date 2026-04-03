@@ -10,7 +10,7 @@ export default function AboutPage() {
 
       {/* Hero Section - matching landing page hero */}
       <section className="flex flex-col items-center justify-center text-center px-4 sm:px-6" style={{ minHeight: '100vh' }}>
-        <div className="w-full max-w-[800px] mx-auto flex flex-col items-center justify-center">
+        <div className="w-full max-w-[1200px] mx-auto flex flex-col items-center justify-center">
           <h1 className="tracking-tight text-center text-[64px] leading-[68px] md:text-[96px] md:leading-[100px]" style={{ display: 'block', fontFamily: 'CoinbaseDisplay, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"', fontWeight: 400, color: 'rgb(10, 11, 13)', letterSpacing: '-0.02em' }}>
             Създадохме първият крипто спестовен продукт в България
           </h1>
