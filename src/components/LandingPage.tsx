@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import { AboutCarousel } from '@/components/AboutCarousel';
 import { ProtocolsSection } from '@/components/ProtocolsSection';
 import { InfoSection } from '@/components/Hero';
@@ -8,6 +9,16 @@ import { useLanguage } from '@/context/LanguageContext';
 
 export function LandingPage() {
   const { t } = useLanguage();
+
+  useEffect(() => {
+    const hash = window.location.hash.slice(1);
+    if (hash) {
+      setTimeout(() => {
+        const el = document.getElementById(hash);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
+  }, []);
 
   return (
     <div
@@ -19,36 +30,88 @@ export function LandingPage() {
         background: '#FFFFFF',
       }}
     >
-      {/* Section 1: Hero + Carousel */}
+      {/* Section 1: Hero */}
       <div
         style={{
-          minHeight: '100vh',
           display: 'flex',
           flexDirection: 'column',
+          alignItems: 'center',
           padding: '0 1rem',
+          background: '#FFFFFF',
         }}
       >
-        <div className="w-full max-w-[800px] mx-auto flex flex-col flex-1 items-center justify-center px-4">
-          <h1 className="leading-[1.05] tracking-tight text-center text-[32px] sm:text-[56px] md:text-[96px]" style={{ display: 'block', fontFamily: 'CoinbaseDisplay, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"', fontWeight: 400, color: 'rgb(10, 11, 13)' }}>
+        {/* Centered text + CTA */}
+        <div className="w-full max-w-[800px] mx-auto flex flex-col items-center text-center pt-16 sm:pt-24 md:pt-32 px-4">
+          <h1
+            className="text-[32px] leading-[36px] sm:text-[48px] sm:leading-[52px] md:text-[64px] md:leading-[68px] lg:text-[80px] lg:leading-[80px]"
+            style={{
+              fontFamily: 'Outfit, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+              fontWeight: 400,
+              color: '#000',
+              letterSpacing: '-0.02em',
+            }}
+          >
             {t('hero.title')}
           </h1>
-          <p className="mt-4 sm:mt-6 text-center" style={{ display: 'block', fontFamily: 'CoinbaseText, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"', fontSize: '18px', fontWeight: 400, lineHeight: '28px', color: 'rgb(10, 11, 13)', overflowWrap: 'break-word' }}>
+          <p
+            className="mt-4 sm:mt-6 text-[15px] sm:text-[16px] md:text-[18px]"
+            style={{
+              fontFamily: 'Inter, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+              fontWeight: 400,
+              lineHeight: '26px',
+              color: 'rgb(10, 11, 13)',
+              overflowWrap: 'break-word',
+            }}
+          >
             {t('hero.subtitle1')} {t('hero.subtitle2')} {t('hero.subtitle3')}
           </p>
-          <div className="mt-8 sm:mt-10">
+          <div className="mt-8">
             <a
-              href="https://app.defied.bg" target="_blank" rel="noopener noreferrer"
-              className="hover:opacity-80 transition-opacity"
-              style={{ background: '#0A0B0D', border: '1px solid #0A0B0D', borderRadius: '56px', color: '#ffffff', fontSize: '16px', fontWeight: 600, height: '58px', minHeight: '56px', minWidth: '100px', padding: '16px 32px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', maxWidth: '100%', userSelect: 'none' }}
+              href="https://app.defied.bg"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn hover:opacity-80 transition-opacity"
+              style={{
+                background: '#0052FF',
+                border: '1px solid #0052FF',
+                borderRadius: '56px',
+                color: '#ffffff',
+                fontSize: '16px',
+                fontWeight: 600,
+                height: '58px',
+                lineHeight: '18.4px',
+                minWidth: '100px',
+                padding: '16px 32px',
+                textDecoration: 'none',
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                userSelect: 'none',
+              }}
             >
               {t('hero.cta')}
             </a>
           </div>
         </div>
+        {/* Hero image below */}
+        <div className="w-full max-w-[745px] mx-auto mt-12 sm:mt-16 px-4">
+          <img
+            src="/hero_app_white.png"
+            alt="DeFied App"
+            style={{
+              width: '745px',
+              maxWidth: '100%',
+              aspectRatio: '1 / 1',
+              borderRadius: '56px',
+              objectFit: 'cover',
+            }}
+          />
+        </div>
       </div>
 
       {/* Section 2: About Grid */}
       <div
+        id="how-it-works"
         style={{
           background: '#fff',
           paddingTop: '100px',
@@ -111,6 +174,7 @@ export function LandingPage() {
 
       {/* Section 5: FAQ */}
       <div
+        id="faq"
         style={{
           background: '#fff',
           paddingTop: '100px',

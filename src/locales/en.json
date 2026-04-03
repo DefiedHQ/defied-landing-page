@@ -8,13 +8,15 @@
     "logout": "Logout",
     "login": "Login",
     "connected": "Connected",
-    "goTo": "Go to..."
+    "goTo": "Go to...",
+    "howItWorks": "How it works",
+    "faq": "FAQ"
   },
   "hero": {
     "title": "Decentralized finance is for everyone",
-    "subtitle1": "Earn passive income",
-    "subtitle2": "through smart",
-    "subtitle3": "contracts.",
+    "subtitle1": "Defied enables you to generate yield on your digital euro and dollars, providing secure and decentralized access to DeFi",
+    "subtitle2": "",
+    "subtitle3": "",
     "cta": "Get started",
     "ctaMain": "Take control of your money",
     "ctaHover": "Get started"

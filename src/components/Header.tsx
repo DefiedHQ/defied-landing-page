@@ -1,17 +1,30 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { useState, useRef, useEffect } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { LogoMark } from '@/components/LogoMark';
 import { useLanguage } from '@/context/LanguageContext';
 
 export function Header() {
   const pathname = usePathname();
+  const router = useRouter();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const mobileToggleRef = useRef<HTMLButtonElement>(null);
   const { t } = useLanguage();
+
+  const scrollToSection = useCallback((sectionId: string) => {
+    setMobileMenuOpen(false);
+    if (pathname === '/') {
+      const el = document.getElementById(sectionId);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      router.push(`/#${sectionId}`);
+    }
+  }, [pathname, router]);
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -47,16 +60,38 @@ export function Header() {
             ref={mobileToggleRef}
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="sm:hidden flex items-center gap-1.5 px-3 py-1.5 hover:opacity-80 transition-opacity"
-            style={{ background: '#0F0F660D', borderRadius: '20px', color: 'rgb(20, 20, 23)', fontSize: '14px', fontWeight: 600, border: 'none' }}
+            className="sm:hidden flex items-center justify-center p-2 hover:opacity-80 transition-opacity"
+            style={{ background: 'none', border: 'none', color: 'rgb(10, 11, 13)' }}
+            aria-label="Menu"
           >
-            {t('nav.goTo') || 'Go to...'}
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style={{ transform: mobileMenuOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }}>
-              <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
+            {mobileMenuOpen ? (
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M18 6L6 18" /><path d="M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M3 12h18" /><path d="M3 6h18" /><path d="M3 18h18" />
+              </svg>
+            )}
           </button>
           {/* Nav tabs */}
           <div className="hidden sm:flex items-center gap-1" style={{ color: '#0A0B0D', fontSize: '16px', fontWeight: 600 }}>
+            <button
+              type="button"
+              onClick={() => scrollToSection('how-it-works')}
+              className={tabClass([])}
+              style={{ borderRadius: '24px', fontFamily: 'Inter, -apple-system, "system-ui", sans-serif' }}
+            >
+              {t('nav.howItWorks')}
+            </button>
+            <button
+              type="button"
+              onClick={() => scrollToSection('faq')}
+              className={tabClass([])}
+              style={{ borderRadius: '24px', fontFamily: 'Inter, -apple-system, "system-ui", sans-serif' }}
+            >
+              {t('nav.faq')}
+            </button>
             <Link href="/about" className={tabClass(['/about'])} style={{ borderRadius: '24px' }}>
               {t('nav.about')}
             </Link>
@@ -70,7 +105,7 @@ export function Header() {
         <div className="flex-1 flex justify-end items-center gap-3">
           <a
             href="https://app.defied.bg" target="_blank" rel="noopener noreferrer"
-            className="hover:opacity-80 transition-opacity"
+            className="btn hover:opacity-80 transition-opacity"
             style={{ background: '#0052FF', border: '1px solid #0052FF', borderRadius: '56px', color: '#ffffff', fontSize: '16px', fontWeight: 600, height: '44px', minWidth: '100px', padding: '0 24px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
           >
             {t('hero.cta')}
@@ -94,6 +129,22 @@ export function Header() {
         }}
       >
         <div className="flex flex-col gap-1 px-4 pt-3 pb-2" style={{ color: '#0A0B0D', fontSize: '18px', fontWeight: 400 }}>
+          <button
+            type="button"
+            onClick={() => scrollToSection('how-it-works')}
+            className="py-2.5 px-1 transition-colors text-left"
+            style={{ background: 'none', border: 'none', color: 'inherit', fontSize: 'inherit', fontWeight: 'inherit', fontFamily: 'Inter, -apple-system, "system-ui", sans-serif' }}
+          >
+            {t('nav.howItWorks')}
+          </button>
+          <button
+            type="button"
+            onClick={() => scrollToSection('faq')}
+            className="py-2.5 px-1 transition-colors text-left"
+            style={{ background: 'none', border: 'none', color: 'inherit', fontSize: 'inherit', fontWeight: 'inherit', fontFamily: 'Inter, -apple-system, "system-ui", sans-serif' }}
+          >
+            {t('nav.faq')}
+          </button>
           {[
             { href: '/about', label: t('nav.about'), paths: ['/about'] },
             { href: '/resources', label: t('nav.resources'), paths: ['/resources'] },

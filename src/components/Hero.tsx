@@ -30,7 +30,7 @@ function FaqItem({ question, answer, open, onToggle }: { question: string; answe
         type="button"
         onClick={onToggle}
         className="w-full flex items-center justify-between text-left"
-        style={{ background: 'rgb(247, 248, 249)', borderRadius: '16px', border: 'none', height: '76px', padding: '24px 72px 24px 32px', cursor: 'pointer', fontFamily: 'CoinbaseSans, -apple-system, "system-ui", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif', fontSize: '16px', fontWeight: 400, lineHeight: '18.4px', position: 'relative' }}
+        style={{ background: 'rgb(247, 248, 249)', borderRadius: '16px', border: 'none', height: '76px', padding: '24px 72px 24px 32px', cursor: 'pointer', fontFamily: 'Inter, -apple-system, "system-ui", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif', fontSize: '16px', fontWeight: 400, lineHeight: '18.4px', position: 'relative' }}
       >
         <span style={{ fontWeight: 600, color: '#0A0B0D', lineHeight: 1.4 }}>{question}</span>
         <span
@@ -96,7 +96,7 @@ export function InfoSection() {
         </p>
         <a
           href="https://app.defied.bg" target="_blank" rel="noopener noreferrer"
-          className="hover:opacity-80 transition-opacity"
+          className="btn hover:opacity-80 transition-opacity"
           style={{ background: '#0A0B0D', border: '1px solid #0A0B0D', borderRadius: '56px', color: '#ffffff', fontSize: '16px', fontWeight: 600, height: '58px', minHeight: '56px', minWidth: '100px', padding: '16px 32px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', userSelect: 'none' }}
         >
           {t('hero.cta')}

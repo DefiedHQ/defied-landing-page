@@ -76,7 +76,7 @@ export function FeatureCarousel() {
         ))}
         <a
           href="https://app.defied.bg" target="_blank" rel="noopener noreferrer"
-          className="hover:opacity-80 transition-opacity"
+          className="btn hover:opacity-80 transition-opacity"
           style={{
             background: '#0052FF',
             border: '1px solid #0052FF',
