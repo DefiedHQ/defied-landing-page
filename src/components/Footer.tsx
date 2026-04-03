@@ -15,7 +15,7 @@ export function Footer() {
           {/* Logo */}
           <div className="flex flex-col self-start">
             <Link href="/" className="inline-flex items-center gap-2 hover:opacity-80 transition-opacity">
-              <img src="/defied_squared_logo_blue.svg" width={36} height={36} alt="" aria-hidden="true" />
+              <img src="/defied_squared_logo_blue.svg" width={44} height={44} alt="" aria-hidden="true" />
             </Link>
             <div style={{ marginTop: '50px', fontSize: '14px', color: '#5B616E', lineHeight: 1.7, fontWeight: 400 }}>
               <p>hello@defied.bg</p>
