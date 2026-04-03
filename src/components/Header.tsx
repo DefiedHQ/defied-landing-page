@@ -42,7 +42,7 @@ export function Header() {
         <div className="flex-1 flex items-center gap-2">
           <Link href="/" className="inline-flex items-center gap-2 hover:opacity-80 transition-opacity">
             <LogoMark size={36} />
-            <span className="tracking-tight hidden sm:inline" style={{ fontFamily: '"Onest", system-ui, sans-serif', fontWeight: 500, fontSize: '36px', color: '#0A0B0D' }}>
+            <span className="tracking-tight hidden sm:inline" style={{ fontFamily: '"Coinbase Display", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif', fontWeight: 500, fontSize: '36px', color: '#0A0B0D' }}>
               defied
             </span>
           </Link>
