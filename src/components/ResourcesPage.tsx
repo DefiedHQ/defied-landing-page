@@ -30,13 +30,13 @@ export function ResourcesPage() {
   const rest = filtered.slice(2);
 
   return (
-    <div className="w-full max-w-[984px] mx-auto pb-16">
+    <div className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 pb-16">
         {/* Hero */}
         <div className="mb-12">
           <h1 className="text-[32px] sm:text-[56px] md:text-[80px] mt-12 sm:mt-[120px] mb-4 sm:mb-6" style={{ fontWeight: 400, lineHeight: 1, maxWidth: '800px', color: '#0A0B0D' }}>
             {t('resources.heroTitle')}
           </h1>
-          <p className="text-base sm:text-lg md:text-2xl" style={{ color: '#5B616E', lineHeight: '1.4', maxWidth: '640px', fontWeight: 400 }}>
+          <p style={{ color: '#5B616E', lineHeight: '28px', maxWidth: '640px', fontWeight: 400, fontSize: '18px' }}>
             {t('resources.heroSubtitle')}
           </p>
         </div>
@@ -70,18 +70,18 @@ export function ResourcesPage() {
           ))}
         </div>
 
-        {/* Featured articles (top 2, larger cards) */}
+        {/* Featured articles (top 2, responsive grid) */}
         {featured.length > 0 && (
-          <div className="flex flex-wrap gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             {featured.map((article) => (
               <Link
                 key={article.id}
                 href={`/resources/${article.id}`}
-                className="block group w-full sm:w-[480px]"
-                style={{ textDecoration: 'none', maxWidth: '100%' }}
+                className="block group"
+                style={{ textDecoration: 'none' }}
               >
                 <div className="overflow-hidden">
-                  <div className="w-full sm:w-[480px] h-[200px] sm:h-[270px]" style={{ maxWidth: '100%', overflow: 'hidden', borderRadius: '56px' }}>
+                  <div className="w-full h-[200px] sm:h-[270px]" style={{ overflow: 'hidden', borderRadius: '56px' }}>
                     <img src="/article-cover.svg" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
                   <div className="pt-5">
@@ -119,8 +119,8 @@ export function ResourcesPage() {
                         WebkitBoxOrient: 'vertical',
                         display: '-webkit-box',
                         overflow: 'hidden',
-                        fontSize: '20px',
-                        fontWeight: 500,
+                        fontSize: '18px',
+                        fontWeight: 400,
                         lineHeight: '28px',
                         color: '#6b7280',
                       }}
@@ -137,18 +137,18 @@ export function ResourcesPage() {
           </div>
         )}
 
-        {/* Rest of articles (3-column grid) */}
+        {/* Rest of articles (responsive grid) */}
         {rest.length > 0 && (
-          <div className="flex flex-wrap gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {rest.map((article) => (
               <Link
                 key={article.id}
                 href={`/resources/${article.id}`}
-                className="block group w-full sm:w-[312px]"
-                style={{ textDecoration: 'none', maxWidth: '100%' }}
+                className="block group"
+                style={{ textDecoration: 'none' }}
               >
                 <div className="overflow-hidden h-full">
-                  <div className="w-full sm:w-[312px] h-[200px] sm:h-[170px]" style={{ maxWidth: '100%', overflow: 'hidden', borderRadius: '56px' }}>
+                  <div className="w-full h-[200px] sm:h-[170px]" style={{ overflow: 'hidden', borderRadius: '56px' }}>
                     <img src="/article-cover.svg" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
                   <div className="pt-4">
@@ -186,8 +186,8 @@ export function ResourcesPage() {
                         WebkitBoxOrient: 'vertical',
                         display: '-webkit-box',
                         overflow: 'hidden',
-                        fontSize: '20px',
-                        fontWeight: 500,
+                        fontSize: '18px',
+                        fontWeight: 400,
                         lineHeight: '28px',
                         color: '#6b7280',
                       }}
