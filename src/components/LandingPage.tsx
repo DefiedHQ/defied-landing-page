@@ -17,22 +17,20 @@ export function LandingPage() {
         flex: 1,
         minHeight: 0,
         overflowY: 'scroll',
-        scrollSnapType: 'y mandatory',
         background: '#FFFFFF',
       }}
     >
-      {/* Section 1: Hero + Protocols + Carousel */}
+      {/* Section 1: Hero + Carousel */}
       <div
         style={{
-          minHeight: '93vh',
-          scrollSnapAlign: 'start',
           display: 'flex',
           flexDirection: 'column',
           padding: '0 1rem',
-          background: '#FFFFFF',
+          paddingTop: '80px',
+          paddingBottom: '80px',
         }}
       >
-        <div className="w-full max-w-[800px] mx-auto flex flex-col flex-1 items-center justify-center px-4">
+        <div className="w-full max-w-[800px] mx-auto flex flex-col items-center justify-center px-4">
           <h1 className="leading-[1.05] tracking-tight text-center text-[32px] sm:text-[56px] md:text-[96px]" style={{ display: 'block', fontFamily: 'CoinbaseDisplay, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"', fontWeight: 400, color: 'rgb(10, 11, 13)' }}>
             {t('hero.title')}
           </h1>
@@ -50,7 +48,7 @@ export function LandingPage() {
           </div>
         </div>
 
-        <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6" style={{ marginTop: 'auto', paddingBottom: '48px' }}>
+        <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6" style={{ marginTop: '100px' }}>
           <FeatureCarousel />
         </div>
       </div>
@@ -59,7 +57,6 @@ export function LandingPage() {
       <div
         className="py-10 sm:py-20"
         style={{
-          scrollSnapAlign: 'start',
           background: '#fff',
         }}
       >
@@ -68,23 +65,14 @@ export function LandingPage() {
         </div>
       </div>
 
-      {/* Section 2.5: Protocols */}
-      <div
-        style={{
-          height: 'calc(100dvh - var(--header-h, 72px))',
-          scrollSnapAlign: 'start',
-          overflow: 'hidden',
-        }}
-      >
+      {/* Section 3: Protocols */}
+      <div style={{ paddingTop: '100px', paddingBottom: '100px' }}>
         <ProtocolsSection />
       </div>
 
-      {/* Section 3: Blue promo */}
+      {/* Section 4: Blue promo */}
       <div
         style={{
-          height: 'calc(100dvh - var(--header-h, 72px))',
-          scrollSnapAlign: 'start',
-          overflow: 'hidden',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -112,6 +100,7 @@ export function LandingPage() {
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
+              minHeight: '400px',
             }}
           >
           {/* Eyebrow */}
@@ -151,23 +140,19 @@ export function LandingPage() {
         </div>
       </div>
 
-      {/* Section 4: FAQ */}
+      {/* Section 5: FAQ */}
       <div
         style={{
-          scrollSnapAlign: 'start',
           background: '#fff',
-          paddingTop: '3rem',
-          paddingBottom: '3rem',
-          minHeight: '50vh',
+          paddingTop: '100px',
+          paddingBottom: '48px',
         }}
       >
         <InfoSection />
       </div>
 
-      {/* Section 5: Footer */}
-      <div style={{ scrollSnapAlign: 'start' }}>
-        <Footer />
-      </div>
+      {/* Section 6: Footer */}
+      <Footer />
     </div>
   );
 }
