@@ -1,6 +1,5 @@
 'use client';
 
-import { FeatureCarousel } from '@/components/FeatureCarousel';
 import { AboutCarousel } from '@/components/AboutCarousel';
 import { ProtocolsSection } from '@/components/ProtocolsSection';
 import { InfoSection } from '@/components/Hero';
@@ -45,10 +44,6 @@ export function LandingPage() {
               {t('hero.cta')}
             </a>
           </div>
-        </div>
-
-        <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6" style={{ marginTop: 'auto', paddingBottom: '48px' }}>
-          <FeatureCarousel />
         </div>
       </div>
 
