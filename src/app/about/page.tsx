@@ -1,46 +1,14 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 
 export default function AboutPage() {
   const { t } = useLanguage();
-  const darkRef = useRef<HTMLDivElement>(null);
-  const blueRef = useRef<HTMLDivElement>(null);
-  const advRef = useRef<HTMLDivElement>(null);
-  const [darkExpanded, setDarkExpanded] = useState(false);
-  const [blueExpanded, setBlueExpanded] = useState(false);
-  const [advExpanded, setAdvExpanded] = useState(false);
 
-  useEffect(() => {
-    const darkObserver = new IntersectionObserver(
-      ([entry]) => { setDarkExpanded(entry.isIntersecting); },
-      { threshold: 0.3 }
-    );
-    const blueObserver = new IntersectionObserver(
-      ([entry]) => { setBlueExpanded(entry.isIntersecting); },
-      { threshold: 0.3 }
-    );
-    const advObserver = new IntersectionObserver(
-      ([entry]) => { setAdvExpanded(entry.isIntersecting); },
-      { threshold: 0.3 }
-    );
-
-    if (darkRef.current) darkObserver.observe(darkRef.current);
-    if (blueRef.current) blueObserver.observe(blueRef.current);
-    if (advRef.current) advObserver.observe(advRef.current);
-    return () => {
-      darkObserver.disconnect();
-      blueObserver.disconnect();
-      advObserver.disconnect();
-    };
-  }, []);
-
-  const expandSectionStyle = (expanded: boolean, bg: string) => ({
+  const sectionStyle = (bg: string) => ({
     background: bg,
-    width: expanded ? '100%' : '90%',
+    width: '100%',
     minHeight: 'calc(100vh - 72px)',
-    transition: 'width 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
     overflow: 'hidden' as const,
   });
 
@@ -68,7 +36,7 @@ export default function AboutPage() {
   const lightTextStyle = {
     fontWeight: 500,
     lineHeight: '1.5',
-    color: 'rgb(20, 20, 23)',
+    color: '#0A0B0D',
     marginBottom: '24px',
   };
 
@@ -87,14 +55,14 @@ export default function AboutPage() {
           <a
             href="https://app.defied.bg" target="_blank" rel="noopener noreferrer"
             className="inline-block hover:opacity-80 transition-opacity whitespace-nowrap"
-            style={{ background: '#000', borderRadius: '28px', color: '#fff', fontSize: '16px', lineHeight: '24px', fontWeight: 700, padding: '14px 32px', textDecoration: 'none' }}
+            style={{ background: '#0052FF', borderRadius: '100px', color: '#fff', fontSize: '16px', lineHeight: '24px', fontWeight: 500, padding: '14px 32px', textDecoration: 'none' }}
           >
             Започни сега
           </a>
           <a
             href="mailto:hello@defied.bg"
             className="inline-block hover:opacity-80 transition-opacity"
-            style={{ background: '#0F0F660D', borderRadius: '28px', color: '#000', fontSize: '16px', lineHeight: '24px', fontWeight: 700, padding: '14px 32px' }}
+            style={{ background: '#F5F8FF', borderRadius: '100px', color: '#0A0B0D', fontSize: '16px', lineHeight: '24px', fontWeight: 500, padding: '14px 32px' }}
           >
             Контакт
           </a>
@@ -103,7 +71,7 @@ export default function AboutPage() {
 
       {/* Dark mission section */}
       <div style={fullBleedWrapper}>
-      <section ref={darkRef} style={expandSectionStyle(darkExpanded, '#141417')}>
+      <section style={sectionStyle('#0A0B0D')}>
         <div style={sectionContentStyle} className="py-20 sm:py-40 lg:py-[320px] px-6 sm:px-10 lg:px-16">
           <h2 className="text-[28px] sm:text-[40px] md:text-[56px]" style={{ fontWeight: 700, lineHeight: 1.15, color: '#fff', maxWidth: '800px' }}>
             Defied предоставя не-попечителска инфраструктура за лесен достъп до децентрализираните финанси.
@@ -122,7 +90,7 @@ export default function AboutPage() {
 
       {/* Blue company section */}
       <div style={fullBleedWrapper}>
-      <section ref={blueRef} style={expandSectionStyle(blueExpanded, '#1E1EE8')}>
+      <section style={sectionStyle('#0052FF')}>
         <div style={sectionContentStyle} className="py-20 sm:py-40 lg:py-[320px] px-6 sm:px-10 lg:px-16">
           <h2 className="text-[28px] sm:text-[40px] md:text-[56px]" style={{ fontWeight: 700, lineHeight: 1.15, color: '#fff', maxWidth: '800px' }}>
             Defied дава възможност на потребителя да създаде акаунт в платформата, без да е необходимо да разбира какво са дигитален портфейл и частен ключ в контекста на блокчейн.
@@ -148,7 +116,7 @@ export default function AboutPage() {
 
       {/* Advantages section */}
       <div style={fullBleedWrapper}>
-      <section ref={advRef} style={expandSectionStyle(advExpanded, '#141417')}>
+      <section style={sectionStyle('#0A0B0D')}>
         <div style={sectionContentStyle} className="py-20 sm:py-40 lg:py-[320px] px-6 sm:px-10 lg:px-16">
           <h2 className="text-[28px] sm:text-[40px] md:text-[56px]" style={{ fontWeight: 700, lineHeight: 1.15, color: '#fff', maxWidth: '800px' }}>
             Без технически познания. Бързо закупуване на крипто. Подбрани протоколи с висока доходност. Пълен контрол върху активите.

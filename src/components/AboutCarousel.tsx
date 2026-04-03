@@ -49,7 +49,6 @@ export function AboutCarousel() {
       desc: t('aboutCarousel.card1Desc'),
       href: '/about',
       cta: t('aboutCarousel.learnMore'),
-      hoverClass: 'about-card-1',
     },
     {
       tag: t('aboutCarousel.card2Tag'),
@@ -57,7 +56,6 @@ export function AboutCarousel() {
       desc: t('aboutCarousel.card2Desc'),
       href: '/about',
       cta: t('aboutCarousel.learnMore'),
-      hoverClass: 'about-card-2',
     },
     {
       tag: t('aboutCarousel.card3Tag'),
@@ -65,7 +63,6 @@ export function AboutCarousel() {
       desc: t('aboutCarousel.card3Desc'),
       href: '/about',
       cta: t('aboutCarousel.learnMore'),
-      hoverClass: 'about-card-3',
     },
     {
       tag: t('aboutCarousel.card4Tag'),
@@ -73,7 +70,6 @@ export function AboutCarousel() {
       desc: t('aboutCarousel.card4Desc'),
       href: '/about',
       cta: t('aboutCarousel.learnMore'),
-      hoverClass: 'about-card-4',
     },
   ];
 
@@ -82,7 +78,7 @@ export function AboutCarousel() {
       {/* Centered title */}
       <h2
         className="text-[24px] sm:text-[36px] md:text-[48px] mb-8 sm:mb-[70px] pl-4 sm:pl-10"
-        style={{ fontWeight: 700, color: '#000', lineHeight: 1.1, textAlign: 'left' }}
+        style={{ fontWeight: 500, color: '#0A0B0D', lineHeight: 1.1, textAlign: 'left' }}
       >
         {t('aboutCarousel.title')}
       </h2>
@@ -110,7 +106,7 @@ export function AboutCarousel() {
             href={card.href}
             onClick={handleClick}
             draggable={false}
-            className={`about-card ${card.hoverClass} sm:shrink-0 w-full sm:w-[640px] h-[420px] sm:h-[540px] p-6 sm:p-14 gap-6 sm:gap-0`}
+            className={`about-card sm:shrink-0 w-full sm:w-[640px] h-[420px] sm:h-[540px] p-6 sm:p-14 gap-6 sm:gap-0`}
             style={{
               display: 'flex',
               flexDirection: 'column',
@@ -125,21 +121,22 @@ export function AboutCarousel() {
               <span
                 style={{
                   display: 'inline-block',
-                  background: '#000',
+                  background: '#0052FF',
                   color: '#fff',
-                  fontSize: '14px',
-                  fontWeight: 600,
+                  fontSize: '13px',
+                  fontWeight: 500,
                   padding: '6px 12px',
                   lineHeight: 1.3,
+                  borderRadius: '100px',
                 }}
               >
                 {card.tag}
               </span>
 
-              <h4 className="text-lg sm:text-2xl mt-4 sm:mt-7 mb-1" style={{ fontWeight: 700, color: '#000', lineHeight: 1.3 }}>
+              <h4 className="text-lg sm:text-2xl mt-4 sm:mt-7 mb-1" style={{ fontWeight: 500, color: '#0A0B0D', lineHeight: 1.3 }}>
                 {card.title}
               </h4>
-              <p className="about-card-desc text-base sm:text-2xl" style={{ fontWeight: 600, color: 'rgb(118, 119, 122)', lineHeight: 1.4 }}>
+              <p className="about-card-desc text-base sm:text-2xl" style={{ fontWeight: 400, color: '#5B616E', lineHeight: 1.4 }}>
                 {card.desc}
               </p>
             </div>
@@ -150,11 +147,11 @@ export function AboutCarousel() {
               style={{
                 alignSelf: 'flex-start',
                 fontSize: '16px',
-                fontWeight: 700,
+                fontWeight: 500,
                 padding: '12px 24px',
-                borderRadius: '28px',
+                borderRadius: '100px',
                 lineHeight: '24px',
-                height: 56,
+                height: 48,
                 minWidth: 148,
                 display: 'inline-flex',
                 alignItems: 'center',

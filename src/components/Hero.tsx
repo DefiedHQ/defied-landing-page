@@ -37,13 +37,13 @@ function FaqItem({ question, answer, open, onToggle }: { question: string; answe
         className="w-full flex items-center gap-4 sm:gap-6 py-4 sm:py-6 text-left"
       >
         <ToggleIcon open={open} />
-        <span className="text-lg sm:text-xl md:text-[24px] text-black leading-tight" style={{ fontWeight: 700 }}>{question}</span>
+        <span className="text-lg sm:text-xl md:text-[24px] leading-tight" style={{ fontWeight: 500, color: '#0A0B0D' }}>{question}</span>
       </button>
       <div
         className={`grid transition-[grid-template-rows] duration-200 ${open ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}
       >
         <div className="overflow-hidden">
-          <p className="pl-10 sm:pl-[52px] pb-6 text-base sm:text-[18px] leading-relaxed" style={{ color: 'rgb(118, 119, 122)', fontWeight: 500 }}>
+          <p className="pl-10 sm:pl-[52px] pb-6 text-base sm:text-[18px] leading-relaxed" style={{ color: '#5B616E', fontWeight: 400 }}>
             {answer}
           </p>
         </div>
@@ -71,9 +71,9 @@ export function InfoSection() {
       <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-24">
         {/* Left: title — sticky so it doesn't move on expand */}
         <div className="lg:w-[40%] shrink-0 lg:sticky lg:top-8">
-          <h1 className="text-2xl sm:text-[32px]" style={{ lineHeight: '1.2', fontWeight: 700, color: '#000000' }}>
+          <h1 className="text-2xl sm:text-[32px]" style={{ lineHeight: '1.2', fontWeight: 500, color: '#0A0B0D' }}>
             {t('faq.title')}{' '}
-            <span style={{ color: 'rgb(118, 119, 122)' }}>{t('faq.subtitle')}</span>
+            <span style={{ color: '#5B616E' }}>{t('faq.subtitle')}</span>
           </h1>
         </div>
 

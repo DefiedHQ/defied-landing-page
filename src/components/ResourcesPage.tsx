@@ -33,10 +33,10 @@ export function ResourcesPage() {
     <div className="w-full max-w-[984px] mx-auto pb-16">
         {/* Hero */}
         <div className="mb-12">
-          <h1 className="text-[32px] sm:text-[52px] md:text-[72px] mt-12 sm:mt-[120px] mb-4 sm:mb-6" style={{ fontWeight: 600, lineHeight: 1, maxWidth: '800px', color: '#000' }}>
+          <h1 className="text-[32px] sm:text-[52px] md:text-[72px] mt-12 sm:mt-[120px] mb-4 sm:mb-6" style={{ fontWeight: 500, lineHeight: 1, maxWidth: '800px', color: '#0A0B0D' }}>
             {t('resources.heroTitle')}
           </h1>
-          <p className="text-base sm:text-lg md:text-2xl" style={{ color: '#6b7280', lineHeight: '1.4', maxWidth: '640px', fontWeight: 500 }}>
+          <p className="text-base sm:text-lg md:text-2xl" style={{ color: '#5B616E', lineHeight: '1.4', maxWidth: '640px', fontWeight: 400 }}>
             {t('resources.heroSubtitle')}
           </p>
         </div>
@@ -60,7 +60,7 @@ export function ResourcesPage() {
                 padding: '16px 24px',
                 transition: 'all .2s ease',
                 whiteSpace: 'nowrap' as const,
-                background: activeFilter === cat ? '#000' : '#0F0F660D',
+                background: activeFilter === cat ? '#0052FF' : '#F5F8FF',
                 color: activeFilter === cat ? '#fff' : '#374151',
               }}
             >
@@ -99,7 +99,7 @@ export function ResourcesPage() {
                       {article.category}
                     </span>
                     <h2
-                      className="group-hover:text-[#1E1EE8] transition-colors mb-2"
+                      className="group-hover:text-[#0052FF] transition-colors mb-2"
                       style={{
                         WebkitLineClamp: 2,
                         WebkitBoxOrient: 'vertical',
@@ -108,7 +108,7 @@ export function ResourcesPage() {
                         fontSize: '24px',
                         fontWeight: 500,
                         lineHeight: '32px',
-                        color: '#000',
+                        color: '#0A0B0D',
                       }}
                     >
                       {article.title}
@@ -166,7 +166,7 @@ export function ResourcesPage() {
                       {article.category}
                     </span>
                     <h3
-                      className="group-hover:text-[#1E1EE8] transition-colors mb-2"
+                      className="group-hover:text-[#0052FF] transition-colors mb-2"
                       style={{
                         WebkitLineClamp: 2,
                         WebkitBoxOrient: 'vertical',
@@ -175,7 +175,7 @@ export function ResourcesPage() {
                         fontSize: '24px',
                         fontWeight: 500,
                         lineHeight: '32px',
-                        color: '#000',
+                        color: '#0A0B0D',
                       }}
                     >
                       {article.title}

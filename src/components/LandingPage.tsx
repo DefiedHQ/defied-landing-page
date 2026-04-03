@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState } from 'react';
 import { FeatureCarousel } from '@/components/FeatureCarousel';
 import { AboutCarousel } from '@/components/AboutCarousel';
 import { ProtocolsSection } from '@/components/ProtocolsSection';
@@ -20,7 +20,7 @@ function CtaSection() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        background: hovered ? 'rgb(30, 30, 232)' : '#fff',
+        background: hovered ? '#0052FF' : '#fff',
         transition: 'background 0.3s ease',
       }}
     >
@@ -30,15 +30,15 @@ function CtaSection() {
           onMouseLeave={() => setHovered(false)}
           className="w-[85vw] sm:w-[600px] md:w-[734px] h-[140px] sm:h-[220px] md:h-[262px] text-lg sm:text-2xl md:text-[32px]"
           style={{
-            borderRadius: '138.5px',
+            borderRadius: '100px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             textAlign: 'center',
             cursor: 'pointer',
-            background: hovered ? '#fff' : '#000',
-            color: hovered ? '#000' : '#fff',
-            fontWeight: 700,
+            background: hovered ? '#fff' : '#0A0B0D',
+            color: hovered ? '#0052FF' : '#fff',
+            fontWeight: 500,
             lineHeight: 1.1,
             transition: 'all 0.4s ease',
             userSelect: 'none',
@@ -54,17 +54,6 @@ function CtaSection() {
 
 export function LandingPage() {
   const { t } = useLanguage();
-  const promoRef = useRef<HTMLDivElement>(null);
-  const [promoExpanded, setPromoExpanded] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => setPromoExpanded(entry.isIntersecting),
-      { threshold: 0.3 }
-    );
-    if (promoRef.current) observer.observe(promoRef.current);
-    return () => observer.disconnect();
-  }, []);
 
   return (
     <div
@@ -74,7 +63,7 @@ export function LandingPage() {
         minHeight: 0,
         overflowY: 'scroll',
         scrollSnapType: 'y mandatory',
-        background: '#000',
+        background: '#0A0B0D',
       }}
     >
       {/* Section 1: Hero + Protocols + Carousel */}
@@ -85,18 +74,18 @@ export function LandingPage() {
           display: 'flex',
           flexDirection: 'column',
           padding: '0 1rem',
-          background: '#f7f7f8',
+          background: '#FFFFFF',
         }}
       >
         <div className="w-full max-w-[800px] mx-auto flex flex-col flex-1 items-center justify-center px-4">
-          <h1 className="leading-[1.1] tracking-tight text-center text-[28px] sm:text-[52px] md:text-[72px]" style={{ fontWeight: 700, color: '#000000' }}>
+          <h1 className="leading-[1.05] tracking-tight text-center text-[28px] sm:text-[52px] md:text-[72px]" style={{ fontWeight: 500, color: '#0A0B0D' }}>
             {t('hero.title')}
           </h1>
           <div className="mt-8 sm:mt-10">
             <a
               href="https://app.defied.bg" target="_blank" rel="noopener noreferrer"
               className="inline-block px-8 py-3.5 hover:opacity-80 transition-opacity"
-              style={{ background: '#000000', borderRadius: '28px', color: '#ffffff', fontSize: '16px', lineHeight: '24px', fontWeight: 700, textDecoration: 'none' }}
+              style={{ background: '#0052FF', borderRadius: '100px', color: '#ffffff', fontSize: '16px', lineHeight: '24px', fontWeight: 500, textDecoration: 'none' }}
             >
               {t('hero.cta')}
             </a>
@@ -134,11 +123,9 @@ export function LandingPage() {
 
       {/* Section 3: Blue promo */}
       <div
-        ref={promoRef}
         style={{
           height: 'calc(100dvh - var(--header-h, 72px))',
           scrollSnapAlign: 'start',
-          background: '#fff',
           overflow: 'hidden',
           display: 'flex',
           alignItems: 'stretch',
@@ -146,10 +133,8 @@ export function LandingPage() {
       >
         <div
           style={{
-            background: '#1400FF',
-            width: promoExpanded ? '100%' : '90%',
-            margin: '0 auto',
-            transition: 'width 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
+            background: '#0052FF',
+            width: '100%',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
@@ -169,14 +154,14 @@ export function LandingPage() {
           >
           {/* Eyebrow */}
           <p className="text-[24px] sm:text-[32px]"
-                style={{ color: '#fff', fontWeight: 500, margin: '0 0 40px 0', lineHeight: 1.1 }}>
+                style={{ color: 'rgba(255,255,255,0.7)', fontWeight: 400, margin: '0 0 40px 0', lineHeight: 1.1 }}>
             {t('imageSection.promoLabel')}
           </p>
 
           {/* Main heading */}
           <h2
             className="text-[28px] sm:text-[42px] md:text-[56px]"
-            style={{ fontWeight: 700, color: '#fff', lineHeight: 1.1, margin: '0 0 clamp(24px, 4vw, 48px) 0', maxWidth: '800px' }}
+            style={{ fontWeight: 500, color: '#fff', lineHeight: 1.1, margin: '0 0 clamp(24px, 4vw, 48px) 0', maxWidth: '800px' }}
           >
             {t('imageSection.heading')}
           </h2>
@@ -188,14 +173,14 @@ export function LandingPage() {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center hover:opacity-80 transition-opacity"
-              style={{ background: '#fff', color: '#000', borderRadius: '28px', padding: '14px 32px', fontSize: '16px', fontWeight: 700, textDecoration: 'none', whiteSpace: 'nowrap' }}
+              style={{ background: '#fff', color: '#0052FF', borderRadius: '100px', padding: '14px 32px', fontSize: '16px', fontWeight: 500, textDecoration: 'none', whiteSpace: 'nowrap' }}
             >
               {t('imageSection.cta1')}
             </a>
             <a
               href="/resources"
               className="inline-flex items-center justify-center hover:opacity-80 transition-opacity"
-              style={{ background: 'rgba(255,255,255,0.15)', color: '#fff', borderRadius: '28px', padding: '14px 32px', fontSize: '16px', fontWeight: 700, textDecoration: 'none', whiteSpace: 'nowrap' }}
+              style={{ background: 'rgba(255,255,255,0.15)', color: '#fff', borderRadius: '100px', padding: '14px 32px', fontSize: '16px', fontWeight: 500, textDecoration: 'none', whiteSpace: 'nowrap' }}
             >
               {t('imageSection.cta2')}
             </a>

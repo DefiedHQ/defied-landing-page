@@ -53,7 +53,7 @@ export function ProtocolsSection() {
       {/* Title */}
       <h2
         className="text-[28px] sm:text-[36px] md:text-[48px]"
-        style={{ fontWeight: 700, color: '#000', lineHeight: 1.1, maxWidth: '520px' }}
+        style={{ fontWeight: 500, color: '#0A0B0D', lineHeight: 1.1, maxWidth: '520px' }}
       >
         {t('protocolsSection.title')}
       </h2>

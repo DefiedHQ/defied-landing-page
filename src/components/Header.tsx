@@ -42,7 +42,7 @@ export function Header() {
         <div className="flex-1 flex items-center gap-2">
           <Link href="/" className="inline-flex items-center gap-2 hover:opacity-80 transition-opacity">
             <LogoMark size={36} />
-            <span className="tracking-tight hidden sm:inline" style={{ fontWeight: 700, fontSize: '36px', color: '#000000' }}>
+            <span className="tracking-tight hidden sm:inline" style={{ fontFamily: '"Coinbase Display", system-ui, sans-serif', fontWeight: 500, fontSize: '36px', color: '#0A0B0D' }}>
               defied
             </span>
           </Link>
@@ -61,7 +61,7 @@ export function Header() {
         </div>
 
         {/* Center nav tabs */}
-        <div className="hidden sm:flex items-center gap-1" style={{ color: 'rgb(20, 20, 23)', fontSize: '16px', fontWeight: 500 }}>
+        <div className="hidden sm:flex items-center gap-1" style={{ color: '#0A0B0D', fontSize: '16px', fontWeight: 400 }}>
           <Link href="/about" className={tabClass(['/about'])} style={{ borderRadius: '24px' }}>
             {t('nav.about')}
           </Link>
@@ -75,7 +75,7 @@ export function Header() {
           <a
             href="https://app.defied.bg" target="_blank" rel="noopener noreferrer"
             className="hover:opacity-80 transition-opacity"
-            style={{ background: '#000000', borderRadius: '28px', color: '#ffffff', fontSize: '16px', lineHeight: '24px', fontWeight: 700, padding: '10px 24px', textDecoration: 'none' }}
+            style={{ background: '#0052FF', borderRadius: '100px', color: '#ffffff', fontSize: '16px', lineHeight: '24px', fontWeight: 500, padding: '10px 24px', textDecoration: 'none' }}
           >
             {t('hero.cta')}
           </a>
@@ -89,7 +89,7 @@ export function Header() {
         style={{
           top: '100%',
           zIndex: 100,
-          background: '#f7f7f8',
+          background: '#FFFFFF',
           boxShadow: mobileMenuOpen ? '0 8px 24px rgba(0,0,0,0.08)' : 'none',
           maxHeight: mobileMenuOpen ? '300px' : '0',
           opacity: mobileMenuOpen ? 1 : 0,
@@ -97,7 +97,7 @@ export function Header() {
           pointerEvents: mobileMenuOpen ? 'auto' : 'none',
         }}
       >
-        <div className="flex flex-col gap-1 px-4 pt-3 pb-2" style={{ color: 'rgb(20, 20, 23)', fontSize: '18px', fontWeight: 500 }}>
+        <div className="flex flex-col gap-1 px-4 pt-3 pb-2" style={{ color: '#0A0B0D', fontSize: '18px', fontWeight: 400 }}>
           {[
             { href: '/about', label: t('nav.about'), paths: ['/about'] },
             { href: '/resources', label: t('nav.resources'), paths: ['/resources'] },
