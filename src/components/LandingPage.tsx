@@ -50,12 +50,16 @@ export function LandingPage() {
           </div>
           {/* Right side: Phone image */}
           <div className="md:w-1/2 flex items-center justify-center">
-            <img
-              src="/phone2.png"
-              alt="DeFied App"
-              className="w-[320px] sm:w-[400px] md:w-[500px] lg:w-[560px] h-auto"
-              style={{ filter: 'drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15))' }}
-            />
+            <div
+              className="w-[340px] sm:w-[420px] md:w-[520px] lg:w-[580px] aspect-square rounded-[32px] overflow-hidden flex items-center justify-center"
+              style={{ background: 'rgb(247, 248, 249)' }}
+            >
+              <img
+                src="/phone2.png"
+                alt="DeFied App"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </div>
