@@ -17,14 +17,14 @@ export default function AboutPage() {
           <div className="flex items-center gap-4 mt-8 sm:mt-10">
             <a
               href="https://app.defied.bg" target="_blank" rel="noopener noreferrer"
-              className="hover:opacity-80 transition-opacity"
+              className="btn hover:opacity-80 transition-opacity"
               style={{ background: '#0A0B0D', border: '1px solid #0A0B0D', borderRadius: '56px', color: '#ffffff', fontSize: '16px', fontWeight: 600, height: '58px', minHeight: '56px', minWidth: '100px', padding: '16px 32px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', maxWidth: '100%', userSelect: 'none' }}
             >
               Започни сега
             </a>
             <a
               href="mailto:hello@defied.bg"
-              className="hover:opacity-80 transition-opacity"
+              className="btn hover:opacity-80 transition-opacity"
               style={{ background: 'rgb(247, 248, 249)', border: '1px solid rgb(247, 248, 249)', borderRadius: '56px', color: '#0A0B0D', fontSize: '16px', fontWeight: 600, height: '58px', minHeight: '56px', minWidth: '100px', padding: '16px 32px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', maxWidth: '100%', userSelect: 'none' }}
             >
               Контакт

@@ -96,7 +96,7 @@ export function InfoSection() {
         </p>
         <a
           href="https://app.defied.bg" target="_blank" rel="noopener noreferrer"
-          className="hover:opacity-80 transition-opacity"
+          className="btn hover:opacity-80 transition-opacity"
           style={{ background: '#0A0B0D', border: '1px solid #0A0B0D', borderRadius: '56px', color: '#ffffff', fontSize: '16px', fontWeight: 600, height: '58px', minHeight: '56px', minWidth: '100px', padding: '16px 32px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', userSelect: 'none' }}
         >
           {t('hero.cta')}
