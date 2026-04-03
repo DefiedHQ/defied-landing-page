@@ -81,7 +81,7 @@ export function ResourcesPage() {
                 style={{ textDecoration: 'none', maxWidth: '100%' }}
               >
                 <div className="overflow-hidden">
-                  <div className="w-full sm:w-[480px] h-[200px] sm:h-[270px]" style={{ maxWidth: '100%', overflow: 'hidden' }}>
+                  <div className="w-full sm:w-[480px] h-[200px] sm:h-[270px]" style={{ maxWidth: '100%', overflow: 'hidden', borderRadius: '56px' }}>
                     <img src="/article-cover.svg" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
                   <div className="pt-5">
@@ -148,7 +148,7 @@ export function ResourcesPage() {
                 style={{ textDecoration: 'none', maxWidth: '100%' }}
               >
                 <div className="overflow-hidden h-full">
-                  <div className="w-full sm:w-[312px] h-[200px] sm:h-[170px]" style={{ maxWidth: '100%', overflow: 'hidden' }}>
+                  <div className="w-full sm:w-[312px] h-[200px] sm:h-[170px]" style={{ maxWidth: '100%', overflow: 'hidden', borderRadius: '56px' }}>
                     <img src="/article-cover.svg" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
                   <div className="pt-4">

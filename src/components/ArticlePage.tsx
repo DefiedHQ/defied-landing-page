@@ -71,7 +71,7 @@ export function ArticlePage() {
           {/* Main content */}
           <article className="min-w-0">
             {/* Hero image placeholder */}
-            <div className="mb-10" style={{ height: '400px', maxWidth: '100%', overflow: 'hidden' }}>
+            <div className="mb-10" style={{ height: '400px', maxWidth: '100%', overflow: 'hidden', borderRadius: '56px' }}>
               <img src="/article-cover.svg" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
 
@@ -183,7 +183,7 @@ export function ArticlePage() {
                     className="block group"
                     style={{ textDecoration: 'none' }}
                   >
-                    <div style={{ height: '190px', maxWidth: '100%', overflow: 'hidden', marginBottom: '12px' }}>
+                    <div style={{ height: '190px', maxWidth: '100%', overflow: 'hidden', marginBottom: '12px', borderRadius: '56px' }}>
                       <img src="/article-cover.svg" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                     </div>
                     <h4
