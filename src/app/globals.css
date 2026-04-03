@@ -114,7 +114,7 @@
   --color-banner-to: var(--banner-to);
   --font-display: "Onest", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-sans: "Inter", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-mono: "Coinbase Mono", monospace;
+  --font-mono: "JetBrains Mono", "Coinbase Mono", monospace;
 }
 
 :root {
@@ -159,12 +159,16 @@ h1, h2, h3, h4, h5, h6 {
 
 button,
 [role="button"],
-a,
 select,
 summary,
 [type="button"],
 [type="submit"],
 [type="reset"] {
+  cursor: pointer;
+  font-family: "JetBrains Mono", "Coinbase Mono", monospace;
+}
+
+a {
   cursor: pointer;
 }
 
