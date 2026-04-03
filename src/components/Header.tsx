@@ -108,7 +108,7 @@ export function Header() {
             className="btn hover:opacity-80 transition-opacity"
             style={{ background: '#0052FF', border: '1px solid #0052FF', borderRadius: '56px', color: '#ffffff', fontSize: '16px', fontWeight: 600, height: '44px', minWidth: '100px', padding: '0 24px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
           >
-            {t('hero.cta')}
+            {t('hero.ctaHeader')}
           </a>
         </div>
       </div>
