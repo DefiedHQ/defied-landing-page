@@ -22,84 +22,81 @@ export function LandingPage() {
       {/* Section 1: Hero */}
       <div
         style={{
-          minHeight: '100vh',
           display: 'flex',
           flexDirection: 'column',
+          alignItems: 'center',
           padding: '0 1rem',
           background: '#FFFFFF',
         }}
       >
-        <div className="w-full max-w-[1200px] mx-auto flex flex-col md:flex-row flex-1 items-center justify-center px-4 gap-10 md:gap-16">
-          {/* Left side: Text + CTA */}
-          <div className="flex flex-col items-start justify-center md:w-1/2 text-center md:text-left">
-            <h1
-              className="w-full"
+        {/* Centered text + CTA */}
+        <div className="w-full max-w-[800px] mx-auto flex flex-col items-center text-center pt-16 sm:pt-24 md:pt-32 px-4">
+          <h1
+            style={{
+              fontFamily: 'CoinbaseDisplay, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+              fontSize: '80px',
+              lineHeight: '80px',
+              fontWeight: 400,
+              color: '#000',
+              letterSpacing: '-0.02em',
+            }}
+          >
+            {t('hero.title')}
+          </h1>
+          <p
+            className="mt-6"
+            style={{
+              fontFamily: 'CoinbaseText, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+              fontSize: '18px',
+              fontWeight: 400,
+              lineHeight: '28px',
+              color: 'rgb(10, 11, 13)',
+              overflowWrap: 'break-word',
+            }}
+          >
+            {t('hero.subtitle1')} {t('hero.subtitle2')} {t('hero.subtitle3')}
+          </p>
+          <div className="mt-8">
+            <a
+              href="https://app.defied.bg"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:opacity-80 transition-opacity"
               style={{
-                fontFamily: 'CoinbaseDisplay, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
-                fontSize: '80px',
-                lineHeight: '80px',
-                fontWeight: 400,
-                color: '#000',
-                letterSpacing: '-0.02em',
-              }}
-            >
-              {t('hero.title')}
-            </h1>
-            <p
-              className="mt-6 w-full"
-              style={{
-                fontFamily: 'CoinbaseText, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
-                fontSize: '18px',
-                fontWeight: 400,
-                lineHeight: '28px',
-                color: 'rgb(10, 11, 13)',
-                overflowWrap: 'break-word',
-              }}
-            >
-              {t('hero.subtitle1')} {t('hero.subtitle2')} {t('hero.subtitle3')}
-            </p>
-            <div className="mt-8 w-full md:w-auto">
-              <a
-                href="https://app.defied.bg"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:opacity-80 transition-opacity"
-                style={{
-                  background: '#0052FF',
-                  border: '1px solid #0052FF',
-                  borderRadius: '56px',
-                  color: '#ffffff',
-                  fontSize: '16px',
-                  fontWeight: 600,
-                  height: '58px',
-                  lineHeight: '18.4px',
-                  minWidth: '100px',
-                  padding: '16px 32px',
-                  textDecoration: 'none',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  userSelect: 'none',
-                }}
-              >
-                {t('hero.cta')}
-              </a>
-            </div>
-          </div>
-          {/* Right side: Hero image */}
-          <div className="md:w-1/2 flex items-center justify-center">
-            <img
-              src="/hero_app.png"
-              alt="DeFied App"
-              style={{
-                width: '745px',
-                maxWidth: '100%',
-                aspectRatio: '1 / 1',
+                background: '#0052FF',
+                border: '1px solid #0052FF',
                 borderRadius: '56px',
-                objectFit: 'cover',
+                color: '#ffffff',
+                fontSize: '16px',
+                fontWeight: 600,
+                height: '58px',
+                lineHeight: '18.4px',
+                minWidth: '100px',
+                padding: '16px 32px',
+                textDecoration: 'none',
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                userSelect: 'none',
               }}
-            />
+            >
+              {t('hero.cta')}
+            </a>
           </div>
+        </div>
+        {/* Hero image below */}
+        <div className="w-full max-w-[745px] mx-auto mt-12 sm:mt-16 px-4">
+          <img
+            src="/hero_app_white.png"
+            alt="DeFied App"
+            style={{
+              width: '745px',
+              maxWidth: '100%',
+              aspectRatio: '1 / 1',
+              borderRadius: '56px',
+              objectFit: 'cover',
+            }}
+          />
         </div>
       </div>
 
