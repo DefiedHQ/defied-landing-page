@@ -61,7 +61,7 @@ export function Header() {
         </div>
 
         {/* Center nav tabs */}
-        <div className="hidden sm:flex items-center gap-1" style={{ color: '#0A0B0D', fontSize: '16px', fontWeight: 400 }}>
+        <div className="hidden sm:flex items-center gap-1" style={{ color: '#0A0B0D', fontSize: '16px', fontWeight: 600 }}>
           <Link href="/about" className={tabClass(['/about'])} style={{ borderRadius: '24px' }}>
             {t('nav.about')}
           </Link>
