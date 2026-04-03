@@ -17,33 +17,34 @@ export function Hero() {
   );
 }
 
-function ToggleIcon({ open }: { open: boolean }) {
-  return (
-    <span
-      className="shrink-0 flex items-center justify-center text-black"
-      style={{ fontSize: '28px', fontWeight: 300, lineHeight: 1, width: '28px' }}
-    >
-      {open ? '—' : '+'}
-    </span>
-  );
-}
-
 function FaqItem({ question, answer, open, onToggle }: { question: string; answer: string; open: boolean; onToggle: () => void }) {
   return (
-    <div>
+    <div
+      style={{
+        background: open ? 'rgb(247, 248, 249)' : 'transparent',
+        borderRadius: '4px',
+        marginBottom: '2px',
+      }}
+    >
       <button
         type="button"
         onClick={onToggle}
-        className="w-full flex items-center gap-4 sm:gap-6 py-4 sm:py-6 text-left"
+        className="w-full flex items-center justify-between py-5 sm:py-6 px-5 sm:px-8 text-left"
+        style={{ background: 'rgb(247, 248, 249)', borderRadius: '4px', border: 'none' }}
       >
-        <ToggleIcon open={open} />
-        <span className="text-lg sm:text-xl md:text-[24px] leading-tight" style={{ fontWeight: 500, color: '#0A0B0D' }}>{question}</span>
+        <span className="text-base sm:text-lg" style={{ fontWeight: 600, color: '#0A0B0D', lineHeight: 1.4 }}>{question}</span>
+        <span
+          className="shrink-0 flex items-center justify-center"
+          style={{ fontSize: '24px', fontWeight: 300, color: '#0A0B0D', marginLeft: '16px' }}
+        >
+          {open ? '–' : '+'}
+        </span>
       </button>
       <div
         className={`grid transition-[grid-template-rows] duration-200 ${open ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}
       >
         <div className="overflow-hidden">
-          <p className="pl-10 sm:pl-[52px] pb-6 text-base sm:text-[18px] leading-relaxed" style={{ color: '#5B616E', fontWeight: 400 }}>
+          <p className="px-5 sm:px-8 pb-6 text-base sm:text-[16px] leading-relaxed" style={{ color: '#5B616E', fontWeight: 400 }}>
             {answer}
           </p>
         </div>
@@ -66,32 +67,41 @@ export function InfoSection() {
   ];
 
   return (
-    <section className="w-full max-w-[1600px] mx-auto mt-6 px-4 sm:px-6">
-      {/* FAQ — two-column */}
-      <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-24">
-        {/* Left: title — sticky so it doesn't move on expand */}
-        <div className="lg:w-[40%] shrink-0 lg:sticky lg:top-8">
-          <h1 className="text-2xl sm:text-[32px]" style={{ lineHeight: '1.2', fontWeight: 500, color: '#0A0B0D' }}>
-            {t('faq.title')}{' '}
-            <span style={{ color: '#5B616E' }}>{t('faq.subtitle')}</span>
-          </h1>
-        </div>
+    <section className="w-full max-w-[1300px] mx-auto px-4 sm:px-6">
+      {/* FAQ Title */}
+      <h2 className="text-[28px] sm:text-[40px] md:text-[52px] mb-10 sm:mb-14" style={{ fontWeight: 400, color: '#0A0B0D', lineHeight: 1.1 }}>
+        {t('faq.title')}
+      </h2>
 
-        {/* Right: accordion — aligned with right edge of container */}
-        <div className="flex-1">
-          {faqItems.map((item, i) => (
-            <FaqItem
-              key={i}
-              question={item.question}
-              answer={item.answer}
-              open={openIndex === i}
-              onToggle={() => setOpenIndex(openIndex === i ? null : i)}
-            />
-          ))}
-        </div>
+      {/* FAQ Accordion */}
+      <div className="flex flex-col gap-[2px]">
+        {faqItems.map((item, i) => (
+          <FaqItem
+            key={i}
+            question={item.question}
+            answer={item.answer}
+            open={openIndex === i}
+            onToggle={() => setOpenIndex(openIndex === i ? null : i)}
+          />
+        ))}
       </div>
 
-      {/* Disclaimers hidden for now */}
+      {/* CTA below FAQ */}
+      <div className="flex flex-col items-center text-center py-20 sm:py-28">
+        <h2 className="text-[32px] sm:text-[48px] md:text-[64px]" style={{ fontWeight: 400, color: '#0A0B0D', lineHeight: 1.1, marginBottom: '16px' }}>
+          {t('hero.ctaMain')}
+        </h2>
+        <p style={{ fontSize: '18px', fontWeight: 400, lineHeight: '28px', color: '#5B616E', marginBottom: '32px' }}>
+          {t('hero.subtitle1')} {t('hero.subtitle2')} {t('hero.subtitle3')}
+        </p>
+        <a
+          href="https://app.defied.bg" target="_blank" rel="noopener noreferrer"
+          className="hover:opacity-80 transition-opacity"
+          style={{ background: '#0A0B0D', border: '1px solid #0A0B0D', borderRadius: '56px', color: '#ffffff', fontSize: '16px', fontWeight: 600, height: '58px', minHeight: '56px', minWidth: '100px', padding: '16px 32px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', userSelect: 'none' }}
+        >
+          {t('hero.cta')}
+        </a>
+      </div>
     </section>
   );
 }

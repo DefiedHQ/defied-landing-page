@@ -1,56 +1,11 @@
 'use client';
 
-import { useState } from 'react';
 import { FeatureCarousel } from '@/components/FeatureCarousel';
 import { AboutCarousel } from '@/components/AboutCarousel';
 import { ProtocolsSection } from '@/components/ProtocolsSection';
 import { InfoSection } from '@/components/Hero';
 import { Footer } from '@/components/Footer';
 import { useLanguage } from '@/context/LanguageContext';
-
-function CtaSection() {
-  const [hovered, setHovered] = useState(false);
-  const { t } = useLanguage();
-
-  return (
-    <div
-      style={{
-        height: 'calc(100dvh - var(--header-h, 72px))',
-        scrollSnapAlign: 'start',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        background: hovered ? '#0052FF' : '#fff',
-        transition: 'background 0.3s ease',
-      }}
-    >
-      <a href="https://app.defied.bg" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
-        <div
-          onMouseEnter={() => setHovered(true)}
-          onMouseLeave={() => setHovered(false)}
-          className="w-[85vw] sm:w-[600px] md:w-[734px] h-[140px] sm:h-[220px] md:h-[262px] text-lg sm:text-2xl md:text-[32px]"
-          style={{
-            borderRadius: '56px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            textAlign: 'center',
-            cursor: 'pointer',
-            background: hovered ? '#fff' : '#0A0B0D',
-            color: hovered ? '#0052FF' : '#fff',
-            fontWeight: 500,
-            lineHeight: 1.1,
-            transition: 'all 0.4s ease',
-            userSelect: 'none',
-            maxWidth: '100%',
-          }}
-        >
-          {hovered ? t('hero.ctaHover') : t('hero.ctaMain')}
-        </div>
-      </a>
-    </div>
-  );
-}
 
 export function LandingPage() {
   const { t } = useLanguage();
@@ -205,10 +160,7 @@ export function LandingPage() {
         <InfoSection />
       </div>
 
-      {/* Section 5: CTA */}
-      <CtaSection />
-
-      {/* Section 6: Footer */}
+      {/* Section 5: Footer */}
       <div style={{ scrollSnapAlign: 'start' }}>
         <Footer />
       </div>
