@@ -18,7 +18,7 @@ export function LandingPage() {
         minHeight: 0,
         overflowY: 'scroll',
         scrollSnapType: 'y mandatory',
-        background: '#0A0B0D',
+        background: '#FFFFFF',
       }}
     >
       {/* Section 1: Hero + Protocols + Carousel */}
