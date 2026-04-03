@@ -166,7 +166,7 @@ summary,
 [type="submit"],
 [type="reset"] {
   cursor: pointer;
-  font-family: "Coinbase Mono", monospace;
+  font-family: "Coinbase Mono", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 a {
