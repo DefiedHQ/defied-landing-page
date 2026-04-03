@@ -87,7 +87,7 @@ export function ERC4626VaultPanel({ config }: { config: ERC4626VaultConfig }) {
       <div className="mb-12">
         <div className="flex gap-3 sm:gap-4 mt-12 sm:mt-[120px] mb-4 sm:mb-6" style={{ maxWidth: '800px', alignItems: 'flex-start' }}>
           <div className="shrink-0 pt-1"><TitleIcon size={40} /></div>
-          <h1 className="text-[32px] sm:text-[52px] md:text-[72px]" style={{ fontWeight: 600, lineHeight: 1, color: '#000' }}>
+          <h1 className="text-[32px] sm:text-[56px] md:text-[80px]" style={{ fontWeight: 400, lineHeight: 1, color: '#0A0B0D' }}>
             {title}
           </h1>
         </div>

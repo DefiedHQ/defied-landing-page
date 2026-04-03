@@ -33,7 +33,7 @@ export function ResourcesPage() {
     <div className="w-full max-w-[984px] mx-auto pb-16">
         {/* Hero */}
         <div className="mb-12">
-          <h1 className="text-[32px] sm:text-[52px] md:text-[72px] mt-12 sm:mt-[120px] mb-4 sm:mb-6" style={{ fontWeight: 500, lineHeight: 1, maxWidth: '800px', color: '#0A0B0D' }}>
+          <h1 className="text-[32px] sm:text-[56px] md:text-[80px] mt-12 sm:mt-[120px] mb-4 sm:mb-6" style={{ fontWeight: 400, lineHeight: 1, maxWidth: '800px', color: '#0A0B0D' }}>
             {t('resources.heroTitle')}
           </h1>
           <p className="text-base sm:text-lg md:text-2xl" style={{ color: '#5B616E', lineHeight: '1.4', maxWidth: '640px', fontWeight: 400 }}>

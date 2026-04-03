@@ -21,7 +21,7 @@ export function ArticlePage() {
   if (!article) {
     return (
       <div className="-mx-4 sm:-mx-6 -mt-4 px-4 sm:px-6 pt-16 pb-16 text-center" style={{ minHeight: '100vh' }}>
-        <h1 style={{ fontSize: '24px', fontWeight: 600, color: '#000' }}>
+        <h1 style={{ fontSize: '24px', fontWeight: 400, color: '#0A0B0D' }}>
           {t('resources.notFound')}
         </h1>
         <Link href="/resources" style={{ color: '#1E1EE8', marginTop: '16px', display: 'inline-block' }}>
@@ -54,7 +54,7 @@ export function ArticlePage() {
         </span>
 
         {/* Title */}
-        <h1 className="text-[32px] sm:text-[52px] md:text-[72px] mb-4 sm:mb-6" style={{ fontWeight: 600, lineHeight: 1, maxWidth: '800px', color: '#000' }}>
+        <h1 className="text-[32px] sm:text-[56px] md:text-[80px] mb-4 sm:mb-6" style={{ fontWeight: 400, lineHeight: 1, maxWidth: '800px', color: '#0A0B0D' }}>
           {article.title}
         </h1>
 

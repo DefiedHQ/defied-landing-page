@@ -48,7 +48,7 @@ export default function AboutPage() {
         <p style={{ fontSize: '24px', fontWeight: 700, color: '#000', marginBottom: '24px' }}>
           За Defied
         </p>
-        <h1 className="text-[32px] sm:text-[52px] md:text-[72px]" style={{ fontWeight: 700, lineHeight: 1.05, color: '#000', maxWidth: '900px' }}>
+        <h1 className="text-[32px] sm:text-[56px] md:text-[80px]" style={{ fontWeight: 400, lineHeight: 1.05, color: '#0A0B0D', maxWidth: '900px' }}>
           Създадохме първият крипто спестовен продукт в България
         </h1>
         <div className="flex items-center gap-4" style={{ marginTop: '48px' }}>

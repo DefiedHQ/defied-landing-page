@@ -78,7 +78,7 @@ export function LandingPage() {
         }}
       >
         <div className="w-full max-w-[800px] mx-auto flex flex-col flex-1 items-center justify-center px-4">
-          <h1 className="leading-[1.05] tracking-tight text-center text-[28px] sm:text-[52px] md:text-[72px]" style={{ fontWeight: 500, color: '#0A0B0D' }}>
+          <h1 className="leading-[1.05] tracking-tight text-center text-[32px] sm:text-[56px] md:text-[80px]" style={{ fontWeight: 400, color: '#0A0B0D' }}>
             {t('hero.title')}
           </h1>
           <div className="mt-8 sm:mt-10">
