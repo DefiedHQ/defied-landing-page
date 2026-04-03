@@ -45,7 +45,7 @@ export function LandingPage() {
           <h1
             className="text-[32px] leading-[36px] sm:text-[48px] sm:leading-[52px] md:text-[64px] md:leading-[68px] lg:text-[80px] lg:leading-[80px]"
             style={{
-              fontFamily: 'Outfit, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+              fontFamily: 'CoinbaseDisplay, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
               fontWeight: 400,
               color: '#000',
               letterSpacing: '-0.02em',
@@ -56,7 +56,7 @@ export function LandingPage() {
           <p
             className="mt-4 sm:mt-6 text-[15px] sm:text-[16px] md:text-[18px]"
             style={{
-              fontFamily: 'Inter, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+              fontFamily: 'CoinbaseText, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
               fontWeight: 400,
               lineHeight: '26px',
               color: 'rgb(10, 11, 13)',

@@ -112,9 +112,9 @@
   --color-banner-from: var(--banner-from);
   --color-banner-via: var(--banner-via);
   --color-banner-to: var(--banner-to);
-  --font-display: "Outfit", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-sans: "Inter", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-mono: "JetBrains Mono", "Coinbase Mono", monospace;
+  --font-display: "Coinbase Display", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-sans: "Coinbase Sans", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "Coinbase Mono", monospace;
 }
 
 :root {
@@ -146,7 +146,7 @@ html {
 body {
   background-color: var(--bg);
   color: var(--tx);
-  font-family: "Inter", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Coinbase Sans", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -154,7 +154,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Outfit", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Coinbase Display", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 button,
@@ -166,7 +166,7 @@ summary,
 [type="submit"],
 [type="reset"] {
   cursor: pointer;
-  font-family: "JetBrains Mono", "Coinbase Mono", monospace;
+  font-family: "Coinbase Mono", monospace;
 }
 
 a {
@@ -181,11 +181,11 @@ button:disabled,
 
 /* Override RainbowKit fonts */
 [data-rk] {
-  --rk-fonts-body: "Inter", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+  --rk-fonts-body: "Coinbase Sans", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
 }
 
 [data-rk] * {
-  font-family: "Inter", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Coinbase Sans", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 
