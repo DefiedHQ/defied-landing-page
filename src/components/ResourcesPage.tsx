@@ -148,7 +148,7 @@ export function ResourcesPage() {
                 style={{ textDecoration: 'none' }}
               >
                 <div className="overflow-hidden h-full">
-                  <div className="w-full h-[200px] sm:h-[170px]" style={{ overflow: 'hidden', borderRadius: '56px' }}>
+                  <div className="w-full h-[200px] sm:h-[270px]" style={{ overflow: 'hidden', borderRadius: '56px' }}>
                     <img src="/article-cover.svg" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
                   <div className="pt-4">
