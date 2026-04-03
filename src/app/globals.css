@@ -112,8 +112,8 @@
   --color-banner-from: var(--banner-from);
   --color-banner-via: var(--banner-via);
   --color-banner-to: var(--banner-to);
-  --font-display: "Coinbase Display", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-sans: "Coinbase Sans", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: "Coinbase Display", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-sans: "Coinbase Sans", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --font-mono: "Coinbase Mono", monospace;
 }
 
@@ -146,7 +146,7 @@ html {
 body {
   background-color: var(--bg);
   color: var(--tx);
-  font-family: "Coinbase Sans", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Coinbase Sans", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -154,7 +154,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Coinbase Display", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Coinbase Display", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 button,
@@ -181,11 +181,11 @@ button:disabled,
 
 /* Override RainbowKit fonts */
 [data-rk] {
-  --rk-fonts-body: "Coinbase Sans", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+  --rk-fonts-body: "Coinbase Sans", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
 }
 
 [data-rk] * {
-  font-family: "Coinbase Sans", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Coinbase Sans", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 
