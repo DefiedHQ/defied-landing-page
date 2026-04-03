@@ -60,13 +60,19 @@ export function Header() {
             ref={mobileToggleRef}
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="sm:hidden flex items-center gap-1.5 px-3 py-1.5 hover:opacity-80 transition-opacity"
-            style={{ background: '#0F0F660D', borderRadius: '20px', color: 'rgb(20, 20, 23)', fontSize: '14px', fontWeight: 600, border: 'none' }}
+            className="sm:hidden flex items-center justify-center p-2 hover:opacity-80 transition-opacity"
+            style={{ background: 'none', border: 'none', color: 'rgb(10, 11, 13)' }}
+            aria-label="Menu"
           >
-            {t('nav.goTo') || 'Go to...'}
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style={{ transform: mobileMenuOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }}>
-              <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
+            {mobileMenuOpen ? (
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M18 6L6 18" /><path d="M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M3 12h18" /><path d="M3 6h18" /><path d="M3 18h18" />
+              </svg>
+            )}
           </button>
           {/* Nav tabs */}
           <div className="hidden sm:flex items-center gap-1" style={{ color: '#0A0B0D', fontSize: '16px', fontWeight: 600 }}>
