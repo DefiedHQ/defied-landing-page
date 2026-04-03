@@ -43,7 +43,7 @@ export function LandingPage() {
         {/* Centered text + CTA */}
         <div className="w-full max-w-[800px] mx-auto flex flex-col items-center text-center pt-16 sm:pt-24 md:pt-32 px-4">
           <h1
-            className="text-[32px] leading-[36px] sm:text-[48px] sm:leading-[52px] md:text-[64px] md:leading-[68px] lg:text-[80px] lg:leading-[80px]"
+            className="text-[64px] leading-[68px] md:text-[96px] md:leading-[100px]"
             style={{
               fontFamily: 'CoinbaseDisplay, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
               fontWeight: 400,
@@ -65,12 +65,12 @@ export function LandingPage() {
           >
             {t('hero.subtitle1')} {t('hero.subtitle2')} {t('hero.subtitle3')}
           </p>
-          <div className="mt-8">
+          <div className="mt-8 w-full md:w-auto">
             <a
               href="https://app.defied.bg"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn hover:opacity-80 transition-opacity"
+              className="btn hover:opacity-80 transition-opacity w-full md:w-auto"
               style={{
                 background: '#0052FF',
                 border: '1px solid #0052FF',

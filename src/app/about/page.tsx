@@ -11,21 +11,21 @@ export default function AboutPage() {
       {/* Hero Section - matching landing page hero */}
       <section className="flex flex-col items-center justify-center text-center px-4 sm:px-6" style={{ minHeight: '100vh' }}>
         <div className="w-full max-w-[800px] mx-auto flex flex-col items-center justify-center">
-          <h1 className="leading-[1.05] tracking-tight text-center text-[32px] sm:text-[56px] md:text-[96px]" style={{ display: 'block', fontFamily: 'CoinbaseDisplay, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"', fontWeight: 400, color: 'rgb(10, 11, 13)' }}>
+          <h1 className="tracking-tight text-center text-[64px] leading-[68px] md:text-[96px] md:leading-[100px]" style={{ display: 'block', fontFamily: 'CoinbaseDisplay, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"', fontWeight: 400, color: 'rgb(10, 11, 13)', letterSpacing: '-0.02em' }}>
             Създадохме първият крипто спестовен продукт в България
           </h1>
-          <div className="flex items-center gap-4 mt-8 sm:mt-10">
+          <div className="flex flex-col md:flex-row items-center gap-4 mt-8 sm:mt-10 w-full md:w-auto">
             <a
               href="https://app.defied.bg" target="_blank" rel="noopener noreferrer"
-              className="btn hover:opacity-80 transition-opacity"
-              style={{ background: '#0A0B0D', border: '1px solid #0A0B0D', borderRadius: '56px', color: '#ffffff', fontSize: '16px', fontWeight: 600, height: '58px', minHeight: '56px', minWidth: '100px', padding: '16px 32px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', maxWidth: '100%', userSelect: 'none' }}
+              className="btn hover:opacity-80 transition-opacity w-full md:w-auto"
+              style={{ background: '#0A0B0D', border: '1px solid #0A0B0D', borderRadius: '56px', color: '#ffffff', fontSize: '16px', fontWeight: 600, height: '58px', minHeight: '56px', minWidth: '100px', padding: '16px 32px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', userSelect: 'none' }}
             >
               Започни сега
             </a>
             <a
               href="mailto:hello@defied.bg"
-              className="btn hover:opacity-80 transition-opacity"
-              style={{ background: 'rgb(247, 248, 249)', border: '1px solid rgb(247, 248, 249)', borderRadius: '56px', color: '#0A0B0D', fontSize: '16px', fontWeight: 600, height: '58px', minHeight: '56px', minWidth: '100px', padding: '16px 32px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', maxWidth: '100%', userSelect: 'none' }}
+              className="btn hover:opacity-80 transition-opacity w-full md:w-auto"
+              style={{ background: 'rgb(247, 248, 249)', border: '1px solid rgb(247, 248, 249)', borderRadius: '56px', color: '#0A0B0D', fontSize: '16px', fontWeight: 600, height: '58px', minHeight: '56px', minWidth: '100px', padding: '16px 32px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', userSelect: 'none' }}
             >
               Контакт
             </a>
