@@ -112,7 +112,7 @@
   --color-banner-from: var(--banner-from);
   --color-banner-via: var(--banner-via);
   --color-banner-to: var(--banner-to);
-  --font-display: "Onest", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: "Outfit", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-sans: "Inter", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-mono: "JetBrains Mono", "Coinbase Mono", monospace;
 }
@@ -154,7 +154,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Onest", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Outfit", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 button,

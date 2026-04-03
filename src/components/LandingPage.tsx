@@ -33,7 +33,7 @@ export function LandingPage() {
         <div className="w-full max-w-[800px] mx-auto flex flex-col items-center text-center pt-16 sm:pt-24 md:pt-32 px-4">
           <h1
             style={{
-              fontFamily: 'Onest, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+              fontFamily: 'Outfit, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
               fontSize: '80px',
               lineHeight: '80px',
               fontWeight: 400,
