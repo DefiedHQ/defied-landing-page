@@ -12,7 +12,7 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const mobileToggleRef = useRef<HTMLButtonElement>(null);
-  const { t } = useLanguage();
+  const { t, lang, setLang } = useLanguage();
 
   const scrollToSection = useCallback((sectionId: string) => {
     setMobileMenuOpen(false);
@@ -101,8 +101,16 @@ export function Header() {
           </div>
         </div>
 
-        {/* CTA button — right */}
+        {/* Language switcher + CTA button — right */}
         <div className="flex-1 flex justify-end items-center gap-3">
+          <button
+            type="button"
+            onClick={() => setLang(lang === 'bg' ? 'en' : 'bg')}
+            className="hidden sm:flex items-center justify-center px-3 py-1.5 hover:bg-[#0F0F660D] transition-colors"
+            style={{ borderRadius: '24px', background: 'none', border: 'none', color: '#0A0B0D', fontSize: '14px', fontWeight: 600, fontFamily: 'CoinbaseSans, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"' }}
+          >
+            {lang === 'bg' ? 'EN' : 'BG'}
+          </button>
           <a
             href="https://app.defied.bg" target="_blank" rel="noopener noreferrer"
             className="btn hover:opacity-80 transition-opacity"
@@ -161,6 +169,14 @@ export function Header() {
               {item.label}
             </Link>
           ))}
+          <button
+            type="button"
+            onClick={() => { setLang(lang === 'bg' ? 'en' : 'bg'); setMobileMenuOpen(false); }}
+            className="py-2.5 px-1 transition-colors text-left"
+            style={{ background: 'none', border: 'none', color: 'inherit', fontSize: 'inherit', fontWeight: 'inherit', fontFamily: 'CoinbaseSans, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"' }}
+          >
+            {lang === 'bg' ? 'English' : 'Български'}
+          </button>
         </div>
       </div>
     </header>
