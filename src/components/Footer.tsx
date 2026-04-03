@@ -16,7 +16,7 @@ export function Footer() {
           <div className="flex flex-col self-start">
             <Link href="/" className="inline-flex items-center gap-2 hover:opacity-80 transition-opacity">
               <img src="/defied_squared_logo.svg" width={36} height={36} alt="" aria-hidden="true" />
-              <span className="tracking-tight" style={{ fontFamily: '"Coinbase Display", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif', fontWeight: 700, fontSize: '36px', lineHeight: '36px', color: '#0A0B0D' }}>defied</span>
+              <span className="tracking-tight" style={{ fontFamily: '"Coinbase Display", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif', fontWeight: 700, fontSize: '36px', lineHeight: '36px', color: '#0052FF' }}>defied</span>
             </Link>
             <div style={{ marginTop: '50px', fontSize: '14px', color: '#5B616E', lineHeight: 1.7, fontWeight: 400 }}>
               <p>hello@defied.bg</p>
