@@ -73,16 +73,16 @@ export function Header() {
             <button
               type="button"
               onClick={() => scrollToSection('how-it-works')}
-              className="px-4 py-2 transition-colors hover:bg-[#0F0F660D]"
-              style={{ borderRadius: '24px', background: 'none', border: 'none', color: 'inherit', fontSize: 'inherit', fontWeight: 'inherit' }}
+              className={tabClass([])}
+              style={{ borderRadius: '24px' }}
             >
               {t('nav.howItWorks')}
             </button>
             <button
               type="button"
               onClick={() => scrollToSection('faq')}
-              className="px-4 py-2 transition-colors hover:bg-[#0F0F660D]"
-              style={{ borderRadius: '24px', background: 'none', border: 'none', color: 'inherit', fontSize: 'inherit', fontWeight: 'inherit' }}
+              className={tabClass([])}
+              style={{ borderRadius: '24px' }}
             >
               {t('nav.faq')}
             </button>
