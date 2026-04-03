@@ -1,7 +1,7 @@
 export function LogoMark({ size = 48 }: { size?: number }) {
   return (
     <img
-      src="/defied-blue.svg"
+      src="/defied_squared_logo_blue.svg"
       width={size}
       height={size}
       alt=""
