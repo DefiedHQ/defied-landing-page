@@ -18,6 +18,10 @@ export function InfoSection() {
     { question: t('faq.q4'), answer: t('faq.a4') },
     { question: t('faq.q5'), answer: t('faq.a5') },
     { question: t('faq.q6'), answer: t('faq.a6') },
+    { question: t('faq.q7'), answer: t('faq.a7') },
+    { question: t('faq.q8'), answer: t('faq.a8') },
+    { question: t('faq.q9'), answer: t('faq.a9') },
+    { question: t('faq.q10'), answer: t('faq.a10') },
   ];
 
   const handleToggle = (key: string | null) => {
@@ -29,6 +33,8 @@ export function InfoSection() {
       <Text
         font="display2"
         as="h2"
+        display="block"
+        className="section-title"
         style={{
           fontSize: 'clamp(2rem, 4vw, 3.25rem)',
           fontWeight: 500,

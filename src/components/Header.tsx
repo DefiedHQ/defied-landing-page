@@ -65,7 +65,7 @@ export function Header() {
       <HStack as="div" style={{ alignItems: 'center' }}>
         {/* Logo + mobile menu toggle */}
         <HStack as="div" style={{ flex: 1, alignItems: 'center', gap: '16px' }}>
-          <Link href="/" className="hover-fade" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', textDecoration: 'none' }}>
+          <Link href="/" className="hover-fade" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', textDecoration: 'none', flexShrink: 0 }}>
             <LogoMark size={48} />
           </Link>
           <button
@@ -92,6 +92,14 @@ export function Header() {
               style={{ padding: '8px 16px', borderRadius: '100px', border: 'none', cursor: 'pointer', color: '#0A0B0D' }}
             >
               <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 600 }}>{t('nav.howItWorks')}</Text>
+            </button>
+            <button
+              type="button"
+              onClick={() => scrollToSection('advantages')}
+              className="header-tab"
+              style={{ padding: '8px 16px', borderRadius: '100px', border: 'none', cursor: 'pointer', color: '#0A0B0D' }}
+            >
+              <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 600 }}>{t('nav.advantages')}</Text>
             </button>
             <button
               type="button"
@@ -148,7 +156,7 @@ export function Header() {
                   flexDirection: 'column',
                 }}
               >
-                <Text font="label1" as="div" color="fgMuted" style={{ marginBottom: '16px' }}>
+                <Text font="label1" as="div" color="fgMuted" style={{ marginBottom: '16px', fontSize: '16px' }}>
                   {t('nav.languageAndRegion')}
                 </Text>
                 <VStack as="div" style={{ margin: '0 -8px', gap: '0px' }}>
@@ -173,9 +181,9 @@ export function Header() {
                       onMouseEnter={(e) => { e.currentTarget.style.background = 'rgb(247, 247, 247)'; }}
                       onMouseLeave={(e) => { e.currentTarget.style.background = 'none'; }}
                     >
-                      <div>
-                        <Text font="headline" as="div">{l.label}</Text>
-                        <Text font="body" as="div" color="fgMuted">{l.region}</Text>
+                      <div style={{ display: 'flex', flexDirection: 'column' }}>
+                        <Text font="headline" as="span" display="block">{l.label}</Text>
+                        <Text font="body" as="span" display="block" color="fgMuted">{l.region}</Text>
                       </div>
                       {lang === l.code && (
                         <Icon name="checkmark" size="s" dangerouslySetColor="#05B169" accessibilityLabel="Selected" />
@@ -226,6 +234,13 @@ export function Header() {
             style={{ padding: '10px 4px', transition: 'color 0.2s ease', textAlign: 'left', background: 'none', border: 'none', color: '#0A0B0D', cursor: 'pointer' }}
           >
             <Text font="body" as="span">{t('nav.howItWorks')}</Text>
+          </button>
+          <button
+            type="button"
+            onClick={() => scrollToSection('advantages')}
+            style={{ padding: '10px 4px', transition: 'color 0.2s ease', textAlign: 'left', background: 'none', border: 'none', color: '#0A0B0D', cursor: 'pointer' }}
+          >
+            <Text font="body" as="span">{t('nav.advantages')}</Text>
           </button>
           <button
             type="button"
