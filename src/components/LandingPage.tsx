@@ -114,6 +114,7 @@ export function LandingPage() {
                 height: '58px',
                 padding: '16px 32px',
                 minWidth: '200px',
+                fontWeight: 500,
               }}
             >
               {t('hero.cta')}
@@ -312,6 +313,7 @@ export function LandingPage() {
                     height: '58px',
                     padding: '16px 32px',
                     minWidth: '200px',
+                    fontWeight: 500,
                   }}
                 >
                   {t('hero.cta')}

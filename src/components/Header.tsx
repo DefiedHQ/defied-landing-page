@@ -98,7 +98,7 @@ export function Header() {
             className="header-tab"
             style={{ padding: '8px 16px', borderRadius: '100px', border: 'none', cursor: 'pointer', color: '#0A0B0D' }}
           >
-            <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 600 }}>{t('nav.whatItDoes')}</Text>
+            <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 500 }}>{t('nav.whatItDoes')}</Text>
           </button>
           <button
             type="button"
@@ -106,7 +106,7 @@ export function Header() {
             className="header-tab"
             style={{ padding: '8px 16px', borderRadius: '100px', border: 'none', cursor: 'pointer', color: '#0A0B0D' }}
           >
-            <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 600 }}>{t('nav.howItWorks')}</Text>
+            <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 500 }}>{t('nav.howItWorks')}</Text>
           </button>
           <button
             type="button"
@@ -114,7 +114,7 @@ export function Header() {
             className="header-tab"
             style={{ padding: '8px 16px', borderRadius: '100px', border: 'none', cursor: 'pointer', color: '#0A0B0D' }}
           >
-            <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 600 }}>{t('nav.advantages')}</Text>
+            <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 500 }}>{t('nav.advantages')}</Text>
           </button>
           <button
             type="button"
@@ -122,14 +122,14 @@ export function Header() {
             className="header-tab"
             style={{ padding: '8px 16px', borderRadius: '100px', border: 'none', cursor: 'pointer', color: '#0A0B0D' }}
           >
-            <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 600 }}>{t('nav.faq')}</Text>
+            <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 500 }}>{t('nav.faq')}</Text>
           </button>
           <Link
             href="/resources"
             className={`header-tab${isActive(['/resources']) ? ' header-tab-active' : ''}`}
             style={{ padding: '8px 16px', borderRadius: '100px', textDecoration: 'none', color: '#0A0B0D' }}
           >
-            <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 600 }}>{t('nav.resources')}</Text>
+            <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 500 }}>{t('nav.resources')}</Text>
           </Link>
         </nav>
 
@@ -208,7 +208,7 @@ export function Header() {
             rel="noopener noreferrer"
             variant="primary"
             compact
-            style={{ borderRadius: '56px', minWidth: '100px', padding: '0 24px', height: '44px' }}
+            style={{ borderRadius: '56px', minWidth: '100px', padding: '0 24px', height: '44px', fontWeight: 500 }}
           >
             {t('hero.ctaHeader')}
           </Button>
