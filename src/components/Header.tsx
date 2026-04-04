@@ -8,7 +8,7 @@ import { HStack } from '@coinbase/cds-web/layout/HStack';
 import { VStack } from '@coinbase/cds-web/layout/VStack';
 import { Text } from '@coinbase/cds-web/typography/Text';
 import { Button } from '@coinbase/cds-web/buttons/Button';
-import { LogoMark as CdsLogoMark } from '@coinbase/cds-web/icons/LogoMark';
+import { Icon } from '@coinbase/cds-web/icons/Icon';
 import { LogoMark } from '@/components/LogoMark';
 import { useLanguage } from '@/context/LanguageContext';
 
@@ -57,13 +57,8 @@ export function Header() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [mobileMenuOpen]);
 
-  const tabProps = (paths: string[]) => {
-    const isActive = paths.some(p => p === '/' ? pathname === '/' : pathname.startsWith(p));
-    return {
-      className: isActive ? 'tab-active' : 'hover-bg-tab',
-      style: { padding: '8px 16px', borderRadius: '24px' } as React.CSSProperties,
-    };
-  };
+  const isActive = (paths: string[]) =>
+    paths.some(p => p === '/' ? pathname === '/' : pathname.startsWith(p));
 
   return (
     <header className="header-padding" style={{ position: 'relative', width: '100%', maxWidth: '1200px', margin: '0 auto' }}>
@@ -77,19 +72,15 @@ export function Header() {
             ref={mobileToggleRef}
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="show-mobile-flex hover-fade"
-            style={{ alignItems: 'center', justifyContent: 'center', background: 'none', border: 'none', color: '#0A0B0D', minWidth: '44px', minHeight: '44px' }}
+            className="show-mobile-flex"
+            style={{ alignItems: 'center', justifyContent: 'center', background: 'none', border: 'none', color: '#0A0B0D', minWidth: '44px', minHeight: '44px', cursor: 'pointer' }}
             aria-label="Menu"
             aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? (
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M18 6L6 18" /><path d="M6 6l12 12" />
-              </svg>
+              <Icon name="close" size="m" color="fgPrimary" accessibilityLabel="Close menu" />
             ) : (
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M3 12h18" /><path d="M3 6h18" /><path d="M3 18h18" />
-              </svg>
+              <Icon name="menu" size="m" color="fgPrimary" accessibilityLabel="Open menu" />
             )}
           </button>
           {/* Nav tabs */}
@@ -97,22 +88,32 @@ export function Header() {
             <button
               type="button"
               onClick={() => scrollToSection('how-it-works')}
-              {...tabProps([])}
+              className="header-tab"
+              style={{ padding: '8px 16px', borderRadius: '100px', background: 'none', border: 'none', cursor: 'pointer', color: '#0A0B0D' }}
             >
-              <Text font="label1" as="span">{t('nav.howItWorks')}</Text>
+              <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 400 }}>{t('nav.howItWorks')}</Text>
             </button>
             <button
               type="button"
               onClick={() => scrollToSection('faq')}
-              {...tabProps([])}
+              className="header-tab"
+              style={{ padding: '8px 16px', borderRadius: '100px', background: 'none', border: 'none', cursor: 'pointer', color: '#0A0B0D' }}
             >
-              <Text font="label1" as="span">{t('nav.faq')}</Text>
+              <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 400 }}>{t('nav.faq')}</Text>
             </button>
-            <Link href="/about" {...tabProps(['/about'])} style={{ ...tabProps(['/about']).style, textDecoration: 'none' }}>
-              <Text font="label1" as="span">{t('nav.about')}</Text>
+            <Link
+              href="/about"
+              className={`header-tab${isActive(['/about']) ? ' header-tab-active' : ''}`}
+              style={{ padding: '8px 16px', borderRadius: '100px', textDecoration: 'none', color: '#0A0B0D' }}
+            >
+              <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 400 }}>{t('nav.about')}</Text>
             </Link>
-            <Link href="/resources" {...tabProps(['/resources'])} style={{ ...tabProps(['/resources']).style, textDecoration: 'none' }}>
-              <Text font="label1" as="span">{t('nav.resources')}</Text>
+            <Link
+              href="/resources"
+              className={`header-tab${isActive(['/resources']) ? ' header-tab-active' : ''}`}
+              style={{ padding: '8px 16px', borderRadius: '100px', textDecoration: 'none', color: '#0A0B0D' }}
+            >
+              <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 400 }}>{t('nav.resources')}</Text>
             </Link>
           </nav>
         </HStack>
@@ -124,15 +125,11 @@ export function Header() {
             <button
               type="button"
               onClick={() => setLangDropdownOpen(!langDropdownOpen)}
-              className="hover-fade-70"
-              style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', background: 'rgb(237, 239, 242)', border: 'none', color: '#0A0B0D', width: '44px', height: '44px' }}
+              className="header-icon-btn"
+              style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', background: 'none', border: 'none', color: '#0A0B0D', width: '40px', height: '40px', cursor: 'pointer' }}
               aria-label="Language"
             >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="10" />
-                <path d="M2 12h20" />
-                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-              </svg>
+              <Icon name="globe" size="m" color="fgPrimary" accessibilityLabel="Language" />
             </button>
             {langDropdownOpen && (
               <Box
@@ -171,6 +168,7 @@ export function Header() {
                         color: '#0A0B0D',
                         padding: '12px 16px',
                         borderRadius: '16px',
+                        cursor: 'pointer',
                       }}
                       onMouseEnter={(e) => { e.currentTarget.style.background = 'rgb(247, 247, 247)'; }}
                       onMouseLeave={(e) => { e.currentTarget.style.background = 'none'; }}
@@ -180,9 +178,7 @@ export function Header() {
                         <Text font="body" as="div" color="fgMuted">{l.region}</Text>
                       </div>
                       {lang === l.code && (
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#05B169" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                          <polyline points="20 6 9 17 4 12" />
-                        </svg>
+                        <Icon name="checkmark" size="s" dangerouslySetColor="#05B169" accessibilityLabel="Selected" />
                       )}
                     </button>
                   ))}
@@ -227,14 +223,14 @@ export function Header() {
           <button
             type="button"
             onClick={() => scrollToSection('how-it-works')}
-            style={{ padding: '10px 4px', transition: 'color 0.2s ease', textAlign: 'left', background: 'none', border: 'none', color: '#0A0B0D' }}
+            style={{ padding: '10px 4px', transition: 'color 0.2s ease', textAlign: 'left', background: 'none', border: 'none', color: '#0A0B0D', cursor: 'pointer' }}
           >
             <Text font="body" as="span">{t('nav.howItWorks')}</Text>
           </button>
           <button
             type="button"
             onClick={() => scrollToSection('faq')}
-            style={{ padding: '10px 4px', transition: 'color 0.2s ease', textAlign: 'left', background: 'none', border: 'none', color: '#0A0B0D' }}
+            style={{ padding: '10px 4px', transition: 'color 0.2s ease', textAlign: 'left', background: 'none', border: 'none', color: '#0A0B0D', cursor: 'pointer' }}
           >
             <Text font="body" as="span">{t('nav.faq')}</Text>
           </button>
@@ -278,6 +274,7 @@ export function Header() {
                   background: 'none',
                   border: 'none',
                   color: 'inherit',
+                  cursor: 'pointer',
                 }}
               >
                 <div>
@@ -285,9 +282,7 @@ export function Header() {
                   <Text font="caption" as="div" color="fgMuted">{l.region}</Text>
                 </div>
                 {lang === l.code && (
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0052FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
+                  <Icon name="checkmark" size="s" dangerouslySetColor="#0052FF" accessibilityLabel="Selected" />
                 )}
               </button>
             ))}

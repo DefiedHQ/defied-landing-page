@@ -310,6 +310,25 @@ input[type="number"]::-webkit-inner-spin-button {
   background-color: rgba(15, 15, 102, 0.05);
 }
 
+/* ─── Coinbase-style header tab hover ─── */
+.header-tab {
+  transition: background-color 0.15s ease;
+}
+.header-tab:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+.header-tab-active {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+/* ─── Header icon button hover (globe, search) ─── */
+.header-icon-btn {
+  transition: background-color 0.15s ease;
+}
+.header-icon-btn:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
 .hover-color-blue {
   transition: color 0.2s ease;
 }
