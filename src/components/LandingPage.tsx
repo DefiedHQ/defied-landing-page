@@ -81,10 +81,10 @@ export function LandingPage() {
           {/* Feature cards grid */}
           <div className="hero-features-grid-4" style={{ marginTop: 'clamp(120px, 16vw, 220px)', width: '100%' }}>
             {[
-              { name: 'browseDecentralizedApps' as const, title: t('features.f1Title'), desc: t('features.f1Desc') },
-              { name: 'multicoinSupport' as const, title: t('features.f2Title'), desc: t('features.f2Desc') },
-              { name: 'defiDecentralizedTradingExchange' as const, title: t('features.f4Title'), desc: t('features.f4Desc') },
-              { name: 'defiEarn' as const, title: t('features.f5Title'), desc: t('features.f5Desc') },
+              { name: 'walletUi' as const, title: t('features.f1Title'), desc: t('features.f1Desc') },
+              { name: 'realToUSDC' as const, title: t('features.f2Title'), desc: t('features.f2Desc') },
+              { name: 'multipleAccountsWalletsForOneUser' as const, title: t('features.f4Title'), desc: t('features.f4Desc') },
+              { name: 'stayInControlSelfHostedWalletsStorage' as const, title: t('features.f5Title'), desc: t('features.f5Desc') },
             ].map((feature) => (
               <VStack key={feature.name} as="div" style={{ alignItems: 'center', textAlign: 'center', gap: '0px' }}>
                 <HeroSquare name={feature.name} scaleMultiplier={0.8} />
