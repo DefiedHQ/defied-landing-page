@@ -89,7 +89,7 @@ export function ProtocolsSection() {
                 alt={protocol.name}
                 width={isMobile ? protocol.mobileWidth : protocol.width}
                 height={isMobile ? protocol.mobileHeight : protocol.height}
-                style={{ filter: 'brightness(0)', display: 'block', objectFit: 'contain', width: 'auto', height: 'auto' }}
+                style={{ filter: 'brightness(0)', display: 'block', objectFit: 'contain', height: 'auto' }}
               />
             </a>
           );

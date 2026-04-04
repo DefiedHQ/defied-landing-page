@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   description:
     'Генерирайте доходност на вашето дигитално евро и долари, по сигурен и децентрализиран начин чрез DeFi. Без банки, без посредници.',
   icons: { icon: '/favicon.svg' },
-  metadataBase: new URL('https://defied.io'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://defied.io'),
   openGraph: {
     title: 'Defied | Първият дигитален портфейл с пасивен доход',
     description:
