@@ -152,7 +152,7 @@ export function ERC4626VaultPanel({ config }: { config: ERC4626VaultConfig }) {
               <>
                 <div className="mb-1">
                   <div className="flex items-center gap-3 mb-4" style={{ color: 'rgb(118, 119, 122)', fontSize: '14px' }}>
-                    <span>{t('vault.payingOn')}</span>
+                    <label htmlFor="erc4626-deposit-amount">{t('vault.payingOn')}</label>
                     <button type="button" onClick={setMaxDeposit} className="hover:opacity-70" style={{ color: 'rgb(30, 30, 232)', fontWeight: 500 }}>
                       Max {maxBal.toFixed(2)}
                     </button>
@@ -161,11 +161,12 @@ export function ERC4626VaultPanel({ config }: { config: ERC4626VaultConfig }) {
                   </div>
                   <div className="flex items-baseline gap-2">
                     <input
+                      id="erc4626-deposit-amount"
                       type="number"
                       placeholder="0"
                       value={depositAmount}
                       onChange={(e) => { setDepositAmount(e.target.value); resetDeposit(); resetApprove(); }}
-                      className="bg-transparent outline-none placeholder:text-[#ccc]"
+                      className="bg-transparent placeholder:text-[#ccc]"
                       style={{ fontSize: 'clamp(24px, 5vw, 36px)', fontWeight: 700, color: '#000', width: depositAmount ? `${Math.max(2, depositAmount.length)}ch` : '2ch' }}
                       min="0"
                       step="1"

@@ -95,7 +95,7 @@ export function ResourcesPage() {
               >
                 <div className="overflow-hidden">
                   <div className="w-full h-[200px] sm:h-[270px]" style={{ overflow: 'hidden', borderRadius: '56px' }}>
-                    <img src="/article-cover.svg" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <img src="/article-cover.svg" alt={article.title} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
                   <div className="pt-5">
                     <span
@@ -141,7 +141,7 @@ export function ResourcesPage() {
                       {article.excerpt}
                     </p>
                     <div className="mt-4" style={{ fontSize: '14px', fontWeight: 400, lineHeight: '20px', color: '#9ca3af' }}>
-                      {formatDate(article.date)} &middot; {article.readTime} {lang === 'en' ? 'min read' : 'мин четене'}
+                      {formatDate(article.date)} &middot; {article.readTime} {t('common.minRead')}
                     </div>
                   </div>
                 </div>
@@ -162,7 +162,7 @@ export function ResourcesPage() {
               >
                 <div className="overflow-hidden h-full">
                   <div className="w-full h-[200px] sm:h-[270px]" style={{ overflow: 'hidden', borderRadius: '56px' }}>
-                    <img src="/article-cover.svg" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <img src="/article-cover.svg" alt={article.title} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
                   <div className="pt-4">
                     <span
@@ -208,7 +208,7 @@ export function ResourcesPage() {
                       {article.excerpt}
                     </p>
                     <div className="mt-3" style={{ fontSize: '14px', fontWeight: 400, lineHeight: '20px', color: '#9ca3af' }}>
-                      {formatDate(article.date)} &middot; {article.readTime} {lang === 'en' ? 'min read' : 'мин четене'}
+                      {formatDate(article.date)} &middot; {article.readTime} {t('common.minRead')}
                     </div>
                   </div>
                 </div>

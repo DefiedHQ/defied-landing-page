@@ -63,10 +63,10 @@ export function ArticlePage() {
 
         {/* Meta */}
         <div className="flex items-center gap-3 mb-8">
-          <img src="/defied_squared_logo_blue.svg" width={40} height={40} alt="" />
+          <img src="/defied_squared_logo_blue.svg" width={40} height={40} alt="Defied" />
           <div style={{ fontSize: '14px', color: '#9ca3af' }}>
-            <div>{lang === 'en' ? 'by' : 'от'} <span style={{ color: '#6b7280' }}>Defied</span></div>
-            <div>{formatDate(article.date)} &middot; {article.readTime} {lang === 'en' ? 'min read' : 'мин четене'}</div>
+            <div>{t('common.by')} <span style={{ color: '#6b7280' }}>Defied</span></div>
+            <div>{formatDate(article.date)} &middot; {article.readTime} {t('common.minRead')}</div>
           </div>
         </div>
 
@@ -75,7 +75,7 @@ export function ArticlePage() {
           <article className="min-w-0">
             {/* Hero image placeholder */}
             <div className="mb-10 h-[250px] sm:h-[350px] md:h-[400px]" style={{ maxWidth: '100%', overflow: 'hidden', borderRadius: '56px' }}>
-              <img src="/article-cover.svg" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img src="/article-cover.svg" alt={article.title} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
 
             {/* Article body */}
@@ -187,7 +187,7 @@ export function ArticlePage() {
                     style={{ textDecoration: 'none' }}
                   >
                     <div style={{ height: '190px', maxWidth: '100%', overflow: 'hidden', marginBottom: '12px', borderRadius: '56px' }}>
-                      <img src="/article-cover.svg" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                      <img src="/article-cover.svg" alt={a.title} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                     </div>
                     <h4
                       className="group-hover:text-[#0052FF] transition-colors"
@@ -221,7 +221,7 @@ export function ArticlePage() {
                       {a.excerpt}
                     </p>
                     <span style={{ fontSize: '14px', fontWeight: 400, color: '#9ca3af' }}>
-                      {formatDate(a.date)} &middot; {a.readTime} мин четене
+                      {formatDate(a.date)} &middot; {a.readTime} {t('common.minRead')}
                     </span>
                   </Link>
                 ))}

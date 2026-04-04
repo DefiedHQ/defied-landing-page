@@ -79,6 +79,66 @@
     "withdrawSuccess": "Withdrawal successful!",
     "contract": "Contract"
   },
+  "common": {
+    "by": "by",
+    "minRead": "min read"
+  },
+  "about": {
+    "heroTitle": "We created the first crypto savings product in Bulgaria",
+    "ctaStart": "Start now",
+    "ctaContact": "Contact",
+    "missionDark": "Defied provides non-custodial infrastructure for easy access to decentralized finance.",
+    "missionLight": "Our mission is to make access to decentralized finance easy.",
+    "blueSection": "Defied allows users to create an account on the platform without needing to understand what a digital wallet and private key are in the blockchain context.",
+    "detailP1": "Defied provides decentralized smart contract infrastructure for generating yield through leading DeFi protocols. The smart contracts are non-custodial — Defied has no access to user funds stored in them.",
+    "detailP2": "Defied offers an intuitive user interface through which users can deposit funds in the form of stablecoins into curated decentralized protocols. Defied covers transaction costs for users (gas fees).",
+    "detailP3": "Users can easily buy crypto or stablecoins with a debit/credit card, Apple Pay, Google Pay, or via SEPA bank transfer.",
+    "advantagesHeading": "No technical knowledge needed. Quick crypto purchase. Curated protocols with high yield. Full control over your assets.",
+    "advantagesP1": "You don't need to understand how digital wallets and private keys work. We offer an easy-to-use interface and registration with just an email address.",
+    "advantagesP2": "We have no access to your funds. You are the only one who controls your wallet. All rules of interaction with DeFi protocols are encoded in smart contracts — public, verifiable, and immutable.",
+    "advantagesP3": "We maintain a detailed knowledge base of materials, articles, and tutorials about the world of decentralized finance."
+  },
+  "terms": {
+    "title": "Terms of Use"
+  },
+  "privacy": {
+    "title": "Privacy Policy"
+  },
+  "risks": {
+    "title": "Risks"
+  },
+  "vaultDiamond": {
+    "title": "Diamond wstETH",
+    "deposit": "Deposit",
+    "withdraw": "Withdraw",
+    "payOnEthereum": "Pay on Ethereum",
+    "receiveOnEthereum": "Receive on Ethereum",
+    "athPaused": "ATH reached! Deposits are paused - withdraw fee-free.",
+    "login": "Login",
+    "depositsDisabled": "Deposits Disabled",
+    "confirmInWallet": "Confirm in Wallet...",
+    "depositing": "Depositing...",
+    "deposited": "Deposited!",
+    "depositETH": "Deposit ETH",
+    "depositSuccess": "Deposit successful!",
+    "vaultBalance": "Your vault balance",
+    "receiveAfterFee": "You receive after {{feePercent}}% exit fee",
+    "athZeroFees": "ATH reached! Zero fees.",
+    "withdrawing": "Withdrawing...",
+    "withdrawn": "Withdrawn!",
+    "noBalance": "No Balance",
+    "withdrawNoFee": "Withdraw (No Fee)",
+    "withdrawWithFee": "Withdraw ({{feePercent}}% Fee)",
+    "withdrawSuccess": "Withdrawal successful!",
+    "description": "Lock ETH as wstETH until a new all-time high. Earn staking yield while you wait.",
+    "vaultDetails": "Vault Details",
+    "tvl": "TVL",
+    "earlyExitFee": "Early exit fee",
+    "feeNone": "None",
+    "yieldSource": "Yield source",
+    "priceOracle": "Price oracle",
+    "contract": "Contract"
+  },
   "resources": {
     "heroTitle": "Updates, stories, and announcements",
     "heroSubtitle": "On this page we publish the latest news: product updates, guides, and articles about the DeFi ecosystem.",

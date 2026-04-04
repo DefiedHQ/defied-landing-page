@@ -72,16 +72,17 @@ export function Header() {
             ref={mobileToggleRef}
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="sm:hidden flex items-center justify-center p-2 hover:opacity-80 transition-opacity"
-            style={{ background: 'none', border: 'none', color: 'rgb(10, 11, 13)' }}
+            className="sm:hidden flex items-center justify-center hover:opacity-80 transition-opacity"
+            style={{ background: 'none', border: 'none', color: 'rgb(10, 11, 13)', minWidth: '44px', minHeight: '44px' }}
             aria-label="Menu"
+            aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? (
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M18 6L6 18" /><path d="M6 6l12 12" />
               </svg>
             ) : (
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M3 12h18" /><path d="M3 6h18" /><path d="M3 18h18" />
               </svg>
             )}
@@ -121,7 +122,7 @@ export function Header() {
               type="button"
               onClick={() => setLangDropdownOpen(!langDropdownOpen)}
               className="flex items-center justify-center hover:opacity-70 transition-opacity"
-              style={{ borderRadius: '50%', background: 'rgb(237, 239, 242)', border: 'none', color: '#0A0B0D', width: '40px', height: '40px' }}
+              style={{ borderRadius: '50%', background: 'rgb(237, 239, 242)', border: 'none', color: '#0A0B0D', width: '44px', height: '44px' }}
               aria-label="Language"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">

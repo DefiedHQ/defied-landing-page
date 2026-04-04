@@ -12,7 +12,7 @@ export default function AboutPage() {
       <section className="flex flex-col items-center justify-center text-center px-4 sm:px-6" style={{ minHeight: '100vh' }}>
         <div className="w-full max-w-[1200px] mx-auto flex flex-col items-center justify-center">
           <h1 className="tracking-tight text-center text-[64px] leading-[68px] md:text-[96px] md:leading-[100px]" style={{ display: 'block', fontFamily: '-apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"', fontWeight: 400, color: 'rgb(10, 11, 13)', letterSpacing: '-0.02em' }}>
-            Създадохме първият крипто спестовен продукт в България
+            {t('about.heroTitle')}
           </h1>
           <div className="flex flex-col md:flex-row items-center gap-4 mt-8 sm:mt-10 w-full md:w-auto">
             <a
@@ -20,14 +20,14 @@ export default function AboutPage() {
               className="btn hover:opacity-80 transition-opacity w-full md:w-auto"
               style={{ background: '#0A0B0D', border: '1px solid #0A0B0D', borderRadius: '56px', color: '#ffffff', fontSize: '16px', fontWeight: 600, height: '58px', minHeight: '56px', minWidth: '100px', padding: '16px 32px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', userSelect: 'none' }}
             >
-              Започни сега
+              {t('about.ctaStart')}
             </a>
             <a
               href="mailto:hello@defied.bg"
               className="btn hover:opacity-80 transition-opacity w-full md:w-auto"
               style={{ background: 'rgb(247, 248, 249)', border: '1px solid rgb(247, 248, 249)', borderRadius: '56px', color: '#0A0B0D', fontSize: '16px', fontWeight: 600, height: '58px', minHeight: '56px', minWidth: '100px', padding: '16px 32px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', userSelect: 'none' }}
             >
-              Контакт
+              {t('about.ctaContact')}
             </a>
           </div>
         </div>
@@ -51,7 +51,7 @@ export default function AboutPage() {
             style={{ width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', minHeight: '400px' }}
           >
             <h2 className="text-[28px] sm:text-[42px] md:text-[56px]" style={{ fontWeight: 500, lineHeight: 1.1, color: '#fff', maxWidth: '800px' }}>
-              Defied предоставя не-попечителска инфраструктура за лесен достъп до децентрализираните финанси.
+              {t('about.missionDark')}
             </h2>
           </div>
         </div>
@@ -61,7 +61,7 @@ export default function AboutPage() {
       <section className="flex flex-col items-center justify-center text-center px-4 sm:px-6" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
         <img src="/defied_squared_logo_blue.svg" width={80} height={80} alt="Defied" style={{ marginBottom: '32px' }} />
         <h2 className="text-[28px] sm:text-[42px] md:text-[56px]" style={{ fontWeight: 500, lineHeight: 1.1, color: '#0A0B0D', maxWidth: '800px' }}>
-          Нашата мисия е да улесним достъпа до децентрализираните финанси.
+          {t('about.missionLight')}
         </h2>
       </section>
 
@@ -83,7 +83,7 @@ export default function AboutPage() {
             style={{ width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', minHeight: '400px' }}
           >
             <h2 className="text-[28px] sm:text-[42px] md:text-[56px]" style={{ fontWeight: 500, lineHeight: 1.1, color: '#fff', maxWidth: '800px' }}>
-              Defied дава възможност на потребителя да създаде акаунт в платформата, без да е необходимо да разбира какво са дигитален портфейл и частен ключ в контекста на блокчейн.
+              {t('about.blueSection')}
             </h2>
           </div>
         </div>
@@ -93,13 +93,13 @@ export default function AboutPage() {
       <section className="px-4 sm:px-6" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
         <div style={{ maxWidth: '800px', marginLeft: 'auto', marginRight: 'auto' }}>
           <p style={{ fontSize: '18px', fontWeight: 400, lineHeight: '28px', color: '#0A0B0D', marginBottom: '24px' }}>
-            Defied предоставя децентрализирана инфраструктура от смарт договори за генериране на доходност чрез водещи DeFi протоколи. Смарт договорите са не-попечителски — Defied няма достъп до средствата на потребителите, съхранявани в тях.
+            {t('about.detailP1')}
           </p>
           <p style={{ fontSize: '18px', fontWeight: 400, lineHeight: '28px', color: '#0A0B0D', marginBottom: '24px' }}>
-            Defied предоставя интуитивен потребителски интерфейс, чрез който потребителите могат да депозират средствата си под формата на стейбълкойни в подбрани децентрализирани протоколи. Defied поема транзакционните разходи на потребителите (газ такси).
+            {t('about.detailP2')}
           </p>
           <p style={{ fontSize: '18px', fontWeight: 400, lineHeight: '28px', color: '#0A0B0D', marginBottom: 0 }}>
-            Потребителите могат лесно да закупят крипто или стейбълкойни с дебитна/кредитна карта, Apple Pay, Google Pay или банков превод чрез SEPA.
+            {t('about.detailP3')}
           </p>
         </div>
       </section>
@@ -122,7 +122,7 @@ export default function AboutPage() {
             style={{ width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', minHeight: '400px' }}
           >
             <h2 className="text-[28px] sm:text-[42px] md:text-[56px]" style={{ fontWeight: 500, lineHeight: 1.1, color: '#fff', maxWidth: '800px' }}>
-              Без технически познания. Бързо закупуване на крипто. Подбрани протоколи с висока доходност. Пълен контрол върху активите.
+              {t('about.advantagesHeading')}
             </h2>
           </div>
         </div>
@@ -132,13 +132,13 @@ export default function AboutPage() {
       <section className="px-4 sm:px-6" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
         <div style={{ maxWidth: '800px', marginLeft: 'auto', marginRight: 'auto' }}>
           <p style={{ fontSize: '18px', fontWeight: 400, lineHeight: '28px', color: '#0A0B0D', marginBottom: '24px' }}>
-            Не е нужно да разбираш как работят дигиталните портфейли и частните ключове. Предлагаме лесен за използване интерфейс и регистрация само с имейл адрес.
+            {t('about.advantagesP1')}
           </p>
           <p style={{ fontSize: '18px', fontWeight: 400, lineHeight: '28px', color: '#0A0B0D', marginBottom: '24px' }}>
-            Ние нямаме достъп до средствата ти. Ти си единственият, който контролира портфейла си. Всички правила на взаимодействие с DeFi протоколите са закодирани в смарт договори — публични, проверяеми и неизменяеми.
+            {t('about.advantagesP2')}
           </p>
           <p style={{ fontSize: '18px', fontWeight: 400, lineHeight: '28px', color: '#0A0B0D', marginBottom: 0 }}>
-            Поддържаме подробна база данни от материали, статии и обучения в света на децентрализираните финанси.
+            {t('about.advantagesP3')}
           </p>
         </div>
       </section>
