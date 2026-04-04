@@ -1,7 +1,7 @@
 'use client';
 
-import { useEffect } from 'react';
-import { m } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import { m, AnimatePresence } from 'framer-motion';
 import { Box } from '@coinbase/cds-web/layout/Box';
 import { VStack } from '@coinbase/cds-web/layout/VStack';
 import { Text } from '@coinbase/cds-web/typography/Text';
@@ -35,9 +35,25 @@ import { ProtocolsSection } from '@/components/ProtocolsSection';
 import { InfoSection } from '@/components/Hero';
 import { Footer } from '@/components/Footer';
 import { useLanguage } from '@/context/LanguageContext';
+import bg from '@/locales/bg.json';
+import en from '@/locales/en.json';
+
+const rotatingWords: Record<string, string[]> = {
+  bg: bg.hero.titleWords,
+  en: en.hero.titleWords,
+};
 
 export function LandingPage() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
+  const [wordIndex, setWordIndex] = useState(0);
+  const words = rotatingWords[lang];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setWordIndex((prev) => (prev + 1) % words.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, [words.length]);
 
   useEffect(() => {
     const hash = window.location.hash.slice(1);
@@ -79,7 +95,21 @@ export function LandingPage() {
           }}
         >
           <Text font="display1" as="h1" className="title-tight-lh" style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', fontWeight: 500, letterSpacing: '-0.02em', textAlign: 'center' }}>
-            {t('hero.title')}
+            {t('hero.titleBase')}{' '}
+            <span style={{ display: 'inline-block', position: 'relative', color: '#0052FF', minWidth: '1ch' }}>
+              <AnimatePresence mode="wait">
+                <m.span
+                  key={words[wordIndex]}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.3 }}
+                  style={{ display: 'inline-block' }}
+                >
+                  {words[wordIndex]}
+                </m.span>
+              </AnimatePresence>
+            </span>
           </Text>
           <div style={{ marginTop: 'clamp(32px, 5vw, 64px)', marginBottom: 'clamp(32px, 5vw, 64px)', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <Text

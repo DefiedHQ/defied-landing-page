@@ -10,6 +10,8 @@
   },
   "hero": {
     "title": "A digital stablecoin wallet for everyone",
+    "titleBase": "A digital stablecoin wallet for",
+    "titleWords": ["everyone", "you", "him", "her"],
     "subtitle1": "Manage your money using the latest technology — stablecoins. Send, receive, and exchange in seconds.",
     "subtitle2": "",
     "subtitle3": "",
