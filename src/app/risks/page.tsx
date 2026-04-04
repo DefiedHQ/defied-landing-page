@@ -4,6 +4,15 @@ export const metadata: Metadata = {
   title: 'Рискове',
   description:
     'Научете повече за рисковете, свързани с DeFi протоколите и криптовалутите. Инвестирайте информирано.',
+  openGraph: {
+    title: 'Рискове | Defied',
+    description:
+      'Научете повече за рисковете, свързани с DeFi протоколите и криптовалутите.',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Defied – Рискове' }], // TODO: Replace with actual OG image
+  },
+  alternates: {
+    canonical: 'https://defied.io/risks',
+  },
 };
 
 export default function RisksPage() {

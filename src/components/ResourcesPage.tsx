@@ -2,29 +2,42 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import articles from '@/data/articles.json';
+import { useArticles } from '@/data/useArticles';
 import { useLanguage } from '@/context/LanguageContext';
 
-const categories = ['Всички', 'DeFi Академия', 'Ръководства', 'Сигурност', 'Технологии'];
+const categoriesMap = {
+  bg: ['Всички', 'DeFi Академия', 'Ръководства', 'Сигурност', 'Технологии'],
+  en: ['All', 'DeFi Academy', 'Guides', 'Security', 'Technology'],
+};
 
-function formatDate(dateStr: string) {
-  const d = new Date(dateStr);
-  const months = ['Яну', 'Фев', 'Мар', 'Апр', 'Май', 'Юни', 'Юли', 'Авг', 'Сеп', 'Окт', 'Ное', 'Дек'];
-  return `${d.getFullYear()} ${months[d.getMonth()]} ${d.getDate()}`;
-}
-
-function countByCategory(cat: string) {
-  if (cat === 'Всички') return articles.length;
-  return articles.filter((a) => a.category === cat).length;
-}
+const monthsBg = ['Яну', 'Фев', 'Мар', 'Апр', 'Май', 'Юни', 'Юли', 'Авг', 'Сеп', 'Окт', 'Ное', 'Дек'];
+const monthsEn = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 export function ResourcesPage() {
-  const { t } = useLanguage();
-  const [activeFilter, setActiveFilter] = useState('Всички');
+  const { t, lang } = useLanguage();
+  const articles = useArticles();
+  const categories = categoriesMap[lang];
+  const allLabel = categories[0];
+  const [activeFilter, setActiveFilter] = useState(allLabel);
 
-  const filtered = activeFilter === 'Всички'
+  // Reset filter when language changes
+  const filterValid = categories.includes(activeFilter);
+  const currentFilter = filterValid ? activeFilter : allLabel;
+
+  function formatDate(dateStr: string) {
+    const d = new Date(dateStr);
+    const months = lang === 'en' ? monthsEn : monthsBg;
+    return `${d.getFullYear()} ${months[d.getMonth()]} ${d.getDate()}`;
+  }
+
+  function countByCategory(cat: string) {
+    if (cat === allLabel) return articles.length;
+    return articles.filter((a) => a.category === cat).length;
+  }
+
+  const filtered = currentFilter === allLabel
     ? articles
-    : articles.filter((a) => a.category === activeFilter);
+    : articles.filter((a) => a.category === currentFilter);
 
   const featured = filtered.slice(0, 2);
   const rest = filtered.slice(2);
@@ -60,8 +73,8 @@ export function ResourcesPage() {
                 padding: '16px 24px',
                 transition: 'all .2s ease',
                 whiteSpace: 'nowrap' as const,
-                background: activeFilter === cat ? '#0052FF' : 'rgb(247, 248, 249)',
-                color: activeFilter === cat ? '#fff' : '#374151',
+                background: currentFilter === cat ? '#0052FF' : 'rgb(247, 248, 249)',
+                color: currentFilter === cat ? '#fff' : '#374151',
               }}
             >
               {cat}
@@ -128,7 +141,7 @@ export function ResourcesPage() {
                       {article.excerpt}
                     </p>
                     <div className="mt-4" style={{ fontSize: '14px', fontWeight: 400, lineHeight: '20px', color: '#9ca3af' }}>
-                      {formatDate(article.date)} &middot; {article.readTime} мин четене
+                      {formatDate(article.date)} &middot; {article.readTime} {lang === 'en' ? 'min read' : 'мин четене'}
                     </div>
                   </div>
                 </div>
@@ -195,7 +208,7 @@ export function ResourcesPage() {
                       {article.excerpt}
                     </p>
                     <div className="mt-3" style={{ fontSize: '14px', fontWeight: 400, lineHeight: '20px', color: '#9ca3af' }}>
-                      {formatDate(article.date)} &middot; {article.readTime} мин четене
+                      {formatDate(article.date)} &middot; {article.readTime} {lang === 'en' ? 'min read' : 'мин четене'}
                     </div>
                   </div>
                 </div>

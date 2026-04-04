@@ -3,20 +3,6 @@
 import { useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 
-export function Hero() {
-  return (
-    <section className="w-full max-w-[680px] mx-auto text-center mb-8 px-2">
-      <h1 className="text-2xl sm:text-3xl font-bold text-text tracking-tight leading-tight mb-3">
-        Put your <span className="text-pink">money</span> where your <span className="text-pink">mouth</span> is.
-      </h1>
-      <p className="text-[15px] text-muted2 leading-relaxed max-w-[520px] mx-auto">
-        Lock ETH until it reaches a new all-time high. Earn staking yield the
-        entire time. Conviction has a price - so does impatience.
-      </p>
-    </section>
-  );
-}
-
 function FaqItem({ question, answer, open, onToggle }: { question: string; answer: string; open: boolean; onToggle: () => void }) {
   return (
     <div
@@ -30,7 +16,7 @@ function FaqItem({ question, answer, open, onToggle }: { question: string; answe
         type="button"
         onClick={onToggle}
         className="w-full flex items-center justify-between text-left"
-        style={{ background: 'rgb(247, 248, 249)', borderRadius: '16px', border: 'none', height: '76px', padding: '24px 72px 24px 32px', cursor: 'pointer', fontFamily: 'Inter, -apple-system, "system-ui", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif', fontSize: '16px', fontWeight: 400, lineHeight: '18.4px', position: 'relative' }}
+        style={{ background: 'rgb(247, 248, 249)', borderRadius: '16px', border: 'none', height: '76px', padding: '24px 72px 24px 32px', cursor: 'pointer', fontFamily: '-apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"', fontSize: '16px', fontWeight: 400, lineHeight: '18.4px', position: 'relative' }}
       >
         <span style={{ fontWeight: 600, color: '#0A0B0D', lineHeight: 1.4 }}>{question}</span>
         <span
@@ -67,7 +53,7 @@ export function InfoSection() {
   ];
 
   return (
-    <section className="w-full max-w-[1200px] mx-auto px-4 sm:px-6">
+    <section className="w-full max-w-[1200px] mx-auto">
       {/* FAQ Title */}
       <h2 className="text-[28px] sm:text-[40px] md:text-[52px] mb-10 sm:mb-14" style={{ fontWeight: 400, color: '#0A0B0D', lineHeight: 1.1 }}>
         {t('faq.title')}
@@ -86,22 +72,6 @@ export function InfoSection() {
         ))}
       </div>
 
-      {/* CTA below FAQ */}
-      <div className="flex flex-col items-center text-center py-20 sm:py-28">
-        <h2 className="text-[32px] sm:text-[48px] md:text-[64px]" style={{ fontWeight: 400, color: '#0A0B0D', lineHeight: 1.1, marginBottom: '16px' }}>
-          {t('hero.ctaMain')}
-        </h2>
-        <p style={{ fontSize: '18px', fontWeight: 400, lineHeight: '28px', color: '#5B616E', marginBottom: '32px' }}>
-          {t('hero.subtitle1')} {t('hero.subtitle2')} {t('hero.subtitle3')}
-        </p>
-        <a
-          href="https://app.defied.bg" target="_blank" rel="noopener noreferrer"
-          className="btn hover:opacity-80 transition-opacity"
-          style={{ background: '#0A0B0D', border: '1px solid #0A0B0D', borderRadius: '56px', color: '#ffffff', fontSize: '16px', fontWeight: 600, height: '58px', minHeight: '56px', minWidth: '100px', padding: '16px 32px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', userSelect: 'none' }}
-        >
-          {t('hero.cta')}
-        </a>
-      </div>
     </section>
   );
 }

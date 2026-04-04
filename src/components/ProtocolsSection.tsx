@@ -35,7 +35,7 @@ export function ProtocolsSection() {
       }}
     >
       <div
-        className="px-4 sm:px-6"
+
         style={{
           maxWidth: '1200px',
           marginLeft: 'auto',
@@ -89,7 +89,7 @@ export function ProtocolsSection() {
                 alt={protocol.name}
                 width={isMobile ? protocol.mobileWidth : protocol.width}
                 height={isMobile ? protocol.mobileHeight : protocol.height}
-                style={{ filter: 'brightness(0)', display: 'block', objectFit: 'contain' }}
+                style={{ filter: 'brightness(0)', display: 'block', objectFit: 'contain', height: 'auto' }}
               />
             </a>
           );

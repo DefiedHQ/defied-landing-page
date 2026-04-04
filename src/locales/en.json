@@ -1,46 +1,25 @@
 {
   "nav": {
-    "earn": "Earn",
-    "trade": "Trade Crypto",
     "resources": "Resources",
     "about": "About",
-    "profile": "Account",
-    "logout": "Logout",
-    "login": "Login",
-    "connected": "Connected",
-    "goTo": "Go to...",
     "howItWorks": "How it works",
-    "faq": "FAQ"
+    "faq": "FAQ",
+    "languageAndRegion": "Language and region"
   },
   "hero": {
-    "title": "Decentralized finance is for everyone",
-    "subtitle1": "Defied enables you to generate yield on your digital euro and dollars, providing secure and decentralized access to DeFi",
+    "title": "The first digital wallet with passive income",
+    "subtitle1": "Generate yield on your digital euro and dollars, in a secure and decentralized way through DeFi.",
     "subtitle2": "",
     "subtitle3": "",
-    "cta": "Get started",
-    "ctaMain": "Take control of your money",
-    "ctaHover": "Get started"
-  },
-  "protocols": {
-    "title": "Integrated Protocols"
+    "cta": "Start for free",
+    "ctaHeader": "Sign in",
+    "ctaMain": "Take control of your money"
   },
   "protocolsSection": {
     "title": "Integrated protocols"
   },
   "imageSection": {
-    "promoLabel": "Earn more from your money",
-    "heading": "DeFi yield without the complexity, banks, or intermediaries.",
-    "cta1": "Open account",
-    "cta2": "Learn more"
-  },
-  "carousel": {
-    "step1Title": "Register with just an email",
-    "step1Desc": "No need to understand wallets or keys. We create a wallet for you automatically.",
-    "step2Title": "Curated DeFi protocols",
-    "step2Desc": "We select low-risk protocols with high liquidity and generate yield for you.",
-    "step3Title": "Full control over your assets",
-    "step3Desc": "We have no access to your funds. Smart contracts are public and verifiable.",
-    "cta": "Get started"
+    "heading": "DeFi yield without the complexity, banks, or intermediaries."
   },
   "aboutCarousel": {
     "title": "How it works",
@@ -55,12 +34,10 @@
     "card3Desc": "No need to research DeFi protocols yourself. We select the lowest-risk options with high liquidity and generate yield for you.",
     "card4Tag": "Quick Purchase",
     "card4Title": "Buy crypto in two clicks",
-    "card4Desc": "Buy cryptocurrency with a card, Apple Pay, Google Pay, or via SEPA bank transfer. You can also deposit crypto directly into your account.",
-    "learnMore": "Learn more"
+    "card4Desc": "Buy cryptocurrency with a card, Apple Pay, Google Pay, or via SEPA bank transfer. You can also deposit crypto directly into your account."
   },
   "faq": {
     "title": "Questions?",
-    "subtitle": "Answers.",
     "q1": "What is Defied?",
     "a1": "Defied is a platform that provides non-custodial decentralized infrastructure for easy access to DeFi. Register with an email and automatically receive a wallet.",
     "q2": "Who controls my funds?",
@@ -74,43 +51,10 @@
     "q6": "How do I buy crypto?",
     "a6": "You can buy stablecoins directly on the platform with a debit/credit card, Apple Pay, Google Pay, or SEPA bank transfer — through our licensed partner MoonPay."
   },
-  "trade": {
-    "title": "Trade Crypto",
-    "subtitle": "Buy crypto with a card, Apple Pay, Google Pay, or SEPA bank transfer.",
-    "loginRequired": "Log in to your account",
-    "loginRequiredDesc": "To buy crypto, you need to log in to your account first.",
-    "buyCrypto": "Buy Crypto",
-    "buyCryptoDesc": "Buy cryptocurrency with a card, Apple Pay, Google Pay, or SEPA bank transfer.",
-    "sellCrypto": "Sell Crypto",
-    "sellCryptoDesc": "Sell cryptocurrency and receive funds to your card or bank account.",
-    "buyAction": "Buy",
-    "sellAction": "Coming soon",
-    "poweredBy": "Powered by MoonPay"
-  },
   "earn": {
-    "title": "Earn",
-    "subtitle": "Explore DeFi vaults and start generating yield from stablecoins through curated protocols.",
-    "filterAll": "All",
     "apr": "APR",
     "protocol": "Protocol",
     "asset": "Asset"
-  },
-  "vaults": {
-    "aaveUsdc": {
-      "title": "USDC Aave Stablecoin",
-      "description": "Deposit USDC stablecoins into the decentralized Aave lending protocol.",
-      "cta": "Deposit"
-    },
-    "aaveEurc": {
-      "title": "EURC Aave Stablecoin",
-      "description": "Deposit EURC stablecoins into the decentralized Aave lending protocol.",
-      "cta": "Deposit"
-    },
-    "compoundUsdc": {
-      "title": "USDC Compound Stablecoin",
-      "description": "Deposit USDC stablecoins into the decentralized Compound lending protocol.",
-      "cta": "Deposit"
-    }
   },
   "vault": {
     "deposit": "Deposit",
@@ -144,9 +88,6 @@
     "notFound": "Article not found"
   },
   "footer": {
-    "products": "Products",
-    "earn": "Earn",
-    "trade": "Trade Crypto",
     "useful": "Useful",
     "resources": "Resources",
     "risks": "Risks",
@@ -154,6 +95,8 @@
     "about": "About us",
     "terms": "Terms of use",
     "privacy": "Privacy policy",
-    "address": "Bulgaria Blvd 115, Sofia, Bulgaria"
+    "address": "81B Bulgaria Blvd, Sofia, Bulgaria",
+    "disclaimer": "This site is operated by Fusion Software LLC (\"Defied\"). Defied does not provide investment, legal, or tax advice and the information on this site should not be considered as research, investment advice, or a recommendation of any kind. The materials on this site are provided for informational and educational purposes only. Testimonials, statements, and opinions presented here pertain to the individuals depicted. Individual experience and past results do not guarantee future outcomes. Investing in digital assets involves significant risk and may result in total loss. Users should conduct their own due diligence. Nothing on this site constitutes or should be construed as an offer or invitation to make an offer for investment in digital assets. Services are available only where permitted and may be restricted in some jurisdictions. By accessing this site you agree to our Terms of Use and Privacy Policy.",
+    "copyright": "© Fusion Software LLC. All rights reserved."
   }
 }

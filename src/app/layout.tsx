@@ -10,23 +10,25 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Defied | Децентрализирани Финанси за Всички',
+    default: 'Defied | Първият дигитален портфейл с пасивен доход',
     template: '%s | Defied',
   },
   description:
-    'Спечели доходност от ETH без банка. Залагай ETH, получи wstETH от Lido и тегли без такси при ново рекордно ниво. Децентрализирани финанси с пълен контрол.',
+    'Генерирайте доходност на вашето дигитално евро и долари, по сигурен и децентрализиран начин чрез DeFi. Без банки, без посредници.',
   icons: { icon: '/favicon.svg' },
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://defied.io'),
   openGraph: {
-    title: 'Defied | Децентрализирани Финанси за Всички',
+    title: 'Defied | Първият дигитален портфейл с пасивен доход',
     description:
-      'Залагай ETH, спечели доходност с wstETH и тегли без такси при ново ATH. Без банка, без посредник – пълен контрол над средствата ти.',
+      'Генерирайте доходност на вашето дигитално евро и долари, по сигурен и децентрализиран начин чрез DeFi.',
     siteName: 'Defied',
+    url: 'https://defied.io',
     images: [
       {
-        url: '/og.svg',
+        url: '/og-image.png', // TODO: Replace with actual 1200x630 OG image
         width: 1200,
         height: 630,
-        alt: 'Defied – Децентрализирани Финанси за Всички',
+        alt: 'Defied – Първият дигитален портфейл с пасивен доход',
       },
     ],
     type: 'website',
@@ -34,10 +36,17 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Defied | Децентрализирани Финанси за Всички',
+    title: 'Defied | Първият дигитален портфейл с пасивен доход',
     description:
-      'Залагай ETH, спечели доходност с wstETH и тегли без такси при ново ATH. Без банка, без посредник.',
-    images: ['/og.svg'],
+      'Генерирайте доходност на вашето дигитално евро и долари, по сигурен и децентрализиран начин чрез DeFi.',
+    images: ['/og-image.png'], // TODO: Replace with actual 1200x630 OG image
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: 'https://defied.io',
   },
 };
 
@@ -48,11 +57,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="bg">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-      </head>
       <body className="antialiased">
         <Providers>
           <LanguageProvider>
