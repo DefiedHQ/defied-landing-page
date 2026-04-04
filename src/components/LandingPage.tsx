@@ -36,7 +36,7 @@ export function LandingPage() {
       }}
     >
       {/* Section 1: Hero */}
-      <section className="px-4 sm:px-6">
+      <section className="section-padding">
         <VStack
           as="div"
           style={{
@@ -48,14 +48,14 @@ export function LandingPage() {
             paddingTop: 'clamp(64px, 10vw, 128px)',
           }}
         >
-          <Text font="display1" as="h1" style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', fontWeight: 500, letterSpacing: '-0.02em', maxWidth: '900px' }}>
+          <Text font="display1" as="h1" style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', fontWeight: 500, letterSpacing: '-0.02em', maxWidth: '900px', textAlign: 'center' }}>
             {t('hero.title')}
           </Text>
           <Text
             font="body"
             as="p"
             color="fgMuted"
-            style={{ marginTop: '24px', maxWidth: '640px', fontSize: '18px', lineHeight: '28px' }}
+            style={{ marginTop: '24px', maxWidth: '640px', fontSize: '18px', lineHeight: '28px', textAlign: 'center' }}
           >
             {t('hero.subtitle1')} {t('hero.subtitle2')} {t('hero.subtitle3')}
           </Text>
@@ -100,7 +100,7 @@ export function LandingPage() {
       {/* Section 2: About Grid */}
       <section
         id="how-it-works"
-        className="px-4 sm:px-6"
+        className="section-padding"
         style={{ paddingTop: '100px', paddingBottom: '100px' }}
       >
         <Box as="div" style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
@@ -109,12 +109,12 @@ export function LandingPage() {
       </section>
 
       {/* Section 3: Protocols */}
-      <section className="px-4 sm:px-6" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
+      <section className="section-padding" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
         <ProtocolsSection />
       </section>
 
       {/* Section 4: Blue promo with HeroSquare */}
-      <section className="px-4 sm:px-6" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
+      <section className="section-padding" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
         <Box
           as="div"
           style={{
@@ -128,7 +128,7 @@ export function LandingPage() {
         >
           <Box
             as="div"
-            className="px-8 sm:px-14 lg:px-20 py-14 sm:py-20"
+            className="box-padding"
             style={{
               display: 'flex',
               flexDirection: 'column',
@@ -151,14 +151,14 @@ export function LandingPage() {
       {/* Section 5: FAQ */}
       <section
         id="faq"
-        className="px-4 sm:px-6"
+        className="section-padding"
         style={{ paddingTop: '100px', paddingBottom: '100px' }}
       >
         <InfoSection />
       </section>
 
       {/* Section 6: CTA */}
-      <section className="px-4 sm:px-6" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
+      <section className="section-padding" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
         <VStack
           as="div"
           style={{
@@ -170,10 +170,10 @@ export function LandingPage() {
             gap: '16px',
           }}
         >
-          <Text font="display1" as="h2" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 500 }}>
+          <Text font="display1" as="h2" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 500, textAlign: 'center' }}>
             {t('hero.ctaMain')}
           </Text>
-          <Text font="body" as="p" color="fgMuted" style={{ fontSize: '18px', lineHeight: '28px', marginBottom: '16px' }}>
+          <Text font="body" as="p" color="fgMuted" style={{ fontSize: '18px', lineHeight: '28px', marginBottom: '16px', textAlign: 'center' }}>
             {t('hero.subtitle1')} {t('hero.subtitle2')} {t('hero.subtitle3')}
           </Text>
           <Button

@@ -79,7 +79,7 @@ export function ERC4626VaultPanel({ config }: { config: ERC4626VaultConfig }) {
       {/* Hero */}
       <Box as="div" style={{ marginBottom: '48px' }}>
         <HStack as="div" style={{ gap: '16px', marginTop: '48px', marginBottom: '24px', maxWidth: '800px', alignItems: 'flex-start' }}>
-          <Box as="div" className="shrink-0" style={{ paddingTop: '4px' }}><TitleIcon size={40} /></Box>
+          <Box as="div" style={{ flexShrink: 0, paddingTop: '4px' }}><TitleIcon size={40} /></Box>
           <Text font="display2" as="h1">{title}</Text>
         </HStack>
         <Text font="body" as="p" color="fgMuted" style={{ maxWidth: '640px', fontSize: '18px' }}>
@@ -107,7 +107,7 @@ export function ERC4626VaultPanel({ config }: { config: ERC4626VaultConfig }) {
         </Button>
       </HStack>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid-1-2-lg">
         {/* Left column */}
         <VStack as="div" style={{ gap: '0px' }}>
           <Box as="div" style={{ flex: 1, background: '#ffffff', padding: '24px' }}>
@@ -116,9 +116,9 @@ export function ERC4626VaultPanel({ config }: { config: ERC4626VaultConfig }) {
                 <Box as="div" style={{ marginBottom: '4px' }}>
                   <HStack as="div" style={{ alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
                     <Text font="caption" as="label" htmlFor="erc4626-deposit-amount" color="fgMuted">{t('vault.payingOn')}</Text>
-                    <button type="button" onClick={setMaxDeposit} className="hover:opacity-70" style={{ color: '#0052FF', fontWeight: 500, background: 'none', border: 'none' }}>Max {maxBal.toFixed(2)}</button>
-                    <button type="button" onClick={set50Deposit} className="hover:opacity-70" style={{ color: '#0052FF', fontWeight: 500, background: 'none', border: 'none' }}>50%</button>
-                    <button type="button" onClick={set25Deposit} className="hover:opacity-70" style={{ color: '#0052FF', fontWeight: 500, background: 'none', border: 'none' }}>25%</button>
+                    <button type="button" onClick={setMaxDeposit} className="hover-fade-70" style={{ color: '#0052FF', fontWeight: 500, background: 'none', border: 'none' }}>Max {maxBal.toFixed(2)}</button>
+                    <button type="button" onClick={set50Deposit} className="hover-fade-70" style={{ color: '#0052FF', fontWeight: 500, background: 'none', border: 'none' }}>50%</button>
+                    <button type="button" onClick={set25Deposit} className="hover-fade-70" style={{ color: '#0052FF', fontWeight: 500, background: 'none', border: 'none' }}>25%</button>
                   </HStack>
                   <HStack as="div" style={{ alignItems: 'baseline', gap: '8px' }}>
                     <input
@@ -127,7 +127,7 @@ export function ERC4626VaultPanel({ config }: { config: ERC4626VaultConfig }) {
                       placeholder="0"
                       value={depositAmount}
                       onChange={(e) => { setDepositAmount(e.target.value); resetDeposit(); resetApprove(); }}
-                      className="bg-transparent placeholder:text-[#ccc]"
+                      className="vault-input"
                       style={{ fontSize: 'clamp(24px, 5vw, 36px)', fontWeight: 700, color: '#000', width: depositAmount ? `${Math.max(2, depositAmount.length)}ch` : '2ch' }}
                       min="0"
                       step="1"
@@ -228,14 +228,14 @@ export function ERC4626VaultPanel({ config }: { config: ERC4626VaultConfig }) {
             <Text font="title3" as="h3" style={{ marginBottom: '8px' }}>{title}</Text>
             <Text font="body" as="p" color="fgMuted" style={{ marginBottom: '32px' }}>{description}</Text>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
+            <div className="grid-2-3">
               <VStack as="div" style={{ gap: '4px' }}>
                 <Text font="caption" as="p" color="fgMuted">{t('earn.apr')}</Text>
                 <Text font="headline" as="p">{apr}</Text>
               </VStack>
               <VStack as="div" style={{ gap: '4px' }}>
                 <Text font="caption" as="p" color="fgMuted">{t('earn.protocol')}</Text>
-                <a href={protocolHref} target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" style={{ textDecoration: 'none' }}>
+                <a href={protocolHref} target="_blank" rel="noopener noreferrer" className="hover-fade" style={{ textDecoration: 'none' }}>
                   <HStack as="div" style={{ alignItems: 'center', gap: '6px' }}><ProtocolIcon size={18} /><Text font="headline" as="span">{protocolName}</Text></HStack>
                 </a>
               </VStack>
@@ -245,7 +245,7 @@ export function ERC4626VaultPanel({ config }: { config: ERC4626VaultConfig }) {
               </VStack>
               <VStack as="div" style={{ gap: '4px' }}>
                 <Text font="caption" as="p" color="fgMuted">{t('vault.contract')}</Text>
-                <a href={etherscanHref} target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" style={{ textDecoration: 'none' }}>
+                <a href={etherscanHref} target="_blank" rel="noopener noreferrer" className="hover-fade" style={{ textDecoration: 'none' }}>
                   <Text font="headline" as="span">Etherscan ↗</Text>
                 </a>
               </VStack>

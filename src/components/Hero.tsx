@@ -25,7 +25,7 @@ export function InfoSection() {
   };
 
   return (
-    <section className="w-full max-w-[1200px] mx-auto">
+    <section style={{ width: '100%', maxWidth: '1200px', margin: '0 auto' }}>
       <Text
         font="display2"
         as="h2"

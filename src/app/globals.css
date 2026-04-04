@@ -1,31 +1,96 @@
-@import "tailwindcss";
+/*
+ * CDS Breakpoints (see src/config/breakpoints.ts):
+ *
+ *   phone:            0 – 559px
+ *   phoneLandscape: 560 – 767px
+ *   tablet:         768 – 1023px
+ *   tabletLandscape:1024 – 1279px
+ *   desktop:        1280 – 1439px
+ *   desktopLarge:   1440 – 1599px
+ *   extraWide:      1600+
+ */
+
+/* ─── Minimal CSS reset (replaces Tailwind Preflight) ─── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 
 :root {
   --header-h: 96px;
+
+  /* Expose breakpoints as CSS custom properties */
+  --bp-phone-landscape: 560px;
+  --bp-tablet: 768px;
+  --bp-tablet-landscape: 1024px;
+  --bp-desktop: 1280px;
+  --bp-desktop-large: 1440px;
+  --bp-extra-wide: 1600px;
 }
 
 html {
   overflow-x: hidden;
 }
 
+/* ─── Number input styling ─── */
 input[type="number"] {
   -moz-appearance: textfield;
 }
-
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-/* Landing page full-bleed — counters MainWrapper padding */
+/* ─── Vault input — transparent bg + placeholder color ─── */
+.vault-input {
+  background: transparent;
+  border: none;
+  outline: none;
+}
+.vault-input::placeholder {
+  color: #ccc;
+}
+
+/* ─── Landing page full-bleed — counters MainWrapper padding ─── */
 .landing-scroll-container {
   margin: 0 -1rem;
   width: calc(100% + 2rem);
 }
-@media (min-width: 640px) {
-  :root {
-    --header-h: 68px;
+
+/* ─── Responsive section padding ─── */
+.section-padding {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* ─── Responsive box inner padding (colored sections) ─── */
+.box-padding {
+  padding: 56px 32px;
+}
+
+/* ─── Header responsive padding ─── */
+.header-padding {
+  padding: 12px 16px;
+}
+
+/* ─── phoneLandscape (560px) — minor spacing adjustments ─── */
+@media (min-width: 560px) {
+  .section-padding {
+    padding-left: 24px;
+    padding-right: 24px;
   }
   .landing-scroll-container {
     margin: 0 -1.5rem;
@@ -33,7 +98,237 @@ input[type="number"]::-webkit-inner-spin-button {
   }
 }
 
-/* Protocol section cards */
+/* ─── tablet (768px) — layout shifts: mobile → tablet ─── */
+@media (min-width: 768px) {
+  :root {
+    --header-h: 68px;
+  }
+  .header-padding {
+    padding: 16px 24px;
+  }
+  .box-padding {
+    padding: 80px 56px;
+  }
+}
+
+/* ─── tabletLandscape (1024px) ─── */
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+/* ─── desktop (1280px) — full desktop experience ─── */
+@media (min-width: 1280px) {
+  .box-padding {
+    padding: 80px 80px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Responsive visibility
+   ═══════════════════════════════════════════════════════════════ */
+.hide-mobile-flex {
+  display: none;
+}
+.hide-mobile-block {
+  display: none;
+}
+.show-mobile-flex {
+  display: flex;
+}
+.show-mobile-block {
+  display: block;
+}
+
+/* Switch at tablet (768px) — mobile nav → desktop nav */
+@media (min-width: 768px) {
+  .hide-mobile-flex {
+    display: flex;
+  }
+  .hide-mobile-block {
+    display: block;
+  }
+  .show-mobile-flex,
+  .show-mobile-block {
+    display: none;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Responsive grids
+   ═══════════════════════════════════════════════════════════════ */
+
+/* 1 col → 2 col at tablet (768px) */
+.grid-1-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+@media (min-width: 768px) {
+  .grid-1-2 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+/* 1 col → 2 col at tablet (768px) — articles */
+.grid-1-2-md {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+@media (min-width: 768px) {
+  .grid-1-2-md {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 1 col → 2 col at tabletLandscape (1024px) — vault panels */
+.grid-1-2-lg {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+@media (min-width: 1024px) {
+  .grid-1-2-lg {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Article layout: 1 col → content + sidebar at tabletLandscape (1024px) */
+.grid-article {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+@media (min-width: 1024px) {
+  .grid-article {
+    grid-template-columns: 1fr 340px;
+  }
+}
+
+/* 2 col → 3 col at tablet (768px) — vault details */
+.grid-2-3 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+@media (min-width: 768px) {
+  .grid-2-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Responsive flex direction
+   ═══════════════════════════════════════════════════════════════ */
+
+/* col → row at tablet (768px) — footer layout */
+.flex-col-row {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: flex-start;
+}
+@media (min-width: 768px) {
+  .flex-col-row {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* col → row at tablet (768px) — CTA button stacks */
+.flex-col-row-md {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+@media (min-width: 768px) {
+  .flex-col-row-md {
+    flex-direction: row;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Responsive typography
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Privacy / Terms page headings */
+.text-display-responsive {
+  font-size: 32px;
+  margin-top: 48px;
+  margin-bottom: 16px;
+}
+@media (min-width: 560px) {
+  .text-display-responsive {
+    font-size: 48px;
+    margin-top: 80px;
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 768px) {
+  .text-display-responsive {
+    font-size: 64px;
+    margin-top: 120px;
+    margin-bottom: 24px;
+  }
+}
+@media (min-width: 1024px) {
+  .text-display-responsive {
+    font-size: 80px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Hover utilities
+   ═══════════════════════════════════════════════════════════════ */
+.hover-fade {
+  transition: opacity 0.2s ease;
+}
+.hover-fade:hover {
+  opacity: 0.8;
+}
+
+.hover-fade-70 {
+  transition: opacity 0.2s ease;
+}
+.hover-fade-70:hover {
+  opacity: 0.7;
+}
+
+.hover-bg-tab {
+  transition: background-color 0.2s ease;
+}
+.hover-bg-tab:hover {
+  background-color: rgba(15, 15, 102, 0.05);
+}
+
+.tab-active {
+  background-color: rgba(15, 15, 102, 0.05);
+}
+
+.hover-color-blue {
+  transition: color 0.2s ease;
+}
+.hover-color-blue:hover {
+  color: #0052FF;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Group hover patterns (card hover effects)
+   ═══════════════════════════════════════════════════════════════ */
+.card-group:hover .card-group-underline {
+  text-decoration: underline;
+}
+.card-group:hover .card-group-blue {
+  color: #0052FF;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Protocol section cards
+   ═══════════════════════════════════════════════════════════════ */
 .protocol-card {
   background: rgb(247, 248, 249);
   display: flex;
@@ -48,7 +343,8 @@ input[type="number"]::-webkit-inner-spin-button {
   max-width: 240px;
   border-radius: 56px;
 }
-@media (max-width: 640px) {
+/* Phone: stack 2-up with fixed aspect ratio */
+@media (max-width: 767px) {
   .protocol-card {
     flex: 1 1 calc(50% - 8px);
     max-width: calc(50% - 8px);
@@ -57,7 +353,9 @@ input[type="number"]::-webkit-inner-spin-button {
   }
 }
 
-/* Focus-visible styles for keyboard navigation */
+/* ═══════════════════════════════════════════════════════════════
+   Focus-visible styles for keyboard navigation
+   ═══════════════════════════════════════════════════════════════ */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -67,7 +365,9 @@ select:focus-visible,
   outline-offset: 2px;
 }
 
-/* Respect reduced motion preferences */
+/* ═══════════════════════════════════════════════════════════════
+   Respect reduced motion preferences
+   ═══════════════════════════════════════════════════════════════ */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

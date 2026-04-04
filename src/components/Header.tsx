@@ -57,27 +57,28 @@ export function Header() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [mobileMenuOpen]);
 
-  const tabClass = (paths: string[]) => {
+  const tabProps = (paths: string[]) => {
     const isActive = paths.some(p => p === '/' ? pathname === '/' : pathname.startsWith(p));
-    return `px-4 py-2 transition-colors ${
-      isActive ? 'bg-[#0F0F660D]' : 'hover:bg-[#0F0F660D]'
-    }`;
+    return {
+      className: isActive ? 'tab-active' : 'hover-bg-tab',
+      style: { padding: '8px 16px', borderRadius: '24px' } as React.CSSProperties,
+    };
   };
 
   return (
-    <header className="relative w-full px-4 sm:px-6 py-3 sm:py-4 max-w-[1200px] mx-auto">
+    <header className="header-padding" style={{ position: 'relative', width: '100%', maxWidth: '1200px', margin: '0 auto' }}>
       <HStack as="div" style={{ alignItems: 'center' }}>
         {/* Logo + mobile menu toggle */}
         <HStack as="div" style={{ flex: 1, alignItems: 'center', gap: '16px' }}>
-          <Link href="/" className="inline-flex items-center gap-2 hover:opacity-80 transition-opacity">
+          <Link href="/" className="hover-fade" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', textDecoration: 'none' }}>
             <LogoMark size={48} />
           </Link>
           <button
             ref={mobileToggleRef}
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="sm:hidden flex items-center justify-center hover:opacity-80 transition-opacity"
-            style={{ background: 'none', border: 'none', color: '#0A0B0D', minWidth: '44px', minHeight: '44px' }}
+            className="show-mobile-flex hover-fade"
+            style={{ alignItems: 'center', justifyContent: 'center', background: 'none', border: 'none', color: '#0A0B0D', minWidth: '44px', minHeight: '44px' }}
             aria-label="Menu"
             aria-expanded={mobileMenuOpen}
           >
@@ -92,27 +93,25 @@ export function Header() {
             )}
           </button>
           {/* Nav tabs */}
-          <nav className="hidden sm:flex items-center gap-1">
+          <nav className="hide-mobile-flex" style={{ alignItems: 'center', gap: '4px' }}>
             <button
               type="button"
               onClick={() => scrollToSection('how-it-works')}
-              className={tabClass([])}
-              style={{ borderRadius: '24px' }}
+              {...tabProps([])}
             >
               <Text font="label1" as="span">{t('nav.howItWorks')}</Text>
             </button>
             <button
               type="button"
               onClick={() => scrollToSection('faq')}
-              className={tabClass([])}
-              style={{ borderRadius: '24px' }}
+              {...tabProps([])}
             >
               <Text font="label1" as="span">{t('nav.faq')}</Text>
             </button>
-            <Link href="/about" className={tabClass(['/about'])} style={{ borderRadius: '24px', textDecoration: 'none' }}>
+            <Link href="/about" {...tabProps(['/about'])} style={{ ...tabProps(['/about']).style, textDecoration: 'none' }}>
               <Text font="label1" as="span">{t('nav.about')}</Text>
             </Link>
-            <Link href="/resources" className={tabClass(['/resources'])} style={{ borderRadius: '24px', textDecoration: 'none' }}>
+            <Link href="/resources" {...tabProps(['/resources'])} style={{ ...tabProps(['/resources']).style, textDecoration: 'none' }}>
               <Text font="label1" as="span">{t('nav.resources')}</Text>
             </Link>
           </nav>
@@ -121,12 +120,12 @@ export function Header() {
         {/* Language switcher + CTA button */}
         <HStack as="div" style={{ flex: 1, justifyContent: 'flex-end', alignItems: 'center', gap: '12px' }}>
           {/* Language dropdown */}
-          <div ref={langDropdownRef} className="relative hidden sm:block">
+          <div ref={langDropdownRef} className="hide-mobile-block" style={{ position: 'relative' }}>
             <button
               type="button"
               onClick={() => setLangDropdownOpen(!langDropdownOpen)}
-              className="flex items-center justify-center hover:opacity-70 transition-opacity"
-              style={{ borderRadius: '50%', background: 'rgb(237, 239, 242)', border: 'none', color: '#0A0B0D', width: '44px', height: '44px' }}
+              className="hover-fade-70"
+              style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', background: 'rgb(237, 239, 242)', border: 'none', color: '#0A0B0D', width: '44px', height: '44px' }}
               aria-label="Language"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -161,8 +160,12 @@ export function Header() {
                       key={l.code}
                       type="button"
                       onClick={() => { setLang(l.code); setLangDropdownOpen(false); }}
-                      className="w-full flex items-center justify-between text-left"
                       style={{
+                        display: 'flex',
+                        width: '100%',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        textAlign: 'left',
                         background: 'none',
                         border: 'none',
                         color: '#0A0B0D',
@@ -204,8 +207,12 @@ export function Header() {
       {/* Mobile-only collapsible menu */}
       <div
         ref={mobileMenuRef}
-        className="sm:hidden absolute left-0 right-0 overflow-hidden"
+        className="show-mobile-block"
         style={{
+          position: 'absolute',
+          left: 0,
+          right: 0,
+          overflow: 'hidden',
           top: '100%',
           zIndex: 100,
           background: '#FFFFFF',
@@ -220,16 +227,14 @@ export function Header() {
           <button
             type="button"
             onClick={() => scrollToSection('how-it-works')}
-            className="py-2.5 px-1 transition-colors text-left"
-            style={{ background: 'none', border: 'none', color: '#0A0B0D' }}
+            style={{ padding: '10px 4px', transition: 'color 0.2s ease', textAlign: 'left', background: 'none', border: 'none', color: '#0A0B0D' }}
           >
             <Text font="body" as="span">{t('nav.howItWorks')}</Text>
           </button>
           <button
             type="button"
             onClick={() => scrollToSection('faq')}
-            className="py-2.5 px-1 transition-colors text-left"
-            style={{ background: 'none', border: 'none', color: '#0A0B0D' }}
+            style={{ padding: '10px 4px', transition: 'color 0.2s ease', textAlign: 'left', background: 'none', border: 'none', color: '#0A0B0D' }}
           >
             <Text font="body" as="span">{t('nav.faq')}</Text>
           </button>
@@ -241,10 +246,13 @@ export function Header() {
               key={item.href}
               href={item.href}
               onClick={() => setMobileMenuOpen(false)}
-              className={`py-2.5 px-1 transition-colors ${
-                item.paths.some(p => pathname.startsWith(p)) ? 'font-bold' : ''
-              }`}
-              style={{ textDecoration: 'none', color: 'inherit' }}
+              style={{
+                padding: '10px 4px',
+                transition: 'color 0.2s ease',
+                textDecoration: 'none',
+                color: 'inherit',
+                fontWeight: item.paths.some(p => pathname.startsWith(p)) ? 700 : 400,
+              }}
             >
               <Text font="body" as="span">{item.label}</Text>
             </Link>
@@ -259,8 +267,18 @@ export function Header() {
                 key={l.code}
                 type="button"
                 onClick={() => { setLang(l.code); setMobileMenuOpen(false); }}
-                className="w-full flex items-center justify-between py-2.5 px-1 transition-colors text-left"
-                style={{ background: 'none', border: 'none', color: 'inherit' }}
+                style={{
+                  display: 'flex',
+                  width: '100%',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  padding: '10px 4px',
+                  transition: 'color 0.2s ease',
+                  textAlign: 'left',
+                  background: 'none',
+                  border: 'none',
+                  color: 'inherit',
+                }}
               >
                 <div>
                   <Text font="label1" as="div">{l.label}</Text>
