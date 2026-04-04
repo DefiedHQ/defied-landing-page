@@ -72,22 +72,6 @@ export function InfoSection() {
         ))}
       </div>
 
-      {/* CTA below FAQ */}
-      <div className="flex flex-col items-center text-center py-20 sm:py-28">
-        <h2 className="text-[32px] sm:text-[48px] md:text-[64px]" style={{ fontWeight: 400, color: '#0A0B0D', lineHeight: 1.1, marginBottom: '16px' }}>
-          {t('hero.ctaMain')}
-        </h2>
-        <p style={{ fontSize: '18px', fontWeight: 400, lineHeight: '28px', color: '#5B616E', marginBottom: '32px' }}>
-          {t('hero.subtitle1')} {t('hero.subtitle2')} {t('hero.subtitle3')}
-        </p>
-        <a
-          href="https://app.defied.bg" target="_blank" rel="noopener noreferrer"
-          className="btn hover:opacity-80 transition-opacity"
-          style={{ background: '#0A0B0D', border: '1px solid #0A0B0D', borderRadius: '56px', color: '#ffffff', fontSize: '16px', fontWeight: 600, height: '58px', minHeight: '56px', minWidth: '100px', padding: '16px 32px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', userSelect: 'none' }}
-        >
-          {t('hero.cta')}
-        </a>
-      </div>
     </section>
   );
 }
