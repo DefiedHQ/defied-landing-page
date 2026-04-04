@@ -7,7 +7,7 @@ export default function PrivacyPage() {
   const { t } = useLanguage();
 
   return (
-    <section style={{ width: '100%', maxWidth: '984px', margin: '0 auto', paddingBottom: '64px' }}>
+    <section className="section-padding" style={{ width: '100%', maxWidth: '984px', margin: '0 auto', paddingBottom: '64px' }}>
       <Text font="display1" as="h1" className="text-display-responsive" style={{ fontWeight: 400, lineHeight: 1, maxWidth: '800px', color: '#0A0B0D' }}>
         {t('privacy.title')}
       </Text>

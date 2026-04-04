@@ -7,8 +7,8 @@ export function RisksContent() {
   const { t } = useLanguage();
 
   return (
-    <section style={{ width: '100%', maxWidth: '984px', margin: '0 auto', paddingBottom: '64px' }}>
-      <Text font="display1" as="h1" style={{ marginTop: 'clamp(48px, 10vw, 120px)', maxWidth: '800px', marginBottom: '24px' }}>
+    <section className="section-padding" style={{ width: '100%', maxWidth: '984px', margin: '0 auto', paddingBottom: '64px' }}>
+      <Text font="display1" as="h1" className="text-display-responsive" style={{ fontWeight: 400, lineHeight: 1, maxWidth: '800px', color: '#0A0B0D' }}>
         {t('risks.title')}
       </Text>
     </section>
