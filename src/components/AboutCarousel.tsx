@@ -7,7 +7,7 @@ import { HeroSquare } from '@coinbase/cds-web/illustrations/HeroSquare';
 import { useLanguage } from '@/context/LanguageContext';
 
 const CARD_ILLUSTRATIONS = [
-  'addBankAccount',
+  'selfCustody',
   'secureStorage',
   'earnGrowth',
   'coinbaseCard',
