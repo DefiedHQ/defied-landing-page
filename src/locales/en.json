@@ -4,59 +4,59 @@
     "about": "About",
     "howItWorks": "How it works",
     "advantages": "Advantages",
-    "faq": "FAQ",
+    "faq": "Questions",
     "languageAndRegion": "Language and region"
   },
   "hero": {
-    "title": "The first digital wallet with passive income",
-    "subtitle1": "Generate yield on your digital euro and dollars, in a secure and decentralized way through DeFi.",
+    "title": "A digital stablecoin wallet for everyone",
+    "subtitle1": "Manage your money using the latest technology — stablecoins. Send, receive, and exchange in seconds.",
     "subtitle2": "",
     "subtitle3": "",
-    "cta": "Start for free",
+    "cta": "Create wallet",
     "ctaHeader": "Sign in",
     "ctaMain": "Take control of your money"
   },
   "features": {
-    "f1Title": "Store any token",
-    "f1Desc": "Store any tokens and NFTs from supported networks",
-    "f2Title": "Interact with any dapp",
-    "f2Desc": "Your home base for all DeFi and onchain activity",
-    "f3Title": "Enable multi-approver",
-    "f3Desc": "Customize consensus and multi-approver capabilities",
-    "f4Title": "Trade on DEXs",
-    "f4Desc": "Tap into decentralized liquidity to trade a large range of assets",
-    "f5Title": "Generate yield",
-    "f5Desc": "Get started with liquid staking, lend assets in DeFi, and more"
+    "f1Title": "Send stablecoins",
+    "f1Desc": "Send or receive stablecoins in seconds",
+    "f2Title": "Exchange stablecoins",
+    "f2Desc": "Exchange back and forth from standard euros and dollars",
+    "f3Title": "Multi-approval",
+    "f3Desc": "Set up consensus and multi-approval rules",
+    "f4Title": "Decentralized Finance",
+    "f4Desc": "Use protocols in decentralized finance",
+    "f5Title": "Virtual debit card",
+    "f5Desc": "Pay directly with a card from your stablecoin balance"
   },
   "advantages": {
     "title": "Advantages",
-    "row1Heading": "Advantages of stablecoins",
-    "row1Subtext": "Stablecoin transactions are significantly faster and cheaper than traditional bank transfers, especially for cross-border operations.",
-    "row2Heading": "Non-custodial wallet",
-    "row2Subtext": "Non-custodial wallets give you full control over your funds. We have no access to them, and no one else can block, move, or hold them. They cannot be frozen by institutions, governments, or third parties. With our infrastructure, behind the scenes, you acquire such a wallet, controlled entirely through your email.",
+    "row1Heading": "Stablecoins",
+    "row1Subtext": "Stablecoin transactions are significantly faster and cheaper than traditional bank transfers, especially for cross-border operations. You can send and receive stable currencies to anywhere in the world, at any time.",
+    "row2Heading": "Onchain wallet",
+    "row2Subtext": "Onchain wallets give you full control over your funds. No one can block, move, or hold them. They cannot be frozen by institutions, governments, or third parties. With our infrastructure, behind the scenes, you acquire such a wallet, controlled entirely through your email.",
     "row3Heading": "Decentralized Finance",
     "row3Subtext": "Anyone with an internet connection can use decentralized finance without needing approval or a bank account, ensuring financial freedom. Traditional banking institutions are eliminated, reducing the risk of censorship and service disruption. You can generate returns through lending, staking, and providing liquidity."
   },
   "protocolsSection": {
-    "title": "Integrated protocols"
+    "title": "Protocols"
   },
   "imageSection": {
     "heading": "DeFi yield without the complexity, banks, or intermediaries."
   },
   "aboutCarousel": {
     "title": "How it works",
-    "card1Tag": "Easy Access",
-    "card1Title": "No technical knowledge needed",
-    "card1Desc": "You don't need to understand how digital wallets and private keys work. We offer an easy-to-use interface and registration with just an email address.",
-    "card2Tag": "Security",
-    "card2Title": "Full control over your assets",
-    "card2Desc": "We have no access to your funds. You are the only one who controls your wallet. All smart contracts are non-custodial.",
-    "card3Tag": "Yield",
-    "card3Title": "Curated protocols with high yield",
-    "card3Desc": "No need to research DeFi protocols yourself. We select the lowest-risk options with high liquidity and generate yield for you.",
-    "card4Tag": "Quick Purchase",
-    "card4Title": "Buy crypto in two clicks",
-    "card4Desc": "Buy cryptocurrency with a card, Apple Pay, Google Pay, or via SEPA bank transfer. You can also deposit crypto directly into your account."
+    "card1Tag": "Non-custodial wallet",
+    "card1Title": "Non-custodial wallet",
+    "card1Desc": "When you register for the first time with email, a non-custodial wallet is automatically created for you. You have full control to transfer it. We have no access to your funds.",
+    "card2Tag": "User interface",
+    "card2Title": "User interface",
+    "card2Desc": "We provide a service through infrastructure and a user interface that communicates with decentralized smart contracts onchain. Anyone can interact with the contracts directly as well.",
+    "card3Tag": "Decentralized finance",
+    "card3Title": "Decentralized finance",
+    "card3Desc": "Our service removes the barriers to decentralized finance. We provide access to participate in various protocols without needing technical knowledge.",
+    "card4Tag": "Quick purchase",
+    "card4Title": "Sponsored transactions",
+    "card4Desc": "We sponsor your transactions when you send stablecoins or use our decentralized finance hub. We simplify the process without compromising security."
   },
   "faq": {
     "title": "Questions?",
