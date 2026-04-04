@@ -354,6 +354,15 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 /* ═══════════════════════════════════════════════════════════════
+   FAQ Accordion — separated items with individual backgrounds
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Hide CDS Accordion dividers between items */
+.faq-accordion [class*="horizontal-"] {
+  display: none;
+}
+
+/* ═══════════════════════════════════════════════════════════════
    Focus-visible styles for keyboard navigation
    ═══════════════════════════════════════════════════════════════ */
 a:focus-visible,

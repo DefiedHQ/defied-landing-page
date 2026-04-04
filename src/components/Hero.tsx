@@ -38,13 +38,14 @@ export function InfoSection() {
         {t('faq.title')}
       </Text>
 
+      <div className="faq-accordion">
       <Accordion
         activeKey={activeKey}
         setActiveKey={handleToggle}
         style={{
-          background: 'rgb(247, 248, 249)',
-          borderRadius: '16px',
-          overflow: 'hidden',
+          display: 'flex',
+          flexDirection: 'column' as const,
+          gap: '8px',
         }}
       >
         {faqItems.map((item, i) => (
@@ -52,6 +53,11 @@ export function InfoSection() {
             key={i}
             itemKey={String(i)}
             title={item.question}
+            style={{
+              background: 'rgb(247, 248, 249)',
+              borderRadius: '16px',
+              overflow: 'hidden',
+            }}
           >
             <VStack>
               <Text font="label2" as="p" color="fgMuted">
@@ -61,6 +67,7 @@ export function InfoSection() {
           </AccordionItem>
         ))}
       </Accordion>
+      </div>
     </section>
   );
 }
