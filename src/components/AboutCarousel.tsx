@@ -8,7 +8,7 @@ import { useLanguage } from '@/context/LanguageContext';
 
 const CARD_ILLUSTRATIONS = [
   'selfCustody',
-  'secureStorage',
+  'decentralizedWebWeb3',
   'earnGrowth',
   'coinbaseCard',
 ] as const;
