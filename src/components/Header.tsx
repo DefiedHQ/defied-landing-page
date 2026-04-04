@@ -158,7 +158,7 @@ export function Header() {
                       style={{
                         background: 'none',
                         border: 'none',
-                        borderBottom: '1px solid rgba(0, 0, 0, 0.05)',
+                        borderBottom: 'none',
                         color: '#0A0B0D',
                         fontFamily: '-apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
                       }}
