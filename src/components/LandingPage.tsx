@@ -149,7 +149,7 @@ export function LandingPage() {
               <HeroSquare name="moneyDecentralized" scaleMultiplier={1.8} />
             </Box>
             <Box as="div" style={{ display: 'flex', flexDirection: 'column', gap: '24px', flex: 1 }}>
-              <Text font="display2" as="h2" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 500, color: '#fff' }}>
+              <Text font="display2" as="h2" className="section-title" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 500, color: '#fff' }}>
                 {t('imageSection.heading')}
               </Text>
             </Box>

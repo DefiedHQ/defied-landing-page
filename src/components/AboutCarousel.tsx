@@ -38,7 +38,7 @@ export function AboutCarousel() {
   return (
     <VStack as="div" style={{ gap: '48px' }}>
       {/* Header */}
-      <Text font="display2" as="h2" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, maxWidth: '600px' }}>
+      <Text font="display2" as="h2" className="section-title" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, maxWidth: '600px' }}>
         {t('aboutCarousel.title')}
       </Text>
 
