@@ -9,7 +9,7 @@ import { useLanguage } from '@/context/LanguageContext';
 const CARD_ILLUSTRATIONS = [
   'selfCustody',
   'decentralizedWebWeb3',
-  'earnGrowth',
+  'retailUSDCRewards',
   'coinbaseCard',
 ] as const;
 
