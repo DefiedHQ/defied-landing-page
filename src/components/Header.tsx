@@ -146,7 +146,7 @@ export function Header() {
                 }}
               >
                 <div style={{ fontSize: '18px', fontWeight: 700, color: 'rgb(91, 97, 110)', marginBottom: '16px' }}>
-                  Language and region
+                  {t('nav.languageAndRegion')}
                 </div>
                 <div className="flex flex-col" style={{ margin: '0 -8px' }}>
                   {languages.map((l) => (
@@ -242,7 +242,7 @@ export function Header() {
           {/* Mobile language selector */}
           <div style={{ borderTop: '1px solid rgba(0,0,0,0.06)', marginTop: '4px', paddingTop: '8px' }}>
             <div style={{ fontSize: '16px', fontWeight: 500, color: '#0A0B0D', padding: '4px 1px 8px' }}>
-              Language and region
+              {t('nav.languageAndRegion')}
             </div>
             {languages.map((l) => (
               <button
