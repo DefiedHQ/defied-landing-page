@@ -115,7 +115,9 @@ export function LandingPage() {
           <Box
             as="div"
             style={{
-              width: '100%',
+              width: 'calc(100% + 32px)',
+              maxWidth: 'calc(100vw - 32px)',
+              margin: '0 auto',
               background: '#0052FF',
               borderRadius: '56px',
               padding: 'clamp(56px, 8vw, 100px) clamp(24px, 4vw, 80px)',
