@@ -91,7 +91,7 @@ export function Header() {
               className="header-tab"
               style={{ padding: '8px 16px', borderRadius: '100px', background: 'none', border: 'none', cursor: 'pointer', color: '#0A0B0D' }}
             >
-              <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 400 }}>{t('nav.howItWorks')}</Text>
+              <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 600 }}>{t('nav.howItWorks')}</Text>
             </button>
             <button
               type="button"
@@ -99,21 +99,21 @@ export function Header() {
               className="header-tab"
               style={{ padding: '8px 16px', borderRadius: '100px', background: 'none', border: 'none', cursor: 'pointer', color: '#0A0B0D' }}
             >
-              <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 400 }}>{t('nav.faq')}</Text>
+              <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 600 }}>{t('nav.faq')}</Text>
             </button>
             <Link
               href="/about"
               className={`header-tab${isActive(['/about']) ? ' header-tab-active' : ''}`}
               style={{ padding: '8px 16px', borderRadius: '100px', textDecoration: 'none', color: '#0A0B0D' }}
             >
-              <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 400 }}>{t('nav.about')}</Text>
+              <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 600 }}>{t('nav.about')}</Text>
             </Link>
             <Link
               href="/resources"
               className={`header-tab${isActive(['/resources']) ? ' header-tab-active' : ''}`}
               style={{ padding: '8px 16px', borderRadius: '100px', textDecoration: 'none', color: '#0A0B0D' }}
             >
-              <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 400 }}>{t('nav.resources')}</Text>
+              <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 600 }}>{t('nav.resources')}</Text>
             </Link>
           </nav>
         </HStack>
@@ -126,7 +126,7 @@ export function Header() {
               type="button"
               onClick={() => setLangDropdownOpen(!langDropdownOpen)}
               className="header-icon-btn"
-              style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', background: 'none', border: 'none', color: '#0A0B0D', width: '40px', height: '40px', cursor: 'pointer' }}
+              style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', background: 'rgb(237, 239, 242)', border: 'none', color: '#0A0B0D', width: '40px', height: '40px', cursor: 'pointer' }}
               aria-label="Language"
             >
               <Icon name="globe" size="m" color="fgPrimary" accessibilityLabel="Language" />
