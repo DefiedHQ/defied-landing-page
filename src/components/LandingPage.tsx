@@ -122,7 +122,7 @@ export function LandingPage() {
       {/* Section 3: Advantages */}
       <section className="section-padding" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
-          <Text font="display2" as="h2" className="section-title" display="block" textAlign="center" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, marginBottom: '56px' }}>
+          <Text font="display2" as="h2" className="section-title" display="block" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, marginBottom: '56px' }}>
             {t('advantages.title')}
           </Text>
           <div
