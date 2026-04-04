@@ -2,6 +2,8 @@
 
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
+import { Text } from '@coinbase/cds-web/typography/Text';
+import { Tag } from '@coinbase/cds-web/tag/Tag';
 import { useArticles } from '@/data/useArticles';
 import { useLanguage } from '@/context/LanguageContext';
 
@@ -24,10 +26,8 @@ export function ArticlePage() {
   if (!article) {
     return (
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '64px 16px', textAlign: 'center', minHeight: '100vh' }}>
-        <h1 style={{ fontSize: '24px', fontWeight: 400, color: '#0A0B0D' }}>
-          {t('resources.notFound')}
-        </h1>
-        <Link href="/resources" style={{ color: '#0052FF', marginTop: '16px', display: 'inline-block' }}>
+        <Text font="title2" as="h1">{t('resources.notFound')}</Text>
+        <Link href="/resources" style={{ color: '#0052FF', marginTop: '16px', display: 'inline-block', textDecoration: 'none' }}>
           &larr; {t('resources.backToResources')}
         </Link>
       </div>
@@ -42,34 +42,25 @@ export function ArticlePage() {
     <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 16px', paddingBottom: '64px', width: '100%' }}>
 
         {/* Category badge */}
-        <span
-          style={{
-            display: 'inline-block',
-            padding: '4px 12px',
-            marginBottom: '16px',
-            marginTop: 'clamp(48px, 10vw, 120px)',
-            borderRadius: '32px',
-            background: '#0F0F660D',
-            color: '#6b7280',
-            fontSize: '16px',
-            fontWeight: 450,
-            lineHeight: '24px',
-          }}
-        >
-          {article.category}
-        </span>
+        <div style={{ marginTop: 'clamp(48px, 10vw, 120px)', marginBottom: '16px' }}>
+          <Tag colorScheme="gray">{article.category}</Tag>
+        </div>
 
         {/* Title */}
-        <h1 style={{ fontSize: 'clamp(2rem, 5vw, 5rem)', fontWeight: 400, lineHeight: 1, maxWidth: '800px', color: '#0A0B0D', marginBottom: '24px', marginTop: 0 }}>
+        <Text font="display1" as="h1" style={{ fontSize: 'clamp(2rem, 5vw, 5rem)', fontWeight: 400, lineHeight: 1, maxWidth: '800px', marginBottom: '24px' }}>
           {article.title}
-        </h1>
+        </Text>
 
         {/* Meta */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '32px' }}>
           <img src="/defied_squared_logo_blue.svg" width={40} height={40} alt="Defied" />
-          <div style={{ fontSize: '14px', color: '#9ca3af' }}>
-            <div>{t('common.by')} <span style={{ color: '#6b7280' }}>Defied</span></div>
-            <div>{formatDate(article.date)} &middot; {article.readTime} {t('common.minRead')}</div>
+          <div>
+            <Text font="caption" as="div" color="fgMuted">
+              {t('common.by')} <Text font="caption" as="span" style={{ color: '#6b7280' }}>Defied</Text>
+            </Text>
+            <Text font="caption" as="div" color="fgMuted">
+              {formatDate(article.date)} &middot; {article.readTime} {t('common.minRead')}
+            </Text>
           </div>
         </div>
 
@@ -84,21 +75,18 @@ export function ArticlePage() {
             {/* Article body */}
             <div>
               {/* Lead paragraph */}
-              <p style={{ fontSize: '18px', fontWeight: 400, lineHeight: '28px', marginBottom: '24px', fontStyle: 'italic', color: '#6b7280' }}>
+              <Text font="body" as="p" color="fgMuted" style={{ fontSize: '18px', lineHeight: '28px', marginBottom: '24px', fontStyle: 'italic' }}>
                 {article.excerpt}
-              </p>
+              </Text>
 
               {article.sections.map((section: { heading: string; body: string }, i: number) => (
                 <div key={i} style={{ marginBottom: '32px' }}>
-                  <h2
-                    id={`section-${i}`}
-                    style={{ fontSize: '32px', fontWeight: 700, lineHeight: '100%', marginBottom: '24px', color: '#0A0B0D' }}
-                  >
+                  <Text font="title2" as="h2" id={`section-${i}`} style={{ marginBottom: '24px' }}>
                     {section.heading}
-                  </h2>
-                  <p style={{ fontSize: '18px', fontWeight: 400, lineHeight: '28px', color: '#5B616E' }}>
+                  </Text>
+                  <Text font="body" as="p" color="fgMuted" style={{ fontSize: '18px', lineHeight: '28px' }}>
                     {section.body}
-                  </p>
+                  </Text>
                 </div>
               ))}
             </div>
@@ -108,9 +96,9 @@ export function ArticlePage() {
           <aside>
             {/* Share */}
             <div style={{ marginBottom: '40px' }}>
-              <h3 style={{ fontSize: '24px', fontWeight: 500, lineHeight: '100%', color: '#0A0B0D', marginBottom: '24px' }}>
+              <Text font="title3" as="h3" style={{ marginBottom: '24px' }}>
                 {t('resources.shareArticle')}
-              </h3>
+              </Text>
               <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
                 <a
                   href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(article.title)}`}
@@ -161,9 +149,6 @@ export function ArticlePage() {
                   className="hover-color-blue"
                   style={{
                     display: 'block',
-                    fontSize: '18px',
-                    fontWeight: 600,
-                    color: '#374151',
                     textDecoration: 'none',
                     borderLeft: '3px solid',
                     borderColor: i === 0 ? '#0052FF' : '#e5e7eb',
@@ -172,16 +157,18 @@ export function ArticlePage() {
                     paddingBottom: '8px',
                   }}
                 >
-                  {section.heading}
+                  <Text font="headline" as="span" style={{ color: '#374151' }}>
+                    {section.heading}
+                  </Text>
                 </a>
               ))}
             </div>
 
             {/* Recent Posts */}
             <div>
-              <h3 style={{ fontSize: '24px', fontWeight: 500, lineHeight: '100%', color: '#0A0B0D', marginBottom: '24px' }}>
+              <Text font="title3" as="h3" style={{ marginBottom: '24px' }}>
                 {t('resources.recentPosts')}
-              </h3>
+              </Text>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
                 {recentArticles.map((a) => (
                   <Link
@@ -193,13 +180,11 @@ export function ArticlePage() {
                     <div style={{ height: '190px', maxWidth: '100%', overflow: 'hidden', marginBottom: '12px', borderRadius: '56px' }}>
                       <img src="/article-cover.svg" alt={a.title} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                     </div>
-                    <h4
+                    <Text
+                      font="headline"
+                      as="h4"
                       className="card-group-blue"
                       style={{
-                        fontSize: '18px',
-                        fontWeight: 600,
-                        color: '#0A0B0D',
-                        lineHeight: '28px',
                         marginBottom: '8px',
                         display: '-webkit-box',
                         WebkitLineClamp: 2,
@@ -209,25 +194,13 @@ export function ArticlePage() {
                       }}
                     >
                       {a.title}
-                    </h4>
-                    <p
-                      style={{
-                        fontSize: '18px',
-                        fontWeight: 400,
-                        color: '#5B616E',
-                        lineHeight: '28px',
-                        marginBottom: '8px',
-                        display: '-webkit-box',
-                        WebkitLineClamp: 1,
-                        WebkitBoxOrient: 'vertical',
-                        overflow: 'hidden',
-                      }}
-                    >
+                    </Text>
+                    <Text font="body" as="p" color="fgMuted" style={{ marginBottom: '8px', display: '-webkit-box', WebkitLineClamp: 1, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
                       {a.excerpt}
-                    </p>
-                    <span style={{ fontSize: '14px', fontWeight: 400, color: '#9ca3af' }}>
+                    </Text>
+                    <Text font="caption" as="span" color="fgMuted">
                       {formatDate(a.date)} &middot; {a.readTime} {t('common.minRead')}
-                    </span>
+                    </Text>
                   </Link>
                 ))}
               </div>

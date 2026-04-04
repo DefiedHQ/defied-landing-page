@@ -2,6 +2,9 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { Text } from '@coinbase/cds-web/typography/Text';
+import { Tag } from '@coinbase/cds-web/tag/Tag';
+import { Chip } from '@coinbase/cds-web/chips/Chip';
 import { useArticles } from '@/data/useArticles';
 import { useLanguage } from '@/context/LanguageContext';
 
@@ -46,39 +49,25 @@ export function ResourcesPage() {
     <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 16px', paddingBottom: '64px', width: '100%' }}>
         {/* Hero */}
         <div style={{ marginBottom: '48px' }}>
-          <h1 style={{ fontSize: 'clamp(2rem, 6vw, 5rem)', fontWeight: 400, lineHeight: 1, maxWidth: '800px', color: '#0A0B0D', marginTop: 'clamp(48px, 10vw, 120px)', marginBottom: '16px' }}>
+          <Text font="display1" as="h1" style={{ fontSize: 'clamp(2rem, 6vw, 5rem)', fontWeight: 400, lineHeight: 1, maxWidth: '800px', marginTop: 'clamp(48px, 10vw, 120px)', marginBottom: '16px' }}>
             {t('resources.heroTitle')}
-          </h1>
-          <p style={{ color: '#5B616E', lineHeight: '28px', maxWidth: '640px', fontWeight: 400, fontSize: '18px' }}>
+          </Text>
+          <Text font="body" as="p" color="fgMuted" style={{ maxWidth: '640px', fontSize: '18px', lineHeight: '28px' }}>
             {t('resources.heroSubtitle')}
-          </p>
+          </Text>
         </div>
 
         {/* Category filters */}
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '40px' }}>
           {categories.map((cat) => (
-            <button
+            <Chip
               key={cat}
-              type="button"
               onClick={() => setActiveFilter(cat)}
-              style={{
-                alignItems: 'center',
-                border: 'none',
-                borderRadius: '50px',
-                cursor: 'pointer',
-                fontSize: '16px',
-                fontWeight: 450,
-                lineHeight: '24px',
-                padding: '16px 24px',
-                transition: 'all .2s ease',
-                whiteSpace: 'nowrap' as const,
-                background: currentFilter === cat ? '#0052FF' : 'rgb(247, 248, 249)',
-                color: currentFilter === cat ? '#fff' : '#374151',
-              }}
+              invertColorScheme={currentFilter === cat}
+              style={{ padding: '16px 24px' }}
             >
-              {cat}
-              <span style={{ opacity: 0.7, marginLeft: '6px' }}>{countByCategory(cat)}</span>
-            </button>
+              {cat} <Text as="span" font="body" style={{ opacity: 0.7, marginLeft: '6px' }}>{countByCategory(cat)}</Text>
+            </Chip>
           ))}
         </div>
 
@@ -97,55 +86,40 @@ export function ResourcesPage() {
                     <img src="/article-cover.svg" alt={article.title} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
                   <div style={{ paddingTop: '20px' }}>
-                    <span
-                      style={{
-                        display: 'inline-block',
-                        padding: '4px 12px',
-                        marginBottom: '12px',
-                        borderRadius: '32px',
-                        background: '#0F0F660D',
-                        color: '#6b7280',
-                        fontSize: '16px',
-                        fontWeight: 450,
-                        lineHeight: '24px',
-                      }}
-                    >
-                      {article.category}
-                    </span>
-                    <h2
+                    <div style={{ marginBottom: '12px' }}>
+                      <Tag colorScheme="gray">{article.category}</Tag>
+                    </div>
+                    <Text
+                      font="title3"
+                      as="h2"
                       className="card-group-underline"
                       style={{
                         WebkitLineClamp: 2,
                         WebkitBoxOrient: 'vertical',
                         display: '-webkit-box',
                         overflow: 'hidden',
-                        fontSize: '24px',
-                        fontWeight: 500,
-                        lineHeight: '32px',
-                        color: '#0A0B0D',
                         margin: '0 0 8px',
                       }}
                     >
                       {article.title}
-                    </h2>
-                    <p
+                    </Text>
+                    <Text
+                      font="body"
+                      as="p"
+                      color="fgMuted"
                       style={{
                         WebkitLineClamp: 3,
                         WebkitBoxOrient: 'vertical',
                         display: '-webkit-box',
                         overflow: 'hidden',
-                        fontSize: '18px',
-                        fontWeight: 400,
-                        lineHeight: '28px',
-                        color: '#6b7280',
                         margin: 0,
                       }}
                     >
                       {article.excerpt}
-                    </p>
-                    <div style={{ marginTop: '16px', fontSize: '14px', fontWeight: 400, lineHeight: '20px', color: '#9ca3af' }}>
+                    </Text>
+                    <Text font="caption" as="div" color="fgMuted" style={{ marginTop: '16px' }}>
                       {formatDate(article.date)} &middot; {article.readTime} {t('common.minRead')}
-                    </div>
+                    </Text>
                   </div>
                 </div>
               </Link>
@@ -168,55 +142,40 @@ export function ResourcesPage() {
                     <img src="/article-cover.svg" alt={article.title} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
                   <div style={{ paddingTop: '16px' }}>
-                    <span
-                      style={{
-                        display: 'inline-block',
-                        padding: '4px 12px',
-                        marginBottom: '8px',
-                        borderRadius: '32px',
-                        background: '#0F0F660D',
-                        color: '#6b7280',
-                        fontSize: '16px',
-                        fontWeight: 450,
-                        lineHeight: '24px',
-                      }}
-                    >
-                      {article.category}
-                    </span>
-                    <h3
+                    <div style={{ marginBottom: '8px' }}>
+                      <Tag colorScheme="gray">{article.category}</Tag>
+                    </div>
+                    <Text
+                      font="title3"
+                      as="h3"
                       className="card-group-underline"
                       style={{
                         WebkitLineClamp: 2,
                         WebkitBoxOrient: 'vertical',
                         display: '-webkit-box',
                         overflow: 'hidden',
-                        fontSize: '24px',
-                        fontWeight: 500,
-                        lineHeight: '32px',
-                        color: '#0A0B0D',
                         margin: '0 0 8px',
                       }}
                     >
                       {article.title}
-                    </h3>
-                    <p
+                    </Text>
+                    <Text
+                      font="body"
+                      as="p"
+                      color="fgMuted"
                       style={{
                         WebkitLineClamp: 3,
                         WebkitBoxOrient: 'vertical',
                         display: '-webkit-box',
                         overflow: 'hidden',
-                        fontSize: '18px',
-                        fontWeight: 400,
-                        lineHeight: '28px',
-                        color: '#6b7280',
                         margin: 0,
                       }}
                     >
                       {article.excerpt}
-                    </p>
-                    <div style={{ marginTop: '12px', fontSize: '14px', fontWeight: 400, lineHeight: '20px', color: '#9ca3af' }}>
+                    </Text>
+                    <Text font="caption" as="div" color="fgMuted" style={{ marginTop: '12px' }}>
                       {formatDate(article.date)} &middot; {article.readTime} {t('common.minRead')}
-                    </div>
+                    </Text>
                   </div>
                 </div>
               </Link>
