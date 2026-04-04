@@ -110,13 +110,6 @@ export function Header() {
               <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 600 }}>{t('nav.faq')}</Text>
             </button>
             <Link
-              href="/about"
-              className={`header-tab${isActive(['/about']) ? ' header-tab-active' : ''}`}
-              style={{ padding: '8px 16px', borderRadius: '100px', textDecoration: 'none', color: '#0A0B0D' }}
-            >
-              <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 600 }}>{t('nav.about')}</Text>
-            </Link>
-            <Link
               href="/resources"
               className={`header-tab${isActive(['/resources']) ? ' header-tab-active' : ''}`}
               style={{ padding: '8px 16px', borderRadius: '100px', textDecoration: 'none', color: '#0A0B0D' }}
@@ -250,7 +243,6 @@ export function Header() {
             <Text font="body" as="span">{t('nav.faq')}</Text>
           </button>
           {[
-            { href: '/about', label: t('nav.about'), paths: ['/about'] },
             { href: '/resources', label: t('nav.resources'), paths: ['/resources'] },
           ].map((item) => (
             <Link

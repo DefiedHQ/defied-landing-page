@@ -80,7 +80,9 @@
     "q9": "Is there risk in using Defied",
     "a9": "The risks fall into two categories. If someone gains access to your email, they could gain access to your digital wallet, as with any other fintech service. That's why we recommend enabling two-factor authentication to prevent such risks. Decentralized finance also carries the risk of hacking attacks. Defied only features thoroughly tested protocols in its interface that have never been hacked, but we cannot guarantee this won't happen.",
     "q10": "Are my funds protected by the Deposit Guarantee Fund",
-    "a10": "No. Defied is not a financial institution but solely a service for accessing decentralized finance. Therefore, if your funds lose value in the event that the stablecoin depreciates, they cannot be restored to you."
+    "a10": "No. Defied is not a financial institution but solely a service for accessing decentralized finance. Therefore, if your funds lose value in the event that the stablecoin depreciates, they cannot be restored to you.",
+    "q11": "What platforms does Defied support",
+    "a11": "Currently, Defied is available as a web application that can be used on both laptops and mobile phones. We are planning to release a mobile version for iOS and Android soon."
   },
   "earn": {
     "apr": "APR",
