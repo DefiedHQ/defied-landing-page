@@ -120,8 +120,8 @@ export function Header() {
             <button
               type="button"
               onClick={() => setLangDropdownOpen(!langDropdownOpen)}
-              className="flex items-center justify-center p-2 hover:bg-[#0F0F660D] transition-colors"
-              style={{ borderRadius: '50%', background: 'none', border: 'none', color: '#0A0B0D' }}
+              className="flex items-center justify-center hover:opacity-70 transition-opacity"
+              style={{ borderRadius: '50%', background: 'rgb(237, 239, 242)', border: 'none', color: '#0A0B0D', width: '40px', height: '40px' }}
               aria-label="Language"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -134,44 +134,47 @@ export function Header() {
               <div
                 style={{
                   position: 'absolute',
-                  top: 'calc(100% + 8px)',
+                  top: 'calc(100% + 12px)',
                   right: 0,
                   background: '#FFFFFF',
-                  borderRadius: '12px',
-                  boxShadow: '0 4px 24px rgba(0, 0, 0, 0.12)',
-                  border: '1px solid rgba(0, 0, 0, 0.08)',
-                  padding: '16px 0 8px',
-                  minWidth: '240px',
+                  borderRadius: '24px',
+                  boxShadow: '0 2px 16px rgba(0, 0, 0, 0.08)',
+                  border: '1px solid rgba(0, 0, 0, 0.05)',
+                  padding: '24px',
+                  minWidth: '280px',
                   zIndex: 200,
                 }}
               >
-                <div style={{ padding: '0 16px 12px', fontSize: '16px', fontWeight: 500, color: '#0A0B0D' }}>
+                <div style={{ fontSize: '18px', fontWeight: 700, color: '#0A0B0D', marginBottom: '16px' }}>
                   Language and region
                 </div>
-                {languages.map((l) => (
-                  <button
-                    key={l.code}
-                    type="button"
-                    onClick={() => { setLang(l.code); setLangDropdownOpen(false); }}
-                    className="w-full flex items-center justify-between px-4 py-3 hover:bg-[#0F0F660D] transition-colors text-left"
-                    style={{
-                      background: 'none',
-                      border: 'none',
-                      color: '#0A0B0D',
-                      fontFamily: '-apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
-                    }}
-                  >
-                    <div>
-                      <div style={{ fontSize: '15px', fontWeight: 500, lineHeight: '20px' }}>{l.label}</div>
-                      <div style={{ fontSize: '13px', fontWeight: 400, color: '#5B616E', lineHeight: '18px' }}>{l.region}</div>
-                    </div>
-                    {lang === l.code && (
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0052FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="20 6 9 17 4 12" />
-                      </svg>
-                    )}
-                  </button>
-                ))}
+                <div className="flex flex-col">
+                  {languages.map((l) => (
+                    <button
+                      key={l.code}
+                      type="button"
+                      onClick={() => { setLang(l.code); setLangDropdownOpen(false); }}
+                      className="w-full flex items-center justify-between py-4 hover:opacity-70 transition-opacity text-left"
+                      style={{
+                        background: 'none',
+                        border: 'none',
+                        borderBottom: '1px solid rgba(0, 0, 0, 0.05)',
+                        color: '#0A0B0D',
+                        fontFamily: '-apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+                      }}
+                    >
+                      <div>
+                        <div style={{ fontSize: '16px', fontWeight: 700, lineHeight: '22px' }}>{l.label}</div>
+                        <div style={{ fontSize: '14px', fontWeight: 400, color: '#8A919E', lineHeight: '20px' }}>{l.region}</div>
+                      </div>
+                      {lang === l.code && (
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#05B169" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                      )}
+                    </button>
+                  ))}
+                </div>
               </div>
             )}
           </div>
