@@ -354,6 +354,21 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 /* ═══════════════════════════════════════════════════════════════
+   Blue promo card — col → row at tablet
+   ═══════════════════════════════════════════════════════════════ */
+.promo-card-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+@media (min-width: 768px) {
+  .promo-card-layout {
+    flex-direction: row;
+    gap: 48px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
    FAQ Accordion — separated items with individual backgrounds
    ═══════════════════════════════════════════════════════════════ */
 
