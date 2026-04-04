@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: 'Risks | Defied',
     description:
       'Learn about the risks associated with DeFi protocols and cryptocurrencies.',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Defied – Risks' }],
+    images: [{ url: '/og-image.svg', width: 1200, height: 630, alt: 'Defied – Risks' }],
   },
   alternates: {
     canonical: 'https://defied.io/risks',

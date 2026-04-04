@@ -114,8 +114,7 @@ export function LandingPage() {
       {/* Section 2: About Grid */}
       <section
         id="how-it-works"
-        className="section-padding"
-        style={{ paddingTop: '100px', paddingBottom: '100px' }}
+        className="section-padding section-vertical-padding"
       >
         <Box as="div" style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
           <AboutCarousel />
@@ -123,7 +122,7 @@ export function LandingPage() {
       </section>
 
       {/* Section 3: Advantages */}
-      <section id="advantages" className="section-padding" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
+      <section id="advantages" className="section-padding section-vertical-padding">
         <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
           <Text font="display2" as="h2" className="section-title" display="block" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, marginBottom: '56px' }}>
             {t('advantages.title')}
@@ -197,7 +196,7 @@ export function LandingPage() {
       </section>
 
       {/* Section: CTA */}
-      <section className="section-padding" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
+      <section className="section-padding section-vertical-padding">
         <div
           className="promo-card-layout"
           style={{
@@ -207,7 +206,7 @@ export function LandingPage() {
             alignItems: 'center',
           }}
         >
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', flex: 1 }}>
+          <div className="cta-text-column" style={{ display: 'flex', flexDirection: 'column', gap: '16px', flex: 1 }}>
             <Text font="display1" as="h2" className="title-tight-lh" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 500 }}>
               {t('hero.ctaMain')}
             </Text>
@@ -239,12 +238,12 @@ export function LandingPage() {
       </section>
 
       {/* Section 4: Protocols */}
-      <section className="section-padding" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
+      <section className="section-padding section-vertical-padding">
         <ProtocolsSection />
       </section>
 
       {/* Section: Our Mission */}
-      <section className="section-padding" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
+      <section className="section-padding section-vertical-padding">
         <div
           className="promo-card-layout"
           style={{
@@ -274,8 +273,7 @@ export function LandingPage() {
       {/* Section 5: FAQ */}
       <section
         id="faq"
-        className="section-padding"
-        style={{ paddingTop: '100px', paddingBottom: '100px' }}
+        className="section-padding section-vertical-padding"
       >
         <InfoSection />
       </section>

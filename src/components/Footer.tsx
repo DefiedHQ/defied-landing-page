@@ -60,7 +60,6 @@ export function Footer() {
             <VStack as="div" style={{ gap: '0px' }}>
               <Text font="headline" as="h4" style={{ marginBottom: '16px' }}>{t('footer.company')}</Text>
               <VStack as="ul" style={{ gap: '10px', listStyle: 'none', padding: 0, margin: 0 }}>
-                <li><Link href="/about" className="hover-fade-70" style={{ textDecoration: 'none' }}><Text font="label2" as="span" color="fgMuted">{t('footer.about')}</Text></Link></li>
                 <li><Link href="/terms" className="hover-fade-70" style={{ textDecoration: 'none' }}><Text font="label2" as="span" color="fgMuted">{t('footer.terms')}</Text></Link></li>
                 <li><Link href="/privacy" className="hover-fade-70" style={{ textDecoration: 'none' }}><Text font="label2" as="span" color="fgMuted">{t('footer.privacy')}</Text></Link></li>
               </VStack>

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: 'Defied | Дигитален стейбълкойн портфейл за всеки',
     description:
       'Управлявай парите си като използваш най-новата технология - стейбълкойните. Изпращай, получавай и обменяй за секунди.',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Defied' }], // TODO: Replace with actual OG image
+    images: [{ url: '/og-image.svg', width: 1200, height: 630, alt: 'Defied' }], // TODO: Replace with actual OG image
   },
   alternates: {
     canonical: 'https://defied.io',
