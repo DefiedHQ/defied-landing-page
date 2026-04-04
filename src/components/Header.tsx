@@ -148,7 +148,7 @@ export function Header() {
                   flexDirection: 'column',
                 }}
               >
-                <Text font="label1" as="div" color="fgMuted" style={{ marginBottom: '16px' }}>
+                <Text font="label1" as="div" color="fgMuted" style={{ marginBottom: '16px', fontSize: '16px' }}>
                   {t('nav.languageAndRegion')}
                 </Text>
                 <VStack as="div" style={{ margin: '0 -8px', gap: '0px' }}>
@@ -173,9 +173,9 @@ export function Header() {
                       onMouseEnter={(e) => { e.currentTarget.style.background = 'rgb(247, 247, 247)'; }}
                       onMouseLeave={(e) => { e.currentTarget.style.background = 'none'; }}
                     >
-                      <div>
-                        <Text font="headline" as="div">{l.label}</Text>
-                        <Text font="body" as="div" color="fgMuted">{l.region}</Text>
+                      <div style={{ display: 'flex', flexDirection: 'column' }}>
+                        <Text font="headline" as="span" display="block">{l.label}</Text>
+                        <Text font="body" as="span" display="block" color="fgMuted">{l.region}</Text>
                       </div>
                       {lang === l.code && (
                         <Icon name="checkmark" size="s" dangerouslySetColor="#05B169" accessibilityLabel="Selected" />
