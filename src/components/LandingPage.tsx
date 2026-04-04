@@ -147,10 +147,28 @@ export function LandingPage() {
               </Text>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Section 4: Protocols */}
+          <div
+            className="promo-card-layout"
+            style={{
+              background: '#0052FF',
+              borderRadius: '56px',
+              padding: 'clamp(40px, 6vw, 80px)',
+              alignItems: 'center',
+              marginTop: '24px',
+            }}
+          >
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', flex: 1 }}>
+              <Text font="display2" as="h3" className="title-tight-lh" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', fontWeight: 500, color: '#fff' }}>
+                {t('advantages.row2Heading')}
+              </Text>
+              <Text font="body" as="p" style={{ fontSize: '18px', lineHeight: '28px', color: 'rgba(255, 255, 255, 0.7)' }}>
+                {t('advantages.row2Subtext')}
+              </Text>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 1 }}>
+              <HeroSquare name="walletSecurity" scaleMultiplier={1.8} />
+            </div>
+          </div>
       <section className="section-padding" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
         <ProtocolsSection />
       </section>

@@ -30,7 +30,9 @@
   "advantages": {
     "title": "Advantages",
     "row1Heading": "Advantages of stablecoins",
-    "row1Subtext": "Stablecoin transactions are significantly faster and cheaper than traditional bank transfers, especially for cross-border operations."
+    "row1Subtext": "Stablecoin transactions are significantly faster and cheaper than traditional bank transfers, especially for cross-border operations.",
+    "row2Heading": "Non-custodial wallet",
+    "row2Subtext": "Non-custodial wallets give you full control over your funds. We have no access to them, and no one else can block, move, or hold them. They cannot be frozen by institutions, governments, or third parties. With our infrastructure, behind the scenes, you acquire such a wallet, controlled entirely through your email."
   },
   "protocolsSection": {
     "title": "Integrated protocols"
