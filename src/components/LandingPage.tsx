@@ -48,12 +48,7 @@ export function LandingPage() {
             paddingTop: 'clamp(64px, 10vw, 128px)',
           }}
         >
-          {/* Hero illustration */}
-          <Box as="div" style={{ display: 'flex', justifyContent: 'center' }}>
-            <HeroSquare name="instoOnChain" scaleMultiplier={2.5} />
-          </Box>
-
-          <Text font="display1" as="h1" style={{ fontSize: 'clamp(2.5rem, 6vw, 4rem)', fontWeight: 500, letterSpacing: '-0.02em', maxWidth: '900px', textAlign: 'center', marginTop: '40px' }}>
+          <Text font="display1" as="h1" style={{ fontSize: 'clamp(2.5rem, 6vw, 4rem)', fontWeight: 500, letterSpacing: '-0.02em', maxWidth: '900px', textAlign: 'center' }}>
             {t('hero.title')}
           </Text>
           <Text
