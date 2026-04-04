@@ -44,21 +44,27 @@
 
 body {
   margin: 0;
-  font-family: var(--defaultFont-sans, 'Inter', sans-serif);
+  font-family: var(--defaultFont-sans, 'Aeonik Pro', 'Inter', sans-serif);
 }
 
-/* Override CDS title font families with Aeonik Pro.
+/* Override CDS font families with Aeonik Pro site-wide.
    CDS ThemeProvider sets --fontFamily-* as inline styles, so !important is
    needed to beat the inline specificity. */
 .cds-default {
-  --fontFamily-display1: 'Aeonik Pro', var(--defaultFont-sans, 'Inter', sans-serif) !important;
-  --fontFamily-display2: 'Aeonik Pro', var(--defaultFont-sans, 'Inter', sans-serif) !important;
-  --fontFamily-display3: 'Aeonik Pro', var(--defaultFont-sans, 'Inter', sans-serif) !important;
-  --fontFamily-title1: 'Aeonik Pro', var(--defaultFont-sans, 'Inter', sans-serif) !important;
-  --fontFamily-title2: 'Aeonik Pro', var(--defaultFont-sans, 'Inter', sans-serif) !important;
-  --fontFamily-title3: 'Aeonik Pro', var(--defaultFont-sans, 'Inter', sans-serif) !important;
-  --fontFamily-title4: 'Aeonik Pro', var(--defaultFont-sans, 'Inter', sans-serif) !important;
-  --fontFamily-headline: 'Aeonik Pro', var(--defaultFont-sans, 'Inter', sans-serif) !important;
+  --defaultFont-sans: 'Aeonik Pro', 'Inter', sans-serif !important;
+  --fontFamily-display1: 'Aeonik Pro', 'Inter', sans-serif !important;
+  --fontFamily-display2: 'Aeonik Pro', 'Inter', sans-serif !important;
+  --fontFamily-display3: 'Aeonik Pro', 'Inter', sans-serif !important;
+  --fontFamily-title1: 'Aeonik Pro', 'Inter', sans-serif !important;
+  --fontFamily-title2: 'Aeonik Pro', 'Inter', sans-serif !important;
+  --fontFamily-title3: 'Aeonik Pro', 'Inter', sans-serif !important;
+  --fontFamily-title4: 'Aeonik Pro', 'Inter', sans-serif !important;
+  --fontFamily-headline: 'Aeonik Pro', 'Inter', sans-serif !important;
+  --fontFamily-body: 'Aeonik Pro', 'Inter', sans-serif !important;
+  --fontFamily-label1: 'Aeonik Pro', 'Inter', sans-serif !important;
+  --fontFamily-label2: 'Aeonik Pro', 'Inter', sans-serif !important;
+  --fontFamily-caption: 'Aeonik Pro', 'Inter', sans-serif !important;
+  --fontFamily-legal: 'Aeonik Pro', 'Inter', sans-serif !important;
 }
 
 img,
