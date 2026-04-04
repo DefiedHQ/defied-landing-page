@@ -45,7 +45,7 @@ export function InfoSection() {
         style={{
           display: 'flex',
           flexDirection: 'column' as const,
-          gap: '8px',
+          gap: '4px',
         }}
       >
         {faqItems.map((item, i) => (
@@ -60,7 +60,7 @@ export function InfoSection() {
             }}
           >
             <VStack>
-              <Text font="label2" as="p" color="fgMuted">
+              <Text font="label2" as="p" color="fgMuted" style={{ fontSize: '16px' }}>
                 {item.answer}
               </Text>
             </VStack>
