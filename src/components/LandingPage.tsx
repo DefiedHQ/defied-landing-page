@@ -44,7 +44,13 @@ export function LandingPage() {
     if (hash) {
       setTimeout(() => {
         const el = document.getElementById(hash);
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
+        const container = document.querySelector('.landing-scroll-container');
+        if (el && container) {
+          const elRect = el.getBoundingClientRect();
+          const containerRect = container.getBoundingClientRect();
+          const offset = elRect.top - containerRect.top + container.scrollTop;
+          container.scrollTo({ top: offset, behavior: 'smooth' });
+        }
       }, 100);
     }
   }, []);
@@ -163,8 +169,8 @@ export function LandingPage() {
                     transition={{ duration: 0.5, delay: i * 0.1, ease: 'easeOut' }}
                     style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
                   >
-                    <div style={{ width: 120, height: 120, overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <HeroSquare name={feature.name} scaleMultiplier={0.8} />
+                    <div style={{ width: 160, height: 160, overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <HeroSquare name={feature.name} scaleMultiplier={1.1} />
                     </div>
                     <Text font="headline" as="h3" style={{ fontWeight: 600, marginTop: '16px', color: '#FFFFFF' }}>{feature.title}</Text>
                     <Text font="body" as="p" style={{ maxWidth: '240px', marginTop: '8px', textAlign: 'center', color: 'rgba(255, 255, 255, 0.7)', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{feature.desc}</Text>
@@ -203,7 +209,7 @@ export function LandingPage() {
               }}
             >
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 1 }}>
-                <HeroSquare name="remittances" scaleMultiplier={1.8} />
+                <HeroSquare name="usdAndUsdc" scaleMultiplier={1.8} />
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', flex: 1 }}>
                 <Text font="display2" as="h3" className="title-tight-lh" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', fontWeight: 500 }}>
@@ -303,7 +309,7 @@ export function LandingPage() {
             </div>
           </m.div>
           <m.div {...slideInRight} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 1 }}>
-            <HeroSquare name="stayInControlSelfHostedWalletsStorage" scaleMultiplier={1.8} />
+            <HeroSquare name="cryptoPortfolioUsdc" scaleMultiplier={1.8} />
           </m.div>
         </div>
       </section>

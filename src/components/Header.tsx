@@ -31,14 +31,12 @@ export function Header() {
     setMobileMenuOpen(false);
     if (pathname === '/') {
       const el = document.getElementById(sectionId);
-      if (el) {
-        const container = document.querySelector('.landing-scroll-container');
-        if (container) {
-          const top = el.getBoundingClientRect().top - container.getBoundingClientRect().top + container.scrollTop;
-          container.scrollTo({ top, behavior: 'smooth' });
-        } else {
-          el.scrollIntoView({ behavior: 'smooth' });
-        }
+      const container = document.querySelector('.landing-scroll-container');
+      if (el && container) {
+        const elRect = el.getBoundingClientRect();
+        const containerRect = container.getBoundingClientRect();
+        const offset = elRect.top - containerRect.top + container.scrollTop;
+        container.scrollTo({ top: offset, behavior: 'smooth' });
       }
     } else {
       router.push(`/#${sectionId}`);
