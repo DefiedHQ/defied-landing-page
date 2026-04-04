@@ -51,15 +51,16 @@ export function LandingPage() {
           <Text font="display1" as="h1" className="title-tight-lh" style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', fontWeight: 500, letterSpacing: '-0.02em', textAlign: 'center' }}>
             {t('hero.title')}
           </Text>
-          <Text
-            font="body"
-            as="p"
-            color="fgMuted"
-            style={{ marginTop: '24px', maxWidth: '640px', fontSize: '18px', lineHeight: '28px', textAlign: 'center' }}
-          >
-            {t('hero.subtitle1')} {t('hero.subtitle2')} {t('hero.subtitle3')}
-          </Text>
-          <Box as="div" style={{ marginTop: '32px' }}>
+          <div style={{ marginTop: 'clamp(32px, 5vw, 64px)', marginBottom: 'clamp(32px, 5vw, 64px)', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <Text
+              font="body"
+              as="p"
+              color="fgMuted"
+              style={{ maxWidth: '640px', fontSize: '18px', lineHeight: '28px', textAlign: 'center' }}
+            >
+              {t('hero.subtitle1')} {t('hero.subtitle2')} {t('hero.subtitle3')}
+            </Text>
+            <Box as="div" style={{ marginTop: '32px' }}>
             <Button
               as="a"
               href="https://app.defied.bg"
@@ -77,12 +78,12 @@ export function LandingPage() {
               {t('hero.cta')}
             </Button>
           </Box>
+          </div>
 
           {/* Feature cards grid */}
           <Box
             as="div"
             style={{
-              marginTop: 'clamp(80px, 12vw, 160px)',
               width: 'calc(100% + 32px)',
               maxWidth: 'calc(100vw - 32px)',
               background: '#0052FF',
