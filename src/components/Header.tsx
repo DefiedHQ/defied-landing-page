@@ -67,6 +67,7 @@ export function Header() {
         <HStack as="div" style={{ flex: 1, alignItems: 'center', gap: '16px' }}>
           <Link href="/" className="hover-fade" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', textDecoration: 'none', flexShrink: 0 }}>
             <LogoMark size={48} />
+            <img src="/defied-logo-text-blue.svg" alt="" height={20} style={{ display: 'block' }} />
           </Link>
           <button
             ref={mobileToggleRef}
@@ -85,6 +86,14 @@ export function Header() {
           </button>
           {/* Nav tabs */}
           <nav className="hide-mobile-flex" style={{ alignItems: 'center', gap: '4px' }}>
+            <button
+              type="button"
+              onClick={() => scrollToSection('what-it-does')}
+              className="header-tab"
+              style={{ padding: '8px 16px', borderRadius: '100px', border: 'none', cursor: 'pointer', color: '#0A0B0D' }}
+            >
+              <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 600 }}>{t('nav.whatItDoes')}</Text>
+            </button>
             <button
               type="button"
               onClick={() => scrollToSection('how-it-works')}
@@ -221,6 +230,13 @@ export function Header() {
         }}
       >
         <VStack as="nav" style={{ gap: '4px', padding: '12px 16px 8px' }}>
+          <button
+            type="button"
+            onClick={() => scrollToSection('what-it-does')}
+            style={{ padding: '10px 4px', transition: 'color 0.2s ease', textAlign: 'left', background: 'none', border: 'none', color: '#0A0B0D', cursor: 'pointer' }}
+          >
+            <Text font="body" as="span">{t('nav.whatItDoes')}</Text>
+          </button>
           <button
             type="button"
             onClick={() => scrollToSection('how-it-works')}

@@ -8,11 +8,11 @@ import { Text } from '@coinbase/cds-web/typography/Text';
 import { useLanguage } from '@/context/LanguageContext';
 
 const protocols = [
-  { name: 'Aave', logo: '/Aave-Logo-purple.svg', width: 140, height: 140, mobileWidth: 70, mobileHeight: 70, href: 'https://aave.com', color: '#9391F7' },
-  { name: 'Compound', logo: '/Compound-Logo.svg', width: 140, height: 140, mobileWidth: 70, mobileHeight: 70, href: 'https://compound.finance', color: '#00D395' },
-  { name: 'Morpho', logo: '/Morpho-logo-horizontal-lightmode.svg', width: 180, height: 60, mobileWidth: 90, mobileHeight: 30, href: 'https://morpho.org', color: '#2470FF' },
-  { name: 'Lido', logo: '/lido-logo.svg', width: 160, height: 60, mobileWidth: 80, mobileHeight: 30, href: 'https://lido.fi', color: '#f89c90' },
-  { name: 'Yo', logo: '/yo_wordmark_black.svg', width: 128, height: 48, mobileWidth: 64, mobileHeight: 24, href: 'https://yo.xyz', color: '#D6FF34' },
+  { name: 'Aave', logo: '/Aave-Logo-purple.svg', width: 140, height: 140, mobileWidth: 70, mobileHeight: 70, color: '#9391F7' },
+  { name: 'Compound', logo: '/Compound-Logo.svg', width: 140, height: 140, mobileWidth: 70, mobileHeight: 70, color: '#00D395' },
+  { name: 'Morpho', logo: '/Morpho-logo-horizontal-lightmode.svg', width: 180, height: 60, mobileWidth: 90, mobileHeight: 30, color: '#2470FF' },
+  { name: 'Lido', logo: '/lido-logo.svg', width: 160, height: 60, mobileWidth: 80, mobileHeight: 30, color: '#f89c90' },
+  { name: 'Yo', logo: '/yo_wordmark_black.svg', width: 128, height: 48, mobileWidth: 64, mobileHeight: 24, color: '#D6FF34' },
 ];
 
 export function ProtocolsSection() {
@@ -58,18 +58,14 @@ export function ProtocolsSection() {
             const isHovered = hoveredIndex === i;
 
             return (
-              <a
+              <div
                 key={protocol.name}
-                href={protocol.href}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="protocol-card"
                 onMouseEnter={() => setHoveredIndex(i)}
                 onMouseLeave={() => setHoveredIndex(null)}
                 style={{
                   background: isHovered ? protocol.color : undefined,
                   transition: 'background 0.3s ease',
-                  textDecoration: 'none',
                 }}
               >
                 <Image
@@ -79,7 +75,7 @@ export function ProtocolsSection() {
                   height={isMobile ? protocol.mobileHeight : protocol.height}
                   style={{ filter: 'brightness(0)', display: 'block', objectFit: 'contain', height: 'auto' }}
                 />
-              </a>
+              </div>
             );
           })}
         </Box>

@@ -131,9 +131,12 @@ export function LandingPage() {
         </VStack>
       </section>
 
-      {/* Section: Features (Функционалности) */}
-      <section className="section-padding" style={{ paddingTop: 'clamp(100px, 12vw, 160px)' }}>
+      {/* Section: Features (Какво прави) */}
+      <section id="what-it-does" className="section-padding" style={{ paddingTop: 'clamp(100px, 12vw, 160px)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
+          <Text font="display2" as="h2" className="section-title" display="block" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, marginBottom: '56px' }}>
+            {t('features.sectionTitle')}
+          </Text>
           <m.div
             {...slideInUp}
             style={{
