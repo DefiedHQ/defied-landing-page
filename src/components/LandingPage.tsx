@@ -196,39 +196,44 @@ export function LandingPage() {
 
       {/* Section: CTA */}
       <section className="section-padding" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
-        <VStack
-          as="div"
+        <div
+          className="promo-card-layout"
           style={{
-            alignItems: 'center',
-            textAlign: 'center',
             maxWidth: '1200px',
             margin: '0 auto',
             width: '100%',
-            gap: '16px',
+            alignItems: 'center',
           }}
         >
-          <Text font="display1" as="h2" className="title-tight-lh" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 500, textAlign: 'center' }}>
-            {t('hero.ctaMain')}
-          </Text>
-          <Text font="body" as="p" color="fgMuted" style={{ fontSize: '18px', lineHeight: '28px', marginBottom: '16px', textAlign: 'center' }}>
-            {t('hero.subtitle1')} {t('hero.subtitle2')} {t('hero.subtitle3')}
-          </Text>
-          <Button
-            as="a"
-            href="https://app.defied.bg"
-            target="_blank"
-            rel="noopener noreferrer"
-            variant="secondary"
-            style={{
-              borderRadius: '56px',
-              height: '58px',
-              padding: '16px 32px',
-              minWidth: '200px',
-            }}
-          >
-            {t('hero.cta')}
-          </Button>
-        </VStack>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', flex: 1 }}>
+            <Text font="display1" as="h2" className="title-tight-lh" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 500 }}>
+              {t('hero.ctaMain')}
+            </Text>
+            <Text font="body" as="p" color="fgMuted" style={{ fontSize: '18px', lineHeight: '28px' }}>
+              {t('hero.subtitle1')} {t('hero.subtitle2')} {t('hero.subtitle3')}
+            </Text>
+            <div style={{ marginTop: '16px' }}>
+              <Button
+                as="a"
+                href="https://app.defied.bg"
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="secondary"
+                style={{
+                  borderRadius: '56px',
+                  height: '58px',
+                  padding: '16px 32px',
+                  minWidth: '200px',
+                }}
+              >
+                {t('hero.cta')}
+              </Button>
+            </div>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 1 }}>
+            <HeroSquare name="stayInControlSelfHostedWalletsStorage" scaleMultiplier={1.8} />
+          </div>
+        </div>
       </section>
 
       {/* Section 4: Protocols */}
