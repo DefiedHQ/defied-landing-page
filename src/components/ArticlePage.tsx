@@ -2,18 +2,21 @@
 
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
-import articles from '@/data/articles.json';
+import { useArticles } from '@/data/useArticles';
 import { useLanguage } from '@/context/LanguageContext';
-
-function formatDate(dateStr: string) {
-  const d = new Date(dateStr);
-  const months = ['Яну', 'Фев', 'Мар', 'Апр', 'Май', 'Юни', 'Юли', 'Авг', 'Сеп', 'Окт', 'Ное', 'Дек'];
-  return `${d.getFullYear()} ${months[d.getMonth()]} ${d.getDate()}`;
-}
 
 export function ArticlePage() {
   const params = useParams();
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
+  const articles = useArticles();
+
+  function formatDate(dateStr: string) {
+    const d = new Date(dateStr);
+    const months = lang === 'en'
+      ? ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+      : ['Яну', 'Фев', 'Мар', 'Апр', 'Май', 'Юни', 'Юли', 'Авг', 'Сеп', 'Окт', 'Ное', 'Дек'];
+    return `${d.getFullYear()} ${months[d.getMonth()]} ${d.getDate()}`;
+  }
   const slug = params.slug as string;
   const article = articles.find((a) => a.id === slug);
   const recentArticles = articles.filter((a) => a.id !== slug).slice(0, 3);
@@ -62,8 +65,8 @@ export function ArticlePage() {
         <div className="flex items-center gap-3 mb-8">
           <img src="/defied_squared_logo_blue.svg" width={40} height={40} alt="" />
           <div style={{ fontSize: '14px', color: '#9ca3af' }}>
-            <div>by <span style={{ color: '#6b7280' }}>Defied</span></div>
-            <div>{formatDate(article.date)} &middot; {article.readTime} мин четене</div>
+            <div>{lang === 'en' ? 'by' : 'от'} <span style={{ color: '#6b7280' }}>Defied</span></div>
+            <div>{formatDate(article.date)} &middot; {article.readTime} {lang === 'en' ? 'min read' : 'мин четене'}</div>
           </div>
         </div>
 
