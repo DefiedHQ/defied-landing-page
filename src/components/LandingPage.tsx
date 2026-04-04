@@ -267,8 +267,8 @@ export function LandingPage() {
             <Box as="div" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '300px', height: '300px' }}>
               <Lottie source={dappWallet} autoplay loop width="100%" height="100%" />
             </Box>
-            <Box as="div" style={{ display: 'flex', flexDirection: 'column', gap: '24px', flex: 1 }}>
-              <Text font="display2" as="h2" className="section-title" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 500, color: '#fff' }}>
+            <Box as="div" style={{ display: 'flex', flexDirection: 'column', gap: '24px', flex: 1, padding: 'clamp(16px, 3vw, 40px)' }}>
+              <Text font="display2" as="h2" className="section-title title-tight-lh" style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', fontWeight: 500, color: '#fff' }}>
                 {t('imageSection.heading')}
               </Text>
             </Box>
