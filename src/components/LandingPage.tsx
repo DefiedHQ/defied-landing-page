@@ -79,20 +79,31 @@ export function LandingPage() {
           </Box>
 
           {/* Feature cards grid */}
-          <div className="hero-features-grid-4" style={{ marginTop: 'clamp(120px, 16vw, 220px)', width: '100%' }}>
-            {[
-              { name: 'walletUi' as const, title: t('features.f1Title'), desc: t('features.f1Desc') },
-              { name: 'realToUSDC' as const, title: t('features.f2Title'), desc: t('features.f2Desc') },
-              { name: 'multipleAccountsWalletsForOneUser' as const, title: t('features.f4Title'), desc: t('features.f4Desc') },
-              { name: 'stayInControlSelfHostedWalletsStorage' as const, title: t('features.f5Title'), desc: t('features.f5Desc') },
-            ].map((feature) => (
-              <VStack key={feature.name} as="div" style={{ alignItems: 'center', textAlign: 'center', gap: '0px' }}>
-                <HeroSquare name={feature.name} scaleMultiplier={0.8} />
-                <Text font="headline" as="h3" style={{ fontWeight: 600, marginTop: '16px' }}>{feature.title}</Text>
-                <Text font="body" as="p" color="fgMuted" style={{ maxWidth: '240px', marginTop: '8px', textAlign: 'center' }}>{feature.desc}</Text>
-              </VStack>
-            ))}
-          </div>
+          <Box
+            as="div"
+            style={{
+              marginTop: 'clamp(120px, 16vw, 220px)',
+              width: '100%',
+              background: '#0052FF',
+              borderRadius: '56px',
+              padding: 'clamp(40px, 6vw, 80px) clamp(24px, 4vw, 56px)',
+            }}
+          >
+            <div className="hero-features-grid-4">
+              {[
+                { name: 'walletUi' as const, title: t('features.f1Title'), desc: t('features.f1Desc') },
+                { name: 'realToUSDC' as const, title: t('features.f2Title'), desc: t('features.f2Desc') },
+                { name: 'multipleAccountsWalletsForOneUser' as const, title: t('features.f4Title'), desc: t('features.f4Desc') },
+                { name: 'stayInControlSelfHostedWalletsStorage' as const, title: t('features.f5Title'), desc: t('features.f5Desc') },
+              ].map((feature) => (
+                <VStack key={feature.name} as="div" style={{ alignItems: 'center', textAlign: 'center', gap: '0px' }}>
+                  <HeroSquare name={feature.name} scaleMultiplier={0.8} />
+                  <Text font="headline" as="h3" style={{ fontWeight: 600, marginTop: '16px', color: '#FFFFFF' }}>{feature.title}</Text>
+                  <Text font="body" as="p" style={{ maxWidth: '240px', marginTop: '8px', textAlign: 'center', color: 'rgba(255, 255, 255, 0.7)' }}>{feature.desc}</Text>
+                </VStack>
+              ))}
+            </div>
+          </Box>
         </VStack>
       </section>
 
