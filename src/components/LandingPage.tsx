@@ -96,7 +96,10 @@ export function LandingPage() {
         >
           <Text font="display1" as="h1" className="title-tight-lh" style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', fontWeight: 500, letterSpacing: '-0.02em', textAlign: 'center' }}>
             {t('hero.titleBase')}{' '}
-            <span style={{ display: 'inline-block', position: 'relative', color: '#0052FF', minWidth: '1ch' }}>
+            <span style={{ display: 'inline-block', position: 'relative', color: '#0052FF', overflow: 'hidden' }}>
+              <span style={{ visibility: 'hidden' }}>
+                {words.reduce((a, b) => a.length >= b.length ? a : b)}
+              </span>
               <AnimatePresence mode="wait">
                 <m.span
                   key={words[wordIndex]}
@@ -104,7 +107,7 @@ export function LandingPage() {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -30 }}
                   transition={{ duration: 0.3 }}
-                  style={{ display: 'inline-block' }}
+                  style={{ position: 'absolute', left: 0, top: 0, display: 'inline-block' }}
                 >
                   {words[wordIndex]}
                 </m.span>
