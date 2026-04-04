@@ -20,7 +20,7 @@
     "ctaMain": "Take control of your money"
   },
   "features": {
-    "sectionTitle": "What it does",
+    "sectionTitle": "What it does?",
     "f1Title": "Send stablecoins",
     "f1Desc": "Send or receive stablecoins in seconds",
     "f2Title": "Exchange stablecoins",
@@ -49,7 +49,7 @@
     "heading": "We believe in everyone's right to access a transparent and secure financial system, without censorship."
   },
   "aboutCarousel": {
-    "title": "How it works",
+    "title": "How it works?",
     "card1Tag": "Non-custodial wallet",
     "card1Title": "Non-custodial wallet",
     "card1Desc": "When you register for the first time with email, a non-custodial wallet is automatically created for you. You have full control to transfer it. We have no access to your funds.",
