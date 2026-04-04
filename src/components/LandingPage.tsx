@@ -78,21 +78,32 @@ export function LandingPage() {
             </Button>
           </Box>
 
-          {/* Hero image */}
-          <Box as="div" style={{ maxWidth: '745px', width: '100%', marginTop: '48px' }}>
-            <img
-              src="/hero_app_white.png"
-              alt="DeFied App"
-              width={745}
-              height={745}
-              style={{
-                width: '100%',
-                maxWidth: '100%',
-                aspectRatio: '1 / 1',
-                borderRadius: '56px',
-                objectFit: 'cover',
-              }}
-            />
+          {/* Feature cards grid */}
+          <Box
+            as="div"
+            style={{
+              marginTop: 'clamp(80px, 12vw, 160px)',
+              width: 'calc(100% + 32px)',
+              maxWidth: 'calc(100vw - 32px)',
+              background: '#0052FF',
+              borderRadius: '56px',
+              padding: 'clamp(56px, 8vw, 100px) clamp(24px, 4vw, 80px)',
+            }}
+          >
+            <div className="hero-features-grid-4">
+              {[
+                { name: 'walletUi' as const, title: t('features.f1Title'), desc: t('features.f1Desc') },
+                { name: 'realToUSDC' as const, title: t('features.f2Title'), desc: t('features.f2Desc') },
+                { name: 'multipleAccountsWalletsForOneUser' as const, title: t('features.f4Title'), desc: t('features.f4Desc') },
+                { name: 'stayInControlSelfHostedWalletsStorage' as const, title: t('features.f5Title'), desc: t('features.f5Desc') },
+              ].map((feature) => (
+                <VStack key={feature.name} as="div" style={{ alignItems: 'center', textAlign: 'center', gap: '0px', minWidth: 0 }}>
+                  <HeroSquare name={feature.name} scaleMultiplier={0.8} />
+                  <Text font="headline" as="h3" style={{ fontWeight: 600, marginTop: '16px', color: '#FFFFFF' }}>{feature.title}</Text>
+                  <Text font="body" as="p" style={{ maxWidth: '240px', marginTop: '8px', textAlign: 'center', color: 'rgba(255, 255, 255, 0.7)', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{feature.desc}</Text>
+                </VStack>
+              ))}
+            </div>
           </Box>
         </VStack>
       </section>

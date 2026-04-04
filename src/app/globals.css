@@ -223,6 +223,21 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 /* ═══════════════════════════════════════════════════════════════
+   Hero features grid
+   ═══════════════════════════════════════════════════════════════ */
+.hero-features-grid-4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  justify-items: center;
+}
+@media (min-width: 768px) {
+  .hero-features-grid-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
    Responsive flex direction
    ═══════════════════════════════════════════════════════════════ */
 
@@ -308,6 +323,26 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .tab-active {
   background-color: rgba(15, 15, 102, 0.05);
+}
+
+/* ─── Coinbase-style header tab hover ─── */
+.header-tab {
+  background-color: transparent;
+  transition: background-color 0.15s ease;
+}
+.header-tab:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+.header-tab-active {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+/* ─── Header icon button hover (globe, search) ─── */
+.header-icon-btn {
+  transition: background-color 0.15s ease;
+}
+.header-icon-btn:hover {
+  background-color: rgba(0, 0, 0, 0.04);
 }
 
 .hover-color-blue {
