@@ -148,27 +148,30 @@ export function Header() {
                 <div style={{ fontSize: '18px', fontWeight: 700, color: 'rgb(91, 97, 110)', marginBottom: '16px' }}>
                   Language and region
                 </div>
-                <div className="flex flex-col">
+                <div className="flex flex-col" style={{ margin: '0 -24px' }}>
                   {languages.map((l) => (
                     <button
                       key={l.code}
                       type="button"
                       onClick={() => { setLang(l.code); setLangDropdownOpen(false); }}
-                      className="w-full flex items-center justify-between py-4 hover:opacity-70 transition-opacity text-left"
+                      className="w-full flex items-center justify-between text-left"
                       style={{
                         background: 'none',
                         border: 'none',
-                        borderBottom: 'none',
                         color: '#0A0B0D',
                         fontFamily: '-apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+                        padding: '12px 24px',
+                        borderRadius: '16px',
                       }}
+                      onMouseEnter={(e) => { e.currentTarget.style.background = 'rgb(247, 247, 247)'; }}
+                      onMouseLeave={(e) => { e.currentTarget.style.background = 'none'; }}
                     >
                       <div>
                         <div style={{ fontSize: '16px', fontWeight: 700, lineHeight: '22px' }}>{l.label}</div>
-                        <div style={{ fontSize: '14px', fontWeight: 400, color: '#8A919E', lineHeight: '20px' }}>{l.region}</div>
+                        <div style={{ fontSize: '16px', fontWeight: 400, color: '#8A919E', lineHeight: '22px' }}>{l.region}</div>
                       </div>
                       {lang === l.code && (
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#05B169" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#05B169" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                           <polyline points="20 6 9 17 4 12" />
                         </svg>
                       )}
