@@ -27,6 +27,11 @@
     "f5Title": "Generate yield",
     "f5Desc": "Get started with liquid staking, lend assets in DeFi, and more"
   },
+  "advantages": {
+    "title": "Advantages",
+    "row1Heading": "Advantages of stablecoins",
+    "row1Subtext": "Stablecoin transactions are significantly faster and cheaper than traditional bank transfers, especially for cross-border operations."
+  },
   "protocolsSection": {
     "title": "Integrated protocols"
   },

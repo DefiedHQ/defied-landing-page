@@ -119,7 +119,38 @@ export function LandingPage() {
         </Box>
       </section>
 
-      {/* Section 3: Protocols */}
+      {/* Section 3: Advantages */}
+      <section className="section-padding" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
+        <Box as="div" style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
+          <Text font="display2" as="h2" className="section-title" display="block" textAlign="center" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, marginBottom: '56px' }}>
+            {t('advantages.title')}
+          </Text>
+          <Box
+            as="div"
+            className="promo-card-layout"
+            style={{
+              background: 'rgb(247, 248, 249)',
+              borderRadius: '56px',
+              padding: 'clamp(40px, 6vw, 80px)',
+              alignItems: 'center',
+            }}
+          >
+            <Box as="div" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 1 }}>
+              <HeroSquare name="remittances" scaleMultiplier={1.8} />
+            </Box>
+            <Box as="div" style={{ display: 'flex', flexDirection: 'column', gap: '16px', flex: 1 }}>
+              <Text font="display2" as="h3" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', fontWeight: 500 }}>
+                {t('advantages.row1Heading')}
+              </Text>
+              <Text font="body" as="p" color="fgMuted" style={{ fontSize: '18px', lineHeight: '28px' }}>
+                {t('advantages.row1Subtext')}
+              </Text>
+            </Box>
+          </Box>
+        </Box>
+      </section>
+
+      {/* Section 4: Protocols */}
       <section className="section-padding" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
         <ProtocolsSection />
       </section>
