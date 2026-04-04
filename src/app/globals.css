@@ -225,28 +225,15 @@ input[type="number"]::-webkit-inner-spin-button {
 /* ═══════════════════════════════════════════════════════════════
    Hero features grid
    ═══════════════════════════════════════════════════════════════ */
-.hero-features-grid {
+.hero-features-grid-4 {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 48px;
   justify-items: center;
-}
-.hero-features-grid-bottom {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 48px;
-  justify-items: center;
-  margin-top: 48px;
 }
 @media (min-width: 768px) {
-  .hero-features-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .hero-features-grid-bottom {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 66.67%;
-    margin-left: auto;
-    margin-right: auto;
+  .hero-features-grid-4 {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 

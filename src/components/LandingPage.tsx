@@ -61,35 +61,20 @@ export function LandingPage() {
           </Text>
 
           {/* Feature cards grid */}
-          <Box as="div" style={{ marginTop: '64px', width: '100%' }}>
-            {/* Top row: 3 items */}
-            <div className="hero-features-grid">
-              {[
-                { name: 'browseDecentralizedApps' as const, title: t('features.f1Title'), desc: t('features.f1Desc') },
-                { name: 'multicoinSupport' as const, title: t('features.f2Title'), desc: t('features.f2Desc') },
-                { name: 'instoKeyGenerationComplete' as const, title: t('features.f3Title'), desc: t('features.f3Desc') },
-              ].map((feature) => (
-                <VStack key={feature.name} as="div" style={{ alignItems: 'center', textAlign: 'center', gap: '12px' }}>
-                  <HeroSquare name={feature.name} scaleMultiplier={0.8} />
-                  <Text font="headline" as="h3" style={{ fontWeight: 600 }}>{feature.title}</Text>
-                  <Text font="body" as="p" color="fgMuted" style={{ maxWidth: '240px' }}>{feature.desc}</Text>
-                </VStack>
-              ))}
-            </div>
-            {/* Bottom row: 2 items centered */}
-            <div className="hero-features-grid-bottom">
-              {[
-                { name: 'defiDecentralizedTradingExchange' as const, title: t('features.f4Title'), desc: t('features.f4Desc') },
-                { name: 'defiEarn' as const, title: t('features.f5Title'), desc: t('features.f5Desc') },
-              ].map((feature) => (
-                <VStack key={feature.name} as="div" style={{ alignItems: 'center', textAlign: 'center', gap: '12px' }}>
-                  <HeroSquare name={feature.name} scaleMultiplier={0.8} />
-                  <Text font="headline" as="h3" style={{ fontWeight: 600 }}>{feature.title}</Text>
-                  <Text font="body" as="p" color="fgMuted" style={{ maxWidth: '240px' }}>{feature.desc}</Text>
-                </VStack>
-              ))}
-            </div>
-          </Box>
+          <div className="hero-features-grid-4" style={{ marginTop: '64px', width: '100%' }}>
+            {[
+              { name: 'browseDecentralizedApps' as const, title: t('features.f1Title'), desc: t('features.f1Desc') },
+              { name: 'multicoinSupport' as const, title: t('features.f2Title'), desc: t('features.f2Desc') },
+              { name: 'defiDecentralizedTradingExchange' as const, title: t('features.f4Title'), desc: t('features.f4Desc') },
+              { name: 'defiEarn' as const, title: t('features.f5Title'), desc: t('features.f5Desc') },
+            ].map((feature) => (
+              <VStack key={feature.name} as="div" style={{ alignItems: 'center', textAlign: 'center', gap: '12px' }}>
+                <HeroSquare name={feature.name} scaleMultiplier={0.8} />
+                <Text font="headline" as="h3" style={{ fontWeight: 600 }}>{feature.title}</Text>
+                <Text font="body" as="p" color="fgMuted" style={{ maxWidth: '240px' }}>{feature.desc}</Text>
+              </VStack>
+            ))}
+          </div>
         </VStack>
       </section>
 
