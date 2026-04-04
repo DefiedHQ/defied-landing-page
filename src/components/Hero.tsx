@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { m } from 'framer-motion';
 import { VStack } from '@coinbase/cds-web/layout/VStack';
 import { Text } from '@coinbase/cds-web/typography/Text';
 import { Accordion } from '@coinbase/cds-web/accordion/Accordion';
@@ -56,22 +57,29 @@ export function InfoSection() {
         }}
       >
         {faqItems.map((item, i) => (
-          <AccordionItem
+          <m.div
             key={i}
-            itemKey={String(i)}
-            title={item.question}
-            style={{
-              background: 'rgb(247, 248, 249)',
-              borderRadius: '16px',
-              overflow: 'hidden',
-            }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.4, delay: i * 0.05, ease: 'easeOut' }}
           >
-            <VStack>
-              <Text font="label2" as="p" color="fgMuted" style={{ fontSize: '16px' }}>
-                {item.answer}
-              </Text>
-            </VStack>
-          </AccordionItem>
+            <AccordionItem
+              itemKey={String(i)}
+              title={item.question}
+              style={{
+                background: 'rgb(247, 248, 249)',
+                borderRadius: '16px',
+                overflow: 'hidden',
+              }}
+            >
+              <VStack>
+                <Text font="label2" as="p" color="fgMuted" style={{ fontSize: '16px' }}>
+                  {item.answer}
+                </Text>
+              </VStack>
+            </AccordionItem>
+          </m.div>
         ))}
       </Accordion>
       </div>

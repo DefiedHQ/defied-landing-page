@@ -114,7 +114,12 @@ export function LandingPage() {
               </AnimatePresence>
             </span>
           </Text>
-          <div style={{ marginTop: 'clamp(32px, 5vw, 64px)', marginBottom: 'clamp(32px, 5vw, 64px)', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <m.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3, ease: 'easeOut' }}
+            style={{ marginTop: 'clamp(32px, 5vw, 64px)', marginBottom: 'clamp(32px, 5vw, 64px)', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+          >
             <Text
               font="body"
               as="p"
@@ -141,7 +146,7 @@ export function LandingPage() {
               {t('hero.cta')}
             </Button>
           </Box>
-          </div>
+          </m.div>
 
           {/* Our Mission */}
           <div

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { m } from 'framer-motion';
 import { Box } from '@coinbase/cds-web/layout/Box';
 import { VStack } from '@coinbase/cds-web/layout/VStack';
 import { Text } from '@coinbase/cds-web/typography/Text';
@@ -58,24 +59,31 @@ export function ProtocolsSection() {
             const isHovered = hoveredIndex === i;
 
             return (
-              <div
+              <m.div
                 key={protocol.name}
-                className="protocol-card"
-                onMouseEnter={() => setHoveredIndex(i)}
-                onMouseLeave={() => setHoveredIndex(null)}
-                style={{
-                  background: isHovered ? protocol.color : undefined,
-                  transition: 'background 0.3s ease',
-                }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.5, delay: i * 0.1, ease: 'easeOut' }}
               >
-                <Image
-                  src={protocol.logo}
-                  alt={protocol.name}
-                  width={isMobile ? protocol.mobileWidth : protocol.width}
-                  height={isMobile ? protocol.mobileHeight : protocol.height}
-                  style={{ filter: 'brightness(0)', display: 'block', objectFit: 'contain', height: 'auto' }}
-                />
-              </div>
+                <div
+                  className="protocol-card"
+                  onMouseEnter={() => setHoveredIndex(i)}
+                  onMouseLeave={() => setHoveredIndex(null)}
+                  style={{
+                    background: isHovered ? protocol.color : undefined,
+                    transition: 'background 0.3s ease',
+                  }}
+                >
+                  <Image
+                    src={protocol.logo}
+                    alt={protocol.name}
+                    width={isMobile ? protocol.mobileWidth : protocol.width}
+                    height={isMobile ? protocol.mobileHeight : protocol.height}
+                    style={{ filter: 'brightness(0)', display: 'block', objectFit: 'contain', height: 'auto' }}
+                  />
+                </div>
+              </m.div>
             );
           })}
         </Box>
