@@ -80,7 +80,7 @@ export function Header() {
               type="button"
               onClick={() => scrollToSection('how-it-works')}
               className={tabClass([])}
-              style={{ borderRadius: '24px', fontFamily: 'CoinbaseSans, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"' }}
+              style={{ borderRadius: '24px', fontFamily: '-apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"' }}
             >
               {t('nav.howItWorks')}
             </button>
@@ -88,7 +88,7 @@ export function Header() {
               type="button"
               onClick={() => scrollToSection('faq')}
               className={tabClass([])}
-              style={{ borderRadius: '24px', fontFamily: 'CoinbaseSans, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"' }}
+              style={{ borderRadius: '24px', fontFamily: '-apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"' }}
             >
               {t('nav.faq')}
             </button>
@@ -107,7 +107,7 @@ export function Header() {
             type="button"
             onClick={() => setLang(lang === 'bg' ? 'en' : 'bg')}
             className="hidden sm:flex items-center justify-center px-3 py-1.5 hover:bg-[#0F0F660D] transition-colors"
-            style={{ borderRadius: '24px', background: 'none', border: 'none', color: '#0A0B0D', fontSize: '14px', fontWeight: 600, fontFamily: 'CoinbaseSans, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"' }}
+            style={{ borderRadius: '24px', background: 'none', border: 'none', color: '#0A0B0D', fontSize: '14px', fontWeight: 600, fontFamily: '-apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"' }}
           >
             {lang === 'bg' ? 'EN' : 'BG'}
           </button>
@@ -141,7 +141,7 @@ export function Header() {
             type="button"
             onClick={() => scrollToSection('how-it-works')}
             className="py-2.5 px-1 transition-colors text-left"
-            style={{ background: 'none', border: 'none', color: 'inherit', fontSize: 'inherit', fontWeight: 'inherit', fontFamily: 'CoinbaseSans, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"' }}
+            style={{ background: 'none', border: 'none', color: 'inherit', fontSize: 'inherit', fontWeight: 'inherit', fontFamily: '-apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"' }}
           >
             {t('nav.howItWorks')}
           </button>
@@ -149,7 +149,7 @@ export function Header() {
             type="button"
             onClick={() => scrollToSection('faq')}
             className="py-2.5 px-1 transition-colors text-left"
-            style={{ background: 'none', border: 'none', color: 'inherit', fontSize: 'inherit', fontWeight: 'inherit', fontFamily: 'CoinbaseSans, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"' }}
+            style={{ background: 'none', border: 'none', color: 'inherit', fontSize: 'inherit', fontWeight: 'inherit', fontFamily: '-apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"' }}
           >
             {t('nav.faq')}
           </button>
@@ -173,7 +173,7 @@ export function Header() {
             type="button"
             onClick={() => { setLang(lang === 'bg' ? 'en' : 'bg'); setMobileMenuOpen(false); }}
             className="py-2.5 px-1 transition-colors text-left"
-            style={{ background: 'none', border: 'none', color: 'inherit', fontSize: 'inherit', fontWeight: 'inherit', fontFamily: 'CoinbaseSans, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"' }}
+            style={{ background: 'none', border: 'none', color: 'inherit', fontSize: 'inherit', fontWeight: 'inherit', fontFamily: '-apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"' }}
           >
             {lang === 'bg' ? 'English' : 'Български'}
           </button>

@@ -45,7 +45,7 @@ export function LandingPage() {
           <h1
             className="text-[64px] leading-[68px] md:text-[96px] md:leading-[100px]"
             style={{
-              fontFamily: 'CoinbaseDisplay, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+              fontFamily: '-apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
               fontWeight: 400,
               color: '#000',
               letterSpacing: '-0.02em',
@@ -56,7 +56,7 @@ export function LandingPage() {
           <p
             className="mt-4 sm:mt-6 text-[15px] sm:text-[16px] md:text-[18px]"
             style={{
-              fontFamily: 'CoinbaseText, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+              fontFamily: '-apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
               fontWeight: 400,
               lineHeight: '26px',
               color: 'rgb(10, 11, 13)',

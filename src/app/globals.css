@@ -1,97 +1,5 @@
 @import "tailwindcss";
 
-/* ── Coinbase Sans ── */
-@font-face {
-  font-family: "Coinbase Sans";
-  src: url("/fonts/Coinbase-Sans/Coinbase_Sans-Light-web-1.32.woff2") format("woff2");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Coinbase Sans";
-  src: url("/fonts/Coinbase-Sans/Coinbase_Sans-Regular-web-1.32.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Coinbase Sans";
-  src: url("/fonts/Coinbase-Sans/Coinbase_Sans-Medium-web-1.32.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Coinbase Sans";
-  src: url("/fonts/Coinbase-Sans/Coinbase_Sans-Bold-web-1.32.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* ── Coinbase Display ── */
-@font-face {
-  font-family: "Coinbase Display";
-  src: url("/fonts/Coinbase-Display/Coinbase_Display-Light-web-1.32.woff2") format("woff2");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Coinbase Display";
-  src: url("/fonts/Coinbase-Display/Coinbase_Display-Regular-web-1.32.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Coinbase Display";
-  src: url("/fonts/Coinbase-Display/Coinbase_Display-Medium-web-1.32.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Coinbase Display";
-  src: url("/fonts/Coinbase-Display/Coinbase_Display-Bold-web-1.32.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* ── Coinbase Text ── */
-@font-face {
-  font-family: "Coinbase Text";
-  src: url("/fonts/Coinbase-Text/Coinbase_Text-Regular-web-1.32.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Coinbase Text";
-  src: url("/fonts/Coinbase-Text/Coinbase_Text-Medium-web-1.32.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Coinbase Text";
-  src: url("/fonts/Coinbase-Text/Coinbase_Text-Bold-web-1.32.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* ── Coinbase Mono ── */
-@font-face {
-  font-family: "Coinbase Mono";
-  src: url("/fonts/Coinbase-Mono/Coinbase_Mono-Regular-web.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
 @theme {
   --color-bg: var(--bg);
   --color-surface: var(--surface);
@@ -112,9 +20,9 @@
   --color-banner-from: var(--banner-from);
   --color-banner-via: var(--banner-via);
   --color-banner-to: var(--banner-to);
-  --font-display: "Coinbase Display", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --font-sans: "Coinbase Sans", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --font-mono: "Coinbase Mono", monospace;
+  --font-display: -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-sans: -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-mono: monospace;
 }
 
 :root {
@@ -146,7 +54,7 @@ html {
 body {
   background-color: var(--bg);
   color: var(--tx);
-  font-family: "Coinbase Sans", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -154,7 +62,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Coinbase Display", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 button,
@@ -166,7 +74,7 @@ summary,
 [type="submit"],
 [type="reset"] {
   cursor: pointer;
-  font-family: "Coinbase Mono", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: monospace;
 }
 
 a {
@@ -181,11 +89,11 @@ button:disabled,
 
 /* Override RainbowKit fonts */
 [data-rk] {
-  --rk-fonts-body: "Coinbase Sans", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+  --rk-fonts-body: -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
 }
 
 [data-rk] * {
-  font-family: "Coinbase Sans", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 
