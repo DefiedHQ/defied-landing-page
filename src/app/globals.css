@@ -312,6 +312,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
 /* ─── Coinbase-style header tab hover ─── */
 .header-tab {
+  background-color: transparent;
   transition: background-color 0.15s ease;
 }
 .header-tab:hover {

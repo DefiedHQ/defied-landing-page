@@ -89,7 +89,7 @@ export function Header() {
               type="button"
               onClick={() => scrollToSection('how-it-works')}
               className="header-tab"
-              style={{ padding: '8px 16px', borderRadius: '100px', background: 'none', border: 'none', cursor: 'pointer', color: '#0A0B0D' }}
+              style={{ padding: '8px 16px', borderRadius: '100px', border: 'none', cursor: 'pointer', color: '#0A0B0D' }}
             >
               <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 600 }}>{t('nav.howItWorks')}</Text>
             </button>
@@ -97,7 +97,7 @@ export function Header() {
               type="button"
               onClick={() => scrollToSection('faq')}
               className="header-tab"
-              style={{ padding: '8px 16px', borderRadius: '100px', background: 'none', border: 'none', cursor: 'pointer', color: '#0A0B0D' }}
+              style={{ padding: '8px 16px', borderRadius: '100px', border: 'none', cursor: 'pointer', color: '#0A0B0D' }}
             >
               <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 600 }}>{t('nav.faq')}</Text>
             </button>
