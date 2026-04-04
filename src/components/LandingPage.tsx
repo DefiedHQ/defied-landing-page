@@ -169,6 +169,10 @@ export function LandingPage() {
               <HeroSquare name="walletSecurity" scaleMultiplier={1.8} />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Section 4: Protocols */}
       <section className="section-padding" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
         <ProtocolsSection />
       </section>
