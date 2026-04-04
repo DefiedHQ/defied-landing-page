@@ -48,7 +48,7 @@ export function LandingPage() {
             paddingTop: 'clamp(64px, 10vw, 128px)',
           }}
         >
-          <Text font="display1" as="h1" style={{ fontSize: 'clamp(2.5rem, 6vw, 4rem)', fontWeight: 500, letterSpacing: '-0.02em', maxWidth: '900px', textAlign: 'center' }}>
+          <Text font="display1" as="h1" style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', fontWeight: 500, letterSpacing: '-0.02em', maxWidth: '900px', textAlign: 'center' }}>
             {t('hero.title')}
           </Text>
           <Text
@@ -82,11 +82,12 @@ export function LandingPage() {
           <Box
             as="div"
             style={{
-              marginTop: 'clamp(120px, 16vw, 220px)',
-              width: '100%',
+              marginTop: 'clamp(80px, 12vw, 160px)',
+              width: 'calc(100% + 32px)',
+              maxWidth: 'calc(100vw - 32px)',
               background: '#0052FF',
               borderRadius: '56px',
-              padding: 'clamp(40px, 6vw, 80px) clamp(24px, 4vw, 56px)',
+              padding: 'clamp(56px, 8vw, 100px) clamp(24px, 4vw, 80px)',
             }}
           >
             <div className="hero-features-grid-4">
