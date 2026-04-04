@@ -95,7 +95,7 @@ export function LandingPage() {
                 { name: 'realToUSDC' as const, title: t('features.f1Title'), desc: t('features.f1Desc') },
                 { name: 'usdtToUSDC' as const, title: t('features.f2Title'), desc: t('features.f2Desc') },
                 { name: 'earnMore' as const, title: t('features.f4Title'), desc: t('features.f4Desc') },
-                { name: 'stayInControlSelfHostedWalletsStorage' as const, title: t('features.f5Title'), desc: t('features.f5Desc') },
+                { name: 'coinbaseCardSpend' as const, title: t('features.f5Title'), desc: t('features.f5Desc') },
               ].map((feature) => (
                 <div key={feature.name} className="hero-feature-item">
                   <HeroSquare name={feature.name} scaleMultiplier={0.8} />
