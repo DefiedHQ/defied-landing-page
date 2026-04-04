@@ -59,19 +59,37 @@ export function LandingPage() {
           >
             {t('hero.subtitle1')} {t('hero.subtitle2')} {t('hero.subtitle3')}
           </Text>
+          <Box as="div" style={{ marginTop: '32px' }}>
+            <Button
+              as="a"
+              href="https://app.defied.bg"
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="primary"
+              block
+              style={{
+                borderRadius: '56px',
+                height: '58px',
+                padding: '16px 32px',
+                minWidth: '200px',
+              }}
+            >
+              {t('hero.cta')}
+            </Button>
+          </Box>
 
           {/* Feature cards grid */}
-          <div className="hero-features-grid-4" style={{ marginTop: '64px', width: '100%' }}>
+          <div className="hero-features-grid-4" style={{ marginTop: 'clamp(80px, 12vw, 160px)', width: '100%' }}>
             {[
               { name: 'browseDecentralizedApps' as const, title: t('features.f1Title'), desc: t('features.f1Desc') },
               { name: 'multicoinSupport' as const, title: t('features.f2Title'), desc: t('features.f2Desc') },
               { name: 'defiDecentralizedTradingExchange' as const, title: t('features.f4Title'), desc: t('features.f4Desc') },
               { name: 'defiEarn' as const, title: t('features.f5Title'), desc: t('features.f5Desc') },
             ].map((feature) => (
-              <VStack key={feature.name} as="div" style={{ alignItems: 'center', textAlign: 'center', gap: '12px' }}>
+              <VStack key={feature.name} as="div" style={{ alignItems: 'center', textAlign: 'center', gap: '0px' }}>
                 <HeroSquare name={feature.name} scaleMultiplier={0.8} />
-                <Text font="headline" as="h3" style={{ fontWeight: 600 }}>{feature.title}</Text>
-                <Text font="body" as="p" color="fgMuted" style={{ maxWidth: '240px' }}>{feature.desc}</Text>
+                <Text font="headline" as="h3" style={{ fontWeight: 600, marginTop: '16px' }}>{feature.title}</Text>
+                <Text font="body" as="p" color="fgMuted" style={{ maxWidth: '240px', marginTop: '8px', textAlign: 'center' }}>{feature.desc}</Text>
               </VStack>
             ))}
           </div>
