@@ -49,10 +49,10 @@ export function ResourcesPage() {
     <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 16px', paddingBottom: '64px', width: '100%' }}>
         {/* Hero */}
         <div style={{ marginBottom: '48px' }}>
-          <Text font="display1" as="h1" style={{ fontSize: 'clamp(2rem, 6vw, 5rem)', fontWeight: 400, lineHeight: 1, maxWidth: '800px', marginTop: 'clamp(48px, 10vw, 120px)', marginBottom: '16px' }}>
+          <Text font="display1" as="h1" display="block" style={{ fontSize: 'clamp(2rem, 6vw, 5rem)', fontWeight: 400, lineHeight: 1, maxWidth: '800px', marginTop: 'clamp(48px, 10vw, 120px)', marginBottom: '16px' }}>
             {t('resources.heroTitle')}
           </Text>
-          <Text font="body" as="p" color="fgMuted" style={{ maxWidth: '640px', fontSize: '18px', lineHeight: '28px' }}>
+          <Text font="body" as="p" display="block" color="fgMuted" style={{ maxWidth: '640px', fontSize: '18px', lineHeight: '28px' }}>
             {t('resources.heroSubtitle')}
           </Text>
         </div>
@@ -64,9 +64,8 @@ export function ResourcesPage() {
               key={cat}
               onClick={() => setActiveFilter(cat)}
               invertColorScheme={currentFilter === cat}
-              style={{ padding: '16px 24px' }}
             >
-              {cat} <Text as="span" font="body" style={{ opacity: 0.7, marginLeft: '6px' }}>{countByCategory(cat)}</Text>
+              {cat} <span style={{ opacity: 0.7, marginLeft: '4px' }}>{countByCategory(cat)}</span>
             </Chip>
           ))}
         </div>
@@ -117,7 +116,7 @@ export function ResourcesPage() {
                     >
                       {article.excerpt}
                     </Text>
-                    <Text font="caption" as="div" color="fgMuted" style={{ marginTop: '16px' }}>
+                    <Text font="label2" as="div" color="fgMuted" style={{ marginTop: '16px' }}>
                       {formatDate(article.date)} &middot; {article.readTime} {t('common.minRead')}
                     </Text>
                   </div>
@@ -173,7 +172,7 @@ export function ResourcesPage() {
                     >
                       {article.excerpt}
                     </Text>
-                    <Text font="caption" as="div" color="fgMuted" style={{ marginTop: '12px' }}>
+                    <Text font="label2" as="div" color="fgMuted" style={{ marginTop: '12px' }}>
                       {formatDate(article.date)} &middot; {article.readTime} {t('common.minRead')}
                     </Text>
                   </div>

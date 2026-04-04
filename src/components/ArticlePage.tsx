@@ -47,7 +47,7 @@ export function ArticlePage() {
         </div>
 
         {/* Title */}
-        <Text font="display1" as="h1" style={{ fontSize: 'clamp(2rem, 5vw, 5rem)', fontWeight: 400, lineHeight: 1, maxWidth: '800px', marginBottom: '24px' }}>
+        <Text font="display1" as="h1" display="block" style={{ fontSize: 'clamp(2rem, 5vw, 5rem)', fontWeight: 400, lineHeight: 1, maxWidth: '800px', marginBottom: '24px' }}>
           {article.title}
         </Text>
 
@@ -55,10 +55,10 @@ export function ArticlePage() {
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '32px' }}>
           <img src="/defied_squared_logo_blue.svg" width={40} height={40} alt="Defied" />
           <div>
-            <Text font="caption" as="div" color="fgMuted">
-              {t('common.by')} <Text font="caption" as="span" style={{ color: '#6b7280' }}>Defied</Text>
+            <Text font="label2" as="div" color="fgMuted">
+              {t('common.by')} <Text font="label2" as="span" style={{ color: '#6b7280' }}>Defied</Text>
             </Text>
-            <Text font="caption" as="div" color="fgMuted">
+            <Text font="label2" as="div" color="fgMuted">
               {formatDate(article.date)} &middot; {article.readTime} {t('common.minRead')}
             </Text>
           </div>
@@ -75,16 +75,16 @@ export function ArticlePage() {
             {/* Article body */}
             <div>
               {/* Lead paragraph */}
-              <Text font="body" as="p" color="fgMuted" style={{ fontSize: '18px', lineHeight: '28px', marginBottom: '24px', fontStyle: 'italic' }}>
+              <Text font="body" as="p" display="block" color="fgMuted" style={{ fontSize: '18px', lineHeight: '28px', marginBottom: '24px', fontStyle: 'italic' }}>
                 {article.excerpt}
               </Text>
 
               {article.sections.map((section: { heading: string; body: string }, i: number) => (
                 <div key={i} style={{ marginBottom: '32px' }}>
-                  <Text font="title2" as="h2" id={`section-${i}`} style={{ marginBottom: '24px' }}>
+                  <Text font="title2" as="h2" display="block" id={`section-${i}`} style={{ marginBottom: '24px' }}>
                     {section.heading}
                   </Text>
-                  <Text font="body" as="p" color="fgMuted" style={{ fontSize: '18px', lineHeight: '28px' }}>
+                  <Text font="body" as="p" display="block" color="fgMuted" style={{ fontSize: '18px', lineHeight: '28px' }}>
                     {section.body}
                   </Text>
                 </div>
@@ -96,7 +96,7 @@ export function ArticlePage() {
           <aside>
             {/* Share */}
             <div style={{ marginBottom: '40px' }}>
-              <Text font="title3" as="h3" style={{ marginBottom: '24px' }}>
+              <Text font="title3" as="h3" display="block" style={{ marginBottom: '24px' }}>
                 {t('resources.shareArticle')}
               </Text>
               <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
@@ -166,7 +166,7 @@ export function ArticlePage() {
 
             {/* Recent Posts */}
             <div>
-              <Text font="title3" as="h3" style={{ marginBottom: '24px' }}>
+              <Text font="title3" as="h3" display="block" style={{ marginBottom: '24px' }}>
                 {t('resources.recentPosts')}
               </Text>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
@@ -198,7 +198,7 @@ export function ArticlePage() {
                     <Text font="body" as="p" color="fgMuted" style={{ marginBottom: '8px', display: '-webkit-box', WebkitLineClamp: 1, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
                       {a.excerpt}
                     </Text>
-                    <Text font="caption" as="span" color="fgMuted">
+                    <Text font="label2" as="span" color="fgMuted">
                       {formatDate(a.date)} &middot; {a.readTime} {t('common.minRead')}
                     </Text>
                   </Link>
