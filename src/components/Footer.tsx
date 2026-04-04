@@ -28,7 +28,7 @@ export function Footer() {
           <VStack as="div" style={{ alignItems: 'flex-start', gap: '0px' }}>
             <Link href="/" className="hover-fade" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', textDecoration: 'none' }}>
               <img src="/defied_squared_logo_blue.svg" width={58} height={58} alt="Defied" loading="lazy" />
-              <img src="/defied-logo-text-blue.svg" alt="" width={82} height={22} style={{ display: 'block' }} loading="lazy" />
+              <img src="/defied-logo-text-blue.svg" alt="" width={157} height={42} style={{ display: 'block' }} loading="lazy" />
             </Link>
             <VStack as="div" style={{ marginTop: '50px', gap: '4px' }}>
               <Text font="label2" as="p" color="fgMuted">hello@defied.bg</Text>
