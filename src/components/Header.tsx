@@ -148,7 +148,7 @@ export function Header() {
                 <div style={{ fontSize: '18px', fontWeight: 700, color: 'rgb(91, 97, 110)', marginBottom: '16px' }}>
                   Language and region
                 </div>
-                <div className="flex flex-col" style={{ margin: '0 -24px' }}>
+                <div className="flex flex-col" style={{ margin: '0 -8px' }}>
                   {languages.map((l) => (
                     <button
                       key={l.code}
@@ -160,7 +160,7 @@ export function Header() {
                         border: 'none',
                         color: '#0A0B0D',
                         fontFamily: '-apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
-                        padding: '12px 24px',
+                        padding: '12px 16px',
                         borderRadius: '16px',
                       }}
                       onMouseEnter={(e) => { e.currentTarget.style.background = 'rgb(247, 247, 247)'; }}
