@@ -1,45 +1,7 @@
 @import "tailwindcss";
 
-@theme {
-  --color-bg: var(--bg);
-  --color-surface: var(--surface);
-  --color-surface2: var(--surface2);
-  --color-border: var(--bdcolor);
-  --color-border2: var(--bdcolor2);
-  --color-primary: #0052FF;
-  --color-green: #05B169;
-  --color-red: #DF2935;
-  --color-text: var(--tx);
-  --color-text2: var(--tx2);
-  --color-muted: var(--mt);
-  --color-muted2: var(--mt2);
-  --color-card: var(--card);
-  --color-card-border: var(--card-bd);
-  --color-banner-from: var(--banner-from);
-  --color-banner-via: var(--banner-via);
-  --color-banner-to: var(--banner-to);
-}
-
 :root {
   --header-h: 96px;
-  --bg: #FFFFFF;
-  --surface: rgb(247, 248, 249);
-  --surface2: rgb(237, 239, 242);
-  --bdcolor: #D1D5DB;
-  --bdcolor2: #C3C8D1;
-  --tx: #0A0B0D;
-  --tx2: #3D4250;
-  --mt: #5B616E;
-  --mt2: #6B7280;
-  --card: #ffffff;
-  --card-bd: rgba(0, 0, 0, 0.06);
-  --banner-from: rgb(247, 248, 249);
-  --banner-via: rgb(243, 244, 246);
-  --banner-to: rgb(247, 248, 249);
-}
-
-* {
-  box-sizing: border-box;
 }
 
 html {
