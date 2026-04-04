@@ -47,7 +47,7 @@ export function ResourcesPage() {
     <Box as="div" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 16px', paddingBottom: '64px', width: '100%' }}>
       {/* Hero */}
       <VStack as="div" style={{ marginBottom: '48px', gap: '16px' }}>
-        <Text font="display1" as="h1" style={{ marginTop: 'clamp(48px, 10vw, 120px)', maxWidth: '800px' }}>
+        <Text font="display1" as="h1" style={{ fontSize: 'clamp(3rem, 6vw, 4rem)', fontWeight: 500, marginTop: 'clamp(48px, 10vw, 120px)', maxWidth: '800px' }}>
           {t('resources.heroTitle')}
         </Text>
         <Text font="body" as="p" color="fgMuted" style={{ maxWidth: '640px', fontSize: '18px', lineHeight: '28px' }}>

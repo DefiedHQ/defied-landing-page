@@ -38,7 +38,7 @@ export function AboutCarousel() {
   return (
     <VStack as="div" style={{ gap: '48px' }}>
       {/* Header */}
-      <Text font="display3" as="h2" style={{ maxWidth: '600px' }}>
+      <Text font="display2" as="h2" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, maxWidth: '600px' }}>
         {t('aboutCarousel.title')}
       </Text>
 
@@ -64,7 +64,7 @@ export function AboutCarousel() {
             </Box>
             {/* Title + Description at bottom */}
             <VStack as="div" style={{ gap: '8px' }}>
-              <Text font="title3" as="h4">
+              <Text font="title3" as="h4" style={{ fontWeight: 600 }}>
                 {card.title}
               </Text>
               <Text font="body" as="p" color="fgMuted">

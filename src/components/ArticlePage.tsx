@@ -48,7 +48,7 @@ export function ArticlePage() {
       </Box>
 
       {/* Title */}
-      <Text font="display1" as="h1" style={{ marginBottom: '24px', maxWidth: '800px' }}>
+      <Text font="display1" as="h1" style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', fontWeight: 500, marginBottom: '24px', maxWidth: '800px' }}>
         {article.title}
       </Text>
 

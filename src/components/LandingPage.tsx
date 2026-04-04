@@ -48,7 +48,7 @@ export function LandingPage() {
             paddingTop: 'clamp(64px, 10vw, 128px)',
           }}
         >
-          <Text font="display1" as="h1" style={{ letterSpacing: '-0.02em', maxWidth: '900px' }}>
+          <Text font="display1" as="h1" style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', fontWeight: 500, letterSpacing: '-0.02em', maxWidth: '900px' }}>
             {t('hero.title')}
           </Text>
           <Text
@@ -153,7 +153,7 @@ export function LandingPage() {
               gap: '32px',
             }}
           >
-            <Text font="display3" as="h2" style={{ color: '#fff', maxWidth: '800px' }}>
+            <Text font="display1" as="h2" style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', fontWeight: 500, color: '#fff', maxWidth: '800px' }}>
               {t('imageSection.heading')}
             </Text>
             <Box as="div" style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
@@ -186,7 +186,7 @@ export function LandingPage() {
             gap: '16px',
           }}
         >
-          <Text font="display2" as="h2">
+          <Text font="display1" as="h2" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 500 }}>
             {t('hero.ctaMain')}
           </Text>
           <Text font="body" as="p" color="fgMuted" style={{ fontSize: '18px', lineHeight: '28px', marginBottom: '16px' }}>
