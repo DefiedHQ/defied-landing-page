@@ -227,8 +227,8 @@ input[type="number"]::-webkit-inner-spin-button {
    ═══════════════════════════════════════════════════════════════ */
 .hero-features-grid-4 {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  grid-template-columns: 1fr;
+  gap: 40px;
   justify-items: center;
 }
 @media (min-width: 768px) {
