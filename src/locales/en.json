@@ -17,6 +17,7 @@
     "ctaMain": "Take control of your money"
   },
   "features": {
+    "sectionTitle": "Features",
     "f1Title": "Send stablecoins",
     "f1Desc": "Send or receive stablecoins in seconds",
     "f2Title": "Exchange stablecoins",

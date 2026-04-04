@@ -82,32 +82,30 @@ export function LandingPage() {
           </Box>
           </div>
 
-          {/* Feature cards grid */}
-          <Box
-            as="div"
+          {/* Our Mission */}
+          <div
+            className="promo-card-layout"
             style={{
               width: 'calc(100% + 32px)',
               maxWidth: 'calc(100vw - 32px)',
               background: '#0052FF',
               borderRadius: '56px',
-              padding: 'clamp(56px, 8vw, 100px) clamp(24px, 4vw, 80px)',
+              padding: 'clamp(40px, 6vw, 80px)',
+              alignItems: 'center',
             }}
           >
-            <div className="hero-features-grid-4">
-              {[
-                { name: 'realToUSDC' as const, title: t('features.f1Title'), desc: t('features.f1Desc') },
-                { name: 'usdtToUSDC' as const, title: t('features.f2Title'), desc: t('features.f2Desc') },
-                { name: 'earnMore' as const, title: t('features.f4Title'), desc: t('features.f4Desc') },
-                { name: 'cardAndPhone' as const, title: t('features.f5Title'), desc: t('features.f5Desc') },
-              ].map((feature) => (
-                <div key={feature.name} className="hero-feature-item">
-                  <HeroSquare name={feature.name} scaleMultiplier={0.8} />
-                  <Text font="headline" as="h3" style={{ fontWeight: 600, marginTop: '16px', color: '#FFFFFF' }}>{feature.title}</Text>
-                  <Text font="body" as="p" style={{ maxWidth: '240px', marginTop: '8px', textAlign: 'center', color: 'rgba(255, 255, 255, 0.7)', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{feature.desc}</Text>
-                </div>
-              ))}
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 1 }}>
+              <Lottie source={dappWallet} autoplay loop width="300px" height="300px" />
             </div>
-          </Box>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', flex: 1 }}>
+              <Text font="display2" as="h2" className="title-tight-lh" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', fontWeight: 500, color: '#fff' }}>
+                {t('imageSection.title')}
+              </Text>
+              <Text font="body" as="p" style={{ fontSize: '18px', lineHeight: '28px', color: 'rgba(255, 255, 255, 0.7)' }}>
+                {t('imageSection.heading')}
+              </Text>
+            </div>
+          </div>
         </VStack>
       </section>
 
@@ -242,31 +240,36 @@ export function LandingPage() {
         <ProtocolsSection />
       </section>
 
-      {/* Section: Our Mission */}
+      {/* Section: Features (Функционалности) */}
       <section className="section-padding section-vertical-padding">
-        <div
-          className="promo-card-layout"
-          style={{
-            background: '#0052FF',
-            borderRadius: '56px',
-            padding: 'clamp(40px, 6vw, 80px)',
-            alignItems: 'center',
-            maxWidth: '1200px',
-            margin: '0 auto',
-            width: '100%',
-          }}
-        >
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 1 }}>
-            <Lottie source={dappWallet} autoplay loop width="300px" height="300px" />
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', flex: 1 }}>
-            <Text font="display2" as="h2" className="title-tight-lh" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', fontWeight: 500, color: '#fff' }}>
-              {t('imageSection.title')}
-            </Text>
-            <Text font="body" as="p" style={{ fontSize: '18px', lineHeight: '28px', color: 'rgba(255, 255, 255, 0.7)' }}>
-              {t('imageSection.heading')}
-            </Text>
-          </div>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
+          <Text font="display2" as="h2" className="section-title" display="block" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, marginBottom: '56px' }}>
+            {t('features.sectionTitle')}
+          </Text>
+          <Box
+            as="div"
+            style={{
+              width: '100%',
+              background: '#0052FF',
+              borderRadius: '56px',
+              padding: 'clamp(56px, 8vw, 100px) clamp(24px, 4vw, 80px)',
+            }}
+          >
+            <div className="hero-features-grid-4">
+              {[
+                { name: 'realToUSDC' as const, title: t('features.f1Title'), desc: t('features.f1Desc') },
+                { name: 'usdtToUSDC' as const, title: t('features.f2Title'), desc: t('features.f2Desc') },
+                { name: 'earnMore' as const, title: t('features.f4Title'), desc: t('features.f4Desc') },
+                { name: 'cardAndPhone' as const, title: t('features.f5Title'), desc: t('features.f5Desc') },
+              ].map((feature) => (
+                <div key={feature.name} className="hero-feature-item">
+                  <HeroSquare name={feature.name} scaleMultiplier={0.8} />
+                  <Text font="headline" as="h3" style={{ fontWeight: 600, marginTop: '16px', color: '#FFFFFF' }}>{feature.title}</Text>
+                  <Text font="body" as="p" style={{ maxWidth: '240px', marginTop: '8px', textAlign: 'center', color: 'rgba(255, 255, 255, 0.7)', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{feature.desc}</Text>
+                </div>
+              ))}
+            </div>
+          </Box>
         </div>
       </section>
 
