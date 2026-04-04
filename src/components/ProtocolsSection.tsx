@@ -2,6 +2,9 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { Box } from '@coinbase/cds-web/layout/Box';
+import { VStack } from '@coinbase/cds-web/layout/VStack';
+import { Text } from '@coinbase/cds-web/typography/Text';
 import { useLanguage } from '@/context/LanguageContext';
 
 const protocols = [
@@ -25,77 +28,62 @@ export function ProtocolsSection() {
   }, []);
 
   return (
-    <div
-      style={{
-        width: '100%',
-        height: '100%',
-        background: '#fff',
-        display: 'flex',
-        alignItems: 'center',
-      }}
-    >
-      <div
-
+    <Box as="div" style={{ width: '100%', display: 'flex', alignItems: 'center' }}>
+      <VStack
+        as="div"
         style={{
           maxWidth: '1200px',
-          marginLeft: 'auto',
-          marginRight: 'auto',
+          margin: '0 auto',
           width: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
           gap: 'clamp(40px, 6vh, 72px)',
         }}
       >
-      {/* Title */}
-      <h2
-        className="text-[28px] sm:text-[36px] md:text-[48px]"
-        style={{ fontWeight: 500, color: '#0A0B0D', lineHeight: 1.1, maxWidth: '520px' }}
-      >
-        {t('protocolsSection.title')}
-      </h2>
+        <Text font="display3" as="h2" style={{ maxWidth: '520px' }}>
+          {t('protocolsSection.title')}
+        </Text>
 
-      {/* Cards row / column */}
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          flexWrap: isMobile ? 'wrap' : 'nowrap',
-          gap: '16px',
-          width: '100%',
-          alignItems: 'center',
-          justifyContent: isMobile ? 'flex-start' : 'space-between',
-        }}
-      >
-        {protocols.map((protocol, i) => {
-          const isHovered = hoveredIndex === i;
+        <Box
+          as="div"
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            flexWrap: isMobile ? 'wrap' : 'nowrap',
+            gap: '16px',
+            width: '100%',
+            alignItems: 'center',
+            justifyContent: isMobile ? 'flex-start' : 'space-between',
+          }}
+        >
+          {protocols.map((protocol, i) => {
+            const isHovered = hoveredIndex === i;
 
-          return (
-            <a
-              key={protocol.name}
-              href={protocol.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="protocol-card"
-              onMouseEnter={() => setHoveredIndex(i)}
-              onMouseLeave={() => setHoveredIndex(null)}
-              style={{
-                background: isHovered ? protocol.color : undefined,
-                transition: 'background 0.3s ease',
-              }}
-            >
-              <Image
-                src={protocol.logo}
-                alt={protocol.name}
-                width={isMobile ? protocol.mobileWidth : protocol.width}
-                height={isMobile ? protocol.mobileHeight : protocol.height}
-                style={{ filter: 'brightness(0)', display: 'block', objectFit: 'contain', height: 'auto' }}
-              />
-            </a>
-          );
-        })}
-      </div>
-      </div>
-    </div>
+            return (
+              <a
+                key={protocol.name}
+                href={protocol.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="protocol-card"
+                onMouseEnter={() => setHoveredIndex(i)}
+                onMouseLeave={() => setHoveredIndex(null)}
+                style={{
+                  background: isHovered ? protocol.color : undefined,
+                  transition: 'background 0.3s ease',
+                  textDecoration: 'none',
+                }}
+              >
+                <Image
+                  src={protocol.logo}
+                  alt={protocol.name}
+                  width={isMobile ? protocol.mobileWidth : protocol.width}
+                  height={isMobile ? protocol.mobileHeight : protocol.height}
+                  style={{ filter: 'brightness(0)', display: 'block', objectFit: 'contain', height: 'auto' }}
+                />
+              </a>
+            );
+          })}
+        </Box>
+      </VStack>
+    </Box>
   );
 }

@@ -2,10 +2,15 @@ import type { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Providers } from './providers';
+import { CdsProvider } from '@/components/CdsProvider';
 import { Header } from '@/components/Header';
 import { ConditionalFooter } from '@/components/ConditionalFooter';
 import { MainWrapper } from '@/components/MainWrapper';
 import { LanguageProvider } from '@/context/LanguageContext';
+
+import '@coinbase/cds-icons/fonts/web/icon-font.css';
+import '@coinbase/cds-web/defaultFontStyles';
+import '@coinbase/cds-web/globalStyles';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -25,7 +30,7 @@ export const metadata: Metadata = {
     url: 'https://defied.io',
     images: [
       {
-        url: '/og-image.png', // TODO: Replace with actual 1200x630 OG image
+        url: '/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Defied – Първият дигитален портфейл с пасивен доход',
@@ -39,7 +44,7 @@ export const metadata: Metadata = {
     title: 'Defied | Първият дигитален портфейл с пасивен доход',
     description:
       'Генерирайте доходност на вашето дигитално евро и долари, по сигурен и децентрализиран начин чрез DeFi.',
-    images: ['/og-image.png'], // TODO: Replace with actual 1200x630 OG image
+    images: ['/og-image.png'],
   },
   robots: {
     index: true,
@@ -57,17 +62,27 @@ export default function RootLayout({
 }) {
   return (
     <html lang="bg">
-      <body className="antialiased">
+      <body>
         <Providers>
-          <LanguageProvider>
-          <div className="min-h-screen flex flex-col">
-            <div className="sticky top-0 z-50" style={{ background: '#ffffff', borderBottom: '1px solid rgba(91, 97, 110, 0.2)' }}>
-              <Header />
-            </div>
-            <MainWrapper>{children}</MainWrapper>
-            <ConditionalFooter />
-          </div>
-          </LanguageProvider>
+          <CdsProvider>
+            <LanguageProvider>
+              <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+                <div
+                  style={{
+                    position: 'sticky',
+                    top: 0,
+                    zIndex: 50,
+                    background: '#ffffff',
+                    borderBottom: '1px solid rgba(91, 97, 110, 0.2)',
+                  }}
+                >
+                  <Header />
+                </div>
+                <MainWrapper>{children}</MainWrapper>
+                <ConditionalFooter />
+              </div>
+            </LanguageProvider>
+          </CdsProvider>
         </Providers>
         <Analytics />
         <SpeedInsights />

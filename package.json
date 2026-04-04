@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@coinbase/cds-icons": "^5.13.0",
+    "@coinbase/cds-web": "^8.62.1",
     "@privy-io/react-auth": "^3.18.0",
     "@privy-io/wagmi": "^4.0.3",
     "@tailwindcss/postcss": "^4.2.2",
@@ -17,6 +19,7 @@
     "@types/react": "^19.2.14",
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
+    "framer-motion": "^10.18.0",
     "next": "^16.2.1",
     "postcss": "^8.5.8",
     "react": "^19.2.4",

@@ -3,6 +3,11 @@
 import { useState, useEffect } from 'react';
 import { useAccount, useBalance } from 'wagmi';
 import { usePrivy } from '@privy-io/react-auth';
+import { Box } from '@coinbase/cds-web/layout/Box';
+import { VStack } from '@coinbase/cds-web/layout/VStack';
+import { HStack } from '@coinbase/cds-web/layout/HStack';
+import { Text } from '@coinbase/cds-web/typography/Text';
+import { Button } from '@coinbase/cds-web/buttons/Button';
 import { useVaultData, useUserBalance } from '@/hooks/useVaultData';
 import { useDeposit, useWithdraw } from '@/hooks/useVaultActions';
 import { ChainlinkIcon, LidoIcon, WstEthIcon } from '@/components/TokenIcons';
@@ -21,21 +26,13 @@ export function VaultPanel() {
   const { wstETHBalance, refetch: refetchBalance } = useUserBalance(address);
 
   const {
-    deposit,
-    isPending: isDepositing,
-    isConfirming: isDepositConfirming,
-    isSuccess: depositSuccess,
-    error: depositError,
-    reset: resetDeposit,
+    deposit, isPending: isDepositing, isConfirming: isDepositConfirming,
+    isSuccess: depositSuccess, error: depositError, reset: resetDeposit,
   } = useDeposit();
 
   const {
-    withdraw,
-    isPending: isWithdrawing,
-    isConfirming: isWithdrawConfirming,
-    isSuccess: withdrawSuccess,
-    error: withdrawError,
-    reset: resetWithdraw,
+    withdraw, isPending: isWithdrawing, isConfirming: isWithdrawConfirming,
+    isSuccess: withdrawSuccess, error: withdrawError, reset: resetWithdraw,
   } = useWithdraw();
 
   useEffect(() => {
@@ -45,357 +42,318 @@ export function VaultPanel() {
     }
   }, [depositSuccess, withdrawSuccess, refetchVault, refetchBalance]);
 
-  const handleDeposit = () => {
-    if (!depositAmount) return;
-    deposit(depositAmount);
-  };
-
-  const handleWithdraw = () => {
-    withdraw();
-  };
+  const handleDeposit = () => { if (depositAmount) deposit(depositAmount); };
+  const handleWithdraw = () => { withdraw(); };
 
   const setMaxDeposit = () => {
     if (!ethBalance?.formatted) return;
     const bal = parseFloat(ethBalance.formatted);
-    const reserve = 0.01;
-    const max = bal > reserve ? bal - reserve : bal;
-    if (max > 0) {
-      setDepositAmount(max.toFixed(6));
-    }
+    const max = bal > 0.01 ? bal - 0.01 : bal;
+    if (max > 0) setDepositAmount(max.toFixed(6));
   };
-
   const set50Deposit = () => {
     if (!ethBalance?.formatted) return;
-    const bal = parseFloat(ethBalance.formatted);
-    const half = bal * 0.5;
+    const half = parseFloat(ethBalance.formatted) * 0.5;
     if (half > 0) setDepositAmount(half.toFixed(6));
   };
-
   const set25Deposit = () => {
     if (!ethBalance?.formatted) return;
-    const bal = parseFloat(ethBalance.formatted);
-    const quarter = bal * 0.25;
+    const quarter = parseFloat(ethBalance.formatted) * 0.25;
     if (quarter > 0) setDepositAmount(quarter.toFixed(6));
   };
 
   const depositNum = parseFloat(depositAmount) || 0;
-  const estimatedWstETH = stEthPerToken && depositNum > 0
-    ? depositNum / stEthPerToken
-    : 0;
-
+  const estimatedWstETH = stEthPerToken && depositNum > 0 ? depositNum / stEthPerToken : 0;
   const earlyWithdrawAmount = parseFloat(wstETHBalance) * (1 - feePercent / 100);
-  const feeAmount = parseFloat(wstETHBalance) * (feePercent / 100);
   const maxBal = ethBalance ? parseFloat(ethBalance.formatted) : 0;
 
   return (
-    <div className="w-full max-w-[1200px] mx-auto mt-6 px-4 sm:px-6">
+    <Box as="div" style={{ maxWidth: '1200px', margin: '24px auto 0', padding: '0 16px', width: '100%' }}>
       {/* Page title */}
-      <div className="flex items-center justify-center gap-4 mb-10">
+      <HStack as="div" style={{ justifyContent: 'center', alignItems: 'center', gap: '16px', marginBottom: '40px' }}>
         <LidoIcon size={56} />
-        <h1 className="text-[32px] sm:text-[56px] md:text-[80px]" style={{ lineHeight: 1, fontWeight: 400, color: '#0A0B0D' }}>
-          {t('vaultDiamond.title')}
-        </h1>
-      </div>
+        <Text font="display2" as="h1">{t('vaultDiamond.title')}</Text>
+      </HStack>
 
       {/* Two-column grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {/* Left column: tabs + widget */}
+        <VStack as="div" style={{ gap: '0px' }}>
+          {/* Tab buttons */}
+          <HStack as="div" style={{ justifyContent: 'center', gap: '8px', marginBottom: '12px' }}>
+            <Button
+              variant={activeTab === 'deposit' ? 'primary' : 'secondary'}
+              compact
+              onClick={() => { setActiveTab('deposit'); resetDeposit(); resetWithdraw(); }}
+              style={{ borderRadius: '24px' }}
+            >
+              {t('vaultDiamond.deposit')}
+            </Button>
+            <Button
+              variant={activeTab === 'withdraw' ? 'primary' : 'secondary'}
+              compact
+              onClick={() => { setActiveTab('withdraw'); resetDeposit(); resetWithdraw(); }}
+              style={{ borderRadius: '24px' }}
+            >
+              {t('vaultDiamond.withdraw')}
+            </Button>
+          </HStack>
 
-      {/* Left column: tabs + widget */}
-      <div className="flex flex-col">
-        {/* Tabs centered above widget */}
-        <div className="flex items-center justify-center gap-2 mb-3 px-2" role="tablist">
-          <button
-            type="button"
-            role="tab"
-            aria-selected={activeTab === 'deposit'}
-            onClick={() => { setActiveTab('deposit'); resetDeposit(); resetWithdraw(); }}
-            className={`text-sm px-4 py-2 transition-colors ${activeTab === 'deposit' ? 'bg-[#0F0F660D]' : 'hover:bg-[#0F0F660D]'}`}
-            style={{ borderRadius: '24px', color: 'rgb(20, 20, 23)', fontWeight: 500 }}
-          >
-            {t('vaultDiamond.deposit')}
-          </button>
-          <button
-            type="button"
-            role="tab"
-            aria-selected={activeTab === 'withdraw'}
-            onClick={() => { setActiveTab('withdraw'); resetDeposit(); resetWithdraw(); }}
-            className={`text-sm px-4 py-2 transition-colors ${activeTab === 'withdraw' ? 'bg-[#0F0F660D]' : 'hover:bg-[#0F0F660D]'}`}
-            style={{ borderRadius: '24px', color: 'rgb(20, 20, 23)', fontWeight: 500 }}
-          >
-            {t('vaultDiamond.withdraw')}
-          </button>
-        </div>
-
-      {/* Card */}
-      <div className="flex-1" style={{ background: '#ffffff', padding: '24px' }}>
-        {activeTab === 'deposit' ? (
-          <>
-            {/* Pay section */}
-            <div className="mb-1">
-              <div className="flex items-center gap-3 mb-4" style={{ color: 'rgb(118, 119, 122)', fontSize: '14px' }}>
-                <label htmlFor="deposit-amount">{t('vaultDiamond.payOnEthereum')}</label>
-                <button type="button" onClick={setMaxDeposit} className="hover:opacity-70" style={{ color: 'rgb(30, 30, 232)', fontWeight: 500, minHeight: '44px', minWidth: '44px' }}>
-                  Max {maxBal.toFixed(7)}
-                </button>
-                <button type="button" onClick={set50Deposit} className="hover:opacity-70" style={{ color: 'rgb(30, 30, 232)', fontWeight: 500, minHeight: '44px', minWidth: '44px' }}>
-                  50%
-                </button>
-                <button type="button" onClick={set25Deposit} className="hover:opacity-70" style={{ color: 'rgb(30, 30, 232)', fontWeight: 500, minHeight: '44px', minWidth: '44px' }}>
-                  25%
-                </button>
-              </div>
-              <div className="flex items-baseline justify-between">
-                <div className="flex items-baseline gap-2">
-                  <input
-                    id="deposit-amount"
-                    type="number"
-                    placeholder="0"
-                    value={depositAmount}
-                    onChange={(e) => { setDepositAmount(e.target.value); resetDeposit(); }}
-                    className="bg-transparent placeholder:text-[#ccc]"
-                    style={{ fontSize: 'clamp(24px, 5vw, 36px)', fontWeight: 700, color: '#000', width: depositAmount ? `${Math.max(2, depositAmount.length)}ch` : '2ch' }}
-                    min="0"
-                    step="0.01"
-                  />
-                  <span style={{ fontSize: 'clamp(24px, 5vw, 36px)', fontWeight: 400, color: 'rgb(118, 119, 122)' }}>ETH</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Divider + arrow */}
-            <div className="flex items-center my-3">
-              <div className="flex-1" style={{ height: '1px', background: '#e0e0e0' }} />
-              <div className="mx-3">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                  <path d="M10 4V16M10 16L6 12M10 16L14 12" stroke="#000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-              <div className="flex-1" style={{ height: '1px', background: '#e0e0e0' }} />
-            </div>
-
-            {/* Receive section */}
-            <div className="mb-6">
-              <p className="mb-4" style={{ color: 'rgb(118, 119, 122)', fontSize: '14px' }}>{t('vaultDiamond.receiveOnEthereum')}</p>
-              <div className="flex items-baseline justify-between">
-                <div className="flex items-baseline gap-2">
-                  <span style={{ fontSize: 'clamp(24px, 5vw, 36px)', fontWeight: 700, color: '#000' }}>
-                    {estimatedWstETH > 0 ? estimatedWstETH.toFixed(6) : '0'}
-                  </span>
-                  <span style={{ fontSize: 'clamp(24px, 5vw, 36px)', fontWeight: 400, color: 'rgb(118, 119, 122)' }}>wstETH</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Alerts */}
-            {athReached && (
-              <div className="mb-4 flex items-start gap-2 px-3 py-2.5 bg-green/8 rounded-xl" role="alert">
-                <span className="text-sm shrink-0" aria-hidden="true">✅</span>
-                <p className="text-[13px] text-green m-0 leading-snug">{t('vaultDiamond.athPaused')}</p>
-              </div>
-            )}
-
-            {/* Button */}
-            <div className="flex items-center justify-center gap-3">
-              {!isConnected ? (
-                <button
-                  type="button"
-                  onClick={login}
-                  className="flex-1 py-4 hover:opacity-80 transition-opacity"
-                  style={{ background: '#000', borderRadius: '28px', color: '#fff', fontSize: '16px', fontWeight: 700 }}
-                >
-                  {t('vaultDiamond.login')}
-                </button>
-              ) : athReached ? (
-                <button type="button" disabled className="flex-1 py-4" style={{ background: '#e8e8ed', borderRadius: '28px', color: 'rgb(118, 119, 122)', fontSize: '16px', fontWeight: 700 }}>
-                  {t('vaultDiamond.depositsDisabled')}
-                </button>
-              ) : (
-                <button
-                  type="button"
-                  onClick={handleDeposit}
-                  disabled={!depositAmount || parseFloat(depositAmount) <= 0 || isDepositing || isDepositConfirming}
-                  className="flex-1 py-4 hover:opacity-80 transition-opacity disabled:opacity-50"
-                  style={{ background: '#000', borderRadius: '28px', color: '#fff', fontSize: '16px', fontWeight: 700 }}
-                >
-                  {isDepositing
-                    ? t('vaultDiamond.confirmInWallet')
-                    : isDepositConfirming
-                    ? t('vaultDiamond.depositing')
-                    : depositSuccess
-                    ? t('vaultDiamond.deposited')
-                    : t('vaultDiamond.depositETH')}
-                </button>
-              )}
-            </div>
-
-            {depositError && (
-              <div className="mt-3 flex items-start gap-2 px-3 py-2.5 bg-pink/6 rounded-xl" role="alert">
-                <span className="text-sm shrink-0" aria-hidden="true">🚨</span>
-                <p className="text-[13px] text-pink m-0 leading-snug break-all">{(depositError as Error).message?.split('\n')[0]}</p>
-              </div>
-            )}
-            {depositSuccess && (
-              <div className="mt-3 flex items-start gap-2 px-3 py-2.5 bg-green/8 rounded-xl" role="alert">
-                <span className="text-sm shrink-0" aria-hidden="true">✅</span>
-                <p className="text-[13px] text-green m-0 leading-snug">{t('vaultDiamond.depositSuccess')}</p>
-              </div>
-            )}
-
-            {/* Exchange rate */}
-            <div className="mt-5 flex items-center justify-center gap-2" style={{ color: 'rgb(118, 119, 122)', fontSize: '13px' }}>
-              <span>1 ETH</span>
-              <span>⇄</span>
-              <span>{stEthPerToken ? (1 / stEthPerToken).toFixed(6) : '—'} wstETH</span>
-            </div>
-          </>
-        ) : (
-          <>
-            {/* Withdraw balance */}
-            <div className="mb-1">
-              <p className="mb-4" style={{ color: 'rgb(118, 119, 122)', fontSize: '14px' }}>{t('vaultDiamond.vaultBalance')}</p>
-              <div className="flex items-baseline gap-2">
-                <span style={{ fontSize: 'clamp(24px, 5vw, 36px)', fontWeight: 700, color: '#000' }}>
-                  {parseFloat(wstETHBalance).toFixed(6)}
-                </span>
-                <span style={{ fontSize: 'clamp(24px, 5vw, 36px)', fontWeight: 400, color: 'rgb(118, 119, 122)' }}>wstETH</span>
-              </div>
-            </div>
-
-            {/* Fee info */}
-            {!athReached && parseFloat(wstETHBalance) > 0 && (
+          {/* Card */}
+          <Box as="div" style={{ flex: 1, background: '#ffffff', padding: '24px' }}>
+            {activeTab === 'deposit' ? (
               <>
-                <div className="flex items-center my-3">
-                  <div className="flex-1" style={{ height: '1px', background: '#e0e0e0' }} />
-                </div>
-                <div className="mb-6">
-                  <p className="mb-4" style={{ color: 'rgb(118, 119, 122)', fontSize: '14px' }}>{t('vaultDiamond.receiveAfterFee', { feePercent: String(feePercent) })}</p>
-                  <div className="flex items-baseline gap-2">
+                {/* Pay section */}
+                <Box as="div" style={{ marginBottom: '4px' }}>
+                  <HStack as="div" style={{ alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
+                    <Text font="caption" as="label" htmlFor="deposit-amount" color="fgMuted">{t('vaultDiamond.payOnEthereum')}</Text>
+                    <button type="button" onClick={setMaxDeposit} className="hover:opacity-70" style={{ color: '#0052FF', fontWeight: 500, background: 'none', border: 'none', minHeight: '44px', minWidth: '44px' }}>
+                      Max {maxBal.toFixed(7)}
+                    </button>
+                    <button type="button" onClick={set50Deposit} className="hover:opacity-70" style={{ color: '#0052FF', fontWeight: 500, background: 'none', border: 'none', minHeight: '44px', minWidth: '44px' }}>50%</button>
+                    <button type="button" onClick={set25Deposit} className="hover:opacity-70" style={{ color: '#0052FF', fontWeight: 500, background: 'none', border: 'none', minHeight: '44px', minWidth: '44px' }}>25%</button>
+                  </HStack>
+                  <HStack as="div" style={{ alignItems: 'baseline', gap: '8px' }}>
+                    <input
+                      id="deposit-amount"
+                      type="number"
+                      placeholder="0"
+                      value={depositAmount}
+                      onChange={(e) => { setDepositAmount(e.target.value); resetDeposit(); }}
+                      className="bg-transparent placeholder:text-[#ccc]"
+                      style={{ fontSize: 'clamp(24px, 5vw, 36px)', fontWeight: 700, color: '#000', width: depositAmount ? `${Math.max(2, depositAmount.length)}ch` : '2ch' }}
+                      min="0"
+                      step="0.01"
+                    />
+                    <Text font="title2" as="span" color="fgMuted">ETH</Text>
+                  </HStack>
+                </Box>
+
+                {/* Divider + arrow */}
+                <HStack as="div" style={{ alignItems: 'center', margin: '12px 0' }}>
+                  <Box as="div" style={{ flex: 1, height: '1px', background: '#e0e0e0' }} />
+                  <Box as="div" style={{ margin: '0 12px' }}>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                      <path d="M10 4V16M10 16L6 12M10 16L14 12" stroke="#000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </Box>
+                  <Box as="div" style={{ flex: 1, height: '1px', background: '#e0e0e0' }} />
+                </HStack>
+
+                {/* Receive section */}
+                <Box as="div" style={{ marginBottom: '24px' }}>
+                  <Text font="caption" as="p" color="fgMuted" style={{ marginBottom: '16px' }}>{t('vaultDiamond.receiveOnEthereum')}</Text>
+                  <HStack as="div" style={{ alignItems: 'baseline', gap: '8px' }}>
                     <span style={{ fontSize: 'clamp(24px, 5vw, 36px)', fontWeight: 700, color: '#000' }}>
-                      {earlyWithdrawAmount.toFixed(6)}
+                      {estimatedWstETH > 0 ? estimatedWstETH.toFixed(6) : '0'}
                     </span>
-                    <span style={{ fontSize: 'clamp(24px, 5vw, 36px)', fontWeight: 400, color: 'rgb(118, 119, 122)' }}>wstETH</span>
-                  </div>
-                </div>
+                    <Text font="title2" as="span" color="fgMuted">wstETH</Text>
+                  </HStack>
+                </Box>
+
+                {/* ATH Alert */}
+                {athReached && (
+                  <Box as="div" role="alert" style={{ marginBottom: '16px', display: 'flex', alignItems: 'flex-start', gap: '8px', padding: '10px 12px', background: 'rgba(5, 177, 105, 0.08)', borderRadius: '12px' }}>
+                    <span aria-hidden="true">✅</span>
+                    <Text font="caption" as="p" style={{ color: '#05B169' }}>{t('vaultDiamond.athPaused')}</Text>
+                  </Box>
+                )}
+
+                {/* Button */}
+                <Box as="div" style={{ display: 'flex', justifyContent: 'center' }}>
+                  {!isConnected ? (
+                    <Button variant="primary" block onClick={login} style={{ borderRadius: '28px', height: '56px' }}>
+                      {t('vaultDiamond.login')}
+                    </Button>
+                  ) : athReached ? (
+                    <Button variant="secondary" block disabled style={{ borderRadius: '28px', height: '56px' }}>
+                      {t('vaultDiamond.depositsDisabled')}
+                    </Button>
+                  ) : (
+                    <Button
+                      variant="primary"
+                      block
+                      onClick={handleDeposit}
+                      disabled={!depositAmount || parseFloat(depositAmount) <= 0 || isDepositing || isDepositConfirming}
+                      loading={isDepositing || isDepositConfirming}
+                      style={{ borderRadius: '28px', height: '56px' }}
+                    >
+                      {isDepositing ? t('vaultDiamond.confirmInWallet')
+                        : isDepositConfirming ? t('vaultDiamond.depositing')
+                        : depositSuccess ? t('vaultDiamond.deposited')
+                        : t('vaultDiamond.depositETH')}
+                    </Button>
+                  )}
+                </Box>
+
+                {depositError && (
+                  <Box as="div" role="alert" style={{ marginTop: '12px', display: 'flex', alignItems: 'flex-start', gap: '8px', padding: '10px 12px', background: 'rgba(223, 41, 53, 0.06)', borderRadius: '12px' }}>
+                    <span aria-hidden="true">🚨</span>
+                    <Text font="caption" as="p" style={{ color: '#DF2935' }}>{(depositError as Error).message?.split('\n')[0]}</Text>
+                  </Box>
+                )}
+                {depositSuccess && (
+                  <Box as="div" role="alert" style={{ marginTop: '12px', display: 'flex', alignItems: 'flex-start', gap: '8px', padding: '10px 12px', background: 'rgba(5, 177, 105, 0.08)', borderRadius: '12px' }}>
+                    <span aria-hidden="true">✅</span>
+                    <Text font="caption" as="p" style={{ color: '#05B169' }}>{t('vaultDiamond.depositSuccess')}</Text>
+                  </Box>
+                )}
+
+                {/* Exchange rate */}
+                <HStack as="div" style={{ justifyContent: 'center', alignItems: 'center', gap: '8px', marginTop: '20px' }}>
+                  <Text font="caption" as="span" color="fgMuted">1 ETH</Text>
+                  <Text font="caption" as="span" color="fgMuted">⇄</Text>
+                  <Text font="caption" as="span" color="fgMuted">{stEthPerToken ? (1 / stEthPerToken).toFixed(6) : '—'} wstETH</Text>
+                </HStack>
+              </>
+            ) : (
+              <>
+                {/* Withdraw balance */}
+                <Box as="div" style={{ marginBottom: '4px' }}>
+                  <Text font="caption" as="p" color="fgMuted" style={{ marginBottom: '16px' }}>{t('vaultDiamond.vaultBalance')}</Text>
+                  <HStack as="div" style={{ alignItems: 'baseline', gap: '8px' }}>
+                    <span style={{ fontSize: 'clamp(24px, 5vw, 36px)', fontWeight: 700, color: '#000' }}>
+                      {parseFloat(wstETHBalance).toFixed(6)}
+                    </span>
+                    <Text font="title2" as="span" color="fgMuted">wstETH</Text>
+                  </HStack>
+                </Box>
+
+                {/* Fee info */}
+                {!athReached && parseFloat(wstETHBalance) > 0 && (
+                  <>
+                    <Box as="div" style={{ height: '1px', background: '#e0e0e0', margin: '12px 0' }} />
+                    <Box as="div" style={{ marginBottom: '24px' }}>
+                      <Text font="caption" as="p" color="fgMuted" style={{ marginBottom: '16px' }}>{t('vaultDiamond.receiveAfterFee', { feePercent: String(feePercent) })}</Text>
+                      <HStack as="div" style={{ alignItems: 'baseline', gap: '8px' }}>
+                        <span style={{ fontSize: 'clamp(24px, 5vw, 36px)', fontWeight: 700, color: '#000' }}>
+                          {earlyWithdrawAmount.toFixed(6)}
+                        </span>
+                        <Text font="title2" as="span" color="fgMuted">wstETH</Text>
+                      </HStack>
+                    </Box>
+                  </>
+                )}
+
+                {athReached && parseFloat(wstETHBalance) > 0 && (
+                  <Box as="div" role="alert" style={{ margin: '12px 0 16px', display: 'flex', alignItems: 'flex-start', gap: '8px', padding: '10px 12px', background: 'rgba(5, 177, 105, 0.08)', borderRadius: '12px' }}>
+                    <span aria-hidden="true">✅</span>
+                    <Text font="caption" as="p" style={{ color: '#05B169' }}>{t('vaultDiamond.athZeroFees')}</Text>
+                  </Box>
+                )}
+
+                {/* Button */}
+                <Box as="div" style={{ marginTop: '16px', display: 'flex', justifyContent: 'center' }}>
+                  {!isConnected ? (
+                    <Button variant="primary" block onClick={login} style={{ borderRadius: '28px', height: '56px' }}>
+                      {t('vaultDiamond.login')}
+                    </Button>
+                  ) : (
+                    <Button
+                      variant="primary"
+                      block
+                      onClick={handleWithdraw}
+                      disabled={parseFloat(wstETHBalance) <= 0 || isWithdrawing || isWithdrawConfirming}
+                      loading={isWithdrawing || isWithdrawConfirming}
+                      style={{ borderRadius: '28px', height: '56px' }}
+                    >
+                      {isWithdrawing ? t('vaultDiamond.confirmInWallet')
+                        : isWithdrawConfirming ? t('vaultDiamond.withdrawing')
+                        : withdrawSuccess ? t('vaultDiamond.withdrawn')
+                        : parseFloat(wstETHBalance) <= 0 ? t('vaultDiamond.noBalance')
+                        : athReached ? t('vaultDiamond.withdrawNoFee')
+                        : t('vaultDiamond.withdrawWithFee', { feePercent: String(feePercent) })}
+                    </Button>
+                  )}
+                </Box>
+
+                {withdrawError && (
+                  <Box as="div" role="alert" style={{ marginTop: '12px', display: 'flex', alignItems: 'flex-start', gap: '8px', padding: '10px 12px', background: 'rgba(223, 41, 53, 0.06)', borderRadius: '12px' }}>
+                    <span aria-hidden="true">🚨</span>
+                    <Text font="caption" as="p" style={{ color: '#DF2935' }}>{(withdrawError as Error).message?.split('\n')[0]}</Text>
+                  </Box>
+                )}
+                {withdrawSuccess && (
+                  <Box as="div" role="alert" style={{ marginTop: '12px', display: 'flex', alignItems: 'flex-start', gap: '8px', padding: '10px 12px', background: 'rgba(5, 177, 105, 0.08)', borderRadius: '12px' }}>
+                    <span aria-hidden="true">✅</span>
+                    <Text font="caption" as="p" style={{ color: '#05B169' }}>{t('vaultDiamond.withdrawSuccess')}</Text>
+                  </Box>
+                )}
               </>
             )}
+          </Box>
+        </VStack>
 
-            {athReached && parseFloat(wstETHBalance) > 0 && (
-              <div className="mt-3 mb-4 flex items-start gap-2 px-3 py-2.5 bg-green/8 rounded-xl" role="alert">
-                <span className="text-sm shrink-0" aria-hidden="true">✅</span>
-                <p className="text-[13px] text-green m-0 leading-snug">{t('vaultDiamond.athZeroFees')}</p>
-              </div>
-            )}
+        {/* Vault info — right column */}
+        <VStack as="div" style={{ gap: '0px' }}>
+          <Box
+            as="div"
+            style={{
+              background: '#fff',
+              borderRadius: '56px',
+              padding: 'clamp(24px, 4vw, 40px)',
+              flex: 1,
+              border: '1px solid rgba(0, 0, 0, 0.06)',
+            }}
+          >
+            <Text font="caption" as="span" style={{ background: '#000', color: '#fff', padding: '4px 12px', fontWeight: 600, display: 'inline-block', marginBottom: '20px' }}>
+              {t('vaultDiamond.vaultDetails')}
+            </Text>
 
-            {/* Button */}
-            <div className="mt-4 flex items-center justify-center">
-              {!isConnected ? (
-                <button
-                  type="button"
-                  onClick={login}
-                  className="flex-1 py-4 hover:opacity-80 transition-opacity"
-                  style={{ background: '#000', borderRadius: '28px', color: '#fff', fontSize: '16px', fontWeight: 700 }}
+            <Text font="title3" as="h3" style={{ marginBottom: '8px' }}>
+              {t('vaultDiamond.title')}
+            </Text>
+            <Text font="body" as="p" color="fgMuted" style={{ marginBottom: '32px' }}>
+              {t('vaultDiamond.description')}
+            </Text>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-6" style={{ marginBottom: '32px' }}>
+              <VStack as="div" style={{ gap: '4px' }}>
+                <Text font="caption" as="p" color="fgMuted">{t('vaultDiamond.tvl')}</Text>
+                <Text font="headline" as="p">{parseFloat(totalWstETH).toFixed(4)}</Text>
+                <HStack as="div" style={{ alignItems: 'center', gap: '6px' }}>
+                  <WstEthIcon size={16} />
+                  <Text font="caption" as="span" color="fgMuted">wstETH</Text>
+                </HStack>
+              </VStack>
+              <VStack as="div" style={{ gap: '4px' }}>
+                <Text font="caption" as="p" color="fgMuted">{t('vaultDiamond.earlyExitFee')}</Text>
+                <Text font="headline" as="p">{athReached ? t('vaultDiamond.feeNone') : `${feePercent}%`}</Text>
+              </VStack>
+              <VStack as="div" style={{ gap: '4px' }}>
+                <Text font="caption" as="p" color="fgMuted">{t('vaultDiamond.yieldSource')}</Text>
+                <a href="https://lido.fi" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" style={{ textDecoration: 'none' }}>
+                  <HStack as="div" style={{ alignItems: 'center', gap: '6px' }}>
+                    <LidoIcon size={18} />
+                    <Text font="headline" as="span">Lido</Text>
+                  </HStack>
+                </a>
+              </VStack>
+              <VStack as="div" style={{ gap: '4px' }}>
+                <Text font="caption" as="p" color="fgMuted">{t('vaultDiamond.priceOracle')}</Text>
+                <a href="https://data.chain.link/feeds/ethereum/mainnet/eth-usd" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" style={{ textDecoration: 'none' }}>
+                  <HStack as="div" style={{ alignItems: 'center', gap: '6px' }}>
+                    <ChainlinkIcon size={18} />
+                    <Text font="headline" as="span">Chainlink</Text>
+                  </HStack>
+                </a>
+              </VStack>
+              <VStack as="div" style={{ gap: '4px' }}>
+                <Text font="caption" as="p" color="fgMuted">{t('vaultDiamond.contract')}</Text>
+                <a
+                  href="https://etherscan.io/address/0x3548A8345A37f58F232F97eB050C937fb660D514"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:opacity-80 transition-opacity"
+                  style={{ textDecoration: 'none' }}
                 >
-                  {t('vaultDiamond.login')}
-                </button>
-              ) : (
-                <button
-                  type="button"
-                  onClick={handleWithdraw}
-                  disabled={parseFloat(wstETHBalance) <= 0 || isWithdrawing || isWithdrawConfirming}
-                  className="flex-1 py-4 hover:opacity-80 transition-opacity disabled:opacity-50"
-                  style={{ background: '#000', borderRadius: '28px', color: '#fff', fontSize: '16px', fontWeight: 700 }}
-                >
-                  {isWithdrawing
-                    ? t('vaultDiamond.confirmInWallet')
-                    : isWithdrawConfirming
-                    ? t('vaultDiamond.withdrawing')
-                    : withdrawSuccess
-                    ? t('vaultDiamond.withdrawn')
-                    : parseFloat(wstETHBalance) <= 0
-                    ? t('vaultDiamond.noBalance')
-                    : athReached
-                    ? t('vaultDiamond.withdrawNoFee')
-                    : t('vaultDiamond.withdrawWithFee', { feePercent: String(feePercent) })}
-                </button>
-              )}
+                  <Text font="headline" as="span">Etherscan ↗</Text>
+                </a>
+              </VStack>
             </div>
-
-            {withdrawError && (
-              <div className="mt-3 flex items-start gap-2 px-3 py-2.5 bg-pink/6 rounded-xl" role="alert">
-                <span className="text-sm shrink-0" aria-hidden="true">🚨</span>
-                <p className="text-[13px] text-pink m-0 leading-snug break-all">{(withdrawError as Error).message?.split('\n')[0]}</p>
-              </div>
-            )}
-            {withdrawSuccess && (
-              <div className="mt-3 flex items-start gap-2 px-3 py-2.5 bg-green/8 rounded-xl" role="alert">
-                <span className="text-sm shrink-0" aria-hidden="true">✅</span>
-                <p className="text-[13px] text-green m-0 leading-snug">{t('vaultDiamond.withdrawSuccess')}</p>
-              </div>
-            )}
-          </>
-        )}
+          </Box>
+        </VStack>
       </div>
-      </div>{/* end left column */}
-
-      {/* Vault info — right column */}
-      <div className="flex flex-col">
-        {/* Spacer matching tabs height so both columns align */}
-        <div className="mb-3" style={{ height: '36px' }} />
-        <div className="vault-card p-8 sm:p-10 flex flex-col flex-1">
-        <span className="inline-block self-start text-[13px] font-semibold text-white px-3 py-1 mb-5" style={{ background: '#000' }}>
-          {t('vaultDiamond.vaultDetails')}
-        </span>
-
-        <h3 className="text-[22px] mb-2" style={{ fontWeight: 700, color: '#000' }}>
-          {t('vaultDiamond.title')}
-        </h3>
-        <p className="text-[18px] leading-relaxed mb-8" style={{ color: 'rgb(118, 119, 122)', fontWeight: 500 }}>
-          {t('vaultDiamond.description')}
-        </p>
-
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-8">
-          <div>
-            <p className="text-[13px] mb-1" style={{ color: 'rgb(118, 119, 122)' }}>{t('vaultDiamond.tvl')}</p>
-            <p className="text-[18px]" style={{ fontWeight: 700, color: '#000' }}>{parseFloat(totalWstETH).toFixed(4)}</p>
-            <div className="flex items-center gap-1.5">
-              <WstEthIcon size={16} />
-              <span className="text-[14px]" style={{ fontWeight: 500, color: 'rgb(118, 119, 122)' }}>wstETH</span>
-            </div>
-          </div>
-          <div>
-            <p className="text-[13px] mb-1" style={{ color: 'rgb(118, 119, 122)' }}>{t('vaultDiamond.earlyExitFee')}</p>
-            <p className="text-[18px]" style={{ fontWeight: 700, color: '#000' }}>{athReached ? t('vaultDiamond.feeNone') : `${feePercent}%`}</p>
-          </div>
-          <div>
-            <p className="text-[13px] mb-1" style={{ color: 'rgb(118, 119, 122)' }}>{t('vaultDiamond.yieldSource')}</p>
-            <a href="https://lido.fi" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:opacity-80 transition-opacity">
-              <LidoIcon size={18} />
-              <p className="text-[18px]" style={{ fontWeight: 700, color: '#000' }}>Lido</p>
-            </a>
-          </div>
-          <div>
-            <p className="text-[13px] mb-1" style={{ color: 'rgb(118, 119, 122)' }}>{t('vaultDiamond.priceOracle')}</p>
-            <a href="https://data.chain.link/feeds/ethereum/mainnet/eth-usd" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:opacity-80 transition-opacity">
-              <ChainlinkIcon size={18} />
-              <p className="text-[18px]" style={{ fontWeight: 700, color: '#000' }}>Chainlink</p>
-            </a>
-          </div>
-          <div>
-            <p className="text-[13px] mb-1" style={{ color: 'rgb(118, 119, 122)' }}>{t('vaultDiamond.contract')}</p>
-            <a
-              href="https://etherscan.io/address/0x3548A8345A37f58F232F97eB050C937fb660D514"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 hover:opacity-80 transition-opacity"
-              style={{ fontSize: '18px', fontWeight: 700, color: '#000' }}
-            >
-              Etherscan ↗
-            </a>
-          </div>
-        </div>
-        </div>
-      </div>
-      </div>
-    </div>
+    </Box>
   );
 }

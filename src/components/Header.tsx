@@ -3,6 +3,12 @@
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useState, useRef, useEffect, useCallback } from 'react';
+import { Box } from '@coinbase/cds-web/layout/Box';
+import { HStack } from '@coinbase/cds-web/layout/HStack';
+import { VStack } from '@coinbase/cds-web/layout/VStack';
+import { Text } from '@coinbase/cds-web/typography/Text';
+import { Button } from '@coinbase/cds-web/buttons/Button';
+import { LogoMark as CdsLogoMark } from '@coinbase/cds-web/icons/LogoMark';
 import { LogoMark } from '@/components/LogoMark';
 import { useLanguage } from '@/context/LanguageContext';
 
@@ -58,13 +64,11 @@ export function Header() {
     }`;
   };
 
-  const currentLang = languages.find(l => l.code === lang) || languages[0];
-
   return (
     <header className="relative w-full px-4 sm:px-6 py-3 sm:py-4 max-w-[1200px] mx-auto">
-      <div className="flex items-center">
+      <HStack as="div" style={{ alignItems: 'center' }}>
         {/* Logo + mobile menu toggle */}
-        <div className="flex-1 flex items-center gap-4">
+        <HStack as="div" style={{ flex: 1, alignItems: 'center', gap: '16px' }}>
           <Link href="/" className="inline-flex items-center gap-2 hover:opacity-80 transition-opacity">
             <LogoMark size={48} />
           </Link>
@@ -73,7 +77,7 @@ export function Header() {
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="sm:hidden flex items-center justify-center hover:opacity-80 transition-opacity"
-            style={{ background: 'none', border: 'none', color: 'rgb(10, 11, 13)', minWidth: '44px', minHeight: '44px' }}
+            style={{ background: 'none', border: 'none', color: '#0A0B0D', minWidth: '44px', minHeight: '44px' }}
             aria-label="Menu"
             aria-expanded={mobileMenuOpen}
           >
@@ -88,34 +92,34 @@ export function Header() {
             )}
           </button>
           {/* Nav tabs */}
-          <div className="hidden sm:flex items-center gap-1" style={{ color: '#0A0B0D', fontSize: '16px', fontWeight: 600 }}>
+          <nav className="hidden sm:flex items-center gap-1">
             <button
               type="button"
               onClick={() => scrollToSection('how-it-works')}
               className={tabClass([])}
-              style={{ borderRadius: '24px', fontFamily: '-apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"' }}
+              style={{ borderRadius: '24px' }}
             >
-              {t('nav.howItWorks')}
+              <Text font="label1" as="span">{t('nav.howItWorks')}</Text>
             </button>
             <button
               type="button"
               onClick={() => scrollToSection('faq')}
               className={tabClass([])}
-              style={{ borderRadius: '24px', fontFamily: '-apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"' }}
+              style={{ borderRadius: '24px' }}
             >
-              {t('nav.faq')}
+              <Text font="label1" as="span">{t('nav.faq')}</Text>
             </button>
-            <Link href="/about" className={tabClass(['/about'])} style={{ borderRadius: '24px' }}>
-              {t('nav.about')}
+            <Link href="/about" className={tabClass(['/about'])} style={{ borderRadius: '24px', textDecoration: 'none' }}>
+              <Text font="label1" as="span">{t('nav.about')}</Text>
             </Link>
-            <Link href="/resources" className={tabClass(['/resources'])} style={{ borderRadius: '24px' }}>
-              {t('nav.resources')}
+            <Link href="/resources" className={tabClass(['/resources'])} style={{ borderRadius: '24px', textDecoration: 'none' }}>
+              <Text font="label1" as="span">{t('nav.resources')}</Text>
             </Link>
-          </div>
-        </div>
+          </nav>
+        </HStack>
 
-        {/* Language switcher + CTA button — right */}
-        <div className="flex-1 flex justify-end items-center gap-3">
+        {/* Language switcher + CTA button */}
+        <HStack as="div" style={{ flex: 1, justifyContent: 'flex-end', alignItems: 'center', gap: '12px' }}>
           {/* Language dropdown */}
           <div ref={langDropdownRef} className="relative hidden sm:block">
             <button
@@ -132,7 +136,8 @@ export function Header() {
               </svg>
             </button>
             {langDropdownOpen && (
-              <div
+              <Box
+                as="div"
                 style={{
                   position: 'absolute',
                   top: 'calc(100% + 12px)',
@@ -144,12 +149,13 @@ export function Header() {
                   padding: '24px',
                   minWidth: '280px',
                   zIndex: 200,
+                  flexDirection: 'column',
                 }}
               >
-                <div style={{ fontSize: '16px', fontWeight: 600, color: 'rgb(91, 97, 110)', marginBottom: '16px' }}>
+                <Text font="label1" as="div" color="fgMuted" style={{ marginBottom: '16px' }}>
                   {t('nav.languageAndRegion')}
-                </div>
-                <div className="flex flex-col" style={{ margin: '0 -8px' }}>
+                </Text>
+                <VStack as="div" style={{ margin: '0 -8px', gap: '0px' }}>
                   {languages.map((l) => (
                     <button
                       key={l.code}
@@ -160,7 +166,6 @@ export function Header() {
                         background: 'none',
                         border: 'none',
                         color: '#0A0B0D',
-                        fontFamily: '-apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
                         padding: '12px 16px',
                         borderRadius: '16px',
                       }}
@@ -168,8 +173,8 @@ export function Header() {
                       onMouseLeave={(e) => { e.currentTarget.style.background = 'none'; }}
                     >
                       <div>
-                        <div style={{ fontSize: '16px', fontWeight: 700, lineHeight: '22px' }}>{l.label}</div>
-                        <div style={{ fontSize: '16px', fontWeight: 400, color: '#8A919E', lineHeight: '22px' }}>{l.region}</div>
+                        <Text font="headline" as="div">{l.label}</Text>
+                        <Text font="body" as="div" color="fgMuted">{l.region}</Text>
                       </div>
                       {lang === l.code && (
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#05B169" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -178,21 +183,25 @@ export function Header() {
                       )}
                     </button>
                   ))}
-                </div>
-              </div>
+                </VStack>
+              </Box>
             )}
           </div>
-          <a
-            href="https://app.defied.bg" target="_blank" rel="noopener noreferrer"
-            className="btn hover:opacity-80 transition-opacity"
-            style={{ background: '#0052FF', border: '1px solid #0052FF', borderRadius: '56px', color: '#ffffff', fontSize: '16px', fontWeight: 600, height: '44px', minWidth: '100px', padding: '0 24px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
+          <Button
+            as="a"
+            href="https://app.defied.bg"
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="primary"
+            compact
+            style={{ borderRadius: '56px', minWidth: '100px', padding: '0 24px', height: '44px' }}
           >
             {t('hero.ctaHeader')}
-          </a>
-        </div>
-      </div>
+          </Button>
+        </HStack>
+      </HStack>
 
-      {/* Mobile-only collapsible menu — absolute overlay */}
+      {/* Mobile-only collapsible menu */}
       <div
         ref={mobileMenuRef}
         className="sm:hidden absolute left-0 right-0 overflow-hidden"
@@ -207,22 +216,22 @@ export function Header() {
           pointerEvents: mobileMenuOpen ? 'auto' : 'none',
         }}
       >
-        <div className="flex flex-col gap-1 px-4 pt-3 pb-2" style={{ color: '#0A0B0D', fontSize: '18px', fontWeight: 400 }}>
+        <VStack as="nav" style={{ gap: '4px', padding: '12px 16px 8px' }}>
           <button
             type="button"
             onClick={() => scrollToSection('how-it-works')}
             className="py-2.5 px-1 transition-colors text-left"
-            style={{ background: 'none', border: 'none', color: 'inherit', fontSize: 'inherit', fontWeight: 'inherit', fontFamily: '-apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"' }}
+            style={{ background: 'none', border: 'none', color: '#0A0B0D' }}
           >
-            {t('nav.howItWorks')}
+            <Text font="body" as="span">{t('nav.howItWorks')}</Text>
           </button>
           <button
             type="button"
             onClick={() => scrollToSection('faq')}
             className="py-2.5 px-1 transition-colors text-left"
-            style={{ background: 'none', border: 'none', color: 'inherit', fontSize: 'inherit', fontWeight: 'inherit', fontFamily: '-apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"' }}
+            style={{ background: 'none', border: 'none', color: '#0A0B0D' }}
           >
-            {t('nav.faq')}
+            <Text font="body" as="span">{t('nav.faq')}</Text>
           </button>
           {[
             { href: '/about', label: t('nav.about'), paths: ['/about'] },
@@ -237,30 +246,25 @@ export function Header() {
               }`}
               style={{ textDecoration: 'none', color: 'inherit' }}
             >
-              {item.label}
+              <Text font="body" as="span">{item.label}</Text>
             </Link>
           ))}
           {/* Mobile language selector */}
           <div style={{ borderTop: '1px solid rgba(0,0,0,0.06)', marginTop: '4px', paddingTop: '8px' }}>
-            <div style={{ fontSize: '16px', fontWeight: 500, color: '#0A0B0D', padding: '4px 1px 8px' }}>
+            <Text font="label1" as="div" style={{ padding: '4px 1px 8px' }}>
               {t('nav.languageAndRegion')}
-            </div>
+            </Text>
             {languages.map((l) => (
               <button
                 key={l.code}
                 type="button"
                 onClick={() => { setLang(l.code); setMobileMenuOpen(false); }}
                 className="w-full flex items-center justify-between py-2.5 px-1 transition-colors text-left"
-                style={{
-                  background: 'none',
-                  border: 'none',
-                  color: 'inherit',
-                  fontFamily: '-apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
-                }}
+                style={{ background: 'none', border: 'none', color: 'inherit' }}
               >
                 <div>
-                  <div style={{ fontSize: '16px', fontWeight: 500, lineHeight: '20px' }}>{l.label}</div>
-                  <div style={{ fontSize: '13px', fontWeight: 400, color: '#5B616E', lineHeight: '18px' }}>{l.region}</div>
+                  <Text font="label1" as="div">{l.label}</Text>
+                  <Text font="caption" as="div" color="fgMuted">{l.region}</Text>
                 </div>
                 {lang === l.code && (
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0052FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -270,7 +274,7 @@ export function Header() {
               </button>
             ))}
           </div>
-        </div>
+        </VStack>
       </div>
     </header>
   );
