@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Text } from '@coinbase/cds-web/typography/Text';
+import { Tag } from '@coinbase/cds-web/tag/Tag';
 import { Chip } from '@coinbase/cds-web/chips/Chip';
 import { useArticles } from '@/data/useArticles';
 import { useLanguage } from '@/context/LanguageContext';
@@ -85,7 +86,7 @@ export function ResourcesPage() {
                   </div>
                   <div style={{ paddingTop: '20px' }}>
                     <div style={{ marginBottom: '12px' }}>
-                      <span className="category-label">{article.category}</span>
+                      <span className="category-tag-hover"><Tag colorScheme="gray">{article.category}</Tag></span>
                     </div>
                     <Text
                       font="title3"
@@ -141,7 +142,7 @@ export function ResourcesPage() {
                   </div>
                   <div style={{ paddingTop: '16px' }}>
                     <div style={{ marginBottom: '8px' }}>
-                      <span className="category-label">{article.category}</span>
+                      <span className="category-tag-hover"><Tag colorScheme="gray">{article.category}</Tag></span>
                     </div>
                     <Text
                       font="title3"
