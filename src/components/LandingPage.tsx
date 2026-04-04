@@ -92,8 +92,8 @@ export function LandingPage() {
           >
             <div className="hero-features-grid-4">
               {[
-                { name: 'walletUi' as const, title: t('features.f1Title'), desc: t('features.f1Desc') },
                 { name: 'realToUSDC' as const, title: t('features.f2Title'), desc: t('features.f2Desc') },
+                { name: 'walletUi' as const, title: t('features.f1Title'), desc: t('features.f1Desc') },
                 { name: 'multipleAccountsWalletsForOneUser' as const, title: t('features.f4Title'), desc: t('features.f4Desc') },
                 { name: 'stayInControlSelfHostedWalletsStorage' as const, title: t('features.f5Title'), desc: t('features.f5Desc') },
               ].map((feature) => (
