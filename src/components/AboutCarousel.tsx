@@ -43,7 +43,7 @@ export function AboutCarousel() {
       </Text>
 
       {/* 2-column grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+      <div className="grid-1-2">
         {cards.map((card, i) => (
           <Box
             key={i}

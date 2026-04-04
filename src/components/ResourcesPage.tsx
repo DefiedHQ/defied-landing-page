@@ -72,16 +72,16 @@ export function ResourcesPage() {
 
       {/* Featured articles */}
       {featured.length > 0 && (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6" style={{ marginBottom: '32px' }}>
+        <div className="grid-1-2-md" style={{ marginBottom: '32px' }}>
           {featured.map((article) => (
             <Link key={article.id} href={`/resources/${article.id}`} style={{ textDecoration: 'none' }}>
-              <VStack as="article" className="group" style={{ gap: '0px' }}>
+              <VStack as="article" className="card-group" style={{ gap: '0px' }}>
                 <Box as="div" style={{ width: '100%', height: 'clamp(200px, 25vw, 270px)', overflow: 'hidden', borderRadius: '56px' }}>
                   <img src="/article-cover.svg" alt={article.title} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </Box>
                 <VStack as="div" style={{ paddingTop: '20px', gap: '8px' }}>
                   <Tag>{article.category}</Tag>
-                  <Text font="title3" as="h2" className="group-hover:underline" style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                  <Text font="title3" as="h2" className="card-group-underline" style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
                     {article.title}
                   </Text>
                   <Text font="body" as="p" color="fgMuted" style={{ display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
@@ -99,16 +99,16 @@ export function ResourcesPage() {
 
       {/* Rest of articles */}
       {rest.length > 0 && (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid-1-2-md">
           {rest.map((article) => (
             <Link key={article.id} href={`/resources/${article.id}`} style={{ textDecoration: 'none' }}>
-              <VStack as="article" className="group" style={{ gap: '0px', height: '100%' }}>
+              <VStack as="article" className="card-group" style={{ gap: '0px', height: '100%' }}>
                 <Box as="div" style={{ width: '100%', height: 'clamp(200px, 25vw, 270px)', overflow: 'hidden', borderRadius: '56px' }}>
                   <img src="/article-cover.svg" alt={article.title} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </Box>
                 <VStack as="div" style={{ paddingTop: '16px', gap: '8px' }}>
                   <Tag>{article.category}</Tag>
-                  <Text font="title3" as="h3" className="group-hover:underline" style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                  <Text font="title3" as="h3" className="card-group-underline" style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
                     {article.title}
                   </Text>
                   <Text font="body" as="p" color="fgMuted" style={{ display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>

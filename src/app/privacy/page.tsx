@@ -1,15 +1,16 @@
 'use client';
 
+import { Text } from '@coinbase/cds-web/typography/Text';
 import { useLanguage } from '@/context/LanguageContext';
 
 export default function PrivacyPage() {
   const { t } = useLanguage();
 
   return (
-    <section className="w-full max-w-[984px] mx-auto pb-16">
-      <h1 className="text-[32px] sm:text-[56px] md:text-[80px] mt-12 sm:mt-[120px] mb-4 sm:mb-6" style={{ fontWeight: 400, lineHeight: 1, maxWidth: '800px', color: '#0A0B0D' }}>
+    <section style={{ width: '100%', maxWidth: '984px', margin: '0 auto', paddingBottom: '64px' }}>
+      <Text font="display1" as="h1" className="text-display-responsive" style={{ fontWeight: 400, lineHeight: 1, maxWidth: '800px', color: '#0A0B0D' }}>
         {t('privacy.title')}
-      </h1>
+      </Text>
     </section>
   );
 }

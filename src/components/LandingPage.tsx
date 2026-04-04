@@ -36,7 +36,7 @@ export function LandingPage() {
       }}
     >
       {/* Section 1: Hero */}
-      <section className="px-4 sm:px-6">
+      <section className="section-padding">
         <VStack
           as="div"
           style={{
@@ -100,7 +100,7 @@ export function LandingPage() {
       {/* Section 2: About Grid */}
       <section
         id="how-it-works"
-        className="px-4 sm:px-6"
+        className="section-padding"
         style={{ paddingTop: '100px', paddingBottom: '100px' }}
       >
         <Box as="div" style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
@@ -109,12 +109,12 @@ export function LandingPage() {
       </section>
 
       {/* Section 3: Protocols */}
-      <section className="px-4 sm:px-6" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
+      <section className="section-padding" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
         <ProtocolsSection />
       </section>
 
       {/* Section 4: Blue promo with HeroSquare */}
-      <section className="px-4 sm:px-6" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
+      <section className="section-padding" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
         <Box
           as="div"
           style={{
@@ -128,7 +128,7 @@ export function LandingPage() {
         >
           <Box
             as="div"
-            className="px-8 sm:px-14 lg:px-20 py-14 sm:py-20"
+            className="box-padding"
             style={{
               display: 'flex',
               flexDirection: 'column',
@@ -151,14 +151,14 @@ export function LandingPage() {
       {/* Section 5: FAQ */}
       <section
         id="faq"
-        className="px-4 sm:px-6"
+        className="section-padding"
         style={{ paddingTop: '100px', paddingBottom: '100px' }}
       >
         <InfoSection />
       </section>
 
       {/* Section 6: CTA */}
-      <section className="px-4 sm:px-6" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
+      <section className="section-padding" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
         <VStack
           as="div"
           style={{

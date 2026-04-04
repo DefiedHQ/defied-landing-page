@@ -76,7 +76,7 @@ export function VaultPanel() {
       </HStack>
 
       {/* Two-column grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid-1-2-lg">
         {/* Left column: tabs + widget */}
         <VStack as="div" style={{ gap: '0px' }}>
           {/* Tab buttons */}
@@ -107,11 +107,11 @@ export function VaultPanel() {
                 <Box as="div" style={{ marginBottom: '4px' }}>
                   <HStack as="div" style={{ alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
                     <Text font="caption" as="label" htmlFor="deposit-amount" color="fgMuted">{t('vaultDiamond.payOnEthereum')}</Text>
-                    <button type="button" onClick={setMaxDeposit} className="hover:opacity-70" style={{ color: '#0052FF', fontWeight: 500, background: 'none', border: 'none', minHeight: '44px', minWidth: '44px' }}>
+                    <button type="button" onClick={setMaxDeposit} className="hover-fade-70" style={{ color: '#0052FF', fontWeight: 500, background: 'none', border: 'none', minHeight: '44px', minWidth: '44px' }}>
                       Max {maxBal.toFixed(7)}
                     </button>
-                    <button type="button" onClick={set50Deposit} className="hover:opacity-70" style={{ color: '#0052FF', fontWeight: 500, background: 'none', border: 'none', minHeight: '44px', minWidth: '44px' }}>50%</button>
-                    <button type="button" onClick={set25Deposit} className="hover:opacity-70" style={{ color: '#0052FF', fontWeight: 500, background: 'none', border: 'none', minHeight: '44px', minWidth: '44px' }}>25%</button>
+                    <button type="button" onClick={set50Deposit} className="hover-fade-70" style={{ color: '#0052FF', fontWeight: 500, background: 'none', border: 'none', minHeight: '44px', minWidth: '44px' }}>50%</button>
+                    <button type="button" onClick={set25Deposit} className="hover-fade-70" style={{ color: '#0052FF', fontWeight: 500, background: 'none', border: 'none', minHeight: '44px', minWidth: '44px' }}>25%</button>
                   </HStack>
                   <HStack as="div" style={{ alignItems: 'baseline', gap: '8px' }}>
                     <input
@@ -120,7 +120,7 @@ export function VaultPanel() {
                       placeholder="0"
                       value={depositAmount}
                       onChange={(e) => { setDepositAmount(e.target.value); resetDeposit(); }}
-                      className="bg-transparent placeholder:text-[#ccc]"
+                      className="vault-input"
                       style={{ fontSize: 'clamp(24px, 5vw, 36px)', fontWeight: 700, color: '#000', width: depositAmount ? `${Math.max(2, depositAmount.length)}ch` : '2ch' }}
                       min="0"
                       step="0.01"
@@ -307,7 +307,7 @@ export function VaultPanel() {
               {t('vaultDiamond.description')}
             </Text>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-6" style={{ marginBottom: '32px' }}>
+            <div className="grid-2-3" style={{ marginBottom: '32px' }}>
               <VStack as="div" style={{ gap: '4px' }}>
                 <Text font="caption" as="p" color="fgMuted">{t('vaultDiamond.tvl')}</Text>
                 <Text font="headline" as="p">{parseFloat(totalWstETH).toFixed(4)}</Text>
@@ -322,7 +322,7 @@ export function VaultPanel() {
               </VStack>
               <VStack as="div" style={{ gap: '4px' }}>
                 <Text font="caption" as="p" color="fgMuted">{t('vaultDiamond.yieldSource')}</Text>
-                <a href="https://lido.fi" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" style={{ textDecoration: 'none' }}>
+                <a href="https://lido.fi" target="_blank" rel="noopener noreferrer" className="hover-fade" style={{ textDecoration: 'none' }}>
                   <HStack as="div" style={{ alignItems: 'center', gap: '6px' }}>
                     <LidoIcon size={18} />
                     <Text font="headline" as="span">Lido</Text>
@@ -331,7 +331,7 @@ export function VaultPanel() {
               </VStack>
               <VStack as="div" style={{ gap: '4px' }}>
                 <Text font="caption" as="p" color="fgMuted">{t('vaultDiamond.priceOracle')}</Text>
-                <a href="https://data.chain.link/feeds/ethereum/mainnet/eth-usd" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" style={{ textDecoration: 'none' }}>
+                <a href="https://data.chain.link/feeds/ethereum/mainnet/eth-usd" target="_blank" rel="noopener noreferrer" className="hover-fade" style={{ textDecoration: 'none' }}>
                   <HStack as="div" style={{ alignItems: 'center', gap: '6px' }}>
                     <ChainlinkIcon size={18} />
                     <Text font="headline" as="span">Chainlink</Text>
@@ -344,7 +344,7 @@ export function VaultPanel() {
                   href="https://etherscan.io/address/0x3548A8345A37f58F232F97eB050C937fb660D514"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:opacity-80 transition-opacity"
+                  className="hover-fade"
                   style={{ textDecoration: 'none' }}
                 >
                   <Text font="headline" as="span">Etherscan ↗</Text>

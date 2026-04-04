@@ -14,12 +14,12 @@ export default function AboutPage() {
   return (
     <Box as="div" style={{ width: '100%', background: '#FFFFFF', flexDirection: 'column' }}>
       {/* Hero Section */}
-      <section className="flex flex-col items-center justify-center text-center px-4 sm:px-6" style={{ minHeight: '100vh' }}>
+      <section className="section-padding" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
         <VStack as="div" style={{ maxWidth: '1200px', margin: '0 auto', alignItems: 'center', justifyContent: 'center', gap: '32px' }}>
           <Text font="display1" as="h1" style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', fontWeight: 500, letterSpacing: '-0.02em' }}>
             {t('about.heroTitle')}
           </Text>
-          <HStack as="div" className="flex-col md:flex-row" style={{ gap: '16px' }}>
+          <HStack as="div" className="flex-col-row-md">
             <Button
               as="a"
               href="https://app.defied.bg"
@@ -48,9 +48,9 @@ export default function AboutPage() {
       </section>
 
       {/* Dark mission section */}
-      <Box as="div" className="px-4 sm:px-6" style={{ display: 'flex', justifyContent: 'center' }}>
+      <Box as="div" className="section-padding" style={{ display: 'flex', justifyContent: 'center' }}>
         <Box as="div" style={{ background: '#0A0B0D', width: '100%', maxWidth: '1200px', borderRadius: '56px' }}>
-          <Box as="div" className="px-8 sm:px-14 lg:px-20 py-14 sm:py-20" style={{ minHeight: '400px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+          <Box as="div" className="box-padding" style={{ minHeight: '400px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
             <Text font="display2" as="h2" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, color: '#fff', maxWidth: '800px' }}>
               {t('about.missionDark')}
             </Text>
@@ -59,7 +59,7 @@ export default function AboutPage() {
       </Box>
 
       {/* Logo + identity section */}
-      <section className="flex flex-col items-center justify-center text-center px-4 sm:px-6" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
+      <section className="section-padding" style={{ paddingTop: '100px', paddingBottom: '100px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
         <img src="/defied_squared_logo_blue.svg" width={80} height={80} alt="Defied" style={{ marginBottom: '32px' }} />
         <Text font="display2" as="h2" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, maxWidth: '800px' }}>
           {t('about.missionLight')}
@@ -67,9 +67,9 @@ export default function AboutPage() {
       </section>
 
       {/* Blue company section */}
-      <Box as="div" className="px-4 sm:px-6" style={{ display: 'flex', justifyContent: 'center' }}>
+      <Box as="div" className="section-padding" style={{ display: 'flex', justifyContent: 'center' }}>
         <Box as="div" style={{ background: '#0052FF', width: '100%', maxWidth: '1200px', borderRadius: '56px' }}>
-          <Box as="div" className="px-8 sm:px-14 lg:px-20 py-14 sm:py-20" style={{ minHeight: '400px', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '24px' }}>
+          <Box as="div" className="box-padding" style={{ minHeight: '400px', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '24px' }}>
             <Text font="display2" as="h2" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, color: '#fff', maxWidth: '800px' }}>
               {t('about.blueSection')}
             </Text>
@@ -79,7 +79,7 @@ export default function AboutPage() {
       </Box>
 
       {/* Details section */}
-      <section className="px-4 sm:px-6" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
+      <section className="section-padding" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
         <VStack as="div" style={{ maxWidth: '800px', margin: '0 auto', gap: '24px' }}>
           <Text font="body" as="p" style={{ fontSize: '18px', lineHeight: '28px' }}>{t('about.detailP1')}</Text>
           <Text font="body" as="p" style={{ fontSize: '18px', lineHeight: '28px' }}>{t('about.detailP2')}</Text>
@@ -88,9 +88,9 @@ export default function AboutPage() {
       </section>
 
       {/* Advantages section */}
-      <Box as="div" className="px-4 sm:px-6" style={{ display: 'flex', justifyContent: 'center' }}>
+      <Box as="div" className="section-padding" style={{ display: 'flex', justifyContent: 'center' }}>
         <Box as="div" style={{ background: '#0A0B0D', width: '100%', maxWidth: '1200px', borderRadius: '56px' }}>
-          <Box as="div" className="px-8 sm:px-14 lg:px-20 py-14 sm:py-20" style={{ minHeight: '400px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+          <Box as="div" className="box-padding" style={{ minHeight: '400px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
             <Text font="display2" as="h2" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, color: '#fff', maxWidth: '800px' }}>
               {t('about.advantagesHeading')}
             </Text>
@@ -99,7 +99,7 @@ export default function AboutPage() {
       </Box>
 
       {/* Advantages details */}
-      <section className="px-4 sm:px-6" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
+      <section className="section-padding" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
         <VStack as="div" style={{ maxWidth: '800px', margin: '0 auto', gap: '24px' }}>
           <Text font="body" as="p" style={{ fontSize: '18px', lineHeight: '28px' }}>{t('about.advantagesP1')}</Text>
           <Text font="body" as="p" style={{ fontSize: '18px', lineHeight: '28px' }}>{t('about.advantagesP2')}</Text>
