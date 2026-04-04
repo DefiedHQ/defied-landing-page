@@ -193,7 +193,7 @@ export function LandingPage() {
       </section>
 
       {/* Section 3: Advantages */}
-      <section id="advantages" className="section-padding section-vertical-padding">
+      <section id="advantages" className="section-padding" style={{ paddingBottom: 'clamp(48px, 8vw, 100px)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
           <Text font="display2" as="h2" className="section-title" display="block" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, marginBottom: '56px' }}>
             {t('advantages.title')}
@@ -295,7 +295,7 @@ export function LandingPage() {
                   href="https://app.defied.bg"
                   target="_blank"
                   rel="noopener noreferrer"
-                  variant="secondary"
+                  variant="primary"
                   style={{
                     borderRadius: '56px',
                     height: '58px',

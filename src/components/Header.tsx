@@ -31,12 +31,13 @@ export function Header() {
     setMobileMenuOpen(false);
     if (pathname === '/') {
       const el = document.getElementById(sectionId);
+      if (!el) return;
       const container = document.querySelector('.landing-scroll-container');
-      if (el && container) {
-        const elRect = el.getBoundingClientRect();
-        const containerRect = container.getBoundingClientRect();
-        const offset = elRect.top - containerRect.top + container.scrollTop;
+      if (container && container.scrollHeight > container.clientHeight) {
+        const offset = el.getBoundingClientRect().top - container.getBoundingClientRect().top + container.scrollTop;
         container.scrollTo({ top: offset, behavior: 'smooth' });
+      } else {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     } else {
       router.push(`/#${sectionId}`);
