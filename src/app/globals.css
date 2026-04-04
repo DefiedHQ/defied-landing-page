@@ -10,6 +10,31 @@
  *   extraWide:      1600+
  */
 
+/* ─── Aeonik Pro font faces ─── */
+@font-face {
+  font-family: 'Aeonik Pro';
+  src: url('/fonts/AeonikPro-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Aeonik Pro';
+  src: url('/fonts/AeonikPro-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Aeonik Pro';
+  src: url('/fonts/AeonikPro-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ─── Minimal CSS reset (replaces Tailwind Preflight) ─── */
 *,
 *::before,
@@ -20,6 +45,18 @@
 body {
   margin: 0;
   font-family: var(--defaultFont-sans, 'Inter', sans-serif);
+}
+
+/* Override CDS title font families with Aeonik Pro */
+:root {
+  --fontFamily-display1: 'Aeonik Pro', var(--defaultFont-sans, 'Inter', sans-serif);
+  --fontFamily-display2: 'Aeonik Pro', var(--defaultFont-sans, 'Inter', sans-serif);
+  --fontFamily-display3: 'Aeonik Pro', var(--defaultFont-sans, 'Inter', sans-serif);
+  --fontFamily-title1: 'Aeonik Pro', var(--defaultFont-sans, 'Inter', sans-serif);
+  --fontFamily-title2: 'Aeonik Pro', var(--defaultFont-sans, 'Inter', sans-serif);
+  --fontFamily-title3: 'Aeonik Pro', var(--defaultFont-sans, 'Inter', sans-serif);
+  --fontFamily-title4: 'Aeonik Pro', var(--defaultFont-sans, 'Inter', sans-serif);
+  --fontFamily-headline: 'Aeonik Pro', var(--defaultFont-sans, 'Inter', sans-serif);
 }
 
 img,
