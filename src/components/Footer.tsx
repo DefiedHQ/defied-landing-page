@@ -30,9 +30,9 @@ export function Footer() {
               <img src="/defied_squared_logo_blue.svg" width={58} height={58} alt="Defied" loading="lazy" />
             </Link>
             <VStack as="div" style={{ marginTop: '50px', gap: '4px' }}>
-              <Text font="caption" as="p" color="fgMuted" style={{ fontWeight: 400, textTransform: 'none' }}>hello@defied.bg</Text>
-              <Text font="caption" as="p" color="fgMuted" style={{ fontWeight: 400, textTransform: 'none' }}>+359 884 627 762</Text>
-              <Text font="caption" as="p" color="fgMuted" style={{ fontWeight: 400, textTransform: 'none' }}>{t('footer.address')}</Text>
+              <Text font="label2" as="p" color="fgMuted">hello@defied.bg</Text>
+              <Text font="label2" as="p" color="fgMuted">+359 884 627 762</Text>
+              <Text font="label2" as="p" color="fgMuted">{t('footer.address')}</Text>
             </VStack>
             {/* Social icons */}
             <HStack as="div" style={{ gap: '12px', marginTop: '16px' }}>
@@ -53,16 +53,16 @@ export function Footer() {
             <VStack as="div" style={{ gap: '0px' }}>
               <Text font="headline" as="h4" style={{ marginBottom: '16px' }}>{t('footer.useful')}</Text>
               <VStack as="ul" style={{ gap: '10px', listStyle: 'none', padding: 0, margin: 0 }}>
-                <li><Link href="/resources" className="hover-fade-70" style={{ textDecoration: 'none' }}><Text font="caption" as="span" color="fgMuted" style={{ fontWeight: 400, textTransform: 'none' }}>{t('footer.resources')}</Text></Link></li>
-                <li><Link href="/risks" className="hover-fade-70" style={{ textDecoration: 'none' }}><Text font="caption" as="span" color="fgMuted" style={{ fontWeight: 400, textTransform: 'none' }}>{t('footer.risks')}</Text></Link></li>
+                <li><Link href="/resources" className="hover-fade-70" style={{ textDecoration: 'none' }}><Text font="label2" as="span" color="fgMuted">{t('footer.resources')}</Text></Link></li>
+                <li><Link href="/risks" className="hover-fade-70" style={{ textDecoration: 'none' }}><Text font="label2" as="span" color="fgMuted">{t('footer.risks')}</Text></Link></li>
               </VStack>
             </VStack>
             <VStack as="div" style={{ gap: '0px' }}>
               <Text font="headline" as="h4" style={{ marginBottom: '16px' }}>{t('footer.company')}</Text>
               <VStack as="ul" style={{ gap: '10px', listStyle: 'none', padding: 0, margin: 0 }}>
-                <li><Link href="/about" className="hover-fade-70" style={{ textDecoration: 'none' }}><Text font="caption" as="span" color="fgMuted" style={{ fontWeight: 400, textTransform: 'none' }}>{t('footer.about')}</Text></Link></li>
-                <li><Link href="/terms" className="hover-fade-70" style={{ textDecoration: 'none' }}><Text font="caption" as="span" color="fgMuted" style={{ fontWeight: 400, textTransform: 'none' }}>{t('footer.terms')}</Text></Link></li>
-                <li><Link href="/privacy" className="hover-fade-70" style={{ textDecoration: 'none' }}><Text font="caption" as="span" color="fgMuted" style={{ fontWeight: 400, textTransform: 'none' }}>{t('footer.privacy')}</Text></Link></li>
+                <li><Link href="/about" className="hover-fade-70" style={{ textDecoration: 'none' }}><Text font="label2" as="span" color="fgMuted">{t('footer.about')}</Text></Link></li>
+                <li><Link href="/terms" className="hover-fade-70" style={{ textDecoration: 'none' }}><Text font="label2" as="span" color="fgMuted">{t('footer.terms')}</Text></Link></li>
+                <li><Link href="/privacy" className="hover-fade-70" style={{ textDecoration: 'none' }}><Text font="label2" as="span" color="fgMuted">{t('footer.privacy')}</Text></Link></li>
               </VStack>
             </VStack>
           </HStack>
