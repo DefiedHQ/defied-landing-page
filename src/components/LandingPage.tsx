@@ -193,6 +193,45 @@ export function LandingPage() {
           </div>
         </div>
       </section>
+
+      {/* Section: CTA */}
+      <section className="section-padding" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
+        <VStack
+          as="div"
+          style={{
+            alignItems: 'center',
+            textAlign: 'center',
+            maxWidth: '1200px',
+            margin: '0 auto',
+            width: '100%',
+            gap: '16px',
+          }}
+        >
+          <Text font="display1" as="h2" className="title-tight-lh" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 500, textAlign: 'center' }}>
+            {t('hero.ctaMain')}
+          </Text>
+          <Text font="body" as="p" color="fgMuted" style={{ fontSize: '18px', lineHeight: '28px', marginBottom: '16px', textAlign: 'center' }}>
+            {t('hero.subtitle1')} {t('hero.subtitle2')} {t('hero.subtitle3')}
+          </Text>
+          <Button
+            as="a"
+            href="https://app.defied.bg"
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="secondary"
+            style={{
+              borderRadius: '56px',
+              height: '58px',
+              padding: '16px 32px',
+              minWidth: '200px',
+            }}
+          >
+            {t('hero.cta')}
+          </Button>
+        </VStack>
+      </section>
+
+      {/* Section 4: Protocols */}
       <section className="section-padding" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
         <ProtocolsSection />
       </section>
@@ -237,43 +276,6 @@ export function LandingPage() {
         style={{ paddingTop: '100px', paddingBottom: '100px' }}
       >
         <InfoSection />
-      </section>
-
-      {/* Section 6: CTA */}
-      <section className="section-padding" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
-        <VStack
-          as="div"
-          style={{
-            alignItems: 'center',
-            textAlign: 'center',
-            maxWidth: '1200px',
-            margin: '0 auto',
-            width: '100%',
-            gap: '16px',
-          }}
-        >
-          <Text font="display1" as="h2" className="title-tight-lh" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 500, textAlign: 'center' }}>
-            {t('hero.ctaMain')}
-          </Text>
-          <Text font="body" as="p" color="fgMuted" style={{ fontSize: '18px', lineHeight: '28px', marginBottom: '16px', textAlign: 'center' }}>
-            {t('hero.subtitle1')} {t('hero.subtitle2')} {t('hero.subtitle3')}
-          </Text>
-          <Button
-            as="a"
-            href="https://app.defied.bg"
-            target="_blank"
-            rel="noopener noreferrer"
-            variant="secondary"
-            style={{
-              borderRadius: '56px',
-              height: '58px',
-              padding: '16px 32px',
-              minWidth: '200px',
-            }}
-          >
-            {t('hero.cta')}
-          </Button>
-        </VStack>
       </section>
 
       {/* Section 7: Footer */}
