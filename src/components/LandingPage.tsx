@@ -48,7 +48,12 @@ export function LandingPage() {
             paddingTop: 'clamp(64px, 10vw, 128px)',
           }}
         >
-          <Text font="display1" as="h1" style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', fontWeight: 500, letterSpacing: '-0.02em', maxWidth: '900px', textAlign: 'center' }}>
+          {/* Hero illustration */}
+          <Box as="div" style={{ display: 'flex', justifyContent: 'center' }}>
+            <HeroSquare name="instoOnChain" scaleMultiplier={2.5} />
+          </Box>
+
+          <Text font="display1" as="h1" style={{ fontSize: 'clamp(2.5rem, 6vw, 4rem)', fontWeight: 500, letterSpacing: '-0.02em', maxWidth: '900px', textAlign: 'center', marginTop: '40px' }}>
             {t('hero.title')}
           </Text>
           <Text
@@ -59,40 +64,36 @@ export function LandingPage() {
           >
             {t('hero.subtitle1')} {t('hero.subtitle2')} {t('hero.subtitle3')}
           </Text>
-          <Box as="div" style={{ marginTop: '32px' }}>
-            <Button
-              as="a"
-              href="https://app.defied.bg"
-              target="_blank"
-              rel="noopener noreferrer"
-              variant="primary"
-              block
-              style={{
-                borderRadius: '56px',
-                height: '58px',
-                padding: '16px 32px',
-                minWidth: '200px',
-              }}
-            >
-              {t('hero.cta')}
-            </Button>
-          </Box>
 
-          {/* Hero image */}
-          <Box as="div" style={{ maxWidth: '745px', width: '100%', marginTop: '48px' }}>
-            <img
-              src="/hero_app_white.png"
-              alt="DeFied App"
-              width={745}
-              height={745}
-              style={{
-                width: '100%',
-                maxWidth: '100%',
-                aspectRatio: '1 / 1',
-                borderRadius: '56px',
-                objectFit: 'cover',
-              }}
-            />
+          {/* Feature cards grid */}
+          <Box as="div" style={{ marginTop: '64px', width: '100%' }}>
+            {/* Top row: 3 items */}
+            <div className="hero-features-grid">
+              {[
+                { name: 'browseDecentralizedApps' as const, title: t('features.f1Title'), desc: t('features.f1Desc') },
+                { name: 'multicoinSupport' as const, title: t('features.f2Title'), desc: t('features.f2Desc') },
+                { name: 'instoKeyGenerationComplete' as const, title: t('features.f3Title'), desc: t('features.f3Desc') },
+              ].map((feature) => (
+                <VStack key={feature.name} as="div" style={{ alignItems: 'center', textAlign: 'center', gap: '12px' }}>
+                  <HeroSquare name={feature.name} scaleMultiplier={0.8} />
+                  <Text font="headline" as="h3" style={{ fontWeight: 600 }}>{feature.title}</Text>
+                  <Text font="body" as="p" color="fgMuted" style={{ maxWidth: '240px' }}>{feature.desc}</Text>
+                </VStack>
+              ))}
+            </div>
+            {/* Bottom row: 2 items centered */}
+            <div className="hero-features-grid-bottom">
+              {[
+                { name: 'defiDecentralizedTradingExchange' as const, title: t('features.f4Title'), desc: t('features.f4Desc') },
+                { name: 'defiEarn' as const, title: t('features.f5Title'), desc: t('features.f5Desc') },
+              ].map((feature) => (
+                <VStack key={feature.name} as="div" style={{ alignItems: 'center', textAlign: 'center', gap: '12px' }}>
+                  <HeroSquare name={feature.name} scaleMultiplier={0.8} />
+                  <Text font="headline" as="h3" style={{ fontWeight: 600 }}>{feature.title}</Text>
+                  <Text font="body" as="p" color="fgMuted" style={{ maxWidth: '240px' }}>{feature.desc}</Text>
+                </VStack>
+              ))}
+            </div>
           </Box>
         </VStack>
       </section>

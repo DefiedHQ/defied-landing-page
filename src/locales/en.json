@@ -15,6 +15,18 @@
     "ctaHeader": "Sign in",
     "ctaMain": "Take control of your money"
   },
+  "features": {
+    "f1Title": "Interact with any dapp",
+    "f1Desc": "Your home base for all DeFi and onchain activity",
+    "f2Title": "Store any token",
+    "f2Desc": "Store any tokens and NFTs from supported networks",
+    "f3Title": "Enable multi-approver",
+    "f3Desc": "Customize consensus and multi-approver capabilities",
+    "f4Title": "Trade on DEXs",
+    "f4Desc": "Tap into decentralized liquidity to trade a large range of assets",
+    "f5Title": "Generate yield",
+    "f5Desc": "Get started with liquid staking, lend assets in DeFi, and more"
+  },
   "protocolsSection": {
     "title": "Integrated protocols"
   },
