@@ -1,148 +1,111 @@
 'use client';
 
+import { Box } from '@coinbase/cds-web/layout/Box';
+import { VStack } from '@coinbase/cds-web/layout/VStack';
+import { HStack } from '@coinbase/cds-web/layout/HStack';
+import { Text } from '@coinbase/cds-web/typography/Text';
+import { Button } from '@coinbase/cds-web/buttons/Button';
+import { HeroSquare } from '@coinbase/cds-web/illustrations/HeroSquare';
 import { useLanguage } from '@/context/LanguageContext';
 
 export default function AboutPage() {
   const { t } = useLanguage();
 
   return (
-    <div className="w-full" style={{ background: '#FFFFFF' }}>
-
-      {/* Hero Section - matching landing page hero */}
+    <Box as="div" style={{ width: '100%', background: '#FFFFFF', flexDirection: 'column' }}>
+      {/* Hero Section */}
       <section className="flex flex-col items-center justify-center text-center px-4 sm:px-6" style={{ minHeight: '100vh' }}>
-        <div className="w-full max-w-[1200px] mx-auto flex flex-col items-center justify-center">
-          <h1 className="tracking-tight text-center text-[64px] leading-[68px] md:text-[96px] md:leading-[100px]" style={{ display: 'block', fontFamily: '-apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"', fontWeight: 400, color: 'rgb(10, 11, 13)', letterSpacing: '-0.02em' }}>
+        <VStack as="div" style={{ maxWidth: '1200px', margin: '0 auto', alignItems: 'center', justifyContent: 'center', gap: '32px' }}>
+          <Text font="display1" as="h1" style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', fontWeight: 500, letterSpacing: '-0.02em' }}>
             {t('about.heroTitle')}
-          </h1>
-          <div className="flex flex-col md:flex-row items-center gap-4 mt-8 sm:mt-10 w-full md:w-auto">
-            <a
-              href="https://app.defied.bg" target="_blank" rel="noopener noreferrer"
-              className="btn hover:opacity-80 transition-opacity w-full md:w-auto"
-              style={{ background: '#0A0B0D', border: '1px solid #0A0B0D', borderRadius: '56px', color: '#ffffff', fontSize: '16px', fontWeight: 600, height: '58px', minHeight: '56px', minWidth: '100px', padding: '16px 32px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', userSelect: 'none' }}
+          </Text>
+          <HStack as="div" className="flex-col md:flex-row" style={{ gap: '16px' }}>
+            <Button
+              as="a"
+              href="https://app.defied.bg"
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="primary"
+              style={{ borderRadius: '56px', height: '58px', padding: '16px 32px', minWidth: '160px' }}
             >
               {t('about.ctaStart')}
-            </a>
-            <a
+            </Button>
+            <Button
+              as="a"
               href="mailto:hello@defied.bg"
-              className="btn hover:opacity-80 transition-opacity w-full md:w-auto"
-              style={{ background: 'rgb(247, 248, 249)', border: '1px solid rgb(247, 248, 249)', borderRadius: '56px', color: '#0A0B0D', fontSize: '16px', fontWeight: 600, height: '58px', minHeight: '56px', minWidth: '100px', padding: '16px 32px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', userSelect: 'none' }}
+              variant="secondary"
+              style={{ borderRadius: '56px', height: '58px', padding: '16px 32px', minWidth: '160px' }}
             >
               {t('about.ctaContact')}
-            </a>
-          </div>
-        </div>
+            </Button>
+          </HStack>
+          {/* Illustration */}
+          <HStack as="div" style={{ gap: '16px', marginTop: '16px' }}>
+            <HeroSquare name="platform" />
+            <HeroSquare name="decentralization" />
+          </HStack>
+        </VStack>
       </section>
 
-      {/* Dark mission section - card style */}
-      <div className="px-4 sm:px-6" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <div
-          style={{
-            background: '#0A0B0D',
-            width: '100%',
-            maxWidth: '1200px',
-            borderRadius: '56px',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-          }}
-        >
-          <div
-            className="px-8 sm:px-14 lg:px-20 py-14 sm:py-20"
-            style={{ width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', minHeight: '400px' }}
-          >
-            <h2 className="text-[28px] sm:text-[42px] md:text-[56px]" style={{ fontWeight: 500, lineHeight: 1.1, color: '#fff', maxWidth: '800px' }}>
+      {/* Dark mission section */}
+      <Box as="div" className="px-4 sm:px-6" style={{ display: 'flex', justifyContent: 'center' }}>
+        <Box as="div" style={{ background: '#0A0B0D', width: '100%', maxWidth: '1200px', borderRadius: '56px' }}>
+          <Box as="div" className="px-8 sm:px-14 lg:px-20 py-14 sm:py-20" style={{ minHeight: '400px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            <Text font="display2" as="h2" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, color: '#fff', maxWidth: '800px' }}>
               {t('about.missionDark')}
-            </h2>
-          </div>
-        </div>
-      </div>
+            </Text>
+          </Box>
+        </Box>
+      </Box>
 
       {/* Logo + identity section */}
       <section className="flex flex-col items-center justify-center text-center px-4 sm:px-6" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
         <img src="/defied_squared_logo_blue.svg" width={80} height={80} alt="Defied" style={{ marginBottom: '32px' }} />
-        <h2 className="text-[28px] sm:text-[42px] md:text-[56px]" style={{ fontWeight: 500, lineHeight: 1.1, color: '#0A0B0D', maxWidth: '800px' }}>
+        <Text font="display2" as="h2" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, maxWidth: '800px' }}>
           {t('about.missionLight')}
-        </h2>
+        </Text>
       </section>
 
-      {/* Blue company section - card style */}
-      <div className="px-4 sm:px-6" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <div
-          style={{
-            background: '#0052FF',
-            width: '100%',
-            maxWidth: '1200px',
-            borderRadius: '56px',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-          }}
-        >
-          <div
-            className="px-8 sm:px-14 lg:px-20 py-14 sm:py-20"
-            style={{ width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', minHeight: '400px' }}
-          >
-            <h2 className="text-[28px] sm:text-[42px] md:text-[56px]" style={{ fontWeight: 500, lineHeight: 1.1, color: '#fff', maxWidth: '800px' }}>
+      {/* Blue company section */}
+      <Box as="div" className="px-4 sm:px-6" style={{ display: 'flex', justifyContent: 'center' }}>
+        <Box as="div" style={{ background: '#0052FF', width: '100%', maxWidth: '1200px', borderRadius: '56px' }}>
+          <Box as="div" className="px-8 sm:px-14 lg:px-20 py-14 sm:py-20" style={{ minHeight: '400px', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '24px' }}>
+            <Text font="display2" as="h2" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, color: '#fff', maxWidth: '800px' }}>
               {t('about.blueSection')}
-            </h2>
-          </div>
-        </div>
-      </div>
+            </Text>
+            <HeroSquare name="earnGlobe" />
+          </Box>
+        </Box>
+      </Box>
 
       {/* Details section */}
       <section className="px-4 sm:px-6" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
-        <div style={{ maxWidth: '800px', marginLeft: 'auto', marginRight: 'auto' }}>
-          <p style={{ fontSize: '18px', fontWeight: 400, lineHeight: '28px', color: '#0A0B0D', marginBottom: '24px' }}>
-            {t('about.detailP1')}
-          </p>
-          <p style={{ fontSize: '18px', fontWeight: 400, lineHeight: '28px', color: '#0A0B0D', marginBottom: '24px' }}>
-            {t('about.detailP2')}
-          </p>
-          <p style={{ fontSize: '18px', fontWeight: 400, lineHeight: '28px', color: '#0A0B0D', marginBottom: 0 }}>
-            {t('about.detailP3')}
-          </p>
-        </div>
+        <VStack as="div" style={{ maxWidth: '800px', margin: '0 auto', gap: '24px' }}>
+          <Text font="body" as="p" style={{ fontSize: '18px', lineHeight: '28px' }}>{t('about.detailP1')}</Text>
+          <Text font="body" as="p" style={{ fontSize: '18px', lineHeight: '28px' }}>{t('about.detailP2')}</Text>
+          <Text font="body" as="p" style={{ fontSize: '18px', lineHeight: '28px' }}>{t('about.detailP3')}</Text>
+        </VStack>
       </section>
 
-      {/* Advantages section - card style */}
-      <div className="px-4 sm:px-6" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <div
-          style={{
-            background: '#0A0B0D',
-            width: '100%',
-            maxWidth: '1200px',
-            borderRadius: '56px',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-          }}
-        >
-          <div
-            className="px-8 sm:px-14 lg:px-20 py-14 sm:py-20"
-            style={{ width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', minHeight: '400px' }}
-          >
-            <h2 className="text-[28px] sm:text-[42px] md:text-[56px]" style={{ fontWeight: 500, lineHeight: 1.1, color: '#fff', maxWidth: '800px' }}>
+      {/* Advantages section */}
+      <Box as="div" className="px-4 sm:px-6" style={{ display: 'flex', justifyContent: 'center' }}>
+        <Box as="div" style={{ background: '#0A0B0D', width: '100%', maxWidth: '1200px', borderRadius: '56px' }}>
+          <Box as="div" className="px-8 sm:px-14 lg:px-20 py-14 sm:py-20" style={{ minHeight: '400px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            <Text font="display2" as="h2" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, color: '#fff', maxWidth: '800px' }}>
               {t('about.advantagesHeading')}
-            </h2>
-          </div>
-        </div>
-      </div>
+            </Text>
+          </Box>
+        </Box>
+      </Box>
 
       {/* Advantages details */}
       <section className="px-4 sm:px-6" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
-        <div style={{ maxWidth: '800px', marginLeft: 'auto', marginRight: 'auto' }}>
-          <p style={{ fontSize: '18px', fontWeight: 400, lineHeight: '28px', color: '#0A0B0D', marginBottom: '24px' }}>
-            {t('about.advantagesP1')}
-          </p>
-          <p style={{ fontSize: '18px', fontWeight: 400, lineHeight: '28px', color: '#0A0B0D', marginBottom: '24px' }}>
-            {t('about.advantagesP2')}
-          </p>
-          <p style={{ fontSize: '18px', fontWeight: 400, lineHeight: '28px', color: '#0A0B0D', marginBottom: 0 }}>
-            {t('about.advantagesP3')}
-          </p>
-        </div>
+        <VStack as="div" style={{ maxWidth: '800px', margin: '0 auto', gap: '24px' }}>
+          <Text font="body" as="p" style={{ fontSize: '18px', lineHeight: '28px' }}>{t('about.advantagesP1')}</Text>
+          <Text font="body" as="p" style={{ fontSize: '18px', lineHeight: '28px' }}>{t('about.advantagesP2')}</Text>
+          <Text font="body" as="p" style={{ fontSize: '18px', lineHeight: '28px' }}>{t('about.advantagesP3')}</Text>
+        </VStack>
       </section>
-
-    </div>
+    </Box>
   );
 }

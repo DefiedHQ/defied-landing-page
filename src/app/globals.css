@@ -1,101 +1,12 @@
 @import "tailwindcss";
 
-@theme {
-  --color-bg: var(--bg);
-  --color-surface: var(--surface);
-  --color-surface2: var(--surface2);
-  --color-border: var(--bdcolor);
-  --color-border2: var(--bdcolor2);
-  --color-pink: #0052FF;
-  --color-cyan: #0052FF;
-  --color-amber: #0052FF;
-  --color-green: #05B169;
-  --color-red: #DF2935;
-  --color-text: var(--tx);
-  --color-text2: var(--tx2);
-  --color-muted: var(--mt);
-  --color-muted2: var(--mt2);
-  --color-card: var(--card);
-  --color-card-border: var(--card-bd);
-  --color-banner-from: var(--banner-from);
-  --color-banner-via: var(--banner-via);
-  --color-banner-to: var(--banner-to);
-  --font-display: -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --font-sans: -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --font-mono: monospace;
-}
-
 :root {
   --header-h: 96px;
-  --bg: #FFFFFF;
-  --surface: rgb(247, 248, 249);
-  --surface2: rgb(237, 239, 242);
-  --bdcolor: #D1D5DB;
-  --bdcolor2: #C3C8D1;
-  --tx: #0A0B0D;
-  --tx2: #3D4250;
-  --mt: #5B616E;
-  --mt2: #6B7280;
-  --card: #ffffff;
-  --card-bd: rgba(0, 0, 0, 0.06);
-  --banner-from: rgb(247, 248, 249);
-  --banner-via: rgb(243, 244, 246);
-  --banner-to: rgb(247, 248, 249);
-}
-
-* {
-  box-sizing: border-box;
 }
 
 html {
   overflow-x: hidden;
 }
-
-body {
-  background-color: var(--bg);
-  color: var(--tx);
-  font-family: -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  margin: 0;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-}
-
-button,
-[role="button"],
-.btn,
-select,
-summary,
-[type="button"],
-[type="submit"],
-[type="reset"] {
-  cursor: pointer;
-  font-family: monospace;
-}
-
-a {
-  cursor: pointer;
-}
-
-button:disabled,
-[type="button"]:disabled,
-[type="submit"]:disabled {
-  cursor: not-allowed;
-}
-
-/* Override RainbowKit fonts */
-[data-rk] {
-  --rk-fonts-body: -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
-}
-
-[data-rk] * {
-  font-family: -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-}
-
 
 input[type="number"] {
   -moz-appearance: textfield;
@@ -122,30 +33,6 @@ input[type="number"]::-webkit-inner-spin-button {
   }
 }
 
-/* Vault card styles — after everything for highest specificity */
-span.vault-card-btn {
-  background-color: #0052FF;
-  color: #fff;
-}
-.vault-card { background-color: #fff; border-radius: 56px; }
-.vault-card-lido:hover, .vault-card-yo:hover, .vault-card-rp:hover { background-color: rgb(247, 248, 249); }
-.vault-card:hover span.vault-card-btn {
-  background-color: #0040D0;
-  color: #fff;
-}
-.vault-card:hover .vault-card-desc {
-  color: #5B616E;
-}
-
-/* About card styles */
-.about-card {
-  background-color: rgb(247, 248, 249) !important;
-  border-radius: 56px !important;
-}
-.about-card-desc {
-  color: #5B616E !important;
-}
-
 /* Protocol section cards */
 .protocol-card {
   background: rgb(247, 248, 249);
@@ -154,7 +41,7 @@ span.vault-card-btn {
   align-items: center;
   justify-content: center;
   gap: 14px;
-  transition: box-shadow 0.3s ease;
+  transition: background 0.3s ease;
   flex: 1 1 0;
   aspect-ratio: 1;
   min-width: 0;
@@ -168,12 +55,6 @@ span.vault-card-btn {
     aspect-ratio: 1;
     height: auto;
   }
-}
-
-/* Resource filter hover */
-.resource-filter-btn:hover {
-  background: #0052FF !important;
-  color: #fff !important;
 }
 
 /* Focus-visible styles for keyboard navigation */
@@ -197,4 +78,3 @@ select:focus-visible,
     scroll-behavior: auto !important;
   }
 }
-
