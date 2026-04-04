@@ -245,27 +245,28 @@ export function LandingPage() {
 
       {/* Section: Our Mission */}
       <section className="section-padding" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
-          <Text font="display2" as="h2" className="section-title" display="block" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, marginBottom: '56px' }}>
-            {t('imageSection.title')}
-          </Text>
-          <div
-            className="promo-card-layout"
-            style={{
-              background: '#0052FF',
-              borderRadius: '56px',
-              padding: 'clamp(40px, 6vw, 80px)',
-              alignItems: 'center',
-            }}
-          >
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', flex: 1 }}>
-              <Text font="display2" as="h3" className="title-tight-lh" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', fontWeight: 500, color: '#fff' }}>
-                {t('imageSection.heading')}
-              </Text>
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 1 }}>
-              <Lottie source={dappWallet} autoplay loop width="300px" height="300px" />
-            </div>
+        <div
+          className="promo-card-layout"
+          style={{
+            background: '#0052FF',
+            borderRadius: '56px',
+            padding: 'clamp(40px, 6vw, 80px)',
+            alignItems: 'center',
+            maxWidth: '1200px',
+            margin: '0 auto',
+            width: '100%',
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 1 }}>
+            <Lottie source={dappWallet} autoplay loop width="300px" height="300px" />
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', flex: 1 }}>
+            <Text font="display2" as="h2" className="title-tight-lh" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', fontWeight: 500, color: '#fff' }}>
+              {t('imageSection.title')}
+            </Text>
+            <Text font="body" as="p" style={{ fontSize: '18px', lineHeight: '28px', color: 'rgba(255, 255, 255, 0.7)' }}>
+              {t('imageSection.heading')}
+            </Text>
           </div>
         </div>
       </section>
