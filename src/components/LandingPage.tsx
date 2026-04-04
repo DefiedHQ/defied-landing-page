@@ -48,14 +48,14 @@ export function LandingPage() {
             paddingTop: 'clamp(64px, 10vw, 128px)',
           }}
         >
-          <Text font="display1" as="h1" style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', fontWeight: 500, letterSpacing: '-0.02em', maxWidth: '900px' }}>
+          <Text font="display1" as="h1" style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', fontWeight: 500, letterSpacing: '-0.02em', maxWidth: '900px', textAlign: 'center' }}>
             {t('hero.title')}
           </Text>
           <Text
             font="body"
             as="p"
             color="fgMuted"
-            style={{ marginTop: '24px', maxWidth: '640px', fontSize: '18px', lineHeight: '28px' }}
+            style={{ marginTop: '24px', maxWidth: '640px', fontSize: '18px', lineHeight: '28px', textAlign: 'center' }}
           >
             {t('hero.subtitle1')} {t('hero.subtitle2')} {t('hero.subtitle3')}
           </Text>
@@ -170,10 +170,10 @@ export function LandingPage() {
             gap: '16px',
           }}
         >
-          <Text font="display1" as="h2" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 500 }}>
+          <Text font="display1" as="h2" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 500, textAlign: 'center' }}>
             {t('hero.ctaMain')}
           </Text>
-          <Text font="body" as="p" color="fgMuted" style={{ fontSize: '18px', lineHeight: '28px', marginBottom: '16px' }}>
+          <Text font="body" as="p" color="fgMuted" style={{ fontSize: '18px', lineHeight: '28px', marginBottom: '16px', textAlign: 'center' }}>
             {t('hero.subtitle1')} {t('hero.subtitle2')} {t('hero.subtitle3')}
           </Text>
           <Button
