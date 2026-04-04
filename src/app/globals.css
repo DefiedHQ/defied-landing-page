@@ -47,6 +47,11 @@ body {
   font-family: var(--defaultFont-sans, 'Aeonik Pro', 'Inter', sans-serif);
 }
 
+/* Override CDS @layer cds default font (unlayered CSS beats @layer cds) */
+:root {
+  --defaultFont-sans: 'Aeonik Pro', 'Inter', sans-serif;
+}
+
 /* Override CDS font families with Aeonik Pro site-wide.
    CDS ThemeProvider sets --fontFamily-* as inline styles, so !important is
    needed to beat the inline specificity. */
