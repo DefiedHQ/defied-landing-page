@@ -139,7 +139,7 @@ export function LandingPage() {
               <HeroSquare name="remittances" scaleMultiplier={1.8} />
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', flex: 1 }}>
-              <Text font="display2" as="h3" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', fontWeight: 500 }}>
+              <Text font="display2" as="h3" className="title-tight-lh" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', fontWeight: 500 }}>
                 {t('advantages.row1Heading')}
               </Text>
               <Text font="body" as="p" color="fgMuted" style={{ fontSize: '18px', lineHeight: '28px' }}>
