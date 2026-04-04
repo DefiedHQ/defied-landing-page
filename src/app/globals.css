@@ -271,18 +271,15 @@ input[type="number"]::-webkit-inner-spin-button {
    Responsive typography
    ═══════════════════════════════════════════════════════════════ */
 
-/* Hero & section titles — tighter line-height on small screens */
-.title-tight-lh {
-  line-height: 1.05;
-}
-@media (min-width: 768px) {
+/* Hero & section titles — tighter line-height on small screens only */
+@media (max-width: 767px) {
   .title-tight-lh {
-    line-height: 1.1;
+    line-height: 1.05;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1023px) {
   .title-tight-lh {
-    line-height: 1.15;
+    line-height: 1.1;
   }
 }
 
