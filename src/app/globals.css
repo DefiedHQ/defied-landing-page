@@ -47,16 +47,18 @@ body {
   font-family: var(--defaultFont-sans, 'Inter', sans-serif);
 }
 
-/* Override CDS title font families with Aeonik Pro */
-:root {
-  --fontFamily-display1: 'Aeonik Pro', var(--defaultFont-sans, 'Inter', sans-serif);
-  --fontFamily-display2: 'Aeonik Pro', var(--defaultFont-sans, 'Inter', sans-serif);
-  --fontFamily-display3: 'Aeonik Pro', var(--defaultFont-sans, 'Inter', sans-serif);
-  --fontFamily-title1: 'Aeonik Pro', var(--defaultFont-sans, 'Inter', sans-serif);
-  --fontFamily-title2: 'Aeonik Pro', var(--defaultFont-sans, 'Inter', sans-serif);
-  --fontFamily-title3: 'Aeonik Pro', var(--defaultFont-sans, 'Inter', sans-serif);
-  --fontFamily-title4: 'Aeonik Pro', var(--defaultFont-sans, 'Inter', sans-serif);
-  --fontFamily-headline: 'Aeonik Pro', var(--defaultFont-sans, 'Inter', sans-serif);
+/* Override CDS title font families with Aeonik Pro.
+   CDS ThemeProvider sets --fontFamily-* as inline styles, so !important is
+   needed to beat the inline specificity. */
+.cds-default {
+  --fontFamily-display1: 'Aeonik Pro', var(--defaultFont-sans, 'Inter', sans-serif) !important;
+  --fontFamily-display2: 'Aeonik Pro', var(--defaultFont-sans, 'Inter', sans-serif) !important;
+  --fontFamily-display3: 'Aeonik Pro', var(--defaultFont-sans, 'Inter', sans-serif) !important;
+  --fontFamily-title1: 'Aeonik Pro', var(--defaultFont-sans, 'Inter', sans-serif) !important;
+  --fontFamily-title2: 'Aeonik Pro', var(--defaultFont-sans, 'Inter', sans-serif) !important;
+  --fontFamily-title3: 'Aeonik Pro', var(--defaultFont-sans, 'Inter', sans-serif) !important;
+  --fontFamily-title4: 'Aeonik Pro', var(--defaultFont-sans, 'Inter', sans-serif) !important;
+  --fontFamily-headline: 'Aeonik Pro', var(--defaultFont-sans, 'Inter', sans-serif) !important;
 }
 
 img,
