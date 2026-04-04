@@ -10,7 +10,7 @@ const CARD_ILLUSTRATIONS = [
   'selfCustody',
   'decentralizedWebWeb3',
   'retailUSDCRewards',
-  'transferringCrypto',
+  'sendCryptoFaster',
 ] as const;
 
 export function AboutCarousel() {
