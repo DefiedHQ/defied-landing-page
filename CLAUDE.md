@@ -40,22 +40,6 @@
 - **Children over render props**: Prefer `children` for composition instead of `renderX` callback props.
 - **React 19**: No need for `forwardRef` — pass `ref` as a regular prop. Use `use()` instead of `useContext()`.
 
-## Global Skills
-
-The following skills are installed globally and should be used when working on this project:
-
-- **ui-ux-pro-max** — UI/UX design intelligence for web and mobile. Includes 50+ styles, 161 color palettes, 57 font pairings, UX guidelines, and chart types. Use for planning, building, designing, reviewing, and optimizing UI/UX code.
-- **design-taste-frontend** — Senior UI/UX engineering skill. Enforces metric-based rules, strict component architecture, CSS hardware acceleration, and balanced design engineering.
-- **high-end-visual-design** — High-end visual design patterns and aesthetics.
-- **minimalist-ui** — Minimalist UI design principles and implementation.
-- **industrial-brutalist-ui** — Industrial brutalist UI design patterns.
-- **stitch-design-taste** — Design taste and stitch patterns for polished interfaces.
-- **redesign-existing-projects** — Guidelines for redesigning and modernizing existing projects.
-- **full-output-enforcement** — Enforces complete, full output in generated code.
-- **shadcn-ui** — Complete shadcn/ui component library patterns including installation, configuration, accessible React components, forms with React Hook Form and Zod, and Tailwind CSS theming.
-- **ui-animation** — Creates, reviews, and debugs UI motion and animation. Covers springs, gestures, drag interactions, clip-path reveals, easing, timing, framer-motion, and CSS transitions.
-- **web-design-guidelines** — Reviews UI code for Web Interface Guidelines compliance, accessibility audits, and UX best practices.
-
 ## Coinbase Design System (CDS)
 
 This project uses the [Coinbase Design System](https://cds.coinbase.com) (`@coinbase/cds-web`) as its primary component library.

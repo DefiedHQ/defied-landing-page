@@ -78,22 +78,6 @@ export function LandingPage() {
             </Button>
           </Box>
 
-          {/* HeroSquare illustrations row */}
-          <Box
-            as="div"
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              gap: '24px',
-              marginTop: '64px',
-              flexWrap: 'wrap',
-            }}
-          >
-            <HeroSquare name="earnGlobe" scaleMultiplier={1.5} />
-            <HeroSquare name="cryptoWallet" scaleMultiplier={1.5} />
-            <HeroSquare name="defiEarn" scaleMultiplier={1.5} />
-          </Box>
-
           {/* Hero image */}
           <Box as="div" style={{ maxWidth: '745px', width: '100%', marginTop: '48px' }}>
             <img
