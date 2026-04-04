@@ -30,9 +30,9 @@ export function Footer() {
               <img src="/defied_squared_logo_blue.svg" width={58} height={58} alt="Defied" loading="lazy" />
             </Link>
             <VStack as="div" style={{ marginTop: '50px', gap: '4px' }}>
-              <Text font="caption" as="p" color="fgMuted">hello@defied.bg</Text>
-              <Text font="caption" as="p" color="fgMuted">+359 884 627 762</Text>
-              <Text font="caption" as="p" color="fgMuted">{t('footer.address')}</Text>
+              <Text font="caption" as="p" color="fgMuted" style={{ fontWeight: 400 }}>hello@defied.bg</Text>
+              <Text font="caption" as="p" color="fgMuted" style={{ fontWeight: 400 }}>+359 884 627 762</Text>
+              <Text font="caption" as="p" color="fgMuted" style={{ fontWeight: 400 }}>{t('footer.address')}</Text>
             </VStack>
             {/* Social icons */}
             <HStack as="div" style={{ gap: '12px', marginTop: '16px' }}>
