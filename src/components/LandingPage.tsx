@@ -97,9 +97,9 @@ export function LandingPage() {
                 { name: 'multipleAccountsWalletsForOneUser' as const, title: t('features.f4Title'), desc: t('features.f4Desc') },
                 { name: 'stayInControlSelfHostedWalletsStorage' as const, title: t('features.f5Title'), desc: t('features.f5Desc') },
               ].map((feature) => (
-                <VStack key={feature.name} as="div" style={{ alignItems: 'center', textAlign: 'center', gap: '0px' }}>
+                <VStack key={feature.name} as="div" style={{ alignItems: 'center', textAlign: 'center', gap: '0px', minWidth: 0 }}>
                   <HeroSquare name={feature.name} scaleMultiplier={0.8} />
-                  <Text font="headline" as="h3" style={{ fontWeight: 600, marginTop: '16px', color: '#FFFFFF', whiteSpace: 'nowrap' }}>{feature.title}</Text>
+                  <Text font="headline" as="h3" style={{ fontWeight: 600, marginTop: '16px', color: '#FFFFFF' }}>{feature.title}</Text>
                   <Text font="body" as="p" style={{ maxWidth: '240px', marginTop: '8px', textAlign: 'center', color: 'rgba(255, 255, 255, 0.7)', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{feature.desc}</Text>
                 </VStack>
               ))}
