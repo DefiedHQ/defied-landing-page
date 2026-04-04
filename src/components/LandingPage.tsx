@@ -79,7 +79,7 @@ export function LandingPage() {
           </Box>
 
           {/* Feature cards grid */}
-          <div className="hero-features-grid-4" style={{ marginTop: 'clamp(80px, 12vw, 160px)', width: '100%' }}>
+          <div className="hero-features-grid-4" style={{ marginTop: 'clamp(120px, 16vw, 220px)', width: '100%' }}>
             {[
               { name: 'browseDecentralizedApps' as const, title: t('features.f1Title'), desc: t('features.f1Desc') },
               { name: 'multicoinSupport' as const, title: t('features.f2Title'), desc: t('features.f2Desc') },
