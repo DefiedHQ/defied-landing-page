@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { Text } from '@coinbase/cds-web/typography/Text';
-import { Tag } from '@coinbase/cds-web/tag/Tag';
 import { useArticles } from '@/data/useArticles';
 import { useLanguage } from '@/context/LanguageContext';
 
@@ -43,7 +42,7 @@ export function ArticlePage() {
 
         {/* Category badge */}
         <div style={{ marginTop: 'clamp(48px, 10vw, 120px)', marginBottom: '16px' }}>
-          <Tag colorScheme="gray">{article.category}</Tag>
+          <span className="category-label">{article.category}</span>
         </div>
 
         {/* Title */}

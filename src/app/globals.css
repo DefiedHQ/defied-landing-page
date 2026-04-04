@@ -370,6 +370,25 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 /* ═══════════════════════════════════════════════════════════════
+   Category label — pill badge (Coinbase blog style)
+   ═══════════════════════════════════════════════════════════════ */
+.category-label {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  padding: 6px 12px;
+  border-radius: 56px;
+  background: rgb(240, 241, 243);
+  color: #0A0B0D;
+  transition: background 0.2s ease;
+  text-decoration: none;
+}
+.category-label:hover {
+  background: rgb(220, 222, 226);
+}
+
+/* ═══════════════════════════════════════════════════════════════
    FAQ Accordion — separated items with individual backgrounds
    ═══════════════════════════════════════════════════════════════ */
 
