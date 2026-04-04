@@ -73,7 +73,7 @@ export default function RootLayout({
                     top: 0,
                     zIndex: 50,
                     background: '#ffffff',
-                    borderBottom: '1px solid rgba(91, 97, 110, 0.2)',
+                    /* borderBottom removed */
                   }}
                 >
                   <Header />
