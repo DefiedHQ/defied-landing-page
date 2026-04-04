@@ -133,6 +133,7 @@ export function LandingPage() {
               borderRadius: '56px',
               padding: 'clamp(40px, 6vw, 80px)',
               alignItems: 'center',
+              width: '100%',
             }}
           >
             <Box as="div" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 1 }}>
