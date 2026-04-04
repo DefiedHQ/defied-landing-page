@@ -100,7 +100,7 @@ export function LandingPage() {
                 <VStack key={feature.name} as="div" style={{ alignItems: 'center', textAlign: 'center', gap: '0px' }}>
                   <HeroSquare name={feature.name} scaleMultiplier={0.8} />
                   <Text font="headline" as="h3" style={{ fontWeight: 600, marginTop: '16px', color: '#FFFFFF', whiteSpace: 'nowrap' }}>{feature.title}</Text>
-                  <Text font="body" as="p" style={{ maxWidth: '240px', marginTop: '8px', textAlign: 'center', color: 'rgba(255, 255, 255, 0.7)' }}>{feature.desc}</Text>
+                  <Text font="body" as="p" style={{ maxWidth: '240px', marginTop: '8px', textAlign: 'center', color: 'rgba(255, 255, 255, 0.7)', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{feature.desc}</Text>
                 </VStack>
               ))}
             </div>
