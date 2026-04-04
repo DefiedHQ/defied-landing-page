@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     images: [{ url: '/og-image.svg', width: 1200, height: 630, alt: 'Defied – За нас' }], // TODO: Replace with actual OG image
   },
   alternates: {
-    canonical: 'https://defied.io/about',
+    canonical: 'https://defied.bg/about',
   },
 };
 

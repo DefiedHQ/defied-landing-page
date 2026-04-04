@@ -100,9 +100,9 @@ export function LandingPage() {
               <AnimatePresence mode="wait">
                 <m.span
                   key={words[wordIndex]}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -30 }}
                   transition={{ duration: 0.3 }}
                   style={{ display: 'inline-block' }}
                 >
