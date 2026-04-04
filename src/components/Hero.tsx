@@ -38,7 +38,7 @@ export function InfoSection() {
         {t('faq.title')}
       </Text>
 
-      <div className="faq-accordion">
+      <div className="faq-accordion" style={{ marginTop: '40px' }}>
       <Accordion
         activeKey={activeKey}
         setActiveKey={handleToggle}
