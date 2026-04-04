@@ -32,7 +32,13 @@ export function Header() {
     if (pathname === '/') {
       const el = document.getElementById(sectionId);
       if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
+        const container = document.querySelector('.landing-scroll-container');
+        if (container) {
+          const top = el.getBoundingClientRect().top - container.getBoundingClientRect().top + container.scrollTop;
+          container.scrollTo({ top, behavior: 'smooth' });
+        } else {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
       }
     } else {
       router.push(`/#${sectionId}`);
@@ -67,7 +73,6 @@ export function Header() {
         <HStack as="div" style={{ flex: 1, alignItems: 'center', gap: '16px' }}>
           <Link href="/" className="hover-fade" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', textDecoration: 'none', flexShrink: 0 }}>
             <LogoMark size={48} />
-            <img src="/defied-logo-text-blue.svg" alt="" width={131} height={35} style={{ display: 'block' }} />
           </Link>
           <button
             ref={mobileToggleRef}
