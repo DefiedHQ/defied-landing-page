@@ -95,6 +95,14 @@ export function Header() {
             </button>
             <button
               type="button"
+              onClick={() => scrollToSection('advantages')}
+              className="header-tab"
+              style={{ padding: '8px 16px', borderRadius: '100px', border: 'none', cursor: 'pointer', color: '#0A0B0D' }}
+            >
+              <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 600 }}>{t('nav.advantages')}</Text>
+            </button>
+            <button
+              type="button"
               onClick={() => scrollToSection('faq')}
               className="header-tab"
               style={{ padding: '8px 16px', borderRadius: '100px', border: 'none', cursor: 'pointer', color: '#0A0B0D' }}
@@ -226,6 +234,13 @@ export function Header() {
             style={{ padding: '10px 4px', transition: 'color 0.2s ease', textAlign: 'left', background: 'none', border: 'none', color: '#0A0B0D', cursor: 'pointer' }}
           >
             <Text font="body" as="span">{t('nav.howItWorks')}</Text>
+          </button>
+          <button
+            type="button"
+            onClick={() => scrollToSection('advantages')}
+            style={{ padding: '10px 4px', transition: 'color 0.2s ease', textAlign: 'left', background: 'none', border: 'none', color: '#0A0B0D', cursor: 'pointer' }}
+          >
+            <Text font="body" as="span">{t('nav.advantages')}</Text>
           </button>
           <button
             type="button"
