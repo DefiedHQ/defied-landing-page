@@ -65,7 +65,7 @@ export function Header() {
       <HStack as="div" style={{ alignItems: 'center' }}>
         {/* Logo + mobile menu toggle */}
         <HStack as="div" style={{ flex: 1, alignItems: 'center', gap: '16px' }}>
-          <Link href="/" className="hover-fade" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', textDecoration: 'none' }}>
+          <Link href="/" className="hover-fade" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', textDecoration: 'none', flexShrink: 0 }}>
             <LogoMark size={48} />
           </Link>
           <button
