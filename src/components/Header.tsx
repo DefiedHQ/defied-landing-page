@@ -292,7 +292,7 @@ export function Header() {
                   cursor: 'pointer',
                 }}
               >
-                <div>
+                <div style={{ display: 'flex', flexDirection: 'column' }}>
                   <Text font="label1" as="div">{l.label}</Text>
                   <Text font="caption" as="div" color="fgMuted">{l.region}</Text>
                 </div>
