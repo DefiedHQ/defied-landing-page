@@ -6,6 +6,8 @@ import { VStack } from '@coinbase/cds-web/layout/VStack';
 import { Text } from '@coinbase/cds-web/typography/Text';
 import { Button } from '@coinbase/cds-web/buttons/Button';
 import { HeroSquare } from '@coinbase/cds-web/illustrations/HeroSquare';
+import { Lottie } from '@coinbase/cds-web/animation/Lottie';
+import { dappWallet } from '@coinbase/cds-lottie-files/dappWallet';
 import { AboutCarousel } from '@/components/AboutCarousel';
 import { ProtocolsSection } from '@/components/ProtocolsSection';
 import { InfoSection } from '@/components/Hero';
@@ -262,8 +264,8 @@ export function LandingPage() {
               minHeight: '400px',
             }}
           >
-            <Box as="div" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <HeroSquare name="moneyDecentralized" scaleMultiplier={1.8} />
+            <Box as="div" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '300px', height: '300px' }}>
+              <Lottie source={dappWallet} autoplay loop width="100%" height="100%" />
             </Box>
             <Box as="div" style={{ display: 'flex', flexDirection: 'column', gap: '24px', flex: 1 }}>
               <Text font="display2" as="h2" className="section-title" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 500, color: '#fff' }}>
