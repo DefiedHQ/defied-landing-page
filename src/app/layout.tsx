@@ -8,10 +8,10 @@ import { ConditionalFooter } from '@/components/ConditionalFooter';
 import { MainWrapper } from '@/components/MainWrapper';
 import { LanguageProvider } from '@/context/LanguageContext';
 
+import './globals.css';
 import '@coinbase/cds-icons/fonts/web/icon-font.css';
 import '@coinbase/cds-web/defaultFontStyles';
 import '@coinbase/cds-web/globalStyles';
-import './globals.css';
 
 export const metadata: Metadata = {
   title: {
