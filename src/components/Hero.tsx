@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Box } from '@coinbase/cds-web/layout/Box';
+import { VStack } from '@coinbase/cds-web/layout/VStack';
 import { Text } from '@coinbase/cds-web/typography/Text';
 import { Accordion } from '@coinbase/cds-web/accordion/Accordion';
 import { AccordionItem } from '@coinbase/cds-web/accordion/AccordionItem';
@@ -26,13 +26,26 @@ export function InfoSection() {
 
   return (
     <section className="w-full max-w-[1200px] mx-auto">
-      <Text font="display2" as="h2" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, marginBottom: '56px' }}>
+      <Text
+        font="display2"
+        as="h2"
+        style={{
+          fontSize: 'clamp(2rem, 4vw, 3.25rem)',
+          fontWeight: 500,
+          marginBottom: '56px',
+        }}
+      >
         {t('faq.title')}
       </Text>
 
       <Accordion
         activeKey={activeKey}
         setActiveKey={handleToggle}
+        style={{
+          background: 'rgb(247, 248, 249)',
+          borderRadius: '16px',
+          overflow: 'hidden',
+        }}
       >
         {faqItems.map((item, i) => (
           <AccordionItem
@@ -40,11 +53,11 @@ export function InfoSection() {
             itemKey={String(i)}
             title={item.question}
           >
-            <Box as="div" style={{ padding: '0 32px 24px' }}>
-              <Text font="body" as="p" color="fgMuted">
+            <VStack>
+              <Text font="label2" as="p" color="fgMuted">
                 {item.answer}
               </Text>
-            </Box>
+            </VStack>
           </AccordionItem>
         ))}
       </Accordion>
