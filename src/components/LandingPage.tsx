@@ -32,16 +32,16 @@ export function LandingPage() {
     >
       {/* Section 1: Hero */}
       <div
+        className="px-4 sm:px-6"
         style={{
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          padding: '0 1rem',
           background: '#FFFFFF',
         }}
       >
         {/* Centered text + CTA */}
-        <div className="w-full max-w-[1200px] mx-auto flex flex-col items-center text-center pt-16 sm:pt-24 md:pt-32 px-4">
+        <div className="w-full max-w-[1200px] mx-auto flex flex-col items-center text-center pt-16 sm:pt-24 md:pt-32">
           <h1
             className="text-[64px] leading-[68px] md:text-[96px] md:leading-[100px]"
             style={{
@@ -94,7 +94,7 @@ export function LandingPage() {
           </div>
         </div>
         {/* Hero image below */}
-        <div className="w-full max-w-[745px] mx-auto mt-12 sm:mt-16 px-4">
+        <div className="w-full max-w-[745px] mx-auto mt-12 sm:mt-16">
           <img
             src="/hero_app_white.png"
             alt="DeFied App"
@@ -112,6 +112,7 @@ export function LandingPage() {
       {/* Section 2: About Grid */}
       <div
         id="how-it-works"
+        className="px-4 sm:px-6"
         style={{
           background: '#fff',
           paddingTop: '100px',
@@ -124,17 +125,17 @@ export function LandingPage() {
       </div>
 
       {/* Section 3: Protocols */}
-      <div style={{ paddingTop: '100px', paddingBottom: '100px' }}>
+      <div className="px-4 sm:px-6" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
         <ProtocolsSection />
       </div>
 
       {/* Section 4: Blue promo */}
       <div
+        className="px-4 sm:px-6"
         style={{
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          padding: '0 1rem',
         }}
       >
         <div
@@ -175,6 +176,7 @@ export function LandingPage() {
       {/* Section 5: FAQ */}
       <div
         id="faq"
+        className="px-4 sm:px-6"
         style={{
           background: '#fff',
           paddingTop: '100px',

@@ -34,7 +34,7 @@ export default function AboutPage() {
       </section>
 
       {/* Dark mission section - card style */}
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0 1rem' }}>
+      <div className="px-4 sm:px-6" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <div
           style={{
             background: '#0A0B0D',
@@ -66,7 +66,7 @@ export default function AboutPage() {
       </section>
 
       {/* Blue company section - card style */}
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0 1rem' }}>
+      <div className="px-4 sm:px-6" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <div
           style={{
             background: '#0052FF',
@@ -105,7 +105,7 @@ export default function AboutPage() {
       </section>
 
       {/* Advantages section - card style */}
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0 1rem' }}>
+      <div className="px-4 sm:px-6" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <div
           style={{
             background: '#0A0B0D',

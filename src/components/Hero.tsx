@@ -53,7 +53,7 @@ export function InfoSection() {
   ];
 
   return (
-    <section className="w-full max-w-[1200px] mx-auto px-4 sm:px-6">
+    <section className="w-full max-w-[1200px] mx-auto">
       {/* FAQ Title */}
       <h2 className="text-[28px] sm:text-[40px] md:text-[52px] mb-10 sm:mb-14" style={{ fontWeight: 400, color: '#0A0B0D', lineHeight: 1.1 }}>
         {t('faq.title')}

@@ -75,7 +75,7 @@ export function AboutCarousel() {
   ];
 
   return (
-    <div className="px-4 sm:px-10">
+    <div>
       {/* Header row: title left, subtitle right */}
       <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 lg:gap-16 mb-12 sm:mb-16">
         <h2
