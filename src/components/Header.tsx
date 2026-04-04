@@ -6,12 +6,19 @@ import { useState, useRef, useEffect, useCallback } from 'react';
 import { LogoMark } from '@/components/LogoMark';
 import { useLanguage } from '@/context/LanguageContext';
 
+const languages = [
+  { code: 'bg' as const, label: 'Български', region: 'България' },
+  { code: 'en' as const, label: 'English', region: 'Global' },
+];
+
 export function Header() {
   const pathname = usePathname();
   const router = useRouter();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [langDropdownOpen, setLangDropdownOpen] = useState(false);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const mobileToggleRef = useRef<HTMLButtonElement>(null);
+  const langDropdownRef = useRef<HTMLDivElement>(null);
   const { t, lang, setLang } = useLanguage();
 
   const scrollToSection = useCallback((sectionId: string) => {
@@ -34,11 +41,14 @@ export function Header() {
       ) {
         setMobileMenuOpen(false);
       }
+      if (
+        langDropdownRef.current && !langDropdownRef.current.contains(e.target as Node)
+      ) {
+        setLangDropdownOpen(false);
+      }
     }
-    if (mobileMenuOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-      return () => document.removeEventListener('mousedown', handleClickOutside);
-    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [mobileMenuOpen]);
 
   const tabClass = (paths: string[]) => {
@@ -47,6 +57,8 @@ export function Header() {
       isActive ? 'bg-[#0F0F660D]' : 'hover:bg-[#0F0F660D]'
     }`;
   };
+
+  const currentLang = languages.find(l => l.code === lang) || languages[0];
 
   return (
     <header className="relative w-full px-4 sm:px-6 py-3 sm:py-4 max-w-[1200px] mx-auto">
@@ -103,14 +115,66 @@ export function Header() {
 
         {/* Language switcher + CTA button — right */}
         <div className="flex-1 flex justify-end items-center gap-3">
-          <button
-            type="button"
-            onClick={() => setLang(lang === 'bg' ? 'en' : 'bg')}
-            className="hidden sm:flex items-center justify-center px-3 py-1.5 hover:bg-[#0F0F660D] transition-colors"
-            style={{ borderRadius: '24px', background: 'none', border: 'none', color: '#0A0B0D', fontSize: '14px', fontWeight: 600, fontFamily: '-apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"' }}
-          >
-            {lang === 'bg' ? 'EN' : 'BG'}
-          </button>
+          {/* Language dropdown */}
+          <div ref={langDropdownRef} className="relative hidden sm:block">
+            <button
+              type="button"
+              onClick={() => setLangDropdownOpen(!langDropdownOpen)}
+              className="flex items-center justify-center p-2 hover:bg-[#0F0F660D] transition-colors"
+              style={{ borderRadius: '50%', background: 'none', border: 'none', color: '#0A0B0D' }}
+              aria-label="Language"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M2 12h20" />
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+              </svg>
+            </button>
+            {langDropdownOpen && (
+              <div
+                style={{
+                  position: 'absolute',
+                  top: 'calc(100% + 8px)',
+                  right: 0,
+                  background: '#FFFFFF',
+                  borderRadius: '12px',
+                  boxShadow: '0 4px 24px rgba(0, 0, 0, 0.12)',
+                  border: '1px solid rgba(0, 0, 0, 0.08)',
+                  padding: '16px 0 8px',
+                  minWidth: '240px',
+                  zIndex: 200,
+                }}
+              >
+                <div style={{ padding: '0 16px 12px', fontSize: '16px', fontWeight: 500, color: '#0A0B0D' }}>
+                  Language and region
+                </div>
+                {languages.map((l) => (
+                  <button
+                    key={l.code}
+                    type="button"
+                    onClick={() => { setLang(l.code); setLangDropdownOpen(false); }}
+                    className="w-full flex items-center justify-between px-4 py-3 hover:bg-[#0F0F660D] transition-colors text-left"
+                    style={{
+                      background: 'none',
+                      border: 'none',
+                      color: '#0A0B0D',
+                      fontFamily: '-apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+                    }}
+                  >
+                    <div>
+                      <div style={{ fontSize: '15px', fontWeight: 500, lineHeight: '20px' }}>{l.label}</div>
+                      <div style={{ fontSize: '13px', fontWeight: 400, color: '#5B616E', lineHeight: '18px' }}>{l.region}</div>
+                    </div>
+                    {lang === l.code && (
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0052FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                    )}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
           <a
             href="https://app.defied.bg" target="_blank" rel="noopener noreferrer"
             className="btn hover:opacity-80 transition-opacity"
@@ -130,7 +194,7 @@ export function Header() {
           zIndex: 100,
           background: '#FFFFFF',
           boxShadow: mobileMenuOpen ? '0 8px 24px rgba(0,0,0,0.08)' : 'none',
-          maxHeight: mobileMenuOpen ? '300px' : '0',
+          maxHeight: mobileMenuOpen ? '400px' : '0',
           opacity: mobileMenuOpen ? 1 : 0,
           transition: 'max-height 0.3s ease, opacity 0.2s ease',
           pointerEvents: mobileMenuOpen ? 'auto' : 'none',
@@ -169,14 +233,36 @@ export function Header() {
               {item.label}
             </Link>
           ))}
-          <button
-            type="button"
-            onClick={() => { setLang(lang === 'bg' ? 'en' : 'bg'); setMobileMenuOpen(false); }}
-            className="py-2.5 px-1 transition-colors text-left"
-            style={{ background: 'none', border: 'none', color: 'inherit', fontSize: 'inherit', fontWeight: 'inherit', fontFamily: '-apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"' }}
-          >
-            {lang === 'bg' ? 'English' : 'Български'}
-          </button>
+          {/* Mobile language selector */}
+          <div style={{ borderTop: '1px solid rgba(0,0,0,0.06)', marginTop: '4px', paddingTop: '8px' }}>
+            <div style={{ fontSize: '16px', fontWeight: 500, color: '#0A0B0D', padding: '4px 1px 8px' }}>
+              Language and region
+            </div>
+            {languages.map((l) => (
+              <button
+                key={l.code}
+                type="button"
+                onClick={() => { setLang(l.code); setMobileMenuOpen(false); }}
+                className="w-full flex items-center justify-between py-2.5 px-1 transition-colors text-left"
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  color: 'inherit',
+                  fontFamily: '-apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+                }}
+              >
+                <div>
+                  <div style={{ fontSize: '16px', fontWeight: 500, lineHeight: '20px' }}>{l.label}</div>
+                  <div style={{ fontSize: '13px', fontWeight: 400, color: '#5B616E', lineHeight: '18px' }}>{l.region}</div>
+                </div>
+                {lang === l.code && (
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0052FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                )}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
     </header>
