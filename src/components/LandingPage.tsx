@@ -109,12 +109,12 @@ export function LandingPage() {
               rel="noopener noreferrer"
               variant="primary"
               block
+              className="btn-fw-500"
               style={{
                 borderRadius: '56px',
                 height: '58px',
                 padding: '16px 32px',
                 minWidth: '200px',
-                fontWeight: 500,
               }}
             >
               {t('hero.cta')}
@@ -308,12 +308,12 @@ export function LandingPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   variant="primary"
+                  className="btn-fw-500"
                   style={{
                     borderRadius: '56px',
                     height: '58px',
                     padding: '16px 32px',
                     minWidth: '200px',
-                    fontWeight: 500,
                   }}
                 >
                   {t('hero.cta')}

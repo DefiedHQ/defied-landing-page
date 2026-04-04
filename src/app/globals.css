@@ -503,6 +503,11 @@ select:focus-visible,
   outline-offset: 2px;
 }
 
+/* ─── Override CDS Button font-weight (CDS hardcodes 600) ─── */
+.btn-fw-500 {
+  font-weight: 500 !important;
+}
+
 /* ═══════════════════════════════════════════════════════════════
    Respect reduced motion preferences
    ═══════════════════════════════════════════════════════════════ */
