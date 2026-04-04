@@ -23,7 +23,7 @@ export function Footer() {
         }}
       >
         {/* Top section: logo left, links right */}
-        <div className="flex-col-row-sm" style={{ marginBottom: '24px' }}>
+        <div className="flex-col-row" style={{ marginBottom: '24px' }}>
           {/* Logo + contact */}
           <VStack as="div" style={{ alignItems: 'flex-start', gap: '0px' }}>
             <Link href="/" className="hover-fade" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', textDecoration: 'none' }}>

@@ -1,12 +1,32 @@
+/*
+ * CDS Breakpoints (see src/config/breakpoints.ts):
+ *
+ *   phone:            0 – 559px
+ *   phoneLandscape: 560 – 767px
+ *   tablet:         768 – 1023px
+ *   tabletLandscape:1024 – 1279px
+ *   desktop:        1280 – 1439px
+ *   desktopLarge:   1440 – 1599px
+ *   extraWide:      1600+
+ */
+
 :root {
   --header-h: 96px;
+
+  /* Expose breakpoints as CSS custom properties */
+  --bp-phone-landscape: 560px;
+  --bp-tablet: 768px;
+  --bp-tablet-landscape: 1024px;
+  --bp-desktop: 1280px;
+  --bp-desktop-large: 1440px;
+  --bp-extra-wide: 1600px;
 }
 
 html {
   overflow-x: hidden;
 }
 
-/* Number input styling */
+/* ─── Number input styling ─── */
 input[type="number"] {
   -moz-appearance: textfield;
 }
@@ -16,7 +36,7 @@ input[type="number"]::-webkit-inner-spin-button {
   margin: 0;
 }
 
-/* Vault input — transparent bg + placeholder color */
+/* ─── Vault input — transparent bg + placeholder color ─── */
 .vault-input {
   background: transparent;
   border: none;
@@ -26,19 +46,19 @@ input[type="number"]::-webkit-inner-spin-button {
   color: #ccc;
 }
 
-/* Landing page full-bleed — counters MainWrapper padding */
+/* ─── Landing page full-bleed — counters MainWrapper padding ─── */
 .landing-scroll-container {
   margin: 0 -1rem;
   width: calc(100% + 2rem);
 }
 
-/* ─── Responsive section padding (px-4 sm:px-6) ─── */
+/* ─── Responsive section padding ─── */
 .section-padding {
   padding-left: 16px;
   padding-right: 16px;
 }
 
-/* ─── Responsive box inner padding (px-8 sm:px-14 lg:px-20 py-14 sm:py-20) ─── */
+/* ─── Responsive box inner padding (colored sections) ─── */
 .box-padding {
   padding: 56px 32px;
 }
@@ -48,33 +68,49 @@ input[type="number"]::-webkit-inner-spin-button {
   padding: 12px 16px;
 }
 
-@media (min-width: 640px) {
-  :root {
-    --header-h: 68px;
+/* ─── phoneLandscape (560px) — minor spacing adjustments ─── */
+@media (min-width: 560px) {
+  .section-padding {
+    padding-left: 24px;
+    padding-right: 24px;
   }
   .landing-scroll-container {
     margin: 0 -1.5rem;
     width: calc(100% + 3rem);
   }
-  .section-padding {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-  .box-padding {
-    padding: 80px 56px;
+}
+
+/* ─── tablet (768px) — layout shifts: mobile → tablet ─── */
+@media (min-width: 768px) {
+  :root {
+    --header-h: 68px;
   }
   .header-padding {
     padding: 16px 24px;
   }
+  .box-padding {
+    padding: 80px 56px;
+  }
 }
 
+/* ─── tabletLandscape (1024px) ─── */
 @media (min-width: 1024px) {
+  .section-padding {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+/* ─── desktop (1280px) — full desktop experience ─── */
+@media (min-width: 1280px) {
   .box-padding {
     padding: 80px 80px;
   }
 }
 
-/* ─── Responsive visibility ─── */
+/* ═══════════════════════════════════════════════════════════════
+   Responsive visibility
+   ═══════════════════════════════════════════════════════════════ */
 .hide-mobile-flex {
   display: none;
 }
@@ -88,7 +124,8 @@ input[type="number"]::-webkit-inner-spin-button {
   display: block;
 }
 
-@media (min-width: 640px) {
+/* Switch at tablet (768px) — mobile nav → desktop nav */
+@media (min-width: 768px) {
   .hide-mobile-flex {
     display: flex;
   }
@@ -101,22 +138,24 @@ input[type="number"]::-webkit-inner-spin-button {
   }
 }
 
-/* ─── Responsive grids ─── */
+/* ═══════════════════════════════════════════════════════════════
+   Responsive grids
+   ═══════════════════════════════════════════════════════════════ */
 
-/* 1 col → 2 col at sm (640px), gap 16→20 */
+/* 1 col → 2 col at tablet (768px) */
 .grid-1-2 {
   display: grid;
   grid-template-columns: 1fr;
   gap: 16px;
 }
-@media (min-width: 640px) {
+@media (min-width: 768px) {
   .grid-1-2 {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
 }
 
-/* 1 col → 2 col at md (768px), gap 24 */
+/* 1 col → 2 col at tablet (768px) — articles */
 .grid-1-2-md {
   display: grid;
   grid-template-columns: 1fr;
@@ -128,7 +167,7 @@ input[type="number"]::-webkit-inner-spin-button {
   }
 }
 
-/* 1 col → 2 col at lg (1024px), gap 24 */
+/* 1 col → 2 col at tabletLandscape (1024px) — vault panels */
 .grid-1-2-lg {
   display: grid;
   grid-template-columns: 1fr;
@@ -140,7 +179,7 @@ input[type="number"]::-webkit-inner-spin-button {
   }
 }
 
-/* Article layout: 1 col → 1fr 340px at lg */
+/* Article layout: 1 col → content + sidebar at tabletLandscape (1024px) */
 .grid-article {
   display: grid;
   grid-template-columns: 1fr;
@@ -152,35 +191,37 @@ input[type="number"]::-webkit-inner-spin-button {
   }
 }
 
-/* 2 col → 3 col at sm, gap 24 */
+/* 2 col → 3 col at tablet (768px) — vault details */
 .grid-2-3 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
 }
-@media (min-width: 640px) {
+@media (min-width: 768px) {
   .grid-2-3 {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-/* ─── Responsive flex direction ─── */
+/* ═══════════════════════════════════════════════════════════════
+   Responsive flex direction
+   ═══════════════════════════════════════════════════════════════ */
 
-/* col → row at sm (footer layout) */
-.flex-col-row-sm {
+/* col → row at tablet (768px) — footer layout */
+.flex-col-row {
   display: flex;
   flex-direction: column;
   gap: 40px;
   align-items: flex-start;
 }
-@media (min-width: 640px) {
-  .flex-col-row-sm {
+@media (min-width: 768px) {
+  .flex-col-row {
     flex-direction: row;
     justify-content: space-between;
   }
 }
 
-/* col → row at md (CTA buttons) */
+/* col → row at tablet (768px) — CTA button stacks */
 .flex-col-row-md {
   display: flex;
   flex-direction: column;
@@ -192,26 +233,39 @@ input[type="number"]::-webkit-inner-spin-button {
   }
 }
 
-/* ─── Responsive text for Privacy/Terms ─── */
+/* ═══════════════════════════════════════════════════════════════
+   Responsive typography
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Privacy / Terms page headings */
 .text-display-responsive {
   font-size: 32px;
   margin-top: 48px;
   margin-bottom: 16px;
 }
-@media (min-width: 640px) {
+@media (min-width: 560px) {
   .text-display-responsive {
-    font-size: 56px;
+    font-size: 48px;
+    margin-top: 80px;
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 768px) {
+  .text-display-responsive {
+    font-size: 64px;
     margin-top: 120px;
     margin-bottom: 24px;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .text-display-responsive {
     font-size: 80px;
   }
 }
 
-/* ─── Hover utilities ─── */
+/* ═══════════════════════════════════════════════════════════════
+   Hover utilities
+   ═══════════════════════════════════════════════════════════════ */
 .hover-fade {
   transition: opacity 0.2s ease;
 }
@@ -244,7 +298,9 @@ input[type="number"]::-webkit-inner-spin-button {
   color: #0052FF;
 }
 
-/* ─── Group hover patterns (card hover effects) ─── */
+/* ═══════════════════════════════════════════════════════════════
+   Group hover patterns (card hover effects)
+   ═══════════════════════════════════════════════════════════════ */
 .card-group:hover .card-group-underline {
   text-decoration: underline;
 }
@@ -252,7 +308,9 @@ input[type="number"]::-webkit-inner-spin-button {
   color: #0052FF;
 }
 
-/* ─── Protocol section cards ─── */
+/* ═══════════════════════════════════════════════════════════════
+   Protocol section cards
+   ═══════════════════════════════════════════════════════════════ */
 .protocol-card {
   background: rgb(247, 248, 249);
   display: flex;
@@ -267,7 +325,8 @@ input[type="number"]::-webkit-inner-spin-button {
   max-width: 240px;
   border-radius: 56px;
 }
-@media (max-width: 640px) {
+/* Phone: stack 2-up with fixed aspect ratio */
+@media (max-width: 767px) {
   .protocol-card {
     flex: 1 1 calc(50% - 8px);
     max-width: calc(50% - 8px);
@@ -276,7 +335,9 @@ input[type="number"]::-webkit-inner-spin-button {
   }
 }
 
-/* ─── Focus-visible styles for keyboard navigation ─── */
+/* ═══════════════════════════════════════════════════════════════
+   Focus-visible styles for keyboard navigation
+   ═══════════════════════════════════════════════════════════════ */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -286,7 +347,9 @@ select:focus-visible,
   outline-offset: 2px;
 }
 
-/* ─── Respect reduced motion preferences ─── */
+/* ═══════════════════════════════════════════════════════════════
+   Respect reduced motion preferences
+   ═══════════════════════════════════════════════════════════════ */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
