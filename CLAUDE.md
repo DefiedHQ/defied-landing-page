@@ -1,3 +1,5 @@
+@.claude/rules/cds.md
+
 # Development Guidelines
 
 ## Responsiveness

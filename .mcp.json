@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "cds": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@coinbase/cds-mcp-server"
+      ]
+    }
+  }
+}
