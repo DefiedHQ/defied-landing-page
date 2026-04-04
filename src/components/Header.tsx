@@ -145,7 +145,7 @@ export function Header() {
                   zIndex: 200,
                 }}
               >
-                <div style={{ fontSize: '18px', fontWeight: 700, color: '#0A0B0D', marginBottom: '16px' }}>
+                <div style={{ fontSize: '18px', fontWeight: 700, color: 'rgb(91, 97, 110)', marginBottom: '16px' }}>
                   Language and region
                 </div>
                 <div className="flex flex-col">
