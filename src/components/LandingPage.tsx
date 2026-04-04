@@ -1,7 +1,7 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { m, AnimatePresence } from 'framer-motion';
+import { useEffect } from 'react';
+import { m } from 'framer-motion';
 import { Box } from '@coinbase/cds-web/layout/Box';
 import { VStack } from '@coinbase/cds-web/layout/VStack';
 import { Text } from '@coinbase/cds-web/typography/Text';
@@ -35,25 +35,9 @@ import { ProtocolsSection } from '@/components/ProtocolsSection';
 import { InfoSection } from '@/components/Hero';
 import { Footer } from '@/components/Footer';
 import { useLanguage } from '@/context/LanguageContext';
-import bg from '@/locales/bg.json';
-import en from '@/locales/en.json';
-
-const rotatingWords: Record<string, string[]> = {
-  bg: bg.hero.titleWords,
-  en: en.hero.titleWords,
-};
 
 export function LandingPage() {
-  const { t, lang } = useLanguage();
-  const [wordIndex, setWordIndex] = useState(0);
-  const words = rotatingWords[lang];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setWordIndex((prev) => (prev + 1) % words.length);
-    }, 2000);
-    return () => clearInterval(interval);
-  }, [words.length]);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const hash = window.location.hash.slice(1);
@@ -94,26 +78,15 @@ export function LandingPage() {
             paddingTop: 'clamp(64px, 10vw, 128px)',
           }}
         >
-          <Text font="display1" as="h1" className="title-tight-lh" style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', fontWeight: 500, letterSpacing: '-0.02em', textAlign: 'center' }}>
-            {t('hero.titleBase')}{' '}
-            <span style={{ display: 'inline-block', position: 'relative', color: '#0052FF', overflow: 'hidden' }}>
-              <span style={{ visibility: 'hidden' }}>
-                {words.reduce((a, b) => a.length >= b.length ? a : b)}
-              </span>
-              <AnimatePresence mode="wait">
-                <m.span
-                  key={words[wordIndex]}
-                  initial={{ opacity: 0, x: 30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -30 }}
-                  transition={{ duration: 0.3 }}
-                  style={{ position: 'absolute', left: 0, top: 0, display: 'inline-block' }}
-                >
-                  {words[wordIndex]}
-                </m.span>
-              </AnimatePresence>
-            </span>
-          </Text>
+          <m.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+          >
+            <Text font="display1" as="h1" className="title-tight-lh" style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', fontWeight: 500, letterSpacing: '-0.02em', textAlign: 'center' }}>
+              {t('hero.title')}
+            </Text>
+          </m.div>
           <m.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

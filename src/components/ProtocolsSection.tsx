@@ -65,6 +65,7 @@ export function ProtocolsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.5, delay: i * 0.1, ease: 'easeOut' }}
+                style={{ flex: isMobile ? '1 1 calc(50% - 8px)' : '1 1 0', maxWidth: isMobile ? 'calc(50% - 8px)' : undefined, minWidth: 0 }}
               >
                 <div
                   className="protocol-card"
