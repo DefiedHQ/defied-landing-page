@@ -128,21 +128,19 @@ export function LandingPage() {
         >
           <Box
             as="div"
-            className="box-padding"
+            className="box-padding promo-card-layout"
             style={{
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
+              alignItems: 'center',
               minHeight: '400px',
-              gap: '32px',
             }}
           >
-            <Text font="display1" as="h2" style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', fontWeight: 500, color: '#fff', maxWidth: '800px' }}>
-              {t('imageSection.heading')}
-            </Text>
-            <Box as="div" style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-              <HeroSquare name="stakingMissedReturns" />
-              <HeroSquare name="earnGrowth" />
+            <Box as="div" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <HeroSquare name="moneyDecentralized" scaleMultiplier={1.8} />
+            </Box>
+            <Box as="div" style={{ display: 'flex', flexDirection: 'column', gap: '24px', flex: 1 }}>
+              <Text font="display2" as="h2" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 500, color: '#fff' }}>
+                {t('imageSection.heading')}
+              </Text>
             </Box>
           </Box>
         </Box>

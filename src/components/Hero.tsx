@@ -38,13 +38,14 @@ export function InfoSection() {
         {t('faq.title')}
       </Text>
 
+      <div className="faq-accordion" style={{ marginTop: '40px' }}>
       <Accordion
         activeKey={activeKey}
         setActiveKey={handleToggle}
         style={{
-          background: 'rgb(247, 248, 249)',
-          borderRadius: '16px',
-          overflow: 'hidden',
+          display: 'flex',
+          flexDirection: 'column' as const,
+          gap: '4px',
         }}
       >
         {faqItems.map((item, i) => (
@@ -52,15 +53,21 @@ export function InfoSection() {
             key={i}
             itemKey={String(i)}
             title={item.question}
+            style={{
+              background: 'rgb(247, 248, 249)',
+              borderRadius: '16px',
+              overflow: 'hidden',
+            }}
           >
             <VStack>
-              <Text font="label2" as="p" color="fgMuted">
+              <Text font="label2" as="p" color="fgMuted" style={{ fontSize: '16px' }}>
                 {item.answer}
               </Text>
             </VStack>
           </AccordionItem>
         ))}
       </Accordion>
+      </div>
     </section>
   );
 }

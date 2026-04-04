@@ -19,6 +19,7 @@
 
 body {
   margin: 0;
+  font-family: var(--defaultFont-sans, 'Inter', sans-serif);
 }
 
 img,
@@ -351,6 +352,40 @@ input[type="number"]::-webkit-inner-spin-button {
     aspect-ratio: 1;
     height: auto;
   }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Blue promo card — col → row at tablet
+   ═══════════════════════════════════════════════════════════════ */
+.promo-card-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+@media (min-width: 768px) {
+  .promo-card-layout {
+    flex-direction: row;
+    gap: 48px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Category label hover — darkens CDS Tag background on hover
+   ═══════════════════════════════════════════════════════════════ */
+.category-tag-hover > div {
+  transition: background 0.2s ease;
+}
+.category-tag-hover:hover > div {
+  background: rgb(220, 222, 226) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   FAQ Accordion — separated items with individual backgrounds
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Hide CDS Accordion dividers between items */
+.faq-accordion [class*="horizontal-"] {
+  display: none;
 }
 
 /* ═══════════════════════════════════════════════════════════════

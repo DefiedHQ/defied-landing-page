@@ -77,3 +77,10 @@ This project uses the [Coinbase Design System](https://cds.coinbase.com) (`@coin
 - Use the `as` prop on CDS components for semantic HTML (e.g., `<Text as="h1">`, `<Box as="nav">`).
 - CDS components support `color` prop with semantic tokens like `fgPrimary`, `fgMuted`, `fgSecondary`.
 - For responsive layouts, combine CDS layout components with Tailwind responsive classes.
+
+### CDS-First Rule (MANDATORY)
+- **ALWAYS consult CDS MCP docs** (`list-cds-routes` → `get-cds-doc`) before implementing any UI element.
+- **NEVER write custom CSS or components** if a CDS component or prop can achieve the same result.
+- **Only override with custom CSS as a last resort** — when CDS genuinely lacks the feature (e.g., hover states on Tag).
+- Check component props thoroughly: CDS components often support `style`, `background`, `borderRadius`, `padding`, layout props, etc. that eliminate the need for custom styling.
+- When custom CSS is unavoidable, keep it minimal and document why CDS couldn't handle it.
