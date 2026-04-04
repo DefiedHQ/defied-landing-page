@@ -231,10 +231,11 @@ input[type="number"]::-webkit-inner-spin-button {
   align-items: center;
   gap: 40px;
 }
-.hero-features-grid-4 > * {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
+.hero-feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 @media (min-width: 768px) {
   .hero-features-grid-4 {
