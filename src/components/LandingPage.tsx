@@ -110,7 +110,7 @@ export function LandingPage() {
       </section>
 
       {/* Section: Features (Функционалности) */}
-      <section className="section-padding section-vertical-padding">
+      <section className="section-padding" style={{ paddingTop: 'clamp(100px, 12vw, 160px)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
           <Box
             as="div"
