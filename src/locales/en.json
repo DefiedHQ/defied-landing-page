@@ -32,7 +32,9 @@
     "row1Heading": "Advantages of stablecoins",
     "row1Subtext": "Stablecoin transactions are significantly faster and cheaper than traditional bank transfers, especially for cross-border operations.",
     "row2Heading": "Non-custodial wallet",
-    "row2Subtext": "Non-custodial wallets give you full control over your funds. We have no access to them, and no one else can block, move, or hold them. They cannot be frozen by institutions, governments, or third parties. With our infrastructure, behind the scenes, you acquire such a wallet, controlled entirely through your email."
+    "row2Subtext": "Non-custodial wallets give you full control over your funds. We have no access to them, and no one else can block, move, or hold them. They cannot be frozen by institutions, governments, or third parties. With our infrastructure, behind the scenes, you acquire such a wallet, controlled entirely through your email.",
+    "row3Heading": "Decentralized Finance",
+    "row3Subtext": "Anyone with an internet connection can use decentralized finance without needing approval or a bank account, ensuring financial freedom. Traditional banking institutions are eliminated, reducing the risk of censorship and service disruption. You can generate returns through lending, staking, and providing liquidity."
   },
   "protocolsSection": {
     "title": "Integrated protocols"
