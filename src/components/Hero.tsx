@@ -3,20 +3,6 @@
 import { useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 
-export function Hero() {
-  return (
-    <section className="w-full max-w-[680px] mx-auto text-center mb-8 px-2">
-      <h1 className="text-2xl sm:text-3xl font-bold text-text tracking-tight leading-tight mb-3">
-        Put your <span className="text-pink">money</span> where your <span className="text-pink">mouth</span> is.
-      </h1>
-      <p className="text-[15px] text-muted2 leading-relaxed max-w-[520px] mx-auto">
-        Lock ETH until it reaches a new all-time high. Earn staking yield the
-        entire time. Conviction has a price - so does impatience.
-      </p>
-    </section>
-  );
-}
-
 function FaqItem({ question, answer, open, onToggle }: { question: string; answer: string; open: boolean; onToggle: () => void }) {
   return (
     <div

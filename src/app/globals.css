@@ -128,9 +128,7 @@ span.vault-card-btn {
   color: #fff;
 }
 .vault-card { background-color: #fff; border-radius: 56px; }
-.vault-card-lido:hover { background-color: rgb(247, 248, 249); }
-.vault-card-yo:hover { background-color: rgb(247, 248, 249); }
-.vault-card-rp:hover { background-color: rgb(247, 248, 249); }
+.vault-card-lido:hover, .vault-card-yo:hover, .vault-card-rp:hover { background-color: rgb(247, 248, 249); }
 .vault-card:hover span.vault-card-btn {
   background-color: #0040D0;
   color: #fff;
@@ -172,38 +170,9 @@ span.vault-card-btn {
   }
 }
 
-/* MoonPay widget iframe overrides */
-#transak-widget iframe,
-.moonpay-widget iframe,
-[id*="moonpay"] iframe,
-[class*="moonpay"] iframe,
-.moonpay-container iframe {
-  border: none !important;
-  border-radius: 0 !important;
-}
-
 /* Resource filter hover */
 .resource-filter-btn:hover {
   background: #0052FF !important;
   color: #fff !important;
 }
 
-/* Bottom-sheet slide-up for modals on mobile/tablet */
-@keyframes modal-slide-up {
-  from { transform: translateY(100%); }
-  to   { transform: translateY(0); }
-}
-@keyframes modal-fade-up {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-@media (max-width: 1023px) {
-  .modal-sheet {
-    animation: modal-slide-up 0.35s cubic-bezier(0.32, 0.72, 0, 1);
-  }
-}
-@media (min-width: 1024px) {
-  .modal-sheet {
-    animation: modal-fade-up 0.25s cubic-bezier(0.32, 0.72, 0, 1);
-  }
-}
