@@ -39,21 +39,21 @@ export default function AboutPage() {
               {t('about.ctaContact')}
             </Button>
           </HStack>
-          {/* Illustration */}
-          <HStack as="div" style={{ gap: '16px', marginTop: '16px' }}>
-            <HeroSquare name="platform" />
-            <HeroSquare name="decentralization" />
-          </HStack>
         </VStack>
       </section>
 
       {/* Dark mission section */}
       <Box as="div" className="section-padding" style={{ display: 'flex', justifyContent: 'center' }}>
-        <Box as="div" style={{ background: '#0A0B0D', width: '100%', maxWidth: '1200px', borderRadius: '56px' }}>
-          <Box as="div" className="box-padding" style={{ minHeight: '400px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
-            <Text font="display2" as="h2" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, color: '#fff', maxWidth: '800px', textAlign: 'center' }}>
-              {t('about.missionDark')}
-            </Text>
+        <Box as="div" style={{ background: '#0A0B0D', width: '100%', maxWidth: '1200px', borderRadius: '56px', overflow: 'hidden' }}>
+          <Box as="div" className="box-padding promo-card-layout" style={{ alignItems: 'center', minHeight: '400px' }}>
+            <Box as="div" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <HeroSquare name="platform" scaleMultiplier={1.8} />
+            </Box>
+            <Box as="div" style={{ display: 'flex', flexDirection: 'column', gap: '24px', flex: 1 }}>
+              <Text font="display2" as="h2" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 500, color: '#fff' }}>
+                {t('about.missionDark')}
+              </Text>
+            </Box>
           </Box>
         </Box>
       </Box>
@@ -68,12 +68,16 @@ export default function AboutPage() {
 
       {/* Blue company section */}
       <Box as="div" className="section-padding" style={{ display: 'flex', justifyContent: 'center' }}>
-        <Box as="div" style={{ background: '#0052FF', width: '100%', maxWidth: '1200px', borderRadius: '56px' }}>
-          <Box as="div" className="box-padding" style={{ minHeight: '400px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', textAlign: 'center', gap: '24px' }}>
-            <Text font="display2" as="h2" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, color: '#fff', maxWidth: '800px', textAlign: 'center' }}>
-              {t('about.blueSection')}
-            </Text>
-            <HeroSquare name="earnGlobe" />
+        <Box as="div" style={{ background: '#0052FF', width: '100%', maxWidth: '1200px', borderRadius: '56px', overflow: 'hidden' }}>
+          <Box as="div" className="box-padding promo-card-layout" style={{ alignItems: 'center', minHeight: '400px' }}>
+            <Box as="div" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <HeroSquare name="earnGlobe" scaleMultiplier={1.8} />
+            </Box>
+            <Box as="div" style={{ display: 'flex', flexDirection: 'column', gap: '24px', flex: 1 }}>
+              <Text font="display2" as="h2" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 500, color: '#fff' }}>
+                {t('about.blueSection')}
+              </Text>
+            </Box>
           </Box>
         </Box>
       </Box>
@@ -89,11 +93,16 @@ export default function AboutPage() {
 
       {/* Advantages section */}
       <Box as="div" className="section-padding" style={{ display: 'flex', justifyContent: 'center' }}>
-        <Box as="div" style={{ background: '#0A0B0D', width: '100%', maxWidth: '1200px', borderRadius: '56px' }}>
-          <Box as="div" className="box-padding" style={{ minHeight: '400px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
-            <Text font="display2" as="h2" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, color: '#fff', maxWidth: '800px', textAlign: 'center' }}>
-              {t('about.advantagesHeading')}
-            </Text>
+        <Box as="div" style={{ background: '#0A0B0D', width: '100%', maxWidth: '1200px', borderRadius: '56px', overflow: 'hidden' }}>
+          <Box as="div" className="box-padding promo-card-layout" style={{ alignItems: 'center', minHeight: '400px' }}>
+            <Box as="div" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <HeroSquare name="decentralization" scaleMultiplier={1.8} />
+            </Box>
+            <Box as="div" style={{ display: 'flex', flexDirection: 'column', gap: '24px', flex: 1 }}>
+              <Text font="display2" as="h2" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 500, color: '#fff' }}>
+                {t('about.advantagesHeading')}
+              </Text>
+            </Box>
           </Box>
         </Box>
       </Box>
