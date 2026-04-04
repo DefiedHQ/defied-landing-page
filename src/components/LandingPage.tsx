@@ -31,7 +31,7 @@ export function LandingPage() {
       }}
     >
       {/* Section 1: Hero */}
-      <div
+      <section
         className="px-4 sm:px-6"
         style={{
           display: 'flex',
@@ -107,10 +107,10 @@ export function LandingPage() {
             }}
           />
         </div>
-      </div>
+      </section>
 
       {/* Section 2: About Grid */}
-      <div
+      <section
         id="how-it-works"
         className="px-4 sm:px-6"
         style={{
@@ -122,15 +122,15 @@ export function LandingPage() {
         <div className="w-full max-w-[1200px] mx-auto">
           <AboutCarousel />
         </div>
-      </div>
+      </section>
 
       {/* Section 3: Protocols */}
-      <div className="px-4 sm:px-6" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
+      <section className="px-4 sm:px-6" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
         <ProtocolsSection />
-      </div>
+      </section>
 
       {/* Section 4: Blue promo */}
-      <div
+      <section
         className="px-4 sm:px-6"
         style={{
           display: 'flex',
@@ -173,10 +173,10 @@ export function LandingPage() {
           </h2>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Section 5: FAQ */}
-      <div
+      <section
         id="faq"
         className="px-4 sm:px-6"
         style={{
@@ -186,10 +186,10 @@ export function LandingPage() {
         }}
       >
         <InfoSection />
-      </div>
+      </section>
 
       {/* Section 6: CTA */}
-      <div
+      <section
         className="px-4 sm:px-6"
         style={{
           background: '#fff',
@@ -212,7 +212,7 @@ export function LandingPage() {
             {t('hero.cta')}
           </a>
         </div>
-      </div>
+      </section>
 
       {/* Section 7: Footer */}
       <Footer />
