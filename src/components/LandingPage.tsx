@@ -48,7 +48,7 @@ export function LandingPage() {
             paddingTop: 'clamp(64px, 10vw, 128px)',
           }}
         >
-          <Text font="display1" as="h1" style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', fontWeight: 500, letterSpacing: '-0.02em', textAlign: 'center' }}>
+          <Text font="display1" as="h1" className="title-tight-lh" style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', fontWeight: 500, letterSpacing: '-0.02em', textAlign: 'center' }}>
             {t('hero.title')}
           </Text>
           <Text
@@ -179,7 +179,7 @@ export function LandingPage() {
             gap: '16px',
           }}
         >
-          <Text font="display1" as="h2" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 500, textAlign: 'center' }}>
+          <Text font="display1" as="h2" className="title-tight-lh" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 500, textAlign: 'center' }}>
             {t('hero.ctaMain')}
           </Text>
           <Text font="body" as="p" color="fgMuted" style={{ fontSize: '18px', lineHeight: '28px', marginBottom: '16px', textAlign: 'center' }}>

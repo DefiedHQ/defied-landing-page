@@ -271,6 +271,21 @@ input[type="number"]::-webkit-inner-spin-button {
    Responsive typography
    ═══════════════════════════════════════════════════════════════ */
 
+/* Hero & section titles — tighter line-height on small screens */
+.title-tight-lh {
+  line-height: 1.05;
+}
+@media (min-width: 768px) {
+  .title-tight-lh {
+    line-height: 1.1;
+  }
+}
+@media (min-width: 1024px) {
+  .title-tight-lh {
+    line-height: 1.15;
+  }
+}
+
 /* Privacy / Terms page headings */
 .text-display-responsive {
   font-size: 32px;
