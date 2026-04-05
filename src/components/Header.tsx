@@ -208,8 +208,8 @@ export function Header() {
             rel="noopener noreferrer"
             variant="primary"
             compact
-            style={{ borderRadius: '56px', minWidth: '100px', padding: '0 24px', height: '44px' }}
             className="btn-fw-500"
+            style={{ borderRadius: '56px', minWidth: '100px', padding: '0 24px', height: '44px' }}
           >
             {t('hero.ctaHeader')}
           </Button>
