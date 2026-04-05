@@ -452,13 +452,16 @@ input[type="number"]::-webkit-inner-spin-button {
   justify-content: center;
   gap: 14px;
   transition: background 0.3s ease;
-  aspect-ratio: 1;
-  border-radius: 56px;
+  border-radius: 32px;
   width: 100%;
+  padding: 32px 16px;
 }
 @media (min-width: 768px) {
   .protocol-card {
+    aspect-ratio: 1;
+    border-radius: 56px;
     max-width: 240px;
+    padding: 0;
   }
 }
 
@@ -469,6 +472,9 @@ input[type="number"]::-webkit-inner-spin-button {
   .about-card {
     align-items: center;
     text-align: center;
+  }
+  .about-card * {
+    text-align: inherit !important;
   }
 }
 
@@ -481,8 +487,11 @@ input[type="number"]::-webkit-inner-spin-button {
   gap: 32px;
 }
 .cta-text-column {
-  text-align: center;
+  text-align: center !important;
   align-items: center;
+}
+.cta-text-column * {
+  text-align: inherit !important;
 }
 @media (min-width: 768px) {
   .promo-card-layout {
@@ -490,7 +499,7 @@ input[type="number"]::-webkit-inner-spin-button {
     gap: 48px;
   }
   .cta-text-column {
-    text-align: left;
+    text-align: left !important;
     align-items: flex-start;
   }
 }
