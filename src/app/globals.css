@@ -10,6 +10,31 @@
  *   extraWide:      1600+
  */
 
+/* ─── Aeonik Pro font faces ─── */
+@font-face {
+  font-family: 'Aeonik Pro';
+  src: url('/fonts/AeonikPro-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Aeonik Pro';
+  src: url('/fonts/AeonikPro-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Aeonik Pro';
+  src: url('/fonts/AeonikPro-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ─── Minimal CSS reset (replaces Tailwind Preflight) ─── */
 *,
 *::before,
@@ -19,7 +44,32 @@
 
 body {
   margin: 0;
-  font-family: var(--defaultFont-sans, 'Inter', sans-serif);
+  font-family: var(--defaultFont-sans, 'Aeonik Pro', 'Inter', sans-serif);
+}
+
+/* Override CDS @layer cds default font (unlayered CSS beats @layer cds) */
+:root {
+  --defaultFont-sans: 'Aeonik Pro', 'Inter', sans-serif;
+}
+
+/* Override CDS font families with Aeonik Pro site-wide.
+   CDS ThemeProvider sets --fontFamily-* as inline styles, so !important is
+   needed to beat the inline specificity. */
+.cds-default {
+  --defaultFont-sans: 'Aeonik Pro', 'Inter', sans-serif !important;
+  --fontFamily-display1: 'Aeonik Pro', 'Inter', sans-serif !important;
+  --fontFamily-display2: 'Aeonik Pro', 'Inter', sans-serif !important;
+  --fontFamily-display3: 'Aeonik Pro', 'Inter', sans-serif !important;
+  --fontFamily-title1: 'Aeonik Pro', 'Inter', sans-serif !important;
+  --fontFamily-title2: 'Aeonik Pro', 'Inter', sans-serif !important;
+  --fontFamily-title3: 'Aeonik Pro', 'Inter', sans-serif !important;
+  --fontFamily-title4: 'Aeonik Pro', 'Inter', sans-serif !important;
+  --fontFamily-headline: 'Aeonik Pro', 'Inter', sans-serif !important;
+  --fontFamily-body: 'Aeonik Pro', 'Inter', sans-serif !important;
+  --fontFamily-label1: 'Aeonik Pro', 'Inter', sans-serif !important;
+  --fontFamily-label2: 'Aeonik Pro', 'Inter', sans-serif !important;
+  --fontFamily-caption: 'Aeonik Pro', 'Inter', sans-serif !important;
+  --fontFamily-legal: 'Aeonik Pro', 'Inter', sans-serif !important;
 }
 
 img,
@@ -451,6 +501,12 @@ select:focus-visible,
 [role="button"]:focus-visible {
   outline: 2px solid #0052FF;
   outline-offset: 2px;
+}
+
+/* ��── Override CDS Button font-weight (CDS hardcodes 600 in @layer cds) ─── */
+.btn-fw-500,
+.btn-fw-500 * {
+  font-weight: 500 !important;
 }
 
 /* ═══════════════════════════════════════════════════════════════

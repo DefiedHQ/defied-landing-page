@@ -21,13 +21,13 @@ export const metadata: Metadata = {
   description:
     'Управлявай парите си като използваш най-новата технология - стейбълкойните. Изпращай, получавай и обменяй за секунди.',
   icons: { icon: '/favicon.svg' },
-  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://defied.io'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://defied.bg'),
   openGraph: {
     title: 'Defied | Дигитален стейбълкойн портфейл за всеки',
     description:
       'Управлявай парите си като използваш най-новата технология - стейбълкойните. Изпращай, получавай и обменяй за секунди.',
     siteName: 'Defied',
-    url: 'https://defied.io',
+    url: 'https://defied.bg',
     images: [
       {
         url: '/og-image.svg',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: 'https://defied.io',
+    canonical: 'https://defied.bg',
   },
 };
 
@@ -73,7 +73,7 @@ export default function RootLayout({
                     top: 0,
                     zIndex: 50,
                     background: '#ffffff',
-                    borderBottom: '1px solid rgba(91, 97, 110, 0.2)',
+                    /* borderBottom removed */
                   }}
                 >
                   <Header />

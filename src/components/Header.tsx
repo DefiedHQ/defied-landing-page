@@ -31,8 +31,13 @@ export function Header() {
     setMobileMenuOpen(false);
     if (pathname === '/') {
       const el = document.getElementById(sectionId);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
+      if (!el) return;
+      const container = document.querySelector('.landing-scroll-container');
+      if (container && container.scrollHeight > container.clientHeight) {
+        const offset = el.getBoundingClientRect().top - container.getBoundingClientRect().top + container.scrollTop;
+        container.scrollTo({ top: offset, behavior: 'smooth' });
+      } else {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     } else {
       router.push(`/#${sectionId}`);
@@ -62,9 +67,9 @@ export function Header() {
 
   return (
     <header className="header-padding" style={{ position: 'relative', width: '100%', maxWidth: '1200px', margin: '0 auto' }}>
-      <HStack as="div" style={{ alignItems: 'center' }}>
+      <HStack as="div" style={{ alignItems: 'center', position: 'relative' }}>
         {/* Logo + mobile menu toggle */}
-        <HStack as="div" style={{ flex: 1, alignItems: 'center', gap: '16px' }}>
+        <HStack as="div" style={{ alignItems: 'center', gap: '16px', flexShrink: 0 }}>
           <Link href="/" className="hover-fade" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', textDecoration: 'none', flexShrink: 0 }}>
             <LogoMark size={48} />
           </Link>
@@ -83,44 +88,53 @@ export function Header() {
               <Icon name="menu" size="m" color="fgPrimary" accessibilityLabel="Open menu" />
             )}
           </button>
-          {/* Nav tabs */}
-          <nav className="hide-mobile-flex" style={{ alignItems: 'center', gap: '4px' }}>
-            <button
-              type="button"
-              onClick={() => scrollToSection('how-it-works')}
-              className="header-tab"
-              style={{ padding: '8px 16px', borderRadius: '100px', border: 'none', cursor: 'pointer', color: '#0A0B0D' }}
-            >
-              <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 600 }}>{t('nav.howItWorks')}</Text>
-            </button>
-            <button
-              type="button"
-              onClick={() => scrollToSection('advantages')}
-              className="header-tab"
-              style={{ padding: '8px 16px', borderRadius: '100px', border: 'none', cursor: 'pointer', color: '#0A0B0D' }}
-            >
-              <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 600 }}>{t('nav.advantages')}</Text>
-            </button>
-            <button
-              type="button"
-              onClick={() => scrollToSection('faq')}
-              className="header-tab"
-              style={{ padding: '8px 16px', borderRadius: '100px', border: 'none', cursor: 'pointer', color: '#0A0B0D' }}
-            >
-              <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 600 }}>{t('nav.faq')}</Text>
-            </button>
-            <Link
-              href="/resources"
-              className={`header-tab${isActive(['/resources']) ? ' header-tab-active' : ''}`}
-              style={{ padding: '8px 16px', borderRadius: '100px', textDecoration: 'none', color: '#0A0B0D' }}
-            >
-              <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 600 }}>{t('nav.resources')}</Text>
-            </Link>
-          </nav>
         </HStack>
 
+        {/* Centered nav tabs */}
+        <nav className="hide-mobile-flex" style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)', alignItems: 'center', gap: '4px' }}>
+          <button
+            type="button"
+            onClick={() => scrollToSection('what-it-does')}
+            className="header-tab"
+            style={{ padding: '8px 16px', borderRadius: '100px', border: 'none', cursor: 'pointer', color: '#0A0B0D' }}
+          >
+            <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 500 }}>{t('nav.whatItDoes')}</Text>
+          </button>
+          <button
+            type="button"
+            onClick={() => scrollToSection('how-it-works')}
+            className="header-tab"
+            style={{ padding: '8px 16px', borderRadius: '100px', border: 'none', cursor: 'pointer', color: '#0A0B0D' }}
+          >
+            <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 500 }}>{t('nav.howItWorks')}</Text>
+          </button>
+          <button
+            type="button"
+            onClick={() => scrollToSection('advantages')}
+            className="header-tab"
+            style={{ padding: '8px 16px', borderRadius: '100px', border: 'none', cursor: 'pointer', color: '#0A0B0D' }}
+          >
+            <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 500 }}>{t('nav.advantages')}</Text>
+          </button>
+          <button
+            type="button"
+            onClick={() => scrollToSection('faq')}
+            className="header-tab"
+            style={{ padding: '8px 16px', borderRadius: '100px', border: 'none', cursor: 'pointer', color: '#0A0B0D' }}
+          >
+            <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 500 }}>{t('nav.faq')}</Text>
+          </button>
+          <Link
+            href="/resources"
+            className={`header-tab${isActive(['/resources']) ? ' header-tab-active' : ''}`}
+            style={{ padding: '8px 16px', borderRadius: '100px', textDecoration: 'none', color: '#0A0B0D' }}
+          >
+            <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 500 }}>{t('nav.resources')}</Text>
+          </Link>
+        </nav>
+
         {/* Language switcher + CTA button */}
-        <HStack as="div" style={{ flex: 1, justifyContent: 'flex-end', alignItems: 'center', gap: '12px' }}>
+        <HStack as="div" style={{ marginLeft: 'auto', alignItems: 'center', gap: '12px' }}>
           {/* Language dropdown */}
           <div ref={langDropdownRef} className="hide-mobile-block" style={{ position: 'relative' }}>
             <button
@@ -194,6 +208,7 @@ export function Header() {
             rel="noopener noreferrer"
             variant="primary"
             compact
+            className="btn-fw-500"
             style={{ borderRadius: '56px', minWidth: '100px', padding: '0 24px', height: '44px' }}
           >
             {t('hero.ctaHeader')}
@@ -221,6 +236,13 @@ export function Header() {
         }}
       >
         <VStack as="nav" style={{ gap: '4px', padding: '12px 16px 8px' }}>
+          <button
+            type="button"
+            onClick={() => scrollToSection('what-it-does')}
+            style={{ padding: '10px 4px', transition: 'color 0.2s ease', textAlign: 'left', background: 'none', border: 'none', color: '#0A0B0D', cursor: 'pointer' }}
+          >
+            <Text font="body" as="span">{t('nav.whatItDoes')}</Text>
+          </button>
           <button
             type="button"
             onClick={() => scrollToSection('how-it-works')}

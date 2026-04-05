@@ -1,5 +1,6 @@
 'use client';
 
+import { m } from 'framer-motion';
 import { Box } from '@coinbase/cds-web/layout/Box';
 import { VStack } from '@coinbase/cds-web/layout/VStack';
 import { Text } from '@coinbase/cds-web/typography/Text';
@@ -45,33 +46,40 @@ export function AboutCarousel() {
       {/* 2-column grid */}
       <div className="grid-1-2">
         {cards.map((card, i) => (
-          <Box
+          <m.div
             key={i}
-            as="article"
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-              padding: 'clamp(24px, 4vw, 40px)',
-              minHeight: '320px',
-              background: 'rgb(247, 248, 249)',
-              borderRadius: '56px',
-            }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5, delay: i * 0.1, ease: 'easeOut' }}
           >
-            {/* Illustration at top */}
-            <Box as="div" style={{ width: 80, height: 80 }}>
-              <HeroSquare name={CARD_ILLUSTRATIONS[i]} scaleMultiplier={0.33} />
+            <Box
+              as="article"
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                padding: 'clamp(24px, 4vw, 40px)',
+                minHeight: '320px',
+                background: 'rgb(247, 248, 249)',
+                borderRadius: '56px',
+              }}
+            >
+              {/* Illustration at top */}
+              <Box as="div" style={{ width: 80, height: 80, overflow: 'hidden', flexShrink: 0 }}>
+                <HeroSquare name={CARD_ILLUSTRATIONS[i]} scaleMultiplier={0.33} />
+              </Box>
+              {/* Title + Description at bottom */}
+              <VStack as="div" style={{ gap: '8px' }}>
+                <Text font="title3" as="h4" style={{ fontWeight: 600 }}>
+                  {card.title}
+                </Text>
+                <Text font="body" as="p" color="fgMuted">
+                  {card.desc}
+                </Text>
+              </VStack>
             </Box>
-            {/* Title + Description at bottom */}
-            <VStack as="div" style={{ gap: '8px' }}>
-              <Text font="title3" as="h4" style={{ fontWeight: 600 }}>
-                {card.title}
-              </Text>
-              <Text font="body" as="p" color="fgMuted">
-                {card.desc}
-              </Text>
-            </VStack>
-          </Box>
+          </m.div>
         ))}
       </div>
     </VStack>
