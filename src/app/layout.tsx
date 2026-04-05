@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     url: 'https://defied.bg',
     images: [
       {
-        url: '/og-image.svg',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Defied – Дигитален стейбълкойн портфейл за всеки',
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     title: 'Defied | Дигитален стейбълкойн портфейл за всеки',
     description:
       'Управлявай парите си като използваш най-новата технология - стейбълкойните. Изпращай, получавай и обменяй за секунди.',
-    images: ['/og-image.svg'],
+    images: ['/og-image.png'],
   },
   robots: {
     index: true,

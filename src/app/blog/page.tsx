@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: 'Блог | Defied',
     description:
       'Статии, ръководства и новини за DeFi, блокчейн и децентрализираните финанси от Defied.',
-    images: [{ url: '/og-image.svg', width: 1200, height: 630, alt: 'Defied – Блог' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Defied – Блог' }],
   },
   alternates: {
     canonical: 'https://defied.bg/blog',

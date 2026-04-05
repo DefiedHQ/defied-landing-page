@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: 'За нас | Defied',
     description:
       'Defied предоставя некастодиална инфраструктура за лесен достъп до децентрализирани финанси.',
-    images: [{ url: '/og-image.svg', width: 1200, height: 630, alt: 'Defied' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Defied' }],
   },
   alternates: {
     canonical: 'https://defied.bg/about',
