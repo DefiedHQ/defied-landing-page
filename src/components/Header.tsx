@@ -144,7 +144,7 @@ export function Header() {
               style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', background: 'rgb(237, 239, 242)', border: 'none', color: '#0A0B0D', width: '44px', height: '44px', cursor: 'pointer' }}
               aria-label="Language"
             >
-              <Icon name="globe" size="m" dangerouslySetColor="#0A0B0D" accessibilityLabel="Language" />
+              <Icon name="globe" size="m" color="fgPrimary" accessibilityLabel="Language" />
             </button>
             {langDropdownOpen && (
               <Box

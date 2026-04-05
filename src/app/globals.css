@@ -453,10 +453,17 @@ input[type="number"]::-webkit-inner-spin-button {
   border-radius: 32px;
   width: 100%;
 }
+/* Scale logos down on mobile via CSS instead of JS resize listener */
+.protocol-logo {
+  max-width: 60%;
+}
 @media (min-width: 768px) {
   .protocol-card {
     border-radius: 56px;
     max-width: 240px;
+  }
+  .protocol-logo {
+    max-width: 100%;
   }
 }
 
