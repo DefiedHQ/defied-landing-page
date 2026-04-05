@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Box } from '@coinbase/cds-web/layout/Box';
 import { HStack } from '@coinbase/cds-web/layout/HStack';
 import { VStack } from '@coinbase/cds-web/layout/VStack';
@@ -27,8 +28,8 @@ export function Footer() {
           {/* Logo + contact */}
           <VStack as="div" style={{ alignItems: 'flex-start', gap: '0px' }}>
             <Link href="/" className="hover-fade" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', textDecoration: 'none' }}>
-              <img src="/defied_squared_logo_blue.svg" width={58} height={58} alt="Defied" loading="lazy" />
-              <img src="/defied-logo-text-blue.svg" alt="" aria-hidden="true" width={157} height={42} style={{ display: 'block' }} loading="lazy" />
+              <Image src="/defied_squared_logo_blue.svg" width={58} height={58} alt="Defied" />
+              <Image src="/defied-logo-text-blue.svg" alt="" aria-hidden="true" width={157} height={42} style={{ display: 'block' }} />
             </Link>
             <VStack as="div" style={{ marginTop: '50px', gap: '4px' }}>
               <Text font="label2" as="p" color="fgMuted">hello@defied.bg</Text>
