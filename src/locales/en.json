@@ -1,6 +1,6 @@
 {
   "nav": {
-    "resources": "Resources",
+    "resources": "Blog",
     "about": "About",
     "whatItDoes": "What it does",
     "howItWorks": "How it works",
@@ -181,12 +181,12 @@
     "heroSubtitle": "On this page we publish the latest news: product updates, guides, and articles about the DeFi ecosystem.",
     "shareArticle": "Share the article",
     "recentPosts": "Recent Posts",
-    "backToResources": "Back to Resources",
+    "backToResources": "Back to Blog",
     "notFound": "Article not found"
   },
   "footer": {
     "useful": "Useful",
-    "resources": "Resources",
+    "resources": "Blog",
     "risks": "Risks",
     "company": "Company",
     "about": "About us",

@@ -27,7 +27,7 @@ export function ArticlePage() {
     return (
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '64px 16px', textAlign: 'center', minHeight: '100vh' }}>
         <Text font="title2" as="h1">{t('resources.notFound')}</Text>
-        <Link href="/resources" style={{ color: '#0052FF', marginTop: '16px', display: 'inline-block', textDecoration: 'none' }}>
+        <Link href="/blog" style={{ color: '#0052FF', marginTop: '16px', display: 'inline-block', textDecoration: 'none' }}>
           &larr; {t('resources.backToResources')}
         </Link>
       </div>
@@ -173,7 +173,7 @@ export function ArticlePage() {
                 {recentArticles.map((a) => (
                   <Link
                     key={a.id}
-                    href={`/resources/${a.id}`}
+                    href={`/blog/${a.id}`}
                     className="card-group"
                     style={{ display: 'block', textDecoration: 'none' }}
                   >
