@@ -425,6 +425,25 @@ input[type="number"]::-webkit-inner-spin-button {
 /* ═══════════════════════════════════════════════════════════════
    Protocol section cards
    ═══════════════════════════════════════════════════════════════ */
+.protocol-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  width: 100%;
+  justify-items: center;
+}
+/* Center the last (odd) item when alone on its row */
+@media (max-width: 767px) {
+  .protocol-grid > :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: calc(50% - 8px);
+  }
+}
+@media (min-width: 768px) {
+  .protocol-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
 .protocol-card {
   background: rgb(247, 248, 249);
   display: flex;
@@ -433,19 +452,23 @@ input[type="number"]::-webkit-inner-spin-button {
   justify-content: center;
   gap: 14px;
   transition: background 0.3s ease;
-  flex: 1 1 0;
   aspect-ratio: 1;
-  min-width: 0;
-  max-width: 240px;
   border-radius: 56px;
+  width: 100%;
 }
-/* Phone: stack 2-up with fixed aspect ratio */
-@media (max-width: 767px) {
+@media (min-width: 768px) {
   .protocol-card {
-    flex: 1 1 calc(50% - 8px);
-    max-width: calc(50% - 8px);
-    aspect-ratio: 1;
-    height: auto;
+    max-width: 240px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   About cards — center content on mobile
+   ═══════════════════════════════════════════════════════════════ */
+@media (max-width: 767px) {
+  .about-card {
+    align-items: center;
+    text-align: center;
   }
 }
 

@@ -55,6 +55,7 @@ export function AboutCarousel() {
           >
             <Box
               as="article"
+              className="about-card"
               style={{
                 display: 'flex',
                 flexDirection: 'column',
