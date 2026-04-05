@@ -9,11 +9,11 @@ import { Text } from '@coinbase/cds-web/typography/Text';
 import { useLanguage } from '@/context/LanguageContext';
 
 const protocols = [
-  { name: 'Aave', logo: '/Aave-Logo-purple.svg', width: 140, height: 140, mobileWidth: 70, mobileHeight: 70, color: '#9391F7' },
-  { name: 'Compound', logo: '/Compound-Logo.svg', width: 140, height: 140, mobileWidth: 70, mobileHeight: 70, color: '#00D395' },
-  { name: 'Morpho', logo: '/Morpho-logo-horizontal-lightmode.svg', width: 180, height: 60, mobileWidth: 90, mobileHeight: 30, color: '#2470FF' },
-  { name: 'Lido', logo: '/lido-logo.svg', width: 160, height: 60, mobileWidth: 80, mobileHeight: 30, color: '#f89c90' },
-  { name: 'Yo', logo: '/yo_wordmark_black.svg', width: 128, height: 48, mobileWidth: 64, mobileHeight: 24, color: '#D6FF34' },
+  { name: 'Aave', logo: '/Aave-Logo-purple.svg', width: 140, height: 140, mobileWidth: 90, mobileHeight: 90, color: '#9391F7' },
+  { name: 'Compound', logo: '/Compound-Logo.svg', width: 140, height: 140, mobileWidth: 90, mobileHeight: 90, color: '#00D395' },
+  { name: 'Morpho', logo: '/Morpho-logo-horizontal-lightmode.svg', width: 180, height: 60, mobileWidth: 120, mobileHeight: 40, color: '#2470FF' },
+  { name: 'Lido', logo: '/lido-logo.svg', width: 160, height: 60, mobileWidth: 108, mobileHeight: 40, color: '#f89c90' },
+  { name: 'Yo', logo: '/yo_wordmark_black.svg', width: 128, height: 48, mobileWidth: 86, mobileHeight: 32, color: '#D6FF34' },
 ];
 
 export function ProtocolsSection() {
