@@ -431,15 +431,6 @@ input[type="number"]::-webkit-inner-spin-button {
   gap: 16px;
   width: 100%;
 }
-/* Center the last (odd) item when alone on its row */
-@media (max-width: 767px) {
-  .protocol-grid > :last-child:nth-child(odd) {
-    grid-column: 1 / -1;
-    justify-self: center;
-    width: 100%;
-    max-width: calc(50% - 8px);
-  }
-}
 @media (min-width: 768px) {
   .protocol-grid {
     grid-template-columns: repeat(5, 1fr);
@@ -458,16 +449,14 @@ input[type="number"]::-webkit-inner-spin-button {
   justify-content: center;
   gap: 14px;
   transition: background 0.3s ease;
+  aspect-ratio: 1;
   border-radius: 32px;
   width: 100%;
-  padding: 32px 16px;
 }
 @media (min-width: 768px) {
   .protocol-card {
-    aspect-ratio: 1;
     border-radius: 56px;
     max-width: 240px;
-    padding: 0;
   }
 }
 
