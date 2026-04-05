@@ -1,10 +1,12 @@
+import Image from 'next/image';
+
 export function LogoMark({ size = 48 }: { size?: number }) {
   return (
-    <img
+    <Image
       src="/defied_squared_logo_blue.svg"
       width={size}
       height={size}
-      alt=""
+      alt="Defied"
       aria-hidden="true"
     />
   );

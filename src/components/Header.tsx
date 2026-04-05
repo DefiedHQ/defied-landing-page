@@ -125,8 +125,8 @@ export function Header() {
             <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 500 }}>{t('nav.faq')}</Text>
           </button>
           <Link
-            href="/resources"
-            className={`header-tab${isActive(['/resources']) ? ' header-tab-active' : ''}`}
+            href="/blog"
+            className={`header-tab${isActive(['/blog']) ? ' header-tab-active' : ''}`}
             style={{ padding: '8px 16px', borderRadius: '100px', textDecoration: 'none', color: '#0A0B0D' }}
           >
             <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 500 }}>{t('nav.resources')}</Text>
@@ -144,7 +144,7 @@ export function Header() {
               style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', background: 'rgb(237, 239, 242)', border: 'none', color: '#0A0B0D', width: '44px', height: '44px', cursor: 'pointer' }}
               aria-label="Language"
             >
-              <Icon name="globe" size="m" dangerouslySetColor="#0A0B0D" accessibilityLabel="Language" />
+              <Icon name="globe" size="m" color="fgPrimary" accessibilityLabel="Language" />
             </button>
             {langDropdownOpen && (
               <Box
@@ -265,7 +265,7 @@ export function Header() {
             <Text font="body" as="span">{t('nav.faq')}</Text>
           </button>
           {[
-            { href: '/resources', label: t('nav.resources'), paths: ['/resources'] },
+            { href: '/blog', label: t('nav.resources'), paths: ['/blog'] },
           ].map((item) => (
             <Link
               key={item.href}

@@ -10,30 +10,10 @@
  *   extraWide:      1600+
  */
 
-/* ─── Aeonik Pro font faces ─── */
-@font-face {
-  font-family: 'Aeonik Pro';
-  src: url('/fonts/AeonikPro-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Aeonik Pro';
-  src: url('/fonts/AeonikPro-Medium.woff2') format('woff2');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Aeonik Pro';
-  src: url('/fonts/AeonikPro-Black.woff2') format('woff2');
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
+/* ─── Aeonik Pro font ───
+   Loaded via next/font/local in layout.tsx.
+   CSS variable: --font-aeonik-pro
+   ─── */
 
 /* ─── Minimal CSS reset (replaces Tailwind Preflight) ─── */
 *,
@@ -44,32 +24,32 @@
 
 body {
   margin: 0;
-  font-family: var(--defaultFont-sans, 'Aeonik Pro', 'Inter', sans-serif);
+  font-family: var(--font-aeonik-pro), 'Inter', sans-serif;
 }
 
 /* Override CDS @layer cds default font (unlayered CSS beats @layer cds) */
 :root {
-  --defaultFont-sans: 'Aeonik Pro', 'Inter', sans-serif;
+  --defaultFont-sans: var(--font-aeonik-pro), 'Inter', sans-serif;
 }
 
 /* Override CDS font families with Aeonik Pro site-wide.
    CDS ThemeProvider sets --fontFamily-* as inline styles, so !important is
    needed to beat the inline specificity. */
 .cds-default {
-  --defaultFont-sans: 'Aeonik Pro', 'Inter', sans-serif !important;
-  --fontFamily-display1: 'Aeonik Pro', 'Inter', sans-serif !important;
-  --fontFamily-display2: 'Aeonik Pro', 'Inter', sans-serif !important;
-  --fontFamily-display3: 'Aeonik Pro', 'Inter', sans-serif !important;
-  --fontFamily-title1: 'Aeonik Pro', 'Inter', sans-serif !important;
-  --fontFamily-title2: 'Aeonik Pro', 'Inter', sans-serif !important;
-  --fontFamily-title3: 'Aeonik Pro', 'Inter', sans-serif !important;
-  --fontFamily-title4: 'Aeonik Pro', 'Inter', sans-serif !important;
-  --fontFamily-headline: 'Aeonik Pro', 'Inter', sans-serif !important;
-  --fontFamily-body: 'Aeonik Pro', 'Inter', sans-serif !important;
-  --fontFamily-label1: 'Aeonik Pro', 'Inter', sans-serif !important;
-  --fontFamily-label2: 'Aeonik Pro', 'Inter', sans-serif !important;
-  --fontFamily-caption: 'Aeonik Pro', 'Inter', sans-serif !important;
-  --fontFamily-legal: 'Aeonik Pro', 'Inter', sans-serif !important;
+  --defaultFont-sans: var(--font-aeonik-pro), 'Inter', sans-serif !important;
+  --fontFamily-display1: var(--font-aeonik-pro), 'Inter', sans-serif !important;
+  --fontFamily-display2: var(--font-aeonik-pro), 'Inter', sans-serif !important;
+  --fontFamily-display3: var(--font-aeonik-pro), 'Inter', sans-serif !important;
+  --fontFamily-title1: var(--font-aeonik-pro), 'Inter', sans-serif !important;
+  --fontFamily-title2: var(--font-aeonik-pro), 'Inter', sans-serif !important;
+  --fontFamily-title3: var(--font-aeonik-pro), 'Inter', sans-serif !important;
+  --fontFamily-title4: var(--font-aeonik-pro), 'Inter', sans-serif !important;
+  --fontFamily-headline: var(--font-aeonik-pro), 'Inter', sans-serif !important;
+  --fontFamily-body: var(--font-aeonik-pro), 'Inter', sans-serif !important;
+  --fontFamily-label1: var(--font-aeonik-pro), 'Inter', sans-serif !important;
+  --fontFamily-label2: var(--font-aeonik-pro), 'Inter', sans-serif !important;
+  --fontFamily-caption: var(--font-aeonik-pro), 'Inter', sans-serif !important;
+  --fontFamily-legal: var(--font-aeonik-pro), 'Inter', sans-serif !important;
 }
 
 img,
@@ -425,6 +405,22 @@ input[type="number"]::-webkit-inner-spin-button {
 /* ═══════════════════════════════════════════════════════════════
    Protocol section cards
    ═══════════════════════════════════════════════════════════════ */
+.protocol-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .protocol-grid {
+    grid-template-columns: repeat(5, 1fr);
+    justify-items: center;
+  }
+}
+/* Make the m.div wrapper fill the grid cell */
+.protocol-grid > * {
+  width: 100%;
+}
 .protocol-card {
   background: rgb(247, 248, 249);
   display: flex;
@@ -433,19 +429,34 @@ input[type="number"]::-webkit-inner-spin-button {
   justify-content: center;
   gap: 14px;
   transition: background 0.3s ease;
-  flex: 1 1 0;
   aspect-ratio: 1;
-  min-width: 0;
-  max-width: 240px;
-  border-radius: 56px;
+  border-radius: 32px;
+  width: 100%;
 }
-/* Phone: stack 2-up with fixed aspect ratio */
-@media (max-width: 767px) {
+/* Scale logos down on mobile via CSS instead of JS resize listener */
+.protocol-logo {
+  max-width: 60%;
+}
+@media (min-width: 768px) {
   .protocol-card {
-    flex: 1 1 calc(50% - 8px);
-    max-width: calc(50% - 8px);
-    aspect-ratio: 1;
-    height: auto;
+    border-radius: 56px;
+    max-width: 240px;
+  }
+  .protocol-logo {
+    max-width: 100%;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   About cards — center content on mobile
+   ═══════════════════════════════════════════════════════════════ */
+@media (max-width: 767px) {
+  .about-card {
+    align-items: center;
+    text-align: center;
+  }
+  .about-card * {
+    text-align: inherit !important;
   }
 }
 
@@ -458,8 +469,11 @@ input[type="number"]::-webkit-inner-spin-button {
   gap: 32px;
 }
 .cta-text-column {
-  text-align: center;
+  text-align: center !important;
   align-items: center;
+}
+.cta-text-column * {
+  text-align: inherit !important;
 }
 @media (min-width: 768px) {
   .promo-card-layout {
@@ -467,7 +481,7 @@ input[type="number"]::-webkit-inner-spin-button {
     gap: 48px;
   }
   .cta-text-column {
-    text-align: left;
+    text-align: left !important;
     align-items: flex-start;
   }
 }

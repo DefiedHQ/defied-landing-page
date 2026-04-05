@@ -123,7 +123,7 @@ export function LandingPage() {
           </m.div>
 
           {/* Our Mission */}
-          <div
+          <article
             className="promo-card-layout"
             style={{
               width: 'calc(100% + 32px)',
@@ -137,15 +137,17 @@ export function LandingPage() {
             <m.div {...slideInLeft} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 1 }}>
               <Lottie source={dappWallet} autoplay loop width="300px" height="300px" />
             </m.div>
-            <m.div {...slideInRight} style={{ display: 'flex', flexDirection: 'column', gap: '16px', flex: 1 }}>
-              <Text font="display2" as="h2" className="title-tight-lh" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', fontWeight: 500, color: '#fff' }}>
-                {t('imageSection.title')}
-              </Text>
-              <Text font="body" as="p" style={{ fontSize: '18px', lineHeight: '28px', color: 'rgba(255, 255, 255, 0.7)' }}>
-                {t('imageSection.heading')}
-              </Text>
+            <m.div {...slideInRight} style={{ flex: 1 }}>
+              <div className="cta-text-column" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <Text font="display2" as="h2" className="title-tight-lh" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', fontWeight: 500, color: '#fff' }}>
+                  {t('imageSection.title')}
+                </Text>
+                <Text font="body" as="p" style={{ fontSize: '18px', lineHeight: '28px', color: 'rgba(255, 255, 255, 0.7)' }}>
+                  {t('imageSection.heading')}
+                </Text>
+              </div>
             </m.div>
-          </div>
+          </article>
         </VStack>
       </section>
 
@@ -185,7 +187,7 @@ export function LandingPage() {
                       <HeroSquare name={feature.name} scaleMultiplier={1.1} />
                     </div>
                     <Text font="headline" as="h3" style={{ fontWeight: 600, marginTop: '16px', color: '#FFFFFF' }}>{feature.title}</Text>
-                    <Text font="body" as="p" style={{ maxWidth: '240px', marginTop: '8px', textAlign: 'center', color: 'rgba(255, 255, 255, 0.7)', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{feature.desc}</Text>
+                    <Text font="body" as="p" title={feature.desc} style={{ maxWidth: '240px', marginTop: '8px', textAlign: 'center', color: 'rgba(255, 255, 255, 0.7)', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{feature.desc}</Text>
                   </m.div>
                 </div>
               ))}
@@ -211,7 +213,7 @@ export function LandingPage() {
             {t('advantages.title')}
           </Text>
           <m.div {...slideInLeft}>
-            <div
+            <article
               className="promo-card-layout"
               style={{
                 background: 'rgb(247, 248, 249)',
@@ -223,7 +225,7 @@ export function LandingPage() {
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 1 }}>
                 <HeroSquare name="usdAndUsdc" scaleMultiplier={1.8} />
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', flex: 1 }}>
+              <div className="cta-text-column" style={{ display: 'flex', flexDirection: 'column', gap: '16px', flex: 1 }}>
                 <Text font="display2" as="h3" className="title-tight-lh" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', fontWeight: 500 }}>
                   {t('advantages.row1Heading')}
                 </Text>
@@ -231,10 +233,10 @@ export function LandingPage() {
                   {t('advantages.row1Subtext')}
                 </Text>
               </div>
-            </div>
+            </article>
           </m.div>
           <m.div {...slideInRight} style={{ marginTop: '24px' }}>
-            <div
+            <article
               className="promo-card-layout"
               style={{
                 background: '#0052FF',
@@ -243,7 +245,7 @@ export function LandingPage() {
                 alignItems: 'center',
               }}
             >
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', flex: 1 }}>
+              <div className="cta-text-column" style={{ display: 'flex', flexDirection: 'column', gap: '16px', flex: 1 }}>
                 <Text font="display2" as="h3" className="title-tight-lh" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', fontWeight: 500, color: '#fff' }}>
                   {t('advantages.row2Heading')}
                 </Text>
@@ -254,10 +256,10 @@ export function LandingPage() {
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 1 }}>
                 <HeroSquare name="walletSecurity" scaleMultiplier={1.8} />
               </div>
-            </div>
+            </article>
           </m.div>
           <m.div {...slideInLeft} style={{ marginTop: '24px' }}>
-            <div
+            <article
               className="promo-card-layout"
               style={{
                 background: 'rgb(247, 248, 249)',
@@ -269,7 +271,7 @@ export function LandingPage() {
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 1 }}>
                 <HeroSquare name="exploreDecentralizedApps" scaleMultiplier={1.8} />
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', flex: 1 }}>
+              <div className="cta-text-column" style={{ display: 'flex', flexDirection: 'column', gap: '16px', flex: 1 }}>
                 <Text font="display2" as="h3" className="title-tight-lh" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', fontWeight: 500 }}>
                   {t('advantages.row3Heading')}
                 </Text>
@@ -277,7 +279,7 @@ export function LandingPage() {
                   {t('advantages.row3Subtext')}
                 </Text>
               </div>
-            </div>
+            </article>
           </m.div>
         </div>
       </section>

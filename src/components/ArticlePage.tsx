@@ -27,7 +27,7 @@ export function ArticlePage() {
     return (
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '64px 16px', textAlign: 'center', minHeight: '100vh' }}>
         <Text font="title2" as="h1">{t('resources.notFound')}</Text>
-        <Link href="/resources" style={{ color: '#0052FF', marginTop: '16px', display: 'inline-block', textDecoration: 'none' }}>
+        <Link href="/blog" style={{ color: '#0052FF', marginTop: '16px', display: 'inline-block', textDecoration: 'none' }}>
           &larr; {t('resources.backToResources')}
         </Link>
       </div>
@@ -54,7 +54,7 @@ export function ArticlePage() {
         {/* Meta */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '32px' }}>
           <img src="/defied_squared_logo_blue.svg" width={40} height={40} alt="Defied" />
-          <div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
             <Text font="label2" as="div" color="fgMuted">
               {t('common.by')} <Text font="label2" as="span" style={{ color: '#6b7280' }}>Defied</Text>
             </Text>
@@ -173,7 +173,7 @@ export function ArticlePage() {
                 {recentArticles.map((a) => (
                   <Link
                     key={a.id}
-                    href={`/resources/${a.id}`}
+                    href={`/blog/${a.id}`}
                     className="card-group"
                     style={{ display: 'block', textDecoration: 'none' }}
                   >

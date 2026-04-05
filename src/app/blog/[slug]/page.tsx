@@ -14,11 +14,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: `${article.title} | Defied`,
       description: article.excerpt,
-      images: [{ url: '/og-image.svg', width: 1200, height: 630, alt: article.title }], // TODO: Replace with article-specific OG image
+      images: [{ url: '/og-image.png', width: 1200, height: 630, alt: article.title }], // TODO: Replace with article-specific OG image
       type: 'article',
     },
     alternates: {
-      canonical: `https://defied.bg/resources/${slug}`,
+      canonical: `https://defied.bg/blog/${slug}`,
     },
   };
 }

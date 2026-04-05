@@ -6,6 +6,10 @@
         "-y",
         "@coinbase/cds-mcp-server"
       ]
+    },
+      "next-devtools": {
+      "command": "npx",
+      "args": ["-y", "next-devtools-mcp@latest"]
     }
   }
 }

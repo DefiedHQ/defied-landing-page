@@ -1,4 +1,5 @@
 @.claude/rules/cds.md
+@AGENTS.md
 
 # Development Guidelines
 

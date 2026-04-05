@@ -76,7 +76,7 @@ export function ResourcesPage() {
             {featured.map((article) => (
               <Link
                 key={article.id}
-                href={`/resources/${article.id}`}
+                href={`/blog/${article.id}`}
                 className="card-group"
                 style={{ textDecoration: 'none', display: 'block' }}
               >
@@ -132,7 +132,7 @@ export function ResourcesPage() {
             {rest.map((article) => (
               <Link
                 key={article.id}
-                href={`/resources/${article.id}`}
+                href={`/blog/${article.id}`}
                 className="card-group"
                 style={{ textDecoration: 'none', display: 'block' }}
               >
