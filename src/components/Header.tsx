@@ -10,6 +10,7 @@ import { Text } from '@coinbase/cds-web/typography/Text';
 import { Button } from '@coinbase/cds-web/buttons/Button';
 import { Icon } from '@coinbase/cds-web/icons/Icon';
 import { LogoMark } from '@/components/LogoMark';
+import { AnimatedButtonText } from '@/components/AnimatedButtonText';
 import { useLanguage } from '@/context/LanguageContext';
 
 const languages = [
@@ -211,7 +212,7 @@ export function Header() {
             className="btn-fw-500"
             style={{ borderRadius: '56px', minWidth: '100px', padding: '0 24px', height: '44px' }}
           >
-            {t('hero.ctaHeader')}
+            <AnimatedButtonText>{t('hero.ctaHeader')}</AnimatedButtonText>
           </Button>
         </HStack>
       </HStack>

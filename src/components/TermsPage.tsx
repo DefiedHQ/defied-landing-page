@@ -2,9 +2,11 @@
 
 import { Text } from '@coinbase/cds-web/typography/Text';
 import { useLanguage } from '@/context/LanguageContext';
+import { useDocumentMeta } from '@/hooks/useDocumentMeta';
 
 export function TermsPage() {
   const { t } = useLanguage();
+  useDocumentMeta('meta.termsTitle', 'meta.termsDescription');
 
   return (
     <section style={{ width: '100%', maxWidth: '1200px', margin: '0 auto', padding: '0 16px', paddingBottom: '64px' }}>

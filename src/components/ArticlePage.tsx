@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { Text } from '@coinbase/cds-web/typography/Text';
@@ -11,6 +12,20 @@ export function ArticlePage() {
   const params = useParams();
   const { t, lang } = useLanguage();
   const articles = useArticles();
+  const slug = params.slug as string;
+  const article = articles.find((a) => a.id === slug);
+
+  useEffect(() => {
+    if (article) {
+      document.title = `${article.title} | Defied`;
+      const metaDescription = document.querySelector('meta[name="description"]');
+      if (metaDescription) {
+        metaDescription.setAttribute('content', article.excerpt);
+      }
+    } else {
+      document.title = `${t('meta.articleNotFound')} | Defied`;
+    }
+  }, [article, t, lang]);
 
   function formatDate(dateStr: string) {
     const d = new Date(dateStr);
@@ -19,8 +34,6 @@ export function ArticlePage() {
       : ['Яну', 'Фев', 'Мар', 'Апр', 'Май', 'Юни', 'Юли', 'Авг', 'Сеп', 'Окт', 'Ное', 'Дек'];
     return `${d.getFullYear()} ${months[d.getMonth()]} ${d.getDate()}`;
   }
-  const slug = params.slug as string;
-  const article = articles.find((a) => a.id === slug);
   const recentArticles = articles.filter((a) => a.id !== slug).slice(0, 3);
 
   if (!article) {

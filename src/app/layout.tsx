@@ -26,17 +26,17 @@ const aeonikPro = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Defied | Дигитален стейбълкойн портфейл за всеки',
+    default: 'Defied | A digital stablecoin wallet for everyone',
     template: '%s | Defied',
   },
   description:
-    'Управлявай парите си като използваш най-новата технология - стейбълкойните. Изпращай, получавай и обменяй за секунди.',
+    'Manage your money using the latest technology — stablecoins. Send, receive, and exchange in seconds.',
   icons: { icon: '/favicon.svg' },
   metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://defied.money'),
   openGraph: {
-    title: 'Defied | Дигитален стейбълкойн портфейл за всеки',
+    title: 'Defied | A digital stablecoin wallet for everyone',
     description:
-      'Управлявай парите си като използваш най-новата технология - стейбълкойните. Изпращай, получавай и обменяй за секунди.',
+      'Manage your money using the latest technology — stablecoins. Send, receive, and exchange in seconds.',
     siteName: 'Defied',
     url: 'https://defied.money',
     images: [
@@ -44,17 +44,17 @@ export const metadata: Metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Defied – Дигитален стейбълкойн портфейл за всеки',
+        alt: 'Defied – A digital stablecoin wallet for everyone',
       },
     ],
     type: 'website',
-    locale: 'bg_BG',
+    locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Defied | Дигитален стейбълкойн портфейл за всеки',
+    title: 'Defied | A digital stablecoin wallet for everyone',
     description:
-      'Управлявай парите си като използваш най-новата технология - стейбълкойните. Изпращай, получавай и обменяй за секунди.',
+      'Manage your money using the latest technology — stablecoins. Send, receive, and exchange in seconds.',
     images: ['/og-image.png'],
   },
   robots: {
@@ -72,7 +72,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="bg" className={aeonikPro.variable}>
+    <html lang="en" className={aeonikPro.variable}>
       <body>
         <Providers>
           <CdsProvider>

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { RisksContent } from './RisksContent';
 
 export const metadata: Metadata = {
-  title: 'Risks | Defied',
+  title: 'Risks',
   description:
     'Learn about the risks associated with DeFi protocols and cryptocurrencies. Invest informed.',
   openGraph: {

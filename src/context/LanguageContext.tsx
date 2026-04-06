@@ -21,6 +21,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   const setLang = (l: Lang) => {
     setLangState(l);
+    document.documentElement.lang = l;
   };
 
   const t = useCallback((key: string, params?: Record<string, string>): string => {

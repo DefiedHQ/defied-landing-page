@@ -2,13 +2,13 @@ import type { Metadata } from 'next';
 import { AboutPage } from '@/components/AboutPage';
 
 export const metadata: Metadata = {
-  title: 'За нас',
+  title: 'About us',
   description:
-    'Defied предоставя некастодиална инфраструктура за лесен достъп до децентрализирани финанси. Първият крипто спестовен продукт в България.',
+    'Defied provides non-custodial infrastructure for easy access to decentralized finance. The first crypto savings product in Bulgaria.',
   openGraph: {
-    title: 'За нас | Defied',
+    title: 'About us | Defied',
     description:
-      'Defied предоставя некастодиална инфраструктура за лесен достъп до децентрализирани финанси.',
+      'Defied provides non-custodial infrastructure for easy access to decentralized finance.',
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Defied' }],
   },
   alternates: {

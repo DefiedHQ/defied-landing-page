@@ -523,6 +523,39 @@ select:focus-visible,
   font-weight: 500 !important;
 }
 
+/* ─── Animated CTA button text (slide-up on hover, desktop only) ─── */
+.animated-btn-text__hover {
+  display: none;
+}
+
+@media (hover: hover) and (min-width: 768px) {
+  .animated-btn-text {
+    display: inline-flex;
+    overflow: hidden;
+    height: 1.25em;
+  }
+
+  .animated-btn-text__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+  }
+
+  .animated-btn-text__default,
+  .animated-btn-text__hover {
+    display: block;
+    height: 1.25em;
+    line-height: 1.25em;
+    white-space: nowrap;
+  }
+
+  a:hover .animated-btn-text__inner,
+  button:hover .animated-btn-text__inner {
+    transform: translateY(-1.25em);
+  }
+}
+
 /* ═══════════════════════════════════════════════════════════════
    Respect reduced motion preferences
    ═══════════════════════════════════════════════════════════════ */

@@ -184,6 +184,22 @@
     "backToResources": "Back to Blog",
     "notFound": "Article not found"
   },
+  "meta": {
+    "defaultTitle": "Defied | A digital stablecoin wallet for everyone",
+    "homeTitle": "A digital stablecoin wallet for everyone",
+    "homeDescription": "Manage your money using the latest technology — stablecoins. Send, receive, and exchange in seconds.",
+    "aboutTitle": "About us",
+    "aboutDescription": "Defied provides non-custodial infrastructure for easy access to decentralized finance. The first crypto savings product in Bulgaria.",
+    "blogTitle": "Blog",
+    "blogDescription": "Articles, guides, and news about DeFi, blockchain, and decentralized finance from Defied.",
+    "privacyTitle": "Privacy Policy",
+    "privacyDescription": "Defied Privacy Policy. Learn how we process and protect your personal data.",
+    "termsTitle": "Terms of Use",
+    "termsDescription": "Terms of Use for the Defied platform. Read our terms and conditions before using our services.",
+    "risksTitle": "Risks",
+    "risksDescription": "Learn about the risks associated with DeFi protocols and cryptocurrencies. Invest informed.",
+    "articleNotFound": "Article not found"
+  },
   "footer": {
     "useful": "Useful",
     "resources": "Blog",

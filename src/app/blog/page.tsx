@@ -2,14 +2,14 @@ import type { Metadata } from 'next';
 import { ResourcesPage } from '@/components/ResourcesPage';
 
 export const metadata: Metadata = {
-  title: 'Блог',
+  title: 'Blog',
   description:
-    'Статии, ръководства и новини за DeFi, блокчейн и децентрализираните финанси от Defied.',
+    'Articles, guides, and news about DeFi, blockchain, and decentralized finance from Defied.',
   openGraph: {
-    title: 'Блог | Defied',
+    title: 'Blog | Defied',
     description:
-      'Статии, ръководства и новини за DeFi, блокчейн и децентрализираните финанси от Defied.',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Defied – Блог' }],
+      'Articles, guides, and news about DeFi, blockchain, and decentralized finance from Defied.',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Defied – Blog' }],
   },
   alternates: {
     canonical: 'https://defied.money/blog',
