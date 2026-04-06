@@ -2,13 +2,13 @@ import type { Metadata } from 'next';
 import { LandingPage } from '@/components/LandingPage';
 
 export const metadata: Metadata = {
-  title: 'A digital stablecoin wallet for everyone',
+  title: 'A stablecoin wallet with DeFi superpowers',
   description:
-    'Manage your money using the latest technology — stablecoins. Send, receive, and exchange in seconds.',
+    'Move your money freely and securely using stablecoins. Send, receive, and exchange in seconds. Access DeFi with one click.',
   openGraph: {
-    title: 'Defied | A digital stablecoin wallet for everyone',
+    title: 'Defied | A stablecoin wallet with DeFi superpowers',
     description:
-      'Manage your money using the latest technology — stablecoins. Send, receive, and exchange in seconds.',
+      'Move your money freely and securely using stablecoins. Send, receive, and exchange in seconds. Access DeFi with one click.',
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Defied' }],
   },
   alternates: {

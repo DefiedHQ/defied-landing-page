@@ -9,10 +9,10 @@
     "languageAndRegion": "Language and region"
   },
   "hero": {
-    "title": "A digital stablecoin wallet for everyone",
+    "title": "A stablecoin wallet with DeFi superpowers",
     "titleBase": "A digital stablecoin wallet for",
     "titleWords": ["everyone", "you", "him", "her"],
-    "subtitle1": "Manage your money using the latest technology — stablecoins. Send, receive, and exchange in seconds.",
+    "subtitle1": "Move your money freely and securely using stablecoins. Send, receive, and exchange in seconds. Access DeFi with one click.",
     "subtitle2": "",
     "subtitle3": "",
     "cta": "Create wallet",
@@ -185,9 +185,9 @@
     "notFound": "Article not found"
   },
   "meta": {
-    "defaultTitle": "Defied | A digital stablecoin wallet for everyone",
-    "homeTitle": "A digital stablecoin wallet for everyone",
-    "homeDescription": "Manage your money using the latest technology — stablecoins. Send, receive, and exchange in seconds.",
+    "defaultTitle": "Defied | A stablecoin wallet with DeFi superpowers",
+    "homeTitle": "A stablecoin wallet with DeFi superpowers",
+    "homeDescription": "Move your money freely and securely using stablecoins. Send, receive, and exchange in seconds. Access DeFi with one click.",
     "aboutTitle": "About us",
     "aboutDescription": "Defied provides non-custodial infrastructure for easy access to decentralized finance. The first crypto savings product in Bulgaria.",
     "blogTitle": "Blog",

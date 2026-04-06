@@ -26,17 +26,17 @@ const aeonikPro = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Defied | A digital stablecoin wallet for everyone',
+    default: 'Defied | A stablecoin wallet with DeFi superpowers',
     template: '%s | Defied',
   },
   description:
-    'Manage your money using the latest technology — stablecoins. Send, receive, and exchange in seconds.',
+    'Move your money freely and securely using stablecoins. Send, receive, and exchange in seconds. Access DeFi with one click.',
   icons: { icon: '/favicon.svg' },
   metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://defied.money'),
   openGraph: {
-    title: 'Defied | A digital stablecoin wallet for everyone',
+    title: 'Defied | A stablecoin wallet with DeFi superpowers',
     description:
-      'Manage your money using the latest technology — stablecoins. Send, receive, and exchange in seconds.',
+      'Move your money freely and securely using stablecoins. Send, receive, and exchange in seconds. Access DeFi with one click.',
     siteName: 'Defied',
     url: 'https://defied.money',
     images: [
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Defied – A digital stablecoin wallet for everyone',
+        alt: 'Defied – A stablecoin wallet with DeFi superpowers',
       },
     ],
     type: 'website',
@@ -52,9 +52,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Defied | A digital stablecoin wallet for everyone',
+    title: 'Defied | A stablecoin wallet with DeFi superpowers',
     description:
-      'Manage your money using the latest technology — stablecoins. Send, receive, and exchange in seconds.',
+      'Move your money freely and securely using stablecoins. Send, receive, and exchange in seconds. Access DeFi with one click.',
     images: ['/og-image.png'],
   },
   robots: {
