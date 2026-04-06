@@ -32,13 +32,13 @@ export const metadata: Metadata = {
   description:
     'Управлявай парите си като използваш най-новата технология - стейбълкойните. Изпращай, получавай и обменяй за секунди.',
   icons: { icon: '/favicon.svg' },
-  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://defied.bg'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://defied.money'),
   openGraph: {
     title: 'Defied | Дигитален стейбълкойн портфейл за всеки',
     description:
       'Управлявай парите си като използваш най-новата технология - стейбълкойните. Изпращай, получавай и обменяй за секунди.',
     siteName: 'Defied',
-    url: 'https://defied.bg',
+    url: 'https://defied.money',
     images: [
       {
         url: '/og-image.png',
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: 'https://defied.bg',
+    canonical: 'https://defied.money',
   },
 };
 

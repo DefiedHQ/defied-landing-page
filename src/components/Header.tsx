@@ -203,7 +203,7 @@ export function Header() {
           </div>
           <Button
             as="a"
-            href="https://app.defied.bg"
+            href="https://app.defied.money"
             target="_blank"
             rel="noopener noreferrer"
             variant="primary"

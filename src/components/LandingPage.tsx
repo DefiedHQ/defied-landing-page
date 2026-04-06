@@ -104,7 +104,7 @@ export function LandingPage() {
             <Box as="div" style={{ marginTop: '32px' }}>
             <Button
               as="a"
-              href="https://app.defied.bg"
+              href="https://app.defied.money"
               target="_blank"
               rel="noopener noreferrer"
               variant="primary"
@@ -306,7 +306,7 @@ export function LandingPage() {
               <div style={{ marginTop: '16px' }}>
                 <Button
                   as="a"
-                  href="https://app.defied.bg"
+                  href="https://app.defied.money"
                   target="_blank"
                   rel="noopener noreferrer"
                   variant="primary"

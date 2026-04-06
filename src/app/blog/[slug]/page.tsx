@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: 'article',
     },
     alternates: {
-      canonical: `https://defied.bg/blog/${slug}`,
+      canonical: `https://defied.money/blog/${slug}`,
     },
   };
 }

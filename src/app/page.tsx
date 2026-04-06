@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Defied' }], // TODO: Replace with actual OG image
   },
   alternates: {
-    canonical: 'https://defied.bg',
+    canonical: 'https://defied.money',
   },
 };
 

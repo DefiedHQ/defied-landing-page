@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     'Политика за поверителност на Defied. Научете как обработваме и защитаваме вашите лични данни.',
   alternates: {
-    canonical: 'https://defied.bg/privacy',
+    canonical: 'https://defied.money/privacy',
   },
 };
 

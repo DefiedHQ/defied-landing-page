@@ -23,7 +23,7 @@ export function AboutPage() {
           <HStack as="div" className="flex-col-row-md">
             <Button
               as="a"
-              href="https://app.defied.bg"
+              href="https://app.defied.money"
               target="_blank"
               rel="noopener noreferrer"
               variant="primary"
@@ -33,7 +33,7 @@ export function AboutPage() {
             </Button>
             <Button
               as="a"
-              href="mailto:hello@defied.bg"
+              href="mailto:hello@defied.money"
               variant="secondary"
               style={{ borderRadius: '56px', height: '58px', padding: '16px 32px', minWidth: '160px' }}
             >

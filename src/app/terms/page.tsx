@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     'Условия за ползване на платформата Defied. Прочетете нашите общи условия преди да използвате услугите ни.',
   alternates: {
-    canonical: 'https://defied.bg/terms',
+    canonical: 'https://defied.money/terms',
   },
 };
 

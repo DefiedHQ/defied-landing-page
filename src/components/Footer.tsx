@@ -32,7 +32,7 @@ export function Footer() {
               <Image src="/defied-logo-text-blue.svg" alt="" aria-hidden="true" width={157} height={42} style={{ display: 'block' }} />
             </Link>
             <VStack as="div" style={{ marginTop: '50px', gap: '4px' }}>
-              <Text font="label2" as="p" color="fgMuted">hello@defied.bg</Text>
+              <Text font="label2" as="p" color="fgMuted">hello@defied.money</Text>
               <Text font="label2" as="p" color="fgMuted">+359 884 627 762</Text>
               <Text font="label2" as="p" color="fgMuted">{t('footer.address')}</Text>
             </VStack>
