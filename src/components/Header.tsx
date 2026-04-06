@@ -136,8 +136,8 @@ export function Header() {
 
         {/* Language switcher + CTA button */}
         <HStack as="div" style={{ marginLeft: 'auto', alignItems: 'center', gap: '12px' }}>
-          {/* Language dropdown */}
-          <div ref={langDropdownRef} className="hide-mobile-block" style={{ position: 'relative' }}>
+          {/* Language dropdown - hidden for now, English only */}
+          {/* <div ref={langDropdownRef} className="hide-mobile-block" style={{ position: 'relative' }}>
             <button
               type="button"
               onClick={() => setLangDropdownOpen(!langDropdownOpen)}
@@ -201,7 +201,7 @@ export function Header() {
                 </VStack>
               </Box>
             )}
-          </div>
+          </div> */}
           <Button
             as="a"
             href="https://app.defied.money"
@@ -283,8 +283,8 @@ export function Header() {
               <Text font="body" as="span">{item.label}</Text>
             </Link>
           ))}
-          {/* Mobile language selector */}
-          <div style={{ borderTop: '1px solid rgba(0,0,0,0.06)', marginTop: '4px', paddingTop: '8px' }}>
+          {/* Mobile language selector - hidden for now, English only */}
+          {/* <div style={{ borderTop: '1px solid rgba(0,0,0,0.06)', marginTop: '4px', paddingTop: '8px' }}>
             <Text font="label1" as="div" style={{ padding: '4px 1px 8px' }}>
               {t('nav.languageAndRegion')}
             </Text>
@@ -316,7 +316,7 @@ export function Header() {
                 )}
               </button>
             ))}
-          </div>
+          </div> */}
         </VStack>
       </div>
     </header>
