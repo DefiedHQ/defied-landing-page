@@ -13,8 +13,8 @@ import { LogoMark } from '@/components/LogoMark';
 import { useLanguage } from '@/context/LanguageContext';
 
 const languages = [
-  { code: 'bg' as const, label: 'Български', region: 'България' },
   { code: 'en' as const, label: 'English', region: 'Global' },
+  { code: 'bg' as const, label: 'Български', region: 'България' },
 ];
 
 export function Header() {
