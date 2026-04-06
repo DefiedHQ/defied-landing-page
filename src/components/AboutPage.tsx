@@ -9,6 +9,7 @@ import { Button } from '@coinbase/cds-web/buttons/Button';
 import { HeroSquare } from '@coinbase/cds-web/illustrations/HeroSquare';
 import { useLanguage } from '@/context/LanguageContext';
 import { useDocumentMeta } from '@/hooks/useDocumentMeta';
+import { AnimatedButtonText } from '@/components/AnimatedButtonText';
 
 export function AboutPage() {
   const { t } = useLanguage();
@@ -31,7 +32,7 @@ export function AboutPage() {
               variant="primary"
               style={{ borderRadius: '56px', height: '58px', padding: '16px 32px', minWidth: '160px' }}
             >
-              {t('about.ctaStart')}
+              <AnimatedButtonText>{t('about.ctaStart')}</AnimatedButtonText>
             </Button>
             <Button
               as="a"
@@ -39,7 +40,7 @@ export function AboutPage() {
               variant="secondary"
               style={{ borderRadius: '56px', height: '58px', padding: '16px 32px', minWidth: '160px' }}
             >
-              {t('about.ctaContact')}
+              <AnimatedButtonText>{t('about.ctaContact')}</AnimatedButtonText>
             </Button>
           </HStack>
         </VStack>

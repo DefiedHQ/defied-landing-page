@@ -36,6 +36,7 @@ import { InfoSection } from '@/components/Hero';
 import { Footer } from '@/components/Footer';
 import { useLanguage } from '@/context/LanguageContext';
 import { useDocumentMeta } from '@/hooks/useDocumentMeta';
+import { AnimatedButtonText } from '@/components/AnimatedButtonText';
 
 export function LandingPage() {
   const { t } = useLanguage();
@@ -119,7 +120,7 @@ export function LandingPage() {
                 minWidth: '200px',
               }}
             >
-              {t('hero.cta')}
+              <AnimatedButtonText>{t('hero.cta')}</AnimatedButtonText>
             </Button>
           </Box>
           </m.div>
@@ -320,7 +321,7 @@ export function LandingPage() {
                     minWidth: '200px',
                   }}
                 >
-                  {t('hero.cta')}
+                  <AnimatedButtonText>{t('hero.cta')}</AnimatedButtonText>
                 </Button>
               </div>
             </div>

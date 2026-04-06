@@ -523,6 +523,34 @@ select:focus-visible,
   font-weight: 500 !important;
 }
 
+/* ─── Animated CTA button text (slide-up on hover) ─── */
+.animated-btn-text {
+  display: inline-flex;
+  overflow: hidden;
+  height: 1.2em;
+  align-items: center;
+  position: relative;
+}
+
+.animated-btn-text__inner {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.animated-btn-text__default,
+.animated-btn-text__hover {
+  display: block;
+  height: 1.2em;
+  line-height: 1.2em;
+}
+
+/* Trigger on the parent button/anchor hover */
+a:hover .animated-btn-text__inner,
+button:hover .animated-btn-text__inner {
+  transform: translateY(-1.2em);
+}
+
 /* ═══════════════════════════════════════════════════════════════
    Respect reduced motion preferences
    ═══════════════════════════════════════════════════════════════ */
