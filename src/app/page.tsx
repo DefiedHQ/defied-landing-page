@@ -2,14 +2,14 @@ import type { Metadata } from 'next';
 import { LandingPage } from '@/components/LandingPage';
 
 export const metadata: Metadata = {
-  title: 'Дигитален стейбълкойн портфейл за всеки',
+  title: 'A digital stablecoin wallet for everyone',
   description:
-    'Управлявай парите си като използваш най-новата технология - стейбълкойните. Изпращай, получавай и обменяй за секунди.',
+    'Manage your money using the latest technology — stablecoins. Send, receive, and exchange in seconds.',
   openGraph: {
-    title: 'Defied | Дигитален стейбълкойн портфейл за всеки',
+    title: 'Defied | A digital stablecoin wallet for everyone',
     description:
-      'Управлявай парите си като използваш най-новата технология - стейбълкойните. Изпращай, получавай и обменяй за секунди.',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Defied' }], // TODO: Replace with actual OG image
+      'Manage your money using the latest technology — stablecoins. Send, receive, and exchange in seconds.',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Defied' }],
   },
   alternates: {
     canonical: 'https://defied.money',

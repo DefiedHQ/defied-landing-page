@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'За нас',
+  title: 'About us',
   description:
-    'Defied е платформа, която предоставя не-попечителска децентрализирана инфраструктура за лесен достъп до децентрализираните финанси (DeFi).',
+    'Defied is a platform that provides non-custodial decentralized infrastructure for easy access to decentralized finance (DeFi).',
   openGraph: {
-    title: 'За нас | Defied',
+    title: 'About us | Defied',
     description:
-      'Defied е платформа, която предоставя не-попечителска децентрализирана инфраструктура за лесен достъп до DeFi.',
-    images: [{ url: '/og-image.svg', width: 1200, height: 630, alt: 'Defied – За нас' }], // TODO: Replace with actual OG image
+      'Defied is a platform that provides non-custodial decentralized infrastructure for easy access to DeFi.',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Defied – About us' }],
   },
   alternates: {
     canonical: 'https://defied.money/about',

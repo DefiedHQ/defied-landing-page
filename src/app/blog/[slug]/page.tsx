@@ -7,7 +7,7 @@ type Props = { params: Promise<{ slug: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const article = articles.find((a) => a.id === slug);
-  if (!article) return { title: 'Статия не е намерена' };
+  if (!article) return { title: 'Article not found' };
   return {
     title: article.title,
     description: article.excerpt,

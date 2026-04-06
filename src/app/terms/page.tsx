@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import { TermsPage } from '@/components/TermsPage';
 
 export const metadata: Metadata = {
-  title: 'Условия за ползване',
+  title: 'Terms of Use',
   description:
-    'Условия за ползване на платформата Defied. Прочетете нашите общи условия преди да използвате услугите ни.',
+    'Terms of Use for the Defied platform. Read our terms and conditions before using our services.',
   alternates: {
     canonical: 'https://defied.money/terms',
   },

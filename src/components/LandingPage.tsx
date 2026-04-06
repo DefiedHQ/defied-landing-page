@@ -35,9 +35,11 @@ import { ProtocolsSection } from '@/components/ProtocolsSection';
 import { InfoSection } from '@/components/Hero';
 import { Footer } from '@/components/Footer';
 import { useLanguage } from '@/context/LanguageContext';
+import { useDocumentMeta } from '@/hooks/useDocumentMeta';
 
 export function LandingPage() {
   const { t } = useLanguage();
+  useDocumentMeta('meta.homeTitle', 'meta.homeDescription');
 
   useEffect(() => {
     const hash = window.location.hash.slice(1);

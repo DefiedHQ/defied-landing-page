@@ -8,9 +8,11 @@ import { Text } from '@coinbase/cds-web/typography/Text';
 import { Button } from '@coinbase/cds-web/buttons/Button';
 import { HeroSquare } from '@coinbase/cds-web/illustrations/HeroSquare';
 import { useLanguage } from '@/context/LanguageContext';
+import { useDocumentMeta } from '@/hooks/useDocumentMeta';
 
 export function AboutPage() {
   const { t } = useLanguage();
+  useDocumentMeta('meta.aboutTitle', 'meta.aboutDescription');
 
   return (
     <Box as="div" style={{ width: '100%', background: '#FFFFFF', flexDirection: 'column' }}>

@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import { PrivacyPage } from '@/components/PrivacyPage';
 
 export const metadata: Metadata = {
-  title: 'Политика за поверителност',
+  title: 'Privacy Policy',
   description:
-    'Политика за поверителност на Defied. Научете как обработваме и защитаваме вашите лични данни.',
+    'Defied Privacy Policy. Learn how we process and protect your personal data.',
   alternates: {
     canonical: 'https://defied.money/privacy',
   },
