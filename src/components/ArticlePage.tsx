@@ -16,9 +16,10 @@ export function ArticlePage() {
 
   function formatDate(dateStr: string) {
     const d = new Date(dateStr);
-    const months = lang === 'en'
-      ? ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-      : ['Яну', 'Фев', 'Мар', 'Апр', 'Май', 'Юни', 'Юли', 'Авг', 'Сеп', 'Окт', 'Ное', 'Дек'];
+    const monthsMap: Record<string, string[]> = {
+      en: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    };
+    const months = monthsMap[lang] ?? monthsMap.en;
     return `${d.getFullYear()} ${months[d.getMonth()]} ${d.getDate()}`;
   }
   const recentArticles = articles.filter((a) => a.id !== slug).slice(0, 3);

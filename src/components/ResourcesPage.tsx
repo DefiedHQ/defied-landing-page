@@ -8,19 +8,18 @@ import { Chip } from '@coinbase/cds-web/chips/Chip';
 import { useArticles } from '@/data/useArticles';
 import { useLanguage } from '@/context/LanguageContext';
 
-const categoriesMap = {
-  bg: ['Всички', 'DeFi Академия', 'Ръководства', 'Сигурност', 'Технологии'],
-  en: ['All', 'DeFi Academy', 'Guides', 'Security', 'Technology'],
-};
+const allLabelMap: Record<string, string> = { en: 'All' };
 
-const monthsBg = ['Яну', 'Фев', 'Мар', 'Апр', 'Май', 'Юни', 'Юли', 'Авг', 'Сеп', 'Окт', 'Ное', 'Дек'];
-const monthsEn = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const monthsMap: Record<string, string[]> = {
+  en: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+};
 
 export function ResourcesPage() {
   const { t, lang } = useLanguage();
   const articles = useArticles();
-  const categories = categoriesMap[lang];
-  const allLabel = categories[0];
+  const allLabel = allLabelMap[lang];
+  const articleCategories = [...new Set(articles.map((a) => a.category))];
+  const categories = [allLabel, ...articleCategories];
   const [activeFilter, setActiveFilter] = useState(allLabel);
 
   // Reset filter when language changes
@@ -29,7 +28,7 @@ export function ResourcesPage() {
 
   function formatDate(dateStr: string) {
     const d = new Date(dateStr);
-    const months = lang === 'en' ? monthsEn : monthsBg;
+    const months = monthsMap[lang] ?? monthsMap.en;
     return `${d.getFullYear()} ${months[d.getMonth()]} ${d.getDate()}`;
   }
 

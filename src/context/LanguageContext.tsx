@@ -1,12 +1,11 @@
 'use client';
 
 import { createContext, useContext, useState, useCallback } from 'react';
-import bg from '@/locales/bg.json';
 import en from '@/locales/en.json';
 
-export type Lang = 'bg' | 'en';
+export type Lang = 'en';
 
-const translations: Record<Lang, typeof bg> = { bg, en };
+const translations: Record<Lang, typeof en> = { en };
 
 interface LanguageContextValue {
   lang: Lang;

@@ -1,8 +1,8 @@
 [
   {
-    "id": "kakvo-e-defi",
-    "category": "DeFi Academy",
-    "title": "What is Decentralized Finance (DeFi)?",
+    "id": "introducing-defied-money-app",
+    "category": "Announcements",
+    "title": "Introducing the Defied Money App.",
     "excerpt": "DeFi is an ecosystem of financial applications built on blockchain networks. Learn how smart contracts work, what opportunities they provide, and why more and more people are choosing decentralized finance over traditional banks.",
     "date": "2026-03-28",
     "readTime": 4,
@@ -19,121 +19,6 @@
       {
         "heading": "Advantages over traditional finance",
         "body": "DeFi offers numerous advantages: 24/7 accessibility, no geographic restrictions, full transparency through public code, lower fees compared to traditional financial institutions, and the potential for higher yields. Additionally, users maintain full control over their assets — there is no bank or institution that can freeze your funds."
-      }
-    ]
-  },
-  {
-    "id": "kak-da-pechelish-ot-stablecoins",
-    "category": "Guides",
-    "title": "How to earn yield from stablecoins?",
-    "excerpt": "Stablecoins offer price stability and the opportunity for passive income through DeFi protocols. Learn about the main strategies and how to start generating returns from your digital assets.",
-    "date": "2026-03-25",
-    "readTime": 3,
-    "image": null,
-    "sections": [
-      {
-        "heading": "What are stablecoins?",
-        "body": "Stablecoins are cryptocurrencies whose value is pegged to a traditional currency, usually the US dollar or euro. The most popular stablecoins include USDC, USDT, and DAI. They combine the stability of fiat currencies with the advantages of blockchain technology — fast transfers, low fees, and programmability through smart contracts."
-      },
-      {
-        "heading": "Yield strategies",
-        "body": "There are several main ways to generate yield from stablecoins. Providing liquidity in lending protocols like Aave and Compound is one of the most popular methods. When you deposit stablecoins into these protocols, they are lent to borrowers, and you earn interest. Annual yields vary between 2% and 8%, depending on market conditions."
-      },
-      {
-        "heading": "How to get started with Defied",
-        "body": "With the Defied platform, the process is extremely simplified. Register with an email, purchase stablecoins directly in the app, and choose a vault with a suitable strategy. Your funds will automatically be deposited into curated DeFi protocols, and yield will accrue in real time."
-      }
-    ]
-  },
-  {
-    "id": "sigurnost-v-defi",
-    "category": "Security",
-    "title": "Security in DeFi: How to protect your assets",
-    "excerpt": "Security is of paramount importance in the world of decentralized finance. Learn about the main risks and best practices for protecting your digital assets when interacting with DeFi protocols.",
-    "date": "2026-03-20",
-    "readTime": 5,
-    "image": null,
-    "sections": [
-      {
-        "heading": "Main risks in DeFi",
-        "body": "The DeFi space, despite its innovation, carries certain risks. The risk of smart contract vulnerabilities is one of the most significant — bugs in the code can lead to loss of funds. Market risk is also a factor, as cryptocurrency values can fluctuate significantly. Liquidity risk means that under certain market conditions, it may be difficult to withdraw your funds immediately."
-      },
-      {
-        "heading": "How Defied protects your funds",
-        "body": "Defied applies a strict protocol selection process. We only work with proven protocols like Aave and Compound, which have a long track record and multiple security audits. Our smart contracts are non-custodial, meaning only you have access to your funds. Your private key is stored locally on your device."
-      },
-      {
-        "heading": "Best practices for users",
-        "body": "Never share your private key or seed phrase with anyone. Use strong passwords and two-factor authentication. Verify the platform URL before interacting with it. Start with small amounts to familiarize yourself with the process. And always remember — if something sounds too good to be true, it probably is."
-      }
-    ]
-  },
-  {
-    "id": "ethereum-i-layer-2",
-    "category": "Technology",
-    "title": "Ethereum and Layer 2 solutions: The future of scalability",
-    "excerpt": "Ethereum continues to evolve with Layer 2 solutions that significantly improve speed and reduce transaction fees. Learn how these technologies are changing the DeFi landscape.",
-    "date": "2026-03-15",
-    "readTime": 4,
-    "image": null,
-    "sections": [
-      {
-        "heading": "Ethereum's challenges",
-        "body": "Ethereum is the leading blockchain platform for DeFi applications, but it faces challenges related to scalability. During high network congestion, transaction fees can become significant and processing times increase. These limitations have driven the development of Layer 2 solutions that process transactions off the main chain."
-      },
-      {
-        "heading": "What are Layer 2 solutions?",
-        "body": "Layer 2 solutions are protocols built on top of Ethereum that process transactions off the main chain, ultimately anchoring to it for security. Rollup technologies, including Optimistic and ZK Rollups, bundle multiple transactions into one, significantly reducing fees. Examples of popular L2 networks include Arbitrum, Optimism, and Base."
-      },
-      {
-        "heading": "Impact on DeFi",
-        "body": "Layer 2 solutions make DeFi accessible to a wider audience through drastically reduced fees and faster transactions. Protocols like Aave and Uniswap are already available on multiple L2 networks, allowing users to benefit from the same functionality at significantly lower costs. This is a key step toward mass adoption of decentralized finance."
-      }
-    ]
-  },
-  {
-    "id": "tokenomika-i-upravlenie",
-    "category": "DeFi Academy",
-    "title": "Tokenomics and governance in DeFi protocols",
-    "excerpt": "How are decentralized protocols governed? Learn about DAO structures, governance tokens, and how communities make decisions about the future of DeFi projects.",
-    "date": "2026-03-10",
-    "readTime": 3,
-    "image": null,
-    "sections": [
-      {
-        "heading": "What is a DAO?",
-        "body": "A DAO (Decentralized Autonomous Organization) is an organization governed by smart contracts and member voting. Instead of a traditional hierarchy with directors and managers, decisions are made collectively by governance token holders. Every holder can propose changes and vote on others' proposals. This model ensures transparency and democracy."
-      },
-      {
-        "heading": "Governance tokens",
-        "body": "Governance tokens grant voting rights in protocol decision-making. For example, AAVE token holders can vote on changes to the Aave protocol parameters — from interest rates to adding new assets. These tokens also incentivize long-term participation in the ecosystem, as holders have a direct interest in the protocol's success."
-      },
-      {
-        "heading": "The future of decentralized governance",
-        "body": "Governance models in DeFi continue to evolve. Delegated voting, quadratic voting, and other innovative approaches aim to make the process more efficient and fair. As the DeFi ecosystem grows, governance becomes an increasingly important factor for the sustainability and long-term success of protocols."
-      }
-    ]
-  },
-  {
-    "id": "nachalnik-guide-defi",
-    "category": "Guides",
-    "title": "Complete beginner's guide to DeFi",
-    "excerpt": "Want to get started with decentralized finance but don't know where to begin? This detailed guide will walk you through step by step — from creating a wallet to your first investment.",
-    "date": "2026-03-05",
-    "readTime": 6,
-    "image": null,
-    "sections": [
-      {
-        "heading": "First steps",
-        "body": "Getting started with DeFi is not as complicated as it may seem. The first step is to create a digital wallet — with Defied, this happens automatically upon registration with an email. The next step is to acquire stablecoins, which you can purchase directly on the platform with a card, Apple Pay, Google Pay, or bank transfer."
-      },
-      {
-        "heading": "Choosing a strategy",
-        "body": "Once you have stablecoins, you need to choose an investment strategy. For beginners, we recommend low-risk strategies such as lending protocols (Aave, Compound), which offer stable yields with minimal risk. As you gain experience, you can explore more complex strategies, but always start with small amounts."
-      },
-      {
-        "heading": "Monitoring and management",
-        "body": "After making your first investment, it's important to monitor your yields and understand what's happening with your funds. With Defied, you can see your balance and accumulated yield in real time. The platform notifies you of important changes and helps you make informed decisions about managing your assets."
       }
     ]
   }

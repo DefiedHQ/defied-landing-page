@@ -1,8 +1,9 @@
 import { useLanguage } from '@/context/LanguageContext';
-import articlesBg from '@/data/articles.json';
 import articlesEn from '@/data/articles-en.json';
+
+const articlesMap: Record<string, typeof articlesEn> = { en: articlesEn };
 
 export function useArticles() {
   const { lang } = useLanguage();
-  return lang === 'en' ? articlesEn : articlesBg;
+  return articlesMap[lang] ?? articlesEn;
 }

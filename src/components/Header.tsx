@@ -15,7 +15,6 @@ import { useLanguage } from '@/context/LanguageContext';
 
 const languages = [
   { code: 'en' as const, label: 'English', region: 'Global' },
-  { code: 'bg' as const, label: 'Български', region: 'България' },
 ];
 
 export function Header() {
@@ -93,6 +92,14 @@ export function Header() {
 
         {/* Centered nav tabs */}
         <nav className="hide-mobile-flex" style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)', alignItems: 'center', gap: '4px' }}>
+          <button
+            type="button"
+            onClick={() => scrollToSection('mission')}
+            className="header-tab"
+            style={{ padding: '8px 16px', borderRadius: '100px', border: 'none', cursor: 'pointer', color: '#0A0B0D' }}
+          >
+            <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 500 }}>{t('nav.mission')}</Text>
+          </button>
           <button
             type="button"
             onClick={() => scrollToSection('what-it-does')}
@@ -237,6 +244,13 @@ export function Header() {
         }}
       >
         <VStack as="nav" style={{ gap: '4px', padding: '12px 16px 8px' }}>
+          <button
+            type="button"
+            onClick={() => scrollToSection('mission')}
+            style={{ padding: '10px 4px', transition: 'color 0.2s ease', textAlign: 'left', background: 'none', border: 'none', color: '#0A0B0D', cursor: 'pointer' }}
+          >
+            <Text font="body" as="span">{t('nav.mission')}</Text>
+          </button>
           <button
             type="button"
             onClick={() => scrollToSection('what-it-does')}

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import localFont from 'next/font/local';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { Analytics } from '@vercel/analytics/next';
@@ -23,15 +23,36 @@ const aeonikPro = localFont({
   variable: '--font-aeonik-pro',
 });
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  themeColor: '#ffffff',
+};
+
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://defied.money'),
   title: {
     default: 'Defied | A stablecoin wallet with DeFi superpowers',
     template: '%s | Defied',
   },
   description:
     'Move your money freely and securely using stablecoins. Send, receive, and exchange in seconds. Access DeFi with one click.',
+  keywords: [
+    'stablecoin wallet',
+    'DeFi',
+    'decentralized finance',
+    'USDC',
+    'EURC',
+    'crypto wallet',
+    'stablecoins',
+    'non-custodial wallet',
+    'Base network',
+    'yield',
+    'lending',
+  ],
   icons: { icon: '/favicon.svg' },
-  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://defied.money'),
   openGraph: {
     title: 'Defied | A stablecoin wallet with DeFi superpowers',
     description:
@@ -51,6 +72,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@defied_money',
+    creator: '@defied_money',
     title: 'Defied | A stablecoin wallet with DeFi superpowers',
     description:
       'Move your money freely and securely using stablecoins. Send, receive, and exchange in seconds. Access DeFi with one click.',
@@ -59,6 +82,13 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
   alternates: {
     canonical: 'https://defied.money',

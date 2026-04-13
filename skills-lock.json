@@ -15,6 +15,11 @@
       "source": "vercel-labs/next-skills",
       "sourceType": "github",
       "computedHash": "e3aeb1f9e8a68d24df0c1c2e3c8ab97ede09a7251a2c76988318d02254346979"
+    },
+    "nextjs-seo": {
+      "source": "laguagu/claude-code-nextjs-skills",
+      "sourceType": "github",
+      "computedHash": "dbe7bb9acf09e443b5bf2bef8e7bfe42b44cf6145ce1e9af6a579fcd962c6899"
     }
   }
 }

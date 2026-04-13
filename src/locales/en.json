@@ -6,10 +6,11 @@
     "howItWorks": "How it works",
     "advantages": "Advantages",
     "faq": "Questions",
+    "mission": "Mission",
     "languageAndRegion": "Language and region"
   },
   "hero": {
-    "title": "A stablecoin wallet with DeFi superpowers",
+    "title": "Move your money globally and freely",
     "titleBase": "A digital stablecoin wallet for",
     "titleWords": ["everyone", "you", "him", "her"],
     "subtitle1": "Move your money freely and securely using stablecoins. Send, receive, and exchange in seconds. Access DeFi with one click.",
@@ -45,6 +46,7 @@
     "title": "Protocols"
   },
   "imageSection": {
+    "sectionTitle": "Mission",
     "title": "Our mission",
     "heading": "We believe in everyone's right to access a transparent and secure financial system, without censorship."
   },
