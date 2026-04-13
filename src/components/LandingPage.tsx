@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import Image from 'next/image';
 import { m } from 'framer-motion';
 import { Box } from '@coinbase/cds-web/layout/Box';
 import { VStack } from '@coinbase/cds-web/layout/VStack';
@@ -123,33 +124,57 @@ export function LandingPage() {
           </Box>
           </m.div>
 
-          {/* Our Mission */}
-          <article
-            className="promo-card-layout"
-            style={{
-              width: 'calc(100% + 32px)',
-              maxWidth: 'calc(100vw - 32px)',
-              background: '#0052FF',
-              borderRadius: '56px',
-              padding: 'clamp(40px, 6vw, 80px)',
-              alignItems: 'center',
-            }}
+          {/* Hero image */}
+          <m.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5, ease: 'easeOut' }}
+            style={{ width: '100%', maxWidth: '900px' }}
           >
-            <m.div {...slideInLeft} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 1 }}>
-              <Lottie source={dappWallet} autoplay loop width="300px" height="300px" />
-            </m.div>
-            <m.div {...slideInRight} style={{ flex: 1 }}>
-              <div className="cta-text-column" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                <Text font="display2" as="h2" className="title-tight-lh" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', fontWeight: 500, color: '#fff' }}>
-                  {t('imageSection.title')}
-                </Text>
-                <Text font="body" as="p" style={{ fontSize: '18px', lineHeight: '28px', color: 'rgba(255, 255, 255, 0.7)' }}>
-                  {t('imageSection.heading')}
-                </Text>
-              </div>
-            </m.div>
-          </article>
+            <Image
+              src="/hero_landing.png"
+              alt="Defied app"
+              width={900}
+              height={600}
+              priority
+              style={{ width: '100%', height: 'auto', borderRadius: '32px' }}
+            />
+          </m.div>
         </VStack>
+      </section>
+
+      {/* Section: Mission */}
+      <section className="section-padding" style={{ paddingTop: 'clamp(48px, 8vw, 100px)' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
+          <Text font="display2" as="h2" className="section-title" display="block" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, marginBottom: '56px' }}>
+            {t('imageSection.sectionTitle')}
+          </Text>
+          <m.div {...slideInUp}>
+            <article
+              className="promo-card-layout"
+              style={{
+                background: '#0052FF',
+                borderRadius: '56px',
+                padding: 'clamp(40px, 6vw, 80px)',
+                alignItems: 'center',
+              }}
+            >
+              <m.div {...slideInLeft} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 1 }}>
+                <Lottie source={dappWallet} autoplay loop width="300px" height="300px" />
+              </m.div>
+              <m.div {...slideInRight} style={{ flex: 1 }}>
+                <div className="cta-text-column" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                  <Text font="display2" as="h3" className="title-tight-lh" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', fontWeight: 500, color: '#fff' }}>
+                    {t('imageSection.title')}
+                  </Text>
+                  <Text font="body" as="p" style={{ fontSize: '18px', lineHeight: '28px', color: 'rgba(255, 255, 255, 0.7)' }}>
+                    {t('imageSection.heading')}
+                  </Text>
+                </div>
+              </m.div>
+            </article>
+          </m.div>
+        </div>
       </section>
 
       {/* Section: Features (Какво прави) */}
