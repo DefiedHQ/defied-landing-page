@@ -8,12 +8,10 @@ import { Text } from '@coinbase/cds-web/typography/Text';
 import { Button } from '@coinbase/cds-web/buttons/Button';
 import { HeroSquare } from '@coinbase/cds-web/illustrations/HeroSquare';
 import { useLanguage } from '@/context/LanguageContext';
-import { useDocumentMeta } from '@/hooks/useDocumentMeta';
 import { AnimatedButtonText } from '@/components/AnimatedButtonText';
 
 export function AboutPage() {
   const { t } = useLanguage();
-  useDocumentMeta('meta.aboutTitle', 'meta.aboutDescription');
 
   return (
     <Box as="div" style={{ width: '100%', background: '#FFFFFF', flexDirection: 'column' }}>
@@ -64,7 +62,7 @@ export function AboutPage() {
 
       {/* Logo + identity section */}
       <section className="section-padding" style={{ paddingTop: '100px', paddingBottom: '100px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
-        <Image src="/defied_squared_logo_blue.svg" width={80} height={80} alt="Defied" style={{ marginBottom: '32px' }} />
+        <Image src="/defied_squared_logo_blue.svg" width={80} height={80} alt="Defied" priority style={{ marginBottom: '32px' }} />
         <Text font="display2" as="h2" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, maxWidth: '800px', textAlign: 'center' }}>
           {t('about.missionLight')}
         </Text>
