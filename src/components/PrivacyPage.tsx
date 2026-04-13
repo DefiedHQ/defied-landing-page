@@ -2,11 +2,9 @@
 
 import { Text } from '@coinbase/cds-web/typography/Text';
 import { useLanguage } from '@/context/LanguageContext';
-import { useDocumentMeta } from '@/hooks/useDocumentMeta';
 
 export function PrivacyPage() {
   const { t } = useLanguage();
-  useDocumentMeta('meta.privacyTitle', 'meta.privacyDescription');
 
   return (
     <section style={{ width: '100%', maxWidth: '1200px', margin: '0 auto', padding: '0 16px', paddingBottom: '64px' }}>

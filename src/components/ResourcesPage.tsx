@@ -7,7 +7,6 @@ import { Tag } from '@coinbase/cds-web/tag/Tag';
 import { Chip } from '@coinbase/cds-web/chips/Chip';
 import { useArticles } from '@/data/useArticles';
 import { useLanguage } from '@/context/LanguageContext';
-import { useDocumentMeta } from '@/hooks/useDocumentMeta';
 
 const categoriesMap = {
   bg: ['Всички', 'DeFi Академия', 'Ръководства', 'Сигурност', 'Технологии'],
@@ -19,7 +18,6 @@ const monthsEn = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep',
 
 export function ResourcesPage() {
   const { t, lang } = useLanguage();
-  useDocumentMeta('meta.blogTitle', 'meta.blogDescription');
   const articles = useArticles();
   const categories = categoriesMap[lang];
   const allLabel = categories[0];

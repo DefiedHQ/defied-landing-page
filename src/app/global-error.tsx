@@ -7,7 +7,7 @@ export default function GlobalError({
   reset: () => void;
 }) {
   return (
-    <html lang="bg">
+    <html lang="en">
       <body>
         <div
           style={{
@@ -23,10 +23,10 @@ export default function GlobalError({
           }}
         >
           <h1 style={{ fontSize: '2rem', fontWeight: 500 }}>
-            Нещо се обърка
+            Something went wrong
           </h1>
           <p style={{ color: '#5B616E' }}>
-            Възникна критична грешка. Моля, опитайте отново.
+            A critical error occurred. Please try again.
           </p>
           <button
             onClick={reset}
@@ -42,7 +42,7 @@ export default function GlobalError({
               marginTop: '16px',
             }}
           >
-            Опитай отново
+            Try again
           </button>
         </div>
       </body>

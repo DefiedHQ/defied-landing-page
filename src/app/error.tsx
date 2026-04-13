@@ -23,10 +23,10 @@ export default function Error({
       }}
     >
       <Text font="display2" as="h1" style={{ fontWeight: 500 }}>
-        Нещо се обърка
+        Something went wrong
       </Text>
       <Text font="body" as="p" color="fgMuted">
-        Възникна неочаквана грешка. Моля, опитайте отново.
+        An unexpected error occurred. Please try again.
       </Text>
       <Button
         variant="primary"
@@ -34,7 +34,7 @@ export default function Error({
         className="btn-fw-500"
         style={{ borderRadius: '56px', marginTop: '16px' }}
       >
-        Опитай отново
+        Try again
       </Button>
     </section>
   );

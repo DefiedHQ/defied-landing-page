@@ -8,6 +8,7 @@ export function LogoMark({ size = 48 }: { size?: number }) {
       height={size}
       alt="Defied"
       aria-hidden="true"
+      priority
     />
   );
 }

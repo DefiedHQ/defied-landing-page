@@ -21,7 +21,7 @@ export default function NotFound() {
         404
       </Text>
       <Text font="body" as="p" color="fgMuted">
-        Страницата не е намерена.
+        Page not found.
       </Text>
       <Button
         as="a"
@@ -30,7 +30,7 @@ export default function NotFound() {
         className="btn-fw-500"
         style={{ borderRadius: '56px', marginTop: '16px' }}
       >
-        Към началната страница
+        Go to homepage
       </Button>
     </section>
   );

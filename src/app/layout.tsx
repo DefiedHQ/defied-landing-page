@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
+import { GoogleAnalytics } from '@next/third-parties/google';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { Providers } from './providers';
 import { CdsProvider } from '@/components/CdsProvider';
 import { Header } from '@/components/Header';
 import { ConditionalFooter } from '@/components/ConditionalFooter';
@@ -18,7 +18,6 @@ const aeonikPro = localFont({
   src: [
     { path: '../../public/fonts/AeonikPro-Regular.woff2', weight: '400', style: 'normal' },
     { path: '../../public/fonts/AeonikPro-Medium.woff2', weight: '500', style: 'normal' },
-    { path: '../../public/fonts/AeonikPro-Black.woff2', weight: '900', style: 'normal' },
   ],
   display: 'swap',
   variable: '--font-aeonik-pro',
@@ -74,29 +73,29 @@ export default function RootLayout({
   return (
     <html lang="en" className={aeonikPro.variable}>
       <body>
-        <Providers>
-          <CdsProvider>
-            <LanguageProvider>
-              <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-                <div
-                  style={{
-                    position: 'sticky',
-                    top: 0,
-                    zIndex: 50,
-                    background: '#ffffff',
-                    /* borderBottom removed */
-                  }}
-                >
-                  <Header />
-                </div>
-                <MainWrapper>{children}</MainWrapper>
-                <ConditionalFooter />
+        <CdsProvider>
+          <LanguageProvider>
+            <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+              <div
+                style={{
+                  position: 'sticky',
+                  top: 0,
+                  zIndex: 50,
+                  background: '#ffffff',
+                }}
+              >
+                <Header />
               </div>
-            </LanguageProvider>
-          </CdsProvider>
-        </Providers>
+              <MainWrapper>{children}</MainWrapper>
+              <ConditionalFooter />
+            </div>
+          </LanguageProvider>
+        </CdsProvider>
         <Analytics />
         <SpeedInsights />
+        {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
+        )}
       </body>
     </html>
   );
