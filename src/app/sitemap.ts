@@ -1,11 +1,10 @@
 import type { MetadataRoute } from 'next';
 import articles from '@/data/articles-en.json';
+import { siteConfig, absoluteUrl } from '@/lib/seo';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://defied.money';
-
   const articleUrls = articles.map((article) => ({
-    url: `${baseUrl}/blog/${article.id}`,
+    url: absoluteUrl(`/blog/${article.id}`),
     lastModified: new Date(article.date),
     changeFrequency: 'monthly' as const,
     priority: 0.7,
@@ -13,38 +12,38 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     {
-      url: baseUrl,
+      url: siteConfig.url,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 1,
-      images: [`${baseUrl}/og-image.png`],
+      images: [absoluteUrl(siteConfig.ogImage)],
     },
     {
-      url: `${baseUrl}/blog`,
+      url: absoluteUrl('/blog'),
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/about`,
+      url: absoluteUrl('/about'),
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/risks`,
+      url: absoluteUrl('/risks'),
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.5,
     },
     {
-      url: `${baseUrl}/terms`,
+      url: absoluteUrl('/terms'),
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.3,
     },
     {
-      url: `${baseUrl}/privacy`,
+      url: absoluteUrl('/privacy'),
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.3,

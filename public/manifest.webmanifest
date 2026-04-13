@@ -1,0 +1,21 @@
+{
+  "name": "Defied",
+  "short_name": "Defied",
+  "description": "A stablecoin wallet with DeFi superpowers",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#0052FF",
+  "icons": [
+    {
+      "src": "/og-image.png",
+      "sizes": "1200x630",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

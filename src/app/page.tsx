@@ -1,63 +1,72 @@
 import type { Metadata } from 'next';
 import { LandingPage } from '@/components/LandingPage';
 import { JsonLd } from '@/components/seo/JsonLd';
+import { siteConfig, absoluteUrl } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'A stablecoin wallet with DeFi superpowers',
-  description:
-    'Move your money freely and securely using stablecoins. Send, receive, and exchange in seconds. Access DeFi with one click.',
+  description: siteConfig.description,
   openGraph: {
     title: 'Defied | A stablecoin wallet with DeFi superpowers',
-    description:
-      'Move your money freely and securely using stablecoins. Send, receive, and exchange in seconds. Access DeFi with one click.',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Defied' }],
+    description: siteConfig.description,
+    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: 'Defied' }],
   },
   alternates: {
-    canonical: 'https://defied.money',
+    canonical: '/',
   },
 };
 
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'Defied',
-  url: 'https://defied.money',
-  description:
-    'Move your money freely and securely using stablecoins. Send, receive, and exchange in seconds. Access DeFi with one click.',
+  name: siteConfig.name,
+  url: siteConfig.url,
+  description: siteConfig.description,
   inLanguage: 'en',
   publisher: {
     '@type': 'Organization',
-    name: 'Defied',
+    name: siteConfig.name,
+  },
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: `${siteConfig.url}/blog?q={search_term_string}`,
+    },
+    'query-input': 'required name=search_term_string',
   },
 };
 
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'Defied',
-  url: 'https://defied.money',
+  name: siteConfig.name,
+  url: siteConfig.url,
   logo: {
     '@type': 'ImageObject',
-    url: 'https://defied.money/defied_squared_logo_blue.svg',
+    url: absoluteUrl(siteConfig.logo),
   },
-  sameAs: [
-    'https://x.com/defied_money',
-    'https://linkedin.com/company/defied-money',
-    'https://instagram.com/defied_money',
-  ],
+  image: absoluteUrl(siteConfig.ogImage),
+  sameAs: [...siteConfig.socials],
   contactPoint: {
     '@type': 'ContactPoint',
-    email: 'hello@defied.money',
-    telephone: '+359884627762',
+    email: siteConfig.contact.email,
+    telephone: siteConfig.contact.telephone,
     contactType: 'customer service',
+  },
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '81B Bulgaria Blvd',
+    addressLocality: 'Sofia',
+    addressCountry: 'BG',
   },
 };
 
 const webAppSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
-  name: 'Defied',
-  url: 'https://app.defied.money',
+  name: siteConfig.name,
+  url: siteConfig.appUrl,
   description:
     'A stablecoin wallet with DeFi superpowers. Send, receive, exchange stablecoins and access decentralized finance.',
   applicationCategory: 'FinanceApplication',
@@ -75,6 +84,7 @@ const webAppSchema = {
     'Non-custodial wallet with full self-custody',
     'Sponsored transactions',
   ],
+  screenshot: absoluteUrl(siteConfig.ogImage),
 };
 
 const faqSchema = {
@@ -126,7 +136,7 @@ const faqSchema = {
       name: 'Is there risk in using Defied?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The risks fall into two categories. If someone gains access to your email, they could gain access to your digital wallet. Decentralized finance also carries the risk of hacking attacks. Defied only features thoroughly tested protocols that have never been hacked, but we cannot guarantee this won\'t happen.',
+        text: "The risks fall into two categories. If someone gains access to your email, they could gain access to your digital wallet. Decentralized finance also carries the risk of hacking attacks. Defied only features thoroughly tested protocols that have never been hacked, but we cannot guarantee this won't happen.",
       },
     },
     {

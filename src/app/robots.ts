@@ -1,8 +1,7 @@
 import type { MetadataRoute } from 'next';
+import { siteConfig } from '@/lib/seo';
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://defied.money';
-
   return {
     rules: [
       {
@@ -11,7 +10,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/'],
       },
     ],
-    sitemap: `${baseUrl}/sitemap.xml`,
-    host: baseUrl,
+    sitemap: `${siteConfig.url}/sitemap.xml`,
+    host: siteConfig.url,
   };
 }

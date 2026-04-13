@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { TermsPage } from '@/components/TermsPage';
+import { siteConfig } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Terms of Use',
@@ -9,10 +10,18 @@ export const metadata: Metadata = {
     title: 'Terms of Use | Defied',
     description:
       'Terms of Use for the Defied platform. Read our terms and conditions before using our services.',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Defied Terms of Use' }],
+    siteName: siteConfig.name,
+    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: 'Defied Terms of Use' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: siteConfig.twitter,
+    title: 'Terms of Use | Defied',
+    description: 'Terms of Use for the Defied platform. Read our terms and conditions before using our services.',
+    images: [siteConfig.ogImage],
   },
   alternates: {
-    canonical: 'https://defied.money/terms',
+    canonical: '/terms',
   },
 };
 
