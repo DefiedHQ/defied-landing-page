@@ -10,40 +10,43 @@
     "languageAndRegion": "Language and region"
   },
   "hero": {
-    "title": "Move your money globally and freely",
-    "titleBase": "A digital stablecoin wallet for",
-    "titleWords": ["everyone", "you", "him", "her"],
-    "subtitle1": "Move your money freely and securely using stablecoins. Send, receive, and exchange in seconds. Access DeFi with one click.",
+    "title": "Your euros, working for you. Always.",
+    "titleBase": "Your euros, working for you.",
+    "titleWords": ["Always"],
+    "subtitle1": "Send money anywhere in seconds. Access lending protocols paying up to 4% APY on your balance. Pay with a card. From an account no bank can freeze.",
     "subtitle2": "",
     "subtitle3": "",
-    "cta": "Get started",
+    "cta": "Start for free",
     "ctaHeader": "Sign in",
-    "ctaMain": "Take control of your money"
+    "ctaMain": "Start for free",
+    "disclaimer": "Accessing decentralized lending protocols involves risk. Past yields are not guaranteed. Defied provides a non-custodial interface to public blockchain protocols — it does not manage or invest your funds."
   },
   "features": {
-    "sectionTitle": "What it does?",
+    "sectionTitle": "Everything your bank does. And what it never will.",
     "f1Title": "Send stablecoins",
-    "f1Desc": "Send or receive stablecoins in seconds",
-    "f2Title": "Exchange stablecoins",
-    "f2Desc": "Exchange back and forth from standard euros and dollars",
-    "f3Title": "Multi-approval",
-    "f3Desc": "Set up consensus and multi-approval rules",
+    "f1Desc": "Send euros or dollars to anyone, anywhere, in seconds. No SWIFT codes. No 3–5 business day waits. No €25 wire fees. Just a wallet address and a confirmation.",
+    "f2Title": "Earn on your balance",
+    "f2Desc": "Connect to the same decentralized lending protocols used by on-chain institutions worldwide. Access pools currently offering 3–5% APY on USDC and EURC — directly, with no lock-up period. Withdraw anytime.",
+    "f2Disclaimer": "Yields are variable and depend on protocol market conditions. This is not a guaranteed return or investment product.",
+    "f3Title": "Exchange stablecoins",
+    "f3Desc": "Swap between USDC (dollar-pegged) and EURC (euro-pegged) instantly, at transparent rates, with a simple fee. No hidden spread.",
     "f4Title": "Decentralized Finance",
     "f4Desc": "Use protocols in decentralized finance",
     "f5Title": "Virtual debit card",
-    "f5Desc": "Pay directly with a card from your stablecoin balance"
+    "f5Desc": "Spend your stablecoin balance anywhere Visa is accepted. Top up from your wallet in one tap. Available on Premium plan."
   },
   "advantages": {
-    "title": "Advantages",
+    "title": "The financial system wasn't built for you. This one is.",
     "row1Heading": "Stablecoins",
-    "row1Subtext": "Stablecoin transactions are significantly faster and cheaper than traditional bank transfers, especially for cross-border operations. You can send and receive stable currencies to anywhere in the world, at any time.",
-    "row2Heading": "Onchain wallet",
-    "row2Subtext": "Onchain wallets give you full control over your funds. No one can block, move, or hold them. They cannot be frozen by institutions, governments, or third parties. With our infrastructure, behind the scenes, you acquire such a wallet, controlled entirely through your email.",
-    "row3Heading": "Decentralized Finance",
-    "row3Subtext": "Anyone with an internet connection can use decentralized finance without needing approval or a bank account, ensuring financial freedom. Traditional banking institutions are eliminated, reducing the risk of censorship and service disruption. You can generate returns through lending, staking, and providing liquidity."
+    "row1Subtext": "Unlike volatile cryptocurrencies, stablecoins are pegged 1:1 to real currencies — USDC to the US dollar, EURC to the euro. You get the speed and global reach of blockchain with the price stability of the currencies you already use. Send and receive 24/7, including weekends and public holidays.",
+    "row2Heading": "An account that's actually yours",
+    "row2Subtext": "With a traditional bank or fintech app, your balance is a number in their database. They hold your money. They can restrict, freeze, or close your account. With Defied, your funds live in a wallet secured by cryptography — not on our servers, not in our control. Your wallet exists and remains accessible even if Defied ceases to exist.",
+    "row3Heading": "Access to decentralized finance",
+    "row3Subtext": "Anyone with an internet connection can participate in decentralized lending protocols — no bank account, no approval process, no minimum balance. Defied removes the technical barriers. You access protocols directly, keeping full custody of your funds throughout."
   },
   "protocolsSection": {
-    "title": "Protocols"
+    "title": "Protocols you can access through Defied",
+    "subtitle": "Defied surfaces established, extensively audited protocols. We do not endorse any protocol as risk-free. Smart contract risk exists — please read our risk disclosure before depositing."
   },
   "imageSection": {
     "sectionTitle": "Mission",
@@ -51,44 +54,40 @@
     "heading": "We believe in everyone's right to access a transparent and secure financial system, without censorship."
   },
   "aboutCarousel": {
-    "title": "How it works?",
+    "title": "Simpler than a bank account. More powerful than one.",
     "card1Tag": "Non-custodial wallet",
     "card1Title": "Non-custodial wallet",
-    "card1Desc": "When you register for the first time with email, a non-custodial wallet is automatically created for you. You have full control to transfer it. We have no access to your funds.",
+    "card1Desc": "When you sign up with your email, a personal digital wallet is created automatically — secured by cryptography, controlled entirely by you. Defied has zero access to your funds. We cannot move them, freeze them, or recover them on your behalf. Think of it this way: we built the safe. You hold the only key.",
     "card2Tag": "User interface",
     "card2Title": "User interface",
-    "card2Desc": "We provide a service through infrastructure and a user interface that communicates with decentralized smart contracts onchain. Anyone can interact with the contracts directly as well.",
+    "card2Desc": "Defied is a front-end interface that connects to public, permissionless smart contracts on the Base blockchain. You interact directly with those contracts — Defied simplifies the experience, but the underlying protocols exist independently of us. You can interact with them directly at any time.",
     "card3Tag": "Decentralized finance",
-    "card3Title": "Decentralized finance",
-    "card3Desc": "Our service removes the barriers to decentralized finance. We provide access to participate in various protocols without needing technical knowledge.",
-    "card4Tag": "Quick purchase",
+    "card3Title": "Access to decentralized protocols",
+    "card3Desc": "Defied surfaces lending, staking, and liquidity protocols in one place — no technical knowledge required. Aave, Compound, Morpho, Lido and more, accessible with one click. You retain full custody throughout.",
+    "card4Tag": "Gas-free",
     "card4Title": "Sponsored transactions",
-    "card4Desc": "We sponsor your transactions when you send stablecoins or use our decentralized finance hub. We simplify the process without compromising security."
+    "card4Desc": "We cover your gas fees when you send stablecoins or interact with supported protocols. The blockchain stays invisible. The experience stays simple."
   },
   "faq": {
     "title": "Questions",
     "q1": "What is Defied?",
-    "a1": "Defied is a digital stablecoin wallet that allows you to exchange, send, and receive USDC and EURC stablecoins via the Base network. Defied also provides a user interface for connecting to decentralized finance, where users can participate in decentralized lending, staking, and liquidity provision.",
+    "a1": "Defied is a non-custodial stablecoin wallet that lets you send, receive, and exchange USDC and EURC on the Base network. It also provides a simple interface for accessing decentralized finance protocols — including lending, staking, and liquidity provision — without requiring any technical knowledge.",
     "q2": "What is a stablecoin?",
-    "a2": "Stablecoins are pegged to reserves of physical assets (fiat currency, gold) or algorithms, which keeps their value constant. With 1:1 fiat-backed stablecoins, the risk of drastic value loss is minimal as they are backed by real reserves. They are a primary unit of account on DeFi platforms, facilitating lending, borrowing, and trading without intermediaries. Transactions can be made at any time of day, without holidays, unlike banking hours.",
+    "a2": "A stablecoin is a digital currency pegged to a real-world asset — in our case, the euro (EURC) or US dollar (USDC). Unlike bitcoin or ether, their value doesn't fluctuate wildly. You can send them globally, instantly, at any time of day — including weekends. They're backed 1:1 by real currency reserves held by regulated issuers.",
     "q3": "What is a non-custodial wallet?",
-    "a3": "With a non-custodial wallet, you own your private keys and recovery phrase, meaning assets are entirely under your control, not a third party or exchange. Defied partners with Privy, which provides infrastructure for managing non-custodial wallets controlled entirely through your email. You don't need to remember your private key, but you always have access to it when needed. There is no risk of account freezing by a third party. You have direct access to your funds 24/7.",
-    "q4": "What is decentralized finance?",
-    "a4": "Decentralized finance (DeFi) offers financial services without intermediaries (banks), providing 24/7 global access, lower fees through automation, and full self-custody of funds. DeFi benefits include high transparency, faster transactions, and an open ecosystem for anyone with internet, removing the need for approval to access banking services.",
-    "q5": "Who controls my funds?",
-    "a5": "Only you. Neither Defied nor Privy have access to them. We cannot withdraw or transfer them. If you wish, you can recover your private key through your unique email.",
-    "q6": "Can I withdraw my money at any time?",
-    "a6": "Yes, there is no waiting period imposed by us. If you have deposited funds into a decentralized finance protocol, it depends on the protocol. Most allow instant withdrawal, but there are cases where there is a waiting period.",
-    "q7": "Do I need to verify my identity to use Defied?",
-    "a7": "In short — no. Defied is a decentralized product that provides a connection to smart contracts. They can be used without Defied as well. If you deposit stablecoins directly, no verification is needed. If you want to exchange standard euros or dollars for stablecoins and vice versa, then verification is required. Defied uses Bridge.xyz as an external partner that provides this service.",
-    "q8": "Are there transaction limits?",
-    "a8": "No, there is no limit on the stablecoins you deposit or send.",
-    "q9": "Is there risk in using Defied?",
-    "a9": "The risks fall into two categories. If someone gains access to your email, they could gain access to your digital wallet, as with any other fintech service. That's why we recommend enabling two-factor authentication to prevent such risks. Decentralized finance also carries the risk of hacking attacks. Defied only features thoroughly tested protocols in its interface that have never been hacked, but we cannot guarantee this won't happen.",
-    "q10": "Are my funds protected by the Deposit Guarantee Fund?",
-    "a10": "No. Defied is not a financial institution but solely a service for accessing decentralized finance. Therefore, if your funds lose value in the event that the stablecoin depreciates, they cannot be restored to you.",
-    "q11": "What platforms does Defied support?",
-    "a11": "Currently, Defied is available as a web application that can be used on both laptops and mobile phones. We are planning to release a mobile version for iOS and Android soon."
+    "a3": "With a non-custodial wallet, you own your funds outright — not a company, not a bank. Defied partners with Privy to create a secure wallet tied to your email address. You don't need to manage a private key manually, but you always have access to it. Defied cannot access, move, or freeze your funds under any circumstances.",
+    "q4": "Who controls my money?",
+    "a4": "You do. Only you. Defied and Privy have no ability to access or move your funds. If you wish, you can export your private key and use your wallet entirely independently of Defied at any time.",
+    "q5": "Can I withdraw at any time?",
+    "a5": "Yes, with no waiting period imposed by Defied. If you have deposited funds into a decentralized protocol, withdrawal terms depend on that protocol — most allow instant withdrawal, though some have waiting periods. We display this information clearly before you deposit.",
+    "q6": "Do I need to verify my identity?",
+    "a6": "To send and receive stablecoins directly, no verification is required. To convert euros or dollars from your bank account into stablecoins (on-ramp) or back (off-ramp), identity verification is required by our regulated partner Bridge.xyz. This takes under two minutes and is required by EU financial regulations.",
+    "q7": "What are the risks?",
+    "a7": "There are two main risk categories. First, if someone gains access to your email account, they could gain access to your wallet — we strongly recommend enabling two-factor authentication. Second, decentralized protocols carry smart contract risk — the possibility of a bug or exploit. Defied only features protocols with extensive audit histories, but we cannot guarantee against future incidents. Funds are not protected by any deposit guarantee scheme. Please read our full risk disclosure before depositing.",
+    "q8": "Are my funds covered by the Deposit Guarantee Fund?",
+    "a8": "No. Defied is a software interface for accessing decentralized protocols, not a bank or regulated financial institution. Funds held in your wallet or deposited in DeFi protocols are not covered by any national deposit guarantee scheme.",
+    "q9": "What platforms does Defied support?",
+    "a9": "Defied is currently available as a web application, optimized for both desktop and mobile browsers. Native iOS and Android apps are in development."
   },
   "earn": {
     "apr": "APR",
@@ -187,9 +186,9 @@
     "notFound": "Article not found"
   },
   "meta": {
-    "defaultTitle": "Defied | A stablecoin wallet with DeFi superpowers",
-    "homeTitle": "A stablecoin wallet with DeFi superpowers",
-    "homeDescription": "Move your money freely and securely using stablecoins. Send, receive, and exchange in seconds. Access DeFi with one click.",
+    "defaultTitle": "Defied — Earn on Your Euros. Send Money Globally. No Bank Needed.",
+    "homeTitle": "Earn on Your Euros. Send Money Globally. No Bank Needed.",
+    "homeDescription": "Defied lets you earn up to 4% APY on your euro balance, send money anywhere in seconds, and pay with a virtual card — from a wallet only you control. Available in the EU.",
     "aboutTitle": "About us",
     "aboutDescription": "Defied provides non-custodial infrastructure for easy access to decentralized finance. The first crypto savings product in Bulgaria.",
     "blogTitle": "Blog",
@@ -211,7 +210,7 @@
     "terms": "Terms of use",
     "privacy": "Privacy policy",
     "address": "81B Bulgaria Blvd, Sofia, Bulgaria",
-    "disclaimer": "This site is operated by Fusion Software LLC (\"Defied\"). Defied does not provide investment, legal, or tax advice and the information on this site should not be considered as research, investment advice, or a recommendation of any kind. The materials on this site are provided for informational and educational purposes only. Testimonials, statements, and opinions presented here pertain to the individuals depicted. Individual experience and past results do not guarantee future outcomes. Investing in digital assets involves significant risk and may result in total loss. Users should conduct their own due diligence. Nothing on this site constitutes or should be construed as an offer or invitation to make an offer for investment in digital assets. Services are available only where permitted and may be restricted in some jurisdictions. By accessing this site you agree to our Terms of Use and Privacy Policy.",
+    "disclaimer": "Defied is operated by Fusion Software LLC. Defied is a non-custodial software interface providing access to public, permissionless blockchain protocols. Defied does not provide investment, financial, legal, or tax advice. Accessing decentralized finance protocols involves significant risk, including the potential loss of funds. Variable yields referenced on this site reflect current third-party protocol rates and are not guaranteed returns. Nothing on this site constitutes an offer, solicitation, or recommendation to acquire any financial product or service. Fiat on-ramp and off-ramp services are provided by Bridge.xyz. Virtual card services are provided by Gnosis Pay. Defied does not hold, manage, or have access to user funds at any time. Services may not be available in all jurisdictions.",
     "copyright": "© Fusion Software LLC. All rights reserved."
   }
 }
