@@ -15,7 +15,6 @@ import { useLanguage } from '@/context/LanguageContext';
 
 const languages = [
   { code: 'en' as const, label: 'English', region: 'Global' },
-  { code: 'bg' as const, label: 'Български', region: 'България' },
 ];
 
 export function Header() {

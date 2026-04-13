@@ -8,10 +8,11 @@ import { Chip } from '@coinbase/cds-web/chips/Chip';
 import { useArticles } from '@/data/useArticles';
 import { useLanguage } from '@/context/LanguageContext';
 
-const allLabelMap = { bg: 'Всички', en: 'All' };
+const allLabelMap: Record<string, string> = { en: 'All' };
 
-const monthsBg = ['Яну', 'Фев', 'Мар', 'Апр', 'Май', 'Юни', 'Юли', 'Авг', 'Сеп', 'Окт', 'Ное', 'Дек'];
-const monthsEn = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const monthsMap: Record<string, string[]> = {
+  en: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+};
 
 export function ResourcesPage() {
   const { t, lang } = useLanguage();
@@ -27,7 +28,7 @@ export function ResourcesPage() {
 
   function formatDate(dateStr: string) {
     const d = new Date(dateStr);
-    const months = lang === 'en' ? monthsEn : monthsBg;
+    const months = monthsMap[lang] ?? monthsMap.en;
     return `${d.getFullYear()} ${months[d.getMonth()]} ${d.getDate()}`;
   }
 

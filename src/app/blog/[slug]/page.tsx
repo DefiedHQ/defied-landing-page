@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { ArticlePage } from '@/components/ArticlePage';
-import articles from '@/data/articles.json';
+import articles from '@/data/articles-en.json';
 
 type Props = { params: Promise<{ slug: string }> };
 
