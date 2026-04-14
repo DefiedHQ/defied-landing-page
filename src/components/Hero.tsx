@@ -38,6 +38,7 @@ export function InfoSection() {
           fontSize: 'clamp(2rem, 4vw, 3.25rem)',
           fontWeight: 500,
           maxWidth: '720px',
+          textAlign: 'center',
           marginBottom: '56px',
         }}
       >
