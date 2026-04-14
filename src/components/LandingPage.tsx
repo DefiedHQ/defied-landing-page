@@ -146,7 +146,7 @@ export function LandingPage() {
               </m.div>
               <m.div {...slideInRight} style={{ flex: 1 }}>
                 <div className="cta-text-column" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                  <Text font="display2" as="h3" className="title-tight-lh" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', fontWeight: 500, color: '#fff' }}>
+                  <Text font="display2" as="h3" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', fontWeight: 500, lineHeight: 1.3, color: '#fff' }}>
                     {t('imageSection.title')}
                   </Text>
                   <Text font="body" as="p" style={{ fontSize: '18px', lineHeight: '28px', color: 'rgba(255, 255, 255, 0.7)' }}>
