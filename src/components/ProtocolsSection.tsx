@@ -31,11 +31,11 @@ export function ProtocolsSection() {
           gap: 'clamp(40px, 6vh, 72px)',
         }}
       >
-        <div>
-          <Text font="display2" as="h2" display="block" className="section-title" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, maxWidth: '600px', marginBottom: '16px' }}>
+        <div className="section-title" style={{ maxWidth: '600px' }}>
+          <Text font="display2" as="h2" display="block" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, marginBottom: '16px' }}>
             {t('protocolsSection.title')}
           </Text>
-          <Text font="body" as="p" color="fgMuted" className="section-title" style={{ maxWidth: '600px', fontSize: '16px', lineHeight: '24px' }}>
+          <Text font="body" as="p" color="fgMuted" style={{ fontSize: '16px', lineHeight: '24px' }}>
             {t('protocolsSection.subtitle')}
           </Text>
         </div>
