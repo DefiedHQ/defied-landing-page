@@ -196,6 +196,7 @@ export function Header() {
             style={{ borderRadius: '56px', minWidth: '100px', padding: '0 24px', height: '44px' }}
           >
             <AnimatedButtonText>{t('hero.ctaMain')}</AnimatedButtonText>
+            <Icon name="arrowRight" size="s" color="inverse" accessibilityLabel="" />
           </Button>
         </HStack>
       </HStack>
