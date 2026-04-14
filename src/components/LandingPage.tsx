@@ -99,7 +99,7 @@ export function LandingPage() {
               color="fgMuted"
               style={{ maxWidth: '640px', fontSize: '18px', lineHeight: '28px', textAlign: 'center' }}
             >
-              {t('hero.subtitle1')} {t('hero.subtitle2')} {t('hero.subtitle3')}<sup>1</sup>
+              {t('hero.subtitle1')} {t('hero.subtitle2')} {t('hero.subtitle3')}<sup style={{ fontSize: '0.6em' }}>1</sup>
             </Text>
             <Box as="div" style={{ marginTop: '32px' }}>
             <Button
