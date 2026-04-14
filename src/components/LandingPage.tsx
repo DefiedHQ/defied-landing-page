@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect } from 'react';
-import Image from 'next/image';
 import { m } from 'framer-motion';
 import { Box } from '@coinbase/cds-web/layout/Box';
 import { VStack } from '@coinbase/cds-web/layout/VStack';
@@ -68,7 +67,7 @@ export function LandingPage() {
       }}
     >
       {/* Section 1: Hero */}
-      <section className="section-padding">
+      <section className="section-padding" style={{ minHeight: 'calc(100vh - 64px)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <VStack
           as="div"
           style={{
@@ -77,7 +76,6 @@ export function LandingPage() {
             margin: '0 auto',
             width: '100%',
             textAlign: 'center',
-            paddingTop: 'clamp(64px, 10vw, 128px)',
           }}
         >
           <m.div
@@ -85,7 +83,7 @@ export function LandingPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
           >
-            <Text font="display1" as="h1" className="title-tight-lh" style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', fontWeight: 500, letterSpacing: '-0.02em', textAlign: 'center' }}>
+            <Text font="display1" as="h1" className="title-tight-lh" style={{ fontSize: 'clamp(2.25rem, 6vw, 4.5rem)', fontWeight: 500, letterSpacing: '-0.02em', textAlign: 'center' }}>
               {t('hero.title')}
             </Text>
           </m.div>
@@ -101,7 +99,7 @@ export function LandingPage() {
               color="fgMuted"
               style={{ maxWidth: '640px', fontSize: '18px', lineHeight: '28px', textAlign: 'center' }}
             >
-              {t('hero.subtitle1')} {t('hero.subtitle2')} {t('hero.subtitle3')}
+              {t('hero.subtitle1')} {t('hero.subtitle2')} {t('hero.subtitle3')}<sup style={{ fontSize: '0.6em' }}>1</sup>
             </Text>
             <Box as="div" style={{ marginTop: '32px' }}>
             <Button
@@ -124,29 +122,13 @@ export function LandingPage() {
           </Box>
           </m.div>
 
-          {/* Hero image */}
-          <m.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5, ease: 'easeOut' }}
-            style={{ width: '100%', maxWidth: '900px' }}
-          >
-            <Image
-              src="/hero_landing.png"
-              alt="Defied app"
-              width={900}
-              height={600}
-              priority
-              style={{ width: '100%', height: 'auto', borderRadius: '32px' }}
-            />
-          </m.div>
         </VStack>
       </section>
 
       {/* Section: Mission */}
       <section id="mission" className="section-padding" style={{ paddingTop: 'clamp(48px, 8vw, 100px)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
-          <Text font="display2" as="h2" className="section-title" display="block" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, marginBottom: '56px' }}>
+          <Text font="display2" as="h2" display="block" className="section-title" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, maxWidth: '720px', marginBottom: '56px' }}>
             {t('imageSection.sectionTitle')}
           </Text>
           <m.div {...slideInUp}>
@@ -164,11 +146,11 @@ export function LandingPage() {
               </m.div>
               <m.div {...slideInRight} style={{ flex: 1 }}>
                 <div className="cta-text-column" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                  <Text font="display2" as="h3" className="title-tight-lh" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', fontWeight: 500, color: '#fff' }}>
+                  <Text font="display2" as="h3" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', fontWeight: 500, lineHeight: 1.05, color: '#fff' }}>
                     {t('imageSection.title')}
                   </Text>
                   <Text font="body" as="p" style={{ fontSize: '18px', lineHeight: '28px', color: 'rgba(255, 255, 255, 0.7)' }}>
-                    {t('imageSection.heading')}
+                    {t('imageSection.body1')}
                   </Text>
                 </div>
               </m.div>
@@ -180,7 +162,7 @@ export function LandingPage() {
       {/* Section: Features (Какво прави) */}
       <section id="what-it-does" className="section-padding" style={{ paddingTop: 'clamp(100px, 12vw, 160px)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
-          <Text font="display2" as="h2" className="section-title" display="block" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, marginBottom: '56px' }}>
+          <Text font="display2" as="h2" display="block" className="section-title" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, maxWidth: '720px', marginBottom: '56px' }}>
             {t('features.sectionTitle')}
           </Text>
           <m.div
@@ -197,8 +179,8 @@ export function LandingPage() {
             <div className="hero-features-grid-4">
               {[
                 { name: 'realToUSDC' as const, title: t('features.f1Title'), desc: t('features.f1Desc') },
-                { name: 'usdtToUSDC' as const, title: t('features.f2Title'), desc: t('features.f2Desc') },
-                { name: 'earnMore' as const, title: t('features.f4Title'), desc: t('features.f4Desc') },
+                { name: 'earnMore' as const, title: t('features.f2Title'), desc: t('features.f2Desc') },
+                { name: 'usdtToUSDC' as const, title: t('features.f3Title'), desc: t('features.f3Desc') },
                 { name: 'cardAndPhone' as const, title: t('features.f5Title'), desc: t('features.f5Desc') },
               ].map((feature, i) => (
                 <div key={feature.name} className="hero-feature-item">
@@ -213,7 +195,7 @@ export function LandingPage() {
                       <HeroSquare name={feature.name} scaleMultiplier={1.1} />
                     </div>
                     <Text font="headline" as="h3" style={{ fontWeight: 600, marginTop: '16px', color: '#FFFFFF' }}>{feature.title}</Text>
-                    <Text font="body" as="p" title={feature.desc} style={{ maxWidth: '240px', marginTop: '8px', textAlign: 'center', color: 'rgba(255, 255, 255, 0.7)', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{feature.desc}</Text>
+                    <Text font="body" as="p" style={{ maxWidth: '280px', marginTop: '8px', textAlign: 'center', color: 'rgba(255, 255, 255, 0.7)', fontSize: '14px', lineHeight: '20px' }}>{feature.desc}</Text>
                   </m.div>
                 </div>
               ))}
@@ -235,7 +217,7 @@ export function LandingPage() {
       {/* Section 3: Advantages */}
       <section id="advantages" className="section-padding" style={{ paddingBottom: 'clamp(48px, 8vw, 100px)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
-          <Text font="display2" as="h2" className="section-title" display="block" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, marginBottom: '56px' }}>
+          <Text font="display2" as="h2" display="block" className="section-title" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, maxWidth: '720px', marginBottom: '56px' }}>
             {t('advantages.title')}
           </Text>
           <m.div {...slideInLeft}>

@@ -8,6 +8,7 @@ import { Header } from '@/components/Header';
 import { ConditionalFooter } from '@/components/ConditionalFooter';
 import { MainWrapper } from '@/components/MainWrapper';
 import { LanguageProvider } from '@/context/LanguageContext';
+import { siteConfig } from '@/lib/seo';
 
 import './globals.css';
 import '@coinbase/cds-icons/fonts/web/icon-font.css';
@@ -32,39 +33,47 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://defied.money'),
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: 'Defied | A stablecoin wallet with DeFi superpowers',
+    default: 'Defied - Earn on Your Euros. Send Money Globally. No Bank Needed.',
     template: '%s | Defied',
   },
-  description:
-    'Move your money freely and securely using stablecoins. Send, receive, and exchange in seconds. Access DeFi with one click.',
+  description: siteConfig.description,
   keywords: [
+    'earn on euros',
+    'stablecoin wallet europe',
+    'send money instantly EU',
+    'DeFi for beginners',
+    'USDC EURC wallet',
+    'non-custodial wallet email login',
     'stablecoin wallet',
     'DeFi',
     'decentralized finance',
     'USDC',
     'EURC',
     'crypto wallet',
-    'stablecoins',
-    'non-custodial wallet',
     'Base network',
     'yield',
     'lending',
+    'euro savings crypto',
+    'virtual debit card crypto',
   ],
-  icons: { icon: '/favicon.svg' },
+  icons: {
+    icon: '/favicon.svg',
+    apple: '/og-image.png',
+  },
+  manifest: '/manifest.webmanifest',
   openGraph: {
-    title: 'Defied | A stablecoin wallet with DeFi superpowers',
-    description:
-      'Move your money freely and securely using stablecoins. Send, receive, and exchange in seconds. Access DeFi with one click.',
-    siteName: 'Defied',
-    url: 'https://defied.money',
+    title: 'Defied - Earn on Your Euros. Send Money Globally. No Bank Needed.',
+    description: siteConfig.description,
+    siteName: siteConfig.name,
+    url: siteConfig.url,
     images: [
       {
-        url: '/og-image.png',
+        url: siteConfig.ogImage,
         width: 1200,
         height: 630,
-        alt: 'Defied – A stablecoin wallet with DeFi superpowers',
+        alt: 'Defied - Earn on Your Euros. Send Money Globally. No Bank Needed.',
       },
     ],
     type: 'website',
@@ -72,12 +81,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@defied_money',
-    creator: '@defied_money',
-    title: 'Defied | A stablecoin wallet with DeFi superpowers',
-    description:
-      'Move your money freely and securely using stablecoins. Send, receive, and exchange in seconds. Access DeFi with one click.',
-    images: ['/og-image.png'],
+    site: siteConfig.twitter,
+    creator: siteConfig.twitter,
+    title: 'Defied - Earn on Your Euros. Send Money Globally. No Bank Needed.',
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
   },
   robots: {
     index: true,
@@ -91,7 +99,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://defied.money',
+    canonical: '/',
   },
 };
 

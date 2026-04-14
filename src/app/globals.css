@@ -280,6 +280,7 @@ input[type="number"]::-webkit-inner-spin-button {
   .hero-features-grid-4 {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: start;
   }
 }
 
@@ -317,11 +318,11 @@ input[type="number"]::-webkit-inner-spin-button {
    Responsive typography
    ═══════════════════════════════════════════════════════════════ */
 
-/* Section titles — center on mobile */
-@media (max-width: 767px) {
-  .section-title {
-    text-align: center !important;
-  }
+/* Section titles — centered */
+.section-title {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Hero & section titles — tighter line-height on small screens only */

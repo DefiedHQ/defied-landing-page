@@ -31,9 +31,14 @@ export function ProtocolsSection() {
           gap: 'clamp(40px, 6vh, 72px)',
         }}
       >
-        <Text font="display2" as="h2" className="section-title" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 500, maxWidth: '520px' }}>
-          {t('protocolsSection.title')}
-        </Text>
+        <div className="section-title" style={{ maxWidth: '720px' }}>
+          <Text font="display2" as="h2" display="block" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, textAlign: 'center', marginBottom: '16px' }}>
+            {t('protocolsSection.title')}
+          </Text>
+          <Text font="body" as="p" color="fgMuted" style={{ fontSize: '16px', lineHeight: '24px', textAlign: 'center' }}>
+            {t('protocolsSection.subtitle')}
+          </Text>
+        </div>
 
         <Box
           as="div"

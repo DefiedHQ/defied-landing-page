@@ -22,8 +22,6 @@ export function InfoSection() {
     { question: t('faq.q7'), answer: t('faq.a7') },
     { question: t('faq.q8'), answer: t('faq.a8') },
     { question: t('faq.q9'), answer: t('faq.a9') },
-    { question: t('faq.q10'), answer: t('faq.a10') },
-    { question: t('faq.q11'), answer: t('faq.a11') },
   ];
 
   const handleToggle = (key: string | null) => {
@@ -32,19 +30,18 @@ export function InfoSection() {
 
   return (
     <section style={{ width: '100%', maxWidth: '1200px', margin: '0 auto' }}>
-      <Text
-        font="display2"
-        as="h2"
-        display="block"
-        className="section-title"
-        style={{
-          fontSize: 'clamp(2rem, 4vw, 3.25rem)',
-          fontWeight: 500,
-          marginBottom: '56px',
-        }}
-      >
-        {t('faq.title')}
-      </Text>
+      <div style={{ maxWidth: '720px', margin: '0 auto 56px', textAlign: 'center' }}>
+        <Text
+          font="display2"
+          as="h2"
+          style={{
+            fontSize: 'clamp(2rem, 4vw, 3.25rem)',
+            fontWeight: 500,
+          }}
+        >
+          {t('faq.title')}
+        </Text>
+      </div>
 
       <div className="faq-accordion" style={{ marginTop: '40px' }}>
       <Accordion

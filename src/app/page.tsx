@@ -1,80 +1,92 @@
 import type { Metadata } from 'next';
 import { LandingPage } from '@/components/LandingPage';
 import { JsonLd } from '@/components/seo/JsonLd';
+import { siteConfig, absoluteUrl } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'A stablecoin wallet with DeFi superpowers',
-  description:
-    'Move your money freely and securely using stablecoins. Send, receive, and exchange in seconds. Access DeFi with one click.',
+  title: 'Earn on Your Euros. Send Money Globally. No Bank Needed.',
+  description: siteConfig.description,
   openGraph: {
-    title: 'Defied | A stablecoin wallet with DeFi superpowers',
-    description:
-      'Move your money freely and securely using stablecoins. Send, receive, and exchange in seconds. Access DeFi with one click.',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Defied' }],
+    title: 'Defied - Earn on Your Euros. Send Money Globally. No Bank Needed.',
+    description: siteConfig.description,
+    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: 'Defied' }],
   },
   alternates: {
-    canonical: 'https://defied.money',
+    canonical: '/',
   },
 };
 
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'Defied',
-  url: 'https://defied.money',
-  description:
-    'Move your money freely and securely using stablecoins. Send, receive, and exchange in seconds. Access DeFi with one click.',
+  name: siteConfig.name,
+  url: siteConfig.url,
+  description: siteConfig.description,
   inLanguage: 'en',
   publisher: {
     '@type': 'Organization',
-    name: 'Defied',
+    name: siteConfig.name,
+  },
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: `${siteConfig.url}/blog?q={search_term_string}`,
+    },
+    'query-input': 'required name=search_term_string',
   },
 };
 
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'Defied',
-  url: 'https://defied.money',
+  name: siteConfig.name,
+  legalName: 'Fusion Software LLC',
+  url: siteConfig.url,
   logo: {
     '@type': 'ImageObject',
-    url: 'https://defied.money/defied_squared_logo_blue.svg',
+    url: absoluteUrl(siteConfig.logo),
   },
-  sameAs: [
-    'https://x.com/defied_money',
-    'https://linkedin.com/company/defied-money',
-    'https://instagram.com/defied_money',
-  ],
+  image: absoluteUrl(siteConfig.ogImage),
+  sameAs: [...siteConfig.socials],
   contactPoint: {
     '@type': 'ContactPoint',
-    email: 'hello@defied.money',
-    telephone: '+359884627762',
+    email: siteConfig.contact.email,
+    telephone: siteConfig.contact.telephone,
     contactType: 'customer service',
+  },
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '81B Bulgaria Blvd',
+    addressLocality: 'Sofia',
+    addressCountry: 'BG',
   },
 };
 
 const webAppSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
-  name: 'Defied',
-  url: 'https://app.defied.money',
+  name: siteConfig.name,
+  url: siteConfig.appUrl,
   description:
-    'A stablecoin wallet with DeFi superpowers. Send, receive, exchange stablecoins and access decentralized finance.',
+    'Earn up to 4% APY on your euro balance, send money anywhere in seconds, and pay with a virtual card - from a non-custodial wallet only you control.',
   applicationCategory: 'FinanceApplication',
   operatingSystem: 'Any',
   browserRequirements: 'Requires JavaScript',
   offers: {
     '@type': 'Offer',
     price: '0',
-    priceCurrency: 'USD',
+    priceCurrency: 'EUR',
   },
   featureList: [
-    'Send and receive USDC and EURC stablecoins',
-    'Exchange stablecoins in seconds',
-    'Access decentralized finance protocols',
-    'Non-custodial wallet with full self-custody',
-    'Sponsored transactions',
+    'Send and receive USDC and EURC stablecoins globally in seconds',
+    'Earn up to 4% APY through decentralized lending protocols',
+    'Exchange between USDC and EURC instantly',
+    'Virtual debit card to spend stablecoin balance anywhere Visa is accepted',
+    'Non-custodial wallet with full self-custody via email login',
+    'Sponsored gas-free transactions',
   ],
+  screenshot: absoluteUrl(siteConfig.ogImage),
 };
 
 const faqSchema = {
@@ -86,7 +98,7 @@ const faqSchema = {
       name: 'What is Defied?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Defied is a digital stablecoin wallet that allows you to exchange, send, and receive USDC and EURC stablecoins via the Base network. Defied also provides a user interface for connecting to decentralized finance, where users can participate in decentralized lending, staking, and liquidity provision.',
+        text: 'Defied is a non-custodial stablecoin wallet that lets you send, receive, and exchange USDC and EURC on the Base network. It also provides a simple interface for accessing decentralized finance protocols - including lending, staking, and liquidity provision - without requiring any technical knowledge.',
       },
     },
     {
@@ -94,7 +106,7 @@ const faqSchema = {
       name: 'What is a stablecoin?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Stablecoins are pegged to reserves of physical assets (fiat currency, gold) or algorithms, which keeps their value constant. With 1:1 fiat-backed stablecoins, the risk of drastic value loss is minimal as they are backed by real reserves.',
+        text: "A stablecoin is a digital currency pegged to a real-world asset - in our case, the euro (EURC) or US dollar (USDC). Unlike bitcoin or ether, their value doesn't fluctuate wildly. You can send them globally, instantly, at any time of day - including weekends. They're backed 1:1 by real currency reserves held by regulated issuers.",
       },
     },
     {
@@ -102,39 +114,39 @@ const faqSchema = {
       name: 'What is a non-custodial wallet?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'With a non-custodial wallet, you own your private keys and recovery phrase, meaning assets are entirely under your control, not a third party or exchange.',
+        text: "With a non-custodial wallet, you own your funds outright - not a company, not a bank. Defied partners with Privy to create a secure wallet tied to your email address. You don't need to manage a private key manually, but you always have access to it. Defied cannot access, move, or freeze your funds under any circumstances.",
       },
     },
     {
       '@type': 'Question',
-      name: 'Who controls my funds?',
+      name: 'Who controls my money?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Only you. Neither Defied nor Privy have access to them. We cannot withdraw or transfer them.',
+        text: 'You do. Only you. Defied and Privy have no ability to access or move your funds. If you wish, you can export your private key and use your wallet entirely independently of Defied at any time.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Can I withdraw my money at any time?',
+      name: 'Can I withdraw at any time?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes, there is no waiting period imposed by us. If you have deposited funds into a decentralized finance protocol, it depends on the protocol. Most allow instant withdrawal.',
+        text: 'Yes, with no waiting period imposed by Defied. If you have deposited funds into a decentralized protocol, withdrawal terms depend on that protocol - most allow instant withdrawal, though some have waiting periods. We display this information clearly before you deposit.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Is there risk in using Defied?',
+      name: 'Do I need to verify my identity?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The risks fall into two categories. If someone gains access to your email, they could gain access to your digital wallet. Decentralized finance also carries the risk of hacking attacks. Defied only features thoroughly tested protocols that have never been hacked, but we cannot guarantee this won\'t happen.',
+        text: 'To send and receive stablecoins directly, no verification is required. To convert euros or dollars from your bank account into stablecoins (on-ramp) or back (off-ramp), identity verification is required by our regulated partner Bridge.xyz. This takes under two minutes and is required by EU financial regulations.',
       },
     },
     {
       '@type': 'Question',
-      name: 'What platforms does Defied support?',
+      name: 'What are the risks?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Currently, Defied is available as a web application that can be used on both laptops and mobile phones. We are planning to release a mobile version for iOS and Android soon.',
+        text: 'There are two main risk categories. First, if someone gains access to your email account, they could gain access to your wallet - we strongly recommend enabling two-factor authentication. Second, decentralized protocols carry smart contract risk - the possibility of a bug or exploit. Defied only features protocols with extensive audit histories, but we cannot guarantee against future incidents. Funds are not protected by any deposit guarantee scheme. Please read our full risk disclosure before depositing.',
       },
     },
   ],

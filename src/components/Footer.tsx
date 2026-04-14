@@ -75,6 +75,11 @@ export function Footer() {
           {t('footer.disclaimer')}
         </Text>
 
+        {/* Footnote */}
+        <Text font="legal" as="p" color="fgMuted" style={{ marginBottom: '16px' }}>
+          <sup style={{ fontSize: '0.6em' }}>1</sup> {t('hero.disclaimer')}
+        </Text>
+
         {/* Copyright */}
         <Text font="legal" as="p" color="fgMuted">
           {t('footer.copyright')}
