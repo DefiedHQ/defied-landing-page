@@ -195,7 +195,7 @@ export function Header() {
             className="btn-fw-500"
             style={{ borderRadius: '56px', minWidth: '100px', padding: '0 24px', height: '44px' }}
           >
-            <AnimatedButtonText>{t('hero.ctaMain')}</AnimatedButtonText>
+            <AnimatedButtonText>{t('hero.ctaHeader')}</AnimatedButtonText>
           </Button>
         </HStack>
       </HStack>
