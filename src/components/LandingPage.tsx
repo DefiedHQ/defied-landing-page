@@ -68,7 +68,7 @@ export function LandingPage() {
       }}
     >
       {/* Section 1: Hero */}
-      <section className="section-padding" style={{ minHeight: 'calc(100vh - 64px)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <section className="section-padding" style={{ height: 'calc(100vh - 64px)', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
         <VStack
           as="div"
           style={{
@@ -77,6 +77,9 @@ export function LandingPage() {
             margin: '0 auto',
             width: '100%',
             textAlign: 'center',
+            flex: 1,
+            justifyContent: 'center',
+            paddingTop: 'clamp(48px, 8vw, 120px)',
           }}
         >
           <m.div
@@ -122,24 +125,24 @@ export function LandingPage() {
             </Button>
           </Box>
           </m.div>
-
-          {/* Hero image */}
-          <m.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5, ease: 'easeOut' }}
-            style={{ width: '100%', maxWidth: '900px' }}
-          >
-            <Image
-              src="/hero_landing.png"
-              alt="Defied Money App"
-              width={900}
-              height={600}
-              priority
-              style={{ width: '100%', height: 'auto', borderRadius: '32px' }}
-            />
-          </m.div>
         </VStack>
+
+        {/* Hero image — bottom aligned to viewport edge */}
+        <m.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5, ease: 'easeOut' }}
+          style={{ width: '100%', maxWidth: '900px', margin: '0 auto', flexShrink: 0 }}
+        >
+          <Image
+            src="/hero_landing.png"
+            alt="Defied Money App"
+            width={900}
+            height={600}
+            priority
+            style={{ width: '100%', height: 'auto', borderRadius: '32px', display: 'block' }}
+          />
+        </m.div>
       </section>
 
       {/* Section: Mission */}
