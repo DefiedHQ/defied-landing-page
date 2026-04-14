@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: article.excerpt,
       url: articleUrl,
       siteName: siteConfig.name,
-      images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: article.title }],
+      images: [{ url: article.image || siteConfig.ogImage, width: 1200, height: 630, alt: article.title }],
       type: 'article',
       publishedTime: `${article.date}T00:00:00+00:00`,
       modifiedTime: `${article.date}T00:00:00+00:00`,
@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       creator: siteConfig.twitter,
       title: `${article.title} | Defied`,
       description: article.excerpt,
-      images: [siteConfig.ogImage],
+      images: [article.image || siteConfig.ogImage],
     },
     alternates: {
       canonical: `/blog/${slug}`,
@@ -58,7 +58,7 @@ export default async function ArticleRoute({ params }: Props) {
               '@type': 'Article',
               headline: article.title,
               description: article.excerpt,
-              image: absoluteUrl(siteConfig.ogImage),
+              image: absoluteUrl(article.image || siteConfig.ogImage),
               datePublished: `${article.date}T00:00:00+00:00`,
               dateModified: `${article.date}T00:00:00+00:00`,
               author: {

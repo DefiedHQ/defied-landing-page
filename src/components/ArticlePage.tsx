@@ -112,7 +112,7 @@ export function ArticlePage() {
           <article style={{ minWidth: 0 }}>
             {/* Hero image placeholder */}
             <div style={{ marginBottom: '40px', height: 'clamp(250px, 30vw, 400px)', maxWidth: '100%', overflow: 'hidden', borderRadius: '56px' }}>
-              <img src="/article-cover.svg" alt={article.title} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img src={article.image || '/article-cover.svg'} alt={article.title} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
 
             {/* Article body */}
