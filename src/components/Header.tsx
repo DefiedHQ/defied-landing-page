@@ -192,8 +192,6 @@ export function Header() {
             rel="noopener noreferrer"
             variant="primary"
             compact
-            endIcon="arrowRight"
-            endIconActive
             className="btn-fw-500"
             style={{ borderRadius: '56px', minWidth: '100px', padding: '0 24px', height: '44px' }}
           >
