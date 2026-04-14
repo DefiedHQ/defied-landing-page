@@ -6,21 +6,21 @@ import { siteConfig, absoluteUrl } from '@/lib/seo';
 export const metadata: Metadata = {
   title: 'About us',
   description:
-    'Defied provides non-custodial infrastructure for easy access to decentralized finance. The first crypto savings product in Bulgaria.',
+    'Defied Money App provides non-custodial infrastructure for easy access to decentralized finance. The first crypto savings product in Bulgaria.',
   openGraph: {
-    title: 'About us | Defied',
+    title: 'About us | Defied Money App',
     description:
-      'Defied provides non-custodial infrastructure for easy access to decentralized finance.',
+      'Defied Money App provides non-custodial infrastructure for easy access to decentralized finance.',
     url: absoluteUrl('/about'),
     siteName: siteConfig.name,
-    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: 'About Defied' }],
+    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: 'About Defied Money App' }],
   },
   twitter: {
     card: 'summary_large_image',
     site: siteConfig.twitter,
-    title: 'About us | Defied',
+    title: 'About us | Defied Money App',
     description:
-      'Defied provides non-custodial infrastructure for easy access to decentralized finance.',
+      'Defied Money App provides non-custodial infrastructure for easy access to decentralized finance.',
     images: [siteConfig.ogImage],
   },
   alternates: {
@@ -35,9 +35,9 @@ export default function Page() {
         data={{
           '@context': 'https://schema.org',
           '@type': 'AboutPage',
-          name: 'About Defied',
+          name: 'About Defied Money App',
           description:
-            'Defied provides non-custodial infrastructure for easy access to decentralized finance. The first crypto savings product in Bulgaria.',
+            'Defied Money App provides non-custodial infrastructure for easy access to decentralized finance. The first crypto savings product in Bulgaria.',
           url: absoluteUrl('/about'),
           isPartOf: {
             '@type': 'WebSite',
@@ -53,7 +53,7 @@ export default function Page() {
               url: absoluteUrl(siteConfig.logo),
             },
             description:
-              'Defied provides non-custodial infrastructure for easy access to decentralized finance.',
+              'Defied Money App provides non-custodial infrastructure for easy access to decentralized finance.',
             foundingLocation: {
               '@type': 'Place',
               address: siteConfig.address,

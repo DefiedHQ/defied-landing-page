@@ -1,6 +1,6 @@
-# Defied Landing Page
+# Defied Money App Landing Page
 
-Next.js 16 landing page for Defied — a stablecoin wallet with DeFi superpowers. Uses the Coinbase Design System (`@coinbase/cds-web`) as the primary component library.
+Next.js 16 landing page for Defied Money App — a stablecoin wallet with DeFi superpowers. Uses the Coinbase Design System (`@coinbase/cds-web`) as the primary component library.
 
 ## Responsiveness
 - Always ensure changes look good on mobile and tablet breakpoints, not just desktop.

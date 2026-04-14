@@ -54,10 +54,10 @@ export function ArticlePage() {
 
         {/* Meta */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '32px' }}>
-          <img src="/defied_squared_logo_blue.svg" width={40} height={40} alt="Defied" />
+          <img src="/defied_squared_logo_blue.svg" width={40} height={40} alt="Defied Money App" />
           <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
             <Text font="label2" as="div" color="fgMuted">
-              {t('common.by')} <Text font="label2" as="span" style={{ color: '#6b7280' }}>Defied</Text>
+              {t('common.by')} <Text font="label2" as="span" style={{ color: '#6b7280' }}>Defied Money App</Text>
             </Text>
             <Text font="label2" as="div" color="fgMuted">
               {formatDate(article.date)} &middot; {article.readTime} {t('common.minRead')}

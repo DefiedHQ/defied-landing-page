@@ -7,21 +7,21 @@ import { siteConfig, absoluteUrl } from '@/lib/seo';
 export const metadata: Metadata = {
   title: 'Blog',
   description:
-    'Articles, guides, and news about DeFi, blockchain, and decentralized finance from Defied.',
+    'Articles, guides, and news about DeFi, blockchain, and decentralized finance from Defied Money App.',
   openGraph: {
-    title: 'Blog | Defied',
+    title: 'Blog | Defied Money App',
     description:
-      'Articles, guides, and news about DeFi, blockchain, and decentralized finance from Defied.',
+      'Articles, guides, and news about DeFi, blockchain, and decentralized finance from Defied Money App.',
     url: absoluteUrl('/blog'),
     siteName: siteConfig.name,
-    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: 'Defied – Blog' }],
+    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: 'Defied Money App – Blog' }],
   },
   twitter: {
     card: 'summary_large_image',
     site: siteConfig.twitter,
-    title: 'Blog | Defied',
+    title: 'Blog | Defied Money App',
     description:
-      'Articles, guides, and news about DeFi, blockchain, and decentralized finance from Defied.',
+      'Articles, guides, and news about DeFi, blockchain, and decentralized finance from Defied Money App.',
     images: [siteConfig.ogImage],
   },
   alternates: {
@@ -36,9 +36,9 @@ export default function BlogRoute() {
         data={{
           '@context': 'https://schema.org',
           '@type': 'CollectionPage',
-          name: 'Defied Blog',
+          name: 'Defied Money App Blog',
           description:
-            'Articles, guides, and news about DeFi, blockchain, and decentralized finance from Defied.',
+            'Articles, guides, and news about DeFi, blockchain, and decentralized finance from Defied Money App.',
           url: absoluteUrl('/blog'),
           isPartOf: {
             '@type': 'WebSite',
