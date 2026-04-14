@@ -149,22 +149,6 @@ const faqSchema = {
         text: 'There are two main risk categories. First, if someone gains access to your email account, they could gain access to your wallet — we strongly recommend enabling two-factor authentication. Second, decentralized protocols carry smart contract risk — the possibility of a bug or exploit. Defied only features protocols with extensive audit histories, but we cannot guarantee against future incidents. Funds are not protected by any deposit guarantee scheme. Please read our full risk disclosure before depositing.',
       },
     },
-    {
-      '@type': 'Question',
-      name: 'Are my funds covered by the Deposit Guarantee Fund?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'No. Defied is a software interface for accessing decentralized protocols, not a bank or regulated financial institution. Funds held in your wallet or deposited in DeFi protocols are not covered by any national deposit guarantee scheme.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'What platforms does Defied support?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Defied is currently available as a web application, optimized for both desktop and mobile browsers. Native iOS and Android apps are in development.',
-      },
-    },
   ],
 };
 
