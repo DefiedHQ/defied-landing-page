@@ -192,10 +192,12 @@ export function Header() {
             rel="noopener noreferrer"
             variant="primary"
             compact
+            endIcon="arrowRight"
+            endIconActive
             className="btn-fw-500"
             style={{ borderRadius: '56px', minWidth: '100px', padding: '0 24px', height: '44px' }}
           >
-            <AnimatedButtonText><span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>{t('hero.ctaMain')}<Icon name="arrowRight" size="s" color="inverse" accessibilityLabel="" /></span></AnimatedButtonText>
+            <AnimatedButtonText>{t('hero.ctaMain')}</AnimatedButtonText>
           </Button>
         </HStack>
       </HStack>
