@@ -32,10 +32,10 @@ export function ProtocolsSection() {
         }}
       >
         <div className="section-title" style={{ maxWidth: '600px' }}>
-          <Text font="display1" as="h2" display="block" className="title-tight-lh" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 500, marginBottom: '16px' }}>
+          <Text font="display2" as="h2" display="block" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, marginBottom: '16px' }}>
             {t('protocolsSection.title')}
           </Text>
-          <Text font="body" as="p" color="fgMuted" style={{ fontSize: '18px', lineHeight: '28px' }}>
+          <Text font="body" as="p" color="fgMuted" style={{ fontSize: '16px', lineHeight: '24px' }}>
             {t('protocolsSection.subtitle')}
           </Text>
         </div>
