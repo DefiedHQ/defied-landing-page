@@ -70,7 +70,7 @@ export function ProtocolsSection() {
                     width={protocol.width}
                     height={protocol.height}
                     className="protocol-logo"
-                    style={{ filter: 'brightness(0)', display: 'block', objectFit: 'contain', height: 'auto' }}
+                    style={{ filter: 'brightness(0)', display: 'block', objectFit: 'contain', width: 'auto', height: 'auto', maxWidth: '100%' }}
                   />
                 </div>
               </m.div>
