@@ -49,9 +49,10 @@
     "subtitle": "Defied surfaces established, extensively audited protocols. We do not endorse any protocol as risk-free. Smart contract risk exists — please read our risk disclosure before depositing."
   },
   "imageSection": {
-    "sectionTitle": "Mission",
-    "title": "Our mission",
-    "heading": "We believe in everyone's right to access a transparent and secure financial system, without censorship."
+    "sectionTitle": "Our mission",
+    "title": "Financial tools this powerful shouldn't require a finance degree — or a bank's permission.",
+    "body1": "For most people, the global financial system is something that happens to them. Banks decide when you can access your money, how much you can move, and who you can send it to. The infrastructure exists for institutional players — not individuals.",
+    "body2": "We built Defied because we think that's worth fixing. Not with complexity, not with jargon — but with a simple app that puts genuinely powerful financial tools in your hands, directly, with no intermediary standing between you and your money."
   },
   "aboutCarousel": {
     "title": "Simpler than a bank account. More powerful than one.",
