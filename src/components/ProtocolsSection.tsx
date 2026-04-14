@@ -31,7 +31,7 @@ export function ProtocolsSection() {
           gap: 'clamp(40px, 6vh, 72px)',
         }}
       >
-        <Text font="display2" as="h2" className="section-title" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 500, maxWidth: '520px' }}>
+        <Text font="display2" as="h2" className="section-title" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, maxWidth: '600px' }}>
           {t('protocolsSection.title')}
         </Text>
 

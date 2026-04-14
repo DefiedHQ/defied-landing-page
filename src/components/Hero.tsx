@@ -33,11 +33,11 @@ export function InfoSection() {
       <Text
         font="display2"
         as="h2"
-        display="block"
         className="section-title"
         style={{
           fontSize: 'clamp(2rem, 4vw, 3.25rem)',
           fontWeight: 500,
+          maxWidth: '600px',
           marginBottom: '56px',
         }}
       >
