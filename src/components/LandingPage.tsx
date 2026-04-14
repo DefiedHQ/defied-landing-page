@@ -113,6 +113,7 @@ export function LandingPage() {
               rel="noopener noreferrer"
               variant="primary"
               block
+              endIcon="arrowRight"
               className="btn-fw-500"
               style={{
                 borderRadius: '56px',
