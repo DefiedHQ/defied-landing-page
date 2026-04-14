@@ -62,7 +62,7 @@ export function AboutPage() {
 
       {/* Logo + identity section */}
       <section className="section-padding" style={{ paddingTop: '100px', paddingBottom: '100px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
-        <Image src="/defied_squared_logo_blue.svg" width={80} height={80} alt="Defied Money App" priority style={{ marginBottom: '32px' }} />
+        <Image src="/defied_squared_logo_blue.svg" width={80} height={80} alt="Defied" priority style={{ marginBottom: '32px' }} />
         <Text font="display2" as="h2" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, maxWidth: '800px', textAlign: 'center' }}>
           {t('about.missionLight')}
         </Text>

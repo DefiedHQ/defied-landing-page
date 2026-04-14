@@ -7,9 +7,9 @@ export const metadata: Metadata = {
   title: 'Earn on Your Euros. Send Money Globally. No Bank Needed.',
   description: siteConfig.description,
   openGraph: {
-    title: 'Defied Money App - Earn on Your Euros. Send Money Globally. No Bank Needed.',
+    title: 'Defied - Earn on Your Euros. Send Money Globally. No Bank Needed.',
     description: siteConfig.description,
-    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: 'Defied Money App' }],
+    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: 'Defied' }],
   },
   alternates: {
     canonical: '/',
@@ -95,10 +95,10 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'What is Defied Money App?',
+      name: 'What is Defied?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Defied Money App is a non-custodial stablecoin wallet that lets you send, receive, and exchange USDC and EURC on the Base network. It also provides a simple interface for accessing decentralized finance protocols - including lending, staking, and liquidity provision - without requiring any technical knowledge.',
+        text: 'Defied is a non-custodial stablecoin wallet that lets you send, receive, and exchange USDC and EURC on the Base network. It also provides a simple interface for accessing decentralized finance protocols - including lending, staking, and liquidity provision - without requiring any technical knowledge.',
       },
     },
     {
@@ -114,7 +114,7 @@ const faqSchema = {
       name: 'What is a non-custodial wallet?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "With a non-custodial wallet, you own your funds outright - not a company, not a bank. Defied Money App partners with Privy to create a secure wallet tied to your email address. You don't need to manage a private key manually, but you always have access to it. Defied Money App cannot access, move, or freeze your funds under any circumstances.",
+        text: "With a non-custodial wallet, you own your funds outright - not a company, not a bank. Defied partners with Privy to create a secure wallet tied to your email address. You don't need to manage a private key manually, but you always have access to it. Defied cannot access, move, or freeze your funds under any circumstances.",
       },
     },
     {
@@ -122,7 +122,7 @@ const faqSchema = {
       name: 'Who controls my money?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'You do. Only you. Defied Money App and Privy have no ability to access or move your funds. If you wish, you can export your private key and use your wallet entirely independently of Defied Money App at any time.',
+        text: 'You do. Only you. Defied and Privy have no ability to access or move your funds. If you wish, you can export your private key and use your wallet entirely independently of Defied at any time.',
       },
     },
     {
@@ -130,7 +130,7 @@ const faqSchema = {
       name: 'Can I withdraw at any time?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes, with no waiting period imposed by Defied Money App. If you have deposited funds into a decentralized protocol, withdrawal terms depend on that protocol - most allow instant withdrawal, though some have waiting periods. We display this information clearly before you deposit.',
+        text: 'Yes, with no waiting period imposed by Defied. If you have deposited funds into a decentralized protocol, withdrawal terms depend on that protocol - most allow instant withdrawal, though some have waiting periods. We display this information clearly before you deposit.',
       },
     },
     {
@@ -146,7 +146,7 @@ const faqSchema = {
       name: 'What are the risks?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'There are two main risk categories. First, if someone gains access to your email account, they could gain access to your wallet - we strongly recommend enabling two-factor authentication. Second, decentralized protocols carry smart contract risk - the possibility of a bug or exploit. Defied Money App only features protocols with extensive audit histories, but we cannot guarantee against future incidents. Funds are not protected by any deposit guarantee scheme. Please read our full risk disclosure before depositing.',
+        text: 'There are two main risk categories. First, if someone gains access to your email account, they could gain access to your wallet - we strongly recommend enabling two-factor authentication. Second, decentralized protocols carry smart contract risk - the possibility of a bug or exploit. Defied only features protocols with extensive audit histories, but we cannot guarantee against future incidents. Funds are not protected by any deposit guarantee scheme. Please read our full risk disclosure before depositing.',
       },
     },
   ],

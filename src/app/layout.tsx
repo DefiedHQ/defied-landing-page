@@ -35,8 +35,8 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: 'Defied Money App - Earn on Your Euros. Send Money Globally. No Bank Needed.',
-    template: '%s | Defied Money App',
+    default: 'Defied - Earn on Your Euros. Send Money Globally. No Bank Needed.',
+    template: '%s | Defied',
   },
   description: siteConfig.description,
   keywords: [
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
   },
   manifest: '/manifest.webmanifest',
   openGraph: {
-    title: 'Defied Money App - Earn on Your Euros. Send Money Globally. No Bank Needed.',
+    title: 'Defied - Earn on Your Euros. Send Money Globally. No Bank Needed.',
     description: siteConfig.description,
     siteName: siteConfig.name,
     url: siteConfig.url,
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
         url: siteConfig.ogImage,
         width: 1200,
         height: 630,
-        alt: 'Defied Money App - Earn on Your Euros. Send Money Globally. No Bank Needed.',
+        alt: 'Defied - Earn on Your Euros. Send Money Globally. No Bank Needed.',
       },
     ],
     type: 'website',
@@ -83,7 +83,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: siteConfig.twitter,
     creator: siteConfig.twitter,
-    title: 'Defied Money App - Earn on Your Euros. Send Money Globally. No Bank Needed.',
+    title: 'Defied - Earn on Your Euros. Send Money Globally. No Bank Needed.',
     description: siteConfig.description,
     images: [siteConfig.ogImage],
   },

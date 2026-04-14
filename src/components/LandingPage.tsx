@@ -136,7 +136,7 @@ export function LandingPage() {
         >
           <Image
             src="/hero_landing.png"
-            alt="Defied Money App"
+            alt="Defied"
             fill
             priority
             sizes="(max-width: 900px) 100vw, 900px"
