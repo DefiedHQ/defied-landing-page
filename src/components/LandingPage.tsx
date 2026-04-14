@@ -120,6 +120,9 @@ export function LandingPage() {
               <AnimatedButtonText>{t('hero.cta')}</AnimatedButtonText>
             </Button>
           </Box>
+            <Text font="legal" as="p" color="fgMuted" style={{ maxWidth: '480px', marginTop: '24px', textAlign: 'center' }}>
+              {t('hero.disclaimer')}
+            </Text>
           </m.div>
 
         </VStack>
