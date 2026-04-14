@@ -39,6 +39,8 @@ export function InfoSection() {
           fontWeight: 500,
           maxWidth: '720px',
           textAlign: 'center',
+          marginLeft: 'auto',
+          marginRight: 'auto',
           marginBottom: '56px',
         }}
       >
