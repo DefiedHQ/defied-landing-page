@@ -24,11 +24,19 @@ function renderInlineMarkdown(text: string): React.ReactNode[] {
       parts.push(<em key={key++}>{match[2]}</em>);
     } else if (match[3] && match[4]) {
       const isExternal = match[4].startsWith('http');
-      parts.push(
-        <a key={key++} href={match[4]} {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})} style={{ color: '#0052FF', textDecoration: 'underline' }}>
-          {match[3]}
-        </a>
-      );
+      if (isExternal) {
+        parts.push(
+          <a key={key++} href={match[4]} target="_blank" rel="noopener noreferrer" style={{ color: '#0052FF', textDecoration: 'underline' }}>
+            {match[3]}
+          </a>
+        );
+      } else {
+        parts.push(
+          <Link key={key++} href={match[4]} style={{ color: '#0052FF', textDecoration: 'underline' }}>
+            {match[3]}
+          </Link>
+        );
+      }
     }
     lastIndex = match.index + match[0].length;
   }
