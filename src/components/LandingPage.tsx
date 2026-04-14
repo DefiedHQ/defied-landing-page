@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import Image from 'next/image';
 import { m } from 'framer-motion';
 import { Box } from '@coinbase/cds-web/layout/Box';
 import { VStack } from '@coinbase/cds-web/layout/VStack';
@@ -122,6 +123,22 @@ export function LandingPage() {
           </Box>
           </m.div>
 
+          {/* Hero image */}
+          <m.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5, ease: 'easeOut' }}
+            style={{ width: '100%', maxWidth: '900px' }}
+          >
+            <Image
+              src="/hero_landing.png"
+              alt="Defied Money App"
+              width={900}
+              height={600}
+              priority
+              style={{ width: '100%', height: 'auto', borderRadius: '32px' }}
+            />
+          </m.div>
         </VStack>
       </section>
 
