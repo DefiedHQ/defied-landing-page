@@ -152,9 +152,6 @@ export function LandingPage() {
                   <Text font="body" as="p" style={{ fontSize: '18px', lineHeight: '28px', color: 'rgba(255, 255, 255, 0.7)' }}>
                     {t('imageSection.body1')}
                   </Text>
-                  <Text font="body" as="p" style={{ fontSize: '18px', lineHeight: '28px', color: 'rgba(255, 255, 255, 0.7)' }}>
-                    {t('imageSection.body2')}
-                  </Text>
                 </div>
               </m.div>
             </article>
