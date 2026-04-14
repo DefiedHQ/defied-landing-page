@@ -224,7 +224,7 @@ export function ArticlePage() {
                     style={{ display: 'block', textDecoration: 'none' }}
                   >
                     <div style={{ height: '190px', maxWidth: '100%', overflow: 'hidden', marginBottom: '12px', borderRadius: '56px' }}>
-                      <img src="/article-cover.svg" alt={a.title} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                      <img src={a.image || '/article-cover.svg'} alt={a.title} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                     </div>
                     <Text
                       font="headline"
