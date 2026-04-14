@@ -67,7 +67,7 @@ export function LandingPage() {
       }}
     >
       {/* Section 1: Hero */}
-      <section className="section-padding">
+      <section className="section-padding" style={{ minHeight: 'calc(100vh - 64px)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <VStack
           as="div"
           style={{
@@ -76,7 +76,6 @@ export function LandingPage() {
             margin: '0 auto',
             width: '100%',
             textAlign: 'center',
-            paddingTop: 'clamp(64px, 10vw, 128px)',
           }}
         >
           <m.div
