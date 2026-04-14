@@ -195,7 +195,7 @@ export function LandingPage() {
                       <HeroSquare name={feature.name} scaleMultiplier={1.1} />
                     </div>
                     <Text font="headline" as="h3" style={{ fontWeight: 600, marginTop: '16px', color: '#FFFFFF' }}>{feature.title}</Text>
-                    <Text font="body" as="p" title={feature.desc} style={{ maxWidth: '240px', marginTop: '8px', textAlign: 'center', color: 'rgba(255, 255, 255, 0.7)', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{feature.desc}</Text>
+                    <Text font="body" as="p" style={{ maxWidth: '280px', marginTop: '8px', textAlign: 'center', color: 'rgba(255, 255, 255, 0.7)', fontSize: '14px', lineHeight: '20px' }}>{feature.desc}</Text>
                   </m.div>
                 </div>
               ))}
