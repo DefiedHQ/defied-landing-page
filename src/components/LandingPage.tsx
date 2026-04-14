@@ -79,7 +79,7 @@ export function LandingPage() {
             textAlign: 'center',
             flex: 1,
             justifyContent: 'center',
-            paddingTop: 'clamp(48px, 8vw, 120px)',
+            paddingTop: 'clamp(80px, 15vw, 200px)',
           }}
         >
           <m.div
@@ -132,15 +132,15 @@ export function LandingPage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5, ease: 'easeOut' }}
-          style={{ width: '100%', maxWidth: '900px', margin: '0 auto', flexShrink: 0 }}
+          style={{ position: 'relative', width: '100%', maxWidth: '900px', aspectRatio: '900 / 600', margin: '0 auto', flexShrink: 0 }}
         >
           <Image
             src="/hero_landing.png"
             alt="Defied Money App"
-            width={900}
-            height={600}
+            fill
             priority
-            style={{ width: '100%', height: 'auto', borderRadius: '32px', display: 'block' }}
+            sizes="(max-width: 900px) 100vw, 900px"
+            style={{ objectFit: 'contain', borderRadius: '32px' }}
           />
         </m.div>
       </section>
