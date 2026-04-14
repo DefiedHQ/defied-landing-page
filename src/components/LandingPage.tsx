@@ -99,7 +99,7 @@ export function LandingPage() {
               color="fgMuted"
               style={{ maxWidth: '640px', fontSize: '18px', lineHeight: '28px', textAlign: 'center' }}
             >
-              {t('hero.subtitle1')} {t('hero.subtitle2')} {t('hero.subtitle3')}
+              {t('hero.subtitle1')} {t('hero.subtitle2')} {t('hero.subtitle3')}<sup>1</sup>
             </Text>
             <Box as="div" style={{ marginTop: '32px' }}>
             <Button
@@ -120,9 +120,6 @@ export function LandingPage() {
               <AnimatedButtonText>{t('hero.cta')}</AnimatedButtonText>
             </Button>
           </Box>
-            <Text font="legal" as="p" color="fgMuted" style={{ maxWidth: '480px', marginTop: '24px', textAlign: 'center' }}>
-              {t('hero.disclaimer')}
-            </Text>
           </m.div>
 
         </VStack>

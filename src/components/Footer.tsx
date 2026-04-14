@@ -70,6 +70,11 @@ export function Footer() {
           </HStack>
         </div>
 
+        {/* Footnote */}
+        <Text font="legal" as="p" color="fgMuted" style={{ marginBottom: '16px' }}>
+          <sup>1</sup> {t('hero.disclaimer')}
+        </Text>
+
         {/* Disclaimer */}
         <Text font="legal" as="p" color="fgMuted" style={{ marginBottom: '16px' }}>
           {t('footer.disclaimer')}
