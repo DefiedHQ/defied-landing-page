@@ -1,24 +1,32 @@
 [
   {
-    "id": "introducing-defied-money-app",
+    "id": "introducing-defied",
     "category": "Announcements",
-    "title": "Introducing the Defied.",
-    "excerpt": "DeFi is an ecosystem of financial applications built on blockchain networks. Learn how smart contracts work, what opportunities they provide, and why more and more people are choosing decentralized finance over traditional banks.",
+    "title": "Introducing Defied",
+    "excerpt": "Defied is a stablecoin wallet that lets you send money anywhere instantly, earn up to 4% APY on your euro balance, and keep full control of your funds — no bank required.",
     "date": "2026-03-28",
-    "readTime": 4,
+    "readTime": 5,
     "image": null,
     "sections": [
       {
-        "heading": "What is DeFi?",
-        "body": "Decentralized Finance (DeFi) is a collective term for financial products and services accessible to anyone who can use Ethereum — practically anyone with an internet connection. With DeFi, markets are always open and there are no centralized authorities that can block payments or deny access. Services that were previously slow and prone to human error are now automatic and more secure, as they are governed by code that anyone can inspect and verify."
+        "heading": "",
+        "body": "We built Defied because we kept running into the same problem.\n\nSending money internationally costs too much and takes too long. Savings accounts pay nothing while inflation quietly shrinks your purchasing power. And your bank — the institution holding your money — can restrict, freeze, or close your account with very little recourse.\n\nNone of this is inevitable. It's just the way traditional finance was built — for institutions, not individuals.\n\nDefied is our answer to that. A stablecoin wallet that gives every person with an internet connection access to a transparent, secure financial system — and to the earning opportunities of decentralized finance, without any of the complexity that has kept it out of reach. Send money globally. Earn on your balance. Stay in full control of your funds. No bank's permission required. No technical knowledge needed."
       },
       {
-        "heading": "How do smart contracts work?",
-        "body": "Smart contracts are programs stored on the blockchain that execute automatically when predetermined conditions are met. They eliminate the need for intermediaries and ensure transparency of every transaction. Anyone can read the code of a smart contract and verify that it works exactly as promised. This is the foundation of trust in the DeFi ecosystem."
+        "heading": "What you can do with Defied",
+        "body": "**Send money anywhere, instantly**\n\nWith Defied, sending euros or dollars to anyone in the world takes seconds — not days. There are no SWIFT codes, no cut-off times, no €15–25 transfer fees. Just a wallet address and a confirmation. The transaction settles on the Base blockchain, one of the fastest and cheapest networks available today.\n\n**Earn on your euro balance**\n\nMost savings accounts across Europe currently pay between 0% and 2% annually — often less than the rate of inflation. Defied connects you directly to decentralized lending protocols like Aave and Morpho, where your USDC or EURC balance can access pools currently offering 3–5% APY. No lock-up period. Withdraw at any time.\n\n*Variable yields depend on protocol market conditions and are not guaranteed. Please read our [risk disclosure](/risks) before depositing.*\n\n**Exchange between euros and dollars**\n\nSwap between USDC (dollar-pegged) and EURC (euro-pegged) instantly, at a transparent rate, with a simple 0.3% fee. No hidden spread, no rate manipulation.\n\n**Pay with a card**\n\nPremium users get a virtual Visa debit card linked directly to their stablecoin balance. Spend anywhere Visa is accepted, topped up from your wallet in one tap."
       },
       {
-        "heading": "Advantages over traditional finance",
-        "body": "DeFi offers numerous advantages: 24/7 accessibility, no geographic restrictions, full transparency through public code, lower fees compared to traditional financial institutions, and the potential for higher yields. Additionally, users maintain full control over their assets — there is no bank or institution that can freeze your funds."
+        "heading": "Why non-custodial matters",
+        "body": "Every fintech app you've used — Revolut, Wise, PayPal — holds your money on your behalf. Your balance is a number in their database. They control it. They can freeze it, limit it, or close your account.\n\nDefied works differently. When you sign up with your email, a personal digital wallet is created and secured by cryptography. That wallet belongs to you — not to us. Defied has zero ability to access, move, or freeze your funds. We built the interface. You hold the key.\n\nYour wallet also exists independently of Defied. The underlying protocols — Aave, Compound, Morpho, Lido — are public smart contracts on the Base blockchain. You can interact with them directly at any time, with or without our interface. If Defied ceased to exist tomorrow, your funds would be completely unaffected.\n\nThis isn't a minor technical detail. It's the entire point."
+      },
+      {
+        "heading": "Built for people, not protocols",
+        "body": "One reason DeFi hasn't gone mainstream yet is that it's genuinely hard to use. Managing private keys, understanding gas fees, navigating protocol interfaces — it requires a level of technical knowledge that most people simply don't have and shouldn't need. The yields are real. The opportunity is real. The barrier is just bad design.\n\nDefied was built specifically to fix that. We wanted to make DeFi feel as simple as checking your bank balance — so the people who could benefit most from it, the ones who aren't developers or crypto natives, could actually use it. Sign up with your email. We handle the wallet creation, the gas fees, the protocol connections. The blockchain stays invisible. The experience feels like a normal financial app — except the money is actually yours."
+      },
+      {
+        "heading": "What's next",
+        "body": "This is the beginning. We're launching with the core features — send, receive, exchange, and DeFi access — and building toward a full-featured mobile app for iOS and Android.\n\nPremium and Premium+ plans are coming, bringing reduced fees, a virtual debit card, and advanced protocol access for users who want to go deeper.\n\nIf you've ever felt like the financial system wasn't built for you — you're right. It wasn't. We're changing that.\n\n[Start for free →](https://app.defied.money)\n\n*Defied is a non-custodial software interface providing access to public blockchain protocols. It does not manage or invest your funds. Accessing decentralized finance protocols involves risk, including potential loss of funds. Past yields are not guaranteed.*"
       }
     ]
   }

@@ -7,6 +7,48 @@ import { Tag } from '@coinbase/cds-web/tag/Tag';
 import { useArticles } from '@/data/useArticles';
 import { useLanguage } from '@/context/LanguageContext';
 
+function renderInlineMarkdown(text: string): React.ReactNode[] {
+  const parts: React.ReactNode[] = [];
+  const regex = /\*\*(.+?)\*\*|\*(.+?)\*|\[(.+?)\]\((.+?)\)/g;
+  let lastIndex = 0;
+  let match;
+  let key = 0;
+
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index));
+    }
+    if (match[1]) {
+      parts.push(<strong key={key++}>{match[1]}</strong>);
+    } else if (match[2]) {
+      parts.push(<em key={key++}>{match[2]}</em>);
+    } else if (match[3] && match[4]) {
+      const isExternal = match[4].startsWith('http');
+      parts.push(
+        <a key={key++} href={match[4]} {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})} style={{ color: '#0052FF', textDecoration: 'underline' }}>
+          {match[3]}
+        </a>
+      );
+    }
+    lastIndex = match.index + match[0].length;
+  }
+
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex));
+  }
+
+  return parts;
+}
+
+function renderBody(body: string) {
+  const paragraphs = body.split('\n\n');
+  return paragraphs.map((paragraph, i) => (
+    <Text key={i} font="body" as="p" display="block" color="fgMuted" style={{ fontSize: '18px', lineHeight: '28px', marginBottom: i < paragraphs.length - 1 ? '16px' : '0' }}>
+      {renderInlineMarkdown(paragraph)}
+    </Text>
+  ));
+}
+
 export function ArticlePage() {
   const params = useParams();
   const { t, lang } = useLanguage();
@@ -82,12 +124,12 @@ export function ArticlePage() {
 
               {article.sections.map((section: { heading: string; body: string }, i: number) => (
                 <div key={i} style={{ marginBottom: '32px' }}>
-                  <Text font="title2" as="h2" display="block" id={`section-${i}`} style={{ marginBottom: '24px' }}>
-                    {section.heading}
-                  </Text>
-                  <Text font="body" as="p" display="block" color="fgMuted" style={{ fontSize: '18px', lineHeight: '28px' }}>
-                    {section.body}
-                  </Text>
+                  {section.heading && (
+                    <Text font="title2" as="h2" display="block" id={`section-${i}`} style={{ marginBottom: '24px' }}>
+                      {section.heading}
+                    </Text>
+                  )}
+                  {renderBody(section.body)}
                 </div>
               ))}
             </div>
@@ -139,30 +181,33 @@ export function ArticlePage() {
 
             {/* Table of Contents */}
             <div style={{ marginBottom: '40px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              {article.sections.map((section: { heading: string }, i: number) => (
-                <a
-                  key={i}
-                  href={`#section-${i}`}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.getElementById(`section-${i}`)?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="hover-color-blue"
-                  style={{
-                    display: 'block',
-                    textDecoration: 'none',
-                    borderLeft: '3px solid',
-                    borderColor: i === 0 ? '#0052FF' : '#e5e7eb',
-                    paddingLeft: '16px',
-                    paddingTop: '8px',
-                    paddingBottom: '8px',
-                  }}
-                >
-                  <Text font="headline" as="span" style={{ color: '#374151' }}>
-                    {section.heading}
-                  </Text>
-                </a>
-              ))}
+              {article.sections.filter((section: { heading: string }) => section.heading).map((section: { heading: string }, i: number, arr) => {
+                const sectionIndex = article.sections.findIndex((s: { heading: string }) => s === section);
+                return (
+                  <a
+                    key={sectionIndex}
+                    href={`#section-${sectionIndex}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      document.getElementById(`section-${sectionIndex}`)?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className="hover-color-blue"
+                    style={{
+                      display: 'block',
+                      textDecoration: 'none',
+                      borderLeft: '3px solid',
+                      borderColor: i === 0 ? '#0052FF' : '#e5e7eb',
+                      paddingLeft: '16px',
+                      paddingTop: '8px',
+                      paddingBottom: '8px',
+                    }}
+                  >
+                    <Text font="headline" as="span" style={{ color: '#374151' }}>
+                      {section.heading}
+                    </Text>
+                  </a>
+                );
+              })}
             </div>
 
             {/* Recent Posts */}
