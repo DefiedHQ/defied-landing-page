@@ -5,7 +5,7 @@
     "whatItDoes": "What it does",
     "howItWorks": "How it works",
     "advantages": "Advantages",
-    "faq": "Questions",
+    "faq": "FAQ",
     "mission": "Mission",
     "languageAndRegion": "Language and region"
   },
@@ -17,9 +17,9 @@
     "subtitle2": "",
     "subtitle3": "",
     "cta": "Start for free",
-    "ctaHeader": "Sign in",
+    "ctaHeader": "Sign up free",
     "ctaMain": "Start for free",
-    "disclaimer": "Accessing decentralized lending protocols involves risk. Past yields are not guaranteed. Defied Money App provides a non-custodial interface to public blockchain protocols - it does not manage or invest your funds."
+    "disclaimer": "Accessing decentralized lending protocols involves risk. Past yields are not guaranteed. Defied provides a non-custodial interface to public blockchain protocols - it does not manage or invest your funds."
   },
   "features": {
     "sectionTitle": "Everything your bank does. And what it never will.",
@@ -40,54 +40,54 @@
     "row1Heading": "Stablecoins",
     "row1Subtext": "Unlike volatile cryptocurrencies, stablecoins are pegged 1:1 to real currencies - USDC to the US dollar, EURC to the euro. You get the speed and global reach of blockchain with the price stability of the currencies you already use. Send and receive 24/7, including weekends and public holidays.",
     "row2Heading": "An account that's actually yours",
-    "row2Subtext": "With a traditional bank or fintech app, your balance is a number in their database. They hold your money. They can restrict, freeze, or close your account. With Defied Money App, your funds live in a wallet secured by cryptography - not on our servers, not in our control. Your wallet exists and remains accessible even if Defied Money App ceases to exist.",
+    "row2Subtext": "With a traditional bank or fintech app, your balance is a number in their database. They hold your money. They can restrict, freeze, or close your account. With Defied, your funds live in a wallet secured by cryptography - not on our servers, not in our control. Your wallet exists and remains accessible even if Defied ceases to exist.",
     "row3Heading": "Access to decentralized finance",
-    "row3Subtext": "Anyone with an internet connection can participate in decentralized lending protocols - no bank account, no approval process, no minimum balance. Defied Money App removes the technical barriers. You access protocols directly, keeping full custody of your funds throughout."
+    "row3Subtext": "Anyone with an internet connection can participate in decentralized lending protocols - no bank account, no approval process, no minimum balance. Defied removes the technical barriers. You access protocols directly, keeping full custody of your funds throughout."
   },
   "protocolsSection": {
-    "title": "Protocols you can access through Defied Money App",
-    "subtitle": "Defied Money App surfaces established, extensively audited protocols. We do not endorse any protocol as risk-free. Smart contract risk exists - please read our risk disclosure before depositing."
+    "title": "Protocols you can access through Defied",
+    "subtitle": "Defied surfaces established, extensively audited protocols. We do not endorse any protocol as risk-free. Smart contract risk exists - please read our risk disclosure before depositing."
   },
   "imageSection": {
     "sectionTitle": "Our mission",
     "title": "Financial tools this powerful shouldn't require a bank's permission.",
-    "body1": "Banks decide when you can access your money, how much you can move, and who you can send it to - built for institutions, not people. Defied Money App gives every individual direct access to a transparent, secure financial system: send money globally, earn on your balance, and stay in full control of your funds. No intermediaries. No permission required."
+    "body1": "Banks decide when you can access your money, how much you can move, and who you can send it to - built for institutions, not people. Defied gives every individual direct access to a transparent, secure financial system: send money globally, earn on your balance, and stay in full control of your funds. No intermediaries. No permission required."
   },
   "aboutCarousel": {
     "title": "Simpler than a bank account. More powerful than one.",
     "card1Tag": "Non-custodial wallet",
     "card1Title": "Non-custodial wallet",
-    "card1Desc": "When you sign up with your email, a personal digital wallet is created automatically - secured by cryptography, controlled entirely by you. Defied Money App has zero access to your funds. We cannot move them, freeze them, or recover them on your behalf. Think of it this way: we built the safe. You hold the only key.",
+    "card1Desc": "When you sign up with your email, a personal digital wallet is created automatically - secured by cryptography, controlled entirely by you. Defied has zero access to your funds. We cannot move them, freeze them, or recover them on your behalf. Think of it this way: we built the safe. You hold the only key.",
     "card2Tag": "User interface",
     "card2Title": "User interface",
-    "card2Desc": "Defied Money App is a front-end interface that connects to public, permissionless smart contracts on the Base blockchain. You interact directly with those contracts - Defied Money App simplifies the experience, but the underlying protocols exist independently of us. You can interact with them directly at any time.",
+    "card2Desc": "Defied is a front-end interface that connects to public, permissionless smart contracts on the Base blockchain. You interact directly with those contracts - Defied simplifies the experience, but the underlying protocols exist independently of us. You can interact with them directly at any time.",
     "card3Tag": "Decentralized finance",
     "card3Title": "Access to decentralized protocols",
-    "card3Desc": "Defied Money App surfaces lending, staking, and liquidity protocols in one place - no technical knowledge required. Aave, Compound, Morpho, Lido and more, accessible with one click. You retain full custody throughout.",
+    "card3Desc": "Defied surfaces lending, staking, and liquidity protocols in one place - no technical knowledge required. Aave, Compound, Morpho, Lido and more, accessible with one click. You retain full custody throughout.",
     "card4Tag": "Gas-free",
     "card4Title": "Sponsored transactions",
     "card4Desc": "We cover your gas fees when you send stablecoins or interact with supported protocols. The blockchain stays invisible. The experience stays simple."
   },
   "faq": {
     "title": "Questions",
-    "q1": "What is Defied Money App?",
-    "a1": "Defied Money App is a non-custodial stablecoin wallet that lets you send, receive, and exchange USDC and EURC on the Base network. It also provides a simple interface for accessing decentralized finance protocols - including lending, staking, and liquidity provision - without requiring any technical knowledge.",
+    "q1": "What is Defied?",
+    "a1": "Defied is a non-custodial stablecoin wallet that lets you send, receive, and exchange USDC and EURC on the Base network. It also provides a simple interface for accessing decentralized finance protocols - including lending, staking, and liquidity provision - without requiring any technical knowledge.",
     "q2": "What is a stablecoin?",
     "a2": "A stablecoin is a digital currency pegged to a real-world asset - in our case, the euro (EURC) or US dollar (USDC). Unlike bitcoin or ether, their value doesn't fluctuate wildly. You can send them globally, instantly, at any time of day - including weekends. They're backed 1:1 by real currency reserves held by regulated issuers.",
     "q3": "What is a non-custodial wallet?",
-    "a3": "With a non-custodial wallet, you own your funds outright - not a company, not a bank. Defied Money App partners with Privy to create a secure wallet tied to your email address. You don't need to manage a private key manually, but you always have access to it. Defied Money App cannot access, move, or freeze your funds under any circumstances.",
+    "a3": "With a non-custodial wallet, you own your funds outright - not a company, not a bank. Defied partners with Privy to create a secure wallet tied to your email address. You don't need to manage a private key manually, but you always have access to it. Defied cannot access, move, or freeze your funds under any circumstances.",
     "q4": "Who controls my money?",
-    "a4": "You do. Only you. Defied Money App and Privy have no ability to access or move your funds. If you wish, you can export your private key and use your wallet entirely independently of Defied Money App at any time.",
+    "a4": "You do. Only you. Defied and Privy have no ability to access or move your funds. If you wish, you can export your private key and use your wallet entirely independently of Defied at any time.",
     "q5": "Can I withdraw at any time?",
-    "a5": "Yes, with no waiting period imposed by Defied Money App. If you have deposited funds into a decentralized protocol, withdrawal terms depend on that protocol - most allow instant withdrawal, though some have waiting periods. We display this information clearly before you deposit.",
+    "a5": "Yes, with no waiting period imposed by Defied. If you have deposited funds into a decentralized protocol, withdrawal terms depend on that protocol - most allow instant withdrawal, though some have waiting periods. We display this information clearly before you deposit.",
     "q6": "Do I need to verify my identity?",
     "a6": "To send and receive stablecoins directly, no verification is required. To convert euros or dollars from your bank account into stablecoins (on-ramp) or back (off-ramp), identity verification is required by our regulated partner Bridge.xyz. This takes under two minutes and is required by EU financial regulations.",
     "q7": "What are the risks?",
-    "a7": "There are two main risk categories. First, if someone gains access to your email account, they could gain access to your wallet - we strongly recommend enabling two-factor authentication. Second, decentralized protocols carry smart contract risk - the possibility of a bug or exploit. Defied Money App only features protocols with extensive audit histories, but we cannot guarantee against future incidents. Funds are not protected by any deposit guarantee scheme. Please read our full risk disclosure before depositing.",
+    "a7": "There are two main risk categories. First, if someone gains access to your email account, they could gain access to your wallet - we strongly recommend enabling two-factor authentication. Second, decentralized protocols carry smart contract risk - the possibility of a bug or exploit. Defied only features protocols with extensive audit histories, but we cannot guarantee against future incidents. Funds are not protected by any deposit guarantee scheme. Please read our full risk disclosure before depositing.",
     "q8": "Are my funds covered by the Deposit Guarantee Fund?",
-    "a8": "No. Defied Money App is a software interface for accessing decentralized protocols, not a bank or regulated financial institution. Funds held in your wallet or deposited in DeFi protocols are not covered by any national deposit guarantee scheme.",
-    "q9": "What platforms does Defied Money App support?",
-    "a9": "Defied Money App is currently available as a web application, optimized for both desktop and mobile browsers. Native iOS and Android apps are in development."
+    "a8": "No. Defied is a software interface for accessing decentralized protocols, not a bank or regulated financial institution. Funds held in your wallet or deposited in DeFi protocols are not covered by any national deposit guarantee scheme.",
+    "q9": "What platforms does Defied support?",
+    "a9": "Defied is currently available as a web application, optimized for both desktop and mobile browsers. Native iOS and Android apps are in development."
   },
   "earn": {
     "apr": "APR",
@@ -125,11 +125,11 @@
     "heroTitle": "We created the first crypto savings product in Bulgaria",
     "ctaStart": "Start now",
     "ctaContact": "Contact",
-    "missionDark": "Defied Money App provides non-custodial infrastructure for easy access to decentralized finance.",
+    "missionDark": "Defied provides non-custodial infrastructure for easy access to decentralized finance.",
     "missionLight": "Our mission is to make access to decentralized finance easy.",
-    "blueSection": "Defied Money App allows users to create an account on the platform without needing to understand what a digital wallet and private key are in the blockchain context.",
-    "detailP1": "Defied Money App provides decentralized smart contract infrastructure for generating yield through leading DeFi protocols. The smart contracts are non-custodial - Defied Money App has no access to user funds stored in them.",
-    "detailP2": "Defied Money App offers an intuitive user interface through which users can deposit funds in the form of stablecoins into curated decentralized protocols. Defied Money App covers transaction costs for users (gas fees).",
+    "blueSection": "Defied allows users to create an account on the platform without needing to understand what a digital wallet and private key are in the blockchain context.",
+    "detailP1": "Defied provides decentralized smart contract infrastructure for generating yield through leading DeFi protocols. The smart contracts are non-custodial - Defied has no access to user funds stored in them.",
+    "detailP2": "Defied offers an intuitive user interface through which users can deposit funds in the form of stablecoins into curated decentralized protocols. Defied covers transaction costs for users (gas fees).",
     "detailP3": "Users can easily buy crypto or stablecoins with a debit/credit card, Apple Pay, Google Pay, or via SEPA bank transfer.",
     "advantagesHeading": "No technical knowledge needed. Quick crypto purchase. Curated protocols with high yield. Full control over your assets.",
     "advantagesP1": "You don't need to understand how digital wallets and private keys work. We offer an easy-to-use interface and registration with just an email address.",
@@ -186,17 +186,17 @@
     "notFound": "Article not found"
   },
   "meta": {
-    "defaultTitle": "Defied Money App - Earn on Your Euros. Send Money Globally. No Bank Needed.",
+    "defaultTitle": "Defied - Earn on Your Euros. Send Money Globally. No Bank Needed.",
     "homeTitle": "Earn on Your Euros. Send Money Globally. No Bank Needed.",
-    "homeDescription": "Defied Money App lets you earn up to 4% APY on your euro balance, send money anywhere in seconds, and pay with a virtual card - from a wallet only you control. Available in the EU.",
+    "homeDescription": "Defied lets you earn up to 4% APY on your euro balance, send money anywhere in seconds, and pay with a virtual card - from a wallet only you control. Available in the EU.",
     "aboutTitle": "About us",
-    "aboutDescription": "Defied Money App provides non-custodial infrastructure for easy access to decentralized finance. The first crypto savings product in Bulgaria.",
+    "aboutDescription": "Defied provides non-custodial infrastructure for easy access to decentralized finance. The first crypto savings product in Bulgaria.",
     "blogTitle": "Blog",
-    "blogDescription": "Articles, guides, and news about DeFi, blockchain, and decentralized finance from Defied Money App.",
+    "blogDescription": "Articles, guides, and news about DeFi, blockchain, and decentralized finance from Defied.",
     "privacyTitle": "Privacy Policy",
-    "privacyDescription": "Defied Money App Privacy Policy. Learn how we process and protect your personal data.",
+    "privacyDescription": "Defied Privacy Policy. Learn how we process and protect your personal data.",
     "termsTitle": "Terms of Use",
-    "termsDescription": "Terms of Use for the Defied Money App platform. Read our terms and conditions before using our services.",
+    "termsDescription": "Terms of Use for the Defied platform. Read our terms and conditions before using our services.",
     "risksTitle": "Risks",
     "risksDescription": "Learn about the risks associated with DeFi protocols and cryptocurrencies. Invest informed.",
     "articleNotFound": "Article not found"
@@ -210,7 +210,7 @@
     "terms": "Terms of use",
     "privacy": "Privacy policy",
     "address": "81B Bulgaria Blvd, Sofia, Bulgaria",
-    "disclaimer": "Defied Money App is operated by Fusion Software LLC. Defied Money App is a non-custodial software interface providing access to public, permissionless blockchain protocols. Defied Money App does not provide investment, financial, legal, or tax advice. Accessing decentralized finance protocols involves significant risk, including the potential loss of funds. Variable yields referenced on this site reflect current third-party protocol rates and are not guaranteed returns. Nothing on this site constitutes an offer, solicitation, or recommendation to acquire any financial product or service. Fiat on-ramp and off-ramp services are provided by Bridge.xyz. Virtual card services are provided by Gnosis Pay. Defied Money App does not hold, manage, or have access to user funds at any time. Services may not be available in all jurisdictions.",
+    "disclaimer": "Defied is operated by Fusion Software LLC. Defied is a non-custodial software interface providing access to public, permissionless blockchain protocols. Defied does not provide investment, financial, legal, or tax advice. Accessing decentralized finance protocols involves significant risk, including the potential loss of funds. Variable yields referenced on this site reflect current third-party protocol rates and are not guaranteed returns. Nothing on this site constitutes an offer, solicitation, or recommendation to acquire any financial product or service. Fiat on-ramp and off-ramp services are provided by Bridge.xyz. Virtual card services are provided by Gnosis Pay. Defied does not hold, manage, or have access to user funds at any time. Services may not be available in all jurisdictions.",
     "copyright": "© Fusion Software LLC. All rights reserved."
   }
 }

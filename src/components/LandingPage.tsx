@@ -113,6 +113,7 @@ export function LandingPage() {
               rel="noopener noreferrer"
               variant="primary"
               block
+              endIcon="arrowRight"
               className="btn-fw-500"
               style={{
                 borderRadius: '56px',
@@ -136,7 +137,7 @@ export function LandingPage() {
         >
           <Image
             src="/hero_landing.png"
-            alt="Defied Money App"
+            alt="Defied"
             fill
             priority
             sizes="(max-width: 900px) 100vw, 900px"
@@ -338,6 +339,7 @@ export function LandingPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   variant="primary"
+                  endIcon="arrowRight"
                   className="btn-fw-500"
                   style={{
                     borderRadius: '56px',

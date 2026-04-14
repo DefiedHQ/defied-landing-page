@@ -1,6 +1,6 @@
 {
-  "name": "Defied Money App",
-  "short_name": "Defied Money App",
+  "name": "Defied",
+  "short_name": "Defied",
   "description": "A stablecoin wallet with DeFi superpowers",
   "start_url": "/",
   "display": "browser",

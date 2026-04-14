@@ -81,7 +81,7 @@ export function ResourcesPage() {
               >
                 <div>
                   <div style={{ width: '100%', height: 'clamp(220px, 30vw, 320px)', overflow: 'hidden', borderRadius: '56px' }}>
-                    <img src="/article-cover.svg" alt={article.title} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <img src={article.image || '/article-cover.svg'} alt={article.title} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
                   <div style={{ paddingTop: '20px' }}>
                     <div style={{ marginBottom: '12px' }}>
@@ -137,7 +137,7 @@ export function ResourcesPage() {
               >
                 <div style={{ height: '100%' }}>
                   <div style={{ width: '100%', height: 'clamp(220px, 30vw, 320px)', overflow: 'hidden', borderRadius: '56px' }}>
-                    <img src="/article-cover.svg" alt={article.title} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <img src={article.image || '/article-cover.svg'} alt={article.title} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
                   <div style={{ paddingTop: '16px' }}>
                     <div style={{ marginBottom: '8px' }}>

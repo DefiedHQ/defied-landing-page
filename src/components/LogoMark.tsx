@@ -6,7 +6,7 @@ export function LogoMark({ size = 48 }: { size?: number }) {
       src="/defied_squared_logo_blue.svg"
       width={size}
       height={size}
-      alt="Defied Money App"
+      alt="Defied"
       aria-hidden="true"
       priority
     />

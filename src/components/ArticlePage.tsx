@@ -7,6 +7,56 @@ import { Tag } from '@coinbase/cds-web/tag/Tag';
 import { useArticles } from '@/data/useArticles';
 import { useLanguage } from '@/context/LanguageContext';
 
+function renderInlineMarkdown(text: string): React.ReactNode[] {
+  const parts: React.ReactNode[] = [];
+  const regex = /\*\*(.+?)\*\*|\*(.+?)\*|\[(.+?)\]\((.+?)\)/g;
+  let lastIndex = 0;
+  let match;
+  let key = 0;
+
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index));
+    }
+    if (match[1]) {
+      parts.push(<strong key={key++}>{match[1]}</strong>);
+    } else if (match[2]) {
+      parts.push(<em key={key++}>{match[2]}</em>);
+    } else if (match[3] && match[4]) {
+      const isExternal = match[4].startsWith('http');
+      if (isExternal) {
+        parts.push(
+          <a key={key++} href={match[4]} target="_blank" rel="noopener noreferrer" style={{ color: '#0052FF', textDecoration: 'underline' }}>
+            {match[3]}
+          </a>
+        );
+      } else {
+        parts.push(
+          <Link key={key++} href={match[4]} style={{ color: '#0052FF', textDecoration: 'underline' }}>
+            {match[3]}
+          </Link>
+        );
+      }
+    }
+    lastIndex = match.index + match[0].length;
+  }
+
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex));
+  }
+
+  return parts;
+}
+
+function renderBody(body: string) {
+  const paragraphs = body.split('\n\n');
+  return paragraphs.map((paragraph, i) => (
+    <Text key={i} font="body" as="p" display="block" color="fgMuted" style={{ fontSize: '18px', lineHeight: '28px', marginBottom: i < paragraphs.length - 1 ? '16px' : '0' }}>
+      {renderInlineMarkdown(paragraph)}
+    </Text>
+  ));
+}
+
 export function ArticlePage() {
   const params = useParams();
   const { t, lang } = useLanguage();
@@ -54,10 +104,10 @@ export function ArticlePage() {
 
         {/* Meta */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '32px' }}>
-          <img src="/defied_squared_logo_blue.svg" width={40} height={40} alt="Defied Money App" />
+          <img src={article.authorImage || '/defied_squared_logo_blue.svg'} width={40} height={40} alt={article.author || 'Defied'} style={{ borderRadius: article.authorImage ? '50%' : '0', objectFit: 'cover' }} />
           <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
             <Text font="label2" as="div" color="fgMuted">
-              {t('common.by')} <Text font="label2" as="span" style={{ color: '#6b7280' }}>Defied Money App</Text>
+              {t('common.by')} <Text font="label2" as="span" style={{ color: '#6b7280' }}>{article.author || 'Defied'}</Text>
             </Text>
             <Text font="label2" as="div" color="fgMuted">
               {formatDate(article.date)} &middot; {article.readTime} {t('common.minRead')}
@@ -70,7 +120,7 @@ export function ArticlePage() {
           <article style={{ minWidth: 0 }}>
             {/* Hero image placeholder */}
             <div style={{ marginBottom: '40px', height: 'clamp(250px, 30vw, 400px)', maxWidth: '100%', overflow: 'hidden', borderRadius: '56px' }}>
-              <img src="/article-cover.svg" alt={article.title} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img src={article.image || '/article-cover.svg'} alt={article.title} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
 
             {/* Article body */}
@@ -82,12 +132,12 @@ export function ArticlePage() {
 
               {article.sections.map((section: { heading: string; body: string }, i: number) => (
                 <div key={i} style={{ marginBottom: '32px' }}>
-                  <Text font="title2" as="h2" display="block" id={`section-${i}`} style={{ marginBottom: '24px' }}>
-                    {section.heading}
-                  </Text>
-                  <Text font="body" as="p" display="block" color="fgMuted" style={{ fontSize: '18px', lineHeight: '28px' }}>
-                    {section.body}
-                  </Text>
+                  {section.heading && (
+                    <Text font="title2" as="h2" display="block" id={`section-${i}`} style={{ marginBottom: '24px' }}>
+                      {section.heading}
+                    </Text>
+                  )}
+                  {renderBody(section.body)}
                 </div>
               ))}
             </div>
@@ -139,30 +189,33 @@ export function ArticlePage() {
 
             {/* Table of Contents */}
             <div style={{ marginBottom: '40px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              {article.sections.map((section: { heading: string }, i: number) => (
-                <a
-                  key={i}
-                  href={`#section-${i}`}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.getElementById(`section-${i}`)?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="hover-color-blue"
-                  style={{
-                    display: 'block',
-                    textDecoration: 'none',
-                    borderLeft: '3px solid',
-                    borderColor: i === 0 ? '#0052FF' : '#e5e7eb',
-                    paddingLeft: '16px',
-                    paddingTop: '8px',
-                    paddingBottom: '8px',
-                  }}
-                >
-                  <Text font="headline" as="span" style={{ color: '#374151' }}>
-                    {section.heading}
-                  </Text>
-                </a>
-              ))}
+              {article.sections.filter((section: { heading: string }) => section.heading).map((section: { heading: string }, i: number, arr) => {
+                const sectionIndex = article.sections.findIndex((s: { heading: string }) => s === section);
+                return (
+                  <a
+                    key={sectionIndex}
+                    href={`#section-${sectionIndex}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      document.getElementById(`section-${sectionIndex}`)?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className="hover-color-blue"
+                    style={{
+                      display: 'block',
+                      textDecoration: 'none',
+                      borderLeft: '3px solid',
+                      borderColor: i === 0 ? '#0052FF' : '#e5e7eb',
+                      paddingLeft: '16px',
+                      paddingTop: '8px',
+                      paddingBottom: '8px',
+                    }}
+                  >
+                    <Text font="headline" as="span" style={{ color: '#374151' }}>
+                      {section.heading}
+                    </Text>
+                  </a>
+                );
+              })}
             </div>
 
             {/* Recent Posts */}
@@ -179,7 +232,7 @@ export function ArticlePage() {
                     style={{ display: 'block', textDecoration: 'none' }}
                   >
                     <div style={{ height: '190px', maxWidth: '100%', overflow: 'hidden', marginBottom: '12px', borderRadius: '56px' }}>
-                      <img src="/article-cover.svg" alt={a.title} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                      <img src={a.image || '/article-cover.svg'} alt={a.title} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                     </div>
                     <Text
                       font="headline"
