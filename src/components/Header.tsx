@@ -94,35 +94,11 @@ export function Header() {
         <nav className="hide-mobile-flex" style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)', alignItems: 'center', gap: '4px' }}>
           <button
             type="button"
-            onClick={() => scrollToSection('mission')}
-            className="header-tab"
-            style={{ padding: '8px 16px', borderRadius: '100px', border: 'none', cursor: 'pointer', color: '#0A0B0D' }}
-          >
-            <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 500 }}>{t('nav.mission')}</Text>
-          </button>
-          <button
-            type="button"
-            onClick={() => scrollToSection('what-it-does')}
-            className="header-tab"
-            style={{ padding: '8px 16px', borderRadius: '100px', border: 'none', cursor: 'pointer', color: '#0A0B0D' }}
-          >
-            <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 500 }}>{t('nav.whatItDoes')}</Text>
-          </button>
-          <button
-            type="button"
             onClick={() => scrollToSection('how-it-works')}
             className="header-tab"
             style={{ padding: '8px 16px', borderRadius: '100px', border: 'none', cursor: 'pointer', color: '#0A0B0D' }}
           >
             <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 500 }}>{t('nav.howItWorks')}</Text>
-          </button>
-          <button
-            type="button"
-            onClick={() => scrollToSection('advantages')}
-            className="header-tab"
-            style={{ padding: '8px 16px', borderRadius: '100px', border: 'none', cursor: 'pointer', color: '#0A0B0D' }}
-          >
-            <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 500 }}>{t('nav.advantages')}</Text>
           </button>
           <button
             type="button"
@@ -219,7 +195,7 @@ export function Header() {
             className="btn-fw-500"
             style={{ borderRadius: '56px', minWidth: '100px', padding: '0 24px', height: '44px' }}
           >
-            <AnimatedButtonText>{t('hero.ctaHeader')}</AnimatedButtonText>
+            <AnimatedButtonText>{t('hero.ctaMain')}</AnimatedButtonText>
           </Button>
         </HStack>
       </HStack>
@@ -246,31 +222,10 @@ export function Header() {
         <VStack as="nav" style={{ gap: '4px', padding: '12px 16px 8px' }}>
           <button
             type="button"
-            onClick={() => scrollToSection('mission')}
-            style={{ padding: '10px 4px', transition: 'color 0.2s ease', textAlign: 'left', background: 'none', border: 'none', color: '#0A0B0D', cursor: 'pointer' }}
-          >
-            <Text font="body" as="span">{t('nav.mission')}</Text>
-          </button>
-          <button
-            type="button"
-            onClick={() => scrollToSection('what-it-does')}
-            style={{ padding: '10px 4px', transition: 'color 0.2s ease', textAlign: 'left', background: 'none', border: 'none', color: '#0A0B0D', cursor: 'pointer' }}
-          >
-            <Text font="body" as="span">{t('nav.whatItDoes')}</Text>
-          </button>
-          <button
-            type="button"
             onClick={() => scrollToSection('how-it-works')}
             style={{ padding: '10px 4px', transition: 'color 0.2s ease', textAlign: 'left', background: 'none', border: 'none', color: '#0A0B0D', cursor: 'pointer' }}
           >
             <Text font="body" as="span">{t('nav.howItWorks')}</Text>
-          </button>
-          <button
-            type="button"
-            onClick={() => scrollToSection('advantages')}
-            style={{ padding: '10px 4px', transition: 'color 0.2s ease', textAlign: 'left', background: 'none', border: 'none', color: '#0A0B0D', cursor: 'pointer' }}
-          >
-            <Text font="body" as="span">{t('nav.advantages')}</Text>
           </button>
           <button
             type="button"
