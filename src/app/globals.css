@@ -318,10 +318,18 @@ input[type="number"]::-webkit-inner-spin-button {
    Responsive typography
    ═══════════════════════════════════════════════════════════════ */
 
-/* Section titles — center on mobile */
+/* Section titles — center on mobile, alternate left/right on desktop */
 @media (max-width: 767px) {
   .section-title {
     text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+@media (min-width: 768px) {
+  .section-title-right {
+    margin-left: auto;
+    text-align: right;
   }
 }
 
