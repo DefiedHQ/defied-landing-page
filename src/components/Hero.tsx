@@ -37,7 +37,7 @@ export function InfoSection() {
         style={{
           fontSize: 'clamp(2rem, 4vw, 3.25rem)',
           fontWeight: 500,
-          maxWidth: '600px',
+          maxWidth: '720px',
           marginBottom: '56px',
         }}
       >

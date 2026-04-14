@@ -128,7 +128,7 @@ export function LandingPage() {
       {/* Section: Mission */}
       <section id="mission" className="section-padding" style={{ paddingTop: 'clamp(48px, 8vw, 100px)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
-          <Text font="display2" as="h2" display="block" className="section-title" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, maxWidth: '600px', marginBottom: '56px' }}>
+          <Text font="display2" as="h2" display="block" className="section-title" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, maxWidth: '720px', marginBottom: '56px' }}>
             {t('imageSection.sectionTitle')}
           </Text>
           <m.div {...slideInUp}>
@@ -162,7 +162,7 @@ export function LandingPage() {
       {/* Section: Features (Какво прави) */}
       <section id="what-it-does" className="section-padding" style={{ paddingTop: 'clamp(100px, 12vw, 160px)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
-          <Text font="display2" as="h2" display="block" className="section-title" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, maxWidth: '600px', marginBottom: '56px' }}>
+          <Text font="display2" as="h2" display="block" className="section-title" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, maxWidth: '720px', marginBottom: '56px' }}>
             {t('features.sectionTitle')}
           </Text>
           <m.div
@@ -217,7 +217,7 @@ export function LandingPage() {
       {/* Section 3: Advantages */}
       <section id="advantages" className="section-padding" style={{ paddingBottom: 'clamp(48px, 8vw, 100px)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
-          <Text font="display2" as="h2" display="block" className="section-title" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, maxWidth: '600px', marginBottom: '56px' }}>
+          <Text font="display2" as="h2" display="block" className="section-title" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, maxWidth: '720px', marginBottom: '56px' }}>
             {t('advantages.title')}
           </Text>
           <m.div {...slideInLeft}>
