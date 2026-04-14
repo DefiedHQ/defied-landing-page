@@ -85,7 +85,7 @@ export function LandingPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
           >
-            <Text font="display1" as="h1" className="title-tight-lh" style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', fontWeight: 500, letterSpacing: '-0.02em', textAlign: 'center' }}>
+            <Text font="display1" as="h1" className="title-tight-lh" style={{ fontSize: 'clamp(2.25rem, 6vw, 4.5rem)', fontWeight: 500, letterSpacing: '-0.02em', textAlign: 'center' }}>
               {t('hero.title')}
             </Text>
           </m.div>
