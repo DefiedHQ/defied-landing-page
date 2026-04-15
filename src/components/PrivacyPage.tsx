@@ -58,7 +58,7 @@ export function PrivacyPage() {
           <li style={liStyle}><span style={strongStyle}>Fulfilling your requests:</span> To comply with requests or directions you make directly.</li>
           <li style={liStyle}><span style={strongStyle}>Consent:</span> For purposes for which we have obtained your explicit consent, where required by applicable law.</li>
         </ul>
-        <p style={pStyle}>We may use information that does not identify you — including aggregated or de-identified data — for any purpose not prohibited by applicable law.</p>
+        <p style={pStyle}>We may use information that does not identify you,including aggregated or de-identified data,for any purpose not prohibited by applicable law.</p>
       </div>
 
       <Text font="title2" as="h2" display="block" style={h2Style}>3. Sharing and Disclosure of Information</Text>
@@ -69,12 +69,12 @@ export function PrivacyPage() {
           <li style={liStyle}><span style={strongStyle}>Professional Advisors:</span> Legal, accounting, and compliance advisors engaged for audits and legal obligations.</li>
           <li style={liStyle}><span style={strongStyle}>Regulatory and Government Authorities:</span> Where we are legally required to share your personal data with relevant regulatory or governmental authorities.</li>
         </ul>
-        <p style={pStyle}>We may share information that does not identify you — including aggregated or de-identified data — except as prohibited by applicable law.</p>
+        <p style={pStyle}>We may share information that does not identify you,including aggregated or de-identified data,except as prohibited by applicable law.</p>
       </div>
 
       <Text font="title2" as="h2" display="block" style={h2Style}>4. Third-Party Services</Text>
       <div style={sectionStyle}>
-        <p style={pStyle}>The Services may include links to or integrations with websites, platforms, and services not operated or controlled by us. When you interact with those third parties — including when you leave our interface — they may independently collect information about you. Their information practices are governed by their own privacy policies and terms of use, which we encourage you to review.</p>
+        <p style={pStyle}>The Services may include links to or integrations with websites, platforms, and services not operated or controlled by us. When you interact with those third parties,including when you leave our interface,they may independently collect information about you. Their information practices are governed by their own privacy policies and terms of use, which we encourage you to review.</p>
         <p style={pStyle}>In particular, your use of a third-party wallet to engage with public blockchain networks is governed by that wallet provider&apos;s terms of service and privacy policy.</p>
       </div>
 

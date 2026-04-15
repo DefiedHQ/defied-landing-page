@@ -102,7 +102,7 @@ export function TermsPage() {
         <p style={pStyle}>Subject to your ongoing compliance with these Terms, we grant you a personal, non-exclusive, non-transferable, revocable license to access and use the Services solely as permitted by these Terms.</p>
 
         <p style={{ ...pStyle, fontWeight: 600, color: '#0A0B0D' }}>We own all rights in the Services.</p>
-        <p style={pStyle}>All right, title, and interest in and to the Services — including all content, code, data, and materials — belongs to Fusion Software LLC. Your use of the Services does not grant you any ownership or rights beyond the limited license set out above.</p>
+        <p style={pStyle}>All right, title, and interest in and to the Services, including all content, code, data, and materials, belongs to Fusion Software LLC. Your use of the Services does not grant you any ownership or rights beyond the limited license set out above.</p>
 
         <p style={{ ...pStyle, fontWeight: 600, color: '#0A0B0D' }}>Feedback.</p>
         <p style={pStyle}>Any feedback, suggestions, or ideas you provide about the Services are entirely voluntary. You agree that we may use such feedback freely without any obligation to you.</p>

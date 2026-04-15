@@ -45,14 +45,14 @@ export function RisksContent() {
         </ul>
 
         <p style={{ ...pStyle, fontWeight: 600, color: '#0A0B0D' }}>Basis for operating without a CASP license.</p>
-        <p style={pStyle}>The core Services provided by Defied — including stablecoin transfers, stablecoin swaps, and access to decentralized lending protocols — are provided in a fully decentralized manner without Defied acting as an intermediary. In accordance with Article 2(4) of MiCA, the regulation does not apply to crypto-asset services provided in a fully decentralized manner without any intermediary.</p>
+        <p style={pStyle}>The core Services provided by Defied,including stablecoin transfers, stablecoin swaps, and access to decentralized lending protocols,are provided in a fully decentralized manner without Defied acting as an intermediary. In accordance with Article 2(4) of MiCA, the regulation does not apply to crypto-asset services provided in a fully decentralized manner without any intermediary.</p>
         <p style={pStyle}>Specifically:</p>
         <ul style={ulStyle}>
           <li style={liStyle}>Stablecoin transfers on Base are executed directly by users via their self-custodial wallets, interacting with public smart contracts that Defied does not own or control</li>
           <li style={liStyle}>USDC/EURC swaps are executed directly against public liquidity pools on the Base network, accessible by anyone without Defied&apos;s involvement</li>
           <li style={liStyle}>Deposits into lending protocols (Aave, Compound, Morpho, Lido) are made directly by users to those protocols&apos; public smart contracts, which are independently accessible without Defied&apos;s interface</li>
         </ul>
-        <p style={pStyle}>Defied provides a user interface — a front-end convenience layer — to these publicly accessible protocols. Users may interact with all underlying protocols directly at any time, without using Defied. Our interface does not custody funds, execute transactions on behalf of users, or act as a counterparty to any transaction.</p>
+        <p style={pStyle}>Defied provides a user interface,a front-end convenience layer,to these publicly accessible protocols. Users may interact with all underlying protocols directly at any time, without using Defied. Our interface does not custody funds, execute transactions on behalf of users, or act as a counterparty to any transaction.</p>
 
         <p style={{ ...pStyle, fontWeight: 600, color: '#0A0B0D' }}>Fiat on-ramp and off-ramp services.</p>
         <p style={pStyle}>The conversion of fiat currency (euros or dollars) to and from stablecoins is facilitated entirely by Bridge.xyz, a regulated third-party service provider operating under its own licenses and regulatory authorizations. Defied does not provide fiat conversion services and does not hold, transmit, or convert fiat currency. All KYC/AML obligations in connection with fiat conversion are discharged by Bridge.xyz under its own regulatory framework.</p>
@@ -63,7 +63,7 @@ export function RisksContent() {
 
       <Text font="title2" as="h2" display="block" style={h2Style}>2. MiCA Compliance of Supported Stablecoins</Text>
       <div style={sectionStyle}>
-        <p style={pStyle}>The stablecoins supported by Defied — USD Coin (USDC) and Euro Coin (EURC) — are issued by Circle Internet Financial, a regulated entity operating in compliance with applicable financial regulations.</p>
+        <p style={pStyle}>The stablecoins supported by Defied,USD Coin (USDC) and Euro Coin (EURC),are issued by Circle Internet Financial, a regulated entity operating in compliance with applicable financial regulations.</p>
         <p style={pStyle}><span style={strongStyle}>EURC</span> is an e-money token (EMT) as defined under MiCA, issued by Circle in compliance with MiCA&apos;s requirements for e-money token issuers, including authorization, reserve backing, and redemption rights. EURC is backed 1:1 by euro-denominated reserves.</p>
         <p style={pStyle}><span style={strongStyle}>USDC</span> is issued by Circle under applicable US regulatory frameworks and is backed 1:1 by US dollar-denominated reserves held in regulated financial institutions.</p>
         <p style={pStyle}>Defied does not issue, mint, redeem, or control either stablecoin. We provide an interface through which users may access these assets on the Base network. The regulatory obligations of stablecoin issuance rest entirely with Circle as the issuer.</p>
@@ -73,7 +73,7 @@ export function RisksContent() {
       <Text font="title2" as="h2" display="block" style={h2Style}>3. Technology and Smart Contract Risk</Text>
       <div style={sectionStyle}>
         <p style={{ ...pStyle, fontWeight: 600, color: '#0A0B0D' }}>Smart contracts are experimental technology.</p>
-        <p style={pStyle}>The protocols accessible through Defied — including Aave, Compound, Morpho, Lido, and others — operate via smart contracts deployed on public blockchain networks. Smart contracts are self-executing code that, once deployed, operate autonomously without human intervention. While the protocols surfaced by Defied have undergone extensive security audits, no smart contract can be guaranteed to be free from bugs, vulnerabilities, or exploits.</p>
+        <p style={pStyle}>The protocols accessible through Defied,including Aave, Compound, Morpho, Lido, and others,operate via smart contracts deployed on public blockchain networks. Smart contracts are self-executing code that, once deployed, operate autonomously without human intervention. While the protocols surfaced by Defied have undergone extensive security audits, no smart contract can be guaranteed to be free from bugs, vulnerabilities, or exploits.</p>
 
         <p style={{ ...pStyle, fontWeight: 600, color: '#0A0B0D' }}>Risks include but are not limited to:</p>
         <ul style={ulStyle}>
@@ -159,7 +159,7 @@ export function RisksContent() {
 
       <Text font="title2" as="h2" display="block" style={h2Style}>10. Limitation of Liability</Text>
       <div style={sectionStyle}>
-        <p style={pStyle}>To the fullest extent permitted by applicable law, Fusion Software LLC and its officers, directors, employees, and agents shall not be liable for any loss or damage — including loss of funds, loss of data, or loss of access — arising from:</p>
+        <p style={pStyle}>To the fullest extent permitted by applicable law, Fusion Software LLC and its officers, directors, employees, and agents shall not be liable for any loss or damage,including loss of funds, loss of data, or loss of access,arising from:</p>
         <ul style={ulStyle}>
           <li style={liStyle}>Smart contract vulnerabilities, exploits, or failures in any third-party protocol</li>
           <li style={liStyle}>De-pegging or failure of any stablecoin</li>
