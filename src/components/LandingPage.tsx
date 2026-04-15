@@ -139,10 +139,10 @@ export function LandingPage() {
             {t('hero.builtWith')}
           </Text>
           <div style={{ display: 'flex', alignItems: 'center', gap: 'clamp(20px, 4vw, 32px)', flexWrap: 'wrap', justifyContent: 'center' }}>
-            <Image src="/privy_logo.png" alt="Privy" width={80} height={24} style={{ objectFit: 'contain', filter: 'grayscale(100%) brightness(0)', opacity: 0.7 }} />
-            <Image src="/bridge_logo.svg" alt="Bridge" width={80} height={24} style={{ objectFit: 'contain', filter: 'grayscale(100%) brightness(0)', opacity: 0.7 }} />
-            <Image src="/gnosis_pay_logo.svg" alt="Gnosis Pay" width={90} height={24} style={{ objectFit: 'contain', filter: 'grayscale(100%) brightness(0)', opacity: 0.7 }} />
-            <Image src="/lifi_logo.svg" alt="LI.FI" width={60} height={24} style={{ objectFit: 'contain', filter: 'grayscale(100%) brightness(0)', opacity: 0.7 }} />
+            <Image className="partner-logo" src="/privy_stripe.svg" alt="Privy" width={80} height={24} style={{ objectFit: 'contain', filter: 'grayscale(100%) brightness(0)' }} />
+            <Image className="partner-logo" src="/bridge_logo.svg" alt="Bridge" width={80} height={24} style={{ objectFit: 'contain', filter: 'grayscale(100%) brightness(0)' }} />
+            <Image className="partner-logo" src="/gnosis_pay_logo.svg" alt="Gnosis Pay" width={90} height={24} style={{ objectFit: 'contain', filter: 'grayscale(100%) brightness(0)' }} />
+            <Image className="partner-logo" src="/lifi_logo.svg" alt="LI.FI" width={60} height={24} style={{ objectFit: 'contain', filter: 'grayscale(100%) brightness(0)' }} />
           </div>
         </m.div>
 
