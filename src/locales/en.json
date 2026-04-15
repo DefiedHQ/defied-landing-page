@@ -29,7 +29,7 @@
   "features": {
     "sectionTitle": "Everything your bank does. And what it never will.",
     "f1Title": "Send stablecoins",
-    "f1Desc": "Send euros or dollars to anyone, anywhere, in seconds. No SWIFT codes. No 3–5 business day waits. No €25 wire fees. Just a wallet address and a confirmation.",
+    "f1Desc": "Send euros or dollars to anyone, anywhere, in seconds. No SWIFT codes. No 3–5 business day waits. No €25 wire fees. Just an email address and a confirmation.",
     "f2Title": "Earn on your balance",
     "f2Desc": "Connect to the same decentralized lending protocols used by on-chain institutions worldwide. Access pools currently offering 3–5% APY on USDC and EURC - directly, with no lock-up period. Withdraw anytime.",
     "f2Disclaimer": "Yields are variable and depend on protocol market conditions. This is not a guaranteed return or investment product.",
@@ -38,7 +38,7 @@
     "f4Title": "Decentralized Finance",
     "f4Desc": "Use protocols in decentralized finance",
     "f5Title": "Virtual debit card",
-    "f5Desc": "Spend your stablecoin balance anywhere Visa is accepted. Top up from your wallet in one tap. Available on Premium plan."
+    "f5Desc": "Spend your stablecoin balance anywhere Visa is accepted. Top up from your wallet in one tap."
   },
   "advantages": {
     "title": "The financial system wasn't built for you. This one is.",
