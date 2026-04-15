@@ -327,12 +327,14 @@ input[type="number"]::-webkit-inner-spin-button {
 
 /* Hero & section titles — tighter line-height on small screens only */
 @media (max-width: 767px) {
-  .title-tight-lh {
+  .title-tight-lh,
+  .section-title {
     line-height: 1.05;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .title-tight-lh {
+  .title-tight-lh,
+  .section-title {
     line-height: 1.1;
   }
 }
