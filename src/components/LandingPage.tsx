@@ -33,6 +33,7 @@ const slideInUp = {
 };
 import { AboutCarousel } from '@/components/AboutCarousel';
 import { ProtocolsSection } from '@/components/ProtocolsSection';
+import { InfrastructureSection } from '@/components/InfrastructureSection';
 import { InfoSection } from '@/components/Hero';
 import { Footer } from '@/components/Footer';
 import { useLanguage } from '@/context/LanguageContext';
@@ -128,24 +129,6 @@ export function LandingPage() {
           </m.div>
         </VStack>
 
-        {/* Partner logos */}
-        <m.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.5, ease: 'easeOut' }}
-          style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px', margin: 'auto 0' }}
-        >
-          <Text font="caption" as="p" color="fgMuted" style={{ textTransform: 'uppercase', letterSpacing: '0.08em', fontSize: '12px' }}>
-            {t('hero.builtWith')}
-          </Text>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 'clamp(20px, 4vw, 32px)', flexWrap: 'wrap', justifyContent: 'center' }}>
-            <Image className="partner-logo" src="/privy_stripe.svg" alt="Privy" width={80} height={24} style={{ objectFit: 'contain', filter: 'grayscale(100%) brightness(0)' }} />
-            <Image className="partner-logo" src="/bridge_logo.svg" alt="Bridge" width={80} height={24} style={{ objectFit: 'contain', filter: 'grayscale(100%) brightness(0)' }} />
-            <Image className="partner-logo" src="/gnosis_pay_logo.svg" alt="Gnosis Pay" width={90} height={24} style={{ objectFit: 'contain', filter: 'grayscale(100%) brightness(0)' }} />
-            <Image className="partner-logo" src="/lifi_logo.svg" alt="LI.FI" width={60} height={24} style={{ objectFit: 'contain', filter: 'grayscale(100%) brightness(0)' }} />
-          </div>
-        </m.div>
-
         {/* Hero image — bottom aligned to viewport edge */}
         <m.div
           initial={{ opacity: 0, y: 30 }}
@@ -162,6 +145,11 @@ export function LandingPage() {
             style={{ objectFit: 'contain', borderRadius: '32px' }}
           />
         </m.div>
+      </section>
+
+      {/* Section: Infrastructure Partners */}
+      <section className="section-padding" style={{ paddingTop: 'clamp(48px, 8vw, 80px)', paddingBottom: 'clamp(48px, 8vw, 80px)' }}>
+        <InfrastructureSection />
       </section>
 
       {/* Section: Mission */}

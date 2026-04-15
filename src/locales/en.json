@@ -22,6 +22,10 @@
     "disclaimer": "Accessing decentralized lending protocols involves risk. Past yields are not guaranteed. Defied provides a non-custodial interface to public blockchain protocols - it does not manage or invest your funds.",
     "builtWith": "Built with the best"
   },
+  "infrastructure": {
+    "title": "Built on trusted infrastructure",
+    "subtitle": "Powered by industry-leading providers in security, compliance, and payments."
+  },
   "features": {
     "sectionTitle": "Everything your bank does. And what it never will.",
     "f1Title": "Send stablecoins",
