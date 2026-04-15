@@ -147,6 +147,11 @@ export function LandingPage() {
         </m.div>
       </section>
 
+      {/* Section: Trust strip — Infrastructure Partners */}
+      <section className="section-padding" style={{ paddingTop: 'clamp(48px, 8vw, 80px)', paddingBottom: 'clamp(48px, 8vw, 80px)' }}>
+        <InfrastructureSection />
+      </section>
+
       {/* Section: What it does — The four pillars */}
       <section id="what-it-does" className="section-padding" style={{ paddingTop: 'clamp(48px, 8vw, 80px)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
@@ -234,11 +239,6 @@ export function LandingPage() {
         <Box as="div" style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
           <AboutCarousel />
         </Box>
-      </section>
-
-      {/* Section: Trust strip — Infrastructure Partners */}
-      <section className="section-padding" style={{ paddingTop: 'clamp(48px, 8vw, 80px)', paddingBottom: 'clamp(48px, 8vw, 80px)' }}>
-        <InfrastructureSection />
       </section>
 
       {/* Section: Protocols — DeFi access proof points */}
