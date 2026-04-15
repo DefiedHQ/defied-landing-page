@@ -74,7 +74,7 @@
     "card4Desc": "We cover your gas fees when you send stablecoins or interact with supported protocols. The blockchain stays invisible. The experience stays simple."
   },
   "faq": {
-    "title": "Questions",
+    "title": "FAQ",
     "q1": "What is Defied?",
     "a1": "Defied is a non-custodial stablecoin wallet that lets you send, receive, and exchange USDC and EURC on the Base network. It also provides a simple interface for accessing decentralized finance protocols - including lending, staking, and liquidity provision - without requiring any technical knowledge.",
     "q2": "What is a stablecoin?",

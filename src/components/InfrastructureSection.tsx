@@ -9,7 +9,7 @@ import { useLanguage } from '@/context/LanguageContext';
 
 const partners = [
   { name: 'Base', logo: '/Base_Logo.svg', width: 100, height: 28 },
-  { name: 'Privy', logo: '/privy_stripe.svg', width: 100, height: 28 },
+  { name: 'Privy', logo: '/privy_stripe.svg', width: 130, height: 28 },
   { name: 'Bridge.xyz', logo: '/bridge_logo.svg', width: 100, height: 28 },
   { name: 'Gnosis Pay', logo: '/gnosis_pay_logo.svg', width: 110, height: 28 },
   { name: 'LI.FI', logo: '/lifi_logo.svg', width: 70, height: 28 },
