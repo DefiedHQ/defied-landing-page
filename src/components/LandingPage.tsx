@@ -147,47 +147,13 @@ export function LandingPage() {
         </m.div>
       </section>
 
-      {/* Section: Infrastructure Partners */}
+      {/* Section: Trust strip — Infrastructure Partners */}
       <section className="section-padding" style={{ paddingTop: 'clamp(48px, 8vw, 80px)', paddingBottom: 'clamp(48px, 8vw, 80px)' }}>
         <InfrastructureSection />
       </section>
 
-      {/* Section: Mission */}
-      <section id="mission" className="section-padding" style={{ paddingTop: 'clamp(48px, 8vw, 100px)' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
-          <Text font="display2" as="h2" display="block" className="section-title" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, maxWidth: '720px', marginBottom: '56px' }}>
-            {t('imageSection.sectionTitle')}
-          </Text>
-          <m.div {...slideInUp}>
-            <article
-              className="promo-card-layout"
-              style={{
-                background: '#0052FF',
-                borderRadius: '56px',
-                padding: 'clamp(40px, 6vw, 80px)',
-                alignItems: 'center',
-              }}
-            >
-              <m.div {...slideInLeft} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 1 }}>
-                <Lottie source={dappWallet} autoplay loop width="300px" height="300px" />
-              </m.div>
-              <m.div {...slideInRight} style={{ flex: 1 }}>
-                <div className="cta-text-column" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                  <Text font="display2" as="h3" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', fontWeight: 500, lineHeight: 1.05, color: '#fff' }}>
-                    {t('imageSection.title')}
-                  </Text>
-                  <Text font="body" as="p" style={{ fontSize: '18px', lineHeight: '28px', color: 'rgba(255, 255, 255, 0.7)' }}>
-                    {t('imageSection.body1')}
-                  </Text>
-                </div>
-              </m.div>
-            </article>
-          </m.div>
-        </div>
-      </section>
-
-      {/* Section: Features (Какво прави) */}
-      <section id="what-it-does" className="section-padding" style={{ paddingTop: 'clamp(100px, 12vw, 160px)' }}>
+      {/* Section: What it does — The four pillars */}
+      <section id="what-it-does" className="section-padding" style={{ paddingTop: 'clamp(48px, 8vw, 80px)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
           <Text font="display2" as="h2" display="block" className="section-title" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, maxWidth: '720px', marginBottom: '56px' }}>
             {t('features.sectionTitle')}
@@ -231,7 +197,41 @@ export function LandingPage() {
         </div>
       </section>
 
-      {/* Section 2: About Grid */}
+      {/* Section: Mission — The why */}
+      <section id="mission" className="section-padding" style={{ paddingTop: 'clamp(100px, 12vw, 160px)' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
+          <Text font="display2" as="h2" display="block" className="section-title" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, maxWidth: '720px', marginBottom: '56px' }}>
+            {t('imageSection.sectionTitle')}
+          </Text>
+          <m.div {...slideInUp}>
+            <article
+              className="promo-card-layout"
+              style={{
+                background: '#0052FF',
+                borderRadius: '56px',
+                padding: 'clamp(40px, 6vw, 80px)',
+                alignItems: 'center',
+              }}
+            >
+              <m.div {...slideInLeft} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 1 }}>
+                <Lottie source={dappWallet} autoplay loop width="300px" height="300px" />
+              </m.div>
+              <m.div {...slideInRight} style={{ flex: 1 }}>
+                <div className="cta-text-column" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                  <Text font="display2" as="h3" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', fontWeight: 500, lineHeight: 1.05, color: '#fff' }}>
+                    {t('imageSection.title')}
+                  </Text>
+                  <Text font="body" as="p" style={{ fontSize: '18px', lineHeight: '28px', color: 'rgba(255, 255, 255, 0.7)' }}>
+                    {t('imageSection.body1')}
+                  </Text>
+                </div>
+              </m.div>
+            </article>
+          </m.div>
+        </div>
+      </section>
+
+      {/* Section: How it works */}
       <section
         id="how-it-works"
         className="section-padding section-vertical-padding"
@@ -241,7 +241,12 @@ export function LandingPage() {
         </Box>
       </section>
 
-      {/* Section 3: Advantages */}
+      {/* Section: Protocols — DeFi access proof points */}
+      <section className="section-padding section-vertical-padding">
+        <ProtocolsSection />
+      </section>
+
+      {/* Section: Advantages — Deep dive */}
       <section id="advantages" className="section-padding" style={{ paddingBottom: 'clamp(48px, 8vw, 100px)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
           <Text font="display2" as="h2" display="block" className="section-title" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, maxWidth: '720px', marginBottom: '56px' }}>
@@ -319,7 +324,15 @@ export function LandingPage() {
         </div>
       </section>
 
-      {/* Section: CTA */}
+      {/* Section: FAQ — Catch remaining objections */}
+      <section
+        id="faq"
+        className="section-padding section-vertical-padding"
+      >
+        <InfoSection />
+      </section>
+
+      {/* Section: CTA repeat — Final push */}
       <section className="section-padding section-vertical-padding">
         <div
           className="promo-card-layout"
@@ -363,19 +376,6 @@ export function LandingPage() {
             <HeroSquare name="cryptoPortfolioUsdc" scaleMultiplier={1.8} />
           </m.div>
         </div>
-      </section>
-
-      {/* Section 4: Protocols */}
-      <section className="section-padding section-vertical-padding">
-        <ProtocolsSection />
-      </section>
-
-      {/* Section 5: FAQ */}
-      <section
-        id="faq"
-        className="section-padding section-vertical-padding"
-      >
-        <InfoSection />
       </section>
 
       {/* Section 7: Footer */}
