@@ -125,19 +125,26 @@ export function LandingPage() {
               <AnimatedButtonText>{t('hero.cta')}</AnimatedButtonText>
             </Button>
           </Box>
-            <div style={{ marginTop: '40px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
-              <Text font="caption" as="p" color="fgMuted" style={{ textTransform: 'uppercase', letterSpacing: '0.08em', fontSize: '12px' }}>
-                {t('hero.builtWith')}
-              </Text>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 'clamp(20px, 4vw, 32px)', flexWrap: 'wrap', justifyContent: 'center' }}>
-                <Image src="/privy_logo.png" alt="Privy" width={80} height={24} style={{ objectFit: 'contain', filter: 'grayscale(100%) brightness(0)', opacity: 0.7 }} />
-                <Image src="/bridge_logo.svg" alt="Bridge" width={80} height={24} style={{ objectFit: 'contain', filter: 'grayscale(100%) brightness(0)', opacity: 0.7 }} />
-                <Image src="/gnosis_pay_logo.svg" alt="Gnosis Pay" width={90} height={24} style={{ objectFit: 'contain', filter: 'grayscale(100%) brightness(0)', opacity: 0.7 }} />
-                <Image src="/lifi_logo.svg" alt="LI.FI" width={60} height={24} style={{ objectFit: 'contain', filter: 'grayscale(100%) brightness(0)', opacity: 0.7 }} />
-              </div>
-            </div>
           </m.div>
         </VStack>
+
+        {/* Partner logos */}
+        <m.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.5, ease: 'easeOut' }}
+          style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px', margin: 'auto 0' }}
+        >
+          <Text font="caption" as="p" color="fgMuted" style={{ textTransform: 'uppercase', letterSpacing: '0.08em', fontSize: '12px' }}>
+            {t('hero.builtWith')}
+          </Text>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 'clamp(20px, 4vw, 32px)', flexWrap: 'wrap', justifyContent: 'center' }}>
+            <Image src="/privy_logo.png" alt="Privy" width={80} height={24} style={{ objectFit: 'contain', filter: 'grayscale(100%) brightness(0)', opacity: 0.7 }} />
+            <Image src="/bridge_logo.svg" alt="Bridge" width={80} height={24} style={{ objectFit: 'contain', filter: 'grayscale(100%) brightness(0)', opacity: 0.7 }} />
+            <Image src="/gnosis_pay_logo.svg" alt="Gnosis Pay" width={90} height={24} style={{ objectFit: 'contain', filter: 'grayscale(100%) brightness(0)', opacity: 0.7 }} />
+            <Image src="/lifi_logo.svg" alt="LI.FI" width={60} height={24} style={{ objectFit: 'contain', filter: 'grayscale(100%) brightness(0)', opacity: 0.7 }} />
+          </div>
+        </m.div>
 
         {/* Hero image — bottom aligned to viewport edge */}
         <m.div
