@@ -34,6 +34,7 @@ export function Footer() {
             </Link>
             <VStack as="div" style={{ marginTop: '50px', gap: '4px' }}>
               <Text font="label2" as="p" color="fgMuted">hello@defied.money</Text>
+              <Text font="label2" as="p" color="fgMuted">{t('footer.operator')}</Text>
               <Text font="label2" as="p" color="fgMuted">{t('footer.address')}</Text>
             </VStack>
             {/* Social icons */}
