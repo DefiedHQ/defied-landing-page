@@ -14,7 +14,7 @@ export const metadata: Metadata = {
       'Articles, guides, and news about DeFi, blockchain, and decentralized finance from Defied.',
     url: absoluteUrl('/blog'),
     siteName: siteConfig.name,
-    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: 'Defied – Blog' }],
+    images: [{ url: absoluteUrl(siteConfig.ogImage), width: 1200, height: 630, alt: 'Defied – Blog' }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     images: [siteConfig.ogImage],
   },
   alternates: {
-    canonical: '/blog',
+    canonical: absoluteUrl('/blog'),
   },
 };
 

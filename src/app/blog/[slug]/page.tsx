@@ -20,12 +20,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: article.excerpt,
       url: articleUrl,
       siteName: siteConfig.name,
-      images: [{ url: article.image || siteConfig.ogImage, width: 1200, height: 630, alt: article.title }],
+      images: [{ url: absoluteUrl(article.image || siteConfig.ogImage), width: 1200, height: 630, alt: article.title }],
       type: 'article',
       publishedTime: `${article.date}T00:00:00+00:00`,
       modifiedTime: `${article.date}T00:00:00+00:00`,
       section: article.category,
-      authors: [siteConfig.url],
+      authors: [article.author],
     },
     twitter: {
       card: 'summary_large_image',
@@ -64,10 +64,10 @@ export default async function ArticleRoute({ params }: Props) {
               image: absoluteUrl(article.image || siteConfig.ogImage),
               datePublished: `${article.date}T00:00:00+00:00`,
               dateModified: `${article.date}T00:00:00+00:00`,
+              dateCreated: `${article.date}T00:00:00+00:00`,
               author: {
-                '@type': 'Organization',
-                name: siteConfig.name,
-                url: siteConfig.url,
+                '@type': 'Person',
+                name: article.author,
               },
               publisher: {
                 '@type': 'Organization',

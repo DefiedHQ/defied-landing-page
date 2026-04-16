@@ -117,7 +117,7 @@ export function ResourcesPage() {
                       {article.excerpt}
                     </Text>
                     <Text font="label2" as="div" color="fgMuted" style={{ marginTop: '16px' }}>
-                      {formatDate(article.date)} &middot; {article.readTime} {t('common.minRead')}
+                      <time dateTime={`${article.date}T00:00:00+00:00`}>{formatDate(article.date)}</time> &middot; {article.readTime} {t('common.minRead')}
                     </Text>
                   </div>
                 </div>
@@ -173,7 +173,7 @@ export function ResourcesPage() {
                       {article.excerpt}
                     </Text>
                     <Text font="label2" as="div" color="fgMuted" style={{ marginTop: '12px' }}>
-                      {formatDate(article.date)} &middot; {article.readTime} {t('common.minRead')}
+                      <time dateTime={`${article.date}T00:00:00+00:00`}>{formatDate(article.date)}</time> &middot; {article.readTime} {t('common.minRead')}
                     </Text>
                   </div>
                 </div>

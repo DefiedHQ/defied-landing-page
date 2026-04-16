@@ -7,6 +7,7 @@ import { Text } from '@coinbase/cds-web/typography/Text';
 import { Tag } from '@coinbase/cds-web/tag/Tag';
 import { useArticles } from '@/data/useArticles';
 import { useLanguage } from '@/context/LanguageContext';
+import { siteConfig, absoluteUrl } from '@/lib/seo';
 
 function renderInlineMarkdown(text: string): React.ReactNode[] {
   const parts: React.ReactNode[] = [];
@@ -64,6 +65,7 @@ export function ArticlePage() {
   const articles = useArticles();
   const slug = params.slug as string;
   const article = articles.find((a) => a.id === slug);
+  const articleUrl = absoluteUrl(`/blog/${slug}`);
 
   function formatDate(dateStr: string) {
     const d = new Date(dateStr);
@@ -93,8 +95,31 @@ export function ArticlePage() {
   return (
     <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 16px', paddingBottom: '64px', width: '100%' }}>
 
+        {/* Breadcrumb */}
+        <nav aria-label="Breadcrumb" style={{ marginTop: 'clamp(48px, 10vw, 120px)', marginBottom: '16px' }}>
+          <ol style={{ display: 'flex', alignItems: 'center', gap: '6px', listStyle: 'none', margin: 0, padding: 0 }}>
+            <li>
+              <Link href="/" style={{ color: '#5B616E', textDecoration: 'none', fontSize: '14px', lineHeight: '20px' }}>
+                Home
+              </Link>
+            </li>
+            <li aria-hidden="true" style={{ color: '#9CA3AF', fontSize: '14px' }}>/</li>
+            <li>
+              <Link href="/blog" style={{ color: '#5B616E', textDecoration: 'none', fontSize: '14px', lineHeight: '20px' }}>
+                Blog
+              </Link>
+            </li>
+            <li aria-hidden="true" style={{ color: '#9CA3AF', fontSize: '14px' }}>/</li>
+            <li aria-current="page">
+              <Text font="label2" as="span" style={{ color: '#0A0B0D', fontSize: '14px', lineHeight: '20px' }}>
+                {article.title}
+              </Text>
+            </li>
+          </ol>
+        </nav>
+
         {/* Category badge */}
-        <div style={{ marginTop: 'clamp(48px, 10vw, 120px)', marginBottom: '16px' }}>
+        <div style={{ marginBottom: '16px' }}>
           <span className="category-tag-hover"><Tag colorScheme="gray">{article.category}</Tag></span>
         </div>
 
@@ -111,7 +136,7 @@ export function ArticlePage() {
               {t('common.by')} <Text font="label2" as="span" style={{ color: '#6b7280' }}>{article.author || 'Defied'}</Text>
             </Text>
             <Text font="label2" as="div" color="fgMuted">
-              {formatDate(article.date)} &middot; {article.readTime} {t('common.minRead')}
+              <time dateTime={`${article.date}T00:00:00+00:00`}>{formatDate(article.date)}</time> &middot; {article.readTime} {t('common.minRead')}
             </Text>
           </div>
         </div>
@@ -148,12 +173,12 @@ export function ArticlePage() {
           <aside>
             {/* Share */}
             <div style={{ marginBottom: '40px' }}>
-              <Text font="title3" as="h3" display="block" style={{ marginBottom: '24px' }}>
+              <Text font="title3" as="h2" display="block" style={{ marginBottom: '24px' }}>
                 {t('resources.shareArticle')}
               </Text>
               <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
                 <a
-                  href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(article.title)}`}
+                  href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(article.title)}&url=${encodeURIComponent(articleUrl)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover-fade-70"
@@ -162,7 +187,7 @@ export function ArticlePage() {
                   <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                 </a>
                 <a
-                  href={`https://t.me/share/url?text=${encodeURIComponent(article.title)}`}
+                  href={`https://t.me/share/url?url=${encodeURIComponent(articleUrl)}&text=${encodeURIComponent(article.title)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover-fade-70"
@@ -171,7 +196,7 @@ export function ArticlePage() {
                   <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
                 </a>
                 <a
-                  href={`mailto:?subject=${encodeURIComponent(article.title)}`}
+                  href={`mailto:?subject=${encodeURIComponent(article.title)}&body=${encodeURIComponent(articleUrl)}`}
                   className="hover-fade-70"
                   style={{ color: '#0A0B0D', textDecoration: 'none' }}
                 >
@@ -221,7 +246,7 @@ export function ArticlePage() {
 
             {/* Recent Posts */}
             <div>
-              <Text font="title3" as="h3" display="block" style={{ marginBottom: '24px' }}>
+              <Text font="title3" as="h2" display="block" style={{ marginBottom: '24px' }}>
                 {t('resources.recentPosts')}
               </Text>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
@@ -237,7 +262,7 @@ export function ArticlePage() {
                     </div>
                     <Text
                       font="headline"
-                      as="h4"
+                      as="h3"
                       className="card-group-blue"
                       style={{
                         marginBottom: '8px',
@@ -254,7 +279,7 @@ export function ArticlePage() {
                       {a.excerpt}
                     </Text>
                     <Text font="label2" as="span" color="fgMuted">
-                      {formatDate(a.date)} &middot; {a.readTime} {t('common.minRead')}
+                      <time dateTime={`${a.date}T00:00:00+00:00`}>{formatDate(a.date)}</time> &middot; {a.readTime} {t('common.minRead')}
                     </Text>
                   </Link>
                 ))}
