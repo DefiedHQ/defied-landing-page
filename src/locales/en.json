@@ -52,7 +52,7 @@
   "advantages": {
     "title": "The financial system wasn't built for you. This one is.",
     "subtitle": "Stablecoins, self-custody, and decentralized lending -- all in one account. No bank required.",
-    "row1Heading": "Stablecoins",
+    "row1Heading": "Spend stablecoins",
     "row1Subtext": "Unlike volatile cryptocurrencies, stablecoins are pegged 1:1 to real currencies - USDC to the US dollar, EURC to the euro. You get the speed and global reach of blockchain with the price stability of the currencies you already use. Send and receive 24/7, including weekends and public holidays.",
     "row2Heading": "An account that's actually yours",
     "row2Subtext": "With a traditional bank or fintech app, your balance is a number in their database. They hold your money. They can restrict, freeze, or close your account. With Defied, your funds live in a wallet secured by cryptography - not on our servers, not in our control. Your wallet exists and remains accessible even if Defied ceases to exist.",

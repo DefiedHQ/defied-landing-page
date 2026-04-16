@@ -284,18 +284,23 @@ export function LandingPage() {
                 heading: t('advantages.row1Heading'),
                 text: t('advantages.row1Subtext'),
                 reversed: false,
+                useCustomImage: true,
+                customImageSrc: '/stablecoin_section.png',
               },
               {
                 illustration: 'walletSecurity' as const,
                 heading: t('advantages.row2Heading'),
                 text: t('advantages.row2Subtext'),
                 reversed: true,
+                useCustomImage: true,
+                customImageSrc: '/account_section.png',
               },
               {
                 illustration: 'exploreDecentralizedApps' as const,
                 heading: t('advantages.row3Heading'),
                 text: t('advantages.row3Subtext'),
                 reversed: false,
+                useCustomImage: true,
               },
             ].map((card, i) => {
               const textBlock = (
@@ -310,7 +315,11 @@ export function LandingPage() {
               );
               const illustrationBlock = (
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 1 }}>
-                  <HeroSquare name={card.illustration} scaleMultiplier={1.2} />
+                  {'useCustomImage' in card && card.useCustomImage ? (
+                    <img src={'customImageSrc' in card ? (card.customImageSrc as string) : '/defi_section.png'} alt={card.heading} style={{ width: '100%', maxWidth: '500px', borderRadius: '56px' }} />
+                  ) : (
+                    <HeroSquare name={card.illustration} scaleMultiplier={1.2} />
+                  )}
                 </div>
               );
               return (

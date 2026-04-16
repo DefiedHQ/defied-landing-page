@@ -361,13 +361,14 @@ input[type="number"]::-webkit-inner-spin-button {
   gap: 56px;
   width: max-content;
   animation: logo-scroll 20s linear infinite;
+  will-change: transform;
 }
 .logo-carousel-item {
   flex-shrink: 0;
 }
 @keyframes logo-scroll {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  100% { transform: translateX(-25%); }
 }
 @media (prefers-reduced-motion: reduce) {
   .logo-carousel-track {

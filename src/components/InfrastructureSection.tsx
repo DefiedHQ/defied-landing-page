@@ -39,8 +39,8 @@ export function InfrastructureSection() {
         </div>
 
         <div className="logo-carousel-wrapper">
-          <div className="logo-carousel-track">
-            {[...partners, ...partners].map((partner, i) => (
+          <div className="logo-carousel-track" aria-hidden="true">
+            {[...partners, ...partners, ...partners, ...partners].map((partner, i) => (
               <div key={`${partner.name}-${i}`} className="logo-carousel-item">
                 <Image
                   className="partner-logo"
