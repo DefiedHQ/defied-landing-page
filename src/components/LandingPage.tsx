@@ -48,12 +48,8 @@ export function LandingPage() {
     if (hash) {
       setTimeout(() => {
         const el = document.getElementById(hash);
-        const container = document.querySelector('.landing-scroll-container');
-        if (el && container) {
-          const elRect = el.getBoundingClientRect();
-          const containerRect = container.getBoundingClientRect();
-          const offset = elRect.top - containerRect.top + container.scrollTop;
-          container.scrollTo({ top: offset, behavior: 'smooth' });
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
         }
       }, 100);
     }
@@ -65,7 +61,6 @@ export function LandingPage() {
       style={{
         flex: 1,
         minHeight: 0,
-        overflowY: 'scroll',
         background: '#FFFFFF',
       }}
     >
@@ -185,10 +180,7 @@ export function LandingPage() {
         </VStack>
 
         {/* Hero phone mockup in rounded gray container */}
-        <m.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5, ease: 'easeOut' }}
+        <div
           style={{
             width: '100%',
             maxWidth: '900px',
@@ -196,29 +188,36 @@ export function LandingPage() {
             flexShrink: 0,
           }}
         >
-          <div
-            className="hero-mockup-container"
-            style={{
-              background: '#F7F8F9',
-              borderRadius: '40px',
-              padding: 'clamp(24px, 4vw, 48px) clamp(24px, 4vw, 48px) 0',
-              display: 'flex',
-              justifyContent: 'center',
-              overflow: 'hidden',
-            }}
+          <m.div
+            initial={{ y: 30 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5, ease: 'easeOut' }}
           >
-            <div style={{ position: 'relative', width: '100%', aspectRatio: '900 / 600' }}>
-              <Image
-                src="/hero_landing.png"
-                alt="Defied app interface"
-                fill
-                priority
-                sizes="(max-width: 900px) 100vw, 900px"
-                style={{ objectFit: 'contain' }}
-              />
+            <div
+              className="hero-mockup-container"
+              style={{
+                background: '#F7F8F9',
+                borderRadius: '40px',
+                padding: 'clamp(24px, 4vw, 48px) clamp(24px, 4vw, 48px) 0',
+                display: 'flex',
+                justifyContent: 'center',
+                overflow: 'hidden',
+              }}
+            >
+              <div style={{ position: 'relative', width: '100%', aspectRatio: '900 / 600' }}>
+                <Image
+                  src="/hero_landing.png"
+                  alt="Defied app interface"
+                  fill
+                  priority
+                  fetchPriority="high"
+                  sizes="(max-width: 900px) 100vw, 900px"
+                  style={{ objectFit: 'contain' }}
+                />
+              </div>
             </div>
-          </div>
-        </m.div>
+          </m.div>
+        </div>
       </section>
 
       {/* Section: Trust strip — Infrastructure Partners */}
@@ -316,7 +315,7 @@ export function LandingPage() {
               const illustrationBlock = (
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 1 }}>
                   {'useCustomImage' in card && card.useCustomImage ? (
-                    <Image src={'customImageSrc' in card ? (card.customImageSrc as string) : '/defi_section.png'} alt={card.heading} width={500} height={500} sizes="(max-width: 768px) 100vw, 500px" style={{ width: '100%', maxWidth: '500px', height: 'auto', borderRadius: '56px' }} />
+                    <Image src={'customImageSrc' in card ? (card.customImageSrc as string) : '/defi_section.png'} alt={card.heading} width={500} height={500} loading="lazy" sizes="(max-width: 768px) 100vw, 500px" style={{ width: '100%', maxWidth: '500px', height: 'auto', borderRadius: '56px' }} />
                   ) : (
                     <HeroSquare name={card.illustration} scaleMultiplier={1.2} />
                   )}
@@ -443,6 +442,7 @@ export function LandingPage() {
                   src="/hero_landing.png"
                   alt="Defied app"
                   fill
+                  loading="lazy"
                   sizes="340px"
                   style={{ objectFit: 'contain', objectPosition: 'bottom' }}
                 />

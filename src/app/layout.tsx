@@ -113,6 +113,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={aeonikPro.variable}>
+      <head>
+        <link
+          rel="preload"
+          href="/hero_landing.png"
+          as="image"
+          type="image/png"
+        />
+      </head>
       <body>
         <CdsProvider>
           <LanguageProvider>

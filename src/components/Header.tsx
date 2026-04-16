@@ -32,13 +32,7 @@ export function Header() {
     if (pathname === '/') {
       const el = document.getElementById(sectionId);
       if (!el) return;
-      const container = document.querySelector('.landing-scroll-container');
-      if (container && container.scrollHeight > container.clientHeight) {
-        const offset = el.getBoundingClientRect().top - container.getBoundingClientRect().top + container.scrollTop;
-        container.scrollTo({ top: offset, behavior: 'smooth' });
-      } else {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     } else {
       router.push(`/#${sectionId}`);
     }
