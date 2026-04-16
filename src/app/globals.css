@@ -348,6 +348,33 @@ input[type="number"]::-webkit-inner-spin-button {
   opacity: 1;
 }
 
+/* Logo carousel */
+.logo-carousel-wrapper {
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+.logo-carousel-track {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  width: max-content;
+  animation: logo-scroll 20s linear infinite;
+}
+.logo-carousel-item {
+  flex-shrink: 0;
+}
+@keyframes logo-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .logo-carousel-track {
+    animation: none;
+  }
+}
+
 /* ═══════════════════════════════════════════════════════════════
    Hover utilities
    ═══════════════════════════════════════════════════════════════ */
@@ -608,6 +635,134 @@ select:focus-visible,
   border-radius: 9999px;
   padding: 6px 16px 6px 6px;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Features 2x2 grid
+   ═══════════════════════════════════════════════════════════════ */
+.features-grid-2x2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+.feature-card {
+  background: rgb(247, 248, 249);
+  border-radius: 24px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+@media (min-width: 768px) {
+  .features-grid-2x2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .feature-card {
+    padding: 40px;
+    border-radius: 32px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Mission section layout
+   ═══════════════════════════════════════════════════════════════ */
+.mission-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  text-align: center;
+}
+.mission-layout > div:first-child {
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .mission-layout {
+    flex-direction: row;
+    gap: 64px;
+    text-align: left;
+  }
+  .mission-layout > div:first-child {
+    align-items: flex-start;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   CTA split card (Aave-inspired)
+   ═══════════════════════════════════════════════════════════════ */
+.cta-split-card {
+  display: flex;
+  flex-direction: column;
+}
+.cta-split-text {
+  text-align: center;
+  align-items: center;
+}
+.cta-split-mockup {
+  padding: 0 24px;
+}
+@media (min-width: 768px) {
+  .cta-split-card {
+    flex-direction: row;
+  }
+  .cta-split-text {
+    text-align: left;
+    align-items: flex-start;
+  }
+  .cta-split-mockup {
+    padding: 0;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Advantage cards — text + squared photo, alternating
+   ═══════════════════════════════════════════════════════════════ */
+.advantage-cards-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+.adv-card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+.adv-card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.adv-card__media {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 56px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (min-width: 768px) {
+  .advantage-cards-stack {
+    gap: 64px;
+  }
+  .adv-card {
+    flex-direction: row;
+    gap: 48px;
+    align-items: flex-start;
+  }
+  .adv-card__text {
+    flex: 1;
+    gap: 16px;
+    padding-top: 16px;
+  }
+  .adv-card__media {
+    flex: 1;
+    max-width: 480px;
+  }
+  .adv-card--reversed {
+    flex-direction: row-reverse;
+  }
 }
 
 /* ═══════════════════════════════════════════════════════════════

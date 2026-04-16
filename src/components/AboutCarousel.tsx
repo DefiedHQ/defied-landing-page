@@ -1,7 +1,6 @@
 'use client';
 
 import { m } from 'framer-motion';
-import { Box } from '@coinbase/cds-web/layout/Box';
 import { VStack } from '@coinbase/cds-web/layout/VStack';
 import { Text } from '@coinbase/cds-web/typography/Text';
 import { Pictogram } from '@coinbase/cds-web/illustrations/Pictogram';
@@ -44,42 +43,28 @@ export function AboutCarousel() {
       </Text>
 
       {/* 2-column grid */}
-      <div className="grid-1-2">
+      <div className="features-grid-2x2">
         {cards.map((card, i) => (
           <m.div
             key={i}
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.5, delay: i * 0.1, ease: 'easeOut' }}
+            transition={{ duration: 0.5, delay: i * 0.08, ease: 'easeOut' }}
           >
-            <Box
-              as="article"
-              className="about-card"
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-                padding: 'clamp(24px, 4vw, 40px)',
-                minHeight: '320px',
-                background: 'rgb(247, 248, 249)',
-                borderRadius: '56px',
-              }}
-            >
-              {/* Pictogram at top */}
-              <Box as="div" style={{ flexShrink: 0 }}>
+            <article className="feature-card">
+              <div style={{ width: 48, height: 48, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                 <Pictogram name={CARD_PICTOGRAMS[i]} dimension="48x48" />
-              </Box>
-              {/* Title + Description at bottom */}
-              <VStack as="div" style={{ gap: '8px' }}>
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 <Text font="title3" as="h4" style={{ fontWeight: 600 }}>
                   {card.title}
                 </Text>
-                <Text font="body" as="p" color="fgMuted">
+                <Text font="body" as="p" color="fgMuted" style={{ fontSize: '15px', lineHeight: '24px' }}>
                   {card.desc}
                 </Text>
-              </VStack>
-            </Box>
+              </div>
+            </article>
           </m.div>
         ))}
       </div>

@@ -26,12 +26,17 @@
     "disclaimer": "Accessing decentralized lending protocols involves risk. Past yields are not guaranteed. Defied provides a non-custodial interface to public blockchain protocols - it does not manage or invest your funds.",
     "builtWith": "Built with the best"
   },
+  "cta": {
+    "heading": "DeFi for everyone.",
+    "subheading": "A completely new way to manage your money, powered by decentralized finance."
+  },
   "infrastructure": {
     "title": "Built on trusted infrastructure",
     "subtitle": "Powered by industry-leading providers in security, compliance, and payments."
   },
   "features": {
     "sectionTitle": "Everything your bank does. And what it never will.",
+    "sectionSubtitle": "Stablecoin payments, lending access, and a virtual card - from a wallet only you control.",
     "f1Title": "Send stablecoins",
     "f1Desc": "Send euros or dollars to anyone, anywhere, in seconds. No SWIFT codes. No 3–5 business day waits. No €25 wire fees. Just an email address and a confirmation.",
     "f2Title": "Earn on your balance",
@@ -46,6 +51,7 @@
   },
   "advantages": {
     "title": "The financial system wasn't built for you. This one is.",
+    "subtitle": "Stablecoins, self-custody, and decentralized lending -- all in one account. No bank required.",
     "row1Heading": "Stablecoins",
     "row1Subtext": "Unlike volatile cryptocurrencies, stablecoins are pegged 1:1 to real currencies - USDC to the US dollar, EURC to the euro. You get the speed and global reach of blockchain with the price stability of the currencies you already use. Send and receive 24/7, including weekends and public holidays.",
     "row2Heading": "An account that's actually yours",
