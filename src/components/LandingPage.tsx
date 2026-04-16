@@ -316,7 +316,7 @@ export function LandingPage() {
               const illustrationBlock = (
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 1 }}>
                   {'useCustomImage' in card && card.useCustomImage ? (
-                    <img src={'customImageSrc' in card ? (card.customImageSrc as string) : '/defi_section.png'} alt={card.heading} style={{ width: '100%', maxWidth: '500px', borderRadius: '56px' }} />
+                    <Image src={'customImageSrc' in card ? (card.customImageSrc as string) : '/defi_section.png'} alt={card.heading} width={500} height={500} sizes="(max-width: 768px) 100vw, 500px" style={{ width: '100%', maxWidth: '500px', height: 'auto', borderRadius: '56px' }} />
                   ) : (
                     <HeroSquare name={card.illustration} scaleMultiplier={1.2} />
                   )}

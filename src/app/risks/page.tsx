@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { RisksContent } from './RisksContent';
-import { siteConfig } from '@/lib/seo';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { siteConfig, absoluteUrl } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Risks',
@@ -26,5 +27,19 @@ export const metadata: Metadata = {
 };
 
 export default function RisksPage() {
-  return <RisksContent />;
+  return (
+    <>
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          name: 'Risks',
+          description: 'Learn about the risks associated with DeFi protocols and cryptocurrencies.',
+          url: absoluteUrl('/risks'),
+          isPartOf: { '@type': 'WebSite', name: siteConfig.name, url: siteConfig.url },
+        }}
+      />
+      <RisksContent />
+    </>
+  );
 }

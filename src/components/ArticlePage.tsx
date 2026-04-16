@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { Text } from '@coinbase/cds-web/typography/Text';
@@ -104,7 +105,7 @@ export function ArticlePage() {
 
         {/* Meta */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '32px' }}>
-          <img src={article.authorImage || '/defied_squared_logo_blue.svg'} width={40} height={40} alt={article.author || 'Defied'} style={{ borderRadius: article.authorImage ? '50%' : '0', objectFit: 'cover' }} />
+          <Image src={article.authorImage || '/defied_squared_logo_blue.svg'} width={40} height={40} alt={article.author || 'Defied'} style={{ borderRadius: article.authorImage ? '50%' : '0', objectFit: 'cover' }} />
           <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
             <Text font="label2" as="div" color="fgMuted">
               {t('common.by')} <Text font="label2" as="span" style={{ color: '#6b7280' }}>{article.author || 'Defied'}</Text>
@@ -119,8 +120,8 @@ export function ArticlePage() {
           {/* Main content */}
           <article style={{ minWidth: 0 }}>
             {/* Hero image placeholder */}
-            <div style={{ marginBottom: '40px', height: 'clamp(250px, 30vw, 400px)', maxWidth: '100%', overflow: 'hidden', borderRadius: '56px' }}>
-              <img src={article.image || '/article-cover.svg'} alt={article.title} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <div style={{ marginBottom: '40px', height: 'clamp(250px, 30vw, 400px)', maxWidth: '100%', overflow: 'hidden', borderRadius: '56px', position: 'relative' }}>
+              <Image src={article.image || '/article-cover.svg'} alt={article.title} fill sizes="(max-width: 768px) 100vw, 800px" style={{ objectFit: 'cover' }} />
             </div>
 
             {/* Article body */}
@@ -231,8 +232,8 @@ export function ArticlePage() {
                     className="card-group"
                     style={{ display: 'block', textDecoration: 'none' }}
                   >
-                    <div style={{ height: '190px', maxWidth: '100%', overflow: 'hidden', marginBottom: '12px', borderRadius: '56px' }}>
-                      <img src={a.image || '/article-cover.svg'} alt={a.title} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <div style={{ height: '190px', maxWidth: '100%', overflow: 'hidden', marginBottom: '12px', borderRadius: '56px', position: 'relative' }}>
+                      <Image src={a.image || '/article-cover.svg'} alt={a.title} fill sizes="300px" style={{ objectFit: 'cover' }} />
                     </div>
                     <Text
                       font="headline"

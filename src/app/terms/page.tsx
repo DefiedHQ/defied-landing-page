@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { TermsPage } from '@/components/TermsPage';
-import { siteConfig } from '@/lib/seo';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { siteConfig, absoluteUrl } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Terms of Use',
@@ -26,5 +27,19 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <TermsPage />;
+  return (
+    <>
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          name: 'Terms of Use',
+          description: 'Terms of Use for the Defied platform. Read our terms and conditions before using our services.',
+          url: absoluteUrl('/terms'),
+          isPartOf: { '@type': 'WebSite', name: siteConfig.name, url: siteConfig.url },
+        }}
+      />
+      <TermsPage />
+    </>
+  );
 }

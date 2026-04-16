@@ -29,7 +29,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   userScalable: true,
-  themeColor: '#ffffff',
+  themeColor: '#0052FF',
 };
 
 export const metadata: Metadata = {
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
       { url: '/favicon.ico', sizes: '48x48' },
       { url: '/favicon.svg', type: 'image/svg+xml' },
     ],
-    apple: '/og-image.png',
+    apple: '/apple-touch-icon.png',
   },
   manifest: '/manifest.webmanifest',
   openGraph: {

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { Text } from '@coinbase/cds-web/typography/Text';
 import { Tag } from '@coinbase/cds-web/tag/Tag';
@@ -80,8 +81,8 @@ export function ResourcesPage() {
                 style={{ textDecoration: 'none', display: 'block' }}
               >
                 <div>
-                  <div style={{ width: '100%', height: 'clamp(220px, 30vw, 320px)', overflow: 'hidden', borderRadius: '56px' }}>
-                    <img src={article.image || '/article-cover.svg'} alt={article.title} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <div style={{ width: '100%', height: 'clamp(220px, 30vw, 320px)', overflow: 'hidden', borderRadius: '56px', position: 'relative' }}>
+                    <Image src={article.image || '/article-cover.svg'} alt={article.title} fill sizes="(max-width: 768px) 100vw, 580px" style={{ objectFit: 'cover' }} />
                   </div>
                   <div style={{ paddingTop: '20px' }}>
                     <div style={{ marginBottom: '12px' }}>
@@ -136,8 +137,8 @@ export function ResourcesPage() {
                 style={{ textDecoration: 'none', display: 'block' }}
               >
                 <div style={{ height: '100%' }}>
-                  <div style={{ width: '100%', height: 'clamp(220px, 30vw, 320px)', overflow: 'hidden', borderRadius: '56px' }}>
-                    <img src={article.image || '/article-cover.svg'} alt={article.title} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <div style={{ width: '100%', height: 'clamp(220px, 30vw, 320px)', overflow: 'hidden', borderRadius: '56px', position: 'relative' }}>
+                    <Image src={article.image || '/article-cover.svg'} alt={article.title} fill sizes="(max-width: 768px) 100vw, 580px" style={{ objectFit: 'cover' }} />
                   </div>
                   <div style={{ paddingTop: '16px' }}>
                     <div style={{ marginBottom: '8px' }}>

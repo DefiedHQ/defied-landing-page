@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { PrivacyPage } from '@/components/PrivacyPage';
-import { siteConfig } from '@/lib/seo';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { siteConfig, absoluteUrl } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
@@ -26,5 +27,19 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <PrivacyPage />;
+  return (
+    <>
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          name: 'Privacy Policy',
+          description: 'Defied Privacy Policy. Learn how we process and protect your personal data.',
+          url: absoluteUrl('/privacy'),
+          isPartOf: { '@type': 'WebSite', name: siteConfig.name, url: siteConfig.url },
+        }}
+      />
+      <PrivacyPage />
+    </>
+  );
 }

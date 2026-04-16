@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import { ArticlePage } from '@/components/ArticlePage';
 import { JsonLd } from '@/components/seo/JsonLd';
 import articles from '@/data/articles-en.json';
@@ -35,7 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images: [article.image || siteConfig.ogImage],
     },
     alternates: {
-      canonical: `/blog/${slug}`,
+      canonical: articleUrl,
     },
   };
 }
@@ -47,6 +48,8 @@ export function generateStaticParams() {
 export default async function ArticleRoute({ params }: Props) {
   const { slug } = await params;
   const article = articles.find((a) => a.id === slug);
+
+  if (!article) notFound();
 
   return (
     <>

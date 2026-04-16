@@ -646,6 +646,9 @@ select:focus-visible,
   grid-template-columns: 1fr;
   gap: 16px;
 }
+.features-grid-2x2 > * {
+  display: flex;
+}
 .feature-card {
   background: rgb(247, 248, 249);
   border-radius: 24px;
@@ -653,10 +656,12 @@ select:focus-visible,
   display: flex;
   flex-direction: column;
   gap: 16px;
+  height: 100%;
 }
 @media (min-width: 768px) {
   .features-grid-2x2 {
     grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 1fr;
   }
   .feature-card {
     padding: 40px;
