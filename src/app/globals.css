@@ -444,6 +444,7 @@ input[type="number"]::-webkit-inner-spin-button {
   aspect-ratio: 1;
   border-radius: 32px;
   width: 100%;
+  padding: 16px;
 }
 /* Scale logos down on mobile via CSS instead of JS resize listener */
 .protocol-logo {
@@ -451,11 +452,12 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 @media (min-width: 768px) {
   .protocol-card {
-    border-radius: 56px;
-    max-width: 240px;
+    border-radius: 48px;
+    max-width: 192px;
+    padding: 24px;
   }
   .protocol-logo {
-    max-width: 100%;
+    max-width: 80%;
   }
 }
 

@@ -152,7 +152,7 @@ export function LandingPage() {
         <InfrastructureSection />
       </section>
 
-      {/* Section: What it does — The four pillars */}
+      {/* Section: What it does — The four pillars + deep dive */}
       <section id="what-it-does" className="section-padding" style={{ paddingTop: 'clamp(48px, 8vw, 80px)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
           <Text font="display2" as="h2" display="block" className="section-title" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, maxWidth: '720px', marginBottom: '56px' }}>
@@ -194,6 +194,79 @@ export function LandingPage() {
               ))}
             </div>
           </m.div>
+
+          {/* Deep dive cards — previously the standalone Advantages section */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', marginTop: '24px', width: 'calc(100% + 32px)', maxWidth: 'calc(100vw - 32px)', margin: '24px auto 0' }}>
+            <m.div {...slideInLeft}>
+              <article
+                className="promo-card-layout"
+                style={{
+                  background: 'rgb(247, 248, 249)',
+                  borderRadius: '56px',
+                  padding: 'clamp(40px, 6vw, 80px)',
+                  alignItems: 'center',
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 1 }}>
+                  <HeroSquare name="usdAndUsdc" scaleMultiplier={1.8} />
+                </div>
+                <div className="cta-text-column" style={{ display: 'flex', flexDirection: 'column', gap: '16px', flex: 1 }}>
+                  <Text font="display2" as="h3" className="title-tight-lh" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', fontWeight: 500 }}>
+                    {t('advantages.row1Heading')}
+                  </Text>
+                  <Text font="body" as="p" color="fgMuted" style={{ fontSize: '18px', lineHeight: '28px' }}>
+                    {t('advantages.row1Subtext')}
+                  </Text>
+                </div>
+              </article>
+            </m.div>
+            <m.div {...slideInRight}>
+              <article
+                className="promo-card-layout"
+                style={{
+                  background: '#0052FF',
+                  borderRadius: '56px',
+                  padding: 'clamp(40px, 6vw, 80px)',
+                  alignItems: 'center',
+                }}
+              >
+                <div className="cta-text-column" style={{ display: 'flex', flexDirection: 'column', gap: '16px', flex: 1 }}>
+                  <Text font="display2" as="h3" className="title-tight-lh" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', fontWeight: 500, color: '#fff' }}>
+                    {t('advantages.row2Heading')}
+                  </Text>
+                  <Text font="body" as="p" style={{ fontSize: '18px', lineHeight: '28px', color: 'rgba(255, 255, 255, 0.7)' }}>
+                    {t('advantages.row2Subtext')}
+                  </Text>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 1 }}>
+                  <HeroSquare name="walletSecurity" scaleMultiplier={1.8} />
+                </div>
+              </article>
+            </m.div>
+            <m.div {...slideInLeft}>
+              <article
+                className="promo-card-layout"
+                style={{
+                  background: 'rgb(247, 248, 249)',
+                  borderRadius: '56px',
+                  padding: 'clamp(40px, 6vw, 80px)',
+                  alignItems: 'center',
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 1 }}>
+                  <HeroSquare name="exploreDecentralizedApps" scaleMultiplier={1.8} />
+                </div>
+                <div className="cta-text-column" style={{ display: 'flex', flexDirection: 'column', gap: '16px', flex: 1 }}>
+                  <Text font="display2" as="h3" className="title-tight-lh" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', fontWeight: 500 }}>
+                    {t('advantages.row3Heading')}
+                  </Text>
+                  <Text font="body" as="p" color="fgMuted" style={{ fontSize: '18px', lineHeight: '28px' }}>
+                    {t('advantages.row3Subtext')}
+                  </Text>
+                </div>
+              </article>
+            </m.div>
+          </div>
         </div>
       </section>
 
@@ -246,83 +319,6 @@ export function LandingPage() {
         <ProtocolsSection />
       </section>
 
-      {/* Section: Advantages — Deep dive */}
-      <section id="advantages" className="section-padding" style={{ paddingBottom: 'clamp(48px, 8vw, 100px)' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
-          <Text font="display2" as="h2" display="block" className="section-title" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, maxWidth: '720px', marginBottom: '56px' }}>
-            {t('advantages.title')}
-          </Text>
-          <m.div {...slideInLeft}>
-            <article
-              className="promo-card-layout"
-              style={{
-                background: 'rgb(247, 248, 249)',
-                borderRadius: '56px',
-                padding: 'clamp(40px, 6vw, 80px)',
-                alignItems: 'center',
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 1 }}>
-                <HeroSquare name="usdAndUsdc" scaleMultiplier={1.8} />
-              </div>
-              <div className="cta-text-column" style={{ display: 'flex', flexDirection: 'column', gap: '16px', flex: 1 }}>
-                <Text font="display2" as="h3" className="title-tight-lh" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', fontWeight: 500 }}>
-                  {t('advantages.row1Heading')}
-                </Text>
-                <Text font="body" as="p" color="fgMuted" style={{ fontSize: '18px', lineHeight: '28px' }}>
-                  {t('advantages.row1Subtext')}
-                </Text>
-              </div>
-            </article>
-          </m.div>
-          <m.div {...slideInRight} style={{ marginTop: '24px' }}>
-            <article
-              className="promo-card-layout"
-              style={{
-                background: '#0052FF',
-                borderRadius: '56px',
-                padding: 'clamp(40px, 6vw, 80px)',
-                alignItems: 'center',
-              }}
-            >
-              <div className="cta-text-column" style={{ display: 'flex', flexDirection: 'column', gap: '16px', flex: 1 }}>
-                <Text font="display2" as="h3" className="title-tight-lh" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', fontWeight: 500, color: '#fff' }}>
-                  {t('advantages.row2Heading')}
-                </Text>
-                <Text font="body" as="p" style={{ fontSize: '18px', lineHeight: '28px', color: 'rgba(255, 255, 255, 0.7)' }}>
-                  {t('advantages.row2Subtext')}
-                </Text>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 1 }}>
-                <HeroSquare name="walletSecurity" scaleMultiplier={1.8} />
-              </div>
-            </article>
-          </m.div>
-          <m.div {...slideInLeft} style={{ marginTop: '24px' }}>
-            <article
-              className="promo-card-layout"
-              style={{
-                background: 'rgb(247, 248, 249)',
-                borderRadius: '56px',
-                padding: 'clamp(40px, 6vw, 80px)',
-                alignItems: 'center',
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 1 }}>
-                <HeroSquare name="exploreDecentralizedApps" scaleMultiplier={1.8} />
-              </div>
-              <div className="cta-text-column" style={{ display: 'flex', flexDirection: 'column', gap: '16px', flex: 1 }}>
-                <Text font="display2" as="h3" className="title-tight-lh" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', fontWeight: 500 }}>
-                  {t('advantages.row3Heading')}
-                </Text>
-                <Text font="body" as="p" color="fgMuted" style={{ fontSize: '18px', lineHeight: '28px' }}>
-                  {t('advantages.row3Subtext')}
-                </Text>
-              </div>
-            </article>
-          </m.div>
-        </div>
-      </section>
 
       {/* Section: FAQ — Catch remaining objections */}
       <section
@@ -333,49 +329,51 @@ export function LandingPage() {
       </section>
 
       {/* Section: CTA repeat — Final push */}
-      <section className="section-padding section-vertical-padding">
-        <div
-          className="promo-card-layout"
+      <section style={{ padding: 'clamp(48px, 8vw, 80px) 16px' }}>
+        <m.div
+          {...slideInUp}
           style={{
             maxWidth: '1200px',
             margin: '0 auto',
             width: '100%',
+            background: '#0052FF',
+            borderRadius: '56px',
+            padding: 'clamp(56px, 8vw, 96px) clamp(24px, 4vw, 64px)',
+            display: 'flex',
+            flexDirection: 'column',
             alignItems: 'center',
+            textAlign: 'center',
+            gap: '24px',
           }}
         >
-          <m.div {...slideInLeft} style={{ flex: 1 }}>
-            <div className="cta-text-column" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-              <Text font="display1" as="h2" className="title-tight-lh" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 500 }}>
-                {t('hero.ctaMain')}
-              </Text>
-              <Text font="body" as="p" color="fgMuted" style={{ fontSize: '18px', lineHeight: '28px' }}>
-                {t('hero.subtitle1')} {t('hero.subtitle2')} {t('hero.subtitle3')}
-              </Text>
-              <div style={{ marginTop: '16px' }}>
-                <Button
-                  as="a"
-                  href="https://app.defied.money"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  variant="primary"
-                  endIcon="arrowRight"
-                  className="btn-fw-500"
-                  style={{
-                    borderRadius: '56px',
-                    height: '58px',
-                    padding: '16px 32px',
-                    minWidth: '200px',
-                  }}
-                >
-                  <AnimatedButtonText>{t('hero.cta')}</AnimatedButtonText>
-                </Button>
-              </div>
-            </div>
-          </m.div>
-          <m.div {...slideInRight} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 1 }}>
-            <HeroSquare name="cryptoPortfolioUsdc" scaleMultiplier={1.8} />
-          </m.div>
-        </div>
+          <Text font="display1" as="h2" className="title-tight-lh" style={{ fontSize: 'clamp(2.25rem, 5vw, 3.75rem)', fontWeight: 500, color: '#FFFFFF', maxWidth: '600px', textAlign: 'center' }}>
+            {t('hero.ctaMain')}
+          </Text>
+          <Text font="body" as="p" style={{ fontSize: '18px', lineHeight: '28px', color: 'rgba(255, 255, 255, 0.7)', maxWidth: '560px', textAlign: 'center' }}>
+            {t('hero.subtitle1')}
+          </Text>
+          <div style={{ marginTop: '8px' }}>
+            <Button
+              as="a"
+              href="https://app.defied.money"
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="secondary"
+              endIcon="arrowRight"
+              className="btn-fw-500"
+              style={{
+                borderRadius: '56px',
+                height: '58px',
+                padding: '16px 32px',
+                minWidth: '200px',
+                background: '#FFFFFF',
+                color: '#0052FF',
+              }}
+            >
+              <AnimatedButtonText>{t('hero.cta')}</AnimatedButtonText>
+            </Button>
+          </div>
+        </m.div>
       </section>
 
       {/* Section 7: Footer */}

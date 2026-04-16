@@ -26,14 +26,15 @@ export function InfrastructureSection() {
           maxWidth: '1200px',
           margin: '0 auto',
           width: '100%',
+          alignItems: 'center',
           gap: 'clamp(40px, 6vh, 56px)',
         }}
       >
-        <div className="section-title" style={{ maxWidth: '720px' }}>
-          <Text font="display2" as="h2" display="block" className="section-title" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, textAlign: 'center', marginBottom: '16px' }}>
+        <div style={{ maxWidth: '720px', textAlign: 'center' }}>
+          <Text font="label1" as="p" color="fgMuted" display="block" style={{ fontSize: '14px', fontWeight: 600, letterSpacing: '0.04em', textTransform: 'uppercase', textAlign: 'center', marginBottom: '8px' }}>
             {t('infrastructure.title')}
           </Text>
-          <Text font="body" as="p" color="fgMuted" style={{ fontSize: '16px', lineHeight: '24px', textAlign: 'center' }}>
+          <Text font="body" as="p" color="fgMuted" style={{ fontSize: '15px', lineHeight: '22px', textAlign: 'center' }}>
             {t('infrastructure.subtitle')}
           </Text>
         </div>

@@ -59,7 +59,10 @@ export const metadata: Metadata = {
     'virtual debit card crypto',
   ],
   icons: {
-    icon: '/favicon.svg',
+    icon: [
+      { url: '/favicon.ico', sizes: '48x48' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
     apple: '/og-image.png',
   },
   manifest: '/manifest.webmanifest',

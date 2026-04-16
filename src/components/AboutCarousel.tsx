@@ -4,14 +4,14 @@ import { m } from 'framer-motion';
 import { Box } from '@coinbase/cds-web/layout/Box';
 import { VStack } from '@coinbase/cds-web/layout/VStack';
 import { Text } from '@coinbase/cds-web/typography/Text';
-import { HeroSquare } from '@coinbase/cds-web/illustrations/HeroSquare';
+import { Pictogram } from '@coinbase/cds-web/illustrations/Pictogram';
 import { useLanguage } from '@/context/LanguageContext';
 
-const CARD_ILLUSTRATIONS = [
-  'selfCustody',
-  'decentralizedWebWeb3',
-  'retailUSDCRewards',
-  'sendCryptoFaster',
+const CARD_PICTOGRAMS = [
+  'selfCustodyWallet',
+  'browser',
+  'decentralizedWeb3',
+  'gasFees',
 ] as const;
 
 export function AboutCarousel() {
@@ -66,9 +66,9 @@ export function AboutCarousel() {
                 borderRadius: '56px',
               }}
             >
-              {/* Illustration at top */}
-              <Box as="div" style={{ width: 80, height: 80, overflow: 'hidden', flexShrink: 0 }}>
-                <HeroSquare name={CARD_ILLUSTRATIONS[i]} scaleMultiplier={0.33} />
+              {/* Pictogram at top */}
+              <Box as="div" style={{ flexShrink: 0 }}>
+                <Pictogram name={CARD_PICTOGRAMS[i]} dimension="48x48" />
               </Box>
               {/* Title + Description at bottom */}
               <VStack as="div" style={{ gap: '8px' }}>
