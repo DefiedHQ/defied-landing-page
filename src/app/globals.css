@@ -571,6 +571,46 @@ select:focus-visible,
 }
 
 /* ═══════════════════════════════════════════════════════════════
+   Aave-inspired hero styles
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Accent highlight with wavy underline */
+.hero-accent-highlight {
+  position: relative;
+  display: inline;
+  color: #0052FF;
+}
+.hero-accent-highlight .wavy-underline {
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  fill: none;
+  stroke: #0052FF;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+
+/* Hero phone mockup container — gradient mask at bottom */
+.hero-mockup-container {
+  mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+}
+
+/* Pill badge */
+.hero-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #FFFFFF;
+  border: 1px solid #EBEBEB;
+  border-radius: 9999px;
+  padding: 6px 16px 6px 6px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* ═══════════════════════════════════════════════════════════════
    Respect reduced motion preferences
    ═══════════════════════════════════════════════════════════════ */
 @media (prefers-reduced-motion: reduce) {

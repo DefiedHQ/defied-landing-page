@@ -69,7 +69,7 @@ export function LandingPage() {
       }}
     >
       {/* Section 1: Hero */}
-      <section className="section-padding" style={{ height: 'calc(100vh - 64px)', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+      <section className="section-padding" style={{ minHeight: 'calc(100vh - 64px)', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
         <VStack
           as="div"
           style={{
@@ -80,23 +80,52 @@ export function LandingPage() {
             textAlign: 'center',
             flex: 1,
             justifyContent: 'center',
-            paddingTop: 'clamp(80px, 15vw, 200px)',
+            paddingTop: 'clamp(48px, 10vw, 120px)',
           }}
         >
+          {/* Pill badge */}
+          <m.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
+          >
+            <div className="hero-pill-badge">
+              <Image
+                src="/defied_squared_logo_blue.svg"
+                alt=""
+                width={28}
+                height={28}
+                style={{ borderRadius: '50%' }}
+              />
+              <Text font="label2" as="span" style={{ fontWeight: 500, color: '#0A0B0D' }}>Defied</Text>
+            </div>
+          </m.div>
+
+          {/* Headline with accent highlight */}
           <m.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
+            transition={{ duration: 0.6, delay: 0.15, ease: 'easeOut' }}
+            style={{ marginTop: '28px' }}
           >
             <Text font="display1" as="h1" className="title-tight-lh" style={{ fontSize: 'clamp(2.25rem, 6vw, 4.5rem)', fontWeight: 500, letterSpacing: '-0.02em', textAlign: 'center' }}>
-              {t('hero.title')}
+              {t('hero.titleStart')}{' '}
+              <span className="hero-accent-highlight">
+                {t('hero.titleHighlight')}
+                <svg className="wavy-underline" viewBox="0 0 200 12" preserveAspectRatio="none" aria-hidden="true">
+                  <path d="M0 8 Q25 2, 50 8 T100 8 T150 8 T200 8" />
+                </svg>
+              </span>{' '}
+              {t('hero.titleEnd')}
             </Text>
           </m.div>
+
+          {/* Subtitle */}
           <m.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3, ease: 'easeOut' }}
-            style={{ marginTop: 'clamp(32px, 5vw, 64px)', marginBottom: 'clamp(32px, 5vw, 64px)', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+            style={{ marginTop: 'clamp(24px, 4vw, 40px)', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
           >
             <Text
               font="body"
@@ -104,46 +133,94 @@ export function LandingPage() {
               color="fgMuted"
               style={{ maxWidth: '640px', fontSize: '18px', lineHeight: '28px', textAlign: 'center' }}
             >
-              {t('hero.subtitle1')} {t('hero.subtitle2')} {t('hero.subtitle3')}<sup style={{ fontSize: '0.6em' }}>1</sup>
+              {t('hero.subtitle1')}
             </Text>
-            <Box as="div" style={{ marginTop: '32px' }}>
-            <Button
-              as="a"
-              href="https://app.defied.money"
-              target="_blank"
-              rel="noopener noreferrer"
-              variant="primary"
-              block
-              endIcon="arrowRight"
-              className="btn-fw-500"
-              style={{
-                borderRadius: '56px',
-                height: '58px',
-                padding: '16px 32px',
-                minWidth: '200px',
-              }}
-            >
-              <AnimatedButtonText>{t('hero.cta')}</AnimatedButtonText>
-            </Button>
-          </Box>
+
+            {/* CTA buttons */}
+            <div className="flex-col-row-md" style={{ marginTop: '32px', alignItems: 'center', justifyContent: 'center' }}>
+              <Button
+                as="a"
+                href="https://app.defied.money"
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="primary"
+                endIcon="arrowRight"
+                className="btn-fw-500"
+                style={{
+                  borderRadius: '56px',
+                  height: '58px',
+                  padding: '16px 32px',
+                  minWidth: '200px',
+                }}
+              >
+                <AnimatedButtonText>{t('hero.cta')}</AnimatedButtonText>
+              </Button>
+              <Button
+                as="a"
+                href="#what-it-does"
+                variant="secondary"
+                className="btn-fw-500"
+                style={{
+                  borderRadius: '56px',
+                  height: '58px',
+                  padding: '16px 32px',
+                  minWidth: '200px',
+                  background: 'transparent',
+                  border: '1.5px solid #D1D5DB',
+                  color: '#0A0B0D',
+                }}
+                onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
+                  e.preventDefault();
+                  const el = document.getElementById('what-it-does');
+                  const container = document.querySelector('.landing-scroll-container');
+                  if (el && container) {
+                    const elRect = el.getBoundingClientRect();
+                    const containerRect = container.getBoundingClientRect();
+                    const offset = elRect.top - containerRect.top + container.scrollTop;
+                    container.scrollTo({ top: offset, behavior: 'smooth' });
+                  }
+                }}
+              >
+                <AnimatedButtonText>{t('hero.learnMore')}</AnimatedButtonText>
+              </Button>
+            </div>
           </m.div>
         </VStack>
 
-        {/* Hero image — bottom aligned to viewport edge */}
+        {/* Hero phone mockup in rounded gray container */}
         <m.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5, ease: 'easeOut' }}
-          style={{ position: 'relative', width: '100%', maxWidth: '900px', aspectRatio: '900 / 600', margin: '0 auto', flexShrink: 0 }}
+          style={{
+            width: '100%',
+            maxWidth: '900px',
+            margin: '0 auto',
+            flexShrink: 0,
+          }}
         >
-          <Image
-            src="/hero_landing.png"
-            alt="Defied"
-            fill
-            priority
-            sizes="(max-width: 900px) 100vw, 900px"
-            style={{ objectFit: 'contain', borderRadius: '32px' }}
-          />
+          <div
+            className="hero-mockup-container"
+            style={{
+              background: '#F7F8F9',
+              borderRadius: '40px',
+              padding: 'clamp(24px, 4vw, 48px) clamp(24px, 4vw, 48px) 0',
+              display: 'flex',
+              justifyContent: 'center',
+              overflow: 'hidden',
+            }}
+          >
+            <div style={{ position: 'relative', width: '100%', aspectRatio: '900 / 600' }}>
+              <Image
+                src="/hero_landing.png"
+                alt="Defied app interface"
+                fill
+                priority
+                sizes="(max-width: 900px) 100vw, 900px"
+                style={{ objectFit: 'contain' }}
+              />
+            </div>
+          </div>
         </m.div>
       </section>
 

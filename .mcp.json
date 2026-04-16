@@ -7,9 +7,16 @@
         "@coinbase/cds-mcp-server"
       ]
     },
-      "next-devtools": {
+    "next-devtools": {
       "command": "npx",
-      "args": ["-y", "next-devtools-mcp@latest"]
+      "args": [
+        "-y",
+        "next-devtools-mcp@latest"
+      ]
+    },
+    "aidesigner": {
+      "type": "http",
+      "url": "https://api.aidesigner.ai/api/v1/mcp"
     }
   }
 }

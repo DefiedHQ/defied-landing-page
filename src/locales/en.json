@@ -11,8 +11,12 @@
   },
   "hero": {
     "title": "Your euros, working for you. Always.",
+    "titleStart": "Your euros,",
+    "titleHighlight": "working for you.",
+    "titleEnd": "Always.",
     "titleBase": "Your euros, working for you.",
     "titleWords": ["Always"],
+    "learnMore": "Learn more",
     "subtitle1": "Send money anywhere in seconds. Access lending protocols paying up to 4% APY on your balance. Pay with a card. From an account no bank can freeze.",
     "subtitle2": "",
     "subtitle3": "",

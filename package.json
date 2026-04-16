@@ -27,5 +27,8 @@
     "typescript": "^5.9.3",
     "viem": "^2.47.5",
     "wagmi": "^2.19.5"
+  },
+  "devDependencies": {
+    "puppeteer": "^24.41.0"
   }
 }
