@@ -4,12 +4,18 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { siteConfig, absoluteUrl } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Earn on Your Euros. Send Money Globally. No Bank Needed.',
+  title: {
+    absolute: 'Defied - Earn on your euros. Send money globally. No bank needed.',
+  },
   description: siteConfig.description,
   openGraph: {
-    title: 'Defied - Earn on Your Euros. Send Money Globally. No Bank Needed.',
+    title: 'Defied - Earn on your euros. Send money globally. No bank needed.',
     description: siteConfig.description,
     images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: 'Defied' }],
+  },
+  twitter: {
+    title: 'Defied - Earn on your euros. Send money globally. No bank needed.',
+    description: siteConfig.description,
   },
   alternates: {
     canonical: '/',
@@ -147,6 +153,54 @@ const faqSchema = {
       acceptedAnswer: {
         '@type': 'Answer',
         text: 'There are two main risk categories. First, if someone gains access to your email account, they could gain access to your wallet - we strongly recommend enabling two-factor authentication. Second, decentralized protocols carry smart contract risk - the possibility of a bug or exploit. Defied only features protocols with extensive audit histories, but we cannot guarantee against future incidents. Funds are not protected by any deposit guarantee scheme. Please read our full risk disclosure before depositing.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is EURC?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'EURC is a digital euro issued by Circle, the same company that issues USDC. Every EURC token is backed 1:1 by real euros held in regulated banks, and the reserves are audited monthly. You can hold, send and receive EURC 24/7, including weekends and holidays - and when you want to, you can always convert it back to regular euros in your bank account.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How is Defied different from traditional fintech apps?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "Traditional fintech apps are licensed financial institutions - they hold your money on their balance sheet, which means they can freeze accounts, impose limits, or close accounts with limited notice. Defied never holds your money. Your balance sits in a wallet that only you can open, and it keeps working even if Defied doesn't. You also earn yield directly from public lending markets, rather than whatever rate a bank decides to pay you.",
+      },
+    },
+    {
+      '@type': 'Question',
+      name: "Is Defied safe if I'm not an expert?",
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "Yes. Defied is designed so you don't need to be. You sign up with your email, we handle the technical parts behind the scenes, and we cover network fees on supported actions. The one thing that's different from a bank: there is no customer support line that can recover your money if you lose access to your email. That's why we recommend enabling two-factor authentication from day one.",
+      },
+    },
+    {
+      '@type': 'Question',
+      name: "How do Defied's yields compare to a European savings account?",
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Most European banks currently pay between 0.5% and 2% on savings, and often less after fees. The lending markets Defied connects you to are currently paying 3–5% a year on EURC and USDC. These rates change over time and carry different risks than a bank deposit - read our risk disclosure for the full picture. For many people, the trade-off is worth understanding.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is Defied available in my country?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Defied is available throughout the European Economic Area. A few features - specifically topping up from a bank account and the Visa debit card - depend on our regulated partners being live in your country. When you sign up, we show you exactly which features are available for you.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What happens to my money if Defied shuts down?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "Your money stays with you. Defied is a front-end - your wallet and the lending markets it connects to exist independently. If we disappeared tomorrow, you'd still have full access to your wallet, through your email login or by exporting your private key into any compatible app. This is the core reason Defied is built this way.",
       },
     },
   ],

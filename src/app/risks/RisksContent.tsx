@@ -96,7 +96,7 @@ export function RisksContent() {
           <li style={liStyle}><span style={strongStyle}>Regulatory risk:</span> Changes in applicable law or regulation may adversely affect the availability, usability, or value of stablecoins in certain jurisdictions</li>
           <li style={liStyle}><span style={strongStyle}>Counterparty risk:</span> Stablecoins held in lending protocols are subject to the counterparty risk of borrowers in those protocols</li>
         </ul>
-        <p style={pStyle}>Funds held in stablecoins or deposited in DeFi protocols are not protected by any national deposit guarantee scheme, including the Bulgarian Deposit Guarantee Fund. Defied is not a financial institution and does not offer any form of deposit protection.</p>
+        <p style={pStyle}>Funds held in stablecoins or deposited in DeFi protocols are not protected by any National Deposit Guarantee Schemes. Defied is not a financial institution and does not offer any form of deposit protection.</p>
       </div>
 
       <Text font="title2" as="h2" display="block" style={h2Style}>5. Yield and Returns Risk</Text>
@@ -150,7 +150,7 @@ export function RisksContent() {
       <div style={sectionStyle}>
         <p style={pStyle}>Funds held in your Defied wallet or deposited in any decentralized protocol are not:</p>
         <ul style={ulStyle}>
-          <li style={liStyle}>Protected by the Bulgarian Deposit Guarantee Fund or any equivalent national scheme</li>
+          <li style={liStyle}>Protected by National Deposit Guarantee Schemes</li>
           <li style={liStyle}>Insured by any government or regulatory body</li>
           <li style={liStyle}>Recoverable by Defied in the event of loss</li>
         </ul>

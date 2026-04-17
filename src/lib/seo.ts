@@ -2,7 +2,7 @@ export const siteConfig = {
   name: 'Defied',
   url: process.env.NEXT_PUBLIC_BASE_URL || 'https://defied.money',
   description:
-    'Defied lets you earn up to 4% APY on your euro balance, send money anywhere in seconds, and pay with a virtual card - from a wallet only you control. Available in the EU.',
+    'Hold, send and earn on your euros and dollars from an account only you control. Up to 4% a year. Global transfers in seconds. No bank required. Join the waitlist.',
   ogImage: '/og-image.png',
   logo: '/defied_squared_logo_blue.svg',
   twitter: '@defied_money',

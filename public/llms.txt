@@ -93,7 +93,7 @@ Full risk disclosure: https://defied.money/risks
 
 **What are the risks?** (1) Email account compromise → wallet compromise (mitigate with 2FA). (2) Smart contract risk on DeFi deposits. (3) No deposit guarantee scheme coverage.
 
-**Are funds covered by the Deposit Guarantee Fund?** No. Defied is a software interface, not a bank.
+**Are funds covered by National Deposit Guarantee Schemes?** No. Defied is a software interface, not a bank.
 
 **What platforms?** Web app (desktop and mobile browser). Native iOS and Android in development.
 
