@@ -3,7 +3,7 @@
 import { m } from 'framer-motion';
 import { VStack } from '@coinbase/cds-web/layout/VStack';
 import { Text } from '@coinbase/cds-web/typography/Text';
-import { Pictogram } from '@coinbase/cds-web/illustrations/Pictogram';
+import { LocalPictogram } from './LocalPictogram';
 import { useLanguage } from '@/context/LanguageContext';
 
 const CARD_PICTOGRAMS = [
@@ -54,7 +54,7 @@ export function AboutCarousel() {
           >
             <article className="feature-card">
               <div style={{ width: 48, height: 48, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                <Pictogram name={CARD_PICTOGRAMS[i]} dimension="48x48" />
+                <LocalPictogram name={CARD_PICTOGRAMS[i]} dimension="48x48" />
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 <Text font="title3" as="h4" style={{ fontWeight: 600 }}>
