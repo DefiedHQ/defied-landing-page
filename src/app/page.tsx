@@ -67,7 +67,7 @@ const webAppSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
   name: siteConfig.name,
-  url: siteConfig.appUrl,
+  url: siteConfig.url,
   description:
     'Earn up to 4% APY on your euro balance, send money anywhere in seconds, and pay with a virtual card - from a non-custodial wallet only you control.',
   applicationCategory: 'FinanceApplication',

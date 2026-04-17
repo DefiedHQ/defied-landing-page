@@ -51,7 +51,7 @@
   },
   "advantages": {
     "title": "The financial system wasn't built for you. This one is.",
-    "subtitle": "Stablecoins, self-custody, and decentralized lending -- all in one account. No bank required.",
+    "subtitle": "Stablecoins, self-custody, and decentralized lending - all in one account. No bank required.",
     "row1Heading": "Spend stablecoins",
     "row1Subtext": "Unlike volatile cryptocurrencies, stablecoins are pegged 1:1 to real currencies - USDC to the US dollar, EURC to the euro. You get the speed and global reach of blockchain with the price stability of the currencies you already use. Send and receive 24/7, including weekends and public holidays.",
     "row2Heading": "An account that's actually yours",
@@ -138,9 +138,17 @@
   },
   "downloadApp": {
     "title": "Get the Defied App",
-    "subtitle": "Scan the QR code to download the app",
+    "subtitle": "The app is launching soon. Join the waitlist and we'll email you the moment it's live.",
     "comingSoon": "Coming soon",
-    "close": "Close"
+    "close": "Close",
+    "waitlistEmailLabel": "Email address",
+    "waitlistEmailPlaceholder": "you@example.com",
+    "waitlistSubmit": "Join waitlist",
+    "waitlistSubmitting": "Joining…",
+    "waitlistSuccess": "You're on the list. We'll be in touch when the app launches.",
+    "waitlistAlready": "You're already on the list. We'll be in touch when the app launches.",
+    "waitlistErrorInvalid": "Please enter a valid email address.",
+    "waitlistErrorGeneric": "Something went wrong. Please try again."
   },
   "about": {
     "heroTitle": "We created the first crypto savings product in Bulgaria",

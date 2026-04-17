@@ -1,7 +1,6 @@
 export const siteConfig = {
   name: 'Defied',
   url: process.env.NEXT_PUBLIC_BASE_URL || 'https://defied.money',
-  appUrl: 'https://app.defied.money',
   description:
     'Defied lets you earn up to 4% APY on your euro balance, send money anywhere in seconds, and pay with a virtual card - from a wallet only you control. Available in the EU.',
   ogImage: '/og-image.png',

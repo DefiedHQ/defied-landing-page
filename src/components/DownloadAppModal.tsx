@@ -1,9 +1,10 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState, type FormEvent } from 'react';
 import Image from 'next/image';
 import { Text } from '@coinbase/cds-web/typography/Text';
 import { Icon } from '@coinbase/cds-web/icons/Icon';
+import { Button } from '@coinbase/cds-web/buttons/Button';
 import { useLanguage } from '@/context/LanguageContext';
 
 interface DownloadAppModalProps {
@@ -11,8 +12,16 @@ interface DownloadAppModalProps {
   onClose: () => void;
 }
 
+type FormState =
+  | { status: 'idle' }
+  | { status: 'submitting' }
+  | { status: 'success'; already?: boolean }
+  | { status: 'error'; message: string };
+
 export function DownloadAppModal({ open, onClose }: DownloadAppModalProps) {
   const { t } = useLanguage();
+  const [email, setEmail] = useState('');
+  const [formState, setFormState] = useState<FormState>({ status: 'idle' });
 
   useEffect(() => {
     if (!open) return;
@@ -20,13 +29,86 @@ export function DownloadAppModal({ open, onClose }: DownloadAppModalProps) {
       if (e.key === 'Escape') onClose();
     };
     document.addEventListener('keydown', onKey);
-    const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
+
+    const html = document.documentElement;
+    const body = document.body;
+    const scrollbarWidth = window.innerWidth - html.clientWidth;
+
+    const prev = {
+      htmlOverflow: html.style.overflow,
+      bodyOverflow: body.style.overflow,
+      bodyPaddingRight: body.style.paddingRight,
+    };
+
+    html.style.overflow = 'hidden';
+    body.style.overflow = 'hidden';
+    if (scrollbarWidth > 0) {
+      body.style.paddingRight = `${scrollbarWidth}px`;
+    }
+
     return () => {
       document.removeEventListener('keydown', onKey);
-      document.body.style.overflow = prevOverflow;
+      html.style.overflow = prev.htmlOverflow;
+      body.style.overflow = prev.bodyOverflow;
+      body.style.paddingRight = prev.bodyPaddingRight;
     };
   }, [open, onClose]);
+
+  useEffect(() => {
+    if (!open) {
+      setEmail('');
+      setFormState({ status: 'idle' });
+    }
+  }, [open]);
+
+  const submitting = formState.status === 'submitting';
+  const succeeded = formState.status === 'success';
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    if (submitting || succeeded) return;
+
+    const trimmed = email.trim();
+    if (!trimmed) {
+      setFormState({
+        status: 'error',
+        message: t('downloadApp.waitlistErrorInvalid'),
+      });
+      return;
+    }
+
+    setFormState({ status: 'submitting' });
+
+    try {
+      const res = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: trimmed }),
+      });
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        setFormState({
+          status: 'error',
+          message:
+            res.status === 400 && data?.error
+              ? t('downloadApp.waitlistErrorInvalid')
+              : t('downloadApp.waitlistErrorGeneric'),
+        });
+        return;
+      }
+
+      setFormState({ status: 'success', already: Boolean(data?.already) });
+    } catch {
+      setFormState({
+        status: 'error',
+        message: t('downloadApp.waitlistErrorGeneric'),
+      });
+    }
+  }
+
+  const errorMessage =
+    formState.status === 'error' ? formState.message : null;
 
   return (
     <div
@@ -75,10 +157,64 @@ export function DownloadAppModal({ open, onClose }: DownloadAppModalProps) {
               lineHeight: '26px',
               textAlign: 'center',
               marginTop: '12px',
+              maxWidth: '420px',
             }}
           >
             {t('downloadApp.subtitle')}
           </Text>
+
+          <form className="dl-modal-form" onSubmit={handleSubmit} noValidate>
+            <label className="dl-modal-form-label" htmlFor="waitlist-email">
+              {t('downloadApp.waitlistEmailLabel')}
+            </label>
+            <div className="dl-modal-form-row">
+              <input
+                id="waitlist-email"
+                type="email"
+                autoComplete="email"
+                inputMode="email"
+                required
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  if (formState.status === 'error') {
+                    setFormState({ status: 'idle' });
+                  }
+                }}
+                placeholder={t('downloadApp.waitlistEmailPlaceholder')}
+                disabled={submitting || succeeded}
+                aria-invalid={formState.status === 'error'}
+                aria-describedby={errorMessage ? 'waitlist-error' : undefined}
+                className="dl-modal-form-input"
+              />
+              <Button
+                type="submit"
+                variant="primary"
+                disabled={submitting || succeeded}
+                loading={submitting}
+                className="btn-fw-500 dl-modal-form-button"
+                style={{ borderRadius: '9999px', height: '56px', padding: '0 28px' }}
+              >
+                {submitting
+                  ? t('downloadApp.waitlistSubmitting')
+                  : t('downloadApp.waitlistSubmit')}
+              </Button>
+            </div>
+
+            {errorMessage && (
+              <p id="waitlist-error" className="dl-modal-form-error" role="alert">
+                {errorMessage}
+              </p>
+            )}
+
+            {succeeded && (
+              <p className="dl-modal-form-success" role="status">
+                {formState.already
+                  ? t('downloadApp.waitlistAlready')
+                  : t('downloadApp.waitlistSuccess')}
+              </p>
+            )}
+          </form>
 
           <div className="dl-modal-qr" aria-label={t('downloadApp.comingSoon')}>
             <div className="dl-modal-qr-pattern" aria-hidden="true">

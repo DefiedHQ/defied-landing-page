@@ -25,7 +25,7 @@ export function TermsPage() {
 
       <Text font="title2" as="h2" display="block" style={h2Style}>1. Introduction</Text>
       <div style={sectionStyle}>
-        <p style={pStyle}>These Terms of Use (&ldquo;Terms&rdquo;) govern your access to and use of defied.money, app.defied.money, and any other online location that links to these Terms (collectively, the &ldquo;Services&rdquo;). The Services are provided by Fusion Software LLC (&ldquo;Defied,&rdquo; &ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;), incorporated in Bulgaria.</p>
+        <p style={pStyle}>These Terms of Use (&ldquo;Terms&rdquo;) govern your access to and use of defied.money, and any other online location that links to these Terms (collectively, the &ldquo;Services&rdquo;). The Services are provided by Fusion Software LLC (&ldquo;Defied,&rdquo; &ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;), incorporated in Bulgaria.</p>
         <p style={pStyle}>Defied provides a non-custodial software interface that connects users to public, permissionless smart contracts deployed on the Base blockchain network. Defied does not control or operate any of the underlying protocols accessible through the Services, including Aave, Compound, Morpho, Lido, or any other third-party decentralized protocol.</p>
         <p style={pStyle}>By accessing or using the Services, you agree to be bound by these Terms and our Privacy Policy. If you do not agree, you must not access or use the Services.</p>
         <p style={pStyle}>We may update these Terms at any time. Continued use of the Services after any update constitutes your acceptance of the revised Terms.</p>

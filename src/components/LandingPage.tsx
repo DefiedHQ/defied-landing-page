@@ -331,9 +331,9 @@ export function LandingPage() {
                   viewport={{ once: true, amount: 0.2 }}
                   transition={{ duration: 0.6, ease: 'easeOut' }}
                 >
-                  <div className="mission-layout">
-                    {card.reversed ? textBlock : illustrationBlock}
-                    {card.reversed ? illustrationBlock : textBlock}
+                  <div className={`mission-layout${card.reversed ? ' mission-layout--reversed' : ''}`}>
+                    {illustrationBlock}
+                    {textBlock}
                   </div>
                 </m.div>
               );

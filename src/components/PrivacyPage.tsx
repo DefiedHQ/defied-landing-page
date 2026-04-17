@@ -25,7 +25,7 @@ export function PrivacyPage() {
       <div style={sectionStyle}>
         <p style={pStyle}>Defied operates as a non-custodial software interface providing access to public, permissionless blockchain protocols. Although we may collect and process information about users of defied.money in accordance with this Privacy Policy, we do not have access to information about all protocol interactions beyond what is already publicly available and recorded on the blockchain.</p>
         <p style={pStyle}>This Privacy Policy explains how Fusion Software LLC (&ldquo;Defied,&rdquo; &ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;) collects, uses, and shares information in connection with our services, as well as your rights and choices regarding such information, in accordance with the General Data Protection Regulation (GDPR) and applicable EU data protection law.</p>
-        <p style={pStyle}>These terms apply to defied.money, app.defied.money, and any other online location that links to this Privacy Policy (collectively, the &ldquo;Services&rdquo;).</p>
+        <p style={pStyle}>These terms apply to defied.money, and any other online location that links to this Privacy Policy (collectively, the &ldquo;Services&rdquo;).</p>
         <p style={pStyle}>By using the Services, you agree to our collection, use, and sharing of your information as described in this Privacy Policy. If you do not agree, you should not use or access the Services.</p>
       </div>
 
