@@ -772,6 +772,142 @@ select:focus-visible,
 }
 
 /* ═══════════════════════════════════════════════════════════════
+   Download app modal
+   ═══════════════════════════════════════════════════════════════ */
+.dl-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 11, 13, 0.5);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  padding: 0;
+}
+.dl-modal-backdrop--open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.dl-modal-card {
+  position: relative;
+  background: #FFFFFF;
+  border-radius: 56px 56px 0 0;
+  width: 100%;
+  max-width: 560px;
+  padding: 48px 24px 32px;
+  transform: translateY(100%);
+  transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
+  box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.08);
+  max-height: 92vh;
+  overflow-y: auto;
+}
+.dl-modal-card--open {
+  transform: translateY(0);
+}
+@media (min-width: 768px) {
+  .dl-modal-backdrop {
+    align-items: center;
+    padding: 24px;
+  }
+  .dl-modal-card {
+    border-radius: 56px;
+    padding: 56px 56px 48px;
+    max-height: calc(100vh - 48px);
+    transform: translateY(16px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.25s ease;
+  }
+  .dl-modal-card--open {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.dl-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0A0B0D;
+  transition: opacity 0.15s ease;
+  z-index: 1;
+  padding: 0;
+}
+.dl-modal-close:hover {
+  opacity: 0.7;
+}
+.dl-modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.dl-modal-qr {
+  position: relative;
+  margin-top: 32px;
+  width: 220px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dl-modal-qr-pattern {
+  width: 100%;
+  height: 100%;
+  opacity: 0.18;
+  filter: grayscale(100%);
+}
+.dl-modal-qr-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dl-modal-coming-soon {
+  background: #0052FF;
+  color: #FFFFFF;
+  padding: 10px 18px;
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.dl-modal-stores {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+}
+.dl-modal-store-badge {
+  height: 96px;
+  width: auto;
+  display: block;
+  transition: opacity 0.15s ease;
+}
+.dl-modal-store-badge:hover {
+  opacity: 0.85;
+}
+@media (min-width: 480px) {
+  .dl-modal-store-badge {
+    height: 112px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
    Respect reduced motion preferences
    ═══════════════════════════════════════════════════════════════ */
 @media (prefers-reduced-motion: reduce) {

@@ -11,6 +11,7 @@ import { Button } from '@coinbase/cds-web/buttons/Button';
 import { Icon } from '@coinbase/cds-web/icons/Icon';
 import { LogoMark } from '@/components/LogoMark';
 import { AnimatedButtonText } from '@/components/AnimatedButtonText';
+import { DownloadAppModal } from '@/components/DownloadAppModal';
 import { useLanguage } from '@/context/LanguageContext';
 
 const languages = [
@@ -22,6 +23,7 @@ export function Header() {
   const router = useRouter();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [langDropdownOpen, setLangDropdownOpen] = useState(false);
+  const [downloadModalOpen, setDownloadModalOpen] = useState(false);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const mobileToggleRef = useRef<HTMLButtonElement>(null);
   const langDropdownRef = useRef<HTMLDivElement>(null);
@@ -77,9 +79,9 @@ export function Header() {
             aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? (
-              <Icon name="close" size="m" color="fgPrimary" accessibilityLabel="Close menu" />
+              <Icon name="close" size="m" dangerouslySetColor="#000000" accessibilityLabel="Close menu" />
             ) : (
-              <Icon name="menu" size="m" color="fgPrimary" accessibilityLabel="Open menu" />
+              <Icon name="hamburger" size="m" dangerouslySetColor="#000000" accessibilityLabel="Open menu" />
             )}
           </button>
         </HStack>
@@ -180,10 +182,7 @@ export function Header() {
             )}
           </div> */}
           <Button
-            as="a"
-            href="https://app.defied.money"
-            target="_blank"
-            rel="noopener noreferrer"
+            onClick={() => setDownloadModalOpen(true)}
             variant="primary"
             compact
             className="btn-fw-500"
@@ -282,6 +281,7 @@ export function Header() {
           </div> */}
         </VStack>
       </div>
+      <DownloadAppModal open={downloadModalOpen} onClose={() => setDownloadModalOpen(false)} />
     </header>
   );
 }

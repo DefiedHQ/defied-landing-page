@@ -20,15 +20,15 @@
     "subtitle1": "Send money anywhere in seconds. Access lending protocols paying up to 4% APY on your balance. Pay with a card. From an account no bank can freeze.",
     "subtitle2": "",
     "subtitle3": "",
-    "cta": "Start for free",
-    "ctaHeader": "Sign up free",
-    "ctaMain": "Start for free",
+    "cta": "Download the app",
+    "ctaHeader": "Sign up",
+    "ctaMain": "Download the app",
     "disclaimer": "Accessing decentralized lending protocols involves risk. Past yields are not guaranteed. Defied provides a non-custodial interface to public blockchain protocols - it does not manage or invest your funds.",
     "builtWith": "Built with the best"
   },
   "cta": {
-    "heading": "DeFi for everyone.",
-    "subheading": "A completely new way to manage your money, powered by decentralized finance."
+    "heading": "Start earning on your euros with Defied",
+    "subheading": "Get the non-custodial stablecoin wallet for Europe. Send EURC and USDC globally in seconds, earn up to 4% APY on your balance, and pay with a virtual card - no bank required."
   },
   "infrastructure": {
     "title": "Built on trusted infrastructure",
@@ -135,6 +135,12 @@
   "common": {
     "by": "by",
     "minRead": "min read"
+  },
+  "downloadApp": {
+    "title": "Get the Defied App",
+    "subtitle": "Scan the QR code to download the app",
+    "comingSoon": "Coming soon",
+    "close": "Close"
   },
   "about": {
     "heroTitle": "We created the first crypto savings product in Bulgaria",

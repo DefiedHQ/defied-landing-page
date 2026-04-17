@@ -96,22 +96,35 @@ export function ArticlePage() {
     <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 16px', paddingBottom: '64px', width: '100%' }}>
 
         {/* Breadcrumb */}
-        <nav aria-label="Breadcrumb" style={{ marginTop: 'clamp(48px, 10vw, 120px)', marginBottom: '16px' }}>
-          <ol style={{ display: 'flex', alignItems: 'center', gap: '6px', listStyle: 'none', margin: 0, padding: 0 }}>
-            <li>
+        <nav aria-label="Breadcrumb" style={{ marginTop: 'clamp(48px, 10vw, 120px)', marginBottom: '16px', minWidth: 0 }}>
+          <ol style={{ display: 'flex', alignItems: 'center', gap: '6px', listStyle: 'none', margin: 0, padding: 0, flexWrap: 'nowrap', minWidth: 0 }}>
+            <li style={{ flexShrink: 0 }}>
               <Link href="/" style={{ color: '#5B616E', textDecoration: 'none', fontSize: '14px', lineHeight: '20px' }}>
                 Home
               </Link>
             </li>
-            <li aria-hidden="true" style={{ color: '#9CA3AF', fontSize: '14px' }}>/</li>
-            <li>
+            <li aria-hidden="true" style={{ color: '#9CA3AF', fontSize: '14px', flexShrink: 0 }}>/</li>
+            <li style={{ flexShrink: 0 }}>
               <Link href="/blog" style={{ color: '#5B616E', textDecoration: 'none', fontSize: '14px', lineHeight: '20px' }}>
                 Blog
               </Link>
             </li>
-            <li aria-hidden="true" style={{ color: '#9CA3AF', fontSize: '14px' }}>/</li>
-            <li aria-current="page">
-              <Text font="label2" as="span" style={{ color: '#0A0B0D', fontSize: '14px', lineHeight: '20px' }}>
+            <li aria-hidden="true" style={{ color: '#9CA3AF', fontSize: '14px', flexShrink: 0 }}>/</li>
+            <li aria-current="page" style={{ minWidth: 0, flex: 1, overflow: 'hidden' }}>
+              <Text
+                font="label2"
+                as="span"
+                style={{
+                  color: '#0A0B0D',
+                  fontSize: '14px',
+                  lineHeight: '20px',
+                  display: 'block',
+                  whiteSpace: 'nowrap',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                }}
+                title={article.title}
+              >
                 {article.title}
               </Text>
             </li>
@@ -144,8 +157,8 @@ export function ArticlePage() {
         <div className="grid-article" style={{ marginBottom: '64px' }}>
           {/* Main content */}
           <article style={{ minWidth: 0 }}>
-            {/* Hero image placeholder */}
-            <div style={{ marginBottom: '40px', height: 'clamp(250px, 30vw, 400px)', maxWidth: '100%', overflow: 'hidden', borderRadius: '56px', position: 'relative' }}>
+            {/* Hero image */}
+            <div style={{ marginBottom: '40px', aspectRatio: '1200 / 630', maxWidth: '100%', overflow: 'hidden', borderRadius: 'clamp(24px, 4vw, 56px)', position: 'relative' }}>
               <Image src={article.image || '/article-cover.svg'} alt={article.title} fill sizes="(max-width: 768px) 100vw, 800px" style={{ objectFit: 'cover' }} />
             </div>
 
@@ -257,7 +270,7 @@ export function ArticlePage() {
                     className="card-group"
                     style={{ display: 'block', textDecoration: 'none' }}
                   >
-                    <div style={{ height: '190px', maxWidth: '100%', overflow: 'hidden', marginBottom: '12px', borderRadius: '56px', position: 'relative' }}>
+                    <div style={{ width: '100%', aspectRatio: '1200 / 630', overflow: 'hidden', marginBottom: '12px', borderRadius: 'clamp(16px, 3vw, 32px)', position: 'relative' }}>
                       <Image src={a.image || '/article-cover.svg'} alt={a.title} fill sizes="300px" style={{ objectFit: 'cover' }} />
                     </div>
                     <Text

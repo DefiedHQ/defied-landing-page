@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { m } from 'framer-motion';
 import { Box } from '@coinbase/cds-web/layout/Box';
@@ -39,9 +39,11 @@ import { InfoSection } from '@/components/Hero';
 import { Footer } from '@/components/Footer';
 import { useLanguage } from '@/context/LanguageContext';
 import { AnimatedButtonText } from '@/components/AnimatedButtonText';
+import { DownloadAppModal } from '@/components/DownloadAppModal';
 
 export function LandingPage() {
   const { t } = useLanguage();
+  const [downloadModalOpen, setDownloadModalOpen] = useState(false);
 
   useEffect(() => {
     const hash = window.location.hash.slice(1);
@@ -135,18 +137,16 @@ export function LandingPage() {
             {/* CTA buttons */}
             <div className="flex-col-row-md" style={{ marginTop: '32px', alignItems: 'center', justifyContent: 'center' }}>
               <Button
-                as="a"
-                href="https://app.defied.money"
-                target="_blank"
-                rel="noopener noreferrer"
+                onClick={() => setDownloadModalOpen(true)}
                 variant="primary"
-                endIcon="arrowRight"
+                startIcon="download"
                 className="btn-fw-500"
                 style={{
                   borderRadius: '56px',
                   height: '58px',
                   padding: '16px 32px',
-                  minWidth: '200px',
+                  width: '240px',
+                  justifyContent: 'center',
                 }}
               >
                 <AnimatedButtonText>{t('hero.cta')}</AnimatedButtonText>
@@ -160,7 +160,8 @@ export function LandingPage() {
                   borderRadius: '56px',
                   height: '58px',
                   padding: '16px 32px',
-                  minWidth: '200px',
+                  width: '240px',
+                  justifyContent: 'center',
                   background: 'transparent',
                   border: '1.5px solid #D1D5DB',
                   color: '#0A0B0D',
@@ -185,6 +186,7 @@ export function LandingPage() {
             width: '100%',
             maxWidth: '900px',
             margin: '0 auto',
+            marginTop: 'clamp(32px, 6vw, 64px)',
             flexShrink: 0,
           }}
         >
@@ -410,7 +412,7 @@ export function LandingPage() {
                 width={56}
                 height={56}
               />
-              <Text font="display2" as="h2" className="title-tight-lh" style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)', fontWeight: 500 }}>
+              <Text font="display2" as="h2" className="title-tight-lh" style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)', fontWeight: 500, lineHeight: 1.05 }}>
                 {t('cta.heading')}
               </Text>
               <Text font="body" as="p" color="fgMuted" style={{ fontSize: '17px', lineHeight: '28px', maxWidth: '420px' }}>
@@ -418,12 +420,9 @@ export function LandingPage() {
               </Text>
               <div style={{ marginTop: '8px' }}>
                 <Button
-                  as="a"
-                  href="https://app.defied.money"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  onClick={() => setDownloadModalOpen(true)}
                   variant="primary"
-                  endIcon="arrowRight"
+                  startIcon="download"
                   className="btn-fw-500"
                   style={{
                     borderRadius: '56px',
@@ -454,6 +453,8 @@ export function LandingPage() {
 
       {/* Section 7: Footer */}
       <Footer />
+
+      <DownloadAppModal open={downloadModalOpen} onClose={() => setDownloadModalOpen(false)} />
     </div>
   );
 }
