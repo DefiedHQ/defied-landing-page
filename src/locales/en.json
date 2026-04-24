@@ -3,6 +3,7 @@
     "resources": "Blog",
     "about": "About",
     "whatItDoes": "What it does",
+    "features": "Features",
     "howItWorks": "How it works",
     "advantages": "Advantages",
     "faq": "FAQ",
@@ -58,10 +59,6 @@
     "row2Subtext": "With a traditional bank or fintech app, your balance is a number in their database. They hold your money. They can restrict, freeze, or close your account. With Defied, your funds live in a secure digital wallet that only you can open - not on our servers, not in our control. Your wallet keeps working even if Defied doesn't.",
     "row3Heading": "Access to decentralized finance",
     "row3Subtext": "Anyone with an internet connection can access global lending markets - no bank account, no approval process, no minimum balance. Defied handles the technical side so you don't have to. You stay in full control of your money throughout."
-  },
-  "protocolsSection": {
-    "title": "Protocols you can access through Defied",
-    "subtitle": "Defied surfaces established, extensively audited protocols. We do not endorse any protocol as risk-free. Smart contract risk exists - please read our risk disclosure before depositing."
   },
   "imageSection": {
     "sectionTitle": "Our mission",
@@ -248,6 +245,7 @@
   "footer": {
     "useful": "Useful",
     "resources": "Blog",
+    "features": "Features",
     "howItWorks": "How it works",
     "faq": "FAQ",
     "risks": "Risks",

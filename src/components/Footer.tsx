@@ -57,6 +57,7 @@ export function Footer() {
               <Text font="headline" as="h4" style={{ marginBottom: '16px' }}>{t('footer.useful')}</Text>
               <VStack as="ul" style={{ gap: '10px', listStyle: 'none', padding: 0, margin: 0 }}>
                 <li><Link href="/blog" className="hover-fade-70" style={{ textDecoration: 'none' }}><Text font="label2" as="span" color="fgMuted">{t('footer.resources')}</Text></Link></li>
+                <li><Link href="/#features" className="hover-fade-70" style={{ textDecoration: 'none' }}><Text font="label2" as="span" color="fgMuted">{t('footer.features')}</Text></Link></li>
                 <li><Link href="/#how-it-works" className="hover-fade-70" style={{ textDecoration: 'none' }}><Text font="label2" as="span" color="fgMuted">{t('footer.howItWorks')}</Text></Link></li>
                 <li><Link href="/#faq" className="hover-fade-70" style={{ textDecoration: 'none' }}><Text font="label2" as="span" color="fgMuted">{t('footer.faq')}</Text></Link></li>
                 <li><Link href="/risks" className="hover-fade-70" style={{ textDecoration: 'none' }}><Text font="label2" as="span" color="fgMuted">{t('footer.risks')}</Text></Link></li>

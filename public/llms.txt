@@ -6,7 +6,7 @@
 **Legal entity:** Fusion Software LLC
 **Headquarters:** 81B Bulgaria Blvd, Sofia, Bulgaria
 **Contact:** hello@defied.money
-**Last updated:** 2026-04-17
+**Last updated:** 2026-04-24
 
 ## What Defied is
 
@@ -110,6 +110,8 @@ Full risk disclosure: https://defied.money/risks
 
 - Introducing Defied — https://defied.money/blog/introducing-defied
 - What is a non-custodial wallet and why does it matter? — https://defied.money/blog/what-is-a-non-custodial-wallet
+- What is a stablecoin? A plain-English guide for Europeans — https://defied.money/blog/what-is-a-stablecoin
+- What is EURC? A complete guide for Europeans — https://defied.money/blog/what-is-eurc
 
 ## Brand
 

@@ -33,7 +33,6 @@ const slideInUp = {
   transition: { duration: 0.6, ease: 'easeOut' },
 };
 import { AboutCarousel } from '@/components/AboutCarousel';
-import { ProtocolsSection } from '@/components/ProtocolsSection';
 import { InfrastructureSection } from '@/components/InfrastructureSection';
 import { InfoSection } from '@/components/Hero';
 import { Footer } from '@/components/Footer';
@@ -153,7 +152,7 @@ export function LandingPage() {
               </Button>
               <Button
                 as="a"
-                href="#what-it-does"
+                href="#features"
                 variant="secondary"
                 className="btn-fw-500"
                 style={{
@@ -168,7 +167,7 @@ export function LandingPage() {
                 }}
                 onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
                   e.preventDefault();
-                  const el = document.getElementById('what-it-does');
+                  const el = document.getElementById('features');
                   if (el) {
                     el.scrollIntoView({ behavior: 'smooth' });
                   }
@@ -227,8 +226,8 @@ export function LandingPage() {
         <InfrastructureSection />
       </section>
 
-      {/* Section: What it does — Features grid + deep dive */}
-      <section id="what-it-does" className="section-padding" style={{ paddingTop: 'clamp(48px, 8vw, 80px)' }}>
+      {/* Section: Features — Features grid */}
+      <section id="features" className="section-padding" style={{ paddingTop: 'clamp(48px, 8vw, 80px)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
           <m.div {...slideInUp} style={{ textAlign: 'center' }}>
             <Text font="display2" as="h2" display="block" className="section-title" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, maxWidth: '720px', marginBottom: '24px' }}>
@@ -266,9 +265,13 @@ export function LandingPage() {
               </m.div>
             ))}
           </div>
+        </div>
+      </section>
 
-          {/* Deep dive section title */}
-          <m.div {...slideInUp} style={{ textAlign: 'center', marginTop: 'clamp(64px, 10vw, 120px)' }}>
+      {/* Section: How it works — Deep dive into advantages */}
+      <section id="how-it-works" className="section-padding" style={{ paddingTop: 'clamp(64px, 10vw, 120px)' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
+          <m.div {...slideInUp} style={{ textAlign: 'center' }}>
             <Text font="display2" as="h2" display="block" className="section-title" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, maxWidth: '720px', marginBottom: '24px' }}>
               {t('advantages.title')}
             </Text>
@@ -366,19 +369,14 @@ export function LandingPage() {
         </div>
       </section>
 
-      {/* Section: How it works */}
+      {/* Section: Overview — What Defied is */}
       <section
-        id="how-it-works"
+        id="overview"
         className="section-padding section-vertical-padding"
       >
         <Box as="div" style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
           <AboutCarousel />
         </Box>
-      </section>
-
-      {/* Section: Protocols — DeFi access proof points */}
-      <section className="section-padding section-vertical-padding">
-        <ProtocolsSection />
       </section>
 
 
