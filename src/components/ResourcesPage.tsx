@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { Text } from '@coinbase/cds-web/typography/Text';
 import { Tag } from '@coinbase/cds-web/tag/Tag';
 import { Chip } from '@coinbase/cds-web/chips/Chip';
+import { Button } from '@coinbase/cds-web/buttons/Button';
 import { useArticles } from '@/data/useArticles';
 import { useLanguage } from '@/context/LanguageContext';
 
@@ -15,6 +16,9 @@ const monthsMap: Record<string, string[]> = {
   en: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
 };
 
+const INITIAL_REST_COUNT = 4;
+const LOAD_MORE_STEP = 4;
+
 export function ResourcesPage() {
   const { t, lang } = useLanguage();
   const articles = useArticles();
@@ -22,6 +26,7 @@ export function ResourcesPage() {
   const articleCategories = [...new Set(articles.map((a) => a.category))];
   const categories = [allLabel, ...articleCategories];
   const [activeFilter, setActiveFilter] = useState(allLabel);
+  const [visibleRestCount, setVisibleRestCount] = useState(INITIAL_REST_COUNT);
 
   // Reset filter when language changes
   const filterValid = categories.includes(activeFilter);
@@ -42,8 +47,15 @@ export function ResourcesPage() {
     ? articles
     : articles.filter((a) => a.category === currentFilter);
 
-  const featured = filtered.slice(0, 2);
-  const rest = filtered.slice(2);
+  const featured = filtered[0];
+  const rest = filtered.slice(1);
+  const visibleRest = rest.slice(0, visibleRestCount);
+  const hasMore = rest.length > visibleRestCount;
+
+  function handleFilter(cat: string) {
+    setActiveFilter(cat);
+    setVisibleRestCount(INITIAL_REST_COUNT);
+  }
 
   return (
     <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 16px', paddingBottom: '64px', width: '100%' }}>
@@ -62,7 +74,7 @@ export function ResourcesPage() {
           {categories.map((cat) => (
             <Chip
               key={cat}
-              onClick={() => setActiveFilter(cat)}
+              onClick={() => handleFilter(cat)}
               invertColorScheme={currentFilter === cat}
             >
               {cat} <span style={{ opacity: 0.7, marginLeft: '4px' }}>{countByCategory(cat)}</span>
@@ -70,66 +82,60 @@ export function ResourcesPage() {
           ))}
         </div>
 
-        {/* Featured articles (top 2, responsive grid) */}
-        {featured.length > 0 && (
-          <div className="grid-1-2-md" style={{ marginBottom: '32px' }}>
-            {featured.map((article) => (
-              <Link
-                key={article.id}
-                href={`/blog/${article.id}`}
-                className="card-group"
-                style={{ textDecoration: 'none', display: 'block' }}
-              >
-                <div>
-                  <div style={{ width: '100%', aspectRatio: '1200 / 630', overflow: 'hidden', borderRadius: 'clamp(24px, 4vw, 56px)', position: 'relative' }}>
-                    <Image src={article.image || '/article-cover.svg'} alt={article.title} fill sizes="(max-width: 768px) 100vw, 580px" style={{ objectFit: 'cover' }} />
-                  </div>
-                  <div style={{ paddingTop: '20px' }}>
-                    <div style={{ marginBottom: '12px' }}>
-                      <span className="category-tag-hover"><Tag colorScheme="gray">{article.category}</Tag></span>
-                    </div>
-                    <Text
-                      font="title3"
-                      as="h2"
-                      className="card-group-underline"
-                      style={{
-                        WebkitLineClamp: 2,
-                        WebkitBoxOrient: 'vertical',
-                        display: '-webkit-box',
-                        overflow: 'hidden',
-                        margin: '0 0 8px',
-                      }}
-                    >
-                      {article.title}
-                    </Text>
-                    <Text
-                      font="body"
-                      as="p"
-                      color="fgMuted"
-                      style={{
-                        WebkitLineClamp: 3,
-                        WebkitBoxOrient: 'vertical',
-                        display: '-webkit-box',
-                        overflow: 'hidden',
-                        margin: 0,
-                      }}
-                    >
-                      {article.excerpt}
-                    </Text>
-                    <Text font="label2" as="div" color="fgMuted" style={{ marginTop: '16px' }}>
-                      <time dateTime={`${article.date}T00:00:00+00:00`}>{formatDate(article.date)}</time> &middot; {article.readTime} {t('common.minRead')}
-                    </Text>
-                  </div>
+        {/* Featured article (most recent, full-width hero) */}
+        {featured && (
+          <Link
+            href={`/blog/${featured.id}`}
+            className="card-group"
+            style={{ textDecoration: 'none', display: 'block', marginBottom: '48px' }}
+          >
+            <div className="grid-1-2-md" style={{ alignItems: 'center', gap: 'clamp(24px, 4vw, 48px)' }}>
+              <div style={{ width: '100%', aspectRatio: '1200 / 630', overflow: 'hidden', borderRadius: 'clamp(24px, 4vw, 56px)', position: 'relative' }}>
+                <Image src={featured.image || '/article-cover.svg'} alt={featured.title} fill sizes="(max-width: 768px) 100vw, 580px" style={{ objectFit: 'cover' }} priority />
+              </div>
+              <div>
+                <div style={{ marginBottom: '16px' }}>
+                  <span className="category-tag-hover"><Tag colorScheme="gray">{featured.category}</Tag></span>
                 </div>
-              </Link>
-            ))}
-          </div>
+                <Text
+                  font="display3"
+                  as="h2"
+                  display="block"
+                  className="card-group-underline"
+                  style={{
+                    fontSize: 'clamp(1.5rem, 2.8vw, 2.25rem)',
+                    lineHeight: 1.1,
+                    fontWeight: 400,
+                    margin: '0 0 16px',
+                  }}
+                >
+                  {featured.title}
+                </Text>
+                <Text
+                  font="body"
+                  as="p"
+                  display="block"
+                  color="fgMuted"
+                  style={{
+                    fontSize: 'clamp(0.9375rem, 1.2vw, 1.0625rem)',
+                    lineHeight: 1.5,
+                    margin: '0 0 16px',
+                  }}
+                >
+                  {featured.excerpt}
+                </Text>
+                <Text font="label2" as="div" display="block" color="fgMuted">
+                  <time dateTime={`${featured.date}T00:00:00+00:00`}>{formatDate(featured.date)}</time> &middot; {featured.readTime} {t('common.minRead')}
+                </Text>
+              </div>
+            </div>
+          </Link>
         )}
 
         {/* Rest of articles (responsive grid) */}
-        {rest.length > 0 && (
+        {visibleRest.length > 0 && (
           <div className="grid-1-2-md">
-            {rest.map((article) => (
+            {visibleRest.map((article) => (
               <Link
                 key={article.id}
                 href={`/blog/${article.id}`}
@@ -179,6 +185,17 @@ export function ResourcesPage() {
                 </div>
               </Link>
             ))}
+          </div>
+        )}
+
+        {hasMore && (
+          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '40px' }}>
+            <Button
+              variant="secondary"
+              onClick={() => setVisibleRestCount((c) => c + LOAD_MORE_STEP)}
+            >
+              {t('resources.readMore')}
+            </Button>
           </div>
         )}
     </div>
