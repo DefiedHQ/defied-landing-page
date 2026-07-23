@@ -18,18 +18,18 @@
     "titleEnd": "Always.",
     "ctaHeader": "Sign in",
     "disclaimer": "Accessing decentralized lending protocols involves risk. Past yields are not guaranteed. Defied Money provides a non-custodial interface to public blockchain protocols - it does not manage or invest your funds.",
-    "cardSubtitle": "The non-custodial stablecoin wallet for Europe. Earn on your balance, send money in seconds - from an account no bank can freeze.",
+    "cardSubtitle": "The non-custodial platform for onchain wealth. Grow your euros and dollars, send money in seconds - from an account only you control.",
     "earlyAccess": "Get early access"
   },
   "earning": {
     "title": "Earning. Even on Sundays.",
-    "body": "Your balance earns in the same global lending markets professional investors use. No lock-ups - withdraw whenever you like.",
+    "body": "Your balance earns in the same open lending markets professional investors use. No lock-ups, no minimums - withdraw whenever you like.",
     "link": "How yield works",
     "screenshotAlt": "The Defied Money app in a browser"
   },
   "cta": {
     "heading": "Start earning on your money with Defied Money",
-    "subheading": "Get the non-custodial stablecoin wallet for Europe. Earn on your balance, send EURC and USDC globally in seconds, and pay with a virtual card - no bank required."
+    "subheading": "The non-custodial platform for onchain wealth. Earn on your balance, send euros and dollars globally in seconds, and pay with a virtual card - no bank required."
   },
   "infrastructure": {
     "title": "Built on trusted infrastructure",
@@ -37,29 +37,29 @@
   },
   "features": {
     "sectionTitle": "Everything your bank does. And what it never will.",
-    "sectionSubtitle": "Stablecoin payments, lending access, and a virtual card - from a wallet only you control.",
-    "f1Title": "Send stablecoins",
-    "f1Desc": "Send euros or dollars to anyone, anywhere, in seconds. No SWIFT codes. No 3–5 business day waits. No €25 wire fees. Just an email address and a confirmation.",
+    "sectionSubtitle": "Payments, earning, and a virtual card - from an account only you control.",
+    "f1Title": "Send money in seconds",
+    "f1Desc": "Send digital euros and dollars to anyone, anywhere, in seconds. No SWIFT codes. No 3–5 business day waits. No €25 wire fees. Just an email address and a confirmation.",
     "f2Title": "Earn on your balance",
     "f2Desc": "Your balance earns while it sits. Defied Money connects you to the same lending markets used by professional investors - see the current rates in the app. No lock-ups. Withdraw any time.",
     "f2Disclaimer": "Yields are variable and depend on protocol market conditions. This is not a guaranteed return or investment product.",
     "f3Title": "Exchange stablecoins",
     "f3Desc": "Swap between USDC (dollar-pegged) and EURC (euro-pegged) instantly, at transparent rates, with a simple fee. No hidden spread.",
-    "f4Title": "Decentralized Finance",
-    "f4Desc": "Use protocols in decentralized finance",
+    "f4Title": "Onchain markets, one tap away",
+    "f4Desc": "Put your money to work in open lending and liquidity markets - Aave, Morpho, Compound and more - directly from your account. We handle the technical layer. You keep full control, always.",
     "f5Title": "Virtual debit card",
-    "f5Desc": "Spend your stablecoin balance anywhere Visa is accepted. Top up from your wallet in one tap.",
-    "f5Card": "Money that travels like you do. Pay wherever Visa is accepted, top up from your wallet in one tap."
+    "f5Desc": "Spend your balance anywhere Visa is accepted. Top up from your account in one tap.",
+    "f5Card": "Money that travels like you do. Pay wherever Visa is accepted, top up from your account in one tap."
   },
   "advantages": {
     "title": "The financial system wasn't built for you. This one is.",
-    "subtitle": "Stablecoins, self-custody, and decentralized lending - all in one account. No bank required.",
+    "subtitle": "Digital euros and dollars, self-custody, and open lending markets - one account for your onchain wealth. No bank required.",
     "row1Heading": "Spend stablecoins",
     "row1Subtext": "Stablecoins are pegged 1:1 to real currencies - USDC to the US dollar, EURC to the euro. The speed and global reach of blockchain, with the price stability of the money you already use. Send and receive 24/7, weekends included.",
-    "row3Heading": "Access to decentralized finance",
-    "row3Subtext": "Global lending markets, open to anyone with an internet connection - no approval process, no minimum balance. Defied Money handles the technical side while you stay in full control of your money.",
+    "row3Heading": "Wealth tools, without the gatekeepers",
+    "row3Subtext": "The onchain markets where wealth is managed are open to anyone with an internet connection - no approval process, no minimum balance, no private-banking tier. Defied Money handles the technical side while you stay in full control of your money.",
     "bandTitle": "An account that's actually yours",
-    "bandBody": "Your funds live in a wallet only you can open. Not on our servers, not in our control. It keeps working even if Defied Money doesn't.",
+    "bandBody": "Your money lives in an onchain account only you can open - one no bank can freeze. Not on our servers, not in our control. It keeps working even if Defied Money doesn't.",
     "bandCta": "How self-custody works"
   },
   "imageSection": {
@@ -69,30 +69,30 @@
   },
   "aboutCarousel": {
     "title": "Simpler than a bank account. More powerful than one.",
-    "card1Tag": "Non-custodial wallet",
-    "card1Title": "A wallet that's truly yours",
-    "card1Desc": "Sign up with your email and a personal wallet is created automatically - secured by cryptography, controlled entirely by you. Defied Money has zero access to your funds. We built the safe. You hold the only key.",
+    "card1Tag": "Self-custody",
+    "card1Title": "An account that's truly yours",
+    "card1Desc": "Sign up with your email and a personal onchain account is created automatically - secured by cryptography, controlled entirely by you. Defied Money has zero access to your money. We built the safe. You hold the only key.",
     "card2Tag": "User interface",
     "card2Title": "A friendly front-end to powerful technology",
     "card2Desc": "Defied Money is a friendly interface to public financial protocols on the Base blockchain. You interact with them directly - they exist independently of us, and you can reach them without Defied Money at any time.",
-    "card3Tag": "Decentralized finance",
-    "card3Title": "Access the best of DeFi in one tap",
-    "card3Desc": "Lending, staking, and liquidity protocols in one place - Aave, Compound, Morpho, Lido and more, accessible in one tap. No technical knowledge required. You keep full custody throughout.",
-    "card4Tag": "Gas-free",
+    "card3Tag": "Onchain markets",
+    "card3Title": "The best of onchain finance, in one tap",
+    "card3Desc": "Lending, staking and liquidity markets in one place - Aave, Compound, Morpho, Lido and more. No technical knowledge required. You keep full custody throughout.",
+    "card4Tag": "Fees covered",
     "card4Title": "We pay the network fees",
-    "card4Desc": "We cover your gas fees when you send stablecoins or interact with supported protocols. The blockchain stays invisible. The experience stays simple."
+    "card4Desc": "We cover your network fees when you send money or use supported markets. The technology stays invisible. The experience stays simple."
   },
   "faq": {
     "title": "Frequently asked questions",
     "showAll": "Show all questions",
     "q1": "What is Defied Money?",
-    "a1": "Defied Money is a non-custodial stablecoin wallet that lets you send, receive, and exchange USDC and EURC on the Base network. It also provides a simple interface for accessing decentralized finance protocols - including lending, staking, and liquidity provision - without requiring any technical knowledge.",
+    "a1": "Defied Money is a non-custodial platform for onchain wealth. It gives you an account only you control, where you can hold, send and exchange digital euros and dollars (the stablecoins EURC and USDC) and put your balance to work in open lending markets like Aave and Morpho - without any technical knowledge. Defied Money never holds your money: you interact with public onchain markets directly, through your own account.",
     "q2": "What is a stablecoin?",
     "a2": "A stablecoin is a digital currency pegged to a real-world asset - in our case, the euro (EURC) or US dollar (USDC). Unlike bitcoin or ether, their value doesn't fluctuate wildly. You can send them globally, instantly, at any time of day - including weekends. They're backed 1:1 by real currency reserves held by regulated issuers.",
     "q3": "What is a non-custodial wallet?",
-    "a3": "With a non-custodial wallet, you own your funds outright - not a company, not a bank. Defied Money partners with Privy to create a secure wallet tied to your email address. You don't need to manage a private key manually, but you always have access to it. Defied Money cannot access, move, or freeze your funds under any circumstances.",
+    "a3": "A non-custodial wallet is an onchain account that only you can open - think of it as a safe where you hold the only key. Your Defied Money account works exactly this way: it's created with your email, secured by cryptography, and controlled entirely by you. You don't need to manage a private key manually, but you can always export it. Defied Money cannot access, move, or freeze your money under any circumstances - and your account keeps working even if Defied Money disappears.",
     "q4": "Who controls my money?",
-    "a4": "You do. Only you. Defied Money and Privy have no ability to access or move your funds. If you wish, you can export your private key and use your wallet entirely independently of Defied Money at any time.",
+    "a4": "You do. Only you. Defied Money and Privy have no ability to access or move your money. If you wish, you can export your private key and use your account entirely independently of Defied Money at any time.",
     "q5": "Can I withdraw at any time?",
     "a5": "Yes, with no waiting period imposed by Defied Money. If you have deposited funds into a decentralized protocol, withdrawal terms depend on that protocol - most allow instant withdrawal, though some have waiting periods. We display this information clearly before you deposit.",
     "q6": "Do I need to verify my identity?",
@@ -106,7 +106,7 @@
     "q10": "What is EURC?",
     "a10": "EURC is a digital euro issued by Circle, the same company that issues USDC. Every EURC token is backed 1:1 by real euros held in regulated banks, and the reserves are audited monthly. You can hold, send and receive EURC 24/7, including weekends and holidays - and when you want to, you can always convert it back to regular euros in your bank account.",
     "q11": "How is Defied Money different from traditional fintech apps?",
-    "a11": "Traditional fintech apps are licensed financial institutions - they hold your money on their balance sheet, which means they can freeze accounts, impose limits, or close accounts with limited notice. Defied Money never holds your money. Your balance sits in a wallet that only you can open, and it keeps working even if Defied Money doesn't. You also earn yield directly from public lending markets, rather than whatever rate a bank decides to pay you.",
+    "a11": "Fintech apps look modern, but underneath they work like banks: they hold your money on their balance sheet, and they can freeze it, limit it, or fail with it. Defied Money is built the opposite way - it's a platform, not a custodian. Your balance sits in your own onchain account, we never touch it, and everything keeps working even if Defied Money doesn't. You also earn directly from open lending markets, rather than whatever rate a bank decides to pay you.",
     "q12": "Is Defied Money safe if I'm not an expert?",
     "a12": "Yes. Defied Money is designed so you don't need to be. You sign up with your email, we handle the technical parts behind the scenes, and we cover network fees on supported actions. The one thing that's different from a bank: there is no customer support line that can recover your money if you lose access to your email. That's why we recommend enabling two-factor authentication from day one.",
     "q13": "How do Defied Money's yields compare to a European savings account?",
@@ -114,7 +114,7 @@
     "q14": "Is Defied Money available in my country?",
     "a14": "Defied Money is available throughout the European Economic Area. A few features - specifically topping up from a bank account and the Visa debit card - depend on our regulated partners being live in your country. When you sign up, we show you exactly which features are available for you.",
     "q15": "What happens to my money if Defied Money shuts down?",
-    "a15": "Your money stays with you. Defied Money is a front-end - your wallet and the lending markets it connects to exist independently. If we disappeared tomorrow, you'd still have full access to your wallet, through your email login or by exporting your private key into any compatible app. This is the core reason Defied Money is built this way."
+    "a15": "Your money stays with you. Defied Money is a front-end - your onchain account and the lending markets it connects to exist independently. If we disappeared tomorrow, you'd still have full access to your money, through your email login or by exporting your private key into any compatible wallet app. This is the core reason Defied Money is built this way."
   },
   "earn": {
     "apr": "APR",
@@ -165,7 +165,7 @@
     "waitlistErrorGeneric": "Something went wrong. Please try again."
   },
   "about": {
-    "heroTitle": "We created the first crypto savings product in Bulgaria",
+    "heroTitle": "We built Bulgaria's first non-custodial platform for onchain wealth",
     "ctaStart": "Start now",
     "ctaContact": "Contact",
     "missionDark": "Defied Money provides non-custodial infrastructure for easy access to decentralized finance.",
@@ -235,11 +235,11 @@
     "faqTitle": "Frequently asked questions"
   },
   "meta": {
-    "defaultTitle": "Defied Money - Earn on Your Money. Send Money Globally. No Bank Needed.",
-    "homeTitle": "Earn on Your Money. Send Money Globally. No Bank Needed.",
-    "homeDescription": "Defied Money lets you earn on your balance, send money anywhere in seconds, and pay with a virtual card - from a wallet only you control. Available in the EU.",
+    "defaultTitle": "Defied Money - Onchain Wealth Platform. Earn on Euros, Send Money Globally.",
+    "homeTitle": "Onchain Wealth Platform. Earn on Euros, Send Money Globally.",
+    "homeDescription": "The non-custodial platform for onchain wealth. Earn on your balance, send money in seconds, and pay with a virtual card - from an account only you control. Available across Europe.",
     "aboutTitle": "About us",
-    "aboutDescription": "Defied Money provides non-custodial infrastructure for easy access to decentralized finance. The first crypto savings product in Bulgaria.",
+    "aboutDescription": "Defied Money is the non-custodial platform for onchain wealth - Bulgaria's first. Hold, grow and send euros and dollars from an account only you control.",
     "blogTitle": "Blog",
     "blogDescription": "Articles, guides, and news about DeFi, blockchain, and decentralized finance from Defied Money.",
     "privacyTitle": "Privacy Policy",
@@ -272,7 +272,7 @@
   },
   "origin": {
     "title": "Built in Sofia. Made for all of Europe.",
-    "body": "Defied Money is developed in Sofia, Bulgaria - the first crypto savings product to come out of the country. It works across the entire European Economic Area: one account for your euros and dollars, wherever in Europe you are.",
+    "body": "Defied Money is built in Sofia, Bulgaria - the country's first non-custodial platform for onchain wealth. It works across the entire European Economic Area: one account for your euros and dollars, wherever in Europe you are.",
     "imageAlt": "Alexander Nevsky Cathedral in Sofia, Bulgaria, by night"
   }
 }

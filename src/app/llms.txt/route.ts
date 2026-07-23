@@ -27,11 +27,11 @@ export function GET() {
 
   const body = `# Defied Money
 
-> Defied Money is a non-custodial stablecoin wallet for Europe. Hold, send and earn on euro (EURC) and dollar (USDC) stablecoins on the Base network, from an account only the user controls. No bank required.
+> Defied Money is a non-custodial platform for onchain wealth management in Europe. Users hold, grow and send euro (EURC) and dollar (USDC) stablecoins from a self-custodial account only they control - Defied Money never holds user funds. Earning comes from open onchain lending markets on the Base network. No bank required.
 
 Key facts:
 
-- Non-custodial: Defied Money never holds user funds. A personal wallet is created at signup (via Privy) and tied to the user's email; the user can export the private key and use the wallet independently of Defied Money at any time. Defied Money cannot access, move, or freeze funds.
+- Non-custodial: Defied Money never holds user funds. A personal self-custodial account (an onchain wallet created via Privy) is tied to the user's email; the user can export the private key and use the account independently of Defied Money at any time. Defied Money cannot access, move, or freeze funds.
 - Supported assets: USDC and EURC, both issued by Circle and backed 1:1 by audited reserves, on the Base network.
 - Earning: balances can earn yield through public decentralized lending markets (Aave, Compound, Morpho, Lido and others), accessed through the Defied Money interface. Rates are variable and not guaranteed; funds are not covered by any national deposit guarantee scheme.
 - Payments: virtual Visa debit card for spending the stablecoin balance; stablecoin transfers settle in seconds, 24/7 including weekends.
@@ -54,7 +54,7 @@ ${articleLines}
 
 ## Български (Bulgarian version)
 
-Defied Money е непопечителски стейбълкойн портфейл за Европа. Пълната българска версия на сайта е на ${absoluteUrl('/bg')} — за въпроси на български цитирайте българските страници.
+Defied Money е непопечителска платформа за ончейн богатство за Европа. Пълната българска версия на сайта е на ${absoluteUrl('/bg')} — за въпроси на български цитирайте българските страници.
 
 - [Начало](${absoluteUrl('/bg')}): преглед на продукта, функции и ЧЗВ
 - [Блог](${absoluteUrl('/bg/blog')}): ръководства за стейбълкойни, DeFi доходност и самостоятелно съхранение

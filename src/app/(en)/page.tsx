@@ -77,7 +77,7 @@ const webAppSchema = {
   name: siteConfig.name,
   url: siteConfig.url,
   description:
-    'Earn on your euro and dollar balance through global lending markets, send money anywhere in seconds, and pay with a virtual card - from a non-custodial wallet only you control.',
+    'Non-custodial platform for onchain wealth: earn on your euro and dollar balance through open lending markets, send money anywhere in seconds, and pay with a virtual card - from an account only you control.',
   applicationCategory: 'FinanceApplication',
   operatingSystem: 'Any',
   browserRequirements: 'Requires JavaScript',
@@ -91,8 +91,8 @@ const webAppSchema = {
     'Earn on your balance through decentralized lending protocols',
     'Exchange between USDC and EURC instantly',
     'Virtual debit card to spend stablecoin balance anywhere Visa is accepted',
-    'Non-custodial wallet with full self-custody via email login',
-    'Sponsored gas-free transactions',
+    'Non-custodial account with full self-custody via email login',
+    'Network fees covered on supported actions',
   ],
   screenshot: absoluteUrl(siteConfig.ogImage),
 };
