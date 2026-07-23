@@ -8,15 +8,15 @@ export const metadata: Metadata = {
   title: bg.meta.risksTitle,
   description: bg.meta.risksDescription,
   openGraph: {
-    title: `${bg.meta.risksTitle} | Defied`,
+    title: `${bg.meta.risksTitle} | Defied Money`,
     description: bg.meta.risksDescription,
     siteName: siteConfig.name,
-    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: 'Defied – Рискове' }],
+    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: 'Defied Money – Рискове' }],
   },
   twitter: {
     card: 'summary_large_image',
     site: siteConfig.twitter,
-    title: `${bg.meta.risksTitle} | Defied`,
+    title: `${bg.meta.risksTitle} | Defied Money`,
     description: bg.meta.risksDescription,
     images: [siteConfig.ogImage],
   },

@@ -17,13 +17,27 @@ const CATEGORY_TINT: Record<string, string> = {
 };
 const DEFAULT_TINT = '#E9EFF9';
 
-export function tintFor(category: string): string {
+/* Per-article tint overrides: with only 8 pictograms for 11 articles, some
+   pictograms repeat - the article that reuses one gets the other tint so no
+   two covers are identical. */
+const ARTICLE_TINT: Record<string, string> = {
+  'revolut-alternatives-bulgaria': '#F6F5F1', // creditCard also used by best-euro-stablecoin (mist)
+  'send-money-from-bulgaria': '#F6F5F1', // transferSend also used by what-is-a-stablecoin (mist)
+  'digital-euro-bulgaria': '#F6F5F1', // walletExchange also used by what-is-eurc (mist)
+};
+
+export function tintFor(category: string, slug?: string): string {
+  if (slug && ARTICLE_TINT[slug]) return ARTICLE_TINT[slug];
   return CATEGORY_TINT[category] ?? DEFAULT_TINT;
 }
 
 /* Article → pictogram (files in public/pictograms). Unique per article so
    covers are distinguishable at a glance. */
 const ARTICLE_PICTOGRAM: Record<string, string> = {
+  'revolut-alternatives-bulgaria': 'creditCard-3.svg',
+  'send-money-from-bulgaria': 'transferSend-3.svg',
+  'crypto-taxes-bulgaria': 'gasFees-5.svg',
+  'digital-euro-bulgaria': 'walletExchange-3.svg',
   'where-does-defi-yield-come-from': 'decentralizedWeb3-5.svg',
   'how-to-earn-interest-on-euros': 'apyInterest-5.svg',
   'best-euro-stablecoin': 'creditCard-3.svg',

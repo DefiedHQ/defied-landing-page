@@ -31,7 +31,7 @@ export async function GET(_req: Request, { params }: { params: Promise<{ slug: s
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background: tintFor(article.category),
+          background: tintFor(article.category, slug),
           position: 'relative',
         }}
       >

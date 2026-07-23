@@ -6,19 +6,19 @@ import { siteConfig, absoluteUrl, languageAlternates } from '@/lib/seo';
 export const metadata: Metadata = {
   title: 'Terms of Use',
   description:
-    'Terms of Use for the Defied platform. Read our terms and conditions before using our services.',
+    'Terms of Use for the Defied Money platform. Read our terms and conditions before using our services.',
   openGraph: {
-    title: 'Terms of Use | Defied',
+    title: 'Terms of Use | Defied Money',
     description:
-      'Terms of Use for the Defied platform. Read our terms and conditions before using our services.',
+      'Terms of Use for the Defied Money platform. Read our terms and conditions before using our services.',
     siteName: siteConfig.name,
-    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: 'Defied Terms of Use' }],
+    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: 'Defied Money Terms of Use' }],
   },
   twitter: {
     card: 'summary_large_image',
     site: siteConfig.twitter,
-    title: 'Terms of Use | Defied',
-    description: 'Terms of Use for the Defied platform. Read our terms and conditions before using our services.',
+    title: 'Terms of Use | Defied Money',
+    description: 'Terms of Use for the Defied Money platform. Read our terms and conditions before using our services.',
     images: [siteConfig.ogImage],
   },
   alternates: {
@@ -35,7 +35,7 @@ export default function Page() {
           '@context': 'https://schema.org',
           '@type': 'WebPage',
           name: 'Terms of Use',
-          description: 'Terms of Use for the Defied platform. Read our terms and conditions before using our services.',
+          description: 'Terms of Use for the Defied Money platform. Read our terms and conditions before using our services.',
           url: absoluteUrl('/terms'),
           isPartOf: { '@type': 'WebSite', name: siteConfig.name, url: siteConfig.url },
         }}

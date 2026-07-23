@@ -10,7 +10,7 @@ import { useLanguage } from '@/context/LanguageContext';
 import { formatArticleDate } from '@/lib/i18n';
 import { siteConfig, absoluteUrl } from '@/lib/seo';
 
-function renderInlineMarkdown(text: string): React.ReactNode[] {
+function renderInlineMarkdown(text: string, localePath: (path: string) => string): React.ReactNode[] {
   const parts: React.ReactNode[] = [];
   const regex = /\*\*(.+?)\*\*|\*(.+?)\*|\[(.+?)\]\((.+?)\)/g;
   let lastIndex = 0;
@@ -34,8 +34,10 @@ function renderInlineMarkdown(text: string): React.ReactNode[] {
           </a>
         );
       } else {
+        // Article bodies use locale-neutral paths (/blog/...); map them to
+        // the current language's URL so BG readers stay on /bg pages.
         parts.push(
-          <Link key={key++} href={match[4]} style={{ color: '#0052FF', textDecoration: 'underline' }}>
+          <Link key={key++} href={localePath(match[4])} style={{ color: '#0052FF', textDecoration: 'underline' }}>
             {match[3]}
           </Link>
         );
@@ -51,13 +53,40 @@ function renderInlineMarkdown(text: string): React.ReactNode[] {
   return parts;
 }
 
-function renderBody(body: string) {
-  const paragraphs = body.split('\n\n');
-  return paragraphs.map((paragraph, i) => (
-    <Text key={i} font="body" as="p" display="block" color="fgMuted" style={{ fontSize: '18px', lineHeight: '28px', marginBottom: i < paragraphs.length - 1 ? '16px' : '0' }}>
-      {renderInlineMarkdown(paragraph)}
-    </Text>
-  ));
+function renderBody(body: string, localePath: (path: string) => string) {
+  const blocks = body.split('\n\n');
+  return blocks.map((block, i) => {
+    const marginBottom = i < blocks.length - 1 ? '16px' : '0';
+    const lines = block.split('\n').filter((l) => l.trim() !== '');
+
+    // A block whose every line starts with "- " (or "N. ") is a markdown
+    // list - render real <ul>/<ol> items instead of a collapsed paragraph.
+    const isUl = lines.length > 0 && lines.every((l) => l.trim().startsWith('- '));
+    const isOl = lines.length > 0 && lines.every((l) => /^\d+\.\s/.test(l.trim()));
+    if (isUl || isOl) {
+      const ListTag = isUl ? 'ul' : 'ol';
+      return (
+        <ListTag
+          key={i}
+          style={{ margin: `0 0 ${marginBottom}`, paddingLeft: '24px', display: 'flex', flexDirection: 'column', gap: '8px', color: 'var(--muted)' }}
+        >
+          {lines.map((line, j) => (
+            <li key={j}>
+              <Text font="body" as="span" color="fgMuted" style={{ fontSize: '18px', lineHeight: '28px' }}>
+                {renderInlineMarkdown(line.trim().replace(/^-\s+|^\d+\.\s+/, ''), localePath)}
+              </Text>
+            </li>
+          ))}
+        </ListTag>
+      );
+    }
+
+    return (
+      <Text key={i} font="body" as="p" display="block" color="fgMuted" style={{ fontSize: '18px', lineHeight: '28px', marginBottom }}>
+        {renderInlineMarkdown(block, localePath)}
+      </Text>
+    );
+  });
 }
 
 export function ArticlePage() {
@@ -137,10 +166,10 @@ export function ArticlePage() {
 
         {/* Meta */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '32px' }}>
-          <Image src={article.authorImage || '/defied_squared_logo_blue.svg'} width={40} height={40} alt={article.author || 'Defied'} style={{ borderRadius: article.authorImage ? '50%' : '0', objectFit: 'cover' }} />
+          <Image src={article.authorImage || '/defied_squared_logo_blue.svg'} width={40} height={40} alt={article.author || 'Defied Money'} style={{ borderRadius: article.authorImage ? '50%' : '0', objectFit: 'cover' }} />
           <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
             <Text font="label2" as="div" color="fgMuted">
-              {t('common.by')} <Text font="label2" as="span" style={{ color: '#6b7280' }}>{article.author || 'Defied'}</Text>
+              {t('common.by')} <Text font="label2" as="span" style={{ color: '#6b7280' }}>{article.author || 'Defied Money'}</Text>
             </Text>
             <Text font="label2" as="div" color="fgMuted">
               <time dateTime={`${article.date}T00:00:00+00:00`}>{formatDate(article.date)}</time> &middot; {article.readTime} {t('common.minRead')}
@@ -170,7 +199,7 @@ export function ArticlePage() {
                       {section.heading}
                     </Text>
                   )}
-                  {renderBody(section.body)}
+                  {renderBody(section.body, localePath)}
                 </div>
               ))}
 

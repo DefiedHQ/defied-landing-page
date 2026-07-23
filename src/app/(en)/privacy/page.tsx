@@ -6,19 +6,19 @@ import { siteConfig, absoluteUrl, languageAlternates } from '@/lib/seo';
 export const metadata: Metadata = {
   title: 'Privacy Policy',
   description:
-    'Defied Privacy Policy. Learn how we process and protect your personal data.',
+    'Defied Money Privacy Policy. Learn how we process and protect your personal data.',
   openGraph: {
-    title: 'Privacy Policy | Defied',
+    title: 'Privacy Policy | Defied Money',
     description:
-      'Defied Privacy Policy. Learn how we process and protect your personal data.',
+      'Defied Money Privacy Policy. Learn how we process and protect your personal data.',
     siteName: siteConfig.name,
-    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: 'Defied Privacy Policy' }],
+    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: 'Defied Money Privacy Policy' }],
   },
   twitter: {
     card: 'summary_large_image',
     site: siteConfig.twitter,
-    title: 'Privacy Policy | Defied',
-    description: 'Defied Privacy Policy. Learn how we process and protect your personal data.',
+    title: 'Privacy Policy | Defied Money',
+    description: 'Defied Money Privacy Policy. Learn how we process and protect your personal data.',
     images: [siteConfig.ogImage],
   },
   alternates: {
@@ -35,7 +35,7 @@ export default function Page() {
           '@context': 'https://schema.org',
           '@type': 'WebPage',
           name: 'Privacy Policy',
-          description: 'Defied Privacy Policy. Learn how we process and protect your personal data.',
+          description: 'Defied Money Privacy Policy. Learn how we process and protect your personal data.',
           url: absoluteUrl('/privacy'),
           isPartOf: { '@type': 'WebSite', name: siteConfig.name, url: siteConfig.url },
         }}

@@ -25,8 +25,8 @@ export function TermsPage() {
 
       <Text font="title2" as="h2" display="block" style={h2Style}>1. Introduction</Text>
       <div style={sectionStyle}>
-        <p style={pStyle}>These Terms of Use (&ldquo;Terms&rdquo;) govern your access to and use of defied.money, and any other online location that links to these Terms (collectively, the &ldquo;Services&rdquo;). The Services are provided by Fusion Software LLC (&ldquo;Defied,&rdquo; &ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;), incorporated in Bulgaria.</p>
-        <p style={pStyle}>Defied provides a non-custodial software interface that connects users to public, permissionless smart contracts deployed on the Base blockchain network. Defied does not control or operate any of the underlying protocols accessible through the Services, including Aave, Compound, Morpho, Lido, or any other third-party decentralized protocol.</p>
+        <p style={pStyle}>These Terms of Use (&ldquo;Terms&rdquo;) govern your access to and use of defied.money, and any other online location that links to these Terms (collectively, the &ldquo;Services&rdquo;). The Services are provided by Fusion Software LLC (&ldquo;Defied Money,&rdquo; &ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;), incorporated in Bulgaria.</p>
+        <p style={pStyle}>Defied Money provides a non-custodial software interface that connects users to public, permissionless smart contracts deployed on the Base blockchain network. Defied Money does not control or operate any of the underlying protocols accessible through the Services, including Aave, Compound, Morpho, Lido, or any other third-party decentralized protocol.</p>
         <p style={pStyle}>By accessing or using the Services, you agree to be bound by these Terms and our Privacy Policy. If you do not agree, you must not access or use the Services.</p>
         <p style={pStyle}>We may update these Terms at any time. Continued use of the Services after any update constitutes your acceptance of the revised Terms.</p>
       </div>
@@ -38,17 +38,17 @@ export function TermsPage() {
 
       <Text font="title2" as="h2" display="block" style={h2Style}>3. Nature of the Services</Text>
       <div style={sectionStyle}>
-        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Defied is a software interface, not a financial institution.</p>
+        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Defied Money is a software interface, not a financial institution.</p>
         <p style={pStyle}>The Services provide a front-end interface through which users may interact with public, permissionless blockchain protocols via their self-custodial wallets. All information provided through the Services is for informational purposes only. Nothing on the Services constitutes financial, investment, legal, or tax advice. You should not make any financial decision based solely on information available through the Services.</p>
 
         <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>You retain full control over your assets at all times.</p>
-        <p style={pStyle}>Defied is not a party to any transaction on any blockchain network. We do not have possession, custody, or control over any cryptoassets or user funds at any time. When you interact with any protocol through the Services, you retain full control over your assets.</p>
+        <p style={pStyle}>Defied Money is not a party to any transaction on any blockchain network. We do not have possession, custody, or control over any cryptoassets or user funds at any time. When you interact with any protocol through the Services, you retain full control over your assets.</p>
 
         <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>We are not intermediaries.</p>
-        <p style={pStyle}>Due to the non-custodial and decentralized nature of the technology, Defied is not an intermediary, agent, advisor, or custodian, and we do not have a fiduciary relationship or obligation to you regarding any decisions, actions, or transactions you make when using the Services. You are solely responsible for ensuring the accuracy, legality, and appropriateness of your interactions with any third-party protocol or smart contract.</p>
+        <p style={pStyle}>Due to the non-custodial and decentralized nature of the technology, Defied Money is not an intermediary, agent, advisor, or custodian, and we do not have a fiduciary relationship or obligation to you regarding any decisions, actions, or transactions you make when using the Services. You are solely responsible for ensuring the accuracy, legality, and appropriateness of your interactions with any third-party protocol or smart contract.</p>
 
         <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Wallet infrastructure is provided by third parties.</p>
-        <p style={pStyle}>To use the Services, you will interact with a self-custodial wallet created and managed through Privy, a third-party wallet infrastructure provider. Your use of Privy is subject to Privy&apos;s own terms and conditions. Defied has no access to your private keys or wallet credentials.</p>
+        <p style={pStyle}>To use the Services, you will interact with a self-custodial wallet created and managed through Privy, a third-party wallet infrastructure provider. Your use of Privy is subject to Privy&apos;s own terms and conditions. Defied Money has no access to your private keys or wallet credentials.</p>
 
         <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Fiat on-ramp and off-ramp services are provided by Bridge.xyz.</p>
         <p style={pStyle}>The conversion of fiat currency (euros or dollars) to and from stablecoins is facilitated by Bridge.xyz, a regulated third-party service provider. Your use of these services is subject to Bridge.xyz&apos;s terms and conditions and applicable regulatory requirements, including identity verification.</p>
@@ -66,17 +66,17 @@ export function TermsPage() {
       <Text font="title2" as="h2" display="block" style={h2Style}>4. Assumption of Risk</Text>
       <div style={sectionStyle}>
         <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Blockchain technology is experimental and carries significant risk.</p>
-        <p style={pStyle}>Smart contracts, cryptoassets, and other blockchain-based systems are experimental, speculative, and subject to change. Bugs, malfunctions, cyberattacks, or changes to the underlying blockchain (such as forks) could disrupt these technologies and result in partial or total loss of funds. Defied assumes no liability for any such risks.</p>
+        <p style={pStyle}>Smart contracts, cryptoassets, and other blockchain-based systems are experimental, speculative, and subject to change. Bugs, malfunctions, cyberattacks, or changes to the underlying blockchain (such as forks) could disrupt these technologies and result in partial or total loss of funds. Defied Money assumes no liability for any such risks.</p>
         <p style={pStyle}>If you are not comfortable assuming these risks, you should not use the Services.</p>
 
         <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>All blockchain transactions are irreversible.</p>
-        <p style={pStyle}>You acknowledge that all transactions on blockchain networks are final and irreversible. Defied has no ability to reverse, cancel, or recover any transaction once it has been submitted to the blockchain.</p>
+        <p style={pStyle}>You acknowledge that all transactions on blockchain networks are final and irreversible. Defied Money has no ability to reverse, cancel, or recover any transaction once it has been submitted to the blockchain.</p>
 
         <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>You are solely responsible for your wallet security.</p>
-        <p style={pStyle}>You are solely responsible for maintaining the security of your self-custodial wallet and any associated credentials. Defied has no access to your private keys and cannot assist in recovering lost or compromised wallets. Unauthorized access to your wallet by third parties could result in the permanent loss of your funds.</p>
+        <p style={pStyle}>You are solely responsible for maintaining the security of your self-custodial wallet and any associated credentials. Defied Money has no access to your private keys and cannot assist in recovering lost or compromised wallets. Unauthorized access to your wallet by third parties could result in the permanent loss of your funds.</p>
 
         <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Third-party protocols carry their own risks.</p>
-        <p style={pStyle}>Defied only surfaces protocols with established audit histories, but we cannot guarantee that any protocol will remain free from exploits, bugs, or other failures. We do not endorse any protocol as risk-free. You should conduct your own due diligence before depositing funds into any protocol.</p>
+        <p style={pStyle}>Defied Money only surfaces protocols with established audit histories, but we cannot guarantee that any protocol will remain free from exploits, bugs, or other failures. We do not endorse any protocol as risk-free. You should conduct your own due diligence before depositing funds into any protocol.</p>
 
         <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Yields are variable and not guaranteed.</p>
         <p style={pStyle}>Any yields or returns referenced through the Services reflect current third-party protocol rates and are subject to change at any time based on market conditions. Past performance is not indicative of future results. Yields do not constitute guaranteed returns or investment products.</p>
@@ -93,7 +93,7 @@ export function TermsPage() {
 
       <Text font="title2" as="h2" display="block" style={h2Style}>5. Taxes</Text>
       <div style={sectionStyle}>
-        <p style={pStyle}>You are solely responsible for determining and paying any taxes, duties, or assessments arising from your use of the Services or your interactions with any blockchain protocol. The tax treatment of cryptoasset transactions is uncertain and may vary by jurisdiction. Defied does not provide tax advice.</p>
+        <p style={pStyle}>You are solely responsible for determining and paying any taxes, duties, or assessments arising from your use of the Services or your interactions with any blockchain protocol. The tax treatment of cryptoasset transactions is uncertain and may vary by jurisdiction. Defied Money does not provide tax advice.</p>
       </div>
 
       <Text font="title2" as="h2" display="block" style={h2Style}>6. Intellectual Property</Text>
@@ -156,7 +156,7 @@ export function TermsPage() {
 
       <Text font="title2" as="h2" display="block" style={h2Style}>10. Indemnification</Text>
       <div style={sectionStyle}>
-        <p style={pStyle}>You agree to indemnify, defend, and hold harmless the Defied Parties from and against any claims, damages, losses, liabilities, costs, and expenses (including reasonable legal fees) arising from:</p>
+        <p style={pStyle}>You agree to indemnify, defend, and hold harmless the Defied Money Parties from and against any claims, damages, losses, liabilities, costs, and expenses (including reasonable legal fees) arising from:</p>
         <ul style={ulStyle}>
           <li style={liStyle}>Your breach of these Terms</li>
           <li style={liStyle}>Your misuse of the Services</li>
@@ -194,7 +194,7 @@ export function TermsPage() {
 
       <Text font="title2" as="h2" display="block" style={h2Style}>15. Entire Agreement</Text>
       <div style={sectionStyle}>
-        <p style={pStyle}>These Terms, together with our Privacy Policy and any other policies referenced herein, constitute the entire agreement between you and Defied with respect to the Services and supersede all prior agreements and understandings.</p>
+        <p style={pStyle}>These Terms, together with our Privacy Policy and any other policies referenced herein, constitute the entire agreement between you and Defied Money with respect to the Services and supersede all prior agreements and understandings.</p>
       </div>
 
       <Text font="title2" as="h2" display="block" style={h2Style}>16. Contact Us</Text>

@@ -20,7 +20,7 @@ const aeonikPro = localFont({
 });
 
 export const metadata: Metadata = {
-  title: '404 | Defied',
+  title: '404 | Defied Money',
   robots: { index: false, follow: false },
 };
 

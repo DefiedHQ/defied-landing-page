@@ -302,7 +302,7 @@ export function LandingPage() {
         </div>
       </section>
 
-      {/* Section: Overview — What Defied is */}
+      {/* Section: Overview — What Defied Money is */}
       <section
         id="overview"
         className="section-padding section-rhythm"
@@ -373,7 +373,7 @@ export function LandingPage() {
               <div style={{ position: 'relative', width: 'min(75%, 496px)', aspectRatio: '1660 / 900' }}>
                 <Image
                   src="/cta-app-laptop.png"
-                  alt="Defied app"
+                  alt="Defied Money app"
                   fill
                   loading="lazy"
                   sizes="(max-width: 768px) 75vw, 496px"

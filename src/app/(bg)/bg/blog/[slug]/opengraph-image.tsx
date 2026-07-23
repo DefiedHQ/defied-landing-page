@@ -17,7 +17,7 @@ export function generateStaticParams() {
 export default async function OgImage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const article = articles.find((a) => a.id === slug);
-  const title = article?.title ?? 'Defied Блог';
+  const title = article?.title ?? 'Defied Money Блог';
   const category = article?.category ?? 'Блог';
 
   const [pictogram, logo, aeonikMedium, aeonikRegular] = await Promise.all([
@@ -36,7 +36,7 @@ export default async function OgImage({ params }: { params: Promise<{ slug: stri
           width: '100%',
           height: '100%',
           display: 'flex',
-          background: tintFor(category),
+          background: tintFor(category, slug),
           position: 'relative',
           fontFamily: 'Aeonik',
         }}

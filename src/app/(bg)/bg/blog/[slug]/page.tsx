@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: article.title,
     description: article.excerpt,
     openGraph: {
-      title: `${article.title} | Defied`,
+      title: `${article.title} | Defied Money`,
       description: article.excerpt,
       url: articleUrl,
       siteName: siteConfig.name,
@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: 'summary_large_image',
       site: siteConfig.twitter,
       creator: siteConfig.twitter,
-      title: `${article.title} | Defied`,
+      title: `${article.title} | Defied Money`,
       description: article.excerpt,
     },
     alternates: {

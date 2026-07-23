@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: bg.meta.defaultTitle,
     description: bg.meta.homeDescription,
     url: absoluteUrl('/bg'),
-    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: 'Defied' }],
+    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: 'Defied Money' }],
   },
   twitter: {
     title: bg.meta.defaultTitle,

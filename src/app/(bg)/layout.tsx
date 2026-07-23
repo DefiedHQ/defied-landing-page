@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
     default: bg.meta.defaultTitle,
-    template: '%s | Defied',
+    template: '%s | Defied Money',
   },
   description: bg.meta.homeDescription,
   keywords: [

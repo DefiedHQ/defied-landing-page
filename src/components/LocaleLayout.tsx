@@ -35,6 +35,13 @@ export function LocaleLayout({ lang, children }: { lang: Lang; children: React.R
   return (
     <html lang={lang} className={aeonikPro.variable}>
       <body>
+        {/* Hoisted to <head> by React — RSS autodiscovery for this language */}
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title={lang === 'bg' ? 'Defied Money Блог' : 'Defied Money Blog'}
+          href={lang === 'bg' ? '/bg/feed.xml' : '/feed.xml'}
+        />
         <CdsProvider>
           <LanguageProvider initialLang={lang}>
             {lang === 'en' && <LanguageGeoInit />}

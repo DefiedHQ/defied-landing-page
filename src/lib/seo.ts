@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: 'Defied',
+  name: 'Defied Money',
   url: process.env.NEXT_PUBLIC_BASE_URL || 'https://defied.money',
   description:
     'Hold, send and earn on your euros and dollars from an account only you control. Global transfers in seconds. Pay with a virtual card. No bank required.',
