@@ -133,8 +133,11 @@ export function DownloadAppModal({ open, onClose }: DownloadAppModalProps) {
         </button>
 
         <div className="dl-modal-content">
+          {/* Not a heading: the modal is in the DOM (closed) on every page, and
+              an h2 before the page's h1 corrupts the document outline. The
+              dialog is still labelled via aria-labelledby. */}
           <Text
-            as="h2"
+            as="p"
             id="dl-modal-title"
             font="display2"
             className="title-tight-lh"
@@ -246,14 +249,14 @@ export function DownloadAppModal({ open, onClose }: DownloadAppModalProps) {
           </div>
 
           <div className="dl-modal-stores">
-            <Image
+            <Image loading="lazy"
               src="/ios_app_store.svg"
               alt="Download on the App Store"
               width={336}
               height={112}
               className="dl-modal-store-badge"
             />
-            <Image
+            <Image loading="lazy"
               src="/google_play_app_store.svg"
               alt="Get it on Google Play"
               width={376}

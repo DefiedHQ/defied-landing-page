@@ -18,7 +18,7 @@
     "titleEnd": "Always.",
     "ctaHeader": "Sign in",
     "disclaimer": "Accessing decentralized lending protocols involves risk. Past yields are not guaranteed. Defied Money provides a non-custodial interface to public blockchain protocols - it does not manage or invest your funds.",
-    "cardSubtitle": "Earn on your balance. Send money in seconds. From an account no bank can freeze.",
+    "cardSubtitle": "The non-custodial stablecoin wallet for Europe. Earn on your balance, send money in seconds - from an account no bank can freeze.",
     "earlyAccess": "Get early access"
   },
   "earning": {
@@ -83,7 +83,7 @@
     "card4Desc": "We cover your gas fees when you send stablecoins or interact with supported protocols. The blockchain stays invisible. The experience stays simple."
   },
   "faq": {
-    "title": "FAQ",
+    "title": "Frequently asked questions",
     "showAll": "Show all questions",
     "q1": "What is Defied Money?",
     "a1": "Defied Money is a non-custodial stablecoin wallet that lets you send, receive, and exchange USDC and EURC on the Base network. It also provides a simple interface for accessing decentralized finance protocols - including lending, staking, and liquidity provision - without requiring any technical knowledge.",
@@ -265,5 +265,14 @@
     "address": "81B Bulgaria Blvd, Sofia, Bulgaria",
     "disclaimer": "Defied Money is operated by Fusion Software LLC. Defied Money is a non-custodial software interface providing access to public, permissionless blockchain protocols. Defied Money does not provide investment, financial, legal, or tax advice. Accessing decentralized finance protocols involves significant risk, including the potential loss of funds. Variable yields referenced on this site reflect current third-party protocol rates and are not guaranteed returns. Nothing on this site constitutes an offer, solicitation, or recommendation to acquire any financial product or service. Fiat on-ramp and off-ramp services are provided by Bridge.xyz. Virtual card services are provided by Gnosis Pay. Defied Money does not hold, manage, or have access to user funds at any time. Services may not be available in all jurisdictions.",
     "copyright": "© Fusion Software LLC. All rights reserved."
+  },
+  "blogSection": {
+    "title": "From the blog",
+    "viewAll": "All articles"
+  },
+  "origin": {
+    "title": "Built in Sofia. Made for all of Europe.",
+    "body": "Defied Money is developed in Sofia, Bulgaria - the first crypto savings product to come out of the country. It works across the entire European Economic Area: one account for your euros and dollars, wherever in Europe you are.",
+    "imageAlt": "Alexander Nevsky Cathedral in Sofia, Bulgaria, by night"
   }
 }

@@ -91,12 +91,15 @@ const webAppSchema = {
   screenshot: absoluteUrl(siteConfig.ogImage),
 };
 
-/* FAQ structured data mirrors the visible Bulgarian FAQ section (bg.json). */
+/* FAQ structured data mirrors the visible FAQ section: the same locale
+   strings, in the same order, limited to the 8 questions that are
+   server-rendered before "show all" (see VISIBLE_FAQ_COUNT in Hero.tsx). */
+const FAQ_KEYS = [1, 4, 7, 8, 5, 13, 15, 14] as const;
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   inLanguage: 'bg',
-  mainEntity: ([1, 2, 3, 4, 5, 6, 7, 8, 9] as const).map((i) => ({
+  mainEntity: FAQ_KEYS.map((i) => ({
     '@type': 'Question',
     name: bg.faq[`q${i}`],
     acceptedAnswer: {

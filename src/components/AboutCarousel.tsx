@@ -59,7 +59,7 @@ export function AboutCarousel() {
                 <LocalPictogram name={CARD_PICTOGRAMS[i]} dimension="48x48" />
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                <Text font="title3" as="h4" style={{ fontWeight: 600 }}>
+                <Text font="title3" as="h3" style={{ fontWeight: 600 }}>
                   {card.title}
                 </Text>
                 <Text font="body" as="p" color="fgMuted" style={{ fontSize: '15px', lineHeight: '24px' }}>

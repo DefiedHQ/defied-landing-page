@@ -24,6 +24,7 @@ const fadeUp = {
   transition: { duration: 0.5, ease: [...MOTION_EASE] },
 };
 import { AboutCarousel } from '@/components/AboutCarousel';
+import { FeaturedPosts } from '@/components/FeaturedPosts';
 import { InfrastructureSection } from '@/components/InfrastructureSection';
 import { InfoSection } from '@/components/Hero';
 import { HeroStatic } from '@/components/HeroStatic';
@@ -313,6 +314,33 @@ export function LandingPage() {
       </section>
 
 
+      {/* Section: Origin — built in Sofia, for Europe (entity/local signal) */}
+      <section id="origin" className="section-padding section-rhythm">
+        <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
+          <m.div {...fadeUp}>
+            <div className="ownership-band" style={{ background: 'var(--surface)' }}>
+              <div className="ownership-band-text">
+                <Text font="display2" as="h2" className="title-tight-lh" style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)', fontWeight: 500 }}>
+                  {t('origin.title')}
+                </Text>
+                <Text font="body" as="p" color="fgMuted" style={{ fontSize: '17px', lineHeight: '28px', maxWidth: '46ch' }}>
+                  {t('origin.body')}
+                </Text>
+              </div>
+              <div className="ownership-band-photo">
+                <Image
+                  src="/Alexander_Nevsky_Cathedral_by_night.jpg"
+                  alt={t('origin.imageAlt')}
+                  fill
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, 480px"
+                />
+              </div>
+            </div>
+          </m.div>
+        </div>
+      </section>
+
       {/* Section: FAQ — Catch remaining objections */}
       <section
         id="faq"
@@ -322,7 +350,7 @@ export function LandingPage() {
       </section>
 
       {/* Section: CTA repeat — Final push (Aave-inspired split layout) */}
-      <section className="section-padding section-rhythm section-rhythm-bottom">
+      <section className="section-padding section-rhythm">
         <m.div {...fadeUp}>
           <div
             className="cta-split-card"
@@ -382,6 +410,13 @@ export function LandingPage() {
               </div>
             </div>
           </div>
+        </m.div>
+      </section>
+
+      {/* Section: From the blog — link the landing to the content cluster */}
+      <section id="blog-highlights" className="section-padding section-rhythm section-rhythm-bottom">
+        <m.div {...fadeUp}>
+          <FeaturedPosts />
         </m.div>
       </section>
 

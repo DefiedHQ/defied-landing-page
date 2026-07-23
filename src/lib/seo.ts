@@ -2,7 +2,7 @@ export const siteConfig = {
   name: 'Defied Money',
   url: process.env.NEXT_PUBLIC_BASE_URL || 'https://defied.money',
   description:
-    'Hold, send and earn on your euros and dollars from an account only you control. Global transfers in seconds. Pay with a virtual card. No bank required.',
+    'The non-custodial stablecoin wallet for Europe. Hold, send and earn on euros and dollars from an account only you control. Instant global transfers, virtual card, no bank.',
   ogImage: '/og-image.png',
   logo: '/defied_squared_logo_blue.svg',
   twitter: '@defied_money',

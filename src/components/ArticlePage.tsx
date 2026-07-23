@@ -182,7 +182,7 @@ export function ArticlePage() {
           <article style={{ minWidth: 0 }}>
             {/* Hero image */}
             <div style={{ marginBottom: '40px', aspectRatio: '1200 / 630', maxWidth: '100%', overflow: 'hidden', borderRadius: 'clamp(24px, 4vw, 56px)', position: 'relative' }}>
-              <Image src={`/blog/${article.id}/cover.png`} alt={article.title} fill sizes="(max-width: 768px) 100vw, 800px" style={{ objectFit: 'cover' }} />
+              <Image src={`/blog/${article.id}/cover.png`} alt={article.title} fill priority sizes="(max-width: 768px) 100vw, 800px" style={{ objectFit: 'cover' }} />
             </div>
 
             {/* Article body */}
