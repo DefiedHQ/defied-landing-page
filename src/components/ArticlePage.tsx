@@ -173,6 +173,26 @@ export function ArticlePage() {
                   {renderBody(section.body)}
                 </div>
               ))}
+
+              {/* FAQ — only when the Q&As aren't already part of the body
+                  sections (faqInBody). Mirrored by FAQPage JSON-LD. */}
+              {article.faq.length > 0 && !article.faqInBody && (
+                <section style={{ marginBottom: '32px' }} aria-labelledby="article-faq">
+                  <Text font="title2" as="h2" display="block" id="article-faq" style={{ marginBottom: '24px' }}>
+                    {t('resources.faqTitle')}
+                  </Text>
+                  {article.faq.map((qa: { q: string; a: string }, i: number) => (
+                    <div key={i} style={{ marginBottom: '24px' }}>
+                      <Text font="headline" as="h3" display="block" style={{ marginBottom: '8px' }}>
+                        {qa.q}
+                      </Text>
+                      <Text font="body" as="p" display="block" color="fgMuted" style={{ fontSize: '18px', lineHeight: '28px' }}>
+                        {qa.a}
+                      </Text>
+                    </div>
+                  ))}
+                </section>
+              )}
             </div>
           </article>
 

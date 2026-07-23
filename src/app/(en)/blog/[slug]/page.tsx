@@ -85,6 +85,20 @@ export default async function ArticleRoute({ params }: Props) {
               wordCount: article.sections.reduce((sum, s) => sum + s.body.split(/\s+/).length, 0),
             }}
           />
+          {article.faq.length > 0 && (
+            <JsonLd
+              data={{
+                '@context': 'https://schema.org',
+                '@type': 'FAQPage',
+                inLanguage: 'en',
+                mainEntity: article.faq.map((qa) => ({
+                  '@type': 'Question',
+                  name: qa.q,
+                  acceptedAnswer: { '@type': 'Answer', text: qa.a },
+                })),
+              }}
+            />
+          )}
           <JsonLd
             data={{
               '@context': 'https://schema.org',

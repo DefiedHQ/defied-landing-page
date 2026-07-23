@@ -57,7 +57,50 @@
         "heading": "Start with Defied",
         "body": "Defied is a non-custodial account built on EURC and USDC. You earn the full underlying DeFi yield — no cut, no spread, no hidden fees. [Join the waitlist](/) and we'll let you know when your spot opens.\n\n*This article is for informational purposes only. Defied is a non-custodial software interface and does not provide financial advice. Please read our [risk disclosure](/risks) and [terms of use](/terms) before using the Services.*\n\n*Last updated: 2026-05-12*"
       }
-    ]
+    ],
+    "faq": [
+      {
+        "q": "Is DeFi yield sustainable?",
+        "a": "Yield from genuine borrower interest is sustainable as long as borrowing demand exists, which it consistently does. Yield from short-term token incentives is not sustainable and ends when the rewards run out. Most yield on established lending markets in 2026 is the first type."
+      },
+      {
+        "q": "Why is stablecoin yield higher than bank savings?",
+        "a": "Because there's no bank in the middle taking a margin. In a bank, your deposit funds loans to other customers, but the bank keeps most of the interest spread. In on-chain lending, your deposit funds loans to other users, but you receive almost all of the interest directly. The yield is the same source — borrower interest — just without the intermediary."
+      },
+      {
+        "q": "Is 4–5% on EURC too good to be true?",
+        "a": "Not really, given the source. Borrowers on Aave and Morpho regularly pay 5–8% to borrow stablecoins because the borrowing has clear economic value to them. After a small protocol fee, depositors earn 3–5%. This is consistent with what borrowers are paying, which makes it sustainable."
+      },
+      {
+        "q": "What yield would actually be too good to be true?",
+        "a": "Anything significantly above the borrower rate has to come from somewhere else — usually token incentives, lock-ups, or platform leverage. If you see 10%+ advertised on stablecoins without lock-ups or conditions, look very carefully at the source. If you see 15%+, assume the answer is unsustainable until proven otherwise."
+      },
+      {
+        "q": "Can I lose money in on-chain lending?",
+        "a": "In theory yes, in three ways: the lending protocol could have a smart contract bug (rare for major protocols), the stablecoin you're lending could depeg (rare for EURC and USDC), or the borrower collateral system could fail to liquidate fast enough in a flash crash (rare, and historically the larger protocols have been over-collateralised enough that depositor losses haven't occurred). In practice, established lending markets have processed tens of billions of euros over multiple years without depositor losses."
+      },
+      {
+        "q": "How does Defied earn 4% if it doesn't take a yield cut?",
+        "a": "Defied doesn't custody your funds or take a cut of the yield — you earn what the underlying lending markets pay. Defied makes money through other features: small fees on currency conversion, on/off-ramp markups, and subscription pricing for Plus and Premium tiers. The yield mechanism is the same as direct on-chain lending — the difference is the user experience."
+      },
+      {
+        "q": "Should I trust on-chain lending more than a centralised crypto platform?",
+        "a": "For most users, yes. Centralised platforms hold your funds and can fail catastrophically (as several have). On-chain lending uses smart contracts you interact with directly — there's no central party that can fail and take your money. Smart contract risk is real but well-understood for major protocols, and the on-chain transparency means anyone can verify the system's state at any time. The major centralised failures of 2022–2023 wouldn't have happened with on-chain lending because the mechanism doesn't allow them."
+      },
+      {
+        "q": "Where do I see the actual borrower rates?",
+        "a": "Both Aave and Morpho publish all borrower rates publicly, in real time, on their dashboards. You can see exactly how much is borrowed, at what rate, and how that translates into the depositor rate. This kind of transparency is genuinely unprecedented compared to traditional finance."
+      },
+      {
+        "q": "What's the worst case for me as a depositor?",
+        "a": "The worst case in established lending markets is a smart contract exploit that drains the pool. This has not happened to the largest protocols in their multi-year operating histories, but it's the theoretical risk. Some protocols and non-custodial accounts offer optional insurance against this. For most users, the practical risk of this happening is low, but it's the real risk worth knowing about."
+      },
+      {
+        "q": "Is on-chain lending regulated?",
+        "a": "The underlying smart contracts are not regulated as financial institutions — they're code running on a public blockchain. The stablecoins flowing through them (EURC, USDC) are regulated. The platforms that provide consumer interfaces (Defied, Bleap, Rebind) operate under varying regulatory frameworks depending on what services they provide. The yield itself isn't regulated, but it isn't unregulated in a hidden way either — the activity is transparent and verifiable."
+      }
+    ],
+    "faqInBody": true
   },
   {
     "id": "how-to-earn-interest-on-euros",
@@ -113,7 +156,50 @@
         "heading": "Start with Defied",
         "body": "Defied is a non-custodial account built on EURC and USDC. Hold, earn, send, and spend without a bank. [Join the waitlist](/) and we'll let you know when your spot opens.\n\n*This article is for informational purposes only. Defied is a non-custodial software interface and does not provide financial advice. Please read our [risk disclosure](/risks) and [terms of use](/terms) before using the Services.*\n\n*Last updated: 2026-05-04*"
       }
-    ]
+    ],
+    "faq": [
+      {
+        "q": "What is the best way to earn interest on euros in 2026?",
+        "a": "For most Europeans, the practical answer is a combination: keep an emergency buffer in a bank savings account for instant liquidity and deposit insurance, hold the bulk of your savings in a euro money market fund for 2–3% with low risk, and put a portion into a non-custodial euro account or direct on-chain lending for higher yield (3–5%). The right split depends on your appetite for managing different tools."
+      },
+      {
+        "q": "What's the highest yield I can earn on euros safely?",
+        "a": "In 2026, around 3–5% is the realistic ceiling for \"safely\" earning on euros, achievable through direct on-chain lending or non-custodial euro accounts. Higher rates than this typically come with custody risk (centralised platforms), lock-up risk (long-term commitments you can't exit), or aggressive marketing tactics. If you see 8–10% advertised on euros, look very closely at the conditions - there's almost always a meaningful catch."
+      },
+      {
+        "q": "Can I lose money earning interest on euros?",
+        "a": "Yes, in different ways depending on the option. Bank savings can be partially lost if the bank fails and your balance exceeds €100,000 deposit insurance. Money market funds can have small price fluctuations. Centralised crypto platforms can fail and take user funds with them - this has happened repeatedly. Direct on-chain lending and non-custodial accounts have smart contract risk, which is small for established protocols but non-zero. No yield-earning option is completely risk-free."
+      },
+      {
+        "q": "Is on-chain lending safer than centralised crypto platforms?",
+        "a": "For most users, yes. Centralised platforms hold your money, so a platform failure means your money is at risk. On-chain lending uses smart contracts that you interact with directly - there's no central party to fail. Smart contract risk is real but well-understood, and the largest protocols (Aave, Morpho) have processed tens of billions of euros over multiple years without losses. The track record is genuinely strong."
+      },
+      {
+        "q": "How are stablecoin yields taxed in Europe?",
+        "a": "Tax treatment varies by country. In most EU jurisdictions, yield earned on stablecoins is taxable as either interest income, capital gains, or miscellaneous income, depending on how the income is classified locally. Most users will need to report yield earnings on their annual tax return. Specific guidance is highly country-dependent - consult a tax advisor familiar with your jurisdiction."
+      },
+      {
+        "q": "What's the difference between a savings account and a euro money market fund?",
+        "a": "A savings account is a deposit at a bank, protected by deposit insurance up to €100,000, with the bank paying you whatever interest rate it chooses. A money market fund is an investment fund that buys very short-term, low-risk debt (mostly government and high-grade corporate paper) and passes the yield to investors. Money market funds typically pay closer to the ECB rate than banks do, but they don't have deposit insurance and aren't quite as instantly liquid."
+      },
+      {
+        "q": "Are non-custodial euro accounts safe?",
+        "a": "Non-custodial euro accounts are as safe as the wallet infrastructure and the underlying lending protocols they connect to. The custody model is strong - the product can't move or freeze your funds. The risks are smart contract risk (bugs in lending protocols, low but non-zero) and infrastructure risk (the wallet provider failing). For users comparing these to centralised crypto platforms, the trust profile is materially better. For users comparing these to bank savings, they're a different and slightly higher-risk category that earns higher yield in exchange."
+      },
+      {
+        "q": "Can my bank stop me from earning on stablecoins?",
+        "a": "Banks can't directly stop you from earning on stablecoins, but they can flag transactions to and from crypto-related services, occasionally restrict transfers to certain platforms, and in some cases close accounts of customers they perceive as high-risk. This varies by bank - some are crypto-friendly (BBVA, Revolut, several German online banks), others are restrictive. If your current bank pushes back on legitimate crypto activity, switching to a more crypto-friendly bank is usually the simplest fix."
+      },
+      {
+        "q": "What's the catch with on-chain lending?",
+        "a": "The honest catch is the user experience. Direct on-chain lending requires you to manage a self-custody wallet, understand gas fees, approve token contracts, and use unfamiliar interfaces. For technical users, this is fine. For non-technical users, it's a real barrier - and the reason non-custodial euro accounts have emerged as the friendlier alternative. The yield itself is straightforward; the tools historically haven't been."
+      },
+      {
+        "q": "How does Defied compare to a regular bank?",
+        "a": "Defied is a non-custodial euro and dollar account, not a bank. The key differences: Defied doesn't hold your money (you do, in a wallet only you control), Defied pays the full underlying DeFi yield rather than a marked-down \"interest rate,\" and Defied isn't covered by deposit insurance. In return, you get yield meaningfully higher than bank savings, an account that can't be frozen, and the ability to send and receive globally in seconds. It's a different product with a different trust model - not a replacement for a primary bank account, but a meaningful alternative for the savings portion of your money."
+      }
+    ],
+    "faqInBody": true
   },
   {
     "id": "best-euro-stablecoin",
@@ -173,7 +259,50 @@
         "heading": "Start with Defied",
         "body": "Defied is a non-custodial account built on EURC and USDC. Hold, earn, send, and spend without a bank. [Join the waitlist](/) and we'll let you know when your spot opens.\n\n*This article is for informational purposes only. Defied is a non-custodial software interface and does not provide financial advice. Please read our [risk disclosure](/risks) and [terms of use](/terms) before using the Services.*\n\n*Last updated: 2026-04-25*"
       }
-    ]
+    ],
+    "faq": [
+      {
+        "q": "Is EURC safer than EURe?",
+        "a": "Both are MiCA-compliant and operate under regulatory oversight, but they have different risk profiles. EURC has higher liquidity (which helps in stress events) and a publicly listed issuer (Circle, since their 2024 IPO). EURe has direct SEPA redemption (which gives holders a stronger legal claim to underlying euros) and operates under EMI regulation, which is a more established framework. Neither is obviously safer than the other - they have different strengths."
+      },
+      {
+        "q": "What is the safest euro stablecoin?",
+        "a": "For most users, the practical answer is \"any of the MiCA-compliant fiat-backed options\" - EURC, EURe, EURS, or EURI. All four are backed by real euros, regulated under European frameworks, and operating under regular attestation or audit. Among them, EURC has the deepest liquidity (which helps in stress events) and EURe has the strongest direct redemption right (which helps if the issuer ever fails)."
+      },
+      {
+        "q": "Which euro stablecoin is MiCA-compliant?",
+        "a": "EURC, EURe, EURS, and EURI are all MiCA-compliant in 2026. EURA is not - it operates as a decentralised crypto asset outside MiCA's E-Money Token framework."
+      },
+      {
+        "q": "Can I earn interest on euro stablecoins?",
+        "a": "Yes. EURC and EURe are both supported on major DeFi lending markets like Aave and Morpho, where you can earn yield. As of 2026, EURC yields typically run 3–5% annually depending on market conditions. EURe yields are usually slightly lower due to lower demand from borrowers. EURS, EURI, and EURA have less DeFi support and fewer yield opportunities."
+      },
+      {
+        "q": "What happens if a euro stablecoin issuer fails?",
+        "a": "For EURC, EURS, and EURI: the underlying reserves are held in regulated financial institutions. In an issuer failure, holders would have a claim to those reserves through the bankruptcy process. For EURe: as regulated electronic money, holders have a direct legal claim to underlying funds, which is a stronger position. For EURA: collateral is held in smart contracts, not by an issuer, so there's no central failure point - but smart contract risk and collateral price risk apply instead."
+      },
+      {
+        "q": "Why is EURC bigger than EURe?",
+        "a": "EURC is issued by Circle, which already has extensive distribution through USDC. When MiCA created clear rules for euro stablecoins in 2024, Circle was positioned to roll out EURC across all the same exchanges and protocols that already supported USDC. EURe doesn't have that pre-existing distribution network, so it's grown more slowly."
+      },
+      {
+        "q": "Are euro stablecoins legal in Europe?",
+        "a": "Yes. MiCA-compliant euro stablecoins (EURC, EURe, EURS, EURI) are explicitly legal under EU law. Holding, sending, and using them is legal across the EU. EURA is in a less clear regulatory position because it operates outside the MiCA E-Money Token framework, but holding and using it is still legal for individuals in most EU jurisdictions."
+      },
+      {
+        "q": "Can a euro stablecoin go to zero?",
+        "a": "Theoretically yes, but the mechanisms are different for each. Fiat-backed stablecoins (EURC, EURe, EURS, EURI) could fail if the issuer or its reserve banks collapse - but reserves provide a recovery path in most cases. Decentralised stablecoins (EURA) could fail if the collateral system breaks down. None of the major euro stablecoins has gone to zero historically. The most significant depeg event for any major fiat-backed stablecoin was USDC's brief drop to $0.87 during the SVB crisis in March 2023, which fully recovered within days."
+      },
+      {
+        "q": "Which euro stablecoin is best for sending money?",
+        "a": "For pure sending speed and cost: EURC on Base offers the fastest, cheapest transfers (typically under €0.05 in network fees, settled in seconds). EURe on Gnosis Chain is similarly fast and cheap. EURS on Algorand is also low-cost. For most users, EURC on Base is the practical default because of its broad recipient support."
+      },
+      {
+        "q": "Which euro stablecoin is best for savings?",
+        "a": "For yield-earning savings: EURC has the most yield opportunities through Aave, Morpho, and other lending markets, currently paying 3–5% annually. EURe has fewer yield options. The other three (EURS, EURI, EURA) have limited DeFi yield availability. If your primary goal is earning interest on euros, EURC is the practical choice."
+      }
+    ],
+    "faqInBody": true
   },
   {
     "id": "what-is-eurc",
@@ -237,7 +366,30 @@
         "heading": "Start with Defied",
         "body": "Defied is a non-custodial account built on EURC and USDC. Hold, earn, send, and spend without a bank. [Join the waitlist](/) and we'll let you know when your spot opens.\n\n*This article is for informational purposes only. Defied is a non-custodial software interface and does not provide financial advice. Please read our [risk disclosure](/risks) and [terms of use](/terms) before using the Services.*"
       }
-    ]
+    ],
+    "faq": [
+      {
+        "q": "Is EURC legal tender?",
+        "a": "No. Only euros issued by the European Central Bank are legal tender. EURC is a digital representation of the euro, redeemable 1:1, but it's a private instrument."
+      },
+      {
+        "q": "Can anyone hold EURC?",
+        "a": "In principle, yes - anyone with a compatible wallet can hold EURC. To acquire it through regulated channels (exchanges, fintech apps), you'll typically need identity verification."
+      },
+      {
+        "q": "Is EURC the same as a digital euro?",
+        "a": "No. The European Central Bank is developing a \"digital euro\" - a central bank digital currency (CBDC) - as a separate project. The digital euro, if launched, would be issued by the ECB itself. EURC is issued by a private company (Circle) under regulatory authorisation. Both could coexist."
+      },
+      {
+        "q": "Can I lose my EURC?",
+        "a": "Yes, in specific circumstances: if you lose access to the wallet holding it, if someone gains access to your wallet, or in the extremely rare case of a protocol or issuer failure. Storing EURC in a non-custodial wallet means you're responsible for its security."
+      },
+      {
+        "q": "How is EURC taxed?",
+        "a": "Treatment varies by country. In most EU jurisdictions, EURC itself is not a taxable asset in the same way investments are - but yield earned on EURC, or gains from converting between EURC and other assets, may be taxable. Consult a tax advisor familiar with your jurisdiction."
+      }
+    ],
+    "faqInBody": true
   },
   {
     "id": "what-is-a-stablecoin",
@@ -297,7 +449,30 @@
         "heading": "Start with Defied",
         "body": "Defied is a non-custodial wallet that lets you hold, send and earn on EURC and USDC - no crypto experience needed. [Join the waitlist](/) and we'll let you know when your spot opens.\n\n*This article is for informational purposes only. Defied is a non-custodial software interface and does not provide financial advice. Please read our [risk disclosure](/risks) and [terms of use](/terms) before using the Services.*"
       }
-    ]
+    ],
+    "faq": [
+      {
+        "q": "What is a stablecoin in simple terms?",
+        "a": "A stablecoin is a digital version of a regular currency, like the euro or the US dollar. One EURC is worth one euro; one USDC is worth one dollar. It keeps its value because the issuer holds real money in reserve for every token — and it moves over the internet in seconds, at any hour, without a bank."
+      },
+      {
+        "q": "Are stablecoins safe?",
+        "a": "Reputable fiat-backed stablecoins like EURC and USDC are backed 1:1 by reserves held with regulated institutions and fall under the EU’s MiCA framework. The main risks are losing access to the wallet that holds them and, in rare cases, issuer failure — not day-to-day price swings."
+      },
+      {
+        "q": "What is the difference between a stablecoin and Bitcoin?",
+        "a": "Bitcoin’s price is set by the market and can move dramatically. A stablecoin is pegged to a currency and designed not to move: it is a payment and savings instrument, not a speculative investment."
+      },
+      {
+        "q": "Are stablecoins legal in Europe?",
+        "a": "Yes. Under the EU’s MiCA regulation, stablecoin issuers operating in Europe must be authorised, hold full reserves, and honour redemption at face value. EURC and USDC are both issued under this framework."
+      },
+      {
+        "q": "Can I earn interest on stablecoins?",
+        "a": "Yes — stablecoins can be deposited into public lending markets to earn variable yield. Rates change with market conditions and lending carries its own risks, so read the risk disclosure of any service you use before depositing."
+      }
+    ],
+    "faqInBody": false
   },
   {
     "id": "what-is-a-non-custodial-wallet",
@@ -349,7 +524,26 @@
         "heading": "Start with Defied",
         "body": "Defied makes non-custodial wallets accessible to everyone - no crypto knowledge required, no seed phrases to manage, just your email address. Your wallet is yours from the moment you sign up. To see the full picture of what Defied offers, read [Introducing Defied](/blog/introducing-defied).\n\n[Start for free →](https://defied.money)\n\n*This article is for informational purposes only. Defied is a non-custodial software interface and does not provide financial advice. Please read our [risk disclosure](/risks) and [terms of use](/terms) before using the Services.*"
       }
-    ]
+    ],
+    "faq": [
+      {
+        "q": "What does non-custodial mean?",
+        "a": "Non-custodial means only you control the funds. The wallet’s private key belongs to you — not to a company or a bank — so nobody else can move, freeze, or block your money."
+      },
+      {
+        "q": "What happens if a non-custodial wallet provider shuts down?",
+        "a": "Your funds are unaffected. The wallet exists on the blockchain independently of the app you use to open it. You can export your private key and access the same wallet through any compatible app."
+      },
+      {
+        "q": "Do I have to manage a private key myself?",
+        "a": "Not necessarily. Modern non-custodial wallets like Defied tie your wallet to your email login and handle key security behind the scenes, while still letting you export the key whenever you want."
+      },
+      {
+        "q": "What is the main risk of a non-custodial wallet?",
+        "a": "There is no customer support line that can restore access if you lose it. Whoever controls your login controls the wallet — which is why enabling two-factor authentication on your email is essential."
+      }
+    ],
+    "faqInBody": false
   },
   {
     "id": "introducing-defied",
@@ -381,6 +575,8 @@
         "heading": "What's next",
         "body": "This is the beginning. We're launching with the core features - send, receive, exchange, and DeFi access - and building toward a full-featured mobile app for iOS and Android.\n\nPremium and Premium+ plans are coming, bringing reduced fees, a virtual debit card, and advanced protocol access for users who want to go deeper.\n\nIf you've ever felt like the financial system wasn't built for you - you're right. It wasn't. We're changing that.\n\n[Start for free →](https://defied.money)\n\n*Defied is a non-custodial software interface providing access to public blockchain protocols. It does not manage or invest your funds. Accessing decentralized finance protocols involves risk, including potential loss of funds. Past yields are not guaranteed.*"
       }
-    ]
+    ],
+    "faq": [],
+    "faqInBody": false
   }
 ]

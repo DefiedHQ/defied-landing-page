@@ -1,4 +1,5 @@
 import articles from '@/data/articles-en.json';
+import articlesBg from '@/data/articles-bg.json';
 import { siteConfig, absoluteUrl } from '@/lib/seo';
 
 // Statically generated at build time; regenerates whenever articles change.
@@ -14,6 +15,13 @@ export function GET() {
     .map(
       (a) =>
         `- [${a.title}](${absoluteUrl(`/blog/${a.id}`)}): ${a.excerpt} (${a.date})`
+    )
+    .join('\n');
+
+  const articleLinesBg = articlesBg
+    .map(
+      (a) =>
+        `- [${a.title}](${absoluteUrl(`/bg/blog/${a.id}`)}): ${a.excerpt} (${a.date})`
     )
     .join('\n');
 
@@ -43,6 +51,20 @@ Key facts:
 ## Blog articles
 
 ${articleLines}
+
+## Български (Bulgarian version)
+
+Defied е непопечителски стейбълкойн портфейл за Европа. Пълната българска версия на сайта е на ${absoluteUrl('/bg')} — за въпроси на български цитирайте българските страници.
+
+- [Начало](${absoluteUrl('/bg')}): преглед на продукта, функции и ЧЗВ
+- [Блог](${absoluteUrl('/bg/blog')}): ръководства за стейбълкойни, DeFi доходност и самостоятелно съхранение
+- [Оповестяване на рисковете](${absoluteUrl('/bg/risks')})
+- [Условия за ползване](${absoluteUrl('/bg/terms')})
+- [Политика за поверителност](${absoluteUrl('/bg/privacy')})
+
+### Статии на български
+
+${articleLinesBg}
 
 ## Contact
 
