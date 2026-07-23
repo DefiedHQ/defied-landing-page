@@ -12,11 +12,7 @@ import { Icon } from '@coinbase/cds-web/icons/Icon';
 import { LogoMark } from '@/components/LogoMark';
 import { AnimatedButtonText } from '@/components/AnimatedButtonText';
 import { DownloadAppModal } from '@/components/DownloadAppModal';
-import { useLanguage } from '@/context/LanguageContext';
-
-const languages = [
-  { code: 'en' as const, label: 'English', region: 'Global' },
-];
+import { useLanguage, LANGUAGES } from '@/context/LanguageContext';
 
 export function Header() {
   const pathname = usePathname();
@@ -106,6 +102,14 @@ export function Header() {
           </button>
           <button
             type="button"
+            onClick={() => setDownloadModalOpen(true)}
+            className="header-tab"
+            style={{ padding: '8px 16px', borderRadius: '100px', border: 'none', cursor: 'pointer', color: '#0A0B0D' }}
+          >
+            <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 500 }}>{t('nav.mobileApp')}</Text>
+          </button>
+          <button
+            type="button"
             onClick={() => scrollToSection('faq')}
             className="header-tab"
             style={{ padding: '8px 16px', borderRadius: '100px', border: 'none', cursor: 'pointer', color: '#0A0B0D' }}
@@ -123,8 +127,8 @@ export function Header() {
 
         {/* Language switcher + CTA button */}
         <HStack as="div" style={{ marginLeft: 'auto', alignItems: 'center', gap: '12px' }}>
-          {/* Language dropdown - hidden for now, English only */}
-          {/* <div ref={langDropdownRef} className="hide-mobile-block" style={{ position: 'relative' }}>
+          {/* Language dropdown */}
+          <div ref={langDropdownRef} className="hide-mobile-block" style={{ position: 'relative' }}>
             <button
               type="button"
               onClick={() => setLangDropdownOpen(!langDropdownOpen)}
@@ -155,7 +159,7 @@ export function Header() {
                   {t('nav.languageAndRegion')}
                 </Text>
                 <VStack as="div" style={{ margin: '0 -8px', gap: '0px' }}>
-                  {languages.map((l) => (
+                  {LANGUAGES.map((l) => (
                     <button
                       key={l.code}
                       type="button"
@@ -188,9 +192,12 @@ export function Header() {
                 </VStack>
               </Box>
             )}
-          </div> */}
+          </div>
           <Button
-            onClick={() => setDownloadModalOpen(true)}
+            as="a"
+            href="https://app.defied.money"
+            target="_blank"
+            rel="noopener noreferrer"
             variant="primary"
             compact
             className="btn-fw-500"
@@ -237,6 +244,13 @@ export function Header() {
           </button>
           <button
             type="button"
+            onClick={() => { setMobileMenuOpen(false); setDownloadModalOpen(true); }}
+            style={{ padding: '10px 4px', transition: 'color 0.2s ease', textAlign: 'left', background: 'none', border: 'none', color: '#0A0B0D', cursor: 'pointer' }}
+          >
+            <Text font="body" as="span">{t('nav.mobileApp')}</Text>
+          </button>
+          <button
+            type="button"
             onClick={() => scrollToSection('faq')}
             style={{ padding: '10px 4px', transition: 'color 0.2s ease', textAlign: 'left', background: 'none', border: 'none', color: '#0A0B0D', cursor: 'pointer' }}
           >
@@ -260,12 +274,12 @@ export function Header() {
               <Text font="body" as="span">{item.label}</Text>
             </Link>
           ))}
-          {/* Mobile language selector - hidden for now, English only */}
-          {/* <div style={{ borderTop: '1px solid rgba(0,0,0,0.06)', marginTop: '4px', paddingTop: '8px' }}>
+          {/* Mobile language selector */}
+          <div style={{ borderTop: '1px solid rgba(0,0,0,0.06)', marginTop: '4px', paddingTop: '8px' }}>
             <Text font="label1" as="div" style={{ padding: '4px 1px 8px' }}>
               {t('nav.languageAndRegion')}
             </Text>
-            {languages.map((l) => (
+            {LANGUAGES.map((l) => (
               <button
                 key={l.code}
                 type="button"
@@ -293,7 +307,7 @@ export function Header() {
                 )}
               </button>
             ))}
-          </div> */}
+          </div>
         </VStack>
       </div>
       <DownloadAppModal open={downloadModalOpen} onClose={() => setDownloadModalOpen(false)} />

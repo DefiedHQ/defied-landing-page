@@ -1,11 +1,13 @@
 'use client';
 
 import { createContext, useContext, useState, useCallback } from 'react';
+import bg from '@/locales/bg.json';
 import en from '@/locales/en.json';
+import { DEFAULT_LANG, type Lang } from '@/lib/i18n';
 
-export type Lang = 'en';
+export { LANGUAGES, DEFAULT_LANG, type Lang } from '@/lib/i18n';
 
-const translations: Record<Lang, typeof en> = { en };
+const translations: Record<Lang, typeof en> = { bg, en };
 
 interface LanguageContextValue {
   lang: Lang;
@@ -16,7 +18,11 @@ interface LanguageContextValue {
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [lang, setLangState] = useState<Lang>('en');
+  // SSR and the first client render always use the default language (no
+  // hydration mismatch); LanguageGeoInit applies the geo-derived language on
+  // mount. Geolocation always wins on load — the manual switcher takes
+  // effect within the session (same behavior as the defied-app-ui web app).
+  const [lang, setLangState] = useState<Lang>(DEFAULT_LANG);
 
   const setLang = (l: Lang) => {
     setLangState(l);

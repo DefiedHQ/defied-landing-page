@@ -1,10 +1,9 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import Image from 'next/image';
 import { m } from 'framer-motion';
 import { Box } from '@coinbase/cds-web/layout/Box';
-import { VStack } from '@coinbase/cds-web/layout/VStack';
 import { Text } from '@coinbase/cds-web/typography/Text';
 import { Button } from '@coinbase/cds-web/buttons/Button';
 import { HeroSquare } from '@coinbase/cds-web/illustrations/HeroSquare';
@@ -35,14 +34,13 @@ const slideInUp = {
 import { AboutCarousel } from '@/components/AboutCarousel';
 import { InfrastructureSection } from '@/components/InfrastructureSection';
 import { InfoSection } from '@/components/Hero';
+import { HeroCarousel } from '@/components/HeroCarousel';
 import { Footer } from '@/components/Footer';
 import { useLanguage } from '@/context/LanguageContext';
 import { AnimatedButtonText } from '@/components/AnimatedButtonText';
-import { DownloadAppModal } from '@/components/DownloadAppModal';
 
 export function LandingPage() {
   const { t } = useLanguage();
-  const [downloadModalOpen, setDownloadModalOpen] = useState(false);
 
   useEffect(() => {
     const hash = window.location.hash.slice(1);
@@ -65,158 +63,15 @@ export function LandingPage() {
         background: '#FFFFFF',
       }}
     >
-      {/* Section 1: Hero */}
-      <section className="section-padding" style={{ minHeight: 'calc(100vh - 64px)', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
-        <VStack
-          as="div"
-          style={{
-            alignItems: 'center',
-            maxWidth: '1200px',
-            margin: '0 auto',
-            width: '100%',
-            textAlign: 'center',
-            flex: 1,
-            justifyContent: 'center',
-            paddingTop: 'clamp(48px, 10vw, 120px)',
-          }}
-        >
-          {/* Pill badge */}
+      {/* Section 1: Hero — full-width photo card carousel */}
+      <section className="section-padding" style={{ paddingTop: 'clamp(16px, 2vw, 24px)' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
           <m.div
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: 'easeOut' }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
           >
-            <div className="hero-pill-badge">
-              <Image
-                src="/defied_squared_logo_blue.svg"
-                alt=""
-                width={28}
-                height={28}
-                style={{ borderRadius: '50%' }}
-              />
-              <Text font="label2" as="span" style={{ fontWeight: 500, color: '#0A0B0D' }}>Defied</Text>
-            </div>
-          </m.div>
-
-          {/* Headline with accent highlight */}
-          <m.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.15, ease: 'easeOut' }}
-            style={{ marginTop: '28px' }}
-          >
-            <Text font="display1" as="h1" className="title-tight-lh" style={{ fontSize: 'clamp(2.25rem, 6vw, 4.5rem)', fontWeight: 500, letterSpacing: '-0.02em', textAlign: 'center' }}>
-              {t('hero.titleStart')}{' '}
-              <span className="hero-accent-highlight">
-                {t('hero.titleHighlight')}
-                <svg className="wavy-underline" viewBox="0 0 200 12" preserveAspectRatio="none" aria-hidden="true">
-                  <path d="M0 8 Q25 2, 50 8 T100 8 T150 8 T200 8" />
-                </svg>
-              </span>{' '}
-              {t('hero.titleEnd')}
-            </Text>
-          </m.div>
-
-          {/* Subtitle */}
-          <m.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3, ease: 'easeOut' }}
-            style={{ marginTop: 'clamp(24px, 4vw, 40px)', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
-          >
-            <Text
-              font="body"
-              as="p"
-              color="fgMuted"
-              style={{ maxWidth: '640px', fontSize: '18px', lineHeight: '28px', textAlign: 'center' }}
-            >
-              {t('hero.subtitle1')}<sup style={{ fontSize: '0.6em' }}>1</sup>
-            </Text>
-
-            {/* CTA buttons */}
-            <div className="flex-col-row-md" style={{ marginTop: '32px', alignItems: 'center', justifyContent: 'center' }}>
-              <Button
-                onClick={() => setDownloadModalOpen(true)}
-                variant="primary"
-                startIcon="download"
-                className="btn-fw-500"
-                style={{
-                  borderRadius: '56px',
-                  height: '58px',
-                  padding: '16px 32px',
-                  width: '240px',
-                  justifyContent: 'center',
-                }}
-              >
-                <AnimatedButtonText>{t('hero.cta')}</AnimatedButtonText>
-              </Button>
-              <Button
-                as="a"
-                href="#features"
-                variant="secondary"
-                className="btn-fw-500"
-                style={{
-                  borderRadius: '56px',
-                  height: '58px',
-                  padding: '16px 32px',
-                  width: '240px',
-                  justifyContent: 'center',
-                  background: 'transparent',
-                  border: '1.5px solid #D1D5DB',
-                  color: '#0A0B0D',
-                }}
-                onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
-                  e.preventDefault();
-                  const el = document.getElementById('features');
-                  if (el) {
-                    el.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
-              >
-                <AnimatedButtonText>{t('hero.learnMore')}</AnimatedButtonText>
-              </Button>
-            </div>
-          </m.div>
-        </VStack>
-
-        {/* Hero phone mockup in rounded gray container */}
-        <div
-          style={{
-            width: '100%',
-            maxWidth: '900px',
-            margin: '0 auto',
-            marginTop: 'clamp(32px, 6vw, 64px)',
-            flexShrink: 0,
-          }}
-        >
-          <m.div
-            initial={{ y: 30 }}
-            animate={{ y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5, ease: 'easeOut' }}
-          >
-            <div
-              className="hero-mockup-container"
-              style={{
-                background: '#F7F8F9',
-                borderRadius: '40px',
-                padding: 'clamp(24px, 4vw, 48px) clamp(24px, 4vw, 48px) 0',
-                display: 'flex',
-                justifyContent: 'center',
-                overflow: 'hidden',
-              }}
-            >
-              <div style={{ position: 'relative', width: '100%', aspectRatio: '900 / 600' }}>
-                <Image
-                  src="/hero_landing.png"
-                  alt="Defied app interface"
-                  fill
-                  priority
-                  fetchPriority="high"
-                  sizes="(max-width: 900px) 100vw, 900px"
-                  style={{ objectFit: 'contain' }}
-                />
-              </div>
-            </div>
+            <HeroCarousel />
           </m.div>
         </div>
       </section>
@@ -289,7 +144,7 @@ export function LandingPage() {
                 text: t('advantages.row1Subtext'),
                 reversed: false,
                 useCustomImage: true,
-                customImageSrc: '/stablecoin_section.png',
+                customImageSrc: '/explore-card.jpg',
               },
               {
                 illustration: 'walletSecurity' as const,
@@ -297,7 +152,7 @@ export function LandingPage() {
                 text: t('advantages.row2Subtext'),
                 reversed: true,
                 useCustomImage: true,
-                customImageSrc: '/account_section.png',
+                customImageSrc: '/explore-add-money.jpg',
               },
               {
                 illustration: 'exploreDecentralizedApps' as const,
@@ -305,6 +160,7 @@ export function LandingPage() {
                 text: t('advantages.row3Subtext'),
                 reversed: false,
                 useCustomImage: true,
+                customImageSrc: '/explore-earn.jpg',
               },
             ].map((card, i) => {
               const textBlock = (
@@ -320,7 +176,9 @@ export function LandingPage() {
               const illustrationBlock = (
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 1 }}>
                   {'useCustomImage' in card && card.useCustomImage ? (
-                    <Image src={'customImageSrc' in card ? (card.customImageSrc as string) : '/defi_section.png'} alt={card.heading} width={500} height={500} loading="lazy" sizes="(max-width: 768px) 100vw, 500px" style={{ width: '100%', maxWidth: '500px', height: 'auto', borderRadius: '56px' }} />
+                    <div className="advantage-photo">
+                      <Image src={'customImageSrc' in card ? (card.customImageSrc as string) : '/defi_section.png'} alt={card.heading} width={600} height={450} loading="lazy" sizes="(max-width: 768px) 100vw, 500px" />
+                    </div>
                   ) : (
                     <HeroSquare name={card.illustration} scaleMultiplier={1.2} />
                   )}
@@ -397,7 +255,7 @@ export function LandingPage() {
               maxWidth: '1200px',
               margin: '0 auto',
               width: '100%',
-              background: 'rgba(0, 82, 255, 0.06)',
+              background: 'linear-gradient(115deg, #E7F0FB 0%, #F8FBFF 62%, #EDF3FC 100%)',
               borderRadius: '32px',
               overflow: 'hidden',
             }}
@@ -418,9 +276,11 @@ export function LandingPage() {
               </Text>
               <div style={{ marginTop: '8px' }}>
                 <Button
-                  onClick={() => setDownloadModalOpen(true)}
+                  as="a"
+                  href="https://app.defied.money"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   variant="primary"
-                  startIcon="download"
                   className="btn-fw-500"
                   style={{
                     borderRadius: '56px',
@@ -428,19 +288,20 @@ export function LandingPage() {
                     padding: '14px 28px',
                   }}
                 >
-                  <AnimatedButtonText>{t('hero.cta')}</AnimatedButtonText>
+                  <AnimatedButtonText>{t('hero.earlyAccess')}</AnimatedButtonText>
                 </Button>
               </div>
             </div>
-            {/* Right: phone mockup */}
+            {/* Right: laptop mockup — centered in the right half, bleeding off
+                the card's bottom edge (the source asset is sheared there) */}
             <div className="cta-split-mockup" style={{ position: 'relative', flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'flex-end', minHeight: '360px' }}>
-              <div style={{ position: 'relative', width: 'clamp(260px, 70%, 340px)', aspectRatio: '390 / 780' }}>
+              <div style={{ position: 'relative', width: 'min(75%, 496px)', aspectRatio: '1660 / 900' }}>
                 <Image
-                  src="/hero_landing.png"
+                  src="/cta-app-laptop.png"
                   alt="Defied app"
                   fill
                   loading="lazy"
-                  sizes="340px"
+                  sizes="(max-width: 768px) 75vw, 496px"
                   style={{ objectFit: 'contain', objectPosition: 'bottom' }}
                 />
               </div>
@@ -451,8 +312,6 @@ export function LandingPage() {
 
       {/* Section 7: Footer */}
       <Footer />
-
-      <DownloadAppModal open={downloadModalOpen} onClose={() => setDownloadModalOpen(false)} />
     </div>
   );
 }

@@ -8,28 +8,28 @@
     "advantages": "Advantages",
     "faq": "FAQ",
     "mission": "Mission",
-    "languageAndRegion": "Language and region"
+    "languageAndRegion": "Language and region",
+    "mobileApp": "Mobile app"
   },
   "hero": {
-    "title": "Your euros, working for you. Always.",
-    "titleStart": "Your euros,",
+    "title": "Your money, working for you. Always.",
+    "titleStart": "Your money,",
     "titleHighlight": "working for you.",
     "titleEnd": "Always.",
-    "titleBase": "Your euros, working for you.",
-    "titleWords": ["Always"],
-    "learnMore": "Learn more",
-    "subtitle1": "Send money anywhere in seconds. Earn up to 4% a year on your balance. Pay with a card. From an account only you control - one no bank can freeze.",
-    "subtitle2": "",
-    "subtitle3": "",
-    "cta": "Download the app",
-    "ctaHeader": "Sign up",
-    "ctaMain": "Download the app",
+    "ctaHeader": "Sign in",
     "disclaimer": "Accessing decentralized lending protocols involves risk. Past yields are not guaranteed. Defied provides a non-custodial interface to public blockchain protocols - it does not manage or invest your funds.",
-    "builtWith": "Built with the best"
+    "cardSubtitle": "Send money in seconds. Earn on your balance. From an account no bank can freeze.",
+    "earlyAccess": "Get early access",
+    "slide2Title": "Money that travels like you do.",
+    "slide2Subtitle": "Pay with your card wherever Visa works, send money home in seconds - no exchange desks, no bank hours.",
+    "slide3Title": "Earning. Even on Sundays.",
+    "slide3Subtitle": "Your balance earns up to 4% a year in global lending markets - withdraw whenever you like.",
+    "carouselLabel": "Highlights",
+    "goToSlide": "Go to slide {{n}}"
   },
   "cta": {
-    "heading": "Start earning on your euros with Defied",
-    "subheading": "Get the non-custodial stablecoin wallet for Europe. Send EURC and USDC globally in seconds, earn up to 4% APY on your balance, and pay with a virtual card - no bank required."
+    "heading": "Start earning on your money with Defied",
+    "subheading": "Get the non-custodial stablecoin wallet for Europe. Send EURC and USDC globally in seconds, earn on your balance, and pay with a virtual card - no bank required."
   },
   "infrastructure": {
     "title": "Built on trusted infrastructure",
@@ -228,9 +228,9 @@
     "readMore": "Read more"
   },
   "meta": {
-    "defaultTitle": "Defied - Earn on Your Euros. Send Money Globally. No Bank Needed.",
-    "homeTitle": "Earn on Your Euros. Send Money Globally. No Bank Needed.",
-    "homeDescription": "Defied lets you earn up to 4% APY on your euro balance, send money anywhere in seconds, and pay with a virtual card - from a wallet only you control. Available in the EU.",
+    "defaultTitle": "Defied - Earn on Your Money. Send Money Globally. No Bank Needed.",
+    "homeTitle": "Earn on Your Money. Send Money Globally. No Bank Needed.",
+    "homeDescription": "Defied lets you earn on your balance, send money anywhere in seconds, and pay with a virtual card - from a wallet only you control. Available in the EU.",
     "aboutTitle": "About us",
     "aboutDescription": "Defied provides non-custodial infrastructure for easy access to decentralized finance. The first crypto savings product in Bulgaria.",
     "blogTitle": "Blog",

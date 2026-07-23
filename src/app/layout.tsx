@@ -8,6 +8,7 @@ import { Header } from '@/components/Header';
 import { ConditionalFooter } from '@/components/ConditionalFooter';
 import { MainWrapper } from '@/components/MainWrapper';
 import { LanguageProvider } from '@/context/LanguageContext';
+import { LanguageGeoInit } from '@/components/LanguageGeoInit';
 import { siteConfig } from '@/lib/seo';
 
 import './globals.css';
@@ -113,17 +114,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={aeonikPro.variable}>
-      <head>
-        <link
-          rel="preload"
-          href="/hero_landing.png"
-          as="image"
-          type="image/png"
-        />
-      </head>
       <body>
         <CdsProvider>
           <LanguageProvider>
+            <LanguageGeoInit />
             <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
               <div
                 style={{
