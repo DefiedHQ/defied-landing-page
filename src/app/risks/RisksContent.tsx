@@ -4,18 +4,18 @@ import { Text } from '@coinbase/cds-web/typography/Text';
 import { useLanguage } from '@/context/LanguageContext';
 
 const sectionStyle = { marginBottom: '40px' } as const;
-const h2Style = { fontSize: 'clamp(1.25rem, 3vw, 1.75rem)', fontWeight: 600, marginBottom: '16px', marginTop: '48px', color: '#0A0B0D' } as const;
-const pStyle = { fontSize: '16px', lineHeight: '28px', marginBottom: '16px', color: '#5B616E' } as const;
+const h2Style = { fontSize: 'clamp(1.25rem, 3vw, 1.75rem)', fontWeight: 600, marginBottom: '16px', marginTop: '48px', color: 'var(--ink)' } as const;
+const pStyle = { fontSize: '16px', lineHeight: '28px', marginBottom: '16px', color: 'var(--muted)' } as const;
 const ulStyle = { paddingLeft: '24px', marginBottom: '16px' } as const;
-const liStyle = { fontSize: '16px', lineHeight: '28px', color: '#5B616E', marginBottom: '8px' } as const;
-const strongStyle = { color: '#0A0B0D', fontWeight: 600 } as const;
+const liStyle = { fontSize: '16px', lineHeight: '28px', color: 'var(--muted)', marginBottom: '8px' } as const;
+const strongStyle = { color: 'var(--ink)', fontWeight: 600 } as const;
 
 export function RisksContent() {
   const { t } = useLanguage();
 
   return (
     <section style={{ width: '100%', maxWidth: '800px', margin: '0 auto', padding: '0 16px', paddingBottom: '64px' }}>
-      <Text font="display1" as="h1" display="block" style={{ fontSize: 'clamp(2rem, 6vw, 5rem)', fontWeight: 400, lineHeight: 1, marginTop: 'clamp(48px, 10vw, 120px)', marginBottom: '16px', color: '#0A0B0D' }}>
+      <Text font="display1" as="h1" display="block" style={{ fontSize: 'clamp(2rem, 6vw, 5rem)', fontWeight: 400, lineHeight: 1, marginTop: 'clamp(48px, 10vw, 120px)', marginBottom: '16px', color: 'var(--ink)' }}>
         {t('risks.title')}
       </Text>
       <Text font="body" as="p" color="fgMuted" style={{ fontSize: '16px', marginBottom: '40px', fontStyle: 'italic' }}>
@@ -29,10 +29,10 @@ export function RisksContent() {
 
       <Text font="title2" as="h2" display="block" style={h2Style}>1. Regulatory Status</Text>
       <div style={sectionStyle}>
-        <p style={{ ...pStyle, fontWeight: 600, color: '#0A0B0D' }}>Defied is not a regulated financial institution.</p>
+        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Defied is not a regulated financial institution.</p>
         <p style={pStyle}>Fusion Software LLC is a software company incorporated in Bulgaria, operating within the European Union. Defied is not a bank, payment institution, electronic money institution, investment firm, or crypto-asset service provider (CASP) as defined under Regulation (EU) 2023/1114 on Markets in Crypto-Assets (&ldquo;MiCA&rdquo;) or any other applicable financial services regulation.</p>
 
-        <p style={{ ...pStyle, fontWeight: 600, color: '#0A0B0D' }}>Defied does not provide regulated financial services.</p>
+        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Defied does not provide regulated financial services.</p>
         <p style={pStyle}>We do not provide any of the following regulated activities:</p>
         <ul style={ulStyle}>
           <li style={liStyle}>Custody or safekeeping of crypto-assets on behalf of users</li>
@@ -44,7 +44,7 @@ export function RisksContent() {
           <li style={liStyle}>Payment services as defined under the Payment Services Directive (PSD2)</li>
         </ul>
 
-        <p style={{ ...pStyle, fontWeight: 600, color: '#0A0B0D' }}>Basis for operating without a CASP license.</p>
+        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Basis for operating without a CASP license.</p>
         <p style={pStyle}>The core Services provided by Defied,including stablecoin transfers, stablecoin swaps, and access to decentralized lending protocols,are provided in a fully decentralized manner without Defied acting as an intermediary. In accordance with Article 2(4) of MiCA, the regulation does not apply to crypto-asset services provided in a fully decentralized manner without any intermediary.</p>
         <p style={pStyle}>Specifically:</p>
         <ul style={ulStyle}>
@@ -54,10 +54,10 @@ export function RisksContent() {
         </ul>
         <p style={pStyle}>Defied provides a user interface,a front-end convenience layer,to these publicly accessible protocols. Users may interact with all underlying protocols directly at any time, without using Defied. Our interface does not custody funds, execute transactions on behalf of users, or act as a counterparty to any transaction.</p>
 
-        <p style={{ ...pStyle, fontWeight: 600, color: '#0A0B0D' }}>Fiat on-ramp and off-ramp services.</p>
+        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Fiat on-ramp and off-ramp services.</p>
         <p style={pStyle}>The conversion of fiat currency (euros or dollars) to and from stablecoins is facilitated entirely by Bridge.xyz, a regulated third-party service provider operating under its own licenses and regulatory authorizations. Defied does not provide fiat conversion services and does not hold, transmit, or convert fiat currency. All KYC/AML obligations in connection with fiat conversion are discharged by Bridge.xyz under its own regulatory framework.</p>
 
-        <p style={{ ...pStyle, fontWeight: 600, color: '#0A0B0D' }}>Virtual card services.</p>
+        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Virtual card services.</p>
         <p style={pStyle}>Virtual debit card functionality is provided exclusively by Gnosis Pay, operating under its own regulatory authorizations. Defied does not issue, operate, or manage payment cards or electronic money.</p>
       </div>
 
@@ -72,10 +72,10 @@ export function RisksContent() {
 
       <Text font="title2" as="h2" display="block" style={h2Style}>3. Technology and Smart Contract Risk</Text>
       <div style={sectionStyle}>
-        <p style={{ ...pStyle, fontWeight: 600, color: '#0A0B0D' }}>Smart contracts are experimental technology.</p>
+        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Smart contracts are experimental technology.</p>
         <p style={pStyle}>The protocols accessible through Defied,including Aave, Compound, Morpho, Lido, and others,operate via smart contracts deployed on public blockchain networks. Smart contracts are self-executing code that, once deployed, operate autonomously without human intervention. While the protocols surfaced by Defied have undergone extensive security audits, no smart contract can be guaranteed to be free from bugs, vulnerabilities, or exploits.</p>
 
-        <p style={{ ...pStyle, fontWeight: 600, color: '#0A0B0D' }}>Risks include but are not limited to:</p>
+        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Risks include but are not limited to:</p>
         <ul style={ulStyle}>
           <li style={liStyle}><span style={strongStyle}>Smart contract vulnerabilities:</span> Bugs or logic errors in smart contract code that could be exploited by malicious actors, potentially resulting in partial or total loss of deposited funds</li>
           <li style={liStyle}><span style={strongStyle}>Oracle failures:</span> Protocols that rely on price oracles may be subject to oracle manipulation attacks, which could result in unintended liquidations or other adverse outcomes</li>
@@ -112,7 +112,7 @@ export function RisksContent() {
 
       <Text font="title2" as="h2" display="block" style={h2Style}>6. Account and Wallet Security Risk</Text>
       <div style={sectionStyle}>
-        <p style={{ ...pStyle, fontWeight: 600, color: '#0A0B0D' }}>Your wallet security is your responsibility.</p>
+        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Your wallet security is your responsibility.</p>
         <p style={pStyle}>When you register with Defied, a non-custodial wallet is created on your behalf through Privy, our wallet infrastructure partner. This wallet is tied to your email address. Defied and Privy do not have access to your private keys and cannot recover your wallet on your behalf.</p>
         <p style={pStyle}>The following security risks apply:</p>
         <ul style={ulStyle}>

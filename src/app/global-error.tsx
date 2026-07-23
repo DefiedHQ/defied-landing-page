@@ -25,7 +25,7 @@ export default function GlobalError({
           <h1 style={{ fontSize: '2rem', fontWeight: 500 }}>
             Something went wrong
           </h1>
-          <p style={{ color: '#5B616E' }}>
+          <p style={{ color: 'var(--muted)' }}>
             A critical error occurred. Please try again.
           </p>
           <button

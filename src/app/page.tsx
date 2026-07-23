@@ -75,7 +75,7 @@ const webAppSchema = {
   name: siteConfig.name,
   url: siteConfig.url,
   description:
-    'Earn up to 4% APY on your euro balance, send money anywhere in seconds, and pay with a virtual card - from a non-custodial wallet only you control.',
+    'Earn on your euro and dollar balance through global lending markets, send money anywhere in seconds, and pay with a virtual card - from a non-custodial wallet only you control.',
   applicationCategory: 'FinanceApplication',
   operatingSystem: 'Any',
   browserRequirements: 'Requires JavaScript',
@@ -86,7 +86,7 @@ const webAppSchema = {
   },
   featureList: [
     'Send and receive USDC and EURC stablecoins globally in seconds',
-    'Earn up to 4% APY through decentralized lending protocols',
+    'Earn on your balance through decentralized lending protocols',
     'Exchange between USDC and EURC instantly',
     'Virtual debit card to spend stablecoin balance anywhere Visa is accepted',
     'Non-custodial wallet with full self-custody via email login',
@@ -184,7 +184,7 @@ const faqSchema = {
       name: "How do Defied's yields compare to a European savings account?",
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Most European banks currently pay between 0.5% and 2% on savings, and often less after fees. The lending markets Defied connects you to are currently paying 3–5% a year on EURC and USDC. These rates change over time and carry different risks than a bank deposit - read our risk disclosure for the full picture. For many people, the trade-off is worth understanding.',
+        text: 'Most European banks pay very little on savings, often even less after fees. The lending markets Defied connects you to typically pay meaningfully more on EURC and USDC - you can see the current rates in the app before you deposit. These rates change over time and carry different risks than a bank deposit - read our risk disclosure for the full picture.',
       },
     },
     {

@@ -18,18 +18,18 @@
     "titleEnd": "Always.",
     "ctaHeader": "Sign in",
     "disclaimer": "Accessing decentralized lending protocols involves risk. Past yields are not guaranteed. Defied provides a non-custodial interface to public blockchain protocols - it does not manage or invest your funds.",
-    "cardSubtitle": "Send money in seconds. Earn on your balance. From an account no bank can freeze.",
-    "earlyAccess": "Get early access",
-    "slide2Title": "Money that travels like you do.",
-    "slide2Subtitle": "Pay with your card wherever Visa works, send money home in seconds - no exchange desks, no bank hours.",
-    "slide3Title": "Earning. Even on Sundays.",
-    "slide3Subtitle": "Your balance earns up to 4% a year in global lending markets - withdraw whenever you like.",
-    "carouselLabel": "Highlights",
-    "goToSlide": "Go to slide {{n}}"
+    "cardSubtitle": "Earn on your balance. Send money in seconds. From an account no bank can freeze.",
+    "earlyAccess": "Get early access"
+  },
+  "earning": {
+    "title": "Earning. Even on Sundays.",
+    "body": "Your balance earns in the same global lending markets professional investors use. No lock-ups - withdraw whenever you like.",
+    "link": "How yield works",
+    "screenshotAlt": "The Defied app in a browser"
   },
   "cta": {
     "heading": "Start earning on your money with Defied",
-    "subheading": "Get the non-custodial stablecoin wallet for Europe. Send EURC and USDC globally in seconds, earn on your balance, and pay with a virtual card - no bank required."
+    "subheading": "Get the non-custodial stablecoin wallet for Europe. Earn on your balance, send EURC and USDC globally in seconds, and pay with a virtual card - no bank required."
   },
   "infrastructure": {
     "title": "Built on trusted infrastructure",
@@ -41,24 +41,26 @@
     "f1Title": "Send stablecoins",
     "f1Desc": "Send euros or dollars to anyone, anywhere, in seconds. No SWIFT codes. No 3–5 business day waits. No €25 wire fees. Just an email address and a confirmation.",
     "f2Title": "Earn on your balance",
-    "f2Desc": "Your balance earns while it sits. Defied connects you to the same lending markets used by professional investors, currently paying 3–5% a year on EURC and USDC. No lock-ups. Withdraw any time.",
+    "f2Desc": "Your balance earns while it sits. Defied connects you to the same lending markets used by professional investors - see the current rates in the app. No lock-ups. Withdraw any time.",
     "f2Disclaimer": "Yields are variable and depend on protocol market conditions. This is not a guaranteed return or investment product.",
     "f3Title": "Exchange stablecoins",
     "f3Desc": "Swap between USDC (dollar-pegged) and EURC (euro-pegged) instantly, at transparent rates, with a simple fee. No hidden spread.",
     "f4Title": "Decentralized Finance",
     "f4Desc": "Use protocols in decentralized finance",
     "f5Title": "Virtual debit card",
-    "f5Desc": "Spend your stablecoin balance anywhere Visa is accepted. Top up from your wallet in one tap."
+    "f5Desc": "Spend your stablecoin balance anywhere Visa is accepted. Top up from your wallet in one tap.",
+    "f5Card": "Money that travels like you do. Pay wherever Visa is accepted, top up from your wallet in one tap."
   },
   "advantages": {
     "title": "The financial system wasn't built for you. This one is.",
     "subtitle": "Stablecoins, self-custody, and decentralized lending - all in one account. No bank required.",
     "row1Heading": "Spend stablecoins",
-    "row1Subtext": "Unlike volatile cryptocurrencies, stablecoins are pegged 1:1 to real currencies - USDC to the US dollar, EURC to the euro. You get the speed and global reach of blockchain with the price stability of the currencies you already use. Send and receive 24/7, including weekends and public holidays.",
-    "row2Heading": "An account that's actually yours",
-    "row2Subtext": "With a traditional bank or fintech app, your balance is a number in their database. They hold your money. They can restrict, freeze, or close your account. With Defied, your funds live in a secure digital wallet that only you can open - not on our servers, not in our control. Your wallet keeps working even if Defied doesn't.",
+    "row1Subtext": "Stablecoins are pegged 1:1 to real currencies - USDC to the US dollar, EURC to the euro. The speed and global reach of blockchain, with the price stability of the money you already use. Send and receive 24/7, weekends included.",
     "row3Heading": "Access to decentralized finance",
-    "row3Subtext": "Anyone with an internet connection can access global lending markets - no bank account, no approval process, no minimum balance. Defied handles the technical side so you don't have to. You stay in full control of your money throughout."
+    "row3Subtext": "Global lending markets, open to anyone with an internet connection - no approval process, no minimum balance. Defied handles the technical side while you stay in full control of your money.",
+    "bandTitle": "An account that's actually yours",
+    "bandBody": "Your funds live in a wallet only you can open. Not on our servers, not in our control. It keeps working even if Defied doesn't.",
+    "bandCta": "How self-custody works"
   },
   "imageSection": {
     "sectionTitle": "Our mission",
@@ -69,19 +71,20 @@
     "title": "Simpler than a bank account. More powerful than one.",
     "card1Tag": "Non-custodial wallet",
     "card1Title": "A wallet that's truly yours",
-    "card1Desc": "When you sign up with your email, a personal digital wallet is created automatically - secured by cryptography and controlled entirely by you. This is called a non-custodial wallet: Defied has zero access to your funds. We cannot move them, freeze them, or recover them on your behalf. Think of it this way: we built the safe. You hold the only key.",
+    "card1Desc": "Sign up with your email and a personal wallet is created automatically - secured by cryptography, controlled entirely by you. Defied has zero access to your funds. We built the safe. You hold the only key.",
     "card2Tag": "User interface",
     "card2Title": "A friendly front-end to powerful technology",
-    "card2Desc": "Defied is a front-end interface that connects to public financial protocols on the Base blockchain. You interact directly with those contracts - Defied simplifies the experience, but the underlying protocols exist independently of us. You can interact with them directly at any time.",
+    "card2Desc": "Defied is a friendly interface to public financial protocols on the Base blockchain. You interact with them directly - they exist independently of us, and you can reach them without Defied at any time.",
     "card3Tag": "Decentralized finance",
     "card3Title": "Access the best of DeFi in one tap",
-    "card3Desc": "Defied surfaces lending, staking, and liquidity protocols in one place - no technical knowledge required. Aave, Compound, Morpho, Lido and more, accessible with one click. You retain full custody throughout.",
+    "card3Desc": "Lending, staking, and liquidity protocols in one place - Aave, Compound, Morpho, Lido and more, accessible in one tap. No technical knowledge required. You keep full custody throughout.",
     "card4Tag": "Gas-free",
     "card4Title": "We pay the network fees",
     "card4Desc": "We cover your gas fees when you send stablecoins or interact with supported protocols. The blockchain stays invisible. The experience stays simple."
   },
   "faq": {
     "title": "FAQ",
+    "showAll": "Show all questions",
     "q1": "What is Defied?",
     "a1": "Defied is a non-custodial stablecoin wallet that lets you send, receive, and exchange USDC and EURC on the Base network. It also provides a simple interface for accessing decentralized finance protocols - including lending, staking, and liquidity provision - without requiring any technical knowledge.",
     "q2": "What is a stablecoin?",
@@ -107,7 +110,7 @@
     "q12": "Is Defied safe if I'm not an expert?",
     "a12": "Yes. Defied is designed so you don't need to be. You sign up with your email, we handle the technical parts behind the scenes, and we cover network fees on supported actions. The one thing that's different from a bank: there is no customer support line that can recover your money if you lose access to your email. That's why we recommend enabling two-factor authentication from day one.",
     "q13": "How do Defied's yields compare to a European savings account?",
-    "a13": "Most European banks currently pay between 0.5% and 2% on savings, and often less after fees. The lending markets Defied connects you to are currently paying 3–5% a year on EURC and USDC. These rates change over time and carry different risks than a bank deposit - read our risk disclosure for the full picture. For many people, the trade-off is worth understanding.",
+    "a13": "Most European banks pay very little on savings, often even less after fees. The lending markets Defied connects you to typically pay meaningfully more on EURC and USDC - you can see the current rates in the app before you deposit. These rates change over time and carry different risks than a bank deposit - read our risk disclosure for the full picture.",
     "q14": "Is Defied available in my country?",
     "a14": "Defied is available throughout the European Economic Area. A few features - specifically topping up from a bank account and the Visa debit card - depend on our regulated partners being live in your country. When you sign up, we show you exactly which features are available for you.",
     "q15": "What happens to my money if Defied shuts down?",
@@ -221,6 +224,7 @@
   "resources": {
     "heroTitle": "Updates, stories, and announcements",
     "heroSubtitle": "On this page we publish the latest news: product updates, guides, and articles about the DeFi ecosystem.",
+    "filterAll": "All",
     "shareArticle": "Share the article",
     "recentPosts": "Recent Posts",
     "backToResources": "Back to Blog",

@@ -7,6 +7,7 @@ import { Text } from '@coinbase/cds-web/typography/Text';
 import { Tag } from '@coinbase/cds-web/tag/Tag';
 import { useArticles } from '@/data/useArticles';
 import { useLanguage } from '@/context/LanguageContext';
+import { formatArticleDate } from '@/lib/i18n';
 import { siteConfig, absoluteUrl } from '@/lib/seo';
 
 function renderInlineMarkdown(text: string): React.ReactNode[] {
@@ -67,14 +68,7 @@ export function ArticlePage() {
   const article = articles.find((a) => a.id === slug);
   const articleUrl = absoluteUrl(`/blog/${slug}`);
 
-  function formatDate(dateStr: string) {
-    const d = new Date(dateStr);
-    const monthsMap: Record<string, string[]> = {
-      en: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-    };
-    const months = monthsMap[lang] ?? monthsMap.en;
-    return `${d.getFullYear()} ${months[d.getMonth()]} ${d.getDate()}`;
-  }
+  const formatDate = (dateStr: string) => formatArticleDate(dateStr, lang);
   const recentArticles = articles.filter((a) => a.id !== slug).slice(0, 3);
 
   if (!article) {
@@ -99,13 +93,13 @@ export function ArticlePage() {
         <nav aria-label="Breadcrumb" style={{ marginTop: 'clamp(48px, 10vw, 120px)', marginBottom: '16px', minWidth: 0 }}>
           <ol style={{ display: 'flex', alignItems: 'center', gap: '6px', listStyle: 'none', margin: 0, padding: 0, flexWrap: 'nowrap', minWidth: 0 }}>
             <li style={{ flexShrink: 0 }}>
-              <Link href="/" style={{ color: '#5B616E', textDecoration: 'none', fontSize: '14px', lineHeight: '20px' }}>
+              <Link href="/" style={{ color: 'var(--muted)', textDecoration: 'none', fontSize: '14px', lineHeight: '20px' }}>
                 Home
               </Link>
             </li>
             <li aria-hidden="true" style={{ color: '#9CA3AF', fontSize: '14px', flexShrink: 0 }}>/</li>
             <li style={{ flexShrink: 0 }}>
-              <Link href="/blog" style={{ color: '#5B616E', textDecoration: 'none', fontSize: '14px', lineHeight: '20px' }}>
+              <Link href="/blog" style={{ color: 'var(--muted)', textDecoration: 'none', fontSize: '14px', lineHeight: '20px' }}>
                 Blog
               </Link>
             </li>
@@ -115,7 +109,7 @@ export function ArticlePage() {
                 font="label2"
                 as="span"
                 style={{
-                  color: '#0A0B0D',
+                  color: 'var(--ink)',
                   fontSize: '14px',
                   lineHeight: '20px',
                   display: 'block',
@@ -159,7 +153,7 @@ export function ArticlePage() {
           <article style={{ minWidth: 0 }}>
             {/* Hero image */}
             <div style={{ marginBottom: '40px', aspectRatio: '1200 / 630', maxWidth: '100%', overflow: 'hidden', borderRadius: 'clamp(24px, 4vw, 56px)', position: 'relative' }}>
-              <Image src={article.image || '/article-cover.svg'} alt={article.title} fill sizes="(max-width: 768px) 100vw, 800px" style={{ objectFit: 'cover' }} />
+              <Image src={`/blog/${article.id}/cover.png`} alt={article.title} fill sizes="(max-width: 768px) 100vw, 800px" style={{ objectFit: 'cover' }} />
             </div>
 
             {/* Article body */}
@@ -195,7 +189,7 @@ export function ArticlePage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover-fade-70"
-                  style={{ color: '#0A0B0D', textDecoration: 'none' }}
+                  style={{ color: 'var(--ink)', textDecoration: 'none' }}
                 >
                   <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                 </a>
@@ -204,14 +198,14 @@ export function ArticlePage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover-fade-70"
-                  style={{ color: '#0A0B0D', textDecoration: 'none' }}
+                  style={{ color: 'var(--ink)', textDecoration: 'none' }}
                 >
                   <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
                 </a>
                 <a
                   href={`mailto:?subject=${encodeURIComponent(article.title)}&body=${encodeURIComponent(articleUrl)}`}
                   className="hover-fade-70"
-                  style={{ color: '#0A0B0D', textDecoration: 'none' }}
+                  style={{ color: 'var(--ink)', textDecoration: 'none' }}
                 >
                   <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                 </a>
@@ -219,7 +213,7 @@ export function ArticlePage() {
                   type="button"
                   onClick={handleCopyLink}
                   className="hover-fade-70"
-                  style={{ color: '#0A0B0D', background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
+                  style={{ color: 'var(--ink)', background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
                 >
                   <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
                 </button>
@@ -271,7 +265,7 @@ export function ArticlePage() {
                     style={{ display: 'block', textDecoration: 'none' }}
                   >
                     <div style={{ width: '100%', aspectRatio: '1200 / 630', overflow: 'hidden', marginBottom: '12px', borderRadius: 'clamp(16px, 3vw, 32px)', position: 'relative' }}>
-                      <Image src={a.image || '/article-cover.svg'} alt={a.title} fill sizes="300px" style={{ objectFit: 'cover' }} />
+                      <Image src={`/blog/${a.id}/cover.png`} alt={a.title} fill sizes="300px" style={{ objectFit: 'cover' }} />
                     </div>
                     <Text
                       font="headline"

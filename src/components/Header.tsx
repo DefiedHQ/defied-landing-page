@@ -70,14 +70,14 @@ export function Header() {
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="show-mobile-flex"
-            style={{ alignItems: 'center', justifyContent: 'center', background: 'none', border: 'none', color: '#0A0B0D', minWidth: '44px', minHeight: '44px', cursor: 'pointer' }}
+            style={{ alignItems: 'center', justifyContent: 'center', background: 'none', border: 'none', color: 'var(--ink)', minWidth: '44px', minHeight: '44px', cursor: 'pointer' }}
             aria-label="Menu"
             aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? (
-              <Icon name="close" size="m" dangerouslySetColor="#000000" accessibilityLabel="Close menu" />
+              <Icon name="close" size="m" dangerouslySetColor="#14161A" accessibilityLabel="Close menu" />
             ) : (
-              <Icon name="hamburger" size="m" dangerouslySetColor="#000000" accessibilityLabel="Open menu" />
+              <Icon name="hamburger" size="m" dangerouslySetColor="#14161A" accessibilityLabel="Open menu" />
             )}
           </button>
         </HStack>
@@ -88,7 +88,7 @@ export function Header() {
             type="button"
             onClick={() => scrollToSection('features')}
             className="header-tab"
-            style={{ padding: '8px 16px', borderRadius: '100px', border: 'none', cursor: 'pointer', color: '#0A0B0D' }}
+            style={{ padding: '8px 16px', borderRadius: '100px', border: 'none', cursor: 'pointer', color: 'var(--ink)' }}
           >
             <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 500 }}>{t('nav.features')}</Text>
           </button>
@@ -96,7 +96,7 @@ export function Header() {
             type="button"
             onClick={() => scrollToSection('how-it-works')}
             className="header-tab"
-            style={{ padding: '8px 16px', borderRadius: '100px', border: 'none', cursor: 'pointer', color: '#0A0B0D' }}
+            style={{ padding: '8px 16px', borderRadius: '100px', border: 'none', cursor: 'pointer', color: 'var(--ink)' }}
           >
             <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 500 }}>{t('nav.howItWorks')}</Text>
           </button>
@@ -104,7 +104,7 @@ export function Header() {
             type="button"
             onClick={() => setDownloadModalOpen(true)}
             className="header-tab"
-            style={{ padding: '8px 16px', borderRadius: '100px', border: 'none', cursor: 'pointer', color: '#0A0B0D' }}
+            style={{ padding: '8px 16px', borderRadius: '100px', border: 'none', cursor: 'pointer', color: 'var(--ink)' }}
           >
             <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 500 }}>{t('nav.mobileApp')}</Text>
           </button>
@@ -112,14 +112,14 @@ export function Header() {
             type="button"
             onClick={() => scrollToSection('faq')}
             className="header-tab"
-            style={{ padding: '8px 16px', borderRadius: '100px', border: 'none', cursor: 'pointer', color: '#0A0B0D' }}
+            style={{ padding: '8px 16px', borderRadius: '100px', border: 'none', cursor: 'pointer', color: 'var(--ink)' }}
           >
             <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 500 }}>{t('nav.faq')}</Text>
           </button>
           <Link
             href="/blog"
             className={`header-tab${isActive(['/blog']) ? ' header-tab-active' : ''}`}
-            style={{ padding: '8px 16px', borderRadius: '100px', textDecoration: 'none', color: '#0A0B0D' }}
+            style={{ padding: '8px 16px', borderRadius: '100px', textDecoration: 'none', color: 'var(--ink)' }}
           >
             <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 500 }}>{t('nav.resources')}</Text>
           </Link>
@@ -133,10 +133,10 @@ export function Header() {
               type="button"
               onClick={() => setLangDropdownOpen(!langDropdownOpen)}
               className="header-icon-btn"
-              style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', background: 'rgb(237, 239, 242)', border: 'none', color: '#0A0B0D', width: '44px', height: '44px', cursor: 'pointer' }}
+              style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', background: 'var(--surface)', border: 'none', color: 'var(--ink)', width: '44px', height: '44px', cursor: 'pointer' }}
               aria-label="Language"
             >
-              <Icon name="globe" size="m" color="fgPrimary" accessibilityLabel="Language" />
+              <Icon name="globe" size="m" color="fg" accessibilityLabel="Language" />
             </button>
             {langDropdownOpen && (
               <Box
@@ -146,7 +146,7 @@ export function Header() {
                   top: 'calc(100% + 12px)',
                   right: 0,
                   background: '#FFFFFF',
-                  borderRadius: '24px',
+                  borderRadius: 'var(--radius-content)',
                   boxShadow: '0 2px 16px rgba(0, 0, 0, 0.08)',
                   border: '1px solid rgba(0, 0, 0, 0.05)',
                   padding: '24px',
@@ -172,12 +172,12 @@ export function Header() {
                         textAlign: 'left',
                         background: 'none',
                         border: 'none',
-                        color: '#0A0B0D',
+                        color: 'var(--ink)',
                         padding: '12px 16px',
                         borderRadius: '16px',
                         cursor: 'pointer',
                       }}
-                      onMouseEnter={(e) => { e.currentTarget.style.background = 'rgb(247, 247, 247)'; }}
+                      onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--surface)'; }}
                       onMouseLeave={(e) => { e.currentTarget.style.background = 'none'; }}
                     >
                       <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -193,12 +193,14 @@ export function Header() {
               </Box>
             )}
           </div>
+          {/* Quiet secondary — the hero owns the one blue CTA per viewport
+              (design review, Phase 2) */}
           <Button
             as="a"
             href="https://app.defied.money"
             target="_blank"
             rel="noopener noreferrer"
-            variant="primary"
+            variant="secondary"
             compact
             className="btn-fw-500"
             style={{ borderRadius: '56px', minWidth: '100px', padding: '0 24px', height: '44px' }}
@@ -231,28 +233,28 @@ export function Header() {
           <button
             type="button"
             onClick={() => scrollToSection('features')}
-            style={{ padding: '10px 4px', transition: 'color 0.2s ease', textAlign: 'left', background: 'none', border: 'none', color: '#0A0B0D', cursor: 'pointer' }}
+            style={{ padding: '10px 4px', transition: 'color 0.2s ease', textAlign: 'left', background: 'none', border: 'none', color: 'var(--ink)', cursor: 'pointer' }}
           >
             <Text font="body" as="span">{t('nav.features')}</Text>
           </button>
           <button
             type="button"
             onClick={() => scrollToSection('how-it-works')}
-            style={{ padding: '10px 4px', transition: 'color 0.2s ease', textAlign: 'left', background: 'none', border: 'none', color: '#0A0B0D', cursor: 'pointer' }}
+            style={{ padding: '10px 4px', transition: 'color 0.2s ease', textAlign: 'left', background: 'none', border: 'none', color: 'var(--ink)', cursor: 'pointer' }}
           >
             <Text font="body" as="span">{t('nav.howItWorks')}</Text>
           </button>
           <button
             type="button"
             onClick={() => { setMobileMenuOpen(false); setDownloadModalOpen(true); }}
-            style={{ padding: '10px 4px', transition: 'color 0.2s ease', textAlign: 'left', background: 'none', border: 'none', color: '#0A0B0D', cursor: 'pointer' }}
+            style={{ padding: '10px 4px', transition: 'color 0.2s ease', textAlign: 'left', background: 'none', border: 'none', color: 'var(--ink)', cursor: 'pointer' }}
           >
             <Text font="body" as="span">{t('nav.mobileApp')}</Text>
           </button>
           <button
             type="button"
             onClick={() => scrollToSection('faq')}
-            style={{ padding: '10px 4px', transition: 'color 0.2s ease', textAlign: 'left', background: 'none', border: 'none', color: '#0A0B0D', cursor: 'pointer' }}
+            style={{ padding: '10px 4px', transition: 'color 0.2s ease', textAlign: 'left', background: 'none', border: 'none', color: 'var(--ink)', cursor: 'pointer' }}
           >
             <Text font="body" as="span">{t('nav.faq')}</Text>
           </button>

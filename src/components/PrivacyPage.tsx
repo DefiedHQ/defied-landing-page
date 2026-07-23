@@ -4,18 +4,18 @@ import { Text } from '@coinbase/cds-web/typography/Text';
 import { useLanguage } from '@/context/LanguageContext';
 
 const sectionStyle = { marginBottom: '40px' } as const;
-const h2Style = { fontSize: 'clamp(1.25rem, 3vw, 1.75rem)', fontWeight: 600, marginBottom: '16px', marginTop: '48px', color: '#0A0B0D' } as const;
-const pStyle = { fontSize: '16px', lineHeight: '28px', marginBottom: '16px', color: '#5B616E' } as const;
+const h2Style = { fontSize: 'clamp(1.25rem, 3vw, 1.75rem)', fontWeight: 600, marginBottom: '16px', marginTop: '48px', color: 'var(--ink)' } as const;
+const pStyle = { fontSize: '16px', lineHeight: '28px', marginBottom: '16px', color: 'var(--muted)' } as const;
 const ulStyle = { paddingLeft: '24px', marginBottom: '16px' } as const;
-const liStyle = { fontSize: '16px', lineHeight: '28px', color: '#5B616E', marginBottom: '8px' } as const;
-const strongStyle = { color: '#0A0B0D', fontWeight: 600 } as const;
+const liStyle = { fontSize: '16px', lineHeight: '28px', color: 'var(--muted)', marginBottom: '8px' } as const;
+const strongStyle = { color: 'var(--ink)', fontWeight: 600 } as const;
 
 export function PrivacyPage() {
   const { t } = useLanguage();
 
   return (
     <section style={{ width: '100%', maxWidth: '800px', margin: '0 auto', padding: '0 16px', paddingBottom: '64px' }}>
-      <Text font="display1" as="h1" display="block" style={{ fontSize: 'clamp(2rem, 6vw, 5rem)', fontWeight: 400, lineHeight: 1, marginTop: 'clamp(48px, 10vw, 120px)', marginBottom: '16px', color: '#0A0B0D' }}>
+      <Text font="display1" as="h1" display="block" style={{ fontSize: 'clamp(2rem, 6vw, 5rem)', fontWeight: 400, lineHeight: 1, marginTop: 'clamp(48px, 10vw, 120px)', marginBottom: '16px', color: 'var(--ink)' }}>
         {t('privacy.title')}
       </Text>
       <Text font="body" as="p" color="fgMuted" style={{ fontSize: '16px', marginBottom: '40px', fontStyle: 'italic' }}>
@@ -31,14 +31,14 @@ export function PrivacyPage() {
 
       <Text font="title2" as="h2" display="block" style={h2Style}>1. Information We Collect</Text>
       <div style={sectionStyle}>
-        <p style={{ ...pStyle, fontWeight: 600, color: '#0A0B0D' }}>A. Information You Provide</p>
+        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>A. Information You Provide</p>
         <p style={pStyle}>We may collect the following information when you use the Services:</p>
         <ul style={ulStyle}>
           <li style={liStyle}><span style={strongStyle}>Correspondence:</span> When you contact us for support or other inquiries, you may share your contact details and contextual information relevant to your issue, such as wallet type, transaction details, device type, or error codes. This helps us respond to your inquiry and improve the Services.</li>
         </ul>
         <p style={pStyle}>You may choose to voluntarily provide other information we have not requested. In such cases, you are solely responsible for that information.</p>
 
-        <p style={{ ...pStyle, fontWeight: 600, color: '#0A0B0D', marginTop: '24px' }}>B. Information Collected Automatically</p>
+        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)', marginTop: '24px' }}>B. Information Collected Automatically</p>
         <ul style={ulStyle}>
           <li style={liStyle}><span style={strongStyle}>Wallet Address:</span> We may collect the wallet address you use to connect to the interface, including to identify wallets associated with legally prohibited conduct and to improve the user experience.</li>
           <li style={liStyle}><span style={strongStyle}>Device Information:</span> We may collect information about the device you use to access the Services, such as device type, operating system, browser type, and screen dimensions. This helps us optimise the interface and troubleshoot technical issues.</li>
@@ -81,7 +81,7 @@ export function PrivacyPage() {
       <Text font="title2" as="h2" display="block" style={h2Style}>5. Cookies</Text>
       <div style={sectionStyle}>
         <p style={pStyle}>We use a minimal set of cookies strictly necessary to operate the Services. We do not use advertising cookies or tracking cookies for third-party purposes.</p>
-        <p style={{ ...pStyle, fontWeight: 600, color: '#0A0B0D' }}>Types of cookies we use:</p>
+        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Types of cookies we use:</p>
         <ul style={ulStyle}>
           <li style={liStyle}><span style={strongStyle}>Strictly Necessary Cookies:</span> Essential for the Services to function, including page navigation and access to secure areas. These do not collect personal information.</li>
           <li style={liStyle}><span style={strongStyle}>Analytical/Performance Cookies:</span> Used to understand how visitors use the Services, helping us improve functionality. Used only with your consent where required.</li>
@@ -135,17 +135,17 @@ export function PrivacyPage() {
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '15px', lineHeight: '24px' }}>
             <thead>
               <tr>
-                <th style={{ textAlign: 'left', padding: '12px 16px', borderBottom: '2px solid #E2E4E9', color: '#0A0B0D', fontWeight: 600 }}>Purpose</th>
-                <th style={{ textAlign: 'left', padding: '12px 16px', borderBottom: '2px solid #E2E4E9', color: '#0A0B0D', fontWeight: 600 }}>Legal Basis</th>
+                <th style={{ textAlign: 'left', padding: '12px 16px', borderBottom: '2px solid #E2E4E9', color: 'var(--ink)', fontWeight: 600 }}>Purpose</th>
+                <th style={{ textAlign: 'left', padding: '12px 16px', borderBottom: '2px solid #E2E4E9', color: 'var(--ink)', fontWeight: 600 }}>Legal Basis</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td style={{ padding: '12px 16px', borderBottom: '1px solid #F0F1F3', color: '#5B616E' }}>Operating and managing the Services</td><td style={{ padding: '12px 16px', borderBottom: '1px solid #F0F1F3', color: '#5B616E' }}>Necessary for the performance of our agreement with you</td></tr>
-              <tr><td style={{ padding: '12px 16px', borderBottom: '1px solid #F0F1F3', color: '#5B616E' }}>Communicating with you</td><td style={{ padding: '12px 16px', borderBottom: '1px solid #F0F1F3', color: '#5B616E' }}>Necessary for the performance of our agreement with you</td></tr>
-              <tr><td style={{ padding: '12px 16px', borderBottom: '1px solid #F0F1F3', color: '#5B616E' }}>Improving the Services</td><td style={{ padding: '12px 16px', borderBottom: '1px solid #F0F1F3', color: '#5B616E' }}>Legitimate interests; Consent</td></tr>
-              <tr><td style={{ padding: '12px 16px', borderBottom: '1px solid #F0F1F3', color: '#5B616E' }}>Security and legal compliance</td><td style={{ padding: '12px 16px', borderBottom: '1px solid #F0F1F3', color: '#5B616E' }}>Legal obligation; Legitimate interests</td></tr>
-              <tr><td style={{ padding: '12px 16px', borderBottom: '1px solid #F0F1F3', color: '#5B616E' }}>Business transfers</td><td style={{ padding: '12px 16px', borderBottom: '1px solid #F0F1F3', color: '#5B616E' }}>Legitimate interests; Legal obligation</td></tr>
-              <tr><td style={{ padding: '12px 16px', borderBottom: '1px solid #F0F1F3', color: '#5B616E' }}>Other consent-based purposes</td><td style={{ padding: '12px 16px', borderBottom: '1px solid #F0F1F3', color: '#5B616E' }}>Consent</td></tr>
+              <tr><td style={{ padding: '12px 16px', borderBottom: '1px solid #F0F1F3', color: 'var(--muted)' }}>Operating and managing the Services</td><td style={{ padding: '12px 16px', borderBottom: '1px solid #F0F1F3', color: 'var(--muted)' }}>Necessary for the performance of our agreement with you</td></tr>
+              <tr><td style={{ padding: '12px 16px', borderBottom: '1px solid #F0F1F3', color: 'var(--muted)' }}>Communicating with you</td><td style={{ padding: '12px 16px', borderBottom: '1px solid #F0F1F3', color: 'var(--muted)' }}>Necessary for the performance of our agreement with you</td></tr>
+              <tr><td style={{ padding: '12px 16px', borderBottom: '1px solid #F0F1F3', color: 'var(--muted)' }}>Improving the Services</td><td style={{ padding: '12px 16px', borderBottom: '1px solid #F0F1F3', color: 'var(--muted)' }}>Legitimate interests; Consent</td></tr>
+              <tr><td style={{ padding: '12px 16px', borderBottom: '1px solid #F0F1F3', color: 'var(--muted)' }}>Security and legal compliance</td><td style={{ padding: '12px 16px', borderBottom: '1px solid #F0F1F3', color: 'var(--muted)' }}>Legal obligation; Legitimate interests</td></tr>
+              <tr><td style={{ padding: '12px 16px', borderBottom: '1px solid #F0F1F3', color: 'var(--muted)' }}>Business transfers</td><td style={{ padding: '12px 16px', borderBottom: '1px solid #F0F1F3', color: 'var(--muted)' }}>Legitimate interests; Legal obligation</td></tr>
+              <tr><td style={{ padding: '12px 16px', borderBottom: '1px solid #F0F1F3', color: 'var(--muted)' }}>Other consent-based purposes</td><td style={{ padding: '12px 16px', borderBottom: '1px solid #F0F1F3', color: 'var(--muted)' }}>Consent</td></tr>
             </tbody>
           </table>
         </div>
@@ -164,7 +164,7 @@ export function PrivacyPage() {
       <Text font="title2" as="h2" display="block" style={h2Style}>14. Contact Us</Text>
       <div style={sectionStyle}>
         <p style={pStyle}>If you have any questions about this Privacy Policy, our data practices, or your rights, please contact us:</p>
-        <p style={{ ...pStyle, fontWeight: 600, color: '#0A0B0D' }}>Fusion Software LLC</p>
+        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Fusion Software LLC</p>
         <p style={pStyle}>81B Bulgaria Blvd, Sofia, Bulgaria<br /><a href="mailto:hello@defied.money" style={{ color: '#0052FF' }}>hello@defied.money</a></p>
       </div>
     </section>

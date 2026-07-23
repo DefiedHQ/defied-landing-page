@@ -4,19 +4,19 @@ import { Text } from '@coinbase/cds-web/typography/Text';
 import { useLanguage } from '@/context/LanguageContext';
 
 const sectionStyle = { marginBottom: '40px' } as const;
-const h2Style = { fontSize: 'clamp(1.25rem, 3vw, 1.75rem)', fontWeight: 600, marginBottom: '16px', marginTop: '48px', color: '#0A0B0D' } as const;
-const pStyle = { fontSize: '16px', lineHeight: '28px', marginBottom: '16px', color: '#5B616E' } as const;
+const h2Style = { fontSize: 'clamp(1.25rem, 3vw, 1.75rem)', fontWeight: 600, marginBottom: '16px', marginTop: '48px', color: 'var(--ink)' } as const;
+const pStyle = { fontSize: '16px', lineHeight: '28px', marginBottom: '16px', color: 'var(--muted)' } as const;
 const ulStyle = { paddingLeft: '24px', marginBottom: '16px' } as const;
-const liStyle = { fontSize: '16px', lineHeight: '28px', color: '#5B616E', marginBottom: '8px' } as const;
-const strongStyle = { color: '#0A0B0D', fontWeight: 600 } as const;
-const capsStyle = { fontSize: '15px', lineHeight: '26px', marginBottom: '16px', color: '#5B616E' } as const;
+const liStyle = { fontSize: '16px', lineHeight: '28px', color: 'var(--muted)', marginBottom: '8px' } as const;
+const strongStyle = { color: 'var(--ink)', fontWeight: 600 } as const;
+const capsStyle = { fontSize: '15px', lineHeight: '26px', marginBottom: '16px', color: 'var(--muted)' } as const;
 
 export function TermsPage() {
   const { t } = useLanguage();
 
   return (
     <section style={{ width: '100%', maxWidth: '800px', margin: '0 auto', padding: '0 16px', paddingBottom: '64px' }}>
-      <Text font="display1" as="h1" display="block" style={{ fontSize: 'clamp(2rem, 6vw, 5rem)', fontWeight: 400, lineHeight: 1, marginTop: 'clamp(48px, 10vw, 120px)', marginBottom: '16px', color: '#0A0B0D' }}>
+      <Text font="display1" as="h1" display="block" style={{ fontSize: 'clamp(2rem, 6vw, 5rem)', fontWeight: 400, lineHeight: 1, marginTop: 'clamp(48px, 10vw, 120px)', marginBottom: '16px', color: 'var(--ink)' }}>
         {t('terms.title')}
       </Text>
       <Text font="body" as="p" color="fgMuted" style={{ fontSize: '16px', marginBottom: '40px', fontStyle: 'italic' }}>
@@ -38,50 +38,50 @@ export function TermsPage() {
 
       <Text font="title2" as="h2" display="block" style={h2Style}>3. Nature of the Services</Text>
       <div style={sectionStyle}>
-        <p style={{ ...pStyle, fontWeight: 600, color: '#0A0B0D' }}>Defied is a software interface, not a financial institution.</p>
+        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Defied is a software interface, not a financial institution.</p>
         <p style={pStyle}>The Services provide a front-end interface through which users may interact with public, permissionless blockchain protocols via their self-custodial wallets. All information provided through the Services is for informational purposes only. Nothing on the Services constitutes financial, investment, legal, or tax advice. You should not make any financial decision based solely on information available through the Services.</p>
 
-        <p style={{ ...pStyle, fontWeight: 600, color: '#0A0B0D' }}>You retain full control over your assets at all times.</p>
+        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>You retain full control over your assets at all times.</p>
         <p style={pStyle}>Defied is not a party to any transaction on any blockchain network. We do not have possession, custody, or control over any cryptoassets or user funds at any time. When you interact with any protocol through the Services, you retain full control over your assets.</p>
 
-        <p style={{ ...pStyle, fontWeight: 600, color: '#0A0B0D' }}>We are not intermediaries.</p>
+        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>We are not intermediaries.</p>
         <p style={pStyle}>Due to the non-custodial and decentralized nature of the technology, Defied is not an intermediary, agent, advisor, or custodian, and we do not have a fiduciary relationship or obligation to you regarding any decisions, actions, or transactions you make when using the Services. You are solely responsible for ensuring the accuracy, legality, and appropriateness of your interactions with any third-party protocol or smart contract.</p>
 
-        <p style={{ ...pStyle, fontWeight: 600, color: '#0A0B0D' }}>Wallet infrastructure is provided by third parties.</p>
+        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Wallet infrastructure is provided by third parties.</p>
         <p style={pStyle}>To use the Services, you will interact with a self-custodial wallet created and managed through Privy, a third-party wallet infrastructure provider. Your use of Privy is subject to Privy&apos;s own terms and conditions. Defied has no access to your private keys or wallet credentials.</p>
 
-        <p style={{ ...pStyle, fontWeight: 600, color: '#0A0B0D' }}>Fiat on-ramp and off-ramp services are provided by Bridge.xyz.</p>
+        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Fiat on-ramp and off-ramp services are provided by Bridge.xyz.</p>
         <p style={pStyle}>The conversion of fiat currency (euros or dollars) to and from stablecoins is facilitated by Bridge.xyz, a regulated third-party service provider. Your use of these services is subject to Bridge.xyz&apos;s terms and conditions and applicable regulatory requirements, including identity verification.</p>
 
-        <p style={{ ...pStyle, fontWeight: 600, color: '#0A0B0D' }}>Virtual card services are provided by Gnosis Pay.</p>
+        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Virtual card services are provided by Gnosis Pay.</p>
         <p style={pStyle}>Virtual debit card functionality is provided by Gnosis Pay. Your use of the card is subject to Gnosis Pay&apos;s terms and conditions.</p>
 
-        <p style={{ ...pStyle, fontWeight: 600, color: '#0A0B0D' }}>Blockchain transactions may incur fees.</p>
+        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Blockchain transactions may incur fees.</p>
         <p style={pStyle}>Transactions on blockchain networks may be subject to network fees (such as gas fees) imposed by third parties. Certain protocols or services accessible through the Services may also charge their own fees. Some blockchain fees are non-refundable regardless of the outcome of a transaction. You are solely responsible for understanding and bearing all costs associated with your use of the Services.</p>
 
-        <p style={{ ...pStyle, fontWeight: 600, color: '#0A0B0D' }}>We have no information beyond what is publicly available on-chain.</p>
+        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>We have no information beyond what is publicly available on-chain.</p>
         <p style={pStyle}>We do not have access to information regarding all protocol interactions beyond what is publicly available and recorded on the relevant blockchain.</p>
       </div>
 
       <Text font="title2" as="h2" display="block" style={h2Style}>4. Assumption of Risk</Text>
       <div style={sectionStyle}>
-        <p style={{ ...pStyle, fontWeight: 600, color: '#0A0B0D' }}>Blockchain technology is experimental and carries significant risk.</p>
+        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Blockchain technology is experimental and carries significant risk.</p>
         <p style={pStyle}>Smart contracts, cryptoassets, and other blockchain-based systems are experimental, speculative, and subject to change. Bugs, malfunctions, cyberattacks, or changes to the underlying blockchain (such as forks) could disrupt these technologies and result in partial or total loss of funds. Defied assumes no liability for any such risks.</p>
         <p style={pStyle}>If you are not comfortable assuming these risks, you should not use the Services.</p>
 
-        <p style={{ ...pStyle, fontWeight: 600, color: '#0A0B0D' }}>All blockchain transactions are irreversible.</p>
+        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>All blockchain transactions are irreversible.</p>
         <p style={pStyle}>You acknowledge that all transactions on blockchain networks are final and irreversible. Defied has no ability to reverse, cancel, or recover any transaction once it has been submitted to the blockchain.</p>
 
-        <p style={{ ...pStyle, fontWeight: 600, color: '#0A0B0D' }}>You are solely responsible for your wallet security.</p>
+        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>You are solely responsible for your wallet security.</p>
         <p style={pStyle}>You are solely responsible for maintaining the security of your self-custodial wallet and any associated credentials. Defied has no access to your private keys and cannot assist in recovering lost or compromised wallets. Unauthorized access to your wallet by third parties could result in the permanent loss of your funds.</p>
 
-        <p style={{ ...pStyle, fontWeight: 600, color: '#0A0B0D' }}>Third-party protocols carry their own risks.</p>
+        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Third-party protocols carry their own risks.</p>
         <p style={pStyle}>Defied only surfaces protocols with established audit histories, but we cannot guarantee that any protocol will remain free from exploits, bugs, or other failures. We do not endorse any protocol as risk-free. You should conduct your own due diligence before depositing funds into any protocol.</p>
 
-        <p style={{ ...pStyle, fontWeight: 600, color: '#0A0B0D' }}>Yields are variable and not guaranteed.</p>
+        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Yields are variable and not guaranteed.</p>
         <p style={pStyle}>Any yields or returns referenced through the Services reflect current third-party protocol rates and are subject to change at any time based on market conditions. Past performance is not indicative of future results. Yields do not constitute guaranteed returns or investment products.</p>
 
-        <p style={{ ...pStyle, fontWeight: 600, color: '#0A0B0D' }}>We may restrict access to the Services.</p>
+        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>We may restrict access to the Services.</p>
         <p style={pStyle}>We reserve the right to restrict your access to the Services, at our sole discretion, if we have reasonable grounds to believe that you are:</p>
         <ul style={ulStyle}>
           <li style={liStyle}>Using the Services for money laundering, terrorist financing, or any other illegal activity</li>
@@ -98,13 +98,13 @@ export function TermsPage() {
 
       <Text font="title2" as="h2" display="block" style={h2Style}>6. Intellectual Property</Text>
       <div style={sectionStyle}>
-        <p style={{ ...pStyle, fontWeight: 600, color: '#0A0B0D' }}>License to use the Services.</p>
+        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>License to use the Services.</p>
         <p style={pStyle}>Subject to your ongoing compliance with these Terms, we grant you a personal, non-exclusive, non-transferable, revocable license to access and use the Services solely as permitted by these Terms.</p>
 
-        <p style={{ ...pStyle, fontWeight: 600, color: '#0A0B0D' }}>We own all rights in the Services.</p>
+        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>We own all rights in the Services.</p>
         <p style={pStyle}>All right, title, and interest in and to the Services, including all content, code, data, and materials, belongs to Fusion Software LLC. Your use of the Services does not grant you any ownership or rights beyond the limited license set out above.</p>
 
-        <p style={{ ...pStyle, fontWeight: 600, color: '#0A0B0D' }}>Feedback.</p>
+        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Feedback.</p>
         <p style={pStyle}>Any feedback, suggestions, or ideas you provide about the Services are entirely voluntary. You agree that we may use such feedback freely without any obligation to you.</p>
       </div>
 
@@ -168,10 +168,10 @@ export function TermsPage() {
 
       <Text font="title2" as="h2" display="block" style={h2Style}>11. Dispute Resolution</Text>
       <div style={sectionStyle}>
-        <p style={{ ...pStyle, fontWeight: 600, color: '#0A0B0D' }}>Good faith negotiation.</p>
+        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Good faith negotiation.</p>
         <p style={pStyle}>Before initiating any legal proceedings, you agree to first attempt to resolve any dispute with us informally by contacting us at <a href="mailto:hello@defied.money" style={{ color: '#0052FF' }}>hello@defied.money</a>. We will attempt to resolve the dispute within 30 days of receiving written notice.</p>
 
-        <p style={{ ...pStyle, fontWeight: 600, color: '#0A0B0D' }}>Governing law and jurisdiction.</p>
+        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Governing law and jurisdiction.</p>
         <p style={pStyle}>These Terms and any disputes arising from them shall be governed by and construed in accordance with the laws of the Republic of Bulgaria and applicable EU law. Any disputes that cannot be resolved informally shall be submitted to the exclusive jurisdiction of the competent courts of Sofia, Bulgaria, unless mandatory consumer protection laws in your country of residence provide otherwise.</p>
         <p style={pStyle}>If you are a consumer resident in the EU, you may also have the right to submit a complaint to an alternative dispute resolution body. The European Commission&apos;s Online Dispute Resolution platform is available at <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer" style={{ color: '#0052FF' }}>https://ec.europa.eu/consumers/odr</a>.</p>
       </div>
@@ -200,7 +200,7 @@ export function TermsPage() {
       <Text font="title2" as="h2" display="block" style={h2Style}>16. Contact Us</Text>
       <div style={sectionStyle}>
         <p style={pStyle}>If you have any questions about these Terms, please contact us:</p>
-        <p style={{ ...pStyle, fontWeight: 600, color: '#0A0B0D' }}>Fusion Software LLC</p>
+        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Fusion Software LLC</p>
         <p style={pStyle}>81B Bulgaria Blvd, Sofia, Bulgaria<br /><a href="mailto:hello@defied.money" style={{ color: '#0052FF' }}>hello@defied.money</a></p>
       </div>
     </section>

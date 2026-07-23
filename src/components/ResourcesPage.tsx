@@ -9,12 +9,7 @@ import { Chip } from '@coinbase/cds-web/chips/Chip';
 import { Button } from '@coinbase/cds-web/buttons/Button';
 import { useArticles } from '@/data/useArticles';
 import { useLanguage } from '@/context/LanguageContext';
-
-const allLabelMap: Record<string, string> = { en: 'All' };
-
-const monthsMap: Record<string, string[]> = {
-  en: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-};
+import { formatArticleDate } from '@/lib/i18n';
 
 const INITIAL_REST_COUNT = 4;
 const LOAD_MORE_STEP = 4;
@@ -22,7 +17,7 @@ const LOAD_MORE_STEP = 4;
 export function ResourcesPage() {
   const { t, lang } = useLanguage();
   const articles = useArticles();
-  const allLabel = allLabelMap[lang];
+  const allLabel = t('resources.filterAll');
   const articleCategories = [...new Set(articles.map((a) => a.category))];
   const categories = [allLabel, ...articleCategories];
   const [activeFilter, setActiveFilter] = useState(allLabel);
@@ -32,11 +27,7 @@ export function ResourcesPage() {
   const filterValid = categories.includes(activeFilter);
   const currentFilter = filterValid ? activeFilter : allLabel;
 
-  function formatDate(dateStr: string) {
-    const d = new Date(dateStr);
-    const months = monthsMap[lang] ?? monthsMap.en;
-    return `${d.getFullYear()} ${months[d.getMonth()]} ${d.getDate()}`;
-  }
+  const formatDate = (dateStr: string) => formatArticleDate(dateStr, lang);
 
   function countByCategory(cat: string) {
     if (cat === allLabel) return articles.length;
@@ -91,7 +82,7 @@ export function ResourcesPage() {
           >
             <div className="grid-1-2-md" style={{ alignItems: 'center', gap: 'clamp(24px, 4vw, 48px)' }}>
               <div style={{ width: '100%', aspectRatio: '1200 / 630', overflow: 'hidden', borderRadius: 'clamp(24px, 4vw, 56px)', position: 'relative' }}>
-                <Image src={featured.image || '/article-cover.svg'} alt={featured.title} fill sizes="(max-width: 768px) 100vw, 580px" style={{ objectFit: 'cover' }} priority />
+                <Image src={`/blog/${featured.id}/cover.png`} alt={featured.title} fill sizes="(max-width: 768px) 100vw, 580px" style={{ objectFit: 'cover' }} priority />
               </div>
               <div>
                 <div style={{ marginBottom: '16px' }}>
@@ -144,7 +135,7 @@ export function ResourcesPage() {
               >
                 <div style={{ height: '100%' }}>
                   <div style={{ width: '100%', aspectRatio: '1200 / 630', overflow: 'hidden', borderRadius: 'clamp(24px, 4vw, 56px)', position: 'relative' }}>
-                    <Image src={article.image || '/article-cover.svg'} alt={article.title} fill sizes="(max-width: 768px) 100vw, 580px" style={{ objectFit: 'cover' }} />
+                    <Image src={`/blog/${article.id}/cover.png`} alt={article.title} fill sizes="(max-width: 768px) 100vw, 580px" style={{ objectFit: 'cover' }} />
                   </div>
                   <div style={{ paddingTop: '16px' }}>
                     <div style={{ marginBottom: '8px' }}>

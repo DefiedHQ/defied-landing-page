@@ -42,17 +42,19 @@ export function AboutCarousel() {
         {t('aboutCarousel.title')}
       </Text>
 
-      {/* 2-column grid */}
-      <div className="features-grid-2x2">
+      {/* Open 2-column rows — a different layout family from the Features
+          card grid, so the two sections stop reading as the same template
+          (design review, Phase 1). */}
+      <div className="about-rows">
         {cards.map((card, i) => (
           <m.div
             key={i}
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.5, delay: i * 0.08, ease: 'easeOut' }}
+            transition={{ duration: 0.5, delay: i * 0.06, ease: [0.22, 1, 0.36, 1] }}
           >
-            <article className="feature-card">
+            <article className="about-row">
               <div style={{ width: 48, height: 48, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                 <LocalPictogram name={CARD_PICTOGRAMS[i]} dimension="48x48" />
               </div>

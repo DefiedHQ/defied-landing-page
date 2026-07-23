@@ -129,7 +129,7 @@ export function DownloadAppModal({ open, onClose }: DownloadAppModalProps) {
           className="dl-modal-close"
           aria-label={t('downloadApp.close')}
         >
-          <Icon name="close" size="m" dangerouslySetColor="#000000" accessibilityLabel={t('downloadApp.close')} />
+          <Icon name="close" size="m" dangerouslySetColor="#14161A" accessibilityLabel={t('downloadApp.close')} />
         </button>
 
         <div className="dl-modal-content">
@@ -220,12 +220,12 @@ export function DownloadAppModal({ open, onClose }: DownloadAppModalProps) {
             <div className="dl-modal-qr-pattern" aria-hidden="true">
               <svg viewBox="0 0 100 100" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
                 {/* Corner finders */}
-                <rect x="4" y="4" width="22" height="22" rx="3" fill="none" stroke="#0A0B0D" strokeWidth="4" />
-                <rect x="10" y="10" width="10" height="10" rx="1" fill="#0A0B0D" />
-                <rect x="74" y="4" width="22" height="22" rx="3" fill="none" stroke="#0A0B0D" strokeWidth="4" />
-                <rect x="80" y="10" width="10" height="10" rx="1" fill="#0A0B0D" />
-                <rect x="4" y="74" width="22" height="22" rx="3" fill="none" stroke="#0A0B0D" strokeWidth="4" />
-                <rect x="10" y="80" width="10" height="10" rx="1" fill="#0A0B0D" />
+                <rect x="4" y="4" width="22" height="22" rx="3" fill="none" stroke="#14161A" strokeWidth="4" />
+                <rect x="10" y="10" width="10" height="10" rx="1" fill="#14161A" />
+                <rect x="74" y="4" width="22" height="22" rx="3" fill="none" stroke="#14161A" strokeWidth="4" />
+                <rect x="80" y="10" width="10" height="10" rx="1" fill="#14161A" />
+                <rect x="4" y="74" width="22" height="22" rx="3" fill="none" stroke="#14161A" strokeWidth="4" />
+                <rect x="10" y="80" width="10" height="10" rx="1" fill="#14161A" />
                 {/* Random data cells */}
                 {Array.from({ length: 140 }).map((_, i) => {
                   const cols = 14;
@@ -236,7 +236,7 @@ export function DownloadAppModal({ open, onClose }: DownloadAppModalProps) {
                   if (x > 68 || y > 92) return null;
                   const seed = (i * 7919) % 11;
                   if (seed < 5) return null;
-                  return <rect key={i} x={x} y={y} width="3.5" height="3.5" fill="#0A0B0D" />;
+                  return <rect key={i} x={x} y={y} width="3.5" height="3.5" fill="#14161A" />;
                 })}
               </svg>
             </div>
