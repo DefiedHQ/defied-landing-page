@@ -146,7 +146,9 @@
   },
   "common": {
     "by": "от",
-    "minRead": "мин четене"
+    "minRead": "мин четене",
+    "home": "Начало",
+    "blog": "Блог"
   },
   "downloadApp": {
     "title": "Вземи приложението Defied",

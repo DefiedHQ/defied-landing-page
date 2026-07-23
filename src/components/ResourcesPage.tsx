@@ -15,7 +15,7 @@ const INITIAL_REST_COUNT = 4;
 const LOAD_MORE_STEP = 4;
 
 export function ResourcesPage() {
-  const { t, lang } = useLanguage();
+  const { t, lang, localePath } = useLanguage();
   const articles = useArticles();
   const allLabel = t('resources.filterAll');
   const articleCategories = [...new Set(articles.map((a) => a.category))];
@@ -76,7 +76,7 @@ export function ResourcesPage() {
         {/* Featured article (most recent, full-width hero) */}
         {featured && (
           <Link
-            href={`/blog/${featured.id}`}
+            href={localePath(`/blog/${featured.id}`)}
             className="card-group"
             style={{ textDecoration: 'none', display: 'block', marginBottom: '48px' }}
           >
@@ -129,7 +129,7 @@ export function ResourcesPage() {
             {visibleRest.map((article) => (
               <Link
                 key={article.id}
-                href={`/blog/${article.id}`}
+                href={localePath(`/blog/${article.id}`)}
                 className="card-group"
                 style={{ textDecoration: 'none', display: 'block' }}
               >

@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { ArticlePage } from '@/components/ArticlePage';
 import { JsonLd } from '@/components/seo/JsonLd';
 import articles from '@/data/articles-en.json';
-import { siteConfig, absoluteUrl } from '@/lib/seo';
+import { siteConfig, absoluteUrl, languageAlternates } from '@/lib/seo';
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -21,6 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: articleUrl,
       siteName: siteConfig.name,
       type: 'article',
+      locale: 'en_US',
       publishedTime: `${article.date}T00:00:00+00:00`,
       modifiedTime: `${article.date}T00:00:00+00:00`,
       section: article.category,
@@ -35,6 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     alternates: {
       canonical: articleUrl,
+      languages: languageAlternates(`/blog/${slug}`),
     },
   };
 }

@@ -62,11 +62,11 @@ function renderBody(body: string) {
 
 export function ArticlePage() {
   const params = useParams();
-  const { t, lang } = useLanguage();
+  const { t, lang, localePath } = useLanguage();
   const articles = useArticles();
   const slug = params.slug as string;
   const article = articles.find((a) => a.id === slug);
-  const articleUrl = absoluteUrl(`/blog/${slug}`);
+  const articleUrl = absoluteUrl(localePath(`/blog/${slug}`));
 
   const formatDate = (dateStr: string) => formatArticleDate(dateStr, lang);
   const recentArticles = articles.filter((a) => a.id !== slug).slice(0, 3);
@@ -75,7 +75,7 @@ export function ArticlePage() {
     return (
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '64px 16px', textAlign: 'center', minHeight: '100vh' }}>
         <Text font="title2" as="h1">{t('resources.notFound')}</Text>
-        <Link href="/blog" style={{ color: '#0052FF', marginTop: '16px', display: 'inline-block', textDecoration: 'none' }}>
+        <Link href={localePath('/blog')} style={{ color: '#0052FF', marginTop: '16px', display: 'inline-block', textDecoration: 'none' }}>
           &larr; {t('resources.backToResources')}
         </Link>
       </div>
@@ -93,14 +93,14 @@ export function ArticlePage() {
         <nav aria-label="Breadcrumb" style={{ marginTop: 'clamp(48px, 10vw, 120px)', marginBottom: '16px', minWidth: 0 }}>
           <ol style={{ display: 'flex', alignItems: 'center', gap: '6px', listStyle: 'none', margin: 0, padding: 0, flexWrap: 'nowrap', minWidth: 0 }}>
             <li style={{ flexShrink: 0 }}>
-              <Link href="/" style={{ color: 'var(--muted)', textDecoration: 'none', fontSize: '14px', lineHeight: '20px' }}>
-                Home
+              <Link href={localePath('/')} style={{ color: 'var(--muted)', textDecoration: 'none', fontSize: '14px', lineHeight: '20px' }}>
+                {t('common.home')}
               </Link>
             </li>
             <li aria-hidden="true" style={{ color: '#9CA3AF', fontSize: '14px', flexShrink: 0 }}>/</li>
             <li style={{ flexShrink: 0 }}>
-              <Link href="/blog" style={{ color: 'var(--muted)', textDecoration: 'none', fontSize: '14px', lineHeight: '20px' }}>
-                Blog
+              <Link href={localePath('/blog')} style={{ color: 'var(--muted)', textDecoration: 'none', fontSize: '14px', lineHeight: '20px' }}>
+                {t('common.blog')}
               </Link>
             </li>
             <li aria-hidden="true" style={{ color: '#9CA3AF', fontSize: '14px', flexShrink: 0 }}>/</li>
@@ -260,7 +260,7 @@ export function ArticlePage() {
                 {recentArticles.map((a) => (
                   <Link
                     key={a.id}
-                    href={`/blog/${a.id}`}
+                    href={localePath(`/blog/${a.id}`)}
                     className="card-group"
                     style={{ display: 'block', textDecoration: 'none' }}
                   >

@@ -1,29 +1,6 @@
 import type { Metadata, Viewport } from 'next';
-import localFont from 'next/font/local';
-import { GoogleAnalytics } from '@next/third-parties/google';
-import { Analytics } from '@vercel/analytics/next';
-import { SpeedInsights } from '@vercel/speed-insights/next';
-import { CdsProvider } from '@/components/CdsProvider';
-import { Header } from '@/components/Header';
-import { ConditionalFooter } from '@/components/ConditionalFooter';
-import { MainWrapper } from '@/components/MainWrapper';
-import { LanguageProvider } from '@/context/LanguageContext';
-import { LanguageGeoInit } from '@/components/LanguageGeoInit';
-import { siteConfig } from '@/lib/seo';
-
-import './globals.css';
-import '@coinbase/cds-icons/fonts/web/icon-font.css';
-import '@coinbase/cds-web/defaultFontStyles';
-import '@coinbase/cds-web/globalStyles';
-
-const aeonikPro = localFont({
-  src: [
-    { path: '../../public/fonts/AeonikPro-Regular.woff2', weight: '400', style: 'normal' },
-    { path: '../../public/fonts/AeonikPro-Medium.woff2', weight: '500', style: 'normal' },
-  ],
-  display: 'swap',
-  variable: '--font-aeonik-pro',
-});
+import { LocaleLayout } from '@/components/LocaleLayout';
+import { siteConfig, languageAlternates } from '@/lib/seo';
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -82,6 +59,7 @@ export const metadata: Metadata = {
     ],
     type: 'website',
     locale: 'en_US',
+    alternateLocale: 'bg_BG',
   },
   twitter: {
     card: 'summary_large_image',
@@ -104,6 +82,7 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: '/',
+    languages: languageAlternates('/'),
   },
 };
 
@@ -112,34 +91,5 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <html lang="en" className={aeonikPro.variable}>
-      <body>
-        <CdsProvider>
-          <LanguageProvider>
-            <LanguageGeoInit />
-            <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-              <div
-                style={{
-                  position: 'sticky',
-                  top: 0,
-                  zIndex: 50,
-                  background: '#ffffff',
-                }}
-              >
-                <Header />
-              </div>
-              <MainWrapper>{children}</MainWrapper>
-              <ConditionalFooter />
-            </div>
-          </LanguageProvider>
-        </CdsProvider>
-        <Analytics />
-        <SpeedInsights />
-        {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
-          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
-        )}
-      </body>
-    </html>
-  );
+  return <LocaleLayout lang="en">{children}</LocaleLayout>;
 }

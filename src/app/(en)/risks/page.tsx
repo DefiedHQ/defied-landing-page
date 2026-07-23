@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-import { RisksContent } from './RisksContent';
+import { RisksContent } from '@/components/RisksContent';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { siteConfig, absoluteUrl } from '@/lib/seo';
+import { siteConfig, absoluteUrl, languageAlternates } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Risks',
@@ -23,6 +23,7 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: '/risks',
+    languages: languageAlternates('/risks'),
   },
 };
 

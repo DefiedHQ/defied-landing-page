@@ -21,3 +21,14 @@ export const siteConfig = {
 export function absoluteUrl(path: string): string {
   return `${siteConfig.url}${path}`;
 }
+
+/**
+ * hreflang alternates for a locale-neutral path. English is canonical at the
+ * root and doubles as x-default; Bulgarian lives under /bg. Used by both page
+ * metadata (`alternates.languages`) and the sitemap.
+ */
+export function languageAlternates(path: string): Record<string, string> {
+  const en = path === '/' ? siteConfig.url : absoluteUrl(path);
+  const bg = absoluteUrl(path === '/' ? '/bg' : `/bg${path}`);
+  return { en, bg, 'x-default': en };
+}

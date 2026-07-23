@@ -1,32 +1,50 @@
 'use client';
 
 import { useEffect } from 'react';
-import { useLanguage } from '@/context/LanguageContext';
-import { geoLangFromCountry } from '@/lib/i18n';
+import { usePathname, useRouter } from 'next/navigation';
+import { geoLangFromCountry, localePath, LANG_PREF_KEY } from '@/lib/i18n';
 
 /**
- * Applies the geolocation-derived default language on mount.
+ * Suggests the Bulgarian site to Bulgarian visitors landing on English pages.
  *
- * The pages are fully static, so the visitor's country is fetched from the
- * tiny dynamic /api/geo route instead of being read in the layout (which
- * would force every route to render dynamically). SSR and the first client
- * render use the default language to avoid a hydration mismatch; geolocation
- * always wins on load, so a returning visitor's language tracks their
- * current country. Within a session the manual language switcher still takes
- * effect until the next reload.
+ * Rendered only in the English root layout. On mount it checks the visitor's
+ * explicit language choice (set by the header switcher); with no choice made
+ * it falls back to geolocation via the tiny dynamic /api/geo route (the pages
+ * themselves stay fully static). Bulgarian visitors are client-side
+ * redirected to the /bg mirror of the current page.
+ *
+ * Deliberately client-side and never forced at the server/edge: search
+ * engine crawlers (which mostly fetch without geo-matching JS effects and
+ * crawl from US IPs) must be able to reach both language versions — hreflang
+ * annotations, not redirects, tell them which is which.
  */
 export function LanguageGeoInit() {
-  const { setLang } = useLanguage();
+  const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
+    const goBg = () => router.replace(localePath('bg', pathname));
+
+    let pref: string | null = null;
+    try {
+      pref = localStorage.getItem(LANG_PREF_KEY);
+    } catch {
+      // Storage unavailable → treat as no preference.
+    }
+    if (pref === 'en') return;
+    if (pref === 'bg') {
+      goBg();
+      return;
+    }
+
     let cancelled = false;
     fetch('/api/geo')
       .then((res) => (res.ok ? res.json() : null))
       .then((data) => {
-        if (!cancelled && data) setLang(geoLangFromCountry(data.country));
+        if (!cancelled && data && geoLangFromCountry(data.country) === 'bg') goBg();
       })
       .catch(() => {
-        // Network failure → stay on the default language.
+        // Network failure → stay on English.
       });
     return () => {
       cancelled = true;

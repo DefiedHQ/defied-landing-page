@@ -1,10 +1,11 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
+import { stripLangPrefix } from '@/lib/i18n';
 
 export function MainWrapper({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const isHome = pathname === '/';
+  const isHome = stripLangPrefix(pathname) === '/';
   return (
     <main
       style={{

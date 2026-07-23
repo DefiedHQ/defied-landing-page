@@ -11,6 +11,27 @@ export const LANGUAGES: ReadonlyArray<{ code: Lang; label: string; region: strin
 /** Default language — used for SSR, first paint, and when geo is unknown. */
 export const DEFAULT_LANG: Lang = 'en';
 
+/** localStorage key for the visitor's explicit language choice (set by the
+    header switcher). Geo-based redirects defer to it. */
+export const LANG_PREF_KEY = 'defied-lang';
+
+/**
+ * Maps a locale-neutral path to its URL for a language. English lives at the
+ * root (`/blog`), Bulgarian under the `/bg` prefix (`/bg/blog`). Hash/query
+ * suffixes pass through untouched.
+ */
+export function localePath(lang: Lang, path: string): string {
+  if (lang !== 'bg') return path;
+  if (path === '/') return '/bg';
+  return path.startsWith('/#') ? `/bg${path.slice(1)}` : `/bg${path}`;
+}
+
+/** Strips the `/bg` prefix from a pathname, returning the locale-neutral path. */
+export function stripLangPrefix(pathname: string): string {
+  if (pathname === '/bg') return '/';
+  return pathname.startsWith('/bg/') ? pathname.slice(3) : pathname;
+}
+
 /**
  * Maps an ISO 3166-1 alpha-2 country code (from the Vercel edge geo header
  * `x-vercel-ip-country`) to a language: Bulgaria gets Bulgarian, everyone

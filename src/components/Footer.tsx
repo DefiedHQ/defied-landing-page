@@ -10,7 +10,7 @@ import { Text } from '@coinbase/cds-web/typography/Text';
 import { useLanguage } from '@/context/LanguageContext';
 
 export function Footer() {
-  const { t } = useLanguage();
+  const { t, localePath } = useLanguage();
 
   return (
     <footer style={{ width: '100%', marginTop: 'auto', background: 'var(--surface)' }}>
@@ -28,7 +28,7 @@ export function Footer() {
         <div className="flex-col-row" style={{ marginBottom: '24px' }}>
           {/* Logo + contact */}
           <VStack as="div" style={{ alignItems: 'flex-start', gap: '0px' }}>
-            <Link href="/" className="hover-fade" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', textDecoration: 'none' }}>
+            <Link href={localePath('/')} className="hover-fade" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', textDecoration: 'none' }}>
               <LogoMark size={48} />
               <Image src="/defied-logo-text-blue.svg" alt="" aria-hidden="true" width={130} height={35} style={{ display: 'block' }} />
             </Link>
@@ -56,18 +56,18 @@ export function Footer() {
             <VStack as="div" style={{ gap: '0px' }}>
               <Text font="headline" as="h4" style={{ marginBottom: '16px' }}>{t('footer.useful')}</Text>
               <VStack as="ul" style={{ gap: '10px', listStyle: 'none', padding: 0, margin: 0 }}>
-                <li><Link href="/blog" className="hover-fade-70" style={{ textDecoration: 'none' }}><Text font="label2" as="span" color="fgMuted">{t('footer.resources')}</Text></Link></li>
-                <li><Link href="/#features" className="hover-fade-70" style={{ textDecoration: 'none' }}><Text font="label2" as="span" color="fgMuted">{t('footer.features')}</Text></Link></li>
-                <li><Link href="/#how-it-works" className="hover-fade-70" style={{ textDecoration: 'none' }}><Text font="label2" as="span" color="fgMuted">{t('footer.howItWorks')}</Text></Link></li>
-                <li><Link href="/#faq" className="hover-fade-70" style={{ textDecoration: 'none' }}><Text font="label2" as="span" color="fgMuted">{t('footer.faq')}</Text></Link></li>
-                <li><Link href="/risks" className="hover-fade-70" style={{ textDecoration: 'none' }}><Text font="label2" as="span" color="fgMuted">{t('footer.risks')}</Text></Link></li>
+                <li><Link href={localePath('/blog')} className="hover-fade-70" style={{ textDecoration: 'none' }}><Text font="label2" as="span" color="fgMuted">{t('footer.resources')}</Text></Link></li>
+                <li><Link href={localePath('/#features')} className="hover-fade-70" style={{ textDecoration: 'none' }}><Text font="label2" as="span" color="fgMuted">{t('footer.features')}</Text></Link></li>
+                <li><Link href={localePath('/#how-it-works')} className="hover-fade-70" style={{ textDecoration: 'none' }}><Text font="label2" as="span" color="fgMuted">{t('footer.howItWorks')}</Text></Link></li>
+                <li><Link href={localePath('/#faq')} className="hover-fade-70" style={{ textDecoration: 'none' }}><Text font="label2" as="span" color="fgMuted">{t('footer.faq')}</Text></Link></li>
+                <li><Link href={localePath('/risks')} className="hover-fade-70" style={{ textDecoration: 'none' }}><Text font="label2" as="span" color="fgMuted">{t('footer.risks')}</Text></Link></li>
               </VStack>
             </VStack>
             <VStack as="div" style={{ gap: '0px' }}>
               <Text font="headline" as="h4" style={{ marginBottom: '16px' }}>{t('footer.company')}</Text>
               <VStack as="ul" style={{ gap: '10px', listStyle: 'none', padding: 0, margin: 0 }}>
-                <li><Link href="/terms" className="hover-fade-70" style={{ textDecoration: 'none' }}><Text font="label2" as="span" color="fgMuted">{t('footer.terms')}</Text></Link></li>
-                <li><Link href="/privacy" className="hover-fade-70" style={{ textDecoration: 'none' }}><Text font="label2" as="span" color="fgMuted">{t('footer.privacy')}</Text></Link></li>
+                <li><Link href={localePath('/terms')} className="hover-fade-70" style={{ textDecoration: 'none' }}><Text font="label2" as="span" color="fgMuted">{t('footer.terms')}</Text></Link></li>
+                <li><Link href={localePath('/privacy')} className="hover-fade-70" style={{ textDecoration: 'none' }}><Text font="label2" as="span" color="fgMuted">{t('footer.privacy')}</Text></Link></li>
               </VStack>
             </VStack>
           </HStack>

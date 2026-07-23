@@ -12,7 +12,8 @@ import { Icon } from '@coinbase/cds-web/icons/Icon';
 import { LogoMark } from '@/components/LogoMark';
 import { AnimatedButtonText } from '@/components/AnimatedButtonText';
 import { DownloadAppModal } from '@/components/DownloadAppModal';
-import { useLanguage, LANGUAGES } from '@/context/LanguageContext';
+import { useLanguage, LANGUAGES, type Lang } from '@/context/LanguageContext';
+import { localePath as localePathFor, stripLangPrefix, LANG_PREF_KEY } from '@/lib/i18n';
 
 export function Header() {
   const pathname = usePathname();
@@ -23,18 +24,29 @@ export function Header() {
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const mobileToggleRef = useRef<HTMLButtonElement>(null);
   const langDropdownRef = useRef<HTMLDivElement>(null);
-  const { t, lang, setLang } = useLanguage();
+  const { t, lang, localePath } = useLanguage();
 
   const scrollToSection = useCallback((sectionId: string) => {
     setMobileMenuOpen(false);
-    if (pathname === '/') {
+    if (stripLangPrefix(pathname) === '/') {
       const el = document.getElementById(sectionId);
       if (!el) return;
       el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     } else {
-      router.push(`/#${sectionId}`);
+      router.push(localePath(`/#${sectionId}`));
     }
-  }, [pathname, router]);
+  }, [pathname, router, localePath]);
+
+  // Switching languages navigates to the same page in the other locale and
+  // records the explicit choice so geo detection stops overriding it.
+  const switchLang = useCallback((code: Lang) => {
+    try {
+      localStorage.setItem(LANG_PREF_KEY, code);
+    } catch {
+      // Storage unavailable — the navigation still switches the language.
+    }
+    if (code !== lang) router.push(localePathFor(code, stripLangPrefix(pathname)));
+  }, [lang, pathname, router]);
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -54,15 +66,17 @@ export function Header() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [mobileMenuOpen]);
 
-  const isActive = (paths: string[]) =>
-    paths.some(p => p === '/' ? pathname === '/' : pathname.startsWith(p));
+  const isActive = (paths: string[]) => {
+    const neutral = stripLangPrefix(pathname);
+    return paths.some(p => p === '/' ? neutral === '/' : neutral.startsWith(p));
+  };
 
   return (
     <header className="header-padding" style={{ position: 'relative', width: '100%', maxWidth: '1200px', margin: '0 auto' }}>
       <HStack as="div" style={{ alignItems: 'center', position: 'relative' }}>
         {/* Logo + mobile menu toggle */}
         <HStack as="div" style={{ alignItems: 'center', gap: '16px', flexShrink: 0 }}>
-          <Link href="/" className="hover-fade" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', textDecoration: 'none', flexShrink: 0 }}>
+          <Link href={localePath('/')} className="hover-fade" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', textDecoration: 'none', flexShrink: 0 }}>
             <LogoMark size={48} />
           </Link>
           <button
@@ -117,7 +131,7 @@ export function Header() {
             <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 500 }}>{t('nav.faq')}</Text>
           </button>
           <Link
-            href="/blog"
+            href={localePath('/blog')}
             className={`header-tab${isActive(['/blog']) ? ' header-tab-active' : ''}`}
             style={{ padding: '8px 16px', borderRadius: '100px', textDecoration: 'none', color: 'var(--ink)' }}
           >
@@ -163,7 +177,7 @@ export function Header() {
                     <button
                       key={l.code}
                       type="button"
-                      onClick={() => { setLang(l.code); setLangDropdownOpen(false); }}
+                      onClick={() => { switchLang(l.code); setLangDropdownOpen(false); }}
                       style={{
                         display: 'flex',
                         width: '100%',
@@ -259,7 +273,7 @@ export function Header() {
             <Text font="body" as="span">{t('nav.faq')}</Text>
           </button>
           {[
-            { href: '/blog', label: t('nav.resources'), paths: ['/blog'] },
+            { href: localePath('/blog'), label: t('nav.resources'), paths: ['/blog'] },
           ].map((item) => (
             <Link
               key={item.href}
@@ -270,7 +284,7 @@ export function Header() {
                 transition: 'color 0.2s ease',
                 textDecoration: 'none',
                 color: 'inherit',
-                fontWeight: item.paths.some(p => pathname.startsWith(p)) ? 700 : 400,
+                fontWeight: item.paths.some(p => stripLangPrefix(pathname).startsWith(p)) ? 700 : 400,
               }}
             >
               <Text font="body" as="span">{item.label}</Text>
@@ -285,7 +299,7 @@ export function Header() {
               <button
                 key={l.code}
                 type="button"
-                onClick={() => { setLang(l.code); setMobileMenuOpen(false); }}
+                onClick={() => { switchLang(l.code); setMobileMenuOpen(false); }}
                 style={{
                   display: 'flex',
                   width: '100%',

@@ -1,9 +1,9 @@
 'use client';
 
-import { createContext, useContext, useState, useCallback } from 'react';
+import { createContext, useContext, useCallback } from 'react';
 import bg from '@/locales/bg.json';
 import en from '@/locales/en.json';
-import { DEFAULT_LANG, type Lang } from '@/lib/i18n';
+import { DEFAULT_LANG, localePath as localePathFor, type Lang } from '@/lib/i18n';
 
 export { LANGUAGES, DEFAULT_LANG, type Lang } from '@/lib/i18n';
 
@@ -11,23 +11,30 @@ const translations: Record<Lang, typeof en> = { bg, en };
 
 interface LanguageContextValue {
   lang: Lang;
-  setLang: (lang: Lang) => void;
+  /** Maps a locale-neutral path (`/blog`) to this language's URL (`/bg/blog`). */
+  localePath: (path: string) => string;
   t: (key: string, params?: Record<string, string>) => string;
 }
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
-export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  // SSR and the first client render always use the default language (no
-  // hydration mismatch); LanguageGeoInit applies the geo-derived language on
-  // mount. Geolocation always wins on load — the manual switcher takes
-  // effect within the session (same behavior as the defied-app-ui web app).
-  const [lang, setLangState] = useState<Lang>(DEFAULT_LANG);
+/**
+ * The language is route-driven: English pages live at the root, Bulgarian
+ * under /bg, and each root layout mounts this provider with its language.
+ * Server and client render the same language, so search engines index real
+ * Bulgarian HTML on /bg URLs. Switching languages is a navigation (see the
+ * Header switcher), not a state change.
+ */
+export function LanguageProvider({
+  initialLang = DEFAULT_LANG,
+  children,
+}: {
+  initialLang?: Lang;
+  children: React.ReactNode;
+}) {
+  const lang = initialLang;
 
-  const setLang = (l: Lang) => {
-    setLangState(l);
-    document.documentElement.lang = l;
-  };
+  const localePath = useCallback((path: string) => localePathFor(lang, path), [lang]);
 
   const t = useCallback((key: string, params?: Record<string, string>): string => {
     const keys = key.split('.');
@@ -42,7 +49,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   }, [lang]);
 
   return (
-    <LanguageContext.Provider value={{ lang, setLang, t }}>
+    <LanguageContext.Provider value={{ lang, localePath, t }}>
       {children}
     </LanguageContext.Provider>
   );

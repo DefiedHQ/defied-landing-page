@@ -146,7 +146,9 @@
   },
   "common": {
     "by": "by",
-    "minRead": "min read"
+    "minRead": "min read",
+    "home": "Home",
+    "blog": "Blog"
   },
   "downloadApp": {
     "title": "Get the Defied App",

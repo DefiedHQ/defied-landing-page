@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { LandingPage } from '@/components/LandingPage';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { siteConfig, absoluteUrl } from '@/lib/seo';
+import { siteConfig, absoluteUrl, languageAlternates } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: {
@@ -19,6 +19,7 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: '/',
+    languages: languageAlternates('/'),
   },
 };
 

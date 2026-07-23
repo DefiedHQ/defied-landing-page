@@ -1,31 +1,30 @@
 import type { Metadata } from 'next';
 import { ResourcesPage } from '@/components/ResourcesPage';
 import { JsonLd } from '@/components/seo/JsonLd';
-import articles from '@/data/articles-en.json';
-import { siteConfig, absoluteUrl } from '@/lib/seo';
+import articles from '@/data/articles-bg.json';
+import { siteConfig, absoluteUrl, languageAlternates } from '@/lib/seo';
+import bg from '@/locales/bg.json';
 
 export const metadata: Metadata = {
-  title: 'Blog',
-  description:
-    'Articles, guides, and news about DeFi, blockchain, and decentralized finance from Defied.',
+  title: bg.meta.blogTitle,
+  description: bg.meta.blogDescription,
   openGraph: {
-    title: 'Blog | Defied',
-    description:
-      'Articles, guides, and news about DeFi, blockchain, and decentralized finance from Defied.',
-    url: absoluteUrl('/blog'),
+    title: `${bg.meta.blogTitle} | Defied`,
+    description: bg.meta.blogDescription,
+    url: absoluteUrl('/bg/blog'),
     siteName: siteConfig.name,
-    images: [{ url: absoluteUrl(siteConfig.ogImage), width: 1200, height: 630, alt: 'Defied – Blog' }],
+    images: [{ url: absoluteUrl(siteConfig.ogImage), width: 1200, height: 630, alt: 'Defied – Блог' }],
   },
   twitter: {
     card: 'summary_large_image',
     site: siteConfig.twitter,
-    title: 'Blog | Defied',
-    description:
-      'Articles, guides, and news about DeFi, blockchain, and decentralized finance from Defied.',
+    title: `${bg.meta.blogTitle} | Defied`,
+    description: bg.meta.blogDescription,
     images: [siteConfig.ogImage],
   },
   alternates: {
-    canonical: absoluteUrl('/blog'),
+    canonical: absoluteUrl('/bg/blog'),
+    languages: languageAlternates('/blog'),
   },
 };
 
@@ -36,10 +35,10 @@ export default function BlogRoute() {
         data={{
           '@context': 'https://schema.org',
           '@type': 'CollectionPage',
-          name: 'Defied Blog',
-          description:
-            'Articles, guides, and news about DeFi, blockchain, and decentralized finance from Defied.',
-          url: absoluteUrl('/blog'),
+          name: 'Defied Блог',
+          description: bg.meta.blogDescription,
+          url: absoluteUrl('/bg/blog'),
+          inLanguage: 'bg',
           isPartOf: {
             '@type': 'WebSite',
             name: siteConfig.name,
@@ -50,7 +49,7 @@ export default function BlogRoute() {
             itemListElement: articles.map((article, index) => ({
               '@type': 'ListItem',
               position: index + 1,
-              url: absoluteUrl(`/blog/${article.id}`),
+              url: absoluteUrl(`/bg/blog/${article.id}`),
               name: article.title,
             })),
           },
@@ -64,14 +63,14 @@ export default function BlogRoute() {
             {
               '@type': 'ListItem',
               position: 1,
-              name: 'Home',
-              item: siteConfig.url,
+              name: 'Начало',
+              item: absoluteUrl('/bg'),
             },
             {
               '@type': 'ListItem',
               position: 2,
-              name: 'Blog',
-              item: absoluteUrl('/blog'),
+              name: 'Блог',
+              item: absoluteUrl('/bg/blog'),
             },
           ],
         }}

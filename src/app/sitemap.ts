@@ -1,47 +1,59 @@
 import type { MetadataRoute } from 'next';
-import articles from '@/data/articles-en.json';
-import { siteConfig, absoluteUrl } from '@/lib/seo';
+import articlesEn from '@/data/articles-en.json';
+import { siteConfig, absoluteUrl, languageAlternates } from '@/lib/seo';
 
+/**
+ * Both language versions of every page are listed, each carrying hreflang
+ * alternates pointing at its counterpart (en at the root, bg under /bg,
+ * x-default → en). Article slugs are shared between the two languages.
+ */
 export default function sitemap(): MetadataRoute.Sitemap {
-  const articleUrls = articles.map((article) => ({
-    url: absoluteUrl(`/blog/${article.id}`),
-    lastModified: new Date(article.date),
-    changeFrequency: 'monthly' as const,
-    priority: 0.7,
-  }));
+  const localized = (
+    path: string,
+    rest: Omit<MetadataRoute.Sitemap[number], 'url' | 'alternates'>
+  ): MetadataRoute.Sitemap => {
+    const alternates = { languages: languageAlternates(path) };
+    return [
+      { url: path === '/' ? siteConfig.url : absoluteUrl(path), alternates, ...rest },
+      { url: absoluteUrl(path === '/' ? '/bg' : `/bg${path}`), alternates, ...rest },
+    ];
+  };
+
+  const articleUrls = articlesEn.flatMap((article) =>
+    localized(`/blog/${article.id}`, {
+      lastModified: new Date(article.date),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })
+  );
 
   return [
-    {
-      url: siteConfig.url,
+    ...localized('/', {
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 1,
       images: [absoluteUrl(siteConfig.ogImage)],
-    },
-    {
-      url: absoluteUrl('/blog'),
+    }),
+    ...localized('/blog', {
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.8,
-    },
-{
-      url: absoluteUrl('/risks'),
+    }),
+    ...localized('/risks', {
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.5,
-    },
-    {
-      url: absoluteUrl('/terms'),
+    }),
+    ...localized('/terms', {
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.3,
-    },
-    {
-      url: absoluteUrl('/privacy'),
+    }),
+    ...localized('/privacy', {
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.3,
-    },
+    }),
     ...articleUrls,
   ];
 }
