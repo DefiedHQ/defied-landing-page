@@ -46,8 +46,8 @@
     "f2Disclaimer": "Yields are variable and depend on protocol market conditions. This is not a guaranteed return or investment product.",
     "f3Title": "Exchange stablecoins",
     "f3Desc": "Swap between dollars and euros instantly, at transparent rates, with a simple fee. No hidden spread.",
-    "f1Chip": "No SWIFT · no €25 wire fees",
-    "f2Chip": "No lock-ups · withdraw any time",
+    "f1Chip": "No SWIFT · No €25 wire fees",
+    "f2Chip": "No lock-ups · Withdraw any time",
     "f3Chip": "Dollars ⇄ euros",
     "f2ImageAlt": "Woman relaxing on a balcony while her balance earns",
     "f1ImageAlt": "Paying instantly with a phone",
@@ -81,7 +81,7 @@
     "title": "Financial tools this powerful shouldn't require a bank's permission.",
     "body1": "Defied Money gives every individual direct access to a transparent, secure financial system - no intermediaries, no permission required. Built in Sofia, Bulgaria, and made for the entire European Economic Area: one account for your euros and dollars, wherever in Europe you are.",
     "imageAlt": "Sofia, Bulgaria business district at dusk, home of Defied Money",
-    "chip": "Sofia, Bulgaria · built for the EEA"
+    "chip": "Sofia, Bulgaria · Built for the EEA"
   },
   "aboutCarousel": {
     "title": "Simpler than a bank account. More powerful than one.",

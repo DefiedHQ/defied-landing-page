@@ -306,7 +306,7 @@ export function LandingPage() {
                 <Text font="label1" as="span" style={{ fontWeight: 600, color: 'rgba(255,255,255,0.8)', textTransform: 'uppercase', letterSpacing: '0.06em', fontSize: '13px' }}>
                   {t('imageSection.sectionTitle')}
                 </Text>
-                <Text font="display2" as="h2" className="title-tight-lh" style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)', fontWeight: 500, color: '#FFFFFF' }}>
+                <Text font="display2" as="h2" className="title-tight-lh" style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)', fontWeight: 500, lineHeight: 1.05, color: '#FFFFFF' }}>
                   {t('imageSection.title')}
                 </Text>
                 <Text font="body" as="p" style={{ fontSize: '17px', lineHeight: '28px', color: 'rgba(255,255,255,0.88)' }}>
