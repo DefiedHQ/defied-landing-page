@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: bg.meta.homeTitle,
     description: bg.meta.homeDescription,
     url: absoluteUrl('/bg'),
-    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: 'Defied Money' }],
+    images: [{ url: siteConfig.ogImageBg, width: 1200, height: 630, alt: 'Defied Money' }],
   },
   twitter: {
     title: bg.meta.homeTitle,
@@ -48,7 +48,7 @@ const organizationSchema = {
     '@type': 'ImageObject',
     url: absoluteUrl(siteConfig.logo),
   },
-  image: absoluteUrl(siteConfig.ogImage),
+  image: absoluteUrl(siteConfig.ogImageBg),
   sameAs: [...siteConfig.socials],
   contactPoint: {
     '@type': 'ContactPoint',
@@ -87,7 +87,7 @@ const webAppSchema = {
     'Непопечителска сметка с пълен собствен контрол чрез вход с имейл',
     'Мрежовите такси са покрити за поддържаните действия',
   ],
-  screenshot: absoluteUrl(siteConfig.ogImage),
+  screenshot: absoluteUrl(siteConfig.ogImageBg),
 };
 
 /* FAQ structured data mirrors the visible FAQ section: the same locale

@@ -46,16 +46,16 @@ export const metadata: Metadata = {
   },
   manifest: '/manifest.webmanifest',
   openGraph: {
-    title: bg.meta.defaultTitle,
+    title: bg.meta.ogTitle,
     description: bg.meta.homeDescription,
     siteName: siteConfig.name,
     url: `${siteConfig.url}/bg`,
     images: [
       {
-        url: siteConfig.ogImage,
+        url: siteConfig.ogImageBg,
         width: 1200,
         height: 630,
-        alt: bg.meta.defaultTitle,
+        alt: bg.meta.ogTitle,
       },
     ],
     type: 'website',
@@ -66,9 +66,9 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: siteConfig.twitter,
     creator: siteConfig.twitter,
-    title: bg.meta.defaultTitle,
+    title: bg.meta.ogTitle,
     description: bg.meta.homeDescription,
-    images: [siteConfig.ogImage],
+    images: [siteConfig.ogImageBg],
   },
   robots: {
     index: true,

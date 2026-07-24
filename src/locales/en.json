@@ -253,7 +253,7 @@
   "meta": {
     "defaultTitle": "Defied Money - Earn on Euros and Dollars. Account Only You Control.",
     "homeTitle": "Earn on Euros and Dollars - Account Only You Control | Defied Money",
-    "homeDescription": "Defied Money is a non-custodial platform for holding, growing and sending euro (EURC) and dollar (USDC) stablecoins across Europe. Earn from open lending markets, send money in seconds - you keep full control of your funds. Available in the EEA.",
+    "homeDescription": "Defied Money is a non-custodial account for your digital euros (EURC) and dollars (USDC). Earn on your balance from open lending markets and send money in seconds - only you control your funds. Available across the EEA.",
     "aboutTitle": "About us",
     "aboutDescription": "Defied Money is a non-custodial platform for digital euros and dollars - Bulgaria's first. Hold, grow and send euros and dollars from an account only you control.",
     "blogTitle": "Blog",
@@ -264,7 +264,8 @@
     "termsDescription": "Terms of Use for the Defied Money platform. Read our terms and conditions before using our services.",
     "risksTitle": "Risks",
     "risksDescription": "Learn about the risks associated with DeFi protocols and cryptocurrencies. Invest informed.",
-    "articleNotFound": "Article not found"
+    "articleNotFound": "Article not found",
+    "ogTitle": "Defied Money - Your money works for you. Always."
   },
   "footer": {
     "useful": "Useful",

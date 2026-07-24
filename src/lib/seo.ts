@@ -2,8 +2,9 @@ export const siteConfig = {
   name: 'Defied Money',
   url: process.env.NEXT_PUBLIC_BASE_URL || 'https://defied.money',
   description:
-    'Defied Money is a non-custodial platform for holding, growing and sending euro (EURC) and dollar (USDC) stablecoins across Europe. Earn from open lending markets, send money in seconds - you keep full control of your funds. Available in the EEA.',
+    'Defied Money is a non-custodial account for your digital euros (EURC) and dollars (USDC). Earn on your balance from open lending markets and send money in seconds - only you control your funds. Available across the EEA.',
   ogImage: '/og-image.png',
+  ogImageBg: '/og-image-bg.png',
   logo: '/defied_squared_logo_blue.svg',
   twitter: '@defied_money',
   socials: [
