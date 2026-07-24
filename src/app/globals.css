@@ -772,6 +772,14 @@ select:focus-visible,
   min-height: 280px;
   justify-content: flex-end;
 }
+/* Mobile: the stacked cards were only as tall as their overlay text, leaving
+   a thin photo strip mostly hidden behind the scrim. A portrait ratio lets
+   the photo show above the text (the card still grows if text needs more). */
+@media (max-width: 767px) {
+  .feature-card--photo {
+    aspect-ratio: 4 / 5;
+  }
+}
 /* Photo cell spans both rows on desktop */
 @media (min-width: 768px) {
   .features-grid-2x2 > .feature-card--tall {
@@ -932,6 +940,26 @@ select:focus-visible,
   left: auto;
   bottom: 24px;
   right: 24px;
+}
+/* Mobile: long (Bulgarian) labels were wrapping inside the pill and
+   distorting it. Smaller type + tighter padding keeps chips on one line;
+   if one still wraps, balanced lines keep the lozenge symmetrical. */
+@media (max-width: 767px) {
+  .photo-chip {
+    top: 16px;
+    left: 16px;
+    max-width: calc(100% - 32px);
+    padding: 9px 14px;
+    font-size: 13px;
+    line-height: 1.3;
+    text-wrap: balance;
+  }
+  /* Keep the bottom-right variant anchored to one corner only — inheriting
+     the left offset above would stretch the pill across the card */
+  .photo-chip--br {
+    left: auto;
+    right: 16px;
+  }
 }
 
 /* ═══════════════════════════════════════════════════════════════
