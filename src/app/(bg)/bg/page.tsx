@@ -6,17 +6,17 @@ import bg from '@/locales/bg.json';
 
 export const metadata: Metadata = {
   title: {
-    absolute: bg.meta.defaultTitle,
+    absolute: bg.meta.homeTitle,
   },
   description: bg.meta.homeDescription,
   openGraph: {
-    title: bg.meta.defaultTitle,
+    title: bg.meta.homeTitle,
     description: bg.meta.homeDescription,
     url: absoluteUrl('/bg'),
     images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: 'Defied Money' }],
   },
   twitter: {
-    title: bg.meta.defaultTitle,
+    title: bg.meta.homeTitle,
     description: bg.meta.homeDescription,
   },
   alternates: {
@@ -70,7 +70,7 @@ const webAppSchema = {
   name: siteConfig.name,
   url: absoluteUrl('/bg'),
   description:
-    'Непопечителска платформа за ончейн богатство: печели върху баланса си в евро и долари чрез отворени кредитни пазари, изпращай пари навсякъде за секунди и плащай с виртуална карта - от сметка, която само ти контролираш.',
+    'Непопечителска платформа за дигитални евро (EURC) и долари (USDC): печели върху баланса си чрез отворени кредитни пазари и изпращай пари навсякъде за секунди - от сметка, която само ти контролираш.',
   inLanguage: 'bg',
   applicationCategory: 'FinanceApplication',
   operatingSystem: 'Any',
@@ -84,7 +84,6 @@ const webAppSchema = {
     'Изпращане и получаване на стейбълкойни USDC и EURC глобално за секунди',
     'Доходност върху баланса чрез децентрализирани протоколи за кредитиране',
     'Мигновена обмяна между USDC и EURC',
-    'Виртуална дебитна карта за плащане със стейбълкойн баланса навсякъде, където се приема Visa',
     'Непопечителска сметка с пълен собствен контрол чрез вход с имейл',
     'Мрежовите такси са покрити за поддържаните действия',
   ],

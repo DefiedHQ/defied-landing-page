@@ -18,8 +18,9 @@
     "titleEnd": "Always.",
     "ctaHeader": "Sign in",
     "disclaimer": "Accessing decentralized lending protocols involves risk. Past yields are not guaranteed. Defied Money provides a non-custodial interface to public blockchain protocols - it does not manage or invest your funds.",
-    "cardSubtitle": "The non-custodial platform for onchain wealth. Grow your euros and dollars, send money in seconds - from an account only you control.",
-    "earlyAccess": "Get early access"
+    "cardSubtitle": "Grow your euros and dollars and send money in seconds - from an account only you control. No bank required.",
+    "earlyAccess": "Get early access",
+    "imageAlt": "Person relaxing while their savings earn in the Defied Money app"
   },
   "earning": {
     "title": "Earning. Even on Sundays.",
@@ -29,7 +30,7 @@
   },
   "cta": {
     "heading": "Start earning on your money with Defied Money",
-    "subheading": "The non-custodial platform for onchain wealth. Earn on your balance, send euros and dollars globally in seconds, and pay with a virtual card - no bank required."
+    "subheading": "Earn on your balance and send euros and dollars globally in seconds - no bank required."
   },
   "infrastructure": {
     "title": "Built on trusted infrastructure",
@@ -37,35 +38,50 @@
   },
   "features": {
     "sectionTitle": "Everything your bank does. And what it never will.",
-    "sectionSubtitle": "Payments, earning, and a virtual card - from an account only you control.",
+    "sectionSubtitle": "Payments and earning - from an account only you control.",
     "f1Title": "Send money in seconds",
-    "f1Desc": "Send digital euros and dollars to anyone, anywhere, in seconds. No SWIFT codes. No 3–5 business day waits. No €25 wire fees. Just an email address and a confirmation.",
+    "f1Desc": "Send digital euros and dollars to anyone, anywhere. Just an email address and a confirmation - and we cover the network fees.",
     "f2Title": "Earn on your balance",
-    "f2Desc": "Your balance earns while it sits. Defied Money connects you to the same lending markets used by professional investors - see the current rates in the app. No lock-ups. Withdraw any time.",
+    "f2Desc": "Your balance earns while it sits. Defied Money connects you to the same lending markets used by professional investors - see the current rates in the app.",
     "f2Disclaimer": "Yields are variable and depend on protocol market conditions. This is not a guaranteed return or investment product.",
     "f3Title": "Exchange stablecoins",
-    "f3Desc": "Swap between USDC (dollar-pegged) and EURC (euro-pegged) instantly, at transparent rates, with a simple fee. No hidden spread.",
-    "f4Title": "Onchain markets, one tap away",
-    "f4Desc": "Put your money to work in open lending and liquidity markets - Aave, Morpho, Compound and more - directly from your account. We handle the technical layer. You keep full control, always.",
-    "f5Title": "Virtual debit card",
-    "f5Desc": "Spend your balance anywhere Visa is accepted. Top up from your account in one tap.",
-    "f5Card": "Money that travels like you do. Pay wherever Visa is accepted, top up from your account in one tap."
+    "f3Desc": "Swap between dollars and euros instantly, at transparent rates, with a simple fee. No hidden spread.",
+    "f1Chip": "No SWIFT · no €25 wire fees",
+    "f2Chip": "No lock-ups · withdraw any time",
+    "f3Chip": "Dollars ⇄ euros",
+    "f2ImageAlt": "Woman relaxing on a balcony while her balance earns",
+    "f1ImageAlt": "Paying instantly with a phone",
+    "f3ImageAlt": "Travelers in Europe exchanging dollars and euros"
+  },
+  "steps": {
+    "title": "Up and running in minutes",
+    "s1Title": "Sign up with your email",
+    "s1Desc": "Your personal account is created automatically - nothing technical to set up, and only you can open it.",
+    "s2Title": "Add euros or dollars",
+    "s2Desc": "Top up from your bank account via our regulated partner Bridge.xyz. Your money becomes digital euros and dollars in your own account.",
+    "s3Title": "Your balance starts earning",
+    "s3Desc": "Put your balance to work in the same open lending markets professional investors use - and send, exchange or spend it whenever you like. We cover the network fees.",
+    "chip": "Just an email - nothing technical",
+    "imageAlt": "Signing up for Defied Money with an email address"
   },
   "advantages": {
-    "title": "The financial system wasn't built for you. This one is.",
-    "subtitle": "Digital euros and dollars, self-custody, and open lending markets - one account for your onchain wealth. No bank required.",
     "row1Heading": "Spend stablecoins",
     "row1Subtext": "Stablecoins are pegged 1:1 to real currencies - USDC to the US dollar, EURC to the euro. The speed and global reach of blockchain, with the price stability of the money you already use. Send and receive 24/7, weekends included.",
-    "row3Heading": "Wealth tools, without the gatekeepers",
-    "row3Subtext": "The onchain markets where wealth is managed are open to anyone with an internet connection - no approval process, no minimum balance, no private-banking tier. Defied Money handles the technical side while you stay in full control of your money.",
     "bandTitle": "An account that's actually yours",
-    "bandBody": "Your money lives in an onchain account only you can open - one no bank can freeze. Not on our servers, not in our control. It keeps working even if Defied Money doesn't.",
-    "bandCta": "How self-custody works"
+    "bandBody": "Your money lives in an account only you can open - one no bank can freeze. Not on our servers, not in our control. It keeps working even if Defied Money doesn't.",
+    "bandCta": "Who controls my money?",
+    "stablecoinsKicker": "What are stablecoins?",
+    "bandChip": "Only you hold the key",
+    "stablecoinsChip": "1 USDC = $1 · 1 EURC = €1",
+    "bandImageAlt": "Adding money to a self-custodial Defied Money account",
+    "stablecoinsImageAlt": "Spending stablecoins while traveling in Europe"
   },
   "imageSection": {
     "sectionTitle": "Our mission",
     "title": "Financial tools this powerful shouldn't require a bank's permission.",
-    "body1": "Banks decide when you can access your money, how much you can move, and who you can send it to - built for institutions, not people. Defied Money gives every individual direct access to a transparent, secure financial system: send money globally, earn on your balance, and stay in full control of your funds. No intermediaries. No permission required."
+    "body1": "Defied Money gives every individual direct access to a transparent, secure financial system - no intermediaries, no permission required. Built in Sofia, Bulgaria, and made for the entire European Economic Area: one account for your euros and dollars, wherever in Europe you are.",
+    "imageAlt": "Sofia, Bulgaria business district at dusk, home of Defied Money",
+    "chip": "Sofia, Bulgaria · built for the EEA"
   },
   "aboutCarousel": {
     "title": "Simpler than a bank account. More powerful than one.",
@@ -235,11 +251,11 @@
     "faqTitle": "Frequently asked questions"
   },
   "meta": {
-    "defaultTitle": "Defied Money - Onchain Wealth Platform. Earn on Euros, Send Money Globally.",
-    "homeTitle": "Onchain Wealth Platform. Earn on Euros, Send Money Globally.",
-    "homeDescription": "The non-custodial platform for onchain wealth. Earn on your balance, send money in seconds, and pay with a virtual card - from an account only you control. Available across Europe.",
+    "defaultTitle": "Defied Money - Earn on Euros and Dollars. Account Only You Control.",
+    "homeTitle": "Earn on Euros and Dollars - Account Only You Control | Defied Money",
+    "homeDescription": "Defied Money is a non-custodial platform for holding, growing and sending euro (EURC) and dollar (USDC) stablecoins across Europe. Earn from open lending markets, send money in seconds - you keep full control of your funds. Available in the EEA.",
     "aboutTitle": "About us",
-    "aboutDescription": "Defied Money is the non-custodial platform for onchain wealth - Bulgaria's first. Hold, grow and send euros and dollars from an account only you control.",
+    "aboutDescription": "Defied Money is a non-custodial platform for digital euros and dollars - Bulgaria's first. Hold, grow and send euros and dollars from an account only you control.",
     "blogTitle": "Blog",
     "blogDescription": "Articles, guides, and news about DeFi, blockchain, and decentralized finance from Defied Money.",
     "privacyTitle": "Privacy Policy",
@@ -269,10 +285,5 @@
   "blogSection": {
     "title": "From the blog",
     "viewAll": "All articles"
-  },
-  "origin": {
-    "title": "Built in Sofia. Made for all of Europe.",
-    "body": "Defied Money is built in Sofia, Bulgaria - the country's first non-custodial platform for onchain wealth. It works across the entire European Economic Area: one account for your euros and dollars, wherever in Europe you are.",
-    "imageAlt": "Alexander Nevsky Cathedral in Sofia, Bulgaria, by night"
   }
 }

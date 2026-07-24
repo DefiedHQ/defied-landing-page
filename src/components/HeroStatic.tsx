@@ -16,11 +16,12 @@ export function HeroStatic() {
 
   return (
     <div className="hero-card">
-      {/* Photo backdrop - decorative, the headline carries the message */}
-      <div className="hero-card-photo" aria-hidden="true">
+      {/* Photo backdrop - the headline carries the message; the alt carries
+          the scene for assistive tech and image search */}
+      <div className="hero-card-photo">
         <Image
           src="/hero-balloon.jpg"
-          alt=""
+          alt={t('hero.imageAlt')}
           fill
           priority
           sizes="(max-width: 1248px) 100vw, 1200px"

@@ -56,7 +56,8 @@ export function InfoSection() {
         </Text>
       </div>
 
-      <div className="faq-accordion" style={{ marginTop: '40px' }}>
+      {/* Constrained for a readable line length (design review) */}
+      <div className="faq-accordion" style={{ maxWidth: '800px', margin: '40px auto 0' }}>
       <Accordion
         activeKey={activeKey}
         setActiveKey={handleToggle}

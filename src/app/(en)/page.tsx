@@ -6,17 +6,17 @@ import en from '@/locales/en.json';
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Defied Money - Earn on your euros. Send money globally. No bank needed.',
+    absolute: en.meta.homeTitle,
   },
-  description: siteConfig.description,
+  description: en.meta.homeDescription,
   openGraph: {
-    title: 'Defied Money - Earn on your euros. Send money globally. No bank needed.',
-    description: siteConfig.description,
+    title: en.meta.homeTitle,
+    description: en.meta.homeDescription,
     images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: 'Defied Money' }],
   },
   twitter: {
-    title: 'Defied Money - Earn on your euros. Send money globally. No bank needed.',
-    description: siteConfig.description,
+    title: en.meta.homeTitle,
+    description: en.meta.homeDescription,
   },
   alternates: {
     canonical: '/',
@@ -77,7 +77,7 @@ const webAppSchema = {
   name: siteConfig.name,
   url: siteConfig.url,
   description:
-    'Non-custodial platform for onchain wealth: earn on your euro and dollar balance through open lending markets, send money anywhere in seconds, and pay with a virtual card - from an account only you control.',
+    'Non-custodial platform for euro (EURC) and dollar (USDC) stablecoins: earn on your balance through open lending markets and send money anywhere in seconds - from an account only you control.',
   applicationCategory: 'FinanceApplication',
   operatingSystem: 'Any',
   browserRequirements: 'Requires JavaScript',
@@ -90,7 +90,6 @@ const webAppSchema = {
     'Send and receive USDC and EURC stablecoins globally in seconds',
     'Earn on your balance through decentralized lending protocols',
     'Exchange between USDC and EURC instantly',
-    'Virtual debit card to spend stablecoin balance anywhere Visa is accepted',
     'Non-custodial account with full self-custody via email login',
     'Network fees covered on supported actions',
   ],
