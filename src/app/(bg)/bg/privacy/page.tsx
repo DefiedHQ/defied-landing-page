@@ -11,14 +11,14 @@ export const metadata: Metadata = {
     title: `${bg.meta.privacyTitle} | Defied Money`,
     description: bg.meta.privacyDescription,
     siteName: siteConfig.name,
-    images: [{ url: siteConfig.ogImageBg, width: 1200, height: 630, alt: 'Defied Money – Политика за поверителност' }],
+    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: 'Defied Money – Политика за поверителност' }],
   },
   twitter: {
     card: 'summary_large_image',
     site: siteConfig.twitter,
     title: `${bg.meta.privacyTitle} | Defied Money`,
     description: bg.meta.privacyDescription,
-    images: [siteConfig.ogImageBg],
+    images: [siteConfig.ogImage],
   },
   alternates: {
     canonical: '/bg/privacy',

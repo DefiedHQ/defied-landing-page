@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     url: `${siteConfig.url}/bg`,
     images: [
       {
-        url: siteConfig.ogImageBg,
+        url: siteConfig.ogImage,
         width: 1200,
         height: 630,
         alt: 'Defied Money — сметка за дигитални евро и долари',
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     creator: siteConfig.twitter,
     title: bg.meta.ogTitle,
     description: bg.meta.homeDescription,
-    images: [siteConfig.ogImageBg],
+    images: [siteConfig.ogImage],
   },
   robots: {
     index: true,

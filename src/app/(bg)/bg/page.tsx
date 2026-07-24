@@ -13,13 +13,13 @@ export const metadata: Metadata = {
     title: bg.meta.homeTitle,
     description: bg.meta.homeDescription,
     url: absoluteUrl('/bg'),
-    images: [{ url: siteConfig.ogImageBg, width: 1200, height: 630, alt: 'Defied Money — сметка за дигитални евро и долари' }],
+    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: 'Defied Money — сметка за дигитални евро и долари' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: bg.meta.homeTitle,
     description: bg.meta.homeDescription,
-    images: [siteConfig.ogImageBg],
+    images: [siteConfig.ogImage],
   },
   alternates: {
     canonical: '/bg',
@@ -50,7 +50,7 @@ const organizationSchema = {
     '@type': 'ImageObject',
     url: absoluteUrl(siteConfig.logo),
   },
-  image: absoluteUrl(siteConfig.ogImageBg),
+  image: absoluteUrl(siteConfig.ogImage),
   sameAs: [...siteConfig.socials],
   contactPoint: {
     '@type': 'ContactPoint',
@@ -89,7 +89,7 @@ const webAppSchema = {
     'Непопечителска сметка с пълен собствен контрол чрез вход с имейл',
     'Мрежовите такси са покрити за поддържаните действия',
   ],
-  screenshot: absoluteUrl(siteConfig.ogImageBg),
+  screenshot: absoluteUrl(siteConfig.ogImage),
 };
 
 /* FAQ structured data mirrors the visible FAQ section: the same locale
