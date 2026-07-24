@@ -4,7 +4,7 @@ export const siteConfig = {
   description:
     'Defied Money is a non-custodial account for your digital euros (EURC) and dollars (USDC). Earn on your balance from open lending markets and send money in seconds - only you control your funds. Available across the EEA.',
   ogImage: '/og-image.png',
-  ogImageBg: '/og-image-bg.png',
+  ogImageBg: '/og-image-bg.jpg',
   logo: '/defied_squared_logo_blue.svg',
   twitter: '@defied_money',
   socials: [

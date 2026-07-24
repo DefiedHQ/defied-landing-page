@@ -13,11 +13,13 @@ export const metadata: Metadata = {
     title: bg.meta.homeTitle,
     description: bg.meta.homeDescription,
     url: absoluteUrl('/bg'),
-    images: [{ url: siteConfig.ogImageBg, width: 1200, height: 630, alt: 'Defied Money' }],
+    images: [{ url: siteConfig.ogImageBg, width: 1200, height: 630, alt: 'Defied Money — сметка за дигитални евро и долари' }],
   },
   twitter: {
+    card: 'summary_large_image',
     title: bg.meta.homeTitle,
     description: bg.meta.homeDescription,
+    images: [siteConfig.ogImageBg],
   },
   alternates: {
     canonical: '/bg',
