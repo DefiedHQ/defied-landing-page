@@ -125,7 +125,7 @@ export function LandingPage() {
             <div className="bleed-band" style={{ background: 'var(--surface)' }}>
               <div className="bleed-band-photo">
                 <Image
-                  src="/explore-add-money.jpg"
+                  src="/woman-with-phone-city.jpg"
                   alt={t('advantages.bandImageAlt')}
                   fill
                   loading="lazy"
@@ -162,9 +162,9 @@ export function LandingPage() {
           {/* All-photo grid — the earn cell spans both rows on desktop */}
           <div className="features-grid-2x2">
             {[
-              { key: 'earn', title: t('features.f2Title'), desc: t('features.f2Desc'), chip: t('features.f2Chip'), image: '/hero-earn.jpg', imageAlt: t('features.f2ImageAlt'), tall: true },
-              { key: 'send', title: t('features.f1Title'), desc: t('features.f1Desc'), chip: t('features.f1Chip'), image: '/explore-card.jpg', imageAlt: t('features.f1ImageAlt'), tall: false },
-              { key: 'exchange', title: t('features.f3Title'), desc: t('features.f3Desc'), chip: t('features.f3Chip'), image: '/explore-exchange.jpg', imageAlt: t('features.f3ImageAlt'), tall: false, imagePosition: '50% 25%' },
+              { key: 'earn', title: t('features.f2Title'), desc: t('features.f2Desc'), chip: t('features.f2Chip'), image: '/black-woman-with-saving-piggy-bank.jpg', imageAlt: t('features.f2ImageAlt'), tall: true },
+              { key: 'send', title: t('features.f1Title'), desc: t('features.f1Desc'), chip: t('features.f1Chip'), image: '/hands-phone-card.jpg', imageAlt: t('features.f1ImageAlt'), tall: false },
+              { key: 'exchange', title: t('features.f3Title'), desc: t('features.f3Desc'), chip: t('features.f3Chip'), image: '/explore-card.jpg', imageAlt: t('features.f3ImageAlt'), tall: false },
             ].map((feature, i) => (
               /* Plain wrapper carries the grid-child modifier class —
                  framer-motion@10's m.div typings don't accept className */
@@ -183,7 +183,6 @@ export function LandingPage() {
                       fill
                       loading="lazy"
                       sizes="(max-width: 768px) 100vw, 584px"
-                      style={'imagePosition' in feature && feature.imagePosition ? { objectPosition: feature.imagePosition } : undefined}
                     />
                     <span className="photo-chip">{feature.chip}</span>
                     <div className="feature-card-photo-overlay">
@@ -206,7 +205,7 @@ export function LandingPage() {
             <div className="bleed-band" style={{ background: 'var(--surface)' }}>
               <div className="bleed-band-photo">
                 <Image
-                  src="/explore-earn.jpg"
+                  src="/woman-phone-laptop-cafe.jpg"
                   alt={t('steps.imageAlt')}
                   fill
                   loading="lazy"
@@ -264,7 +263,7 @@ export function LandingPage() {
             <div className="bleed-band bleed-band--photo-right" style={{ background: 'var(--mist)' }}>
               <div className="bleed-band-photo">
                 <Image
-                  src="/hero-travel.jpg"
+                  src="/friends-with-phone-outside.jpg"
                   alt={t('advantages.stablecoinsImageAlt')}
                   fill
                   loading="lazy"

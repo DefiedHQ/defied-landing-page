@@ -49,9 +49,9 @@
     "f1Chip": "No SWIFT · No €25 wire fees",
     "f2Chip": "No lock-ups · Withdraw any time",
     "f3Chip": "Dollars ⇄ euros",
-    "f2ImageAlt": "Woman relaxing on a balcony while her balance earns",
-    "f1ImageAlt": "Paying instantly with a phone",
-    "f3ImageAlt": "Travelers in Europe exchanging dollars and euros"
+    "f2ImageAlt": "Woman smiling while adding savings to a piggy bank",
+    "f1ImageAlt": "Hands holding a phone and a payment card at a coffee table",
+    "f3ImageAlt": "Paying instantly with a phone"
   },
   "steps": {
     "title": "Up and running in minutes",
@@ -62,7 +62,7 @@
     "s3Title": "Your balance starts earning",
     "s3Desc": "Put your balance to work in the same open lending markets professional investors use - and send, exchange or spend it whenever you like. We cover the network fees.",
     "chip": "Just an email - nothing technical",
-    "imageAlt": "Signing up for Defied Money with an email address"
+    "imageAlt": "Woman signing up on her phone at a cafe"
   },
   "advantages": {
     "row1Heading": "Spend stablecoins",
@@ -73,8 +73,8 @@
     "stablecoinsKicker": "What are stablecoins?",
     "bandChip": "Only you hold the key",
     "stablecoinsChip": "1 USDC = $1 · 1 EURC = €1",
-    "bandImageAlt": "Adding money to a self-custodial Defied Money account",
-    "stablecoinsImageAlt": "Spending stablecoins while traveling in Europe"
+    "bandImageAlt": "Woman in the city checking her account on her phone",
+    "stablecoinsImageAlt": "Two friends outside smiling at a phone screen"
   },
   "imageSection": {
     "sectionTitle": "Our mission",

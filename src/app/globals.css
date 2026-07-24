@@ -878,14 +878,20 @@ select:focus-visible,
   .bleed-band--photo-right {
     flex-direction: row-reverse;
   }
+  /* Exact 50/50 halves — the photo/text split line sits at the center of
+     the band, aligning with the features grid gutter above. flex-basis 50%
+     with grow/shrink locked, and min-width 0 so long text can't push the
+     divider off-center. */
   .bleed-band-photo {
     width: auto;
-    flex: 1;
+    flex: 0 0 50%;
+    min-width: 0;
     aspect-ratio: auto;
     min-height: 420px;
   }
   .bleed-band-text {
-    flex: 1.1;
+    flex: 0 0 50%;
+    min-width: 0;
   }
 }
 
@@ -896,7 +902,9 @@ select:focus-visible,
   top: 24px;
   left: 24px;
   max-width: calc(100% - 48px);
-  background: #FFFFFF;
+  /* Frosted glass — translucent white kept high-alpha so the ink text
+     stays WCAG-legible over busy photos; solid fallback below */
+  background: rgba(255, 255, 255, 0.92);
   color: var(--ink);
   border-radius: 100px;
   padding: 11px 18px;
@@ -904,6 +912,13 @@ select:focus-visible,
   font-weight: 500;
   line-height: 1.2;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.10);
+}
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .photo-chip {
+    background: rgba(255, 255, 255, 0.62);
+    -webkit-backdrop-filter: blur(14px) saturate(1.6);
+    backdrop-filter: blur(14px) saturate(1.6);
+  }
 }
 .photo-chip--br {
   top: auto;
