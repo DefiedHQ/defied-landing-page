@@ -12,14 +12,14 @@
     "mobileApp": "Mobile app"
   },
   "hero": {
-    "title": "Your money, working for you. Always.",
-    "titleStart": "Your money,",
-    "titleHighlight": "working for you.",
+    "title": "Your money works for you. Always.",
+    "titleStart": "Your money",
+    "titleHighlight": "works for you.",
     "titleEnd": "Always.",
     "ctaHeader": "Sign in",
     "disclaimer": "Accessing decentralized lending protocols involves risk. Past yields are not guaranteed. Defied Money provides a non-custodial interface to public blockchain protocols - it does not manage or invest your funds.",
     "cardSubtitle": "Grow your euros and dollars and send money in seconds - from an account only you control. No bank required.",
-    "earlyAccess": "Get early access",
+    "earlyAccess": "Create account",
     "imageAlt": "Person relaxing while their savings earn in the Defied Money app"
   },
   "earning": {
@@ -29,7 +29,7 @@
     "screenshotAlt": "The Defied Money app in a browser"
   },
   "cta": {
-    "heading": "Start earning on your money with Defied Money",
+    "heading": "Put your money to work - with Defied Money",
     "subheading": "Earn on your balance and send euros and dollars globally in seconds - no bank required."
   },
   "infrastructure": {
@@ -65,7 +65,7 @@
     "imageAlt": "Woman signing up on her phone at a cafe"
   },
   "advantages": {
-    "row1Heading": "Spend stablecoins",
+    "row1Heading": "Money that's stable by design",
     "row1Subtext": "Stablecoins are pegged 1:1 to real currencies - USDC to the US dollar, EURC to the euro. The speed and global reach of blockchain, with the price stability of the money you already use. Send and receive 24/7, weekends included.",
     "bandTitle": "An account that's actually yours",
     "bandBody": "Your money lives in an account only you can open - one no bank can freeze. Not on our servers, not in our control. It keeps working even if Defied Money doesn't.",
@@ -78,7 +78,7 @@
   },
   "imageSection": {
     "sectionTitle": "Our mission",
-    "title": "Financial tools this powerful shouldn't require a bank's permission.",
+    "title": "Your money shouldn't need permission",
     "body1": "Defied Money gives every individual direct access to a transparent, secure financial system - no intermediaries, no permission required. Built in Sofia, Bulgaria, and made for the entire European Economic Area: one account for your euros and dollars, wherever in Europe you are.",
     "imageAlt": "Sofia, Bulgaria business district at dusk, home of Defied Money",
     "chip": "Sofia, Bulgaria · Built for the EEA"

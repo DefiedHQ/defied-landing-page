@@ -186,7 +186,7 @@ export function LandingPage() {
                     />
                     <span className="photo-chip">{feature.chip}</span>
                     <div className="feature-card-photo-overlay">
-                      <Text font="title3" as="h3" style={{ fontWeight: 600, color: '#FFFFFF' }}>{feature.title}</Text>
+                      <Text font="title3" as="h3" className="card-title" style={{ fontWeight: 600, color: '#FFFFFF' }}>{feature.title}</Text>
                       <Text font="body" as="p" style={{ fontSize: '15px', lineHeight: '24px', color: 'rgba(255,255,255,0.88)' }}>{feature.desc}</Text>
                     </div>
                   </article>
@@ -226,7 +226,7 @@ export function LandingPage() {
                     <div key={i} className="step-row">
                       <div className="step-number" aria-hidden="true">{i + 1}</div>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                        <Text font="title4" as="h3" style={{ fontWeight: 600 }}>{step.title}</Text>
+                        <Text font="title4" as="h3" className="card-title" style={{ fontWeight: 600 }}>{step.title}</Text>
                         <Text font="body" as="p" color="fgMuted" style={{ fontSize: '15px', lineHeight: '24px' }}>{step.desc}</Text>
                       </div>
                     </div>

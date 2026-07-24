@@ -895,6 +895,13 @@ select:focus-visible,
   }
 }
 
+/* Card titles — one line-height across every card variant (feature photo
+   cards, steps, about carousel, blog cards), overriding the per-variant
+   CDS title3/title4 defaults */
+.card-title {
+  line-height: 1.25;
+}
+
 /* Chip — white pill floated on photos for proof points */
 .photo-chip {
   position: absolute;
@@ -1395,8 +1402,26 @@ select:focus-visible,
 
 /* ═══════════════════════════════════════════════════════════════
    Photo treatment consistency (design review, Phase 3)
-   Every photo card: saturate(0.85) + hairline inset ring.
+   Every photo card: saturate(0.85) + brand color-wash + hairline ring.
    ═══════════════════════════════════════════════════════════════ */
+/* Brand grade — one navy color-wash over every lifestyle photo. The mixed
+   stock casts (pink, warm wood, cool city) all get nudged toward the same
+   ink-navy family the scrims already use. mix-blend "color" shifts hue
+   only, so skin tones and exposure survive; browsers without blend
+   support just get a faint navy veil, which reads the same. */
+.hero-card-photo::before,
+.feature-card--photo::before,
+.bleed-band-photo::before,
+.mission-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: #0B1B3A;
+  mix-blend-mode: color;
+  opacity: 0.15;
+  pointer-events: none;
+}
 .hero-card-photo::after,
 .feature-card--photo::after {
   content: '';

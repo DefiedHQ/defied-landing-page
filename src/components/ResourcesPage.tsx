@@ -144,7 +144,7 @@ export function ResourcesPage() {
                     <Text
                       font="title3"
                       as="h3"
-                      className="card-group-underline"
+                      className="card-group-underline card-title"
                       style={{
                         WebkitLineClamp: 2,
                         WebkitBoxOrient: 'vertical',
