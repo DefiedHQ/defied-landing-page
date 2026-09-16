@@ -23,51 +23,47 @@ export function RisksContent() {
       </Text>
 
       <div style={sectionStyle}>
-        <p style={pStyle}>Fusion Software LLC (&ldquo;Defied Money,&rdquo; &ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;) operates defied.money as a non-custodial software interface providing access to public, permissionless smart contracts deployed on the Base blockchain network. This Risk Disclosure is intended to provide users, prospective users, and regulatory authorities with a clear and comprehensive explanation of the nature of our Services, the risks involved in using them, and the basis on which we operate.</p>
+        <p style={pStyle}>Fusion Software LLC (&ldquo;Defied Money,&rdquo; &ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;) operates defied.money as a non-custodial software interface for supported stablecoin transactions and selected third-party onchain applications on Base. This Risk Disclosure explains the nature of the Services and the risks involved in using them.</p>
         <p style={pStyle}>Please read this document carefully before using the Services. By accessing or using the Services, you acknowledge that you have read, understood, and accepted the risks described herein.</p>
       </div>
 
-      <Text font="title2" as="h2" display="block" style={h2Style}>1. Regulatory Status</Text>
+      <Text font="title2" as="h2" display="block" style={h2Style}>1. Nature of the Services</Text>
       <div style={sectionStyle}>
-        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Defied Money is not a regulated financial institution.</p>
-        <p style={pStyle}>Fusion Software LLC is a software company incorporated in Bulgaria, operating within the European Union. Defied Money is not a bank, payment institution, electronic money institution, investment firm, or crypto-asset service provider (CASP) as defined under Regulation (EU) 2023/1114 on Markets in Crypto-Assets (&ldquo;MiCA&rdquo;) or any other applicable financial services regulation.</p>
+        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Defied Money is a non-custodial software interface.</p>
+        <p style={pStyle}>Defied Money provides software that helps users access supported stablecoins and selected third-party onchain applications. We do not hold customer crypto-assets or control the private keys used to access a user&apos;s wallet. We do not issue, mint or redeem supported stablecoins, and we do not provide investment, legal or tax advice.</p>
 
-        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Defied Money does not provide regulated financial services.</p>
-        <p style={pStyle}>We do not provide any of the following regulated activities:</p>
+        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Role separation.</p>
+        <p style={pStyle}>The relevant issuer determines the issuance, reserves and redemption framework for a stablecoin. Third-party protocols determine the terms, functionality and risks of their applications. Defied Money does not control the underlying third-party protocols that may be accessed through the Services.</p>
+        <p style={pStyle}>The Services are not designed to provide:</p>
         <ul style={ulStyle}>
           <li style={liStyle}>Custody or safekeeping of crypto-assets on behalf of users</li>
-          <li style={liStyle}>Operation of a trading platform for crypto-assets</li>
-          <li style={liStyle}>Exchange of crypto-assets for fiat currency or other crypto-assets as a principal</li>
-          <li style={liStyle}>Execution of orders for crypto-assets on behalf of users</li>
-          <li style={liStyle}>Reception and transmission of orders for crypto-assets</li>
-          <li style={liStyle}>Portfolio management or investment advice</li>
-          <li style={liStyle}>Payment services as defined under the Payment Services Directive (PSD2)</li>
+          <li style={liStyle}>Stablecoin issuance, minting or redemption by Defied Money</li>
+          <li style={liStyle}>Investment, legal or tax advice</li>
+          <li style={liStyle}>A guaranteed-return, savings or deposit product</li>
         </ul>
 
-        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Basis for operating without a CASP license.</p>
-        <p style={pStyle}>The core Services provided by Defied Money,including stablecoin transfers, stablecoin swaps, and access to decentralized lending protocols,are provided in a fully decentralized manner without Defied Money acting as an intermediary. In accordance with Article 2(4) of MiCA, the regulation does not apply to crypto-asset services provided in a fully decentralized manner without any intermediary.</p>
-        <p style={pStyle}>Specifically:</p>
+        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Wallet and protocol interactions.</p>
+        <p style={pStyle}>Transactions are authorised from a user&apos;s self-custodial wallet and recorded on the relevant blockchain network. A user may choose to interact with third-party protocols from that wallet. Availability and functionality depend on the relevant wallet infrastructure, blockchain network and third-party protocol.</p>
+        <p style={pStyle}>For example:</p>
         <ul style={ulStyle}>
-          <li style={liStyle}>Stablecoin transfers on Base are executed directly by users via their self-custodial wallets, interacting with public smart contracts that Defied Money does not own or control</li>
-          <li style={liStyle}>USDC/EURC swaps are executed directly against public liquidity pools on the Base network, accessible by anyone without Defied Money&apos;s involvement</li>
-          <li style={liStyle}>Deposits into lending protocols (Aave, Compound, Morpho, Lido) are made directly by users to those protocols&apos; public smart contracts, which are independently accessible without Defied Money&apos;s interface</li>
+          <li style={liStyle}>Supported stablecoin transfers are authorised from the user&apos;s wallet</li>
+          <li style={liStyle}>Stablecoin exchanges, where available, may use third-party liquidity or service providers</li>
+          <li style={liStyle}>Interactions with decentralised lending protocols are made from the user&apos;s wallet and are governed by those protocols&apos; terms and risks</li>
         </ul>
-        <p style={pStyle}>Defied Money provides a user interface,a front-end convenience layer,to these publicly accessible protocols. Users may interact with all underlying protocols directly at any time, without using Defied Money. Our interface does not custody funds, execute transactions on behalf of users, or act as a counterparty to any transaction.</p>
+        <p style={pStyle}>Defied Money provides the interface through which users may access these services. We do not custody wallet assets or control the underlying third-party protocols.</p>
 
         <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Fiat on-ramp and off-ramp services.</p>
-        <p style={pStyle}>The conversion of fiat currency (euros or dollars) to and from stablecoins is facilitated entirely by Bridge.xyz, a regulated third-party service provider operating under its own licenses and regulatory authorizations. Defied Money does not provide fiat conversion services and does not hold, transmit, or convert fiat currency. All KYC/AML obligations in connection with fiat conversion are discharged by Bridge.xyz under its own regulatory framework.</p>
+        <p style={pStyle}>Where available, conversion between fiat currency and supported stablecoins is provided by independent third-party service providers, including Bridge.xyz. These services are subject to the provider&apos;s terms, eligibility requirements, identity verification and applicable laws and regulations. Defied Money does not itself hold customer fiat or provide the underlying conversion service.</p>
 
         <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Virtual card services.</p>
-        <p style={pStyle}>Virtual debit card functionality is provided exclusively by Gnosis Pay, operating under its own regulatory authorizations. Defied Money does not issue, operate, or manage payment cards or electronic money.</p>
+        <p style={pStyle}>Where available, virtual card functionality is provided by Gnosis Pay under its own terms. Defied Money does not issue, operate or manage payment cards or electronic money.</p>
       </div>
 
-      <Text font="title2" as="h2" display="block" style={h2Style}>2. MiCA Compliance of Supported Stablecoins</Text>
+      <Text font="title2" as="h2" display="block" style={h2Style}>2. Supported Stablecoins</Text>
       <div style={sectionStyle}>
-        <p style={pStyle}>The stablecoins supported by Defied Money,USD Coin (USDC) and Euro Coin (EURC),are issued by Circle Internet Financial, a regulated entity operating in compliance with applicable financial regulations.</p>
-        <p style={pStyle}><span style={strongStyle}>EURC</span> is an e-money token (EMT) as defined under MiCA, issued by Circle in compliance with MiCA&apos;s requirements for e-money token issuers, including authorization, reserve backing, and redemption rights. EURC is backed 1:1 by euro-denominated reserves.</p>
-        <p style={pStyle}><span style={strongStyle}>USDC</span> is issued by Circle under applicable US regulatory frameworks and is backed 1:1 by US dollar-denominated reserves held in regulated financial institutions.</p>
-        <p style={pStyle}>Defied Money does not issue, mint, redeem, or control either stablecoin. We provide an interface through which users may access these assets on the Base network. The regulatory obligations of stablecoin issuance rest entirely with Circle as the issuer.</p>
-        <p style={pStyle}>Users should be aware that even MiCA-compliant stablecoins carry risks, including but not limited to issuer insolvency, reserve mismanagement, and regulatory changes affecting the issuer. Defied Money makes no representations regarding the ongoing compliance or solvency of any stablecoin issuer.</p>
+        <p style={pStyle}>EURC and USDC are supported stablecoins designed to reference the value of the euro and US dollar respectively. Defied Money is not the issuer of these tokens and does not determine their reserves, redemption terms, issuer obligations or regulatory status.</p>
+        <p style={pStyle}>Defied Money does not issue, mint, redeem or control either stablecoin. For information about a specific stablecoin, refer to the relevant issuer&apos;s documentation and disclosures.</p>
+        <p style={pStyle}>Stablecoins carry risks, including issuer insolvency, reserve mismanagement, de-pegging and regulatory changes. Defied Money makes no representation regarding the ongoing compliance or solvency of an issuer.</p>
       </div>
 
       <Text font="title2" as="h2" display="block" style={h2Style}>3. Technology and Smart Contract Risk</Text>

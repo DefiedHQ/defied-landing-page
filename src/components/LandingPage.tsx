@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { m } from 'framer-motion';
 import { Text } from '@coinbase/cds-web/typography/Text';
 import { Button } from '@coinbase/cds-web/buttons/Button';
@@ -27,7 +28,7 @@ import { useLanguage } from '@/context/LanguageContext';
 import { AnimatedButtonText } from '@/components/AnimatedButtonText';
 
 export function LandingPage() {
-  const { t } = useLanguage();
+  const { t, localePath } = useLanguage();
 
   // Smooth-scroll for in-page anchor links (matches the header nav behavior;
   // the global reduced-motion override turns this into an instant jump)
@@ -324,6 +325,30 @@ export function LandingPage() {
         className="section-padding section-rhythm"
       >
         <InfoSection />
+      </section>
+
+      {/* Concise product and risk disclosure, kept close to the primary
+          conversion path without turning the hero into a legal notice. */}
+      <section className="section-padding section-rhythm">
+        <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
+          <m.div {...fadeUp}>
+            <div style={{ background: 'var(--mist)', borderRadius: 'var(--radius-content)', padding: 'clamp(28px, 5vw, 40px)', maxWidth: '800px', margin: '0 auto' }}>
+              <Text font="title2" as="h2" display="block" style={{ fontWeight: 600, marginBottom: '16px', lineHeight: 1.15 }}>
+                {t('importantInfo.title')}
+              </Text>
+              <Text font="body" as="p" color="fgMuted" display="block" style={{ fontSize: '16px', lineHeight: '25px', maxWidth: '68ch', marginBottom: '16px' }}>
+                {t('importantInfo.body')}
+              </Text>
+              <Text font="body" as="p" display="block" style={{ fontSize: '16px', lineHeight: '25px' }}>
+                {t('importantInfo.linkPrefix')}
+                <Link href={localePath('/terms')} className="band-link">{t('importantInfo.terms')}</Link>
+                {t('importantInfo.joiner')}
+                <Link href={localePath('/risks')} className="band-link">{t('importantInfo.risks')}</Link>
+                {t('importantInfo.linkSuffix')}
+              </Text>
+            </div>
+          </m.div>
+        </div>
       </section>
 
       {/* Section 10: CTA repeat — Final push (Aave-inspired split layout) */}

@@ -26,7 +26,7 @@ export function TermsPage() {
       <Text font="title2" as="h2" display="block" style={h2Style}>1. Introduction</Text>
       <div style={sectionStyle}>
         <p style={pStyle}>These Terms of Use (&ldquo;Terms&rdquo;) govern your access to and use of defied.money, and any other online location that links to these Terms (collectively, the &ldquo;Services&rdquo;). The Services are provided by Fusion Software LLC (&ldquo;Defied Money,&rdquo; &ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;), incorporated in Bulgaria.</p>
-        <p style={pStyle}>Defied Money provides a non-custodial software interface that connects users to public, permissionless smart contracts deployed on the Base blockchain network. Defied Money does not control or operate any of the underlying protocols accessible through the Services, including Aave, Compound, Morpho, Lido, or any other third-party decentralized protocol.</p>
+        <p style={pStyle}>Defied Money provides a non-custodial software interface for supported stablecoin transactions and selected third-party onchain applications on the Base blockchain network. Defied Money does not control or operate the underlying third-party protocols accessible through the Services.</p>
         <p style={pStyle}>By accessing or using the Services, you agree to be bound by these Terms and our Privacy Policy. If you do not agree, you must not access or use the Services.</p>
         <p style={pStyle}>We may update these Terms at any time. Continued use of the Services after any update constitutes your acceptance of the revised Terms.</p>
       </div>
@@ -41,17 +41,17 @@ export function TermsPage() {
         <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Defied Money is a software interface, not a financial institution.</p>
         <p style={pStyle}>The Services provide a front-end interface through which users may interact with public, permissionless blockchain protocols via their self-custodial wallets. All information provided through the Services is for informational purposes only. Nothing on the Services constitutes financial, investment, legal, or tax advice. You should not make any financial decision based solely on information available through the Services.</p>
 
-        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>You retain full control over your assets at all times.</p>
-        <p style={pStyle}>Defied Money is not a party to any transaction on any blockchain network. We do not have possession, custody, or control over any cryptoassets or user funds at any time. When you interact with any protocol through the Services, you retain full control over your assets.</p>
+        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Your wallet is self-custodial.</p>
+        <p style={pStyle}>Defied Money does not have possession or custody of crypto-assets held in your wallet and does not control the private keys used to access it. Blockchain transactions are authorised from your wallet and may be subject to the relevant wallet infrastructure, blockchain-network and third-party protocol functionality.</p>
 
-        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>We are not intermediaries.</p>
-        <p style={pStyle}>Due to the non-custodial and decentralized nature of the technology, Defied Money is not an intermediary, agent, advisor, or custodian, and we do not have a fiduciary relationship or obligation to you regarding any decisions, actions, or transactions you make when using the Services. You are solely responsible for ensuring the accuracy, legality, and appropriateness of your interactions with any third-party protocol or smart contract.</p>
+        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Third-party services have separate terms and risks.</p>
+        <p style={pStyle}>Stablecoin issuers are responsible for the issuance, reserves and redemption framework applicable to their tokens. Third-party protocols determine the terms and risks of the applications you choose to use. You are responsible for ensuring the accuracy, legality and appropriateness of your interactions with third-party services and smart contracts.</p>
 
         <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Wallet infrastructure is provided by third parties.</p>
         <p style={pStyle}>To use the Services, you will interact with a self-custodial wallet created and managed through Privy, a third-party wallet infrastructure provider. Your use of Privy is subject to Privy&apos;s own terms and conditions. Defied Money has no access to your private keys or wallet credentials.</p>
 
         <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Fiat on-ramp and off-ramp services are provided by Bridge.xyz.</p>
-        <p style={pStyle}>The conversion of fiat currency (euros or dollars) to and from stablecoins is facilitated by Bridge.xyz, a regulated third-party service provider. Your use of these services is subject to Bridge.xyz&apos;s terms and conditions and applicable regulatory requirements, including identity verification.</p>
+        <p style={pStyle}>Where available, conversion between fiat currency and supported stablecoins is provided by Bridge.xyz as an independent third-party service provider. Your use of these services is subject to Bridge.xyz&apos;s terms, eligibility requirements, identity verification and applicable laws and regulations. Defied Money does not itself hold customer fiat or provide the underlying conversion service.</p>
 
         <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Virtual card services are provided by Gnosis Pay.</p>
         <p style={pStyle}>Virtual debit card functionality is provided by Gnosis Pay. Your use of the card is subject to Gnosis Pay&apos;s terms and conditions.</p>
