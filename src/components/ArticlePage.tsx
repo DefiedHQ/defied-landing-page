@@ -34,8 +34,8 @@ function renderInlineMarkdown(text: string, localePath: (path: string) => string
           </a>
         );
       } else {
-        // Article bodies use locale-neutral paths (/blog/...); map them to
-        // the current language's URL so BG readers stay on /bg pages.
+        // Article bodies use locale-neutral paths and remain within the
+        // public English route tree.
         parts.push(
           <Link key={key++} href={localePath(match[4])} style={{ color: '#0052FF', textDecoration: 'underline' }}>
             {match[3]}

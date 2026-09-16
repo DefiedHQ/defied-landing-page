@@ -4,10 +4,8 @@ import localFont from 'next/font/local';
 import './globals.css';
 
 /**
- * Global 404 for URLs that match neither language tree. Rendered standalone
- * (outside both root layouts), so it is bilingual and self-contained — no
- * CDS provider or header, just the brand font and a way back into each
- * language version.
+ * Global 404 for URLs that do not match a public route. Rendered standalone
+ * (outside the root layout), so it does not need the CDS provider or header.
  */
 
 const aeonikPro = localFont({
@@ -42,9 +40,7 @@ export default function GlobalNotFound() {
           }}
         >
           <h1 style={{ fontSize: '64px', fontWeight: 500, margin: 0, color: 'var(--ink)' }}>404</h1>
-          <p style={{ fontSize: '18px', color: 'var(--muted)', margin: 0 }}>
-            Page not found. <span lang="bg">Страницата не е намерена.</span>
-          </p>
+          <p style={{ fontSize: '18px', color: 'var(--muted)', margin: 0 }}>Page not found.</p>
           <div style={{ display: 'flex', gap: '12px', marginTop: '16px', flexWrap: 'wrap', justifyContent: 'center' }}>
             <a
               href="/"
@@ -58,20 +54,6 @@ export default function GlobalNotFound() {
               }}
             >
               Go to homepage
-            </a>
-            <a
-              href="/bg"
-              lang="bg"
-              style={{
-                background: 'var(--surface)',
-                color: 'var(--ink)',
-                borderRadius: '56px',
-                padding: '12px 24px',
-                textDecoration: 'none',
-                fontWeight: 500,
-              }}
-            >
-              Към началната страница
             </a>
           </div>
         </section>

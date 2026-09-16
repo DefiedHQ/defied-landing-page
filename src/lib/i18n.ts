@@ -1,56 +1,26 @@
 // Shared i18n primitives — importable from both server and client modules.
 
-export type Lang = 'bg' | 'en';
+export type Lang = 'en';
 
-/** Supported languages, in display order, with their native names. */
-export const LANGUAGES: ReadonlyArray<{ code: Lang; label: string; region: string }> = [
-  { code: 'bg', label: 'Български', region: 'България' },
-  { code: 'en', label: 'English', region: 'Global' },
-];
-
-/** Default language — used for SSR, first paint, and when geo is unknown. */
+/** Default language for the primary site experience. */
 export const DEFAULT_LANG: Lang = 'en';
 
-/** localStorage key for the visitor's explicit language choice (set by the
-    header switcher). Geo-based redirects defer to it. */
-export const LANG_PREF_KEY = 'defied-lang';
-
-/**
- * Maps a locale-neutral path to its URL for a language. English lives at the
- * root (`/blog`), Bulgarian under the `/bg` prefix (`/bg/blog`). Hash/query
- * suffixes pass through untouched.
- */
-export function localePath(lang: Lang, path: string): string {
-  if (lang !== 'bg') return path;
-  if (path === '/') return '/bg';
-  return path.startsWith('/#') ? `/bg${path.slice(1)}` : `/bg${path}`;
+/** All public routes use their English URL unchanged. */
+export function localePath(_lang: Lang, path: string): string {
+  return path;
 }
 
-/** Strips the `/bg` prefix from a pathname, returning the locale-neutral path. */
+/** Retained for callers that compare a pathname with a route path. */
 export function stripLangPrefix(pathname: string): string {
-  if (pathname === '/bg') return '/';
-  return pathname.startsWith('/bg/') ? pathname.slice(3) : pathname;
-}
-
-/**
- * Maps an ISO 3166-1 alpha-2 country code (from the Vercel edge geo header
- * `x-vercel-ip-country`) to a language: Bulgaria gets Bulgarian, everyone
- * else (including unknown/local dev) gets the default (English).
- */
-export function geoLangFromCountry(country: string | null | undefined): Lang {
-  return country?.toUpperCase() === 'BG' ? 'bg' : DEFAULT_LANG;
+  return pathname;
 }
 
 /* Month names for article dates. Explicit tables (not toLocaleDateString) so
    SSR and client always agree regardless of ICU data. */
-const MONTHS: Record<Lang, string[]> = {
-  en: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-  bg: ['януари', 'февруари', 'март', 'април', 'май', 'юни', 'юли', 'август', 'септември', 'октомври', 'ноември', 'декември'],
-};
+const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-/** Formats an ISO date (YYYY-MM-DD) per language: "May 12, 2026" / "12 май 2026". */
-export function formatArticleDate(dateStr: string, lang: Lang): string {
+/** Formats an ISO date as "May 12, 2026". */
+export function formatArticleDate(dateStr: string, _lang: Lang): string {
   const [y, m, d] = dateStr.split('-').map(Number);
-  const month = (MONTHS[lang] ?? MONTHS.en)[m - 1];
-  return lang === 'bg' ? `${d} ${month} ${y}` : `${month} ${d}, ${y}`;
+  return `${MONTHS[m - 1]} ${d}, ${y}`;
 }

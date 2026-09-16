@@ -7,7 +7,6 @@ import { Header } from '@/components/Header';
 import { ConditionalFooter } from '@/components/ConditionalFooter';
 import { MainWrapper } from '@/components/MainWrapper';
 import { LanguageProvider } from '@/context/LanguageContext';
-import { LanguageGeoInit } from '@/components/LanguageGeoInit';
 import type { Lang } from '@/lib/i18n';
 
 import '@/app/globals.css';
@@ -25,11 +24,7 @@ const aeonikPro = localFont({
 });
 
 /**
- * Shared document shell for both language trees. Each root layout —
- * app/(en)/layout.tsx and app/(bg)/layout.tsx — renders this with its
- * language, so `<html lang>` and every server-rendered string match the URL
- * (English at the root, Bulgarian under /bg). Geo-based language suggestion
- * only runs on the English tree; on /bg the URL already states the intent.
+ * Shared document shell for the site's English route tree.
  */
 export function LocaleLayout({ lang, children }: { lang: Lang; children: React.ReactNode }) {
   return (
@@ -39,12 +34,11 @@ export function LocaleLayout({ lang, children }: { lang: Lang; children: React.R
         <link
           rel="alternate"
           type="application/rss+xml"
-          title={lang === 'bg' ? 'Defied Money Блог' : 'Defied Money Blog'}
-          href={lang === 'bg' ? '/bg/feed.xml' : '/feed.xml'}
+          title="Defied Money Blog"
+          href="/feed.xml"
         />
         <CdsProvider>
           <LanguageProvider initialLang={lang}>
-            {lang === 'en' && <LanguageGeoInit />}
             <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
               <div
                 style={{

@@ -1,17 +1,16 @@
 'use client';
 
 import { createContext, useContext, useCallback } from 'react';
-import bg from '@/locales/bg.json';
 import en from '@/locales/en.json';
 import { DEFAULT_LANG, localePath as localePathFor, type Lang } from '@/lib/i18n';
 
-export { LANGUAGES, DEFAULT_LANG, type Lang } from '@/lib/i18n';
+export { DEFAULT_LANG, type Lang } from '@/lib/i18n';
 
-const translations: Record<Lang, typeof en> = { bg, en };
+const translations: Record<Lang, typeof en> = { en };
 
 interface LanguageContextValue {
   lang: Lang;
-  /** Maps a locale-neutral path (`/blog`) to this language's URL (`/bg/blog`). */
+  /** Returns the public English URL for a locale-neutral path. */
   localePath: (path: string) => string;
   t: (key: string, params?: Record<string, string>) => string;
 }
@@ -19,11 +18,7 @@ interface LanguageContextValue {
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
 /**
- * The language is route-driven: English pages live at the root, Bulgarian
- * under /bg, and each root layout mounts this provider with its language.
- * Server and client render the same language, so search engines index real
- * Bulgarian HTML on /bg URLs. Switching languages is a navigation (see the
- * Header switcher), not a state change.
+ * The site serves English pages from the root route tree.
  */
 export function LanguageProvider({
   initialLang = DEFAULT_LANG,

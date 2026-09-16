@@ -64,7 +64,6 @@ export const metadata: Metadata = {
     ],
     type: 'website',
     locale: 'en_US',
-    alternateLocale: 'bg_BG',
   },
   twitter: {
     card: 'summary_large_image',
