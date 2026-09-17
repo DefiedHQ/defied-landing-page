@@ -60,7 +60,7 @@ export function LandingPage() {
         background: '#FFFFFF',
       }}
     >
-      {/* Section 1: Hero — full-width static photo card, one message */}
+      {/* Section 1: Hero — centered introduction, one message */}
       <section className="section-padding" style={{ paddingTop: 'clamp(16px, 2vw, 24px)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
           <m.div
@@ -74,7 +74,7 @@ export function LandingPage() {
       </section>
 
       {/* Section 2: Trust strip — Infrastructure Partners */}
-      <section className="section-padding section-rhythm">
+      <section className="section-padding section-rhythm trust-strip-after-hero">
         <InfrastructureSection />
       </section>
 

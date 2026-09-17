@@ -1,40 +1,18 @@
 'use client';
 
-import Image from 'next/image';
 import { Text } from '@coinbase/cds-web/typography/Text';
 import { Button } from '@coinbase/cds-web/buttons/Button';
 import { useLanguage } from '@/context/LanguageContext';
 import { AnimatedButtonText } from '@/components/AnimatedButtonText';
 
 /**
- * Static hero - one message, one CTA (design review, Phase 1).
- * Replaces the auto-rotating HeroCarousel; the retired slides now live as
- * dedicated sections further down the page.
+ * Static hero - one message, one CTA.
  */
 export function HeroStatic() {
   const { t } = useLanguage();
 
   return (
     <div className="hero-card">
-      {/* Photo backdrop - the headline carries the message; the alt carries
-          the scene for assistive tech and image search */}
-      <div className="hero-card-photo">
-        <Image
-          src="/hero-balloon.jpg"
-          alt={t('hero.imageAlt')}
-          fill
-          priority
-          sizes="(max-width: 1248px) 100vw, 1200px"
-          style={
-            {
-              '--op-desktop': '100% 55%',
-              '--op-mobile': '62% 50%',
-            } as React.CSSProperties
-          }
-        />
-        <div className="hero-card-scrim" />
-      </div>
-
       <div className="hero-card-content">
         <Text
           font="display1"

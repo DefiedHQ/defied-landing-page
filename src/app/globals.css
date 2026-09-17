@@ -128,12 +128,21 @@ input[type="number"]::-webkit-inner-spin-button {
 .section-rhythm-bottom {
   padding-bottom: 56px;
 }
+
+/* The trust strip directly follows the hero. It needs less separation than
+   the page's regular content sections so every partner logo stays in view. */
+.trust-strip-after-hero {
+  padding-top: 40px;
+}
 @media (min-width: 768px) {
   .section-rhythm {
     padding-top: 96px;
   }
   .section-rhythm-bottom {
     padding-bottom: 96px;
+  }
+  .trust-strip-after-hero {
+    padding-top: 48px;
   }
 }
 
@@ -637,99 +646,56 @@ select:focus-visible,
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   Hero — full-width photo card
+   Hero — centered editorial introduction
    ═══════════════════════════════════════════════════════════════ */
 
 .hero-card {
-  position: relative;
-  border-radius: var(--radius-media);
-  overflow: hidden;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  background: #BBD4EE; /* fallback while the photo loads */
-}
-.hero-card-photo {
-  position: absolute;
-  inset: 0;
-}
-/* Crop via CSS vars set on the img (see HeroStatic);
-   slight desaturation for a calmer photo register */
-.hero-card-photo img {
-  object-fit: cover;
-  object-position: var(--op-desktop, 100% 55%);
-  filter: saturate(0.85);
-}
-/* Light scrim over the left half — keeps var(--ink) text at AA contrast */
-.hero-card-scrim {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    94deg,
-    rgba(235, 243, 252, 0.9) 0%,
-    rgba(235, 243, 252, 0.72) 34%,
-    rgba(235, 243, 252, 0.25) 52%,
-    transparent 66%
-  );
 }
 .hero-card-content {
-  position: relative;
-  z-index: 1;
-  padding: clamp(32px, 5vw, 72px);
-  max-width: 620px;
+  width: 100%;
+  max-width: 840px;
+  margin: 0 auto;
+  padding: clamp(56px, 9vw, 144px) 24px;
+  text-align: center;
+}
+.hero-card-content h1,
+.hero-card-content p {
+  text-align: center;
+}
+.hero-card-content p {
+  margin-left: auto;
+  margin-right: auto;
 }
 .hero-card-cta-row {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
   margin-top: clamp(24px, 3vw, 36px);
+  justify-content: center;
 }
 /* Desktop */
 @media (min-width: 900px) {
   .hero-card {
-    min-height: min(640px, 72vh);
+    /* Reserve enough of the first viewport for the complete trust carousel. */
+    min-height: max(520px, calc(100svh - var(--header-h) - 260px));
+  }
+  .hero-card-content {
+    /* Keep the message centered in the viewport despite the carousel space. */
+    transform: translateY(clamp(0px, calc(50svh - 352px), 72px));
   }
 }
 
-/* Mobile — Klarna-style: rounded photo card on top, centered text below on white */
+/* Mobile — keep the focused, centered composition while preserving room for
+   the header and the infrastructure section that follows. */
 @media (max-width: 640px) {
   .hero-card {
-    background: transparent;
-    border-radius: 0;
-    overflow: visible;
-    min-height: 0;
-    justify-content: flex-start;
-  }
-  .hero-card-photo {
-    position: relative;
-    inset: auto;
-    aspect-ratio: 1 / 1;
-    border-radius: var(--radius-media);
-    overflow: hidden;
-  }
-  /* Per-slide crop for the square mobile card */
-  .hero-card-photo img {
-    object-position: var(--op-mobile, 62% 50%);
-  }
-  .hero-card-scrim {
-    display: none;
+    min-height: max(420px, calc(100svh - var(--header-h) - 194px));
   }
   .hero-card-content {
-    padding: 28px 8px 0;
-    max-width: none;
-    text-align: center;
-  }
-  .hero-card-content h1,
-  .hero-card-content h2,
-  .hero-card-content p {
-    text-align: center;
-  }
-  .hero-card-content p {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .hero-card-cta-row {
-    justify-content: center;
+    padding: 48px 8px;
+    transform: translateY(clamp(0px, calc(50svh - 368px), 32px));
   }
 }
 
