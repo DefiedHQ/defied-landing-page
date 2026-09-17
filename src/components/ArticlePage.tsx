@@ -222,6 +222,12 @@ export function ArticlePage() {
                   ))}
                 </section>
               )}
+
+              {/* Editorial disclaimer — articles discuss market rates and
+                  third-party protocols; this keeps them clearly informational */}
+              <Text font="legal" as="p" display="block" color="fgMuted" style={{ marginTop: '8px', paddingTop: '24px', borderTop: '1px solid rgba(20, 22, 26, 0.08)' }}>
+                {t('resources.articleDisclaimer')}
+              </Text>
             </div>
           </article>
 

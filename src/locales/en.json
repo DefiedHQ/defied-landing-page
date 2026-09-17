@@ -12,76 +12,63 @@
     "mobileApp": "Mobile app"
   },
   "hero": {
-    "title": "Your stablecoins. Your wallet. Your control.",
-    "titleStart": "Your stablecoins.",
-    "titleHighlight": "Your wallet.",
-    "titleEnd": "Your control.",
+    "pillLabel": "Now live on Base",
+    "pillCta": "Read more",
+    "titleLine1": "Your gateway to stablecoins",
+    "titleLine2": "and onchain finance.",
     "ctaHeader": "Sign in",
-    "disclaimer": "Defied Money is a non-custodial software interface. Optional access to third-party protocols involves risk; rates are variable and returns are not guaranteed.",
-    "cardSubtitle": "A self-custodial wallet for holding, sending and using digital euros and dollars onchain. Manage supported stablecoins such as EURC and USDC on Base without Defied taking custody of your assets.",
-    "earlyAccess": "Create your wallet",
+    "cardSubtitle": "Defied Money is a self-custodial wallet built for holding, sending and using digital euros and dollars in the onchain economy.",
+    "earlyAccess": "Create your wallet now",
+    "seeFeatures": "See all features",
+    "scrollCue": "Scroll to learn more",
     "imageAlt": "Person using the Defied Money wallet app"
   },
   "earning": {
-    "title": "Optional access to onchain markets.",
-    "body": "Access selected third-party decentralised lending protocols from your self-custodial wallet. Rates are variable and returns are not guaranteed.",
+    "title": "Open markets. Your call.",
+    "body": "Connect your balance to selected decentralized finance markets, straight from your wallet. Rates come from the protocol, change with the market and are not guaranteed. You can skip this entirely.",
     "link": "How protocol access works",
     "screenshotAlt": "The Defied Money app in a browser"
   },
   "cta": {
-    "heading": "Your stablecoins. Your wallet. Your control.",
-    "subheading": "Hold, send and use supported stablecoins through a wallet you control."
+    "heading": "Your gateway to stablecoins and onchain finance",
+    "subheading": "Hold it. Send it. Use it. From a wallet only you control."
   },
   "infrastructure": {
     "title": "Built on trusted infrastructure",
     "subtitle": "Built with wallet infrastructure, blockchain networks and independent third-party service providers."
   },
   "features": {
-    "sectionTitle": "One wallet for supported onchain services.",
-    "sectionSubtitle": "Hold, send and use supported stablecoins from a wallet you control.",
-    "f1Title": "Send stablecoins 24/7",
-    "f1Desc": "Send supported stablecoins from your wallet when the underlying blockchain network is available. Fees, network conditions, eligibility requirements and other limitations may apply.",
-    "f2Title": "Access onchain applications",
-    "f2Desc": "Interact with selected third-party decentralised lending protocols from your self-custodial wallet. Current protocol rates are variable and returns are not guaranteed.",
+    "sectionTitle": "Digital euros and dollars. The essentials, made simple.",
+    "sectionSubtitle": "Hold them. Send them. Use them onchain. All from a wallet only you control.",
+    "f1Title": "Send money like a message",
+    "f1Desc": "Send supported stablecoins to anyone, any day, whenever the network is up. Network fees and limits may apply.",
+    "f2Title": "Onchain markets, one tap away",
+    "f2Desc": "Connect to selected decentralized finance markets straight from your wallet, if you choose to. Rates are set by the protocol, move with the market and are never guaranteed.",
     "f2Disclaimer": "Third-party protocol rates are variable. This is not a guaranteed return or a Defied Money investment product.",
-    "f3Title": "Exchange supported stablecoins",
-    "f3Desc": "Where available, exchange supported stablecoins through third-party services. Terms, fees, eligibility requirements and network conditions may apply.",
-    "f1Chip": "Onchain transfers",
-    "f2Chip": "Third-party protocols",
-    "f3Chip": "Dollars ⇄ euros",
-    "f2ImageAlt": "Woman using a phone near a piggy bank",
-    "f1ImageAlt": "Hands holding a phone and a payment card at a coffee table",
-    "f3ImageAlt": "Paying instantly with a phone"
+    "f3Title": "Dollars to euros. Euros to dollars.",
+    "f3Desc": "Swap between supported stablecoins through third-party services, where available. Their terms, fees and eligibility rules apply."
   },
   "steps": {
-    "title": "Set up your wallet in minutes",
+    "title": "Start in minutes. Stay in control.",
     "s1Title": "Create your wallet",
-    "s1Desc": "Set up a self-custodial wallet with your email. You control the assets in your wallet.",
-    "s2Title": "Add supported stablecoins",
-    "s2Desc": "Receive EURC or USDC in your wallet. Where available, fiat conversion is provided by independent third-party providers, subject to their terms and eligibility requirements.",
-    "s3Title": "Use onchain services",
-    "s3Desc": "Send, exchange or interact with selected third-party protocols from your wallet. Network fees and other limitations may apply.",
-    "chip": "Simple wallet setup",
-    "imageAlt": "Woman signing up on her phone at a cafe"
+    "s1Desc": "Sign up with your email. The wallet is yours from the first second, and only you control what’s in it.",
+    "s2Title": "Add digital euros or dollars",
+    "s2Desc": "Receive EURC or USDC from anywhere. Where available, top up from your bank through independent providers, under their terms and checks.",
+    "s3Title": "Use it for real life",
+    "s3Desc": "Send, swap or connect to selected decentralized finance markets. Network fees and limits may apply."
   },
   "advantages": {
-    "row1Heading": "Digital euros and dollars",
-    "row1Subtext": "Hold and send supported stablecoins from one wallet. EURC and USDC are designed to reference the value of the euro and US dollar respectively. Defied Money is not their issuer and does not determine their reserves, redemption terms or regulatory status. Refer to the relevant issuer’s documentation and disclosures for information about a stablecoin.",
+    "row1Heading": "Euros and dollars, onchain.",
+    "row1Subtext": "EURC and USDC are stablecoins designed to track the euro and the US dollar. Their issuers, not Defied Money, mint and redeem them and stand behind their reserves. They are not bank deposits. Read the issuer’s disclosures before you hold one.",
     "bandTitle": "Self-custodial by design",
-    "bandBody": "Your wallet is controlled by you. Defied Money does not hold customer funds or control the private keys used to access your wallet. Transactions are authorised from your wallet and recorded on the relevant blockchain network.",
+    "bandBody": "Your keys. Your wallet. Your money. Defied Money never holds your funds and never has your private keys. Every transaction is signed by you and recorded on the blockchain.",
     "bandCta": "Learn about self-custody",
-    "stablecoinsKicker": "What are stablecoins?",
-    "bandChip": "Wallet you control",
-    "stablecoinsChip": "EURC · USDC",
-    "bandImageAlt": "Woman in the city checking her wallet on her phone",
-    "stablecoinsImageAlt": "Two friends outside smiling at a phone screen"
+    "stablecoinsKicker": "What are stablecoins?"
   },
   "imageSection": {
     "sectionTitle": "Our mission",
-    "title": "Built for clarity",
-    "body1": "We make onchain financial infrastructure easier to understand. You control your wallet; stablecoin issuers are responsible for issuance, reserves and redemption; third-party protocols determine the terms and risks of their applications. Defied Money provides the software interface that helps you access these onchain services. Built in Sofia, Bulgaria. Availability and features may vary by jurisdiction.",
-    "imageAlt": "Sofia, Bulgaria business district at dusk, home of Defied Money",
-    "chip": "Created in Sofia, Bulgaria"
+    "title": "Clear by design.",
+    "body1": "Onchain finance, explained in plain words. You control your wallet. Issuers stand behind their stablecoins. Protocols set their own terms and risks. We build the interface that makes it all understandable. Availability and features vary by country."
   },
   "aboutCarousel": {
     "title": "A clear interface for onchain services.",
@@ -115,7 +102,7 @@
     "a6": "Requirements may vary by feature and jurisdiction. Where available, fiat conversion between fiat currency and supported stablecoins is provided by independent third-party providers and may require identity verification under their terms and applicable law.",
     "q7": "What are the risks?",
     "a7": "Digital assets and decentralised protocols involve risk, including loss of assets, smart-contract vulnerabilities, blockchain-network disruption, loss of wallet credentials, stablecoin issuer risk and regulatory changes. Third-party protocol rates are variable and returns are not guaranteed. Read our Risk Disclosure before using the service.",
-    "q8": "Are my funds covered by National Deposit Guarantee Schemes?",
+    "q8": "Are my funds covered by a deposit guarantee?",
     "a8": "No. Stablecoins are not bank deposits, and holdings through a self-custodial wallet are not covered by national deposit guarantee schemes. Assets used with third-party protocols are also subject to their terms and risks.",
     "q9": "What platforms does Defied Money support?",
     "a9": "Defied Money is currently available as a web application, optimized for both desktop and mobile browsers. Native iOS and Android apps are in development.",
@@ -125,49 +112,12 @@
     "a11": "Defied Money is designed as a non-custodial wallet and software interface. You control your wallet assets; Defied Money does not hold customer funds, issue supported stablecoins or operate the third-party protocols available through the interface. Features, availability and risks differ from those of traditional financial services.",
     "q12": "Is Defied Money safe if I'm not an expert?",
     "a12": "Defied Money is designed to make wallet use simpler, but self-custody has important responsibilities and risks. Protect your email, device and wallet credentials, and enable two-factor authentication. Defied Money cannot recover assets lost through compromised credentials or irreversible blockchain transactions.",
-    "q13": "How do protocol rates work?",
+    "q13": "Where do the rates come from?",
     "a13": "Some third-party decentralised protocols display rates for particular onchain activities. These are current protocol rates, not rates offered or guaranteed by Defied Money. They can change at any time and involve smart-contract, liquidity, market and other risks.",
     "q14": "Is Defied Money available in my country?",
     "a14": "Availability and features may vary by jurisdiction and may be subject to eligibility, compliance, provider and technical requirements. Fiat conversion and card features, where available, are provided by independent third-party providers under their own terms.",
     "q15": "What happens to my money if Defied Money shuts down?",
     "a15": "Your assets remain in your self-custodial wallet. Access outside the Defied Money interface depends on the relevant wallet infrastructure, compatible wallet software and blockchain-network functionality. You should keep your credentials secure and understand the recovery options available to you."
-  },
-  "earn": {
-    "apr": "APR",
-    "protocol": "Protocol",
-    "asset": "Asset"
-  },
-  "importantInfo": {
-    "title": "Important information",
-    "body": "Defied Money is a non-custodial software interface and does not provide investment, legal or tax advice. Digital assets and decentralised protocols involve risks, including loss of assets, smart-contract vulnerabilities, blockchain-network disruption, loss of wallet credentials and regulatory changes. Stablecoins are not bank deposits, and holdings through a self-custodial wallet are not covered by national deposit guarantee schemes. Availability may vary by jurisdiction and may be subject to eligibility, compliance and technical requirements.",
-    "linkPrefix": "Read the ",
-    "terms": "Terms of Use",
-    "joiner": " and ",
-    "risks": "Risk Disclosure",
-    "linkSuffix": " before using the service."
-  },
-  "vault": {
-    "deposit": "Add assets",
-    "withdraw": "Withdraw",
-    "payingOn": "You pay on Ethereum",
-    "receivingOn": "You receive on Ethereum",
-    "shares": "shares",
-    "login": "Login",
-    "confirmInWallet": "Confirm in wallet...",
-    "approving": "Approving...",
-    "approved": "Approved!",
-    "approve": "Approve {{asset}}",
-    "depositing": "Adding assets...",
-    "deposited": "Assets added!",
-    "depositCta": "Add {{asset}}",
-    "depositSuccess": "Assets added successfully!",
-    "vaultBalance": "Vault balance",
-    "noBalance": "No balance",
-    "withdrawAll": "Withdraw all",
-    "withdrawing": "Withdrawing...",
-    "withdrawn": "Withdrawn!",
-    "withdrawSuccess": "Withdrawal successful!",
-    "contract": "Contract"
   },
   "common": {
     "by": "by",
@@ -189,21 +139,6 @@
     "waitlistErrorInvalid": "Please enter a valid email address.",
     "waitlistErrorGeneric": "Something went wrong. Please try again."
   },
-  "about": {
-    "heroTitle": "We built Bulgaria's first non-custodial platform for onchain wealth",
-    "ctaStart": "Start now",
-    "ctaContact": "Contact",
-    "missionDark": "Defied Money provides non-custodial infrastructure for easy access to decentralized finance.",
-    "missionLight": "Our mission is to make access to decentralized finance easy.",
-    "blueSection": "Defied Money allows users to create an account on the platform without needing to understand what a digital wallet and private key are in the blockchain context.",
-    "detailP1": "Defied Money provides decentralized smart contract infrastructure for generating yield through leading DeFi protocols. The smart contracts are non-custodial - Defied Money has no access to user funds stored in them.",
-    "detailP2": "Defied Money offers an intuitive user interface through which users can deposit funds in the form of stablecoins into curated decentralized protocols. Defied Money covers transaction costs for users (gas fees).",
-    "detailP3": "Users can easily buy crypto or stablecoins with a debit/credit card, Apple Pay, Google Pay, or via SEPA bank transfer.",
-    "advantagesHeading": "No technical knowledge needed. Quick crypto purchase. Curated protocols with high yield. Full control over your assets.",
-    "advantagesP1": "You don't need to understand how digital wallets and private keys work. We offer an easy-to-use interface and registration with just an email address.",
-    "advantagesP2": "We have no access to your funds. You are the only one who controls your wallet. All rules of interaction with DeFi protocols are encoded in smart contracts - public, verifiable, and immutable.",
-    "advantagesP3": "We maintain a detailed knowledge base of materials, articles, and tutorials about the world of decentralized finance."
-  },
   "terms": {
     "title": "Terms of Use",
     "lastUpdated": "Last updated: April 15, 2026"
@@ -216,38 +151,6 @@
     "title": "Risk Disclosure",
     "lastUpdated": "Last updated: April 15, 2026"
   },
-  "vaultDiamond": {
-    "title": "Diamond wstETH",
-    "deposit": "Deposit",
-    "withdraw": "Withdraw",
-    "payOnEthereum": "Pay on Ethereum",
-    "receiveOnEthereum": "Receive on Ethereum",
-    "athPaused": "ATH reached! Deposits are paused - withdraw fee-free.",
-    "login": "Login",
-    "depositsDisabled": "Deposits Disabled",
-    "confirmInWallet": "Confirm in Wallet...",
-    "depositing": "Depositing...",
-    "deposited": "Deposited!",
-    "depositETH": "Deposit ETH",
-    "depositSuccess": "Deposit successful!",
-    "vaultBalance": "Your vault balance",
-    "receiveAfterFee": "You receive after {{feePercent}}% exit fee",
-    "athZeroFees": "ATH reached! Zero fees.",
-    "withdrawing": "Withdrawing...",
-    "withdrawn": "Withdrawn!",
-    "noBalance": "No Balance",
-    "withdrawNoFee": "Withdraw (No Fee)",
-    "withdrawWithFee": "Withdraw ({{feePercent}}% Fee)",
-    "withdrawSuccess": "Withdrawal successful!",
-    "description": "Lock ETH as wstETH until a new all-time high. Earn staking yield while you wait.",
-    "vaultDetails": "Vault Details",
-    "tvl": "TVL",
-    "earlyExitFee": "Early exit fee",
-    "feeNone": "None",
-    "yieldSource": "Yield source",
-    "priceOracle": "Price oracle",
-    "contract": "Contract"
-  },
   "resources": {
     "heroTitle": "Updates, stories, and announcements",
     "heroSubtitle": "On this page we publish the latest news: product updates, guides, and articles about the DeFi ecosystem.",
@@ -257,12 +160,13 @@
     "backToResources": "Back to Blog",
     "notFound": "Article not found",
     "readMore": "Read more",
-    "faqTitle": "Frequently asked questions"
+    "faqTitle": "Frequently asked questions",
+    "articleDisclaimer": "This article is for general information only and is not investment, legal or tax advice. Any rates mentioned are third-party protocol or market rates at the time of writing; they change constantly and are not offered or guaranteed by Defied Money. Stablecoins are not bank deposits and are not covered by deposit guarantee schemes. Defied Money is a non-custodial software interface and does not hold customer assets. Read the Risk Disclosure before using the service."
   },
   "meta": {
-    "defaultTitle": "Defied Money - Your stablecoins. Your wallet. Your control.",
+    "defaultTitle": "Defied Money - Your gateway to stablecoins and onchain finance",
     "homeTitle": "Non-custodial stablecoin wallet | Defied Money",
-    "homeDescription": "Defied Money is a self-custodial wallet and software interface for holding, sending and using supported stablecoins, including EURC and USDC, on Base.",
+    "homeDescription": "Defied Money is a self-custodial wallet for digital euros (EURC) and dollars (USDC). Hold, send and use supported stablecoins, and connect to selected decentralized finance markets, from a wallet only you control.",
     "aboutTitle": "About us",
     "aboutDescription": "Defied Money is a non-custodial wallet and software interface for supported digital euros and dollars on Base.",
     "blogTitle": "Blog",
@@ -274,7 +178,7 @@
     "risksTitle": "Risks",
     "risksDescription": "Learn about the risks associated with stablecoins, self-custodial wallets and third-party onchain protocols.",
     "articleNotFound": "Article not found",
-    "ogTitle": "Defied Money - Your stablecoins. Your wallet. Your control."
+    "ogTitle": "Defied Money - Your gateway to stablecoins and onchain finance"
   },
   "footer": {
     "useful": "Useful",
@@ -287,9 +191,7 @@
     "about": "About us",
     "terms": "Terms of use",
     "privacy": "Privacy policy",
-    "operator": "Operated by Fusion Software LLC",
-    "address": "81B Bulgaria Blvd, Sofia, Bulgaria",
-    "positioning": "Your stablecoins. Your wallet. Your control.",
+    "positioning": "Your gateway to stablecoins and onchain finance.",
     "disclaimer": "Defied Money is a non-custodial wallet and software interface. Defied Money does not hold customer crypto-assets, issue supported stablecoins or provide investment, legal or tax advice. Third-party protocols involve significant risk, including potential loss of assets; rates are variable and returns are not guaranteed. Fiat conversion and card services, where available, are provided by independent third-party providers under their own terms. Availability may vary by jurisdiction.",
     "copyright": "© Defied Money. All rights reserved."
   },

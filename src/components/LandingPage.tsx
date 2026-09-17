@@ -2,7 +2,6 @@
 
 import { useEffect } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { m } from 'framer-motion';
 import { Text } from '@coinbase/cds-web/typography/Text';
 import { Button } from '@coinbase/cds-web/buttons/Button';
@@ -22,13 +21,24 @@ const fadeUp = {
 import { FeaturedPosts } from '@/components/FeaturedPosts';
 import { InfrastructureSection } from '@/components/InfrastructureSection';
 import { InfoSection } from '@/components/Hero';
-import { HeroStatic } from '@/components/HeroStatic';
+import { HeroStatic, HERO_SCROLL_TARGET_ID } from '@/components/HeroStatic';
 import { Footer } from '@/components/Footer';
 import { useLanguage } from '@/context/LanguageContext';
 import { AnimatedButtonText } from '@/components/AnimatedButtonText';
+import { PictogramCover } from '@/components/PictogramCover';
+import type { LocalPictogramName } from '@/components/LocalPictogram';
+
+type FeatureCard = {
+  key: string;
+  title: string;
+  desc: string;
+  pictogram: LocalPictogramName;
+  tint: 'mist' | 'stone';
+  tall: boolean;
+};
 
 export function LandingPage() {
-  const { t, localePath } = useLanguage();
+  const { t } = useLanguage();
 
   // Smooth-scroll for in-page anchor links (matches the header nav behavior;
   // the global reduced-motion override turns this into an instant jump)
@@ -74,99 +84,30 @@ export function LandingPage() {
       </section>
 
       {/* Section 2: Trust strip — Infrastructure Partners */}
-      <section className="section-padding section-rhythm trust-strip-after-hero">
+      <section id={HERO_SCROLL_TARGET_ID} className="section-padding section-rhythm trust-strip-after-hero">
         <InfrastructureSection />
       </section>
 
-      {/* Section 3: Earning — signature moment, proves the hero's promise */}
-      <section id="earning" className="section-padding section-rhythm">
-        <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
-          <m.div {...fadeUp}>
-            <div className="earning-band">
-              <div className="earning-band-text">
-                <Text font="display2" as="h2" className="title-tight-lh" style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)', fontWeight: 500 }}>
-                  {t('earning.title')}
-                </Text>
-                <Text font="body" as="p" color="fgMuted" style={{ fontSize: '17px', lineHeight: '28px', maxWidth: '46ch' }}>
-                  {t('earning.body')}
-                  <sup style={{ fontSize: '0.6em' }}>1</sup>
-                </Text>
-                <a href="#faq" onClick={scrollToFaq} className="band-link">{t('earning.link')}</a>
-              </div>
-              {/* Laptop app shot, resting on the band's bottom edge — same
-                  treatment as the final CTA card (the asset is sheared there) */}
-              <div className="earning-band-device">
-                <m.div
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.4 }}
-                  transition={{ duration: 0.6, delay: 0.12, ease: [...MOTION_EASE] }}
-                  style={{ position: 'absolute', inset: 0 }}
-                >
-                  <Image
-                    src="/cta-app-laptop.png"
-                    alt={t('earning.screenshotAlt')}
-                    fill
-                    loading="lazy"
-                    sizes="(max-width: 768px) 90vw, 520px"
-                    style={{ objectFit: 'contain', objectPosition: 'bottom' }}
-                  />
-                </m.div>
-              </div>
-            </div>
-          </m.div>
-        </div>
-      </section>
-
-      {/* Section 4: Ownership — answers the control objection right after the
-          yield promise. Edge-bleed band: photo fills the left half. */}
-      <section id="ownership" className="section-padding section-rhythm">
-        <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
-          <m.div {...fadeUp}>
-            <div className="bleed-band" style={{ background: 'var(--surface)' }}>
-              <div className="bleed-band-photo">
-                <Image
-                  src="/woman-with-phone-city.jpg"
-                  alt={t('advantages.bandImageAlt')}
-                  fill
-                  loading="lazy"
-                  sizes="(max-width: 768px) 100vw, 600px"
-                />
-                <span className="photo-chip">{t('advantages.bandChip')}</span>
-              </div>
-              <div className="bleed-band-text">
-                <Text font="display2" as="h2" className="title-tight-lh" style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)', fontWeight: 500 }}>
-                  {t('advantages.bandTitle')}
-                </Text>
-                <Text font="body" as="p" color="fgMuted" style={{ fontSize: '17px', lineHeight: '28px', maxWidth: '46ch' }}>
-                  {t('advantages.bandBody')}
-                </Text>
-                <a href="#faq" onClick={scrollToFaq} className="band-link">{t('advantages.bandCta')}</a>
-              </div>
-            </div>
-          </m.div>
-        </div>
-      </section>
-
-      {/* Section 5: Features — all-photo grid, proof points as chips */}
+      {/* Section 3: Features — pictogram-cover grid, the plain "what you get" */}
       <section id="features" className="section-padding section-rhythm">
         <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
           <m.div {...fadeUp} style={{ textAlign: 'center' }}>
-            <Text font="display2" as="h2" display="block" className="section-title" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, maxWidth: '720px', marginBottom: '24px' }}>
+            <Text font="display2" as="h2" display="block" className="section-title" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, maxWidth: '720px', marginBottom: '24px', textWrap: 'balance' }}>
               {t('features.sectionTitle')}
             </Text>
-            <Text font="body" as="p" color="fgMuted" display="block" style={{ fontSize: '18px', lineHeight: '28px', maxWidth: '560px', margin: '0 auto 56px', textAlign: 'center' }}>
+            <Text font="body" as="p" color="fgMuted" display="block" style={{ fontSize: '18px', lineHeight: '28px', maxWidth: '560px', margin: '0 auto 56px', textAlign: 'center', textWrap: 'pretty' }}>
               {t('features.sectionSubtitle')}
             </Text>
           </m.div>
 
-          {/* All-photo grid — the earn cell spans both rows on desktop */}
+          {/* Pictogram-cover grid (same grammar as the blog covers) — the
+              earn cell spans both rows on desktop */}
           <div className="features-grid-2x2">
-            {[
-              { key: 'earn', title: t('features.f2Title'), desc: t('features.f2Desc'), chip: t('features.f2Chip'), image: '/black-woman-with-saving-piggy-bank.jpg', imageAlt: t('features.f2ImageAlt'), tall: true },
-              { key: 'send', title: t('features.f1Title'), desc: t('features.f1Desc'), chip: t('features.f1Chip'), image: '/hands-phone-card.jpg', imageAlt: t('features.f1ImageAlt'), tall: false },
-              { key: 'exchange', title: t('features.f3Title'), desc: t('features.f3Desc'), chip: t('features.f3Chip'), image: '/explore-card.jpg', imageAlt: t('features.f3ImageAlt'), tall: false },
-            ].map((feature, i) => (
+            {([
+              { key: 'earn', title: t('features.f2Title'), desc: t('features.f2Desc'), pictogram: 'decentralizedWeb3', tint: 'mist', tall: true },
+              { key: 'send', title: t('features.f1Title'), desc: t('features.f1Desc'), pictogram: 'sendPaymentToOthers', tint: 'stone', tall: false },
+              { key: 'exchange', title: t('features.f3Title'), desc: t('features.f3Desc'), pictogram: 'walletExchange', tint: 'stone', tall: false },
+            ] satisfies FeatureCard[]).map((feature, i) => (
               /* Plain wrapper carries the grid-child modifier class —
                  framer-motion@10's m.div typings don't accept className */
               <div key={feature.key} className={feature.tall ? 'feature-card--tall' : undefined}>
@@ -177,18 +118,13 @@ export function LandingPage() {
                   transition={{ duration: 0.5, delay: i * 0.06, ease: [...MOTION_EASE] }}
                   style={{ display: 'flex', width: '100%' }}
                 >
-                  <article className="feature-card feature-card--photo">
-                    <Image
-                      src={feature.image}
-                      alt={feature.imageAlt}
-                      fill
-                      loading="lazy"
-                      sizes="(max-width: 768px) 100vw, 584px"
-                    />
-                    <span className="photo-chip">{feature.chip}</span>
-                    <div className="feature-card-photo-overlay">
-                      <Text font="title3" as="h3" className="card-title" style={{ fontWeight: 600, color: '#FFFFFF' }}>{feature.title}</Text>
-                      <Text font="body" as="p" style={{ fontSize: '15px', lineHeight: '24px', color: 'rgba(255,255,255,0.88)' }}>{feature.desc}</Text>
+                  <article className={`feature-card feature-card--cover feature-card--cover-${feature.tint}`}>
+                    <div className="feature-card-cover-art">
+                      <PictogramCover name={feature.pictogram} tint={feature.tint} />
+                    </div>
+                    <div className="feature-card-cover-text">
+                      <Text font="title3" as="h3" className="card-title" style={{ fontWeight: 600 }}>{feature.title}</Text>
+                      <Text font="body" as="p" color="fgMuted" style={{ fontSize: '15px', lineHeight: '24px' }}>{feature.desc}</Text>
                     </div>
                   </article>
                 </m.div>
@@ -198,21 +134,14 @@ export function LandingPage() {
         </div>
       </section>
 
-      {/* Section 6: How it works — edge-bleed band with vertical 3-step list
+      {/* Section 4: How it works — edge-bleed band with vertical 3-step list
           and the mid-page CTA */}
       <section id="how-it-works" className="section-padding section-rhythm">
         <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
           <m.div {...fadeUp}>
             <div className="bleed-band" style={{ background: 'var(--surface)' }}>
-              <div className="bleed-band-photo">
-                <Image
-                  src="/woman-phone-laptop-cafe.jpg"
-                  alt={t('steps.imageAlt')}
-                  fill
-                  loading="lazy"
-                  sizes="(max-width: 768px) 100vw, 600px"
-                />
-                <span className="photo-chip">{t('steps.chip')}</span>
+              <div className="bleed-band-photo bleed-band-photo--cover">
+                <PictogramCover name="getStarted" tint="mist" />
               </div>
               <div className="bleed-band-text">
                 <Text font="display2" as="h2" className="title-tight-lh" style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)', fontWeight: 500 }}>
@@ -256,21 +185,14 @@ export function LandingPage() {
         </div>
       </section>
 
-      {/* Section 7: Stablecoins — the one explainer keeping USDC/EURC tickers.
+      {/* Section 5: Stablecoins — the one explainer keeping USDC/EURC tickers.
           Edge-bleed band on mist: text left, photo right. */}
       <section id="stablecoins" className="section-padding section-rhythm">
         <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
           <m.div {...fadeUp}>
             <div className="bleed-band bleed-band--photo-right" style={{ background: 'var(--mist)' }}>
-              <div className="bleed-band-photo">
-                <Image
-                  src="/friends-with-phone-outside.jpg"
-                  alt={t('advantages.stablecoinsImageAlt')}
-                  fill
-                  loading="lazy"
-                  sizes="(max-width: 768px) 100vw, 600px"
-                />
-                <span className="photo-chip">{t('advantages.stablecoinsChip')}</span>
+              <div className="bleed-band-photo bleed-band-photo--cover">
+                <PictogramCover name="stableCoinMetaphor" tint="stone" />
               </div>
               <div className="bleed-band-text">
                 <Text font="label1" as="span" style={{ fontWeight: 600, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.06em', fontSize: '13px' }}>
@@ -288,32 +210,88 @@ export function LandingPage() {
         </div>
       </section>
 
-      {/* Section 8: Mission — full-bleed Sofia photo band, merged with the
-          origin story (text anchored bottom-left over a layered scrim) */}
+      {/* Section 6: Earning — the differentiator, placed after the basics */}
+      <section id="earning" className="section-padding section-rhythm">
+        <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
+          <m.div {...fadeUp}>
+            <div className="earning-band">
+              <div className="earning-band-text">
+                <Text font="display2" as="h2" className="title-tight-lh" style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)', fontWeight: 500 }}>
+                  {t('earning.title')}
+                </Text>
+                <Text font="body" as="p" color="fgMuted" style={{ fontSize: '17px', lineHeight: '28px', maxWidth: '46ch' }}>
+                  {t('earning.body')}
+                </Text>
+                <a href="#faq" onClick={scrollToFaq} className="band-link">{t('earning.link')}</a>
+              </div>
+              {/* Laptop app shot, resting on the band's bottom edge — same
+                  treatment as the final CTA card (the asset is sheared there) */}
+              <div className="earning-band-device">
+                <m.div
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.4 }}
+                  transition={{ duration: 0.6, delay: 0.12, ease: [...MOTION_EASE] }}
+                  style={{ position: 'absolute', inset: 0 }}
+                >
+                  <Image
+                    src="/cta-app-laptop.png"
+                    alt={t('earning.screenshotAlt')}
+                    fill
+                    loading="lazy"
+                    sizes="(max-width: 768px) 90vw, 520px"
+                    style={{ objectFit: 'contain', objectPosition: 'bottom' }}
+                  />
+                </m.div>
+              </div>
+            </div>
+          </m.div>
+        </div>
+      </section>
+
+      {/* Section 7: Ownership — answers the control objection right after the
+          earning band. Art on the right so it alternates with the mission band. */}
+      <section id="ownership" className="section-padding section-rhythm">
+        <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
+          <m.div {...fadeUp}>
+            <div className="bleed-band bleed-band--photo-right" style={{ background: 'var(--surface)' }}>
+              <div className="bleed-band-photo bleed-band-photo--cover">
+                <PictogramCover name="controlWalletStorage" tint="mist" />
+              </div>
+              <div className="bleed-band-text">
+                <Text font="display2" as="h2" className="title-tight-lh" style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)', fontWeight: 500 }}>
+                  {t('advantages.bandTitle')}
+                </Text>
+                <Text font="body" as="p" color="fgMuted" style={{ fontSize: '17px', lineHeight: '28px', maxWidth: '46ch' }}>
+                  {t('advantages.bandBody')}
+                </Text>
+                <a href="#faq" onClick={scrollToFaq} className="band-link">{t('advantages.bandCta')}</a>
+              </div>
+            </div>
+          </m.div>
+        </div>
+      </section>
+
+      {/* Section 8: Mission — edge-bleed band, art left on stone, text on
+          mist (mirrors the stablecoins band above) */}
       <section id="mission" className="section-padding section-rhythm">
         <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
           <m.div {...fadeUp}>
-            <div className="mission-hero">
-              <Image
-                src="/sofia-skyline.jpg"
-                alt={t('imageSection.imageAlt')}
-                fill
-                loading="lazy"
-                sizes="(max-width: 768px) 100vw, 1200px"
-                style={{ objectFit: 'cover', objectPosition: '50% 30%' }}
-              />
-              <div className="mission-hero-content">
-                <Text font="label1" as="span" style={{ fontWeight: 600, color: 'rgba(255,255,255,0.8)', textTransform: 'uppercase', letterSpacing: '0.06em', fontSize: '13px' }}>
+            <div className="bleed-band" style={{ background: 'var(--mist)' }}>
+              <div className="bleed-band-photo bleed-band-photo--cover">
+                <PictogramCover name="lightbulbLearn" tint="stone" />
+              </div>
+              <div className="bleed-band-text">
+                <Text font="label1" as="span" style={{ fontWeight: 600, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.06em', fontSize: '13px' }}>
                   {t('imageSection.sectionTitle')}
                 </Text>
-                <Text font="display2" as="h2" className="title-tight-lh" style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)', fontWeight: 500, lineHeight: 1.05, color: '#FFFFFF' }}>
+                <Text font="display2" as="h2" className="title-tight-lh" style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)', fontWeight: 500 }}>
                   {t('imageSection.title')}
                 </Text>
-                <Text font="body" as="p" style={{ fontSize: '17px', lineHeight: '28px', color: 'rgba(255,255,255,0.88)' }}>
+                <Text font="body" as="p" color="fgMuted" style={{ fontSize: '17px', lineHeight: '28px', maxWidth: '46ch' }}>
                   {t('imageSection.body1')}
                 </Text>
               </div>
-              <span className="photo-chip photo-chip--br">{t('imageSection.chip')}</span>
             </div>
           </m.div>
         </div>
@@ -325,30 +303,6 @@ export function LandingPage() {
         className="section-padding section-rhythm"
       >
         <InfoSection />
-      </section>
-
-      {/* Concise product and risk disclosure, kept close to the primary
-          conversion path without turning the hero into a legal notice. */}
-      <section className="section-padding section-rhythm">
-        <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
-          <m.div {...fadeUp}>
-            <div style={{ background: 'var(--mist)', borderRadius: 'var(--radius-content)', padding: 'clamp(28px, 5vw, 40px)', maxWidth: '800px', margin: '0 auto' }}>
-              <Text font="title2" as="h2" display="block" style={{ fontWeight: 600, marginBottom: '16px', lineHeight: 1.15 }}>
-                {t('importantInfo.title')}
-              </Text>
-              <Text font="body" as="p" color="fgMuted" display="block" style={{ fontSize: '16px', lineHeight: '25px', maxWidth: '68ch', marginBottom: '16px' }}>
-                {t('importantInfo.body')}
-              </Text>
-              <Text font="body" as="p" display="block" style={{ fontSize: '16px', lineHeight: '25px' }}>
-                {t('importantInfo.linkPrefix')}
-                <Link href={localePath('/terms')} className="band-link">{t('importantInfo.terms')}</Link>
-                {t('importantInfo.joiner')}
-                <Link href={localePath('/risks')} className="band-link">{t('importantInfo.risks')}</Link>
-                {t('importantInfo.linkSuffix')}
-              </Text>
-            </div>
-          </m.div>
-        </div>
       </section>
 
       {/* Section 10: CTA repeat — Final push (Aave-inspired split layout) */}

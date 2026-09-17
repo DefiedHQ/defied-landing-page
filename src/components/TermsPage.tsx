@@ -25,7 +25,7 @@ export function TermsPage() {
 
       <Text font="title2" as="h2" display="block" style={h2Style}>1. Introduction</Text>
       <div style={sectionStyle}>
-        <p style={pStyle}>These Terms of Use (&ldquo;Terms&rdquo;) govern your access to and use of defied.money, and any other online location that links to these Terms (collectively, the &ldquo;Services&rdquo;). The Services are provided by Fusion Software LLC (&ldquo;Defied Money,&rdquo; &ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;), incorporated in Bulgaria.</p>
+        <p style={pStyle}>These Terms of Use (&ldquo;Terms&rdquo;) govern your access to and use of defied.money, and any other online location that links to these Terms (collectively, the &ldquo;Services&rdquo;). The Services are provided by Defied Money (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;).</p>
         <p style={pStyle}>Defied Money provides a non-custodial software interface for supported stablecoin transactions and selected third-party onchain applications on the Base blockchain network. Defied Money does not control or operate the underlying third-party protocols accessible through the Services.</p>
         <p style={pStyle}>By accessing or using the Services, you agree to be bound by these Terms and our Privacy Policy. If you do not agree, you must not access or use the Services.</p>
         <p style={pStyle}>We may update these Terms at any time. Continued use of the Services after any update constitutes your acceptance of the revised Terms.</p>
@@ -102,7 +102,7 @@ export function TermsPage() {
         <p style={pStyle}>Subject to your ongoing compliance with these Terms, we grant you a personal, non-exclusive, non-transferable, revocable license to access and use the Services solely as permitted by these Terms.</p>
 
         <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>We own all rights in the Services.</p>
-        <p style={pStyle}>All right, title, and interest in and to the Services, including all content, code, data, and materials, belongs to Fusion Software LLC. Your use of the Services does not grant you any ownership or rights beyond the limited license set out above.</p>
+        <p style={pStyle}>All right, title, and interest in and to the Services, including all content, code, data, and materials, belongs to Defied Money. Your use of the Services does not grant you any ownership or rights beyond the limited license set out above.</p>
 
         <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Feedback.</p>
         <p style={pStyle}>Any feedback, suggestions, or ideas you provide about the Services are entirely voluntary. You agree that we may use such feedback freely without any obligation to you.</p>
@@ -128,7 +128,7 @@ export function TermsPage() {
 
       <Text font="title2" as="h2" display="block" style={h2Style}>8. Disclaimers</Text>
       <div style={sectionStyle}>
-        <p style={capsStyle}>THE SERVICES ARE PROVIDED ON AN &ldquo;AS IS&rdquo; AND &ldquo;AS AVAILABLE&rdquo; BASIS WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, FUSION SOFTWARE LLC AND ITS OFFICERS, DIRECTORS, EMPLOYEES, AND AGENTS (&ldquo;DEFIED PARTIES&rdquo;) DISCLAIM ALL WARRANTIES, INCLUDING IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.</p>
+        <p style={capsStyle}>THE SERVICES ARE PROVIDED ON AN &ldquo;AS IS&rdquo; AND &ldquo;AS AVAILABLE&rdquo; BASIS WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, DEFIED MONEY AND ITS OFFICERS, DIRECTORS, EMPLOYEES, AND AGENTS (&ldquo;DEFIED PARTIES&rdquo;) DISCLAIM ALL WARRANTIES, INCLUDING IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.</p>
         <p style={capsStyle}>THE DEFIED PARTIES ARE NOT RESPONSIBLE FOR:</p>
         <ul style={ulStyle}>
           <li style={{ ...liStyle, fontSize: '15px', lineHeight: '26px' }}>THE ACCURACY, COMPLETENESS, OR TIMELINESS OF ANY INFORMATION PROVIDED THROUGH THE SERVICES</li>
@@ -200,8 +200,8 @@ export function TermsPage() {
       <Text font="title2" as="h2" display="block" style={h2Style}>16. Contact Us</Text>
       <div style={sectionStyle}>
         <p style={pStyle}>If you have any questions about these Terms, please contact us:</p>
-        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Fusion Software LLC</p>
-        <p style={pStyle}>81B Bulgaria Blvd, Sofia, Bulgaria<br /><a href="mailto:hello@defied.money" style={{ color: '#0052FF' }}>hello@defied.money</a></p>
+        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Defied Money</p>
+        <p style={pStyle}><a href="mailto:hello@defied.money" style={{ color: '#0052FF' }}>hello@defied.money</a></p>
       </div>
     </section>
   );

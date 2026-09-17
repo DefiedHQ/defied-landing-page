@@ -2,7 +2,7 @@ export const siteConfig = {
   name: 'Defied Money',
   url: process.env.NEXT_PUBLIC_BASE_URL || 'https://defied.money',
   description:
-    'Defied Money is a non-custodial account for your digital euros (EURC) and dollars (USDC). Earn on your balance from open lending markets and send money in seconds - only you control your funds. Available across the EEA.',
+    'Defied Money is a self-custodial wallet for digital euros (EURC) and dollars (USDC). Hold, send and use supported stablecoins, and connect to selected decentralized finance markets, from a wallet only you control. Available across the EEA.',
   ogImage: '/og-image.jpg',
   logo: '/defied_squared_logo_blue.svg',
   twitter: '@defied_money',
@@ -15,7 +15,6 @@ export const siteConfig = {
     email: 'hello@defied.money',
     telephone: '+359884627762',
   },
-  address: '81B Bulgaria Blvd, Sofia, Bulgaria',
 } as const;
 
 export function absoluteUrl(path: string): string {

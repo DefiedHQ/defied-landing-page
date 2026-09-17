@@ -14,7 +14,12 @@ export type LocalPictogramName =
   | 'transferSend'
   | 'apyInterest'
   | 'walletExchange'
-  | 'creditCard';
+  | 'creditCard'
+  | 'controlWalletStorage'
+  | 'sendPaymentToOthers'
+  | 'getStarted'
+  | 'stableCoinMetaphor'
+  | 'lightbulbLearn';
 
 const PICTOGRAM_FILE: Record<LocalPictogramName, string> = {
   selfCustodyWallet: 'selfCustodyWallet-5.svg',
@@ -25,6 +30,11 @@ const PICTOGRAM_FILE: Record<LocalPictogramName, string> = {
   apyInterest: 'apyInterest-5.svg',
   walletExchange: 'walletExchange-3.svg',
   creditCard: 'creditCard-3.svg',
+  controlWalletStorage: 'controlWalletStorage-4.svg',
+  sendPaymentToOthers: 'sendPaymentToOthers-4.svg',
+  getStarted: 'getStarted-4.svg',
+  stableCoinMetaphor: 'stableCoinMetaphor-4.svg',
+  lightbulbLearn: 'lightbulbLearn-5.svg',
 };
 
 type Props = {

@@ -23,7 +23,7 @@ export function RisksContent() {
       </Text>
 
       <div style={sectionStyle}>
-        <p style={pStyle}>Fusion Software LLC (&ldquo;Defied Money,&rdquo; &ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;) operates defied.money as a non-custodial software interface for supported stablecoin transactions and selected third-party onchain applications on Base. This Risk Disclosure explains the nature of the Services and the risks involved in using them.</p>
+        <p style={pStyle}>Defied Money (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;) operates defied.money as a non-custodial software interface for supported stablecoin transactions and selected third-party onchain applications on Base. This Risk Disclosure explains the nature of the Services and the risks involved in using them.</p>
         <p style={pStyle}>Please read this document carefully before using the Services. By accessing or using the Services, you acknowledge that you have read, understood, and accepted the risks described herein.</p>
       </div>
 
@@ -48,7 +48,7 @@ export function RisksContent() {
         <ul style={ulStyle}>
           <li style={liStyle}>Supported stablecoin transfers are authorised from the user&apos;s wallet</li>
           <li style={liStyle}>Stablecoin exchanges, where available, may use third-party liquidity or service providers</li>
-          <li style={liStyle}>Interactions with decentralised lending protocols are made from the user&apos;s wallet and are governed by those protocols&apos; terms and risks</li>
+          <li style={liStyle}>Interactions with decentralised finance protocols are made from the user&apos;s wallet and are governed by those protocols&apos; terms and risks</li>
         </ul>
         <p style={pStyle}>Defied Money provides the interface through which users may access these services. We do not custody wallet assets or control the underlying third-party protocols.</p>
 
@@ -69,13 +69,13 @@ export function RisksContent() {
       <Text font="title2" as="h2" display="block" style={h2Style}>3. Technology and Smart Contract Risk</Text>
       <div style={sectionStyle}>
         <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Smart contracts are experimental technology.</p>
-        <p style={pStyle}>The protocols accessible through Defied Money,including Aave, Compound, Morpho, Lido, and others,operate via smart contracts deployed on public blockchain networks. Smart contracts are self-executing code that, once deployed, operate autonomously without human intervention. While the protocols surfaced by Defied Money have undergone extensive security audits, no smart contract can be guaranteed to be free from bugs, vulnerabilities, or exploits.</p>
+        <p style={pStyle}>The protocols accessible through Defied Money,including Aave, Compound, Morpho and others,operate via smart contracts deployed on public blockchain networks. Smart contracts are self-executing code that, once deployed, operate autonomously without human intervention. While the protocols surfaced by Defied Money have undergone extensive security audits, no smart contract can be guaranteed to be free from bugs, vulnerabilities, or exploits.</p>
 
         <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Risks include but are not limited to:</p>
         <ul style={ulStyle}>
           <li style={liStyle}><span style={strongStyle}>Smart contract vulnerabilities:</span> Bugs or logic errors in smart contract code that could be exploited by malicious actors, potentially resulting in partial or total loss of deposited funds</li>
           <li style={liStyle}><span style={strongStyle}>Oracle failures:</span> Protocols that rely on price oracles may be subject to oracle manipulation attacks, which could result in unintended liquidations or other adverse outcomes</li>
-          <li style={liStyle}><span style={strongStyle}>Liquidity risk:</span> In periods of extreme market stress, liquidity in lending protocols may be insufficient to allow immediate withdrawal of deposited funds</li>
+          <li style={liStyle}><span style={strongStyle}>Liquidity risk:</span> In periods of extreme market stress, liquidity in decentralised finance protocols may be insufficient to allow immediate withdrawal of deposited funds</li>
           <li style={liStyle}><span style={strongStyle}>Protocol upgrades and governance:</span> Protocol parameters, including interest rates, collateral requirements, and supported assets, may be changed by protocol governance at any time without Defied Money&apos;s involvement or consent</li>
           <li style={liStyle}><span style={strongStyle}>Blockchain network risk:</span> The Base network, like all blockchain networks, is subject to potential disruptions, forks, congestion, and other technical failures that may prevent or delay transactions</li>
           <li style={liStyle}><span style={strongStyle}>Bridge and cross-chain risk:</span> Cross-chain operations facilitated through LI.FI involve additional layers of smart contract complexity and may carry elevated risk compared to single-chain operations</li>
@@ -90,18 +90,18 @@ export function RisksContent() {
           <li style={liStyle}><span style={strongStyle}>De-pegging risk:</span> A stablecoin may lose its peg to the reference currency due to market conditions, issuer insolvency, or reserve mismanagement, resulting in a loss of value</li>
           <li style={liStyle}><span style={strongStyle}>Issuer risk:</span> The issuer of a stablecoin may become insolvent, face regulatory action, or otherwise be unable to honour redemptions</li>
           <li style={liStyle}><span style={strongStyle}>Regulatory risk:</span> Changes in applicable law or regulation may adversely affect the availability, usability, or value of stablecoins in certain jurisdictions</li>
-          <li style={liStyle}><span style={strongStyle}>Counterparty risk:</span> Stablecoins held in lending protocols are subject to the counterparty risk of borrowers in those protocols</li>
+          <li style={liStyle}><span style={strongStyle}>Counterparty risk:</span> Stablecoins held in decentralised finance protocols are subject to the counterparty risk of borrowers in those protocols</li>
         </ul>
         <p style={pStyle}>Funds held in stablecoins or deposited in DeFi protocols are not protected by any National Deposit Guarantee Schemes. Defied Money is not a financial institution and does not offer any form of deposit protection.</p>
       </div>
 
       <Text font="title2" as="h2" display="block" style={h2Style}>5. Yield and Returns Risk</Text>
       <div style={sectionStyle}>
-        <p style={pStyle}>Access to decentralized lending protocols through Defied Money may allow users to earn yields on their stablecoin balances. Users must understand the following:</p>
+        <p style={pStyle}>Third-party decentralized finance protocols may display rates for stablecoin balances a user chooses to connect to them. Defied Money does not offer, set or pay any rate. Users must understand the following:</p>
         <ul style={ulStyle}>
           <li style={liStyle}><span style={strongStyle}>Yields are variable:</span> All yields displayed through the Services reflect current third-party protocol rates at the time of display. These rates fluctuate continuously based on supply and demand dynamics within each protocol and may decrease significantly at any time</li>
           <li style={liStyle}><span style={strongStyle}>Yields are not guaranteed:</span> Past yields are not indicative of future performance. Defied Money makes no representations, warranties, or guarantees regarding the level of yield that may be achieved</li>
-          <li style={liStyle}><span style={strongStyle}>Yields are not investment returns:</span> Access to lending protocol yields through Defied Money does not constitute an investment product, collective investment scheme, or any other regulated financial product. Users are interacting directly with public smart contracts, not investing through Defied Money</li>
+          <li style={liStyle}><span style={strongStyle}>Yields are not investment returns:</span> Access to decentralised finance protocol yields through Defied Money does not constitute an investment product, collective investment scheme, or any other regulated financial product. Users are interacting directly with public smart contracts, not investing through Defied Money</li>
           <li style={liStyle}><span style={strongStyle}>Yields may be subject to tax:</span> Returns earned through decentralized protocols may be subject to income tax, capital gains tax, or other taxes in your jurisdiction. You are solely responsible for determining your own tax obligations</li>
         </ul>
       </div>
@@ -155,7 +155,7 @@ export function RisksContent() {
 
       <Text font="title2" as="h2" display="block" style={h2Style}>10. Limitation of Liability</Text>
       <div style={sectionStyle}>
-        <p style={pStyle}>To the fullest extent permitted by applicable law, Fusion Software LLC and its officers, directors, employees, and agents shall not be liable for any loss or damage,including loss of funds, loss of data, or loss of access,arising from:</p>
+        <p style={pStyle}>To the fullest extent permitted by applicable law, Defied Money and its officers, directors, employees, and agents shall not be liable for any loss or damage,including loss of funds, loss of data, or loss of access,arising from:</p>
         <ul style={ulStyle}>
           <li style={liStyle}>Smart contract vulnerabilities, exploits, or failures in any third-party protocol</li>
           <li style={liStyle}>De-pegging or failure of any stablecoin</li>
@@ -173,11 +173,10 @@ export function RisksContent() {
       <div style={sectionStyle}>
         <p style={pStyle}>If you have questions about this Risk Disclosure or about the risks associated with using the Services, please contact us:</p>
         <p style={pStyle}>
-          <span style={strongStyle}>Fusion Software LLC</span><br />
-          81B Bulgaria Blvd, Sofia, Bulgaria<br />
+          <span style={strongStyle}>Defied Money</span><br />
           hello@defied.money
         </p>
-        <p style={pStyle}>For regulatory enquiries, please contact us at the same address, marking your correspondence clearly as a regulatory enquiry.</p>
+        <p style={pStyle}>For regulatory enquiries, please contact us at the same email address, marking your correspondence clearly as a regulatory enquiry.</p>
       </div>
     </section>
   );

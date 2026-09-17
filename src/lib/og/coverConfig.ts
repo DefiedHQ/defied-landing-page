@@ -39,7 +39,7 @@ const ARTICLE_PICTOGRAM: Record<string, string> = {
   'crypto-taxes-bulgaria': 'gasFees-5.svg',
   'digital-euro-bulgaria': 'walletExchange-3.svg',
   'where-does-defi-yield-come-from': 'decentralizedWeb3-5.svg',
-  'how-to-earn-interest-on-euros': 'apyInterest-5.svg',
+  'euro-yield-options-compared': 'apyInterest-5.svg',
   'best-euro-stablecoin': 'creditCard-3.svg',
   'what-is-eurc': 'walletExchange-3.svg',
   'what-is-a-stablecoin': 'transferSend-3.svg',

@@ -24,7 +24,7 @@ export function PrivacyPage() {
 
       <div style={sectionStyle}>
         <p style={pStyle}>Defied Money operates as a non-custodial software interface providing access to public, permissionless blockchain protocols. Although we may collect and process information about users of defied.money in accordance with this Privacy Policy, we do not have access to information about all protocol interactions beyond what is already publicly available and recorded on the blockchain.</p>
-        <p style={pStyle}>This Privacy Policy explains how Fusion Software LLC (&ldquo;Defied Money,&rdquo; &ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;) collects, uses, and shares information in connection with our services, as well as your rights and choices regarding such information, in accordance with the General Data Protection Regulation (GDPR) and applicable EU data protection law.</p>
+        <p style={pStyle}>This Privacy Policy explains how Defied Money (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;) collects, uses, and shares information in connection with our services, as well as your rights and choices regarding such information, in accordance with the General Data Protection Regulation (GDPR) and applicable EU data protection law.</p>
         <p style={pStyle}>These terms apply to defied.money, and any other online location that links to this Privacy Policy (collectively, the &ldquo;Services&rdquo;).</p>
         <p style={pStyle}>By using the Services, you agree to our collection, use, and sharing of your information as described in this Privacy Policy. If you do not agree, you should not use or access the Services.</p>
       </div>
@@ -107,7 +107,7 @@ export function PrivacyPage() {
 
       <Text font="title2" as="h2" display="block" style={h2Style}>9. International Transfers</Text>
       <div style={sectionStyle}>
-        <p style={pStyle}>Fusion Software LLC is incorporated in Bulgaria and operates within the European Union. Information collected through the Services may be transferred to, processed, or stored in the EU and in other jurisdictions where our service providers operate.</p>
+        <p style={pStyle}>Defied Money operates within the European Union. Information collected through the Services may be transferred to, processed, or stored in the EU and in other jurisdictions where our service providers operate.</p>
         <p style={pStyle}>Where personal data is transferred outside the European Economic Area, we ensure appropriate safeguards are in place in accordance with GDPR requirements, including standard contractual clauses or equivalent mechanisms, where applicable.</p>
       </div>
 
@@ -164,8 +164,8 @@ export function PrivacyPage() {
       <Text font="title2" as="h2" display="block" style={h2Style}>14. Contact Us</Text>
       <div style={sectionStyle}>
         <p style={pStyle}>If you have any questions about this Privacy Policy, our data practices, or your rights, please contact us:</p>
-        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Fusion Software LLC</p>
-        <p style={pStyle}>81B Bulgaria Blvd, Sofia, Bulgaria<br /><a href="mailto:hello@defied.money" style={{ color: '#0052FF' }}>hello@defied.money</a></p>
+        <p style={{ ...pStyle, fontWeight: 600, color: 'var(--ink)' }}>Defied Money</p>
+        <p style={pStyle}><a href="mailto:hello@defied.money" style={{ color: '#0052FF' }}>hello@defied.money</a></p>
       </div>
     </section>
   );

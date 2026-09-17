@@ -49,7 +49,6 @@ const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: siteConfig.name,
-  legalName: 'Fusion Software LLC',
   url: siteConfig.url,
   logo: {
     '@type': 'ImageObject',
@@ -63,12 +62,6 @@ const organizationSchema = {
     telephone: siteConfig.contact.telephone,
     contactType: 'customer service',
   },
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '81B Bulgaria Blvd',
-    addressLocality: 'Sofia',
-    addressCountry: 'BG',
-  },
 };
 
 const webAppSchema = {
@@ -77,7 +70,7 @@ const webAppSchema = {
   name: siteConfig.name,
   url: siteConfig.url,
   description:
-    'Non-custodial platform for euro (EURC) and dollar (USDC) stablecoins: earn on your balance through open lending markets and send money anywhere in seconds - from an account only you control.',
+    'Self-custodial wallet for euro (EURC) and dollar (USDC) stablecoins: hold, send and use supported stablecoins, and connect to selected decentralized finance markets, from a wallet only you control.',
   applicationCategory: 'FinanceApplication',
   operatingSystem: 'Any',
   browserRequirements: 'Requires JavaScript',
@@ -87,10 +80,10 @@ const webAppSchema = {
     priceCurrency: 'EUR',
   },
   featureList: [
-    'Send and receive USDC and EURC stablecoins globally in seconds',
-    'Earn on your balance through decentralized lending protocols',
-    'Exchange between USDC and EURC instantly',
-    'Non-custodial account with full self-custody via email login',
+    'Send and receive USDC and EURC stablecoins 24/7, whenever the network is available',
+    'Connect to selected decentralized finance markets straight from your wallet',
+    'Swap between USDC and EURC through third-party services, where available',
+    'Self-custodial wallet with email login; Defied Money never holds your funds',
     'Network fees covered on supported actions',
   ],
   screenshot: absoluteUrl(siteConfig.ogImage),

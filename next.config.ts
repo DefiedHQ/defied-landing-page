@@ -11,6 +11,16 @@ const nextConfig: NextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
   },
+  async redirects() {
+    return [
+      // Article renamed 2026-09-17 to drop "earn interest" from the URL
+      {
+        source: '/blog/how-to-earn-interest-on-euros',
+        destination: '/blog/euro-yield-options-compared',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

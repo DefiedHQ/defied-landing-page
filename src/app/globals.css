@@ -650,52 +650,135 @@ select:focus-visible,
    ═══════════════════════════════════════════════════════════════ */
 
 .hero-card {
+  position: relative;
   display: flex;
   justify-content: center;
+  align-items: center;
+  /* Fill the first viewport so the trust strip starts below the fold
+     (100svh minus the header and the hero section's own top padding) */
+  min-height: calc(100svh - var(--header-h) - 24px);
+}
+/* Scroll cue — pinned to the bottom edge of the first viewport. The gentle
+   dip is the page's one ambient motion; disabled under reduced motion. */
+.hero-scroll-cue {
+  position: absolute;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  animation: hero-cue-dip 2.4s ease-in-out infinite;
+}
+@keyframes hero-cue-dip {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, 6px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-scroll-cue {
+    animation: none;
+  }
 }
 .hero-card-content {
   width: 100%;
-  max-width: 840px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: clamp(56px, 9vw, 144px) 24px;
+  /* Bottom padding clears the scroll cue (40px button + 24px offset) so the
+     lockup + headline + CTAs still fit a 720px-tall laptop viewport */
+  padding: clamp(40px, 5vw, 96px) 24px 80px;
   text-align: center;
+  /* The card starts below the header, so flex-centering lands the message
+     slightly low in the viewport. Lift it by half the header + section
+     padding so it sits on the true viewport midline. */
+  transform: translateY(calc((var(--header-h) + 24px) / -2));
 }
 .hero-card-content h1,
 .hero-card-content p {
   text-align: center;
 }
+/* Social-proof pill above the headline — mint tint on the success green,
+   label | divider | "Read more", the whole pill is the link */
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: clamp(20px, 2.5vw, 28px);
+  padding: 8px 16px;
+  border-radius: 100px;
+  background: rgba(5, 177, 105, 0.10);
+  border: 1px solid rgba(5, 177, 105, 0.28);
+  color: #087A4A;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: background-color 150ms ease, border-color 150ms ease;
+}
+.hero-pill:hover {
+  background: rgba(5, 177, 105, 0.16);
+  border-color: rgba(5, 177, 105, 0.45);
+}
+.hero-pill:focus-visible {
+  outline: 2px solid #087A4A;
+  outline-offset: 3px;
+}
+.hero-pill-divider {
+  width: 1px;
+  height: 14px;
+  background: rgba(5, 177, 105, 0.45);
+}
+.hero-pill-cta {
+  opacity: 0.8;
+}
 .hero-card-content p {
   margin-left: auto;
   margin-right: auto;
 }
+/* Two equal-width pills: a shrink-to-fit grid whose 1fr columns both take
+   the wider button's width */
 .hero-card-cta-row {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
   gap: 12px;
-  margin-top: clamp(24px, 3vw, 36px);
-  justify-content: center;
+  width: fit-content;
+  max-width: 100%;
+  margin: clamp(24px, 3vw, 36px) auto 0;
 }
-/* Desktop */
-@media (min-width: 900px) {
+.hero-card-cta-row > * {
+  width: 100%;
+}
+/* Phones: stack, still equal width */
+@media (max-width: 480px) {
+  .hero-card-cta-row {
+    grid-auto-flow: row;
+    grid-template-columns: max-content;
+  }
+}
+/* Mobile — the rendered header is 72px here (the --header-h token is a
+   desktop value) plus the hero section's 16px top padding */
+@media (max-width: 640px) {
   .hero-card {
-    /* Reserve enough of the first viewport for the complete trust carousel. */
-    min-height: max(520px, calc(100svh - var(--header-h) - 260px));
+    min-height: calc(100svh - 88px);
   }
   .hero-card-content {
-    /* Keep the message centered in the viewport despite the carousel space. */
-    transform: translateY(clamp(0px, calc(50svh - 352px), 72px));
+    /* Bottom room for the scroll cue */
+    padding: 48px 8px 88px;
+    /* Half of the 88px header + padding on phones, less the 20px the
+       asymmetric padding (48 top / 88 bottom) already lifts the content */
+    transform: translateY(-24px);
+  }
+  .hero-scroll-cue {
+    bottom: 16px;
+  }
+  /* 44px touch target on phones (CDS IconButton renders at 40px) */
+  .hero-scroll-cue button {
+    min-width: 44px;
+    min-height: 44px;
   }
 }
 
-/* Mobile — keep the focused, centered composition while preserving room for
-   the header and the infrastructure section that follows. */
-@media (max-width: 640px) {
-  .hero-card {
-    min-height: max(420px, calc(100svh - var(--header-h) - 194px));
-  }
-  .hero-card-content {
-    padding: 48px 8px;
-    transform: translateY(clamp(0px, calc(50svh - 368px), 32px));
+/* Force the hero headline onto exactly two lines from tablet up; phones wrap naturally. */
+@media (min-width: 641px) {
+  .hero-title-line2 {
+    display: block;
   }
 }
 
@@ -730,57 +813,94 @@ select:focus-visible,
   }
 }
 
-/* Feature card variants — all-photo grid with chip proof points */
-.feature-card--photo {
+/* ═══════════════════════════════════════════════════════════════
+   Pictogram cover — landing counterpart of the blog cover template
+   (src/lib/og/coverConfig.ts): one flat tint + one large pictogram.
+   Fills a positioned parent (.bleed-band-photo, .feature-card-cover-art).
+   ═══════════════════════════════════════════════════════════════ */
+.picto-cover {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  container-type: size;
+}
+.picto-cover--mist {
+  background: var(--mist);
+}
+.picto-cover--stone {
+  background: var(--surface);
+}
+/* Same pictogram-to-canvas ratio as the 440/1200 blog covers; the height
+   term keeps it clear of the chip and the text block in short cards */
+.picto-cover img {
+  width: min(36cqw, 52cqh, 240px);
+  height: auto;
+}
+/* Flat tint needs neither the photo colour wash nor the saturation filter */
+.bleed-band-photo--cover::before {
+  display: none;
+}
+.bleed-band-photo--cover img {
+  filter: none;
+}
+
+/* Feature card variants — pictogram-cover grid with chip proof points.
+   Art on top, ink text below on the same tint (no scrim needed). */
+.feature-card--cover {
   position: relative;
   overflow: hidden;
   padding: 0;
   min-height: 280px;
-  justify-content: flex-end;
+  gap: 0;
 }
-/* Mobile: the stacked cards were only as tall as their overlay text, leaving
-   a thin photo strip mostly hidden behind the scrim. A portrait ratio lets
-   the photo show above the text (the card still grows if text needs more). */
-@media (max-width: 767px) {
-  .feature-card--photo {
-    aspect-ratio: 4 / 5;
-  }
+.feature-card--cover-mist {
+  background: var(--mist);
 }
-/* Photo cell spans both rows on desktop */
+.feature-card--cover-stone {
+  background: var(--surface);
+}
+.feature-card-cover-art {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 220px;
+}
+/* Centered composition: one mark above a short centered caption, the same
+   read as the blog covers */
+.feature-card-cover-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 0 32px 32px;
+  text-align: center;
+}
+/* CDS Text sets text-align on the element itself, so center each child */
+.feature-card-cover-text h3,
+.feature-card-cover-text p {
+  text-align: center;
+}
+.feature-card-cover-text h3 {
+  text-wrap: balance;
+}
+.feature-card-cover-text p {
+  max-width: 40ch;
+  text-wrap: pretty;
+}
+/* Tall (earn) cell spans both rows on desktop */
 @media (min-width: 768px) {
   .features-grid-2x2 > .feature-card--tall {
     grid-row: span 2;
   }
-  .feature-card--photo {
+  .feature-card--cover {
     min-height: 272px;
   }
-  .feature-card--tall .feature-card--photo {
+  .feature-card--tall .feature-card--cover {
     min-height: 560px;
   }
-}
-.feature-card--photo > img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  /* Same muted register as the hero photos */
-  filter: saturate(0.85);
-}
-.feature-card-photo-overlay {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 32px;
-  /* Scrim keeps the white text at AA contrast over the photo */
-  background: linear-gradient(180deg, transparent 0%, rgba(11, 27, 58, 0.80) 100%);
-  padding-top: 96px;
-}
-@media (min-width: 768px) {
-  .feature-card-photo-overlay {
-    padding: 120px 40px 40px;
+  .feature-card-cover-text {
+    padding: 0 40px 40px;
   }
 }
 
@@ -876,112 +996,6 @@ select:focus-visible,
   line-height: 1.25;
 }
 
-/* Chip — white pill floated on photos for proof points */
-.photo-chip {
-  position: absolute;
-  z-index: 3;
-  top: 24px;
-  left: 24px;
-  max-width: calc(100% - 48px);
-  /* Frosted glass — translucent white kept high-alpha so the ink text
-     stays WCAG-legible over busy photos; solid fallback below */
-  background: rgba(255, 255, 255, 0.92);
-  color: var(--ink);
-  border-radius: 100px;
-  padding: 11px 18px;
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 1.2;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.10);
-}
-@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-  .photo-chip {
-    background: rgba(255, 255, 255, 0.62);
-    -webkit-backdrop-filter: blur(14px) saturate(1.6);
-    backdrop-filter: blur(14px) saturate(1.6);
-  }
-}
-.photo-chip--br {
-  top: auto;
-  left: auto;
-  bottom: 24px;
-  right: 24px;
-}
-/* Mobile: long (Bulgarian) labels were wrapping inside the pill and
-   distorting it. Smaller type + tighter padding keeps chips on one line;
-   if one still wraps, balanced lines keep the lozenge symmetrical. */
-@media (max-width: 767px) {
-  .photo-chip {
-    top: 16px;
-    left: 16px;
-    max-width: calc(100% - 32px);
-    padding: 9px 14px;
-    font-size: 13px;
-    line-height: 1.3;
-    text-wrap: balance;
-  }
-  /* Keep the bottom-right variant anchored to one corner only — inheriting
-     the left offset above would stretch the pill across the card */
-  .photo-chip--br {
-    left: auto;
-    right: 16px;
-  }
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   Mission — full-bleed photo band, text bottom-left over a
-   layered scrim (horizontal depth + vertical legibility)
-   ═══════════════════════════════════════════════════════════════ */
-.mission-hero {
-  position: relative;
-  min-height: 520px;
-  border-radius: var(--radius-media);
-  overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-}
-.mission-hero > img {
-  filter: saturate(0.85);
-}
-.mission-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background:
-    linear-gradient(90deg, rgba(11, 27, 58, 0.62), rgba(11, 27, 58, 0.30) 52%, rgba(11, 27, 58, 0.05) 78%),
-    linear-gradient(180deg, rgba(11, 27, 58, 0.10), rgba(11, 27, 58, 0.45) 62%, rgba(11, 27, 58, 0.80));
-  pointer-events: none;
-}
-.mission-hero-content {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  max-width: 620px;
-  padding: clamp(32px, 5vw, 56px);
-}
-@media (max-width: 767px) {
-  .mission-hero {
-    min-height: 460px;
-  }
-  /* Strengthen the vertical scrim where all the text sits */
-  .mission-hero::before {
-    background:
-      linear-gradient(90deg, rgba(11, 27, 58, 0.40), rgba(11, 27, 58, 0.20) 60%, rgba(11, 27, 58, 0.10)),
-      linear-gradient(180deg, rgba(11, 27, 58, 0.10), rgba(11, 27, 58, 0.55) 55%, rgba(11, 27, 58, 0.88));
-  }
-}
-/* Below desktop the band isn't wide enough for the bottom-right chip to
-   clear the bottom-anchored text — float it top-right instead */
-@media (max-width: 1023px) {
-  .mission-hero .photo-chip--br {
-    bottom: auto;
-    top: 24px;
-    right: 24px;
-  }
-}
 
 /* ═══════════════════════════════════════════════════════════════
    Earning band — signature 24/7 moment (mist tint)
@@ -1404,9 +1418,7 @@ select:focus-visible,
    only, so skin tones and exposure survive; browsers without blend
    support just get a faint navy veil, which reads the same. */
 .hero-card-photo::before,
-.feature-card--photo::before,
-.bleed-band-photo::before,
-.mission-hero::after {
+.bleed-band-photo::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -1416,8 +1428,7 @@ select:focus-visible,
   opacity: 0.15;
   pointer-events: none;
 }
-.hero-card-photo::after,
-.feature-card--photo::after {
+.hero-card-photo::after {
   content: '';
   position: absolute;
   inset: 0;

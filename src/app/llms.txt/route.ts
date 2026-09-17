@@ -19,23 +19,22 @@ export function GET() {
 
   const body = `# Defied Money
 
-> Defied Money gives Europeans an account only they control for holding, growing and sending digital euros and dollars (EURC/USDC stablecoins). Defied Money never holds user funds. Earning comes from open onchain lending markets on the Base network. No bank required.
+> Defied Money is a self-custodial wallet for holding, sending and using digital euros and dollars (EURC/USDC stablecoins) on the Base network, with optional access to selected decentralized finance markets. Defied Money never holds user funds.
 
 Key facts:
 
 - Non-custodial: Defied Money never holds user funds. A personal self-custodial account (an onchain wallet created via Privy) is tied to the user's email; the user can export the private key and use the account independently of Defied Money at any time. Defied Money cannot access, move, or freeze funds.
-- Supported assets: USDC and EURC, both issued by Circle and backed 1:1 by audited reserves, on the Base network.
-- Earning: balances can earn yield through public decentralized lending markets (Aave, Compound, Morpho, Lido and others), accessed through the Defied Money interface. Rates are variable and not guaranteed; funds are not covered by any national deposit guarantee scheme.
+- Supported assets: USDC and EURC, both issued by Circle, on the Base network. Reserve composition and monthly attestations are published by the issuer; Defied Money does not issue, redeem or back either token.
+- Decentralized finance access: balances can be connected to selected public decentralized finance markets (Aave, Compound, Morpho and others; no staking products) through the Defied Money interface. Rates are set by each protocol, are variable and are not guaranteed; funds are not covered by any national deposit guarantee scheme.
 - Payments: stablecoin transfers settle in seconds, 24/7 including weekends. A virtual Visa debit card is planned.
 - On/off-ramp: converting between bank money and stablecoins is handled by the regulated partner Bridge.xyz and requires identity verification; direct stablecoin transfers require none.
 - Network fees on supported actions are covered by Defied Money.
 - Availability: the European Economic Area. Card and bank top-up availability depend on partner coverage per country.
-- Operated by Fusion Software LLC, Sofia, Bulgaria.
 
 ## Pages
 
 - [Home](${siteConfig.url}/): product overview, features, and FAQ
-- [Blog](${absoluteUrl('/blog')}): guides on stablecoins, DeFi yield, and self-custody
+- [Blog](${absoluteUrl('/blog')}): guides on stablecoins, decentralized finance and self-custody
 - [Risk disclosure](${absoluteUrl('/risks')}): full explanation of the risks of stablecoins and DeFi protocols
 - [Terms of service](${absoluteUrl('/terms')})
 - [Privacy policy](${absoluteUrl('/privacy')})
