@@ -693,6 +693,23 @@ select:focus-visible,
 .hero-card-content p {
   text-align: center;
 }
+/* Header CTA cross-fades between the quiet and primary states as the hero
+   leaves the viewport (variant swap happens in React; this only eases it) */
+.header-cta,
+.header-cta * {
+  /* !important: CDS Button sets its own (instant) transition on the pill and
+     its inner span, which otherwise wins over this class */
+  /* colour is deliberately not transitioned: each label owns its colour and
+     cross-fades instead, so text never passes through low-contrast tints */
+  transition: background-color 600ms ease, border-color 600ms ease, min-width 600ms ease !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  .header-cta,
+  .header-cta * {
+    transition: none !important;
+  }
+}
+
 /* Social-proof pill above the headline — mint tint on the success green,
    label | divider | "Read more", the whole pill is the link */
 .hero-pill {
@@ -731,25 +748,37 @@ select:focus-visible,
   margin-left: auto;
   margin-right: auto;
 }
-/* Two equal-width pills: a shrink-to-fit grid whose 1fr columns both take
-   the wider button's width */
+/* Two pills, each sized to its own label, centered as a pair */
 .hero-card-cta-row {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 1fr;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 12px;
-  width: fit-content;
-  max-width: 100%;
-  margin: clamp(24px, 3vw, 36px) auto 0;
+  margin-top: clamp(24px, 3vw, 36px);
 }
-.hero-card-cta-row > * {
-  width: 100%;
+/* Apple + Android glyphs in the waitlist button's start slot */
+.hero-platform-icons {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: inherit;
 }
-/* Phones: stack, still equal width */
+/* Both glyphs at the button's text colour, optically matched: the Apple
+   font glyph sits ~2px high of the label's cap height, the Android head is
+   cropped to its artwork so both ink boxes are ~13px tall */
+.hero-apple-icon {
+  display: block;
+  color: inherit;
+}
+.hero-android-icon {
+  display: block;
+  color: inherit;
+}
+/* Phones: stack, each pill still hugging its own label */
 @media (max-width: 480px) {
   .hero-card-cta-row {
-    grid-auto-flow: row;
-    grid-template-columns: max-content;
+    flex-direction: column;
+    align-items: center;
   }
 }
 /* Mobile — the rendered header is 72px here (the --header-h token is a

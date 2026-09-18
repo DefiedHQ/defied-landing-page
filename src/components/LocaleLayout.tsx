@@ -7,6 +7,7 @@ import { Header } from '@/components/Header';
 import { ConditionalFooter } from '@/components/ConditionalFooter';
 import { MainWrapper } from '@/components/MainWrapper';
 import { LanguageProvider } from '@/context/LanguageContext';
+import { DownloadModalProvider } from '@/context/DownloadModalContext';
 import type { Lang } from '@/lib/i18n';
 
 import '@/app/globals.css';
@@ -39,6 +40,7 @@ export function LocaleLayout({ lang, children }: { lang: Lang; children: React.R
         />
         <CdsProvider>
           <LanguageProvider initialLang={lang}>
+            <DownloadModalProvider>
             <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
               <div
                 style={{
@@ -53,6 +55,7 @@ export function LocaleLayout({ lang, children }: { lang: Lang; children: React.R
               <MainWrapper>{children}</MainWrapper>
               <ConditionalFooter />
             </div>
+            </DownloadModalProvider>
           </LanguageProvider>
         </CdsProvider>
         <Analytics />

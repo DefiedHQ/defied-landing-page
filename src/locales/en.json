@@ -8,18 +8,17 @@
     "advantages": "Advantages",
     "faq": "FAQ",
     "mission": "Mission",
-    "languageAndRegion": "Language and region",
-    "mobileApp": "Mobile app"
+    "languageAndRegion": "Language and region"
   },
   "hero": {
     "pillLabel": "Now live on Base",
     "pillCta": "Read more",
     "titleLine1": "Your gateway to stablecoins",
     "titleLine2": "and onchain finance.",
-    "ctaHeader": "Sign in",
-    "cardSubtitle": "Defied Money is a self-custodial wallet built for holding, sending and using digital euros and dollars in the onchain economy.",
+    "ctaHeader": "Open app",
+    "cardSubtitle": "Hold digital euros and dollars. Send them in seconds. Use them onchain. All from a wallet only you control.",
     "earlyAccess": "Create your wallet now",
-    "seeFeatures": "See all features",
+    "waitlistCta": "Join the iOS & Android waitlist",
     "scrollCue": "Scroll to learn more",
     "imageAlt": "Person using the Defied Money wallet app"
   },
@@ -34,8 +33,8 @@
     "subheading": "Hold it. Send it. Use it. From a wallet only you control."
   },
   "infrastructure": {
-    "title": "Built on trusted infrastructure",
-    "subtitle": "Built with wallet infrastructure, blockchain networks and independent third-party service providers."
+    "title": "Built on Base. Powered by the rails you already know.",
+    "subtitle": "Wallet infrastructure, onchain settlement, fiat on-ramps and swaps, each run by an independent provider under its own terms. We build the interface on top."
   },
   "features": {
     "sectionTitle": "Digital euros and dollars. The essentials, made simple.",

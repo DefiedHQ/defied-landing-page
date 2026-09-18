@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useState, useRef, useEffect, useCallback } from 'react';
+import { AnimatePresence, m } from 'framer-motion';
 import { HStack } from '@coinbase/cds-web/layout/HStack';
 import { VStack } from '@coinbase/cds-web/layout/VStack';
 import { Text } from '@coinbase/cds-web/typography/Text';
@@ -10,18 +11,35 @@ import { Button } from '@coinbase/cds-web/buttons/Button';
 import { Icon } from '@coinbase/cds-web/icons/Icon';
 import { LogoMark } from '@/components/LogoMark';
 import { AnimatedButtonText } from '@/components/AnimatedButtonText';
-import { DownloadAppModal } from '@/components/DownloadAppModal';
 import { useLanguage } from '@/context/LanguageContext';
 import { stripLangPrefix } from '@/lib/i18n';
+import { HERO_ID } from '@/components/HeroStatic';
 
 export function Header() {
   const pathname = usePathname();
   const router = useRouter();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [downloadModalOpen, setDownloadModalOpen] = useState(false);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const mobileToggleRef = useRef<HTMLButtonElement>(null);
   const { t, localePath } = useLanguage();
+
+  // Scroll-aware CTA: a quiet "Sign in" while the hero (which owns the one
+  // blue CTA per viewport) is on screen; the primary "Create your wallet now"
+  // once the hero has scrolled out. Pages without a hero keep "Sign in".
+  const [pastHero, setPastHero] = useState(false);
+  useEffect(() => {
+    const hero = document.getElementById(HERO_ID);
+    if (!hero) {
+      setPastHero(false);
+      return;
+    }
+    const observer = new IntersectionObserver(
+      ([entry]) => setPastHero(!entry.isIntersecting),
+      { threshold: 0 }
+    );
+    observer.observe(hero);
+    return () => observer.disconnect();
+  }, [pathname]);
 
   const scrollToSection = useCallback((sectionId: string) => {
     setMobileMenuOpen(false);
@@ -97,14 +115,6 @@ export function Header() {
           </button>
           <button
             type="button"
-            onClick={() => setDownloadModalOpen(true)}
-            className="header-tab"
-            style={{ padding: '8px 16px', borderRadius: '100px', border: 'none', cursor: 'pointer', color: 'var(--ink)' }}
-          >
-            <Text as="span" style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 500 }}>{t('nav.mobileApp')}</Text>
-          </button>
-          <button
-            type="button"
             onClick={() => scrollToSection('faq')}
             className="header-tab"
             style={{ padding: '8px 16px', borderRadius: '100px', border: 'none', cursor: 'pointer', color: 'var(--ink)' }}
@@ -129,12 +139,28 @@ export function Header() {
             href="https://app.defied.money"
             target="_blank"
             rel="noopener noreferrer"
-            variant="secondary"
+            variant={pastHero ? 'primary' : 'secondary'}
             compact
-            className="btn-fw-500"
-            style={{ borderRadius: '56px', minWidth: '100px', padding: '0 24px', height: '44px' }}
+            className="btn-fw-500 header-cta"
+            style={{ borderRadius: '56px', minWidth: pastHero ? '217px' : '100px', padding: '0 24px', height: '44px' }}
           >
-            <AnimatedButtonText>{t('hero.ctaHeader')}</AnimatedButtonText>
+            {/* Label cross-fades (out, then in) while the pill's colour and
+                width ease over the same window - see .header-cta */}
+            <AnimatePresence mode="wait" initial={false}>
+              <m.span
+                key={pastHero ? 'cta' : 'signin'}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3, ease: 'easeInOut' }}
+                /* Each label carries its own colour: AnimatePresence freezes the
+                   exiting span's props, so the old label fades out in its own
+                   ink instead of snapping to white against the still-light pill */
+                style={{ display: 'inline-flex', color: pastHero ? '#FFFFFF' : 'var(--ink)' }}
+              >
+                <AnimatedButtonText>{pastHero ? t('hero.earlyAccess') : t('hero.ctaHeader')}</AnimatedButtonText>
+              </m.span>
+            </AnimatePresence>
           </Button>
         </HStack>
       </HStack>
@@ -175,13 +201,6 @@ export function Header() {
           </button>
           <button
             type="button"
-            onClick={() => { setMobileMenuOpen(false); setDownloadModalOpen(true); }}
-            style={{ padding: '10px 4px', transition: 'color 0.2s ease', textAlign: 'left', background: 'none', border: 'none', color: 'var(--ink)', cursor: 'pointer' }}
-          >
-            <Text font="body" as="span">{t('nav.mobileApp')}</Text>
-          </button>
-          <button
-            type="button"
             onClick={() => scrollToSection('faq')}
             style={{ padding: '10px 4px', transition: 'color 0.2s ease', textAlign: 'left', background: 'none', border: 'none', color: 'var(--ink)', cursor: 'pointer' }}
           >
@@ -207,7 +226,6 @@ export function Header() {
           ))}
         </VStack>
       </div>
-      <DownloadAppModal open={downloadModalOpen} onClose={() => setDownloadModalOpen(false)} />
     </header>
   );
 }
