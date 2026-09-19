@@ -20,7 +20,20 @@
     "earlyAccess": "Create your wallet now",
     "waitlistCta": "Join the iOS & Android waitlist",
     "scrollCue": "Scroll to learn more",
-    "imageAlt": "Person using the Defied Money wallet app"
+    "imageAlt": "Person using the Defied Money wallet app",
+    "card": {
+      "ariaLabel": "Illustration of the Defied Money wallet: a euro balance with recent sends, receipts, currency exchanges, and deposits to and withdrawals from onchain markets",
+      "balanceLabel": "Total balance",
+      "recentLabel": "Recent activity",
+      "received": "Received",
+      "sent": "Sent",
+      "deposit": "Deposit",
+      "withdraw": "Withdraw",
+      "exchange": "Exchange",
+      "noteDinner": "Dinner",
+      "noteRent": "Rent",
+      "noteTickets": "Concert tickets"
+    }
   },
   "earning": {
     "title": "Open markets. Your call.",
