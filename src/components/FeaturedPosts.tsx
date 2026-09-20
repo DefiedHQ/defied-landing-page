@@ -10,7 +10,7 @@ import { useLanguage } from '@/context/LanguageContext';
 /* Hand-picked for the landing page: the strongest commercial article, the
    strongest educational one, and the entry-level explainer. */
 const FEATURED_SLUGS = [
-  'revolut-alternatives-bulgaria',
+  'revolut-alternatives',
   'where-does-defi-yield-come-from',
   'what-is-a-stablecoin',
 ];

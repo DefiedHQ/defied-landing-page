@@ -67,10 +67,10 @@
     "faqInBody": false
   },
   {
-    "id": "revolut-alternatives-bulgaria",
+    "id": "revolut-alternatives",
     "category": "Guides",
-    "title": "Revolut Alternatives in Bulgaria in 2026: An Honest Comparison",
-    "excerpt": "The best Revolut alternative depends on the job: Wise wins on international transfers, Paysera on business accounts, your Bulgarian bank on guaranteed deposits - and a non-custodial account like Defied Money on savings you fully control. An honest look at where each one beats Revolut, and where it doesn't.",
+    "title": "Revolut Alternatives in 2026: An Honest Comparison",
+    "excerpt": "The best Revolut alternative depends on the job: Wise wins on international transfers, Paysera on business accounts, your local bank on guaranteed deposits - and a non-custodial account like Defied Money on savings you fully control. An honest look at where each one beats Revolut, and where it doesn't.",
     "date": "2026-07-21",
     "readTime": 9,
     "author": "Stan Trenev",
@@ -78,61 +78,61 @@
     "sections": [
       {
         "heading": "",
-        "body": "Revolut became the default second account for hundreds of thousands of Bulgarians - and deservedly so. It normalised instant app payments, fee-free card spending abroad, and multi-currency accounts years before most local banks caught up.\n\nBut 2026 is a different landscape. Bulgaria now uses the euro, so SEPA Instant makes fast, free euro transfers the baseline rather than a premium feature. And a new generation of accounts competes on things Revolut structurally can't offer - including not holding your money at all. Here's an honest look at when Revolut is still the right tool, and what to use when it isn't."
+        "body": "Revolut became the default second account for millions of Europeans - and deservedly so. It normalised instant app payments, fee-free card spending abroad, and multi-currency accounts years before most banks caught up.\n\nBut 2026 is a different landscape. Across the euro area, SEPA Instant makes fast, free euro transfers the baseline rather than a premium feature. And a new generation of accounts competes on things Revolut structurally can't offer - including not holding your money at all. Here's an honest look at when Revolut is still the right tool, and what to use when it isn't."
       },
       {
         "heading": "What Revolut does well",
-        "body": "Credit where due: Revolut remains excellent as a **travel and spending card** - competitive exchange rates on dozens of currencies, instant card controls, and wide acceptance. The app experience is still among the best in the industry, budgeting tools included.\n\nIt's also a real bank: Revolut operates in Bulgaria through its Lithuanian-licensed bank, which means deposits are covered by an EU deposit guarantee scheme up to €100,000. For everyday spending money, Revolut is a perfectly reasonable place."
+        "body": "Credit where due: Revolut remains excellent as a **travel and spending card** - competitive exchange rates on dozens of currencies, instant card controls, and wide acceptance. The app experience is still among the best in the industry, budgeting tools included.\n\nIt's also a real bank: in most EU countries Revolut operates through its EU-licensed bank, which means deposits are covered by a deposit guarantee scheme up to €100,000. For everyday spending money, Revolut is a perfectly reasonable place."
       },
       {
         "heading": "Where Revolut falls short",
-        "body": "The complaints Bulgarian users actually have cluster around three things:\n\n- **Frozen accounts.** Like every regulated institution, Revolut runs automated compliance checks - and when one triggers, your account can be blocked for days or weeks while documents are reviewed, with limited recourse in the meantime.\n- **Support at scale.** With tens of millions of customers, getting a human on a non-standard problem can be slow, and chat support has a script-first reputation.\n- **It holds your money.** That's not a flaw - it's what a bank is. But it means limits, terms, and product changes are decided for you, and your balance is a claim on Revolut rather than something you hold yourself. What that distinction means in practice is covered in our guide to [non-custodial wallets](/blog/what-is-a-non-custodial-wallet)."
+        "body": "The complaints users actually have cluster around three things:\n\n- **Frozen accounts.** Like every regulated institution, Revolut runs automated compliance checks - and when one triggers, your account can be blocked for days or weeks while documents are reviewed, with limited recourse in the meantime.\n- **Support at scale.** With tens of millions of customers, getting a human on a non-standard problem can be slow, and chat support has a script-first reputation.\n- **It holds your money.** That's not a flaw - it's what a bank is. But it means limits, terms, and product changes are decided for you, and your balance is a claim on Revolut rather than something you hold yourself. What that distinction means in practice is covered in our guide to [non-custodial wallets](/blog/what-is-a-non-custodial-wallet)."
       },
       {
         "heading": "Wise: best for international transfers",
-        "body": "For getting money across borders, **Wise** remains the benchmark: conversion at the mid-market rate, one transparent fee shown upfront, and delivery in minutes to a day on major corridors. Its multi-currency account with local account details in several currencies is genuinely useful for freelancers invoicing abroad.\n\nWhat Wise is not: a place to earn on your balance in Bulgaria, or a full banking replacement. It's a transfer tool - the best one - and worth having alongside whatever else you use. We compare the full costs of every transfer method in our [guide to sending money from Bulgaria](/blog/send-money-from-bulgaria)."
+        "body": "For getting money across borders, **Wise** remains the benchmark: conversion at the mid-market rate, one transparent fee shown upfront, and delivery in minutes to a day on major corridors. Its multi-currency account with local account details in several currencies is genuinely useful for freelancers invoicing abroad.\n\nWhat Wise is not: a place to earn on your balance, or a full banking replacement. It's a transfer tool - the best one - and worth having alongside whatever else you use. We compare the full costs of every transfer method in our [guide to sending money abroad](/blog/send-money-abroad)."
       },
       {
         "heading": "Paysera: the business workhorse",
-        "body": "**Paysera**, a Lithuanian e-money institution with a long-standing Bulgarian presence, is quietly the practical choice for small businesses and sole traders: multi-currency IBANs, low-cost SEPA transfers, invoicing tools, and checkout integrations at prices that undercut traditional business banking.\n\nThe trade-off to understand: as an e-money institution rather than a bank, client funds are safeguarded (held segregated at credit institutions) but not covered by the €100,000 deposit guarantee. Fine for operating money flowing through a business; think twice before parking long-term savings there."
+        "body": "**Paysera**, a Lithuanian e-money institution with a presence across much of Europe, is quietly the practical choice for small businesses and sole traders: multi-currency IBANs, low-cost SEPA transfers, invoicing tools, and checkout integrations at prices that undercut traditional business banking.\n\nThe trade-off to understand: as an e-money institution rather than a bank, client funds are safeguarded (held segregated at credit institutions) but not covered by the €100,000 deposit guarantee. Fine for operating money flowing through a business; think twice before parking long-term savings there."
       },
       {
-        "heading": "Your Bulgarian bank: better than you remember",
-        "body": "Euro adoption forced Bulgarian banks to raise their game. SEPA Instant is now a required, no-premium feature, mobile apps have improved markedly, and for money you want guaranteed, a Bulgarian bank deposit carries the national deposit guarantee up to €100,000.\n\nThe honest weaknesses haven't changed: savings rates that lag well behind what open markets pay, fees that accumulate across everyday operations, and product terms that reward inertia. As a salary anchor and guaranteed store, a local bank earns its place; as a place for your savings to grow, it usually doesn't. We compared the real numbers in [how to earn interest on euros](/blog/euro-yield-options-compared)."
+        "heading": "Your local bank: better than you remember",
+        "body": "Competition from fintechs forced traditional banks to raise their game. Across the euro area, SEPA Instant is now a required, no-premium feature, mobile apps have improved markedly, and for money you want guaranteed, a bank deposit carries the national deposit guarantee up to €100,000.\n\nThe honest weaknesses haven't changed: savings rates that lag well behind what open markets pay, fees that accumulate across everyday operations, and product terms that reward inertia. As a salary anchor and guaranteed store, a local bank earns its place; as a place for your savings to grow, it usually doesn't. We compared the real numbers in [how to earn on euros](/blog/euro-yield-options-compared)."
       },
       {
         "heading": "Defied Money: the non-custodial alternative",
-        "body": "**Defied Money** competes on a different axis entirely: it never holds your money. Your balance lives in [EURC and USDC](/blog/what-is-eurc) in an onchain account only you control - Defied Money is the interface, not the custodian. That structurally removes the frozen-account problem: there is no balance sheet for your funds to sit on and no operations team that can block them.\n\nOn top of that: transfers that settle in seconds worldwide, 24/7; optional access to open lending markets from your own wallet, at whatever variable rate the market is paying (here's [where that yield comes from](/blog/where-does-defi-yield-come-from)); and a virtual Visa card for spending.\n\nThe honest trade-offs: self-custody means securing your email login is genuinely your job, funds are not covered by a deposit guarantee scheme, and DeFi yields carry protocol risk - read the [risk disclosure](/risks) before depositing. Non-custodial accounts reward users who understand what they're holding."
+        "body": "**Defied Money** competes on a different axis entirely: it never holds your money. Your balance lives in [EURC and USDC](/blog/what-is-eurc) in an onchain account only you control - Defied Money is the interface, not the custodian. That structurally removes the frozen-account problem: there is no balance sheet for your funds to sit on and no operations team that can block them.\n\nOn top of that: transfers that settle in seconds worldwide, 24/7; optional access to open lending markets from your own wallet, at whatever variable rate the market is paying (here's [where that yield comes from](/blog/where-does-defi-yield-come-from)); and a virtual Visa card for spending, where available.\n\nThe honest trade-offs: self-custody means securing your email login is genuinely your job, funds are not covered by a deposit guarantee scheme, and DeFi yields carry protocol risk - read the [risk disclosure](/risks) before depositing. Non-custodial accounts reward users who understand what they're holding."
       },
       {
         "heading": "How to choose",
-        "body": "Match the tool to the job:\n\n- **Travel card and everyday spending:** Revolut - still the best all-rounder\n- **One-off international transfers:** Wise - transparent and consistently cheap\n- **Business accounts and invoicing:** Paysera - built for it\n- **Salary and guaranteed deposits:** a Bulgarian bank - the €100,000 guarantee matters\n- **Savings you control, that earn and move 24/7:** Defied Money - self-custody with market yield\n\nMost people end up with two or three of these, not one. The mistake isn't picking the \"wrong\" app - it's keeping all your money in any single one of them."
+        "body": "Match the tool to the job:\n\n- **Travel card and everyday spending:** Revolut - still the best all-rounder\n- **One-off international transfers:** Wise - transparent and consistently cheap\n- **Business accounts and invoicing:** Paysera - built for it\n- **Salary and guaranteed deposits:** your local bank - the €100,000 guarantee matters\n- **Savings you control, that earn and move 24/7:** Defied Money - self-custody with market yield\n\nMost people end up with two or three of these, not one. The mistake isn't picking the \"wrong\" app - it's keeping all your money in any single one of them."
       },
       {
         "heading": "The bottom line",
-        "body": "Revolut earned its place in Bulgarian pockets, and for spending it keeps it. But \"alternative to Revolut\" is really three different questions - about transfers, about business banking, and about savings - with three different best answers.\n\nThe deepest difference is the last one: every option above except one holds your money for you. If 2026 has a genuinely new answer to offer, it's the account where nobody stands between you and your funds at all."
+        "body": "Revolut earned its place in European pockets, and for spending it keeps it. But \"alternative to Revolut\" is really three different questions - about transfers, about business banking, and about savings - with three different best answers.\n\nThe deepest difference is the last one: every option above except one holds your money for you. If 2026 has a genuinely new answer to offer, it's the account where nobody stands between you and your funds at all."
       },
       {
         "heading": "Start with Defied Money",
-        "body": "Defied Money is a non-custodial platform for onchain wealth, built on EURC and USDC. Hold, earn, send, and spend without a bank. [Join the waitlist](/) and we'll let you know when your spot opens.\n\n*This article is for informational purposes only. Defied Money is a non-custodial software interface and does not provide financial advice. Please read our [risk disclosure](/risks) and [terms of use](/terms) before using the Services.*\n\n*Last updated: 2026-07-21*"
+        "body": "Defied Money is a non-custodial platform for onchain wealth, built on EURC and USDC. Hold, earn, send, and spend without a bank. [Join the waitlist](/) and we'll let you know when your spot opens.\n\n*This article is for informational purposes only. Defied Money is a non-custodial software interface and does not provide financial advice. Please read our [risk disclosure](/risks) and [terms of use](/terms) before using the Services.*\n\n*Last updated: 2026-09-20*"
       }
     ],
     "faq": [
       {
-        "q": "What is the best Revolut alternative in Bulgaria?",
-        "a": "It depends on the job: Wise is best for international transfers, Paysera for business accounts, a Bulgarian bank for deposits under the €100,000 guarantee, and a non-custodial account like Defied Money for savings you fully control that earn market yield. Most people combine two or three."
+        "q": "What is the best Revolut alternative?",
+        "a": "It depends on the job: Wise is best for international transfers, Paysera for business accounts, a local bank for deposits under the €100,000 guarantee, and a non-custodial account like Defied Money for savings you fully control that earn market yield. Most people combine two or three."
       },
       {
         "q": "Is Revolut safe to keep money in?",
-        "a": "Revolut serves Bulgarian customers through its EU-licensed bank, so deposits are covered by a deposit guarantee up to €100,000. The practical risk isn't insolvency - it's operational: compliance checks can freeze an account for days or weeks, which is a good argument against keeping everything in one place."
+        "a": "In most EU countries Revolut serves customers through its EU-licensed bank, so deposits are covered by a deposit guarantee up to €100,000. The practical risk isn't insolvency - it's operational: compliance checks can freeze an account for days or weeks, which is a good argument against keeping everything in one place."
       },
       {
         "q": "Why do Revolut accounts get frozen?",
         "a": "Anti-money-laundering rules require every regulated institution to monitor transactions and freeze accounts that trigger checks until documents are reviewed. It's not unique to Revolut - but at its scale, reviews can take time. Diversifying where your money lives is the practical protection."
       },
       {
-        "q": "Do I still need Revolut now that Bulgaria uses the euro?",
-        "a": "Less than before. Since euro adoption, SEPA Instant makes euro transfers free and instant from any bank, which was long a key Revolut advantage. It remains a strong travel and multi-currency spending card - that's where it still clearly earns its place."
+        "q": "Do I still need Revolut if my bank offers SEPA Instant?",
+        "a": "Less than before. EU rules now require banks to offer SEPA Instant at no premium, so free, instant euro transfers - long a key Revolut advantage - come with any euro-area bank account. Revolut remains a strong travel and multi-currency spending card, and that's where it still clearly earns its place."
       },
       {
         "q": "What is the difference between Revolut and a non-custodial account like Defied Money?",
@@ -142,10 +142,10 @@
     "faqInBody": false
   },
   {
-    "id": "send-money-from-bulgaria",
+    "id": "send-money-abroad",
     "category": "Guides",
-    "title": "How to Send Money From Bulgaria in 2026: Fees and Speed Compared",
-    "excerpt": "Within the EU, euro adoption made transfers from Bulgaria as cheap as domestic ones - SEPA Instant arrives in seconds. Outside the EU, the real cost hides in exchange-rate margins, not headline fees. Here's an honest comparison of banks, fintechs, remittance networks, and stablecoins.",
+    "title": "How to Send Money Abroad in 2026: Fees and Speed Compared",
+    "excerpt": "Within the euro area, SEPA Instant makes transfers as cheap as domestic ones and arrives in seconds. Outside it, the real cost hides in exchange-rate margins, not headline fees. Here's an honest comparison of banks, fintechs, remittance networks, and stablecoins.",
     "date": "2026-07-08",
     "readTime": 9,
     "author": "Stan Trenev",
@@ -153,15 +153,15 @@
     "sections": [
       {
         "heading": "",
-        "body": "Sending money from Bulgaria used to mean a choice between slow bank wires and expensive transfer counters. Two things changed that: Bulgaria's adoption of the euro in January 2026, which turned most European transfers into cheap domestic-style payments, and the maturing of alternatives - from fintech apps to [stablecoins](/blog/what-is-a-stablecoin) that settle in seconds at any hour.\n\nThe right tool now depends almost entirely on one question: where is the money going? Here's the honest comparison."
+        "body": "Sending money abroad used to mean a choice between slow bank wires and expensive transfer counters. Two things changed that: SEPA Instant, which turned most European euro transfers into cheap, immediate payments, and the maturing of alternatives - from fintech apps to [stablecoins](/blog/what-is-a-stablecoin) that settle in seconds at any hour.\n\nThe right tool now depends almost entirely on one question: where is the money going? Here's the honest comparison."
       },
       {
-        "heading": "Within the EU: SEPA made it (almost) free",
-        "body": "Since Bulgaria joined the euro area, a transfer to Germany, Spain, or Greece is no different from one across Sofia: a **SEPA credit transfer**, typically free or costing cents through most banks and fintechs.\n\nEven better, EU rules now require banks to offer **SEPA Instant** at no premium over regular transfers - your euros arrive in about ten seconds, around the clock, weekends included. For euro-to-euro payments inside the EU, there is no longer any reason to pay meaningful transfer fees. If your bank still charges them, that's a bank problem, not a transfer problem."
+        "heading": "Within the euro area: SEPA made it (almost) free",
+        "body": "Inside the euro area, a transfer to Germany, Spain, or Greece is no different from one across your own city: a **SEPA credit transfer**, typically free or costing cents through most banks and fintechs.\n\nEven better, EU rules now require banks to offer **SEPA Instant** at no premium over regular transfers - your euros arrive in about ten seconds, around the clock, weekends included. For euro-to-euro payments inside the EU, there is no longer any reason to pay meaningful transfer fees. If your bank still charges them, that's a bank problem, not a transfer problem."
       },
       {
-        "heading": "Outside the EU: the SWIFT problem",
-        "body": "Sending to the UK, US, Turkey, or anywhere outside the euro's home turf usually means an international wire over SWIFT - and this is where costs pile up:\n\n- **Outgoing fees** commonly range from €15 to €50 at Bulgarian banks\n- **Correspondent banks** along the route can each take their own cut\n- **The exchange-rate margin** - often 1-3% above the mid-market rate - is usually the largest cost, and the least visible\n- **Speed:** one to five business days\n\nA \"€25 fee\" wire can quietly cost several times that once the FX margin is counted. Always compare what the recipient actually receives, not the advertised fee."
+        "heading": "Outside the euro area: the SWIFT problem",
+        "body": "Sending to the UK, US, Turkey, or anywhere outside the euro's home turf usually means an international wire over SWIFT - and this is where costs pile up:\n\n- **Outgoing fees** commonly range from €15 to €50 at traditional banks\n- **Correspondent banks** along the route can each take their own cut\n- **The exchange-rate margin** - often 1-3% above the mid-market rate - is usually the largest cost, and the least visible\n- **Speed:** one to five business days\n\nA \"€25 fee\" wire can quietly cost several times that once the FX margin is counted. Always compare what the recipient actually receives, not the advertised fee."
       },
       {
         "heading": "Fintech transfer services: Wise, Revolut and friends",
@@ -173,7 +173,7 @@
       },
       {
         "heading": "Stablecoins: euros that move at internet speed",
-        "body": "A stablecoin transfer is a different animal: [EURC or USDC](/blog/what-is-eurc) moves from your wallet to anyone's wallet, anywhere on the planet, in seconds - 24/7, weekends and holidays included, with network costs of cents (which Defied Money covers on supported actions). There are no correspondent banks because there is no route: it's one shared ledger.\n\nThe honest trade-offs: the recipient needs a wallet, which takes minutes to set up but is a real step; and if they need local cash in a bank account, they'll use an off-ramp, which involves identity verification and its own small conversion cost. For recurring transfers between people who both hold stablecoins - families, freelancers, remote teams - it is the fastest and cheapest rail that exists today. Selling crypto you've gained on can also be a taxable event - see our [Bulgarian crypto tax guide](/blog/crypto-taxes-bulgaria)."
+        "body": "A stablecoin transfer is a different animal: [EURC or USDC](/blog/what-is-eurc) moves from your wallet to anyone's wallet, anywhere on the planet, in seconds - 24/7, weekends and holidays included, with network costs of cents (which Defied Money covers on supported actions). There are no correspondent banks because there is no route: it's one shared ledger.\n\nThe honest trade-offs: the recipient needs a wallet, which takes minutes to set up but is a real step; and if they need local cash in a bank account, they'll use an off-ramp, which involves identity verification and its own small conversion cost. For recurring transfers between people who both hold stablecoins - families, freelancers, remote teams - it is the fastest and cheapest rail that exists today. Selling crypto you've gained on can also be a taxable event - see our [plain-language crypto tax guide](/blog/crypto-taxes-europe)."
       },
       {
         "heading": "What actually determines what you pay",
@@ -185,42 +185,42 @@
       },
       {
         "heading": "The bottom line",
-        "body": "Inside the EU, the problem is solved: use SEPA Instant and pay nothing. Outside the EU, avoid bank wires when you can - a transparent fintech service delivers more of your money, faster. Remittance counters are for when cash pickup is genuinely the only option.\n\nAnd for money that moves often - between family members, freelancers and clients, or your own accounts across borders - stablecoins are the rail the others are quietly being measured against: seconds, cents, any day of the year."
+        "body": "Inside the euro area, the problem is solved: use SEPA Instant and pay nothing. Outside it, avoid bank wires when you can - a transparent fintech service delivers more of your money, faster. Remittance counters are for when cash pickup is genuinely the only option.\n\nAnd for money that moves often - between family members, freelancers and clients, or your own accounts across borders - stablecoins are the rail the others are quietly being measured against: seconds, cents, any day of the year."
       },
       {
         "heading": "Start with Defied Money",
-        "body": "Defied Money is a non-custodial platform for onchain wealth, built on EURC and USDC. Hold, earn, send, and spend without a bank. [Join the waitlist](/) and we'll let you know when your spot opens.\n\n*This article is for informational purposes only. Defied Money is a non-custodial software interface and does not provide financial advice. Please read our [risk disclosure](/risks) and [terms of use](/terms) before using the Services.*\n\n*Last updated: 2026-07-08*"
+        "body": "Defied Money is a non-custodial platform for onchain wealth, built on EURC and USDC. Hold, earn, send, and spend without a bank. [Join the waitlist](/) and we'll let you know when your spot opens.\n\n*This article is for informational purposes only. Defied Money is a non-custodial software interface and does not provide financial advice. Please read our [risk disclosure](/risks) and [terms of use](/terms) before using the Services.*\n\n*Last updated: 2026-09-20*"
       }
     ],
     "faq": [
       {
-        "q": "What is the cheapest way to send money from Bulgaria to another EU country?",
-        "a": "A SEPA transfer. Since Bulgaria adopted the euro, transfers to any euro-area country work like domestic payments - free or costing cents - and EU rules require banks to offer SEPA Instant, arriving in about ten seconds, at no premium."
+        "q": "What is the cheapest way to send money to another EU country?",
+        "a": "A SEPA transfer. Within the euro area, transfers work like domestic payments - free or costing cents - and EU rules require banks to offer SEPA Instant, arriving in about ten seconds, at no premium."
       },
       {
-        "q": "What is the cheapest way to send money from Bulgaria outside the EU?",
+        "q": "What is the cheapest way to send money outside the EU?",
         "a": "Usually a transparent fintech service like Wise, which converts at the mid-market rate with one visible fee - or a stablecoin transfer if the recipient holds a wallet, which settles in seconds for cents. Bank wires over SWIFT are typically the most expensive option once exchange-rate margins are counted."
       },
       {
         "q": "Are stablecoin transfers legal?",
-        "a": "Yes. Stablecoins like EURC and USDC are regulated in the EU under the MiCA framework, and holding or transferring them is legal. Gains realised when disposing of crypto assets can be taxable - see our guide to crypto taxes in Bulgaria."
+        "a": "Yes. Stablecoins like EURC and USDC are regulated in the EU under the MiCA framework, and holding or transferring them is legal. Gains realised when disposing of crypto assets can be taxable - see our plain-language guide to crypto taxes in Europe."
       },
       {
         "q": "What is the catch with sending money via stablecoins?",
         "a": "The recipient needs a wallet, and turning stablecoins into cash in a bank account requires an off-ramp with identity verification and a small conversion cost. Between two people who both hold stablecoins, there is no faster or cheaper method today."
       },
       {
-        "q": "Can I send money from Bulgaria on a weekend?",
+        "q": "Can I send money abroad on a weekend?",
         "a": "Yes - with the right rail. SEPA Instant works 24/7 within the euro area, and stablecoin transfers settle in seconds any day of the year. Regular SEPA, SWIFT wires, and many fintech transfers wait for business days."
       }
     ],
     "faqInBody": false
   },
   {
-    "id": "crypto-taxes-bulgaria",
+    "id": "crypto-taxes-europe",
     "category": "Guides",
-    "title": "Crypto Taxes in Bulgaria in 2026: A Plain-Language Guide",
-    "excerpt": "In Bulgaria, individuals generally pay a flat 10% tax on realised crypto gains, declared with the annual tax return - buying and holding is not taxed. Here's how taxable events, stablecoins, and yield are treated in plain language. This is general information, not tax advice.",
+    "title": "Crypto Taxes in Europe in 2026: A Plain-Language Guide",
+    "excerpt": "Across the EU, buying and holding crypto is not taxed; tax generally arises when you sell, swap, or spend at a profit, and yield is treated as income. Rates and rules differ by country. Here's how taxable events, stablecoins, and yield are treated in plain language. This is general information, not tax advice.",
     "date": "2026-06-18",
     "readTime": 10,
     "author": "Stan Trenev",
@@ -228,31 +228,31 @@
     "sections": [
       {
         "heading": "",
-        "body": "Crypto taxation in Bulgaria is simpler than in most EU countries - but \"simpler\" is not the same as \"optional\", and the reporting environment is tightening across the EU. This guide explains the general rules in plain language: what triggers tax, what doesn't, and how stablecoins and yield fit in.\n\n*One thing before we start: this is general educational information, not tax or legal advice. Tax law changes, individual situations differ, and the safe move for anything beyond trivial amounts is a consultation with a Bulgarian tax advisor.*"
+        "body": "Crypto taxation in Europe follows a few shared principles - but the rates, forms and deadlines are set by each country, and the reporting environment is tightening across the EU. This guide explains the common rules in plain language: what triggers tax, what doesn't, and how stablecoins and yield fit in.\n\n*One thing before we start: this is general educational information, not tax or legal advice. Tax law differs by country and changes over time, and the safe move for anything beyond trivial amounts is a consultation with a tax advisor in your country of residence.*"
       },
       {
         "heading": "The short answer",
-        "body": "For private individuals in Bulgaria, profit from selling or exchanging cryptocurrency is generally treated as **income from the sale of financial assets** and taxed at the flat **10% rate**, declared once a year with your annual tax return.\n\nJust as important is what is *not* taxed: buying crypto with fiat money, holding it - for a week or for a decade - and moving it between your own wallets. No gain has been realised, so there is nothing to tax."
+        "body": "For private individuals in most EU countries, profit from selling or exchanging cryptocurrency is treated as a **capital gain or income from financial assets** and taxed at that country's rate - anywhere from a flat single-digit percentage to progressive income-tax rates, and in a few countries zero after a minimum holding period. It is usually declared once a year with your annual tax return.\n\nJust as important is what is generally *not* taxed anywhere: buying crypto with fiat money, holding it - for a week or for a decade - and moving it between your own wallets. No gain has been realised, so there is nothing to tax."
       },
       {
         "heading": "What counts as a taxable event",
-        "body": "Tax generally arises when you *dispose* of crypto at a profit:\n\n- **Selling crypto for fiat** - euro, dollars, or anything else\n- **Swapping one crypto for another** - including into and out of stablecoins; an exchange is a disposal even if no fiat is involved\n- **Paying for goods or services with crypto** - legally, you disposed of an asset\n\nWhat generally does **not** trigger tax:\n\n- Buying crypto with fiat\n- Holding, regardless of how much the price moves\n- Transferring between wallets you own - including into a [non-custodial wallet](/blog/what-is-a-non-custodial-wallet)"
+        "body": "Tax generally arises when you *dispose* of crypto at a profit:\n\n- **Selling crypto for fiat** - euro, dollars, or anything else\n- **Swapping one crypto for another** - including into and out of stablecoins; in most countries an exchange is a disposal even if no fiat is involved\n- **Paying for goods or services with crypto** - legally, you disposed of an asset\n\nWhat generally does **not** trigger tax:\n\n- Buying crypto with fiat\n- Holding, regardless of how much the price moves\n- Transferring between wallets you own - including into a [non-custodial wallet](/blog/what-is-a-non-custodial-wallet)"
       },
       {
         "heading": "How the gain is calculated",
-        "body": "The taxable amount is the **profit**: your sale price minus the acquisition cost of what you sold. Bulgarian practice for financial assets uses the weighted-average acquisition price when you bought at different times and prices.\n\nA simple example: you bought 0.1 ETH for €200 and later sold it for €300. The taxable gain is €100, and the tax on it is €10. Gains and losses across your disposals during the year are netted for the annual result, which is why record-keeping (more below) matters so much."
+        "body": "The taxable amount is the **profit**: your sale price minus the acquisition cost of what you sold. Countries differ on how to match sales to purchases when you bought at different times and prices - weighted average and first-in-first-out are the most common methods, and some countries let you choose.\n\nA simple example: you bought 0.1 ETH for €200 and later sold it for €300. The taxable gain is €100, and the tax is that gain multiplied by your country's rate. Gains and losses across your disposals during the year are usually netted for the annual result, which is why record-keeping (more below) matters so much."
       },
       {
         "heading": "How stablecoins are taxed",
-        "body": "Stablecoins are crypto assets for tax purposes, so the same logic applies - with a practical twist: because [a euro stablecoin like EURC](/blog/what-is-eurc) tracks the euro 1:1, converting euros to EURC and back typically produces little or no gain. There is usually nothing meaningful to tax on the conversion itself.\n\nFormally, though, a conversion is still a disposal, and a dollar stablecoin like USDC can produce real gains or losses for a euro-based taxpayer as the exchange rate moves. Keep records of every conversion, even the boring ones."
+        "body": "Stablecoins are crypto assets for tax purposes, so the same logic applies - with a practical twist: because [a euro stablecoin like EURC](/blog/what-is-eurc) tracks the euro 1:1, converting euros to EURC and back typically produces little or no gain. There is usually nothing meaningful to tax on the conversion itself.\n\nFormally, though, a conversion is still a disposal in most countries, and a dollar stablecoin like USDC can produce real gains or losses for a euro-based taxpayer as the exchange rate moves. Keep records of every conversion, even the boring ones."
       },
       {
         "heading": "How yield is taxed",
-        "body": "Earning yield on your crypto - through lending markets, staking, or similar - is **income**, separate from trading gains. In general, such income is also taxed at the flat 10% rate for individuals and must be declared in the annual return.\n\nThe details of classification (interest-like income vs. other income) can affect exactly how it is declared, which is one of the places a tax advisor earns their fee. What is not defensible is treating yield as invisible - especially given where EU reporting is heading (see below). If you want to understand the economics of that yield first, read our guide to [where DeFi yield comes from](/blog/where-does-defi-yield-come-from)."
+        "body": "Earning yield on your crypto - through lending markets, staking, or similar - is **income**, separate from trading gains. Most countries tax it either as ordinary income or under a specific capital-income rate, and it must be declared in the annual return.\n\nThe details of classification (interest-like income vs. other income) vary by country and affect exactly how it is declared, which is one of the places a tax advisor earns their fee. What is not defensible anywhere is treating yield as invisible - especially given where EU reporting is heading (see below). If you want to understand the economics of that yield first, read our guide to [where DeFi yield comes from](/blog/where-does-defi-yield-come-from)."
       },
       {
         "heading": "When it becomes a business",
-        "body": "Everything above assumes you are a private individual investing your own money. If your activity looks like a **trade** - high frequency, systematic, your main source of income, trading for others - the tax authority can reclassify it as business activity, with different rates, social security contributions, and bookkeeping obligations.\n\nThere is no bright-line test; it's an overall assessment. Casual investors buying, holding, and occasionally rebalancing are generally not in this category."
+        "body": "Everything above assumes you are a private individual investing your own money. If your activity looks like a **trade** - high frequency, systematic, your main source of income, trading for others - most tax authorities can reclassify it as business activity, with different rates, social security contributions, and bookkeeping obligations.\n\nThere is rarely a bright-line test; it's an overall assessment. Casual investors buying, holding, and occasionally rebalancing are generally not in this category."
       },
       {
         "heading": "VAT: the easy part",
@@ -260,7 +260,7 @@
       },
       {
         "heading": "Reporting: deadlines and the transparency wave",
-        "body": "Gains and income are declared in the **annual tax return** (typically due by 30 April of the following year), and tax is paid on the same schedule.\n\nTwo EU developments make accurate reporting more important than ever: under **MiCA**, crypto service providers across the EU are licensed and supervised; and under **DAC8**, the EU's tax-transparency directive, crypto platforms must report their users' transactions to tax authorities, with automatic exchange between member states. The era when exchange activity was invisible to tax offices is ending - declare properly."
+        "body": "Gains and income are declared in the **annual tax return**, on your country's schedule, and tax is paid on the same timetable.\n\nTwo EU developments make accurate reporting more important than ever: under **MiCA**, crypto service providers across the EU are licensed and supervised; and under **DAC8**, the EU's tax-transparency directive, crypto platforms must report their users' transactions to tax authorities, with automatic exchange between member states. The era when exchange activity was invisible to tax offices is ending - declare properly."
       },
       {
         "heading": "Keep good records",
@@ -268,29 +268,29 @@
       },
       {
         "heading": "The bottom line",
-        "body": "Bulgaria remains one of the friendlier EU jurisdictions for crypto: a flat 10% on realised gains, nothing on buying and holding, no VAT on exchange. The rules are manageable for a careful individual - realise a gain, keep records, declare annually.\n\nAnd since the tax only ever applies to profit, it is one more reason to make sure your crypto actually works for you rather than sitting idle - see our honest comparison of [ways to earn on euros](/blog/euro-yield-options-compared)."
+        "body": "The shape of crypto tax is the same across most of Europe: nothing on buying and holding, tax on realised gains and on yield, no VAT on exchange. The rate and the paperwork are local. The rules are manageable for a careful individual - realise a gain, keep records, declare annually in your own country.\n\nAnd since the tax only ever applies to profit, it is one more reason to make sure your crypto actually works for you rather than sitting idle - see our honest comparison of [ways to earn on euros](/blog/euro-yield-options-compared)."
       },
       {
         "heading": "Start with Defied Money",
-        "body": "Defied Money is a non-custodial platform for onchain wealth, built on EURC and USDC. Hold, earn, send, and spend without a bank. [Join the waitlist](/) and we'll let you know when your spot opens.\n\n*This article is general information, not tax, legal, or financial advice. Tax rules change and individual circumstances differ - consult a qualified Bulgarian tax advisor about your situation. Please read our [risk disclosure](/risks) and [terms of use](/terms) before using the Services.*\n\n*Last updated: 2026-06-18*"
+        "body": "Defied Money is a non-custodial platform for onchain wealth, built on EURC and USDC. Hold, earn, send, and spend without a bank. [Join the waitlist](/) and we'll let you know when your spot opens.\n\n*This article is general information, not tax, legal, or financial advice. Tax rules differ by country and change over time - consult a qualified tax advisor in your country of residence about your situation. Please read our [risk disclosure](/risks) and [terms of use](/terms) before using the Services.*\n\n*Last updated: 2026-09-20*"
       }
     ],
     "faq": [
       {
-        "q": "Do I pay tax in Bulgaria if I just hold crypto?",
-        "a": "No. Buying crypto with fiat and holding it is not a taxable event in Bulgaria, no matter how much the value rises. Tax generally arises only when you dispose of it - by selling, swapping, or spending - at a profit."
+        "q": "Do I pay tax if I just hold crypto?",
+        "a": "Generally no. Across the EU, buying crypto with fiat and holding it is not a taxable event, no matter how much the value rises. Tax generally arises only when you dispose of it - by selling, swapping, or spending - at a profit."
       },
       {
-        "q": "Is swapping one crypto for another taxable in Bulgaria?",
-        "a": "Generally yes. An exchange of one crypto asset for another - including into or out of stablecoins - is a disposal, and any gain realised at that moment is taxable, even though no fiat money was involved."
+        "q": "Is swapping one crypto for another taxable?",
+        "a": "In most EU countries, yes. An exchange of one crypto asset for another - including into or out of stablecoins - is a disposal, and any gain realised at that moment is taxable, even though no fiat money was involved. A few countries treat crypto-to-crypto swaps differently, so check your local rules."
       },
       {
-        "q": "What is the crypto tax rate in Bulgaria?",
-        "a": "For private individuals, realised crypto gains are generally taxed at the flat 10% income tax rate and declared with the annual tax return. Activity that qualifies as a business is taxed under different rules."
+        "q": "What is the crypto tax rate in Europe?",
+        "a": "There is no single rate. Each EU country sets its own: some apply a flat rate to realised gains, others tax them at progressive income-tax rates, and a few exempt gains after a minimum holding period. Activity that qualifies as a business is taxed under different rules everywhere."
       },
       {
-        "q": "How is stablecoin yield taxed in Bulgaria?",
-        "a": "Yield earned on stablecoins is income, separate from trading gains, and is generally also taxed at the flat 10% rate for individuals. It must be declared in the annual return - exact classification is worth confirming with a tax advisor."
+        "q": "How is stablecoin yield taxed?",
+        "a": "Yield earned on stablecoins is income, separate from trading gains, and most countries tax it as ordinary or capital income. It must be declared in the annual return - exact classification is worth confirming with a tax advisor in your country."
       },
       {
         "q": "Will the tax office know about my crypto?",
@@ -300,10 +300,10 @@
     "faqInBody": false
   },
   {
-    "id": "digital-euro-bulgaria",
+    "id": "what-is-the-digital-euro",
     "category": "Guides",
-    "title": "The Digital Euro and Bulgaria: What It Is and When It's Coming",
-    "excerpt": "The digital euro is a planned central bank digital currency issued by the ECB - it has not launched yet, and no firm date exists. Since Bulgaria joined the euro area in January 2026, it would apply here from day one. Here's what it is, what it isn't, and how it compares to euro stablecoins you can use today.",
+    "title": "The Digital Euro: What It Is and When It's Coming",
+    "excerpt": "The digital euro is a planned central bank digital currency issued by the ECB - it has not launched yet, and no firm date exists. It would apply across the whole euro area from day one. Here's what it is, what it isn't, and how it compares to the euro stablecoins you can use today.",
     "date": "2026-06-05",
     "readTime": 8,
     "author": "Stan Trenev",
@@ -311,7 +311,7 @@
     "sections": [
       {
         "heading": "",
-        "body": "Since 1 January 2026, Bulgaria uses the euro - which means every project of the European Central Bank now applies directly to Bulgarian wallets and bank accounts. The most discussed of those projects is the digital euro: a central bank digital currency (CBDC) that has been in preparation for years and generates equal parts excitement and confusion.\n\nMost of the confusion comes from the name. The digital euro is not crypto, it's not a stablecoin, and - most importantly - it does not exist yet as something you can use. This guide explains what it actually is, where the project stands, and how it compares to the digital euros you can already hold today."
+        "body": "Every project of the European Central Bank applies directly to the wallets and bank accounts of everyone in the euro area. The most discussed of those projects is the digital euro: a central bank digital currency (CBDC) that has been in preparation for years and generates equal parts excitement and confusion.\n\nMost of the confusion comes from the name. The digital euro is not crypto, it's not a stablecoin, and - most importantly - it does not exist yet as something you can use. This guide explains what it actually is, where the project stands, and how it compares to the digital euros you can already hold today."
       },
       {
         "heading": "What the digital euro actually is",
@@ -322,8 +322,8 @@
         "body": "**It's not a cryptocurrency.** It would run on infrastructure controlled by the Eurosystem, not on a public blockchain, and its value would not float - it would simply be a euro.\n\n**It's not a stablecoin.** Stablecoins like [EURC](/blog/what-is-eurc) are issued by private, regulated companies and backed by reserves. The digital euro would be issued by the central bank itself - no reserves needed, because it *is* base money.\n\n**It's not a replacement for cash.** The ECB has been explicit that the digital euro would complement banknotes, not replace them.\n\n**And it's not available.** Anyone offering you a \"digital euro\" to buy today is offering something else - possibly a scam."
       },
       {
-        "heading": "Where Bulgaria fits",
-        "body": "Before 2026, Bulgaria would have watched the digital euro from the sidelines. That changed with euro adoption: the Bulgarian National Bank is now part of the Eurosystem, and Bulgaria would receive the digital euro at launch on the same terms as every other euro area country.\n\nIn practical terms, that means Bulgarian residents would get access to a free, ECB-guaranteed digital payment method through banks and payment apps - whenever the project actually ships."
+        "heading": "Who would get it",
+        "body": "The digital euro is designed for the whole euro area: every country whose central bank is part of the Eurosystem would receive it at launch on the same terms, and the ECB has said non-euro EU countries could be included through agreements later.\n\nIn practical terms, that means residents of the euro area would get access to a free, ECB-guaranteed digital payment method through banks and payment apps - whenever the project actually ships."
       },
       {
         "heading": "Digital euro vs stablecoins vs bank deposits",
@@ -335,7 +335,7 @@
       },
       {
         "heading": "What it would mean for you",
-        "body": "If and when the digital euro launches, the practical effect for most people in Bulgaria would be modest but positive: a free, universally accepted digital payment option that works even if your bank has an outage, with basic services guaranteed by law.\n\nWhat it would *not* be is a savings tool. With holding limits and zero interest by design, the digital euro is built for spending. Your savings would still live somewhere else - in deposits, funds, or yield-bearing digital assets."
+        "body": "If and when the digital euro launches, the practical effect for most people would be modest but positive: a free, universally accepted digital payment option that works even if your bank has an outage, with basic services guaranteed by law.\n\nWhat it would *not* be is a savings tool. With holding limits and zero interest by design, the digital euro is built for spending. Your savings would still live somewhere else - in deposits, funds, or yield-bearing digital assets."
       },
       {
         "heading": "Why people use euro stablecoins today",
@@ -343,11 +343,11 @@
       },
       {
         "heading": "The bottom line",
-        "body": "The digital euro is real as a project and absent as a product. Bulgaria, as a euro area member since January 2026, will be included whenever it launches - but the legislation is still in negotiation and no date is set.\n\nIn the meantime, \"digital euro\" in practice means either the balance in your banking app or a regulated euro stablecoin like EURC. They serve different needs - and unlike the ECB's version, both are available today."
+        "body": "The digital euro is real as a project and absent as a product. Every euro area country will be included whenever it launches - but the legislation is still in negotiation and no date is set.\n\nIn the meantime, \"digital euro\" in practice means either the balance in your banking app or a regulated euro stablecoin like EURC. They serve different needs - and unlike the ECB's version, both are available today."
       },
       {
         "heading": "Start with Defied Money",
-        "body": "Defied Money is a non-custodial platform for onchain wealth, built on EURC and USDC. Hold, earn, send, and spend without a bank. [Join the waitlist](/) and we'll let you know when your spot opens.\n\n*This article is for informational purposes only. Defied Money is a non-custodial software interface and does not provide financial advice. Please read our [risk disclosure](/risks) and [terms of use](/terms) before using the Services.*\n\n*Last updated: 2026-06-05*"
+        "body": "Defied Money is a non-custodial platform for onchain wealth, built on EURC and USDC. Hold, earn, send, and spend without a bank. [Join the waitlist](/) and we'll let you know when your spot opens.\n\n*This article is for informational purposes only. Defied Money is a non-custodial software interface and does not provide financial advice. Please read our [risk disclosure](/risks) and [terms of use](/terms) before using the Services.*\n\n*Last updated: 2026-09-20*"
       }
     ],
     "faq": [
@@ -368,8 +368,8 @@
         "a": "No. The ECB has consistently said the digital euro would complement banknotes and coins, not replace them. Cash remains legal tender, and the legislation under discussion protects its acceptance."
       },
       {
-        "q": "Will Bulgarians be able to use the digital euro?",
-        "a": "Yes. Since Bulgaria adopted the euro in January 2026, it is a full euro area member - the digital euro would be available to Bulgarian residents at launch on the same terms as everywhere else in the euro area."
+        "q": "Who will be able to use the digital euro?",
+        "a": "Everyone in the euro area, at launch, on the same terms in every member country. The ECB has also said non-euro EU countries could join through agreements with their central banks later on."
       }
     ],
     "faqInBody": false
@@ -517,7 +517,7 @@
       },
       {
         "heading": "How to choose the right option for you",
-        "body": "Here's a practical decision framework based on what matters to you most.\n\n**If you want maximum safety and instant access: Bank savings.** Keep a meaningful emergency buffer (3–6 months of expenses) in a regular bank savings account. Deposit insurance, instant liquidity, and the simplicity of having your buffer in the same place as your everyday banking are worth the lower yield. Don't put more than this in a savings account.\n\n**If you have €10,000+ in savings beyond your buffer: Money market funds.** For most savers, a euro money market fund through a low-cost broker is the right next step. You'll likely earn 2–3% with very low risk. This is the \"easy upgrade\" option that most Europeans should consider before anything else.\n\n**If you want to learn DeFi properly and maximise yield: Direct on-chain lending.** If you're already comfortable with crypto wallets, gas fees, and signing transactions, depositing EURC into Aave or Morpho directly is the highest-yield, lowest-fee, most-trustworthy on-chain option. This is what crypto-natives do and it works.\n\n**If you want yield without learning DeFi: Non-custodial euro accounts.** This is the practical middle ground for most non-crypto users. Sign up with email, deposit euros, earn yield in the background - without giving custody to a centralised platform. As of 2026, the leading products in this category include Defied Money, Rebind, and Bleap, with different feature sets and target users.\n\n**What about centralised crypto earn platforms?** Honest answer: in 2026, this category makes less sense than it did a few years ago. The custodial trust assumption is significant (the platform holds your money), the yield isn't materially better than what self-custodial alternatives pay, and several major platforms have failed catastrophically. If you specifically want a regulated counterparty with customer support, a centralised platform might fit. For most users, one of the other four categories is a better choice.\n\nOne more practical note: yield you earn is taxable income in most jurisdictions - Bulgarian residents can check our [plain-language crypto tax guide](/blog/crypto-taxes-bulgaria)."
+        "body": "Here's a practical decision framework based on what matters to you most.\n\n**If you want maximum safety and instant access: Bank savings.** Keep a meaningful emergency buffer (3–6 months of expenses) in a regular bank savings account. Deposit insurance, instant liquidity, and the simplicity of having your buffer in the same place as your everyday banking are worth the lower yield. Don't put more than this in a savings account.\n\n**If you have €10,000+ in savings beyond your buffer: Money market funds.** For most savers, a euro money market fund through a low-cost broker is the right next step. You'll likely earn 2–3% with very low risk. This is the \"easy upgrade\" option that most Europeans should consider before anything else.\n\n**If you want to learn DeFi properly and maximise yield: Direct on-chain lending.** If you're already comfortable with crypto wallets, gas fees, and signing transactions, depositing EURC into Aave or Morpho directly is the highest-yield, lowest-fee, most-trustworthy on-chain option. This is what crypto-natives do and it works.\n\n**If you want yield without learning DeFi: Non-custodial euro accounts.** This is the practical middle ground for most non-crypto users. Sign up with email, deposit euros, earn yield in the background - without giving custody to a centralised platform. As of 2026, the leading products in this category include Defied Money, Rebind, and Bleap, with different feature sets and target users.\n\n**What about centralised crypto earn platforms?** Honest answer: in 2026, this category makes less sense than it did a few years ago. The custodial trust assumption is significant (the platform holds your money), the yield isn't materially better than what self-custodial alternatives pay, and several major platforms have failed catastrophically. If you specifically want a regulated counterparty with customer support, a centralised platform might fit. For most users, one of the other four categories is a better choice.\n\nOne more practical note: yield you earn is taxable income in most jurisdictions - see our [plain-language crypto tax guide](/blog/crypto-taxes-europe)."
       },
       {
         "heading": "Key questions answered",
@@ -723,7 +723,7 @@
       },
       {
         "heading": "What you can actually do with EURC",
-        "body": "Holding EURC in a wallet gives you several capabilities that holding euros in a bank doesn't:\n\n**Send globally in seconds.** Transfer EURC to any wallet address, anywhere in the world, 24 hours a day. No SWIFT codes, no banking hours, no €25 wire fees. A typical transfer on Base costs a few cents in network fees and settles in under a minute.\n\n**Earn yield through lending markets.** By depositing EURC into open, on-chain lending markets like Aave, you can earn interest while borrowers take liquidity. Current rates on EURC typically run between 3% and 5% annually, depending on market conditions. This is directly accessible to anyone holding EURC.\n\n**Exchange for other stablecoins.** Switch between EURC and USDC (or other stablecoins) instantly, at transparent rates, with small fees. Useful for anyone receiving payment in one currency and spending in another.\n\n**Spend with a card.** Several providers - including Gnosis Pay - offer Visa debit cards that spend from stablecoin balances. The conversion happens at the point of sale.\n\n**Hold as savings without bank dependency.** For Europeans concerned about account freezing or banking system fragility, holding EURC in a [non-custodial wallet](/blog/what-is-a-non-custodial-wallet) provides a parallel savings mechanism that doesn't depend on any single bank or fintech continuing to operate.\n\nFor a full comparison of what euro transfers cost across banks, fintechs, and stablecoins, see our guide to [sending money from Bulgaria](/blog/send-money-from-bulgaria)."
+        "body": "Holding EURC in a wallet gives you several capabilities that holding euros in a bank doesn't:\n\n**Send globally in seconds.** Transfer EURC to any wallet address, anywhere in the world, 24 hours a day. No SWIFT codes, no banking hours, no €25 wire fees. A typical transfer on Base costs a few cents in network fees and settles in under a minute.\n\n**Earn yield through lending markets.** By depositing EURC into open, on-chain lending markets like Aave, you can earn interest while borrowers take liquidity. Current rates on EURC typically run between 3% and 5% annually, depending on market conditions. This is directly accessible to anyone holding EURC.\n\n**Exchange for other stablecoins.** Switch between EURC and USDC (or other stablecoins) instantly, at transparent rates, with small fees. Useful for anyone receiving payment in one currency and spending in another.\n\n**Spend with a card.** Several providers - including Gnosis Pay - offer Visa debit cards that spend from stablecoin balances. The conversion happens at the point of sale.\n\n**Hold as savings without bank dependency.** For Europeans concerned about account freezing or banking system fragility, holding EURC in a [non-custodial wallet](/blog/what-is-a-non-custodial-wallet) provides a parallel savings mechanism that doesn't depend on any single bank or fintech continuing to operate.\n\nFor a full comparison of what euro transfers cost across banks, fintechs, and stablecoins, see our guide to [sending money abroad](/blog/send-money-abroad)."
       },
       {
         "heading": "The real risks",

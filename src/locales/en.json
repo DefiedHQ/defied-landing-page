@@ -32,14 +32,21 @@
       "exchange": "Exchange",
       "noteDinner": "Dinner",
       "noteRent": "Rent",
-      "noteTickets": "Concert tickets"
+      "noteTickets": "Concert tickets",
+      "inMarketsLabel": "In markets",
+      "ariaLabelMarkets": "Illustration of the Defied Money app: money placed in onchain markets, with recent deposits to and withdrawals from Aave and Fluid",
+      "ariaLabelPayments": "Illustration of the Defied Money wallet: a balance with recent payments sent and received in euros and dollars",
+      "noteInvoice": "Invoice",
+      "noteSplit": "Split dinner",
+      "noteGroceries": "Groceries"
     }
   },
   "earning": {
     "title": "Open markets. Your call.",
-    "body": "Connect your balance to selected decentralized finance markets, straight from your wallet. Rates come from the protocol, change with the market and are not guaranteed. You can skip this entirely.",
+    "body": "Connect your balance to open onchain markets, straight from your wallet. You choose when, and you can skip it entirely.",
     "link": "How protocol access works",
-    "screenshotAlt": "The Defied Money app in a browser"
+    "noteText": "Rates are set by each protocol, move with the market and are never guaranteed. Withdrawals depend on market liquidity.",
+    "noteLink": "Read the Risk Disclosure"
   },
   "cta": {
     "heading": "Your gateway to stablecoins and onchain finance",
@@ -53,29 +60,64 @@
     "sectionTitle": "Digital euros and dollars. The essentials, made simple.",
     "sectionSubtitle": "Hold them. Send them. Use them onchain. All from a wallet only you control.",
     "f1Title": "Send money like a message",
-    "f1Desc": "Send supported stablecoins to anyone, any day, whenever the network is up. Network fees and limits may apply.",
+    "f1Desc": "Send digital euros or dollars to anyone, any day, in seconds. No bank hours, no borders.",
     "f2Title": "Onchain markets, one tap away",
-    "f2Desc": "Connect to selected decentralized finance markets straight from your wallet, if you choose to. Rates are set by the protocol, move with the market and are never guaranteed.",
-    "f2Disclaimer": "Third-party protocol rates are variable. This is not a guaranteed return or a Defied Money investment product.",
+    "f2Desc": "Put your balance to work in open onchain markets like Aave, straight from your wallet. Your choice, every time.",
     "f3Title": "Dollars to euros. Euros to dollars.",
-    "f3Desc": "Swap between supported stablecoins through third-party services, where available. Their terms, fees and eligibility rules apply."
+    "f3Desc": "Move between euros and dollars in a couple of taps, with the rate shown before you confirm.",
+    "noteText": "Network fees and limits may apply. Exchanges run through independent providers under their terms. Market rates are set by third-party protocols, move with the market and are never guaranteed. This is not an investment product.",
+    "noteLink": "Read the Risk Disclosure"
   },
   "steps": {
     "title": "Start in minutes. Stay in control.",
     "s1Title": "Create your wallet",
     "s1Desc": "Sign up with your email. The wallet is yours from the first second, and only you control what’s in it.",
     "s2Title": "Add digital euros or dollars",
-    "s2Desc": "Receive EURC or USDC from anywhere. Where available, top up from your bank through independent providers, under their terms and checks.",
+    "s2Desc": "Receive EURC or USDC from anywhere, or top up straight from your bank.",
     "s3Title": "Use it for real life",
-    "s3Desc": "Send, swap or connect to selected decentralized finance markets. Network fees and limits may apply."
+    "s3Desc": "Send, exchange, or put your balance to work in onchain markets.",
+    "noteText": "Bank top-ups run through independent providers, where available, under their terms and identity checks. Network fees and limits may apply.",
+    "noteLink": "Read the Terms"
   },
   "advantages": {
     "row1Heading": "Euros and dollars, onchain.",
-    "row1Subtext": "EURC and USDC are stablecoins designed to track the euro and the US dollar. Their issuers, not Defied Money, mint and redeem them and stand behind their reserves. They are not bank deposits. Read the issuer’s disclosures before you hold one.",
+    "row1Subtext": "EURC and USDC are digital euros and dollars issued by Circle, designed to hold their value one to one. Circle mints and redeems them and publishes what backs them.",
     "bandTitle": "Self-custodial by design",
-    "bandBody": "Your keys. Your wallet. Your money. Defied Money never holds your funds and never has your private keys. Every transaction is signed by you and recorded on the blockchain.",
+    "bandBody": "Your keys. Your wallet. Your money. Defied Money never holds your funds and never has your private keys. Every transaction happens from a wallet only you can export, and is recorded on the blockchain.",
     "bandCta": "Learn about self-custody",
-    "stablecoinsKicker": "What are stablecoins?"
+    "stablecoinsKicker": "What are stablecoins?",
+    "row1NoteText": "Stablecoins are not bank deposits and are not covered by deposit guarantees. Read the issuer’s disclosures before you hold one."
+  },
+  "safety": {
+    "i1Title": "Your key, yours to export",
+    "i1Desc": "Your wallet key is created for you at sign-up and can be exported at any time. Defied Money never holds it. Anything the app automates for you, like covering network fees, runs under policies set on your wallet.",
+    "i2Title": "Sign in without a seed phrase",
+    "i2Desc": "Use your email or Google account. There is nothing to write down, photograph or lose.",
+    "i3Title": "Verification only where a bank needs it",
+    "i3Desc": "Holding, sending and exchanging need no identity check. Bank transfers and the card do, and those checks are run by the regulated providers behind them.",
+    "i4Title": "Money and markets you can inspect",
+    "i4Desc": "USDC and EURC are issued by Circle, which publishes its reserves. Onchain deposits go only to protocols with public, audited contracts.",
+    "noteText": "Digital assets and onchain protocols carry risk, and holdings are not covered by deposit guarantees."
+  },
+  "compare": {
+    "kicker": "How it compares",
+    "title": "A wallet, not an account.",
+    "subtitle": "The same everyday money, with a different set of trade-offs. Here is where they differ.",
+    "colBank": "Bank",
+    "colFintech": "Fintech app",
+    "colDefied": "Defied Money",
+    "r1": "Only you hold the keys",
+    "r2": "Sends settle in seconds, any day of the year",
+    "r3": "Money you can use in other onchain apps",
+    "r4": "Access to open onchain markets",
+    "r5": "Your money stays yours if the company shuts down",
+    "r6": "Get started without an identity check",
+    "r7": "Covered by a deposit guarantee",
+    "yes": "Yes",
+    "no": "No",
+    "partly": "Partly",
+    "noteText": "Banks and fintech apps differ, so this shows the typical model. Defied Money asks for identity verification only for bank top-ups and the card. Stablecoins in a self-custodial wallet are not bank deposits and are not covered by deposit guarantees.",
+    "noteLink": "Read the Risk Disclosure"
   },
   "imageSection": {
     "sectionTitle": "Our mission",
@@ -187,8 +229,8 @@
     "privacyDescription": "Defied Money Privacy Policy. Learn how we process and protect your personal data.",
     "termsTitle": "Terms of Use",
     "termsDescription": "Terms of Use for the Defied Money platform. Read our terms and conditions before using our services.",
-    "risksTitle": "Risks",
-    "risksDescription": "Learn about the risks associated with stablecoins, self-custodial wallets and third-party onchain protocols.",
+    "risksTitle": "Risk Disclosure",
+    "risksDescription": "Defied Money Risk Disclosure: the risks of stablecoins, self-custodial wallets and third-party onchain protocols, including variable rates and the absence of deposit guarantees.",
     "articleNotFound": "Article not found",
     "ogTitle": "Defied Money - Your gateway to stablecoins and onchain finance"
   },
@@ -198,11 +240,11 @@
     "features": "Features",
     "howItWorks": "How it works",
     "faq": "FAQ",
-    "risks": "Risks",
+    "risks": "Risk Disclosure",
     "company": "Legal",
     "about": "About us",
-    "terms": "Terms of use",
-    "privacy": "Privacy policy",
+    "terms": "Terms of Use",
+    "privacy": "Privacy Policy",
     "positioning": "Your gateway to stablecoins and onchain finance.",
     "disclaimer": "Defied Money is a non-custodial wallet and software interface. Defied Money does not hold customer crypto-assets, issue supported stablecoins or provide investment, legal or tax advice. Third-party protocols involve significant risk, including potential loss of assets; rates are variable and returns are not guaranteed. Fiat conversion and card services, where available, are provided by independent third-party providers under their own terms. Availability may vary by jurisdiction.",
     "copyright": "© Defied Money. All rights reserved."

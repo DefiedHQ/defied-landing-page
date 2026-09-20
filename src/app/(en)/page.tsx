@@ -55,6 +55,8 @@ const organizationSchema = {
     url: absoluteUrl(siteConfig.logo),
   },
   image: absoluteUrl(siteConfig.ogImage),
+  description: siteConfig.description,
+  areaServed: 'European Economic Area',
   sameAs: [...siteConfig.socials],
   contactPoint: {
     '@type': 'ContactPoint',
@@ -70,7 +72,7 @@ const webAppSchema = {
   name: siteConfig.name,
   url: siteConfig.url,
   description:
-    'Self-custodial wallet for euro (EURC) and dollar (USDC) stablecoins: hold, send and use supported stablecoins, and connect to selected decentralized finance markets, from a wallet only you control.',
+    'Self-custodial wallet for digital euros (EURC) and dollars (USDC) on Base: hold them, send them in seconds, exchange between euros and dollars, and put your balance to work in open onchain markets such as Aave and Fluid, from a wallet only you control.',
   applicationCategory: 'FinanceApplication',
   operatingSystem: 'Any',
   browserRequirements: 'Requires JavaScript',
@@ -80,10 +82,11 @@ const webAppSchema = {
     priceCurrency: 'EUR',
   },
   featureList: [
-    'Send and receive USDC and EURC stablecoins 24/7, whenever the network is available',
-    'Connect to selected decentralized finance markets straight from your wallet',
-    'Swap between USDC and EURC through third-party services, where available',
-    'Self-custodial wallet with email login; Defied Money never holds your funds',
+    'Send and receive USDC and EURC stablecoins any day of the year, settling in seconds',
+    'Exchange between euros and dollars with the rate shown before you confirm',
+    'Deposit into and withdraw from open onchain lending markets such as Aave and Fluid, straight from your wallet',
+    'Self-custodial: sign in with email or Google, no seed phrase, and export your wallet key at any time',
+    'No identity check to hold, send or exchange; verification only for bank top-ups and the card',
     'Network fees covered on supported actions',
   ],
   screenshot: absoluteUrl(siteConfig.ogImage),

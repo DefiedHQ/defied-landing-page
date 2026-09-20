@@ -52,19 +52,71 @@ type WalletEvent = {
   deltaCents: number;
 };
 
-/* Net delta of one full cycle is 0, so the balance loops cleanly. */
-const EVENT_CYCLE: Omit<WalletEvent, 'id'>[] = [
-  { kind: 'received', title: 'ivan@defied.me', noteKey: 'noteDinner', currency: 'EUR', amountCents: 50000, deltaCents: 50000 },
-  { kind: 'sent', title: 'maria@defied.me', noteKey: 'noteRent', currency: 'EUR', amountCents: 12000, deltaCents: -12000 },
-  { kind: 'exchange', currency: 'USD', amountCents: 20000, toCurrency: 'EUR', toAmountCents: 18400, deltaCents: 18400 },
-  { kind: 'deposit', title: 'Aave', protocol: 'Aave', currency: 'EUR', amountCents: 40000, deltaCents: -40000 },
-  { kind: 'sent', title: 'elena@defied.me', noteKey: 'noteTickets', currency: 'USD', amountCents: 6000, deltaCents: -5500 },
-  { kind: 'withdraw', title: 'Fluid', protocol: 'Fluid', currency: 'USD', amountCents: 17000, deltaCents: 15600 },
-  { kind: 'received', title: 'petar@defied.me', currency: 'EUR', amountCents: 3500, deltaCents: 3500 },
-  { kind: 'exchange', currency: 'EUR', amountCents: 30000, toCurrency: 'USD', toAmountCents: 32600, deltaCents: -30000 },
-];
+export type WalletCardVariant = 'wallet' | 'markets' | 'payments';
 
-const START_BALANCE_CENTS = 236000;
+type VariantConfig = {
+  /** Events cycle in order; net delta of one full cycle is 0 so the balance loops cleanly */
+  cycle: Omit<WalletEvent, 'id'>[];
+  startBalanceCents: number;
+  balanceLabelKey: string;
+  ariaLabelKey: string;
+  /** Header chips: the two currencies, or the two markets */
+  chips: 'currencies' | 'protocols';
+};
+
+/* deltaCents is relative to the card's own balance: in the wallet and
+   payments cards a deposit leaves the balance; in the markets card (balance
+   = money in markets) a deposit adds to it. The sign shown on each row
+   follows deltaCents, so the same word reads correctly in both. */
+const VARIANTS: Record<WalletCardVariant, VariantConfig> = {
+  wallet: {
+    startBalanceCents: 236000,
+    balanceLabelKey: 'balanceLabel',
+    ariaLabelKey: 'ariaLabel',
+    chips: 'currencies',
+    cycle: [
+      { kind: 'received', title: 'ivan@defied.me', noteKey: 'noteDinner', currency: 'EUR', amountCents: 50000, deltaCents: 50000 },
+      { kind: 'sent', title: 'maria@defied.me', noteKey: 'noteRent', currency: 'EUR', amountCents: 12000, deltaCents: -12000 },
+      { kind: 'exchange', currency: 'USD', amountCents: 20000, toCurrency: 'EUR', toAmountCents: 18400, deltaCents: 18400 },
+      { kind: 'deposit', title: 'Aave', protocol: 'Aave', currency: 'EUR', amountCents: 40000, deltaCents: -40000 },
+      { kind: 'sent', title: 'elena@defied.me', noteKey: 'noteTickets', currency: 'USD', amountCents: 6000, deltaCents: -5500 },
+      { kind: 'withdraw', title: 'Fluid', protocol: 'Fluid', currency: 'USD', amountCents: 17000, deltaCents: 15600 },
+      { kind: 'received', title: 'petar@defied.me', currency: 'EUR', amountCents: 3500, deltaCents: 3500 },
+      { kind: 'exchange', currency: 'EUR', amountCents: 30000, toCurrency: 'USD', toAmountCents: 32600, deltaCents: -30000 },
+    ],
+  },
+  markets: {
+    startBalanceCents: 184000,
+    balanceLabelKey: 'inMarketsLabel',
+    ariaLabelKey: 'ariaLabelMarkets',
+    chips: 'protocols',
+    cycle: [
+      { kind: 'deposit', title: 'Aave', protocol: 'Aave', currency: 'EUR', amountCents: 40000, deltaCents: 40000 },
+      { kind: 'withdraw', title: 'Fluid', protocol: 'Fluid', currency: 'USD', amountCents: 17000, deltaCents: -15600 },
+      { kind: 'deposit', title: 'Fluid', protocol: 'Fluid', currency: 'USD', amountCents: 25000, deltaCents: 23000 },
+      { kind: 'withdraw', title: 'Aave', protocol: 'Aave', currency: 'EUR', amountCents: 12000, deltaCents: -12000 },
+      { kind: 'deposit', title: 'Aave', protocol: 'Aave', currency: 'EUR', amountCents: 20000, deltaCents: 20000 },
+      { kind: 'withdraw', title: 'Fluid', protocol: 'Fluid', currency: 'USD', amountCents: 60200, deltaCents: -55400 },
+    ],
+  },
+  payments: {
+    startBalanceCents: 142000,
+    balanceLabelKey: 'balanceLabel',
+    ariaLabelKey: 'ariaLabelPayments',
+    chips: 'currencies',
+    cycle: [
+      { kind: 'received', title: 'ana@defied.me', noteKey: 'noteInvoice', currency: 'EUR', amountCents: 125000, deltaCents: 125000 },
+      { kind: 'sent', title: 'georgi@defied.me', noteKey: 'noteRent', currency: 'EUR', amountCents: 64000, deltaCents: -64000 },
+      { kind: 'received', title: 'lea@defied.me', noteKey: 'noteSplit', currency: 'USD', amountCents: 4200, deltaCents: 3900 },
+      { kind: 'sent', title: 'nikola@defied.me', noteKey: 'noteGroceries', currency: 'EUR', amountCents: 8600, deltaCents: -8600 },
+      { kind: 'exchange', currency: 'EUR', amountCents: 25000, toCurrency: 'USD', toAmountCents: 27200, deltaCents: -25000 },
+      { kind: 'sent', title: 'maria@defied.me', noteKey: 'noteDinner', currency: 'USD', amountCents: 3400, deltaCents: -3100 },
+      { kind: 'received', title: 'ivan@defied.me', currency: 'EUR', amountCents: 6800, deltaCents: 6800 },
+      { kind: 'sent', title: 'elena@defied.me', noteKey: 'noteTickets', currency: 'EUR', amountCents: 35000, deltaCents: -35000 },
+    ],
+  },
+};
+
 const VISIBLE_ROWS = 3;
 const ROW_HEIGHT = 64;
 const AVATAR_SIZE = 40;
@@ -97,7 +149,7 @@ function AaveMark({ size }: { size: number }) {
 
 function ProtocolMark({ protocol, size }: { protocol: Protocol; size: number }) {
   if (protocol === 'Aave') return <AaveMark size={size} />;
-  return <Image src='/fluid_logo.svg' alt='' width={size} height={size} style={{ display: 'block' }} />;
+  return <Image loading='eager' src='/fluid_logo.svg' alt='' width={size} height={size} style={{ display: 'block' }} />;
 }
 
 /** Main circle: protocol mark, filled convert glyph for exchanges, or an initial for people */
@@ -114,26 +166,27 @@ function RowAvatar({ event }: { event: WalletEvent }) {
 }
 
 /** Initial feed: the first VISIBLE_ROWS events, newest first */
-function initialFeed(): WalletEvent[] {
-  return EVENT_CYCLE.slice(0, VISIBLE_ROWS)
+function initialFeed(cfg: VariantConfig): WalletEvent[] {
+  return cfg.cycle.slice(0, VISIBLE_ROWS)
     .map((e, i) => ({ ...e, id: i }))
     .reverse();
 }
 
-function initialBalance(): number {
-  return EVENT_CYCLE.slice(0, VISIBLE_ROWS).reduce((sum, e) => sum + e.deltaCents, START_BALANCE_CENTS);
+function initialBalance(cfg: VariantConfig): number {
+  return cfg.cycle.slice(0, VISIBLE_ROWS).reduce((sum, e) => sum + e.deltaCents, cfg.startBalanceCents);
 }
 
-export function HeroWalletCard() {
+export function HeroWalletCard({ variant = 'wallet' }: { variant?: WalletCardVariant }) {
   const { t } = useLanguage();
+  const cfg = VARIANTS[variant];
   const reduceMotion = useReducedMotion();
   /* non-null init: useInView wants RefObject<Element>; React 19 types RefObject<T | null> */
   const ref = useRef<HTMLDivElement>(null!);
   const inView = useInView(ref, { amount: 0.5 });
 
-  const [feed, setFeed] = useState<WalletEvent[]>(initialFeed);
+  const [feed, setFeed] = useState<WalletEvent[]>(() => initialFeed(cfg));
   const nextIndex = useRef(VISIBLE_ROWS);
-  const balanceCents = useRef(initialBalance());
+  const balanceCents = useRef(initialBalance(cfg));
 
   const balance = useMotionValue(balanceCents.current);
   const balanceText = useTransform(balance, (v) => formatEur(Math.round(v)));
@@ -141,7 +194,7 @@ export function HeroWalletCard() {
   useEffect(() => {
     if (reduceMotion || !inView) return;
     const timer = window.setInterval(() => {
-      const source = EVENT_CYCLE[nextIndex.current % EVENT_CYCLE.length];
+      const source = cfg.cycle[nextIndex.current % cfg.cycle.length];
       const event: WalletEvent = { ...source, id: nextIndex.current };
       nextIndex.current += 1;
       balanceCents.current += event.deltaCents;
@@ -149,7 +202,7 @@ export function HeroWalletCard() {
       setFeed((prev) => [event, ...prev].slice(0, VISIBLE_ROWS));
     }, ACTIVITY_INTERVAL_MS);
     return () => window.clearInterval(timer);
-  }, [reduceMotion, inView, balance]);
+  }, [reduceMotion, inView, balance, cfg]);
 
   const actionLabel = (event: WalletEvent) => {
     if (event.kind === 'exchange') return `${event.currency} → ${event.toCurrency}`;
@@ -158,13 +211,13 @@ export function HeroWalletCard() {
   };
 
   return (
-    <div ref={ref} className='wallet-card' role='img' aria-label={t('hero.card.ariaLabel')}>
+    <div ref={ref} className='wallet-card' role='img' aria-label={t(`hero.card.${cfg.ariaLabelKey}`)}>
       <div className='wallet-card-top'>
         {/* App-style header: label left, small mark right. 24px keeps the
             blue square a badge, not a second CTA next to the primary button */}
         <div className='wallet-card-header'>
           <Text font='label2' as='span' display='block' color='fgMuted'>
-            {t('hero.card.balanceLabel')}
+            {t(`hero.card.${cfg.balanceLabelKey}`)}
           </Text>
           <LogoMark size={24} />
         </div>
@@ -172,14 +225,29 @@ export function HeroWalletCard() {
           <m.span>{balanceText}</m.span>
         </span>
         <div className='wallet-card-chips' aria-hidden='true'>
-          <span className='wallet-card-chip'>
-            <Image src={FLAG_SRC.EUR} alt='' width={14} height={14} />
-            EURC
-          </span>
-          <span className='wallet-card-chip'>
-            <Image src={FLAG_SRC.USD} alt='' width={14} height={14} />
-            USDC
-          </span>
+          {cfg.chips === 'currencies' ? (
+            <>
+              <span className='wallet-card-chip'>
+                <Image loading='eager' src={FLAG_SRC.EUR} alt='' width={14} height={14} />
+                EURC
+              </span>
+              <span className='wallet-card-chip'>
+                <Image loading='eager' src={FLAG_SRC.USD} alt='' width={14} height={14} />
+                USDC
+              </span>
+            </>
+          ) : (
+            <>
+              <span className='wallet-card-chip'>
+                <ProtocolMark protocol='Aave' size={14} />
+                Aave
+              </span>
+              <span className='wallet-card-chip'>
+                <ProtocolMark protocol='Fluid' size={14} />
+                Fluid
+              </span>
+            </>
+          )}
         </div>
       </div>
 
@@ -193,7 +261,7 @@ export function HeroWalletCard() {
         >
           <AnimatePresence initial={false}>
             {feed.map((event, index) => {
-              const isOut = event.kind === 'sent' || event.kind === 'deposit';
+              const isOut = event.deltaCents < 0;
               const isExchange = event.kind === 'exchange';
               return (
                 /* className is not typed on m.* here (framer-motion 10 + React 19
@@ -211,7 +279,7 @@ export function HeroWalletCard() {
                     <span className='wallet-card-avatar-wrap'>
                       <RowAvatar event={event} />
                       <span className='wallet-card-badge'>
-                        <Image src={FLAG_SRC[event.currency]} alt='' width={BADGE_SIZE - 3} height={BADGE_SIZE - 3} />
+                        <Image loading='eager' src={FLAG_SRC[event.currency]} alt='' width={BADGE_SIZE - 3} height={BADGE_SIZE - 3} />
                       </span>
                     </span>
                     <span className='wallet-card-row-text'>

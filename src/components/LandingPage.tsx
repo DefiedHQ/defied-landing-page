@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { m } from 'framer-motion';
 import { Text } from '@coinbase/cds-web/typography/Text';
 import { Button } from '@coinbase/cds-web/buttons/Button';
+import { Icon } from '@coinbase/cds-web/icons/Icon';
 
 /* One motion system (design review, Phase 3): everything fades up 20px over
    0.5s with an ease-out-quart curve. No slides from the sides, nothing
@@ -22,11 +23,13 @@ import { FeaturedPosts } from '@/components/FeaturedPosts';
 import { InfrastructureSection } from '@/components/InfrastructureSection';
 import { InfoSection } from '@/components/Hero';
 import { HeroStatic, HERO_SCROLL_TARGET_ID } from '@/components/HeroStatic';
+import { HeroWalletCard } from '@/components/HeroWalletCard';
 import { Footer } from '@/components/Footer';
 import { useLanguage } from '@/context/LanguageContext';
 import { AnimatedButtonText } from '@/components/AnimatedButtonText';
 import { PictogramCover } from '@/components/PictogramCover';
-import type { LocalPictogramName } from '@/components/LocalPictogram';
+import Link from 'next/link';
+import { LocalPictogram, type LocalPictogramName } from '@/components/LocalPictogram';
 
 type FeatureCard = {
   key: string;
@@ -38,7 +41,7 @@ type FeatureCard = {
 };
 
 export function LandingPage() {
-  const { t } = useLanguage();
+  const { t, localePath } = useLanguage();
 
   // Smooth-scroll for in-page anchor links (matches the header nav behavior;
   // the global reduced-motion override turns this into an instant jump)
@@ -131,10 +134,81 @@ export function LandingPage() {
               </div>
             ))}
           </div>
+          <m.div {...fadeUp}>
+            <div className="note-stack note-stack--section">
+              <p>{t('features.noteText')}</p>
+              <Link href={localePath('/risks')} className="band-link note-stack-link">{t('features.noteLink')}</Link>
+            </div>
+          </m.div>
         </div>
       </section>
 
-      {/* Section 4: How it works — edge-bleed band with vertical 3-step list
+      {/* Section 4: Comparison — Aave's bank-vs-fintech chart, reframed
+          around control instead of a rate. Three honest states per cell
+          (yes / partly / no); the guarantee row goes against us on purpose. */}
+      <section id="compare" className="section-padding section-rhythm">
+        <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
+          <m.div {...fadeUp}>
+            <div className="safety-head">
+              <Text font="label1" as="span" style={{ fontWeight: 600, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.06em', fontSize: '13px' }}>
+                {t('compare.kicker')}
+              </Text>
+              <Text font="display2" as="h2" className="title-tight-lh" style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)', fontWeight: 500 }}>
+                {t('compare.title')}
+              </Text>
+              <Text font="body" as="p" color="fgMuted" style={{ fontSize: '17px', lineHeight: '28px', maxWidth: '46ch' }}>
+                {t('compare.subtitle')}
+              </Text>
+            </div>
+          </m.div>
+          <m.div {...fadeUp}>
+            <div className="compare-wrap">
+              <table className="compare-table">
+                <thead>
+                  <tr>
+                    <th scope="col"><span className="sr-only">{t('compare.kicker')}</span></th>
+                    <th scope="col">{t('compare.colBank')}</th>
+                    <th scope="col">{t('compare.colFintech')}</th>
+                    <th scope="col" className="compare-col-us">{t('compare.colDefied')}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {([
+                    { key: 'r1', cells: ['no', 'no', 'yes'] },
+                    { key: 'r2', cells: ['partly', 'partly', 'yes'] },
+                    { key: 'r3', cells: ['no', 'no', 'yes'] },
+                    { key: 'r4', cells: ['no', 'no', 'yes'] },
+                    { key: 'r5', cells: ['no', 'no', 'yes'] },
+                    { key: 'r6', cells: ['no', 'no', 'yes'] },
+                    { key: 'r7', cells: ['yes', 'partly', 'no'] },
+                  ] as { key: string; cells: ('yes' | 'no' | 'partly')[] }[]).map((row) => (
+                    <tr key={row.key}>
+                      <th scope="row">{t(`compare.${row.key}`)}</th>
+                      {row.cells.map((cell, i) => (
+                        <td key={i} className={i === 2 ? 'compare-col-us' : undefined}>
+                          <span className={`compare-cell compare-cell--${cell}`}>
+                            {cell === 'yes' && <Icon name="checkmark" size="s" dangerouslySetColor="currentColor" />}
+                            {cell === 'no' && <Icon name="minus" size="s" dangerouslySetColor="currentColor" />}
+                            <span className={cell === 'yes' || cell === 'no' ? 'sr-only' : undefined}>{t(`compare.${cell}`)}</span>
+                          </span>
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </m.div>
+          <m.div {...fadeUp}>
+            <div className="note-stack note-stack--section">
+              <p>{t('compare.noteText')}</p>
+              <Link href={localePath('/risks')} className="band-link note-stack-link">{t('compare.noteLink')}</Link>
+            </div>
+          </m.div>
+        </div>
+      </section>
+
+      {/* Section 5: How it works — edge-bleed band with vertical 3-step list
           and the mid-page CTA */}
       <section id="how-it-works" className="section-padding section-rhythm">
         <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
@@ -179,13 +253,17 @@ export function LandingPage() {
                     <AnimatedButtonText>{t('hero.earlyAccess')}</AnimatedButtonText>
                   </Button>
                 </div>
+                <div className="note-stack">
+                  <p>{t('steps.noteText')}</p>
+                  <Link href={localePath('/terms')} className="band-link note-stack-link">{t('steps.noteLink')}</Link>
+                </div>
               </div>
             </div>
           </m.div>
         </div>
       </section>
 
-      {/* Section 5: Stablecoins — the one explainer keeping USDC/EURC tickers.
+      {/* Section 6: Stablecoins — the one explainer keeping USDC/EURC tickers.
           Edge-bleed band on mist: text left, photo right. */}
       <section id="stablecoins" className="section-padding section-rhythm">
         <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
@@ -204,13 +282,16 @@ export function LandingPage() {
                 <Text font="body" as="p" color="fgMuted" style={{ fontSize: '17px', lineHeight: '28px', maxWidth: '46ch' }}>
                   {t('advantages.row1Subtext')}
                 </Text>
+                <div className="note-stack">
+                  <p>{t('advantages.row1NoteText')}</p>
+                </div>
               </div>
             </div>
           </m.div>
         </div>
       </section>
 
-      {/* Section 6: Earning — the differentiator, placed after the basics */}
+      {/* Section 7: Earning — the differentiator, placed after the basics */}
       <section id="earning" className="section-padding section-rhythm">
         <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
           <m.div {...fadeUp}>
@@ -223,25 +304,21 @@ export function LandingPage() {
                   {t('earning.body')}
                 </Text>
                 <a href="#faq" onClick={scrollToFaq} className="band-link">{t('earning.link')}</a>
+                <div className="note-stack">
+                  <p>{t('earning.noteText')}</p>
+                  <Link href={localePath('/risks')} className="band-link note-stack-link">{t('earning.noteLink')}</Link>
+                </div>
               </div>
-              {/* Laptop app shot, resting on the band's bottom edge — same
-                  treatment as the final CTA card (the asset is sheared there) */}
+              {/* The markets view of the live card: money in Aave and Fluid,
+                  deposits and withdrawals rolling through, no rate anywhere */}
               <div className="earning-band-device">
                 <m.div
                   initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.4 }}
                   transition={{ duration: 0.6, delay: 0.12, ease: [...MOTION_EASE] }}
-                  style={{ position: 'absolute', inset: 0 }}
                 >
-                  <Image
-                    src="/cta-app-laptop.png"
-                    alt={t('earning.screenshotAlt')}
-                    fill
-                    loading="lazy"
-                    sizes="(max-width: 768px) 90vw, 520px"
-                    style={{ objectFit: 'contain', objectPosition: 'bottom' }}
-                  />
+                  <HeroWalletCard variant="markets" />
                 </m.div>
               </div>
             </div>
@@ -249,30 +326,55 @@ export function LandingPage() {
         </div>
       </section>
 
-      {/* Section 7: Ownership — answers the control objection right after the
-          earning band. Art on the right so it alternates with the mission band. */}
-      <section id="ownership" className="section-padding section-rhythm">
+      {/* Section 8: Self-custody — the claim (former ownership band) as the
+          header, the four concrete mechanisms as the proof. Quiet list on
+          white, no cards, so it reads as facts rather than features. The
+          hedge lives in one footnote, not inside each item. */}
+      <section id="safety" className="section-padding section-rhythm">
         <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
           <m.div {...fadeUp}>
-            <div className="bleed-band bleed-band--photo-right" style={{ background: 'var(--surface)' }}>
-              <div className="bleed-band-photo bleed-band-photo--cover">
-                <PictogramCover name="controlWalletStorage" tint="mist" />
-              </div>
-              <div className="bleed-band-text">
-                <Text font="display2" as="h2" className="title-tight-lh" style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)', fontWeight: 500 }}>
-                  {t('advantages.bandTitle')}
-                </Text>
-                <Text font="body" as="p" color="fgMuted" style={{ fontSize: '17px', lineHeight: '28px', maxWidth: '46ch' }}>
-                  {t('advantages.bandBody')}
-                </Text>
-                <a href="#faq" onClick={scrollToFaq} className="band-link">{t('advantages.bandCta')}</a>
-              </div>
+            <div className="safety-head">
+              <Text font="display2" as="h2" className="title-tight-lh" style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)', fontWeight: 500 }}>
+                {t('advantages.bandTitle')}
+              </Text>
+              <Text font="body" as="p" color="fgMuted" style={{ fontSize: '17px', lineHeight: '28px', maxWidth: '52ch' }}>
+                {t('advantages.bandBody')}
+              </Text>
+              <a href="#faq" onClick={scrollToFaq} className="band-link">{t('advantages.bandCta')}</a>
+            </div>
+          </m.div>
+          <ul className="safety-grid">
+            {([
+              { key: 'i1', pictogram: 'selfCustodyWallet' },
+              { key: 'i2', pictogram: 'browser' },
+              { key: 'i3', pictogram: 'creditCard' },
+              { key: 'i4', pictogram: 'stableCoinMetaphor' },
+            ] satisfies { key: string; pictogram: LocalPictogramName }[]).map((item, i) => (
+              <li key={item.key} className="safety-item">
+                <m.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.5, delay: i * 0.06, ease: [...MOTION_EASE] }}
+                >
+                  <div className="safety-item-art" aria-hidden="true">
+                    <LocalPictogram name={item.pictogram} dimension="48x48" />
+                  </div>
+                  <Text font="title3" as="h3" className="card-title" style={{ fontWeight: 600 }}>{t(`safety.${item.key}Title`)}</Text>
+                  <Text font="body" as="p" color="fgMuted" style={{ fontSize: '15px', lineHeight: '24px' }}>{t(`safety.${item.key}Desc`)}</Text>
+                </m.div>
+              </li>
+            ))}
+          </ul>
+          <m.div {...fadeUp}>
+            <div className="note-stack note-stack--section">
+              <p>{t('safety.noteText')}</p>
             </div>
           </m.div>
         </div>
       </section>
 
-      {/* Section 8: Mission — edge-bleed band, art left on stone, text on
+      {/* Section 9: Mission — edge-bleed band, art left on stone, text on
           mist (mirrors the stablecoins band above) */}
       <section id="mission" className="section-padding section-rhythm">
         <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
@@ -297,7 +399,7 @@ export function LandingPage() {
         </div>
       </section>
 
-      {/* Section 9: FAQ — Catch remaining objections */}
+      {/* Section 10: FAQ — Catch remaining objections */}
       <section
         id="faq"
         className="section-padding section-rhythm"
@@ -305,7 +407,7 @@ export function LandingPage() {
         <InfoSection />
       </section>
 
-      {/* Section 10: CTA repeat — Final push (Aave-inspired split layout) */}
+      {/* Section 11: CTA repeat — Final push (Aave-inspired split layout) */}
       <section className="section-padding section-rhythm">
         <m.div {...fadeUp}>
           <div
@@ -351,32 +453,23 @@ export function LandingPage() {
                 </Button>
               </div>
             </div>
-            {/* Right: laptop mockup — centered in the right half, bleeding off
-                the card's bottom edge (the source asset is sheared there) */}
-            <div className="cta-split-mockup" style={{ position: 'relative', flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'flex-end', minHeight: '360px' }}>
-              <div style={{ position: 'relative', width: 'min(75%, 496px)', aspectRatio: '1660 / 900' }}>
-                <Image
-                  src="/cta-app-laptop.png"
-                  alt="Defied Money app"
-                  fill
-                  loading="lazy"
-                  sizes="(max-width: 768px) 75vw, 496px"
-                  style={{ objectFit: 'contain', objectPosition: 'bottom' }}
-                />
-              </div>
+            {/* Right: the payments view of the live card, centred in the
+                right half */}
+            <div className="cta-split-mockup" style={{ position: 'relative', flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+              <HeroWalletCard variant="payments" />
             </div>
           </div>
         </m.div>
       </section>
 
-      {/* Section 11: From the blog — link the landing to the content cluster */}
+      {/* Section 12: From the blog — link the landing to the content cluster */}
       <section id="blog-highlights" className="section-padding section-rhythm section-rhythm-bottom">
         <m.div {...fadeUp}>
           <FeaturedPosts />
         </m.div>
       </section>
 
-      {/* Section 12: Footer */}
+      {/* Section 13: Footer */}
       <Footer />
     </div>
   );

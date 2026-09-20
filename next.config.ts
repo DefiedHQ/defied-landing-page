@@ -19,6 +19,11 @@ const nextConfig: NextConfig = {
         destination: '/blog/euro-yield-options-compared',
         permanent: true,
       },
+      // Articles made country-neutral 2026-09-20: the "-bulgaria" slugs moved
+      { source: '/blog/revolut-alternatives-bulgaria', destination: '/blog/revolut-alternatives', permanent: true },
+      { source: '/blog/send-money-from-bulgaria', destination: '/blog/send-money-abroad', permanent: true },
+      { source: '/blog/crypto-taxes-bulgaria', destination: '/blog/crypto-taxes-europe', permanent: true },
+      { source: '/blog/digital-euro-bulgaria', destination: '/blog/what-is-the-digital-euro', permanent: true },
     ];
   },
   async headers() {

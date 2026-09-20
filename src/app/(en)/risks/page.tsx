@@ -4,21 +4,21 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { siteConfig, absoluteUrl, languageAlternates } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Risks',
+  title: 'Risk Disclosure',
   description:
-    'Learn about the risks associated with DeFi protocols and cryptocurrencies. Invest informed.',
+    'Defied Money Risk Disclosure: the risks of stablecoins, self-custodial wallets and third-party onchain protocols, including variable rates and the absence of deposit guarantees.',
   openGraph: {
-    title: 'Risks | Defied Money',
+    title: 'Risk Disclosure | Defied Money',
     description:
-      'Learn about the risks associated with DeFi protocols and cryptocurrencies.',
+      'Defied Money Risk Disclosure: the risks of stablecoins, self-custodial wallets and third-party onchain protocols, including variable rates and the absence of deposit guarantees.',
     siteName: siteConfig.name,
-    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: 'Defied Money – Risks' }],
+    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: 'Defied Money – Risk Disclosure' }],
   },
   twitter: {
     card: 'summary_large_image',
     site: siteConfig.twitter,
-    title: 'Risks | Defied Money',
-    description: 'Learn about the risks associated with DeFi protocols and cryptocurrencies.',
+    title: 'Risk Disclosure | Defied Money',
+    description: 'Defied Money Risk Disclosure: the risks of stablecoins, self-custodial wallets and third-party onchain protocols, including variable rates and the absence of deposit guarantees.',
     images: [siteConfig.ogImage],
   },
   alternates: {
