@@ -777,13 +777,15 @@ select:focus-visible,
 .hero-pill-avatar + .hero-pill-avatar {
   margin-left: -8px;
 }
-/* Narrow phones: let the claim wrap to two lines instead of overflowing.
-   The selector out-ranks the hero's centred-paragraph rule so the wrapped
-   lines stay ragged-left beside the faces. */
-@media (max-width: 400px) {
+/* Phones: the one-line pill needs ~470px, so below the phone breakpoint the
+   claim wraps to two lines instead of overflowing the viewport. The selector
+   out-ranks the hero's centred-paragraph rule so the wrapped lines stay
+   ragged-left beside the faces. */
+@media (max-width: 559px) {
   .hero-card-content p.hero-pill {
     white-space: normal;
     text-align: left;
+    max-width: 100%;
   }
 }
 .hero-card-content p {
