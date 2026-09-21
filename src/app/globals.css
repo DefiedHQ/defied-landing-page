@@ -829,6 +829,13 @@ select:focus-visible,
     width: 100%;
     max-width: 360px;
   }
+  /* CDS Button gives its start slot flex: 1 0 auto + justify-content:
+     flex-start, which at full width parks the icon on the left edge while
+     the label centres. Pin the slot to its content so the anchor's own
+     justify-content: center holds icon + label together as one group. */
+  .hero-card-cta-row > * > span:first-child {
+    flex: 0 0 auto;
+  }
 }
 @media (max-width: 640px) {
   .hero-card-content {
