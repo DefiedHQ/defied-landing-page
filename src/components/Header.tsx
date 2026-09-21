@@ -136,7 +136,7 @@ export function Header() {
               (design review, Phase 2) */}
           <Button
             as="a"
-            href="https://app.defied.money"
+            href="https://wallet.defied.money"
             target="_blank"
             rel="noopener noreferrer"
             variant={pastHero ? 'primary' : 'secondary'}

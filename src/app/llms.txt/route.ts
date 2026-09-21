@@ -76,7 +76,7 @@ Banks and fintech apps differ; this shows the typical model.
 
 ## Availability
 
-- Web app at https://app.defied.money, optimised for desktop and mobile browsers. Native iOS and Android apps are on a waitlist.
+- Web app at https://wallet.defied.money, optimised for desktop and mobile browsers. Native iOS and Android apps are on a waitlist.
 - Intended for users in the European Economic Area. Bank top-up and card availability depend on partner coverage per country.
 
 ## Risks
@@ -101,7 +101,7 @@ ${articleLines}
 - Email: ${siteConfig.contact.email}
 - X: ${siteConfig.socials[0]}
 - LinkedIn: ${siteConfig.socials[1]}
-- App: https://app.defied.money
+- App: https://wallet.defied.money
 `;
 
   return new Response(body, {

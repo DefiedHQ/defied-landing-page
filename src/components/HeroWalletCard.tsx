@@ -117,7 +117,7 @@ const VARIANTS: Record<WalletCardVariant, VariantConfig> = {
   },
 };
 
-const VISIBLE_ROWS = 3;
+const DEFAULT_VISIBLE_ROWS = 3;
 const ROW_HEIGHT = 64;
 const AVATAR_SIZE = 40;
 const BADGE_SIZE = 18;
@@ -165,18 +165,26 @@ function RowAvatar({ event }: { event: WalletEvent }) {
   return <span className='wallet-card-avatar'>{event.title?.charAt(0).toUpperCase()}</span>;
 }
 
-/** Initial feed: the first VISIBLE_ROWS events, newest first */
-function initialFeed(cfg: VariantConfig): WalletEvent[] {
-  return cfg.cycle.slice(0, VISIBLE_ROWS)
+/** Initial feed: the first `rows` events, newest first */
+function initialFeed(cfg: VariantConfig, rows: number): WalletEvent[] {
+  return cfg.cycle.slice(0, rows)
     .map((e, i) => ({ ...e, id: i }))
     .reverse();
 }
 
-function initialBalance(cfg: VariantConfig): number {
-  return cfg.cycle.slice(0, VISIBLE_ROWS).reduce((sum, e) => sum + e.deltaCents, cfg.startBalanceCents);
+function initialBalance(cfg: VariantConfig, rows: number): number {
+  return cfg.cycle.slice(0, rows).reduce((sum, e) => sum + e.deltaCents, cfg.startBalanceCents);
 }
 
-export function HeroWalletCard({ variant = 'wallet' }: { variant?: WalletCardVariant }) {
+type HeroWalletCardProps = {
+  variant?: WalletCardVariant;
+  /** Rows shown in the feed (3 on the page cards, 4 inside a phone screen) */
+  visibleRows?: number;
+  /** Delay before the first new row, so side-by-side cards don't tick in lockstep */
+  tickOffsetMs?: number;
+};
+
+export function HeroWalletCard({ variant = 'wallet', visibleRows = DEFAULT_VISIBLE_ROWS, tickOffsetMs = 0 }: HeroWalletCardProps) {
   const { t } = useLanguage();
   const cfg = VARIANTS[variant];
   const reduceMotion = useReducedMotion();
@@ -184,25 +192,33 @@ export function HeroWalletCard({ variant = 'wallet' }: { variant?: WalletCardVar
   const ref = useRef<HTMLDivElement>(null!);
   const inView = useInView(ref, { amount: 0.5 });
 
-  const [feed, setFeed] = useState<WalletEvent[]>(() => initialFeed(cfg));
-  const nextIndex = useRef(VISIBLE_ROWS);
-  const balanceCents = useRef(initialBalance(cfg));
+  const [feed, setFeed] = useState<WalletEvent[]>(() => initialFeed(cfg, visibleRows));
+  const nextIndex = useRef(visibleRows);
+  const balanceCents = useRef(initialBalance(cfg, visibleRows));
 
   const balance = useMotionValue(balanceCents.current);
   const balanceText = useTransform(balance, (v) => formatEur(Math.round(v)));
 
   useEffect(() => {
     if (reduceMotion || !inView) return;
-    const timer = window.setInterval(() => {
+    const tick = () => {
       const source = cfg.cycle[nextIndex.current % cfg.cycle.length];
       const event: WalletEvent = { ...source, id: nextIndex.current };
       nextIndex.current += 1;
       balanceCents.current += event.deltaCents;
       animate(balance, balanceCents.current, { duration: 0.9, ease: [...EASE] });
-      setFeed((prev) => [event, ...prev].slice(0, VISIBLE_ROWS));
-    }, ACTIVITY_INTERVAL_MS);
-    return () => window.clearInterval(timer);
-  }, [reduceMotion, inView, balance, cfg]);
+      setFeed((prev) => [event, ...prev].slice(0, visibleRows));
+    };
+    let interval: number | undefined;
+    const start = window.setTimeout(() => {
+      tick();
+      interval = window.setInterval(tick, ACTIVITY_INTERVAL_MS);
+    }, ACTIVITY_INTERVAL_MS + tickOffsetMs);
+    return () => {
+      window.clearTimeout(start);
+      if (interval !== undefined) window.clearInterval(interval);
+    };
+  }, [reduceMotion, inView, balance, cfg, visibleRows, tickOffsetMs]);
 
   const actionLabel = (event: WalletEvent) => {
     if (event.kind === 'exchange') return `${event.currency} → ${event.toCurrency}`;
@@ -257,7 +273,7 @@ export function HeroWalletCard({ variant = 'wallet' }: { variant?: WalletCardVar
         </Text>
         <div
           className='wallet-card-rows'
-          style={{ '--row-h': `${ROW_HEIGHT}px`, height: ROW_HEIGHT * VISIBLE_ROWS } as React.CSSProperties}
+          style={{ '--row-h': `${ROW_HEIGHT}px`, height: ROW_HEIGHT * visibleRows } as React.CSSProperties}
         >
           <AnimatePresence initial={false}>
             {feed.map((event, index) => {
@@ -272,7 +288,7 @@ export function HeroWalletCard({ variant = 'wallet' }: { variant?: WalletCardVar
                   style={{ position: 'absolute', top: 0, left: 0, right: 0 }}
                   initial={{ opacity: 0, y: -ROW_HEIGHT * 0.35 }}
                   animate={{ opacity: 1, y: ROW_HEIGHT * index }}
-                  exit={{ opacity: 0, y: ROW_HEIGHT * VISIBLE_ROWS }}
+                  exit={{ opacity: 0, y: ROW_HEIGHT * visibleRows }}
                   transition={{ duration: 0.5, ease: [...EASE] }}
                 >
                   <div className='wallet-card-row'>

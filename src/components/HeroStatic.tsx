@@ -7,7 +7,7 @@ import { Icon } from '@coinbase/cds-web/icons/Icon';
 import { useLanguage } from '@/context/LanguageContext';
 import { useDownloadModal } from '@/context/DownloadModalContext';
 import { AnimatedButtonText } from '@/components/AnimatedButtonText';
-import { HeroWalletCard } from '@/components/HeroWalletCard';
+import { HeroPhones } from '@/components/HeroPhones';
 
 /* Android robot head - CDS has no Android glyph. The Android robot is
    licensed by Google under CC BY 3.0 (attribution in the SVG title). */
@@ -30,7 +30,7 @@ export const HERO_ID = 'hero';
 const BASE_EUROPE_POST_URL = 'https://x.com/Base_EUR/status/2079858688601280868';
 
 /**
- * Hero - one message, one CTA, and the wallet card showing the product.
+ * Hero - one message, one CTA, and the product running on two phones.
  */
 export function HeroStatic() {
   const { t } = useLanguage();
@@ -49,15 +49,15 @@ export function HeroStatic() {
   return (
     <div className="hero-card" id={HERO_ID}>
       <div className="hero-card-content">
-        {/* Social-proof pill linking to the Base Europe post. Sits above the
-            two-column row so the wallet card's top aligns with the headline. */}
-        <a className="hero-pill" href={BASE_EUROPE_POST_URL} target="_blank" rel="noopener noreferrer">
-          <span>{t('hero.pillLabel')}</span>
-          <span className="hero-pill-divider" aria-hidden="true" />
-          <span className="hero-pill-cta">{t('hero.pillCta')}</span>
-        </a>
         <div className="hero-card-layout">
           <div className="hero-card-copy">
+            {/* Social-proof pill linking to the Base Europe post, directly
+                above the headline so the two read as one block */}
+            <a className="hero-pill" href={BASE_EUROPE_POST_URL} target="_blank" rel="noopener noreferrer">
+              <span>{t('hero.pillLabel')}</span>
+              <span className="hero-pill-divider" aria-hidden="true" />
+              <span className="hero-pill-cta">{t('hero.pillCta')}</span>
+            </a>
             <Text
               font="display1"
               as="h1"
@@ -91,7 +91,7 @@ export function HeroStatic() {
             <div className="hero-card-cta-row">
               <Button
                 as="a"
-                href="https://app.defied.money"
+                href="https://wallet.defied.money"
                 target="_blank"
                 rel="noopener noreferrer"
                 variant="primary"
@@ -129,8 +129,8 @@ export function HeroStatic() {
             </div>
           </div>
 
-          {/* The product itself: a live wallet feed (hold, send, swap) */}
-          <HeroWalletCard />
+          {/* The product itself: the live wallet and markets feeds, on phones */}
+          <HeroPhones />
         </div>
       </div>
 

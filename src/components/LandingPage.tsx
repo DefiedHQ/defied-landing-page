@@ -24,6 +24,7 @@ import { InfrastructureSection } from '@/components/InfrastructureSection';
 import { InfoSection } from '@/components/Hero';
 import { HeroStatic, HERO_SCROLL_TARGET_ID } from '@/components/HeroStatic';
 import { HeroWalletCard } from '@/components/HeroWalletCard';
+import { PhoneFrame } from '@/components/PhoneFrame';
 import { Footer } from '@/components/Footer';
 import { useLanguage } from '@/context/LanguageContext';
 import { AnimatedButtonText } from '@/components/AnimatedButtonText';
@@ -239,7 +240,7 @@ export function LandingPage() {
                 <div style={{ marginTop: '8px' }}>
                   <Button
                     as="a"
-                    href="https://app.defied.money"
+                    href="https://wallet.defied.money"
                     target="_blank"
                     rel="noopener noreferrer"
                     variant="primary"
@@ -309,7 +310,8 @@ export function LandingPage() {
                   <Link href={localePath('/risks')} className="band-link note-stack-link">{t('earning.noteLink')}</Link>
                 </div>
               </div>
-              {/* The markets view of the live card: money in Aave and Fluid,
+              {/* The markets view of the live card on an upright phone that
+                  rises from the band's bottom edge: money in Aave and Fluid,
                   deposits and withdrawals rolling through, no rate anywhere */}
               <div className="earning-band-device">
                 <m.div
@@ -318,7 +320,9 @@ export function LandingPage() {
                   viewport={{ once: true, amount: 0.4 }}
                   transition={{ duration: 0.6, delay: 0.12, ease: [...MOTION_EASE] }}
                 >
-                  <HeroWalletCard variant="markets" />
+                  <PhoneFrame>
+                    <HeroWalletCard variant="markets" visibleRows={4} />
+                  </PhoneFrame>
                 </m.div>
               </div>
             </div>
@@ -438,7 +442,7 @@ export function LandingPage() {
               <div style={{ marginTop: '8px' }}>
                 <Button
                   as="a"
-                  href="https://app.defied.money"
+                  href="https://wallet.defied.money"
                   target="_blank"
                   rel="noopener noreferrer"
                   variant="primary"
@@ -453,10 +457,15 @@ export function LandingPage() {
                 </Button>
               </div>
             </div>
-            {/* Right: the payments view of the live card, centred in the
-                right half */}
-            <div className="cta-split-mockup" style={{ position: 'relative', flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <HeroWalletCard variant="payments" />
+            {/* Right: the payments view of the live card on an upright phone
+                that rises from the card's bottom edge (the card's overflow
+                crops the lower part of the device) */}
+            <div className="cta-split-mockup">
+              <div className="cta-split-phone">
+                <PhoneFrame>
+                  <HeroWalletCard variant="payments" visibleRows={4} />
+                </PhoneFrame>
+              </div>
             </div>
           </div>
         </m.div>

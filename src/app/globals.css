@@ -974,16 +974,14 @@ select:focus-visible,
 /* Tablet-landscape and up: copy left, card right */
 @media (min-width: 1024px) {
   .hero-card-content {
-    max-width: 1160px;
+    max-width: 1200px;
   }
   .hero-card-layout {
     flex-direction: row;
-    align-items: flex-start; /* card top = headline top */
+    align-items: center; /* the phone cluster is taller than the copy */
     justify-content: space-between;
+    gap: 40px;
     text-align: left;
-  }
-  .hero-card-content .hero-pill {
-    align-self: flex-start;
   }
   .hero-card-content {
     display: flex;
@@ -995,7 +993,7 @@ select:focus-visible,
   }
   .hero-card-copy {
     flex: 1 1 0;
-    max-width: 640px;
+    max-width: 700px;
   }
   .hero-card-content .hero-card-copy h1,
   .hero-card-content .hero-card-copy p {
@@ -1019,6 +1017,186 @@ select:focus-visible,
   }
 }
 
+/* ─── Hero phones ───
+   The wallet card shown as the app it is: two phones fanned like a product
+   shot, the wallet in front (right) and the markets view behind (left).
+   The stage is laid out at a fixed size and scaled per breakpoint with a
+   transform, so the card's px type stays crisp in proportion; the wrapper
+   takes the scaled box so the flex layout sees the real footprint. */
+.hero-phones {
+  --phone-w: 300px;
+  --phone-h: 618px;
+  --stage-w: 520px;
+  --stage-h: 700px;
+  --s: 0.9;
+  width: calc(var(--stage-w) * var(--s));
+  height: calc(var(--stage-h) * var(--s));
+  flex-shrink: 0;
+}
+.hero-phones-stage {
+  position: relative;
+  width: var(--stage-w);
+  height: var(--stage-h);
+  transform: scale(var(--s));
+  transform-origin: top left;
+}
+.hero-phone {
+  position: absolute;
+  width: var(--phone-w);
+  height: var(--phone-h);
+}
+.hero-phone--back {
+  left: 0;
+  top: 72px;
+  transform: rotate(-7deg);
+  z-index: 1;
+}
+.hero-phone--front {
+  left: 220px;
+  top: 0;
+  transform: rotate(7deg);
+  z-index: 2;
+}
+/* Phones: a single upright device, scaled to the narrow viewport */
+@media (max-width: 559px) {
+  .hero-phones {
+    --stage-w: 300px;
+    --stage-h: 618px;
+    --s: 0.82;
+  }
+  .hero-phone--back {
+    display: none;
+  }
+  .hero-phone--front {
+    left: 0;
+    transform: none;
+  }
+}
+/* Tablet-landscape: small enough that the copy column keeps ~600px, which
+   the two CTAs need to sit on one line at their natural width */
+@media (min-width: 1024px) {
+  .hero-phones {
+    --s: 0.64;
+  }
+}
+@media (min-width: 1280px) {
+  .hero-phones {
+    --s: 0.92;
+  }
+}
+
+/* Device shell: dark bezel, side keys, one soft drop shadow. Designed at
+   300x618 so the card's px type keeps its proportions; contexts that need a
+   smaller device set --phone-scale and size their wrapper to the scaled box */
+.phone-frame {
+  position: relative;
+  width: var(--phone-w, 300px);
+  height: var(--phone-h, 618px);
+  transform: scale(var(--phone-scale, 1));
+  transform-origin: top left;
+  padding: 10px;
+  border-radius: 50px;
+  background: #101114;
+  box-shadow:
+    inset 0 0 0 1.5px rgba(255, 255, 255, 0.10),
+    0 2px 4px rgba(11, 27, 58, 0.10),
+    0 40px 70px -24px rgba(11, 27, 58, 0.35);
+}
+.phone-frame::before,
+.phone-frame::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  background: #2A2C32;
+}
+.phone-frame::before {
+  left: -3px;
+  top: 128px;
+  height: 92px;
+  border-radius: 2px 0 0 2px;
+}
+.phone-frame::after {
+  right: -3px;
+  top: 168px;
+  height: 64px;
+  border-radius: 0 2px 2px 0;
+}
+.phone-screen {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  border-radius: 40px;
+  background: #fff;
+  overflow: hidden;
+}
+.phone-status {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 54px;
+  padding: 8px 26px 0;
+  color: var(--ink);
+}
+.phone-status-time {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+}
+.phone-island {
+  position: absolute;
+  left: 50%;
+  top: 11px;
+  width: 96px;
+  height: 30px;
+  border-radius: 20px;
+  background: #101114;
+  transform: translateX(-50%);
+}
+.phone-status-icons {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.phone-status-icons svg {
+  display: block;
+}
+.phone-content {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+.phone-home {
+  display: block;
+  width: 120px;
+  height: 5px;
+  margin: 8px auto 9px;
+  border-radius: 3px;
+  background: var(--ink);
+  opacity: 0.9;
+}
+/* Inside a screen the card is the app view: full-bleed, no ring or shadow */
+.phone-content .wallet-card {
+  width: 100%;
+  flex: 1;
+  padding: 10px 20px 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.phone-content .wallet-card-balance {
+  font-size: 36px;
+}
+/* Narrow screen: the "Action · note" line stays on one line like the label */
+.phone-content .wallet-card-row-detail {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 /* Headline size lives here (not inline) so the split layout can step it down */
 .hero-title {
   font-size: clamp(2.5rem, 5.5vw, 4.75rem);
@@ -1038,8 +1216,10 @@ select:focus-visible,
   /* Tighter pills so the CTA row ends close to where the headline wraps */
   .hero-card-copy .hero-card-cta-row {
     gap: 10px;
+    flex-wrap: nowrap;
   }
   .hero-card-copy .hero-card-cta-row > * {
+    flex-shrink: 0;
     padding-left: 24px !important;
     padding-right: 24px !important;
   }
@@ -1474,14 +1654,20 @@ select:focus-visible,
   flex-direction: column;
   gap: 12px;
 }
-/* The live card sits in the band's right half (white card on mist) */
+/* The phone stands on the band's bottom edge: pulled below the band's own
+   padding by a fixed amount, and cropped by the band's overflow: hidden */
 .earning-band-device {
+  --phone-scale: 0.8;
   position: relative;
-  align-self: center;
-  width: min(400px, 100%);
-}
-.earning-band-device .wallet-card {
+  display: flex;
+  justify-content: center;
   width: 100%;
+  height: calc(618px * var(--phone-scale));
+  margin-bottom: calc(-1 * var(--band-pad) - 130px);
+}
+.earning-band-device > * {
+  width: calc(300px * var(--phone-scale));
+  height: calc(618px * var(--phone-scale));
 }
 @media (min-width: 768px) {
   .earning-band {
@@ -1493,10 +1679,14 @@ select:focus-visible,
     flex: 1;
     padding-bottom: 8px;
   }
+  /* The column spans the band's right half (measured on the band's outer
+     box, so the centred phone lines up with the artwork centred in the right
+     half of the stablecoins band above): half the content box plus the
+     right padding, minus the left padding = 50% - pad */
   .earning-band-device {
-    align-self: center;
-    flex-shrink: 0;
-    width: 400px;
+    align-self: flex-end;
+    flex: 0 0 calc(50% - var(--band-pad));
+    width: auto;
   }
 }
 
@@ -1587,11 +1777,21 @@ select:focus-visible,
 .cta-split-text p {
   text-align: center;
 }
+/* The phone stands on the card's bottom edge: the mockup column aligns it
+   to the end and pulls it below the card, whose overflow: hidden crops it */
 .cta-split-mockup {
-  padding: 0 24px 40px;
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0 24px;
 }
-.cta-split-mockup .wallet-card {
-  width: min(400px, 100%);
+.cta-split-phone {
+  --phone-scale: 0.8;
+  width: calc(300px * var(--phone-scale));
+  height: calc(618px * var(--phone-scale));
+  margin-bottom: -130px;
 }
 @media (min-width: 768px) {
   .cta-split-card {
@@ -1608,7 +1808,7 @@ select:focus-visible,
     text-align: left;
   }
   .cta-split-mockup {
-    padding: 40px 40px 40px 0;
+    padding: 56px 40px 0 0;
   }
 }
 

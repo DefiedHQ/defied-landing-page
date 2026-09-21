@@ -15,7 +15,7 @@
     "pillCta": "Read more",
     "titleLine1": "Your gateway to stablecoins",
     "titleLine2": "and onchain finance.",
-    "ctaHeader": "Open app",
+    "ctaHeader": "Open Wallet",
     "cardSubtitle": "Hold digital euros and dollars. Send them in seconds. Use them onchain. All from a wallet only you control.",
     "earlyAccess": "Create your wallet now",
     "waitlistCta": "Join the iOS & Android waitlist",
@@ -140,7 +140,7 @@
     "card4Desc": "Network-fee support may be available for selected actions. Eligibility, availability and network conditions may apply."
   },
   "faq": {
-    "title": "Frequently asked questions",
+    "title": "FAQ",
     "showAll": "Show all questions",
     "q1": "What is Defied Money?",
     "a1": "Defied Money is a non-custodial wallet and software interface for supported onchain services. You can hold, send, receive and use supported stablecoins such as EURC and USDC from a wallet you control. Defied Money does not hold your assets, issue stablecoins or control the third-party protocols you may choose to use.",
