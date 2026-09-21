@@ -76,6 +76,8 @@ video {
   --deep: #0B1B3A;         /* deep ink-blue accent */
   --radius-media: 32px;    /* photo cards, bands, color blocks */
   --radius-content: 20px;  /* content cards, FAQ items, dropdowns */
+  --band-pad: clamp(40px, 5vw, 64px); /* inner padding of every band / CTA card */
+  --mist-wash: #F8FBFF;    /* lightest mist, gradient midpoint */
 
   /* Expose breakpoints as CSS custom properties */
   --bp-phone-landscape: 560px;
@@ -400,6 +402,14 @@ input[type="number"]::-webkit-inner-spin-button {
   opacity: 1;
 }
 
+/* On phones the strip keeps its one-line title and the logos; the
+   explanatory sentence would wrap to four lines above a logo reel */
+@media (max-width: 559px) {
+  .trust-strip-subtitle {
+    display: none;
+  }
+}
+
 /* Logo carousel */
 .logo-carousel-wrapper {
   width: 100%;
@@ -597,6 +607,13 @@ input[type="number"]::-webkit-inner-spin-button {
 .faq-accordion [class*="horizontal-"] {
   display: none;
 }
+/* Question titles: CDS AccordionItem hardcodes 700 in pure black. Every
+   heading on the page is 500 in the ink token, so match it. */
+.faq-accordion button,
+.faq-accordion button * {
+  font-weight: 500;
+  color: var(--ink);
+}
 
 /* ═══════════════════════════════════════════════════════════════
    Focus-visible styles for keyboard navigation
@@ -685,6 +702,13 @@ select:focus-visible,
     animation: none;
   }
 }
+/* Phones: the hero is taller than the viewport, so a cue "at the fold" would
+   float between the device and the trust strip. Scrolling is self-evident. */
+@media (max-width: 767px) {
+  .hero-scroll-cue {
+    display: none;
+  }
+}
 .hero-card-content {
   width: 100%;
   max-width: 1000px;
@@ -715,39 +739,52 @@ select:focus-visible,
   }
 }
 
-/* Social-proof pill above the headline — mint tint on the success green,
-   label | divider | "Read more", the whole pill is the link */
+/* Social-proof pill above the headline: white capsule, hairline ring, one
+   soft shadow; three overlapping faces, then "10k+ users" in medium */
 .hero-pill {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: clamp(20px, 2.5vw, 28px);
-  padding: 8px 16px;
+  gap: 12px;
+  margin: 0 0 clamp(20px, 2.5vw, 28px);
+  padding: 6px 18px 6px 6px;
   border-radius: 100px;
-  background: rgba(5, 177, 105, 0.10);
-  border: 1px solid rgba(5, 177, 105, 0.28);
-  color: #087A4A;
-  font-size: 14px;
-  font-weight: 500;
+  background: #fff;
+  border: 1px solid rgba(20, 22, 26, 0.08);
+  box-shadow:
+    0 1px 2px rgba(20, 22, 26, 0.04),
+    0 6px 16px -6px rgba(11, 27, 58, 0.12);
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 400;
   line-height: 1.2;
-  text-decoration: none;
-  transition: background-color 150ms ease, border-color 150ms ease;
+  text-align: left;
+  white-space: nowrap;
 }
-.hero-pill:hover {
-  background: rgba(5, 177, 105, 0.16);
-  border-color: rgba(5, 177, 105, 0.45);
+.hero-pill strong {
+  font-weight: 600;
 }
-.hero-pill:focus-visible {
-  outline: 2px solid #087A4A;
-  outline-offset: 3px;
+.hero-pill-avatars {
+  display: inline-flex;
+  flex-shrink: 0;
 }
-.hero-pill-divider {
-  width: 1px;
-  height: 14px;
-  background: rgba(5, 177, 105, 0.45);
+.hero-pill-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0 2px #fff;
 }
-.hero-pill-cta {
-  opacity: 0.8;
+.hero-pill-avatar + .hero-pill-avatar {
+  margin-left: -8px;
+}
+/* Narrow phones: let the claim wrap to two lines instead of overflowing.
+   The selector out-ranks the hero's centred-paragraph rule so the wrapped
+   lines stay ragged-left beside the faces. */
+@media (max-width: 400px) {
+  .hero-card-content p.hero-pill {
+    white-space: normal;
+    text-align: left;
+  }
 }
 .hero-card-content p {
   margin-left: auto;
@@ -779,11 +816,16 @@ select:focus-visible,
   display: block;
   color: inherit;
 }
-/* Phones: stack, each pill still hugging its own label */
+/* Phones: stack, both pills on one shared width so the stack reads as a
+   pair instead of two pills of unrelated size */
 @media (max-width: 480px) {
   .hero-card-cta-row {
     flex-direction: column;
     align-items: center;
+  }
+  .hero-card-cta-row > * {
+    width: 100%;
+    max-width: 360px;
   }
 }
 @media (max-width: 640px) {
@@ -1200,6 +1242,9 @@ select:focus-visible,
 /* Headline size lives here (not inline) so the split layout can step it down */
 .hero-title {
   font-size: clamp(2.5rem, 5.5vw, 4.75rem);
+  /* One leading at every breakpoint (CDS display1 gave 72px under a 76px
+     size on desktop, and the small-screen rules gave 1.05 / 1.1) */
+  line-height: 1.02;
 }
 /* Force the hero headline onto exactly two lines from tablet up; phones wrap
    naturally. In the split layout (1024px+) the copy column is ~640px, so the
@@ -1233,7 +1278,7 @@ select:focus-visible,
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 12px;
+  gap: 16px;
   margin-bottom: clamp(32px, 4vw, 48px);
 }
 .safety-head h2,
@@ -1254,7 +1299,7 @@ select:focus-visible,
 }
 .safety-item {
   border-top: 1px solid rgba(93, 97, 103, 0.2);
-  padding: 28px 0 32px;
+  padding: 28px 0;
 }
 .safety-item > div {
   display: flex;
@@ -1289,18 +1334,21 @@ select:focus-visible,
   font-size: 14px;
 }
 /* Section-level footnote (under a grid, outside any band): left-aligned on
-   the grid's own left edge, so it lines up with the first column's text */
+   the grid's own left edge, so it lines up with the first column's text.
+   Capped at 72ch so the 14px note never runs the full 1200px grid. */
 .note-stack--section {
   margin-top: clamp(24px, 3vw, 32px);
-  max-width: none;
+  max-width: 72ch;
 }
-.note-stack--section p {
-  max-width: none;
+/* After a hairline list the items already carry 28px of bottom padding, so
+   the note only needs a small step to read as the list's closing line */
+.note-stack--after-list {
+  margin-top: 8px;
 }
 /* Inside bands the note follows the band's own alignment (centred on phones) */
 .bleed-band-text .note-stack,
 .earning-band-text .note-stack {
-  margin-top: 4px;
+  margin-top: 8px;
 }
 @media (max-width: 767px) {
   .bleed-band-text .note-stack,
@@ -1351,7 +1399,7 @@ select:focus-visible,
   border-top: 0;
   font-size: 13px;
   font-weight: 600;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em; /* same tracking as .kicker */
   text-transform: uppercase;
   color: var(--muted);
 }
@@ -1392,7 +1440,9 @@ select:focus-visible,
   color: #087A4A;
 }
 .compare-cell--no {
-  color: rgba(93, 97, 103, 0.55);
+  /* Full muted token: the dash carries meaning ("No"), so it needs the 3:1
+     non-text contrast floor; the 55% tint used before fell to ~2.4:1 */
+  color: var(--muted);
 }
 .compare-table td:not(:first-child) {
   width: 20%;
@@ -1557,6 +1607,8 @@ select:focus-visible,
   text-align: left;
 }
 .step-number {
+  /* Centre the 32px ring on the 25px title line box (20px title at 1.25) */
+  margin-top: -4px;
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -1597,7 +1649,7 @@ select:focus-visible,
   justify-content: center;
   gap: 16px;
   flex: 1;
-  padding: clamp(40px, 5vw, 64px);
+  padding: var(--band-pad);
 }
 @media (min-width: 768px) {
   .bleed-band {
@@ -1631,6 +1683,50 @@ select:focus-visible,
    CDS title3/title4 defaults */
 .card-title {
   line-height: 1.25;
+  text-wrap: balance;
+}
+
+/* ─── Type scale (design review, Phase 2) ───
+   One section-heading size at 1.1 leading and display tracking, one kicker,
+   and four body steps: lead 18/28, body 16/26, card 15/24, small 14/22
+   (legal 13/18). Applied as classes so CDS Text sizes are set in one place. */
+.section-heading {
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  line-height: 1.1;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+.kicker {
+  font-size: 13px;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.text-lead {
+  font-size: 18px;
+  line-height: 28px;
+}
+.text-card {
+  font-size: 15px;
+  line-height: 24px;
+}
+.text-small {
+  font-size: 14px;
+  line-height: 22px;
+}
+.text-legal {
+  font-size: 13px;
+  line-height: 18px;
+}
+/* Stack rhythm inside bands and centred section heads: kicker sits 12px
+   above the title (gap 16 - 4), title to body 16, body to footnote 24 */
+.safety-head .kicker,
+.bleed-band-text .kicker,
+.earning-band-text .kicker {
+  margin-bottom: -4px;
 }
 
 
@@ -1638,7 +1734,6 @@ select:focus-visible,
    Earning band — signature 24/7 moment (mist tint)
    ═══════════════════════════════════════════════════════════════ */
 .earning-band {
-  --band-pad: clamp(32px, 5vw, 64px);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -1652,7 +1747,7 @@ select:focus-visible,
 .earning-band-text {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
 }
 /* The phone stands on the band's bottom edge: pulled below the band's own
    padding by a fixed amount, and cropped by the band's overflow: hidden */

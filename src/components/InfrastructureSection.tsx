@@ -10,7 +10,7 @@ const partners = [
   { name: 'Base', logo: '/Base_Logo.svg', width: 100, height: 28 },
   { name: 'Privy', logo: '/privy_stripe.svg', width: 130, height: 28 },
   { name: 'Bridge.xyz', logo: '/bridge_logo.svg', width: 100, height: 28 },
-  { name: 'Gnosis Pay', logo: '/gnosis_pay_logo.svg', width: 110, height: 28 },
+  { name: 'Stripe', logo: '/stripe_logo.svg', width: 67, height: 28 },
   { name: 'LI.FI', logo: '/lifi_logo.svg', width: 70, height: 28 },
 ];
 
@@ -30,10 +30,10 @@ export function InfrastructureSection() {
         }}
       >
         <div style={{ maxWidth: '720px', textAlign: 'center' }}>
-          <Text font="label1" as="p" color="fgMuted" display="block" style={{ fontSize: '20px', fontWeight: 500, letterSpacing: '0.01em', textAlign: 'center', marginBottom: '8px' }}>
+          <Text font="body" as="p" display="block" className="text-lead" style={{ fontWeight: 500, textAlign: 'center', marginBottom: '8px' }}>
             {t('infrastructure.title')}
           </Text>
-          <Text font="body" as="p" color="fgMuted" style={{ fontSize: '15px', lineHeight: '22px', textAlign: 'center' }}>
+          <Text font="body" as="p" color="fgMuted" className="text-card trust-strip-subtitle" style={{ textAlign: 'center' }}>
             {t('infrastructure.subtitle')}
           </Text>
         </div>

@@ -4,15 +4,14 @@
     "about": "About",
     "whatItDoes": "What it does",
     "features": "Features",
-    "howItWorks": "How it works",
+    "howItWorks": "How it Works",
     "advantages": "Advantages",
     "faq": "FAQ",
     "mission": "Mission",
     "languageAndRegion": "Language and region"
   },
   "hero": {
-    "pillLabel": "Now live on Base",
-    "pillCta": "Read more",
+    "pillLabel": "10k+ users",
     "titleLine1": "Your gateway to stablecoins",
     "titleLine2": "and onchain finance.",
     "ctaHeader": "Open Wallet",
@@ -39,18 +38,20 @@
       "noteInvoice": "Invoice",
       "noteSplit": "Split dinner",
       "noteGroceries": "Groceries"
-    }
+    },
+    "pillText": "already send 💸 stables with Defied Money"
   },
   "earning": {
     "title": "Open markets. Your call.",
     "body": "Connect your balance to open onchain markets, straight from your wallet. You choose when, and you can skip it entirely.",
     "link": "How protocol access works",
     "noteText": "Rates are set by each protocol, move with the market and are never guaranteed. Withdrawals depend on market liquidity.",
-    "noteLink": "Read the Risk Disclosure"
+    "noteLink": "Read the Risk Disclosure",
+    "kicker": "Onchain markets"
   },
   "cta": {
-    "heading": "Your gateway to stablecoins and onchain finance",
-    "subheading": "Hold it. Send it. Use it. From a wallet only you control."
+    "heading": "Open your wallet in minutes.",
+    "subheading": "Sign up with your email. No seed phrase, and no identity check to get started."
   },
   "infrastructure": {
     "title": "Built on Base. Powered by the rails you already know.",
@@ -58,7 +59,7 @@
   },
   "features": {
     "sectionTitle": "Digital euros and dollars. The essentials, made simple.",
-    "sectionSubtitle": "Hold them. Send them. Use them onchain. All from a wallet only you control.",
+    "sectionSubtitle": "Send, exchange, and put money to work in onchain markets. Three jobs, one wallet.",
     "f1Title": "Send money like a message",
     "f1Desc": "Send digital euros or dollars to anyone, any day, in seconds. No bank hours, no borders.",
     "f2Title": "Onchain markets, one tap away",
@@ -66,7 +67,8 @@
     "f3Title": "Dollars to euros. Euros to dollars.",
     "f3Desc": "Move between euros and dollars in a couple of taps, with the rate shown before you confirm.",
     "noteText": "Network fees and limits may apply. Exchanges run through independent providers under their terms. Market rates are set by third-party protocols, move with the market and are never guaranteed. This is not an investment product.",
-    "noteLink": "Read the Risk Disclosure"
+    "noteLink": "Read the Risk Disclosure",
+    "kicker": "What you get"
   },
   "steps": {
     "title": "Start in minutes. Stay in control.",
@@ -77,7 +79,8 @@
     "s3Title": "Use it for real life",
     "s3Desc": "Send, exchange, or put your balance to work in onchain markets.",
     "noteText": "Bank top-ups run through independent providers, where available, under their terms and identity checks. Network fees and limits may apply.",
-    "noteLink": "Read the Terms"
+    "noteLink": "Read the Terms",
+    "kicker": "How it works"
   },
   "advantages": {
     "row1Heading": "Euros and dollars, onchain.",
@@ -97,7 +100,8 @@
     "i3Desc": "Holding, sending and exchanging need no identity check. Bank transfers and the card do, and those checks are run by the regulated providers behind them.",
     "i4Title": "Money and markets you can inspect",
     "i4Desc": "USDC and EURC are issued by Circle, which publishes its reserves. Onchain deposits go only to protocols with public, audited contracts.",
-    "noteText": "Digital assets and onchain protocols carry risk, and holdings are not covered by deposit guarantees."
+    "noteText": "Digital assets and onchain protocols carry risk, and holdings are not covered by deposit guarantees.",
+    "kicker": "Safety"
   },
   "compare": {
     "kicker": "How it compares",

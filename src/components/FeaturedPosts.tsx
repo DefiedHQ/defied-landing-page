@@ -32,7 +32,7 @@ export function FeaturedPosts() {
   return (
     <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
       <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: '16px', marginBottom: '40px', flexWrap: 'wrap' }}>
-        <Text font="display2" as="h2" className="title-tight-lh" style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)', fontWeight: 500 }}>
+        <Text font="display2" as="h2" className="section-heading">
           {t('blogSection.title')}
         </Text>
         <Link href={localePath('/blog')} className="band-link">

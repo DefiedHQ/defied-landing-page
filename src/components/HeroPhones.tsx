@@ -1,6 +1,6 @@
 'use client';
 
-import { m, useReducedMotion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { PhoneFrame } from '@/components/PhoneFrame';
 import { HeroWalletCard } from '@/components/HeroWalletCard';
 
@@ -12,19 +12,18 @@ import { HeroWalletCard } from '@/components/HeroWalletCard';
  *
  * The two feeds tick on offset timers so the eye has one thing to follow
  * at a time. Entrance is one settle-in (opacity + y), then the feeds run.
+ * Reduced motion is handled by MotionConfig in CdsProvider (it drops the
+ * transform); branching on useReducedMotion here would render differently
+ * on the server and the client and break hydration.
  */
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 export function HeroPhones() {
-  const reduceMotion = useReducedMotion();
-  const entrance = (delay: number) =>
-    reduceMotion
-      ? {}
-      : {
-          initial: { opacity: 0, y: 28 },
-          animate: { opacity: 1, y: 0 },
-          transition: { duration: 0.8, delay, ease: [...EASE] },
-        };
+  const entrance = (delay: number) => ({
+    initial: { opacity: 0, y: 28 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.8, delay, ease: [...EASE] },
+  });
 
   return (
     <div className="hero-phones">

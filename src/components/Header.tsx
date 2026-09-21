@@ -73,27 +73,10 @@ export function Header() {
   return (
     <header className="header-padding" style={{ position: 'relative', width: '100%', maxWidth: '1200px', margin: '0 auto' }}>
       <HStack as="div" style={{ alignItems: 'center', position: 'relative' }}>
-        {/* Logo + mobile menu toggle */}
-        <HStack as="div" style={{ alignItems: 'center', gap: '16px', flexShrink: 0 }}>
-          <Link href={localePath('/')} className="hover-fade" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', textDecoration: 'none', flexShrink: 0 }}>
-            <LogoMark size={48} />
-          </Link>
-          <button
-            ref={mobileToggleRef}
-            type="button"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="show-mobile-flex"
-            style={{ alignItems: 'center', justifyContent: 'center', background: 'none', border: 'none', color: 'var(--ink)', minWidth: '44px', minHeight: '44px', cursor: 'pointer' }}
-            aria-label="Menu"
-            aria-expanded={mobileMenuOpen}
-          >
-            {mobileMenuOpen ? (
-              <Icon name="close" size="m" dangerouslySetColor="#14161A" accessibilityLabel="Close menu" />
-            ) : (
-              <Icon name="hamburger" size="m" dangerouslySetColor="#14161A" accessibilityLabel="Open menu" />
-            )}
-          </button>
-        </HStack>
+        {/* Logo */}
+        <Link href={localePath('/')} className="hover-fade" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', textDecoration: 'none', flexShrink: 0 }}>
+          <LogoMark size={48} />
+        </Link>
 
         {/* Centered nav tabs */}
         <nav className="hide-mobile-flex" style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)', alignItems: 'center', gap: '4px' }}>
@@ -162,6 +145,23 @@ export function Header() {
               </m.span>
             </AnimatePresence>
           </Button>
+          {/* Mobile menu toggle sits at the right edge, in thumb reach and
+              where the convention puts it (design review, Phase 3) */}
+          <button
+            ref={mobileToggleRef}
+            type="button"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="show-mobile-flex"
+            style={{ alignItems: 'center', justifyContent: 'center', background: 'none', border: 'none', color: 'var(--ink)', minWidth: '44px', minHeight: '44px', marginRight: '-8px', cursor: 'pointer' }}
+            aria-label="Menu"
+            aria-expanded={mobileMenuOpen}
+          >
+            {mobileMenuOpen ? (
+              <Icon name="close" size="m" dangerouslySetColor="#14161A" accessibilityLabel="Close menu" />
+            ) : (
+              <Icon name="hamburger" size="m" dangerouslySetColor="#14161A" accessibilityLabel="Open menu" />
+            )}
+          </button>
         </HStack>
       </HStack>
 
@@ -218,7 +218,7 @@ export function Header() {
                 transition: 'color 0.2s ease',
                 textDecoration: 'none',
                 color: 'inherit',
-                fontWeight: item.paths.some(p => stripLangPrefix(pathname).startsWith(p)) ? 700 : 400,
+                fontWeight: item.paths.some(p => stripLangPrefix(pathname).startsWith(p)) ? 600 : 400,
               }}
             >
               <Text font="body" as="span">{item.label}</Text>

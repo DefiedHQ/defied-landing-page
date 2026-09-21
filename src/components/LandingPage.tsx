@@ -96,10 +96,13 @@ export function LandingPage() {
       <section id="features" className="section-padding section-rhythm">
         <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
           <m.div {...fadeUp} style={{ textAlign: 'center' }}>
-            <Text font="display2" as="h2" display="block" className="section-title" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 500, maxWidth: '720px', marginBottom: '24px', textWrap: 'balance' }}>
+            <Text font="label1" as="span" display="block" className="kicker" style={{ textAlign: 'center', marginBottom: '12px' }}>
+              {t('features.kicker')}
+            </Text>
+            <Text font="display2" as="h2" display="block" className="section-title section-heading" style={{ maxWidth: '720px', marginBottom: '24px' }}>
               {t('features.sectionTitle')}
             </Text>
-            <Text font="body" as="p" color="fgMuted" display="block" style={{ fontSize: '18px', lineHeight: '28px', maxWidth: '560px', margin: '0 auto 56px', textAlign: 'center', textWrap: 'pretty' }}>
+            <Text font="body" as="p" color="fgMuted" display="block" className="text-lead" style={{ maxWidth: '560px', margin: '0 auto 56px', textAlign: 'center', textWrap: 'pretty' }}>
               {t('features.sectionSubtitle')}
             </Text>
           </m.div>
@@ -128,7 +131,7 @@ export function LandingPage() {
                     </div>
                     <div className="feature-card-cover-text">
                       <Text font="title3" as="h3" className="card-title" style={{ fontWeight: 600 }}>{feature.title}</Text>
-                      <Text font="body" as="p" color="fgMuted" style={{ fontSize: '15px', lineHeight: '24px' }}>{feature.desc}</Text>
+                      <Text font="body" as="p" color="fgMuted" className="text-card">{feature.desc}</Text>
                     </div>
                   </article>
                 </m.div>
@@ -151,13 +154,13 @@ export function LandingPage() {
         <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
           <m.div {...fadeUp}>
             <div className="safety-head">
-              <Text font="label1" as="span" style={{ fontWeight: 600, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.06em', fontSize: '13px' }}>
+              <Text font="label1" as="span" className="kicker">
                 {t('compare.kicker')}
               </Text>
-              <Text font="display2" as="h2" className="title-tight-lh" style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)', fontWeight: 500 }}>
+              <Text font="display2" as="h2" className="section-heading">
                 {t('compare.title')}
               </Text>
-              <Text font="body" as="p" color="fgMuted" style={{ fontSize: '17px', lineHeight: '28px', maxWidth: '46ch' }}>
+              <Text font="body" as="p" color="fgMuted" className="text-lead" style={{ maxWidth: '46ch' }}>
                 {t('compare.subtitle')}
               </Text>
             </div>
@@ -219,7 +222,10 @@ export function LandingPage() {
                 <PictogramCover name="getStarted" tint="mist" />
               </div>
               <div className="bleed-band-text">
-                <Text font="display2" as="h2" className="title-tight-lh" style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)', fontWeight: 500 }}>
+                <Text font="label1" as="span" className="kicker">
+                  {t('steps.kicker')}
+                </Text>
+                <Text font="display2" as="h2" className="section-heading">
                   {t('steps.title')}
                 </Text>
                 <div className="steps-list">
@@ -232,7 +238,7 @@ export function LandingPage() {
                       <div className="step-number" aria-hidden="true">{i + 1}</div>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                         <Text font="title4" as="h3" className="card-title" style={{ fontWeight: 600 }}>{step.title}</Text>
-                        <Text font="body" as="p" color="fgMuted" style={{ fontSize: '15px', lineHeight: '24px' }}>{step.desc}</Text>
+                        <Text font="body" as="p" color="fgMuted" className="text-card">{step.desc}</Text>
                       </div>
                     </div>
                   ))}
@@ -247,7 +253,7 @@ export function LandingPage() {
                     className="btn-fw-500"
                     style={{
                       borderRadius: '56px',
-                      height: '54px',
+                      height: '56px',
                       padding: '14px 28px',
                     }}
                   >
@@ -274,13 +280,13 @@ export function LandingPage() {
                 <PictogramCover name="stableCoinMetaphor" tint="stone" />
               </div>
               <div className="bleed-band-text">
-                <Text font="label1" as="span" style={{ fontWeight: 600, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.06em', fontSize: '13px' }}>
+                <Text font="label1" as="span" className="kicker">
                   {t('advantages.stablecoinsKicker')}
                 </Text>
-                <Text font="display2" as="h3" className="title-tight-lh" style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)', fontWeight: 500 }}>
+                <Text font="display2" as="h3" className="section-heading">
                   {t('advantages.row1Heading')}
                 </Text>
-                <Text font="body" as="p" color="fgMuted" style={{ fontSize: '17px', lineHeight: '28px', maxWidth: '46ch' }}>
+                <Text font="body" as="p" color="fgMuted" className="text-lead" style={{ maxWidth: '46ch' }}>
                   {t('advantages.row1Subtext')}
                 </Text>
                 <div className="note-stack">
@@ -298,10 +304,13 @@ export function LandingPage() {
           <m.div {...fadeUp}>
             <div className="earning-band">
               <div className="earning-band-text">
-                <Text font="display2" as="h2" className="title-tight-lh" style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)', fontWeight: 500 }}>
+                <Text font="label1" as="span" className="kicker">
+                  {t('earning.kicker')}
+                </Text>
+                <Text font="display2" as="h2" className="section-heading">
                   {t('earning.title')}
                 </Text>
-                <Text font="body" as="p" color="fgMuted" style={{ fontSize: '17px', lineHeight: '28px', maxWidth: '46ch' }}>
+                <Text font="body" as="p" color="fgMuted" className="text-lead" style={{ maxWidth: '46ch' }}>
                   {t('earning.body')}
                 </Text>
                 <a href="#faq" onClick={scrollToFaq} className="band-link">{t('earning.link')}</a>
@@ -338,10 +347,13 @@ export function LandingPage() {
         <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
           <m.div {...fadeUp}>
             <div className="safety-head">
-              <Text font="display2" as="h2" className="title-tight-lh" style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)', fontWeight: 500 }}>
+              <Text font="label1" as="span" className="kicker">
+                {t('safety.kicker')}
+              </Text>
+              <Text font="display2" as="h2" className="section-heading">
                 {t('advantages.bandTitle')}
               </Text>
-              <Text font="body" as="p" color="fgMuted" style={{ fontSize: '17px', lineHeight: '28px', maxWidth: '52ch' }}>
+              <Text font="body" as="p" color="fgMuted" className="text-lead" style={{ maxWidth: '52ch' }}>
                 {t('advantages.bandBody')}
               </Text>
               <a href="#faq" onClick={scrollToFaq} className="band-link">{t('advantages.bandCta')}</a>
@@ -365,13 +377,13 @@ export function LandingPage() {
                     <LocalPictogram name={item.pictogram} dimension="48x48" />
                   </div>
                   <Text font="title3" as="h3" className="card-title" style={{ fontWeight: 600 }}>{t(`safety.${item.key}Title`)}</Text>
-                  <Text font="body" as="p" color="fgMuted" style={{ fontSize: '15px', lineHeight: '24px' }}>{t(`safety.${item.key}Desc`)}</Text>
+                  <Text font="body" as="p" color="fgMuted" className="text-card">{t(`safety.${item.key}Desc`)}</Text>
                 </m.div>
               </li>
             ))}
           </ul>
           <m.div {...fadeUp}>
-            <div className="note-stack note-stack--section">
+            <div className="note-stack note-stack--section note-stack--after-list">
               <p>{t('safety.noteText')}</p>
             </div>
           </m.div>
@@ -388,13 +400,13 @@ export function LandingPage() {
                 <PictogramCover name="lightbulbLearn" tint="stone" />
               </div>
               <div className="bleed-band-text">
-                <Text font="label1" as="span" style={{ fontWeight: 600, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.06em', fontSize: '13px' }}>
+                <Text font="label1" as="span" className="kicker">
                   {t('imageSection.sectionTitle')}
                 </Text>
-                <Text font="display2" as="h2" className="title-tight-lh" style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)', fontWeight: 500 }}>
+                <Text font="display2" as="h2" className="section-heading">
                   {t('imageSection.title')}
                 </Text>
-                <Text font="body" as="p" color="fgMuted" style={{ fontSize: '17px', lineHeight: '28px', maxWidth: '46ch' }}>
+                <Text font="body" as="p" color="fgMuted" className="text-lead" style={{ maxWidth: '46ch' }}>
                   {t('imageSection.body1')}
                 </Text>
               </div>
@@ -420,23 +432,23 @@ export function LandingPage() {
               maxWidth: '1200px',
               margin: '0 auto',
               width: '100%',
-              background: 'linear-gradient(115deg, #E7F0FB 0%, #F8FBFF 62%, #EDF3FC 100%)',
+              background: 'linear-gradient(115deg, var(--mist) 0%, var(--mist-wash) 62%, var(--mist) 100%)',
               borderRadius: '32px',
               overflow: 'hidden',
             }}
           >
             {/* Left: text content */}
-            <div className="cta-split-text" style={{ display: 'flex', flexDirection: 'column', gap: '20px', padding: 'clamp(40px, 6vw, 72px)', justifyContent: 'center', flex: 1 }}>
+            <div className="cta-split-text" style={{ display: 'flex', flexDirection: 'column', gap: '16px', padding: 'var(--band-pad)', justifyContent: 'center', flex: 1 }}>
               <Image
                 src="/defied_squared_logo_blue.svg"
                 alt=""
                 width={56}
                 height={56}
               />
-              <Text font="display2" as="h2" className="title-tight-lh" style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)', fontWeight: 500, lineHeight: 1.05 }}>
+              <Text font="display2" as="h2" className="section-heading">
                 {t('cta.heading')}
               </Text>
-              <Text font="body" as="p" color="fgMuted" style={{ fontSize: '17px', lineHeight: '28px', maxWidth: '420px' }}>
+              <Text font="body" as="p" color="fgMuted" className="text-lead" style={{ maxWidth: '420px' }}>
                 {t('cta.subheading')}
               </Text>
               <div style={{ marginTop: '8px' }}>
@@ -449,7 +461,7 @@ export function LandingPage() {
                   className="btn-fw-500"
                   style={{
                     borderRadius: '56px',
-                    height: '54px',
+                    height: '56px',
                     padding: '14px 28px',
                   }}
                 >

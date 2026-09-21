@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { Text } from '@coinbase/cds-web/typography/Text';
 import { Button } from '@coinbase/cds-web/buttons/Button';
 import { IconButton } from '@coinbase/cds-web/buttons/IconButton';
@@ -26,8 +27,9 @@ export const HERO_SCROLL_TARGET_ID = 'after-hero';
 /** id of the hero itself - the header watches it to swap its CTA once scrolled past */
 export const HERO_ID = 'hero';
 
-/** Base Europe post linked from the hero pill */
-const BASE_EUROPE_POST_URL = 'https://x.com/Base_EUR/status/2079858688601280868';
+/* Social-proof avatars (placeholder portraits from randomuser.me; swap for
+   real customer photos in public/avatars/) */
+const PILL_AVATARS = ['/avatars/a.jpg', '/avatars/b.jpg', '/avatars/c.jpg'];
 
 /**
  * Hero - one message, one CTA, and the product running on two phones.
@@ -51,13 +53,18 @@ export function HeroStatic() {
       <div className="hero-card-content">
         <div className="hero-card-layout">
           <div className="hero-card-copy">
-            {/* Social-proof pill linking to the Base Europe post, directly
-                above the headline so the two read as one block */}
-            <a className="hero-pill" href={BASE_EUROPE_POST_URL} target="_blank" rel="noopener noreferrer">
-              <span>{t('hero.pillLabel')}</span>
-              <span className="hero-pill-divider" aria-hidden="true" />
-              <span className="hero-pill-cta">{t('hero.pillCta')}</span>
-            </a>
+            {/* Social-proof pill directly above the headline so the two read
+                as one block: three faces, then "10k+ users" + claim */}
+            <p className="hero-pill">
+              <span className="hero-pill-avatars" aria-hidden="true">
+                {PILL_AVATARS.map((src) => (
+                  <Image key={src} src={src} alt="" width={28} height={28} className="hero-pill-avatar" />
+                ))}
+              </span>
+              <span>
+                <strong>{t('hero.pillLabel')}</strong> {t('hero.pillText')}
+              </span>
+            </p>
             <Text
               font="display1"
               as="h1"
@@ -76,13 +83,12 @@ export function HeroStatic() {
               font="body"
               as="p"
               display="block"
+              color="fgMuted"
+              className="text-lead"
               style={{
                 marginTop: 'clamp(20px, 3vw, 32px)',
                 maxWidth: '490px',
                 textWrap: 'balance',
-                fontSize: '20px',
-                lineHeight: '30px',
-                color: '#3C4048',
               }}
             >
               {t('hero.cardSubtitle')}
@@ -95,21 +101,27 @@ export function HeroStatic() {
                 target="_blank"
                 rel="noopener noreferrer"
                 variant="primary"
-                startIcon="wallet"
+                /* start slot (not startIcon): keeps the glyph next to the
+                   label when the pill stretches to full width on phones */
+                start={<Icon name="wallet" size="m" dangerouslySetColor="currentColor" />}
                 className="btn-fw-500"
                 style={{
                   borderRadius: '56px',
-                  height: '58px',
+                  height: '56px',
                   padding: '16px 32px',
                   justifyContent: 'center',
                 }}
               >
                 <AnimatedButtonText>{t('hero.earlyAccess')}</AnimatedButtonText>
               </Button>
+              {/* Transparent secondary (CDS: "supplementary actions with
+                  lower prominence", pill shows on hover): the app waitlist is
+                  the side door and must not weigh the same as the wallet CTA */}
               <Button
                 onClick={openWaitlist}
                 aria-haspopup="dialog"
                 variant="secondary"
+                transparent
                 className="btn-fw-500"
                 start={
                   <span className="hero-platform-icons" aria-hidden="true">
@@ -119,7 +131,7 @@ export function HeroStatic() {
                 }
                 style={{
                   borderRadius: '56px',
-                  height: '58px',
+                  height: '56px',
                   padding: '16px 32px',
                   justifyContent: 'center',
                 }}

@@ -44,20 +44,13 @@ export function InfoSection() {
   return (
     <section style={{ width: '100%', maxWidth: '1200px', margin: '0 auto' }}>
       <div style={{ maxWidth: '720px', margin: '0 auto 56px', textAlign: 'center' }}>
-        <Text
-          font="display2"
-          as="h2"
-          style={{
-            fontSize: 'clamp(2rem, 4vw, 3.25rem)',
-            fontWeight: 500,
-          }}
-        >
+        <Text font="display2" as="h2" className="section-heading">
           {t('faq.title')}
         </Text>
       </div>
 
       {/* Constrained for a readable line length (design review) */}
-      <div className="faq-accordion" style={{ maxWidth: '800px', margin: '40px auto 0' }}>
+      <div className="faq-accordion" style={{ maxWidth: '800px', margin: '0 auto' }}>
       <Accordion
         activeKey={activeKey}
         setActiveKey={handleToggle}
@@ -85,7 +78,7 @@ export function InfoSection() {
               }}
             >
               <VStack>
-                <Text font="label2" as="p" color="fgMuted" style={{ fontSize: '16px' }}>
+                <Text font="body" as="p" color="fgMuted" style={{ fontSize: '16px', lineHeight: '26px' }}>
                   {item.answer}
                 </Text>
               </VStack>
